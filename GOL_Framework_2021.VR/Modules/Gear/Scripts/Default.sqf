@@ -19,6 +19,21 @@ marksman	- Marksman
 
 switch (toLower(_role)) do {
 
+	case "high": {
+		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
+		[_rifle, _rifle_mag, ""] call _addPrimary;
+		[_pistol, _pistol_mag, ""] call _addHandGun;
+		_IFAK call _addToUniform;
+		[[_pistol_mag,2],[_smokegrenadeY,3],[_rifle_mag,3]] call _addToUniform;
+		[[_smokegrenadeG,5]] call _addToBackpack;
+		_rangefinder call _addBino;
+		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
+		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
+			_nvg call _addNVG;
+			[[_mapFlashLight,1],[_IRStrobe,1]] call _addToUniform;
+		};
+	};
+
 	case "pl": {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
 		[_rifle, _rifle_mag, ""] call _addPrimary;

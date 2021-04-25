@@ -17,6 +17,21 @@ p		- Pilot
 
 switch (toLower(_role)) do {
 
+	case "high": {
+		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
+		[_rifle, _rifle_mag, ""] call _addPrimary;
+		[_pistol, _pistol_mag, ""] call _addHandGun;
+		_IFAK call _addToUniform;
+		[[_pistol_mag,2],[_smokegrenadeY,3],[_rifle_mag,3]] call _addToUniform;
+		[[_smokegrenadeG,5]] call _addToBackpack;
+		_rangefinder call _addBino;
+		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
+		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
+			_nvg call _addNVG;
+			[[_mapFlashLight,1],[_IRStrobe,1]] call _addToUniform;
+		};
+	};
+
 	case "sl": {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
 		[_rifleGL, _rifleGL_mag, _glHE] call _addPrimary;
@@ -141,6 +156,23 @@ switch (toLower(_role)) do {
 		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
 		[[_MMG_mag_tr,COUNT_AR_MAGS(_MMG_mag_tr)]] call _addToVest;
 		["", "", "", "", "", _nvg] call _addLinkedItems;
+	};
+
+	case "marksman": {
+		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
+		[_rifleMarksman, _rifleMarksman_mag, ""] call _addPrimary;
+		[_pistol, _pistol_mag, ""] call _addHandGun;
+		_IFAK call _addToUniform;
+		[[_pistol_mag,2],[_rangecard,1],[_microDAGR,1],["ACE_ATragMX",1],["ACE_Kestrel4500",1]] call _addToUniform;
+		[[_rifleMarksman_mag,3],[_grenademini,2],[_smokegrenadeY,6],[_smokegrenadeG,6],[_smokegrenadeB,2],[_smokegrenadeP,2]] call _addToVest;
+		[[_rifleMarksman_mag_tr,2],[_smokegrenadeG,5]] call _addToBackpack;
+		_rangefinder call _addBino;
+		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
+		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
+			_nvg call _addNVG;
+			[[_mapFlashLight,1]] call _addToUniform;
+			[[_chemG,5],[_chemR,5],[_handFlareG,2],[_IRStrobe,2]] call _addToBackpack;
+		};
 	};
 
 	default {

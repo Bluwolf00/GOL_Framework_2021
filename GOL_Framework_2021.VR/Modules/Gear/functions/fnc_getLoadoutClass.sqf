@@ -25,6 +25,9 @@ private _role = "r";
 private _displayName = getText (configfile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
 
 switch (true) do {
+	case (_displayName in ["Officer","Commander"]): {
+		_role = "high";
+	};
 	case (_displayName isEqualTo "Squad Leader"): {
 		_role = "sl";
 	};
@@ -37,7 +40,7 @@ switch (true) do {
 			_role = "mat";
 		};
 	};
-	case (_displayName isEqualTo "Grenadier"): {
+	case (_displayName isEqualTo "Grenadier") || (["Grenadier",_displayName] call BIS_fnc_inString;) : {
 		if (_groupType) then {
 			_role = "amat";
 		} else {
@@ -51,18 +54,21 @@ switch (true) do {
 			_role = "ag";
 		};
 	};
-	case (_displayName in ["Autorifleman","Machinegunner"]): {
+	case (_displayName in ["Autorifleman","Machinegunner","Automatic Rifleman","Auto Rifleman","Machine Gunner","Machine Gunner Assistant","Heavy Gunner"]): {
 		if (_groupType) then {
 			_role = "mmg";
 		} else {
 			_role = "ar";
 		};
 	};
-	case (_displayName isEqualTo "Crewman"): {
+	case (_displayName in ["Crewman","Crew"]) || (["Crew",_displayName] call BIS_fnc_inString;): {
 		_role = "crew";
 	};
 	case (_displayName in ["Helicopter Pilot","Pilot"]): {
 		_role = "p";
+	};
+	case (_displayName in ["Marksman","Sniper","Spotter"]) || (["Marksman",_displayName] call BIS_fnc_inString;) || (["Sniper",_displayName] call BIS_fnc_inString;): {
+		_role = "marksman";
 	};
 };
 
