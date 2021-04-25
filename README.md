@@ -1,4 +1,4 @@
-# GOL_Framework_2020
+# GOL_Framework_2021
 Guerrillas Of Liberation's custom framework for Arma 3</br>
 Edited by the GOL Technical Team.</br>
 
