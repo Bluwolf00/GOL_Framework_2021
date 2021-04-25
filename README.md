@@ -2,7 +2,7 @@
 Guerrillas Of Liberation's custom framework for Arma 3</br>
 Edited by the GOL Technical Team.</br>
 
-__USE THE RELEASE FOR THE LATEST **STABLE** BUILD__
+USE THE RELEASE FOR THE LATEST **STABLE** BUILD
 
 # Functions
 
