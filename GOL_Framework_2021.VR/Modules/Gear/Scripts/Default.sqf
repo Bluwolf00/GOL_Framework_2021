@@ -39,7 +39,7 @@ switch (toLower(_role)) do {
 		[_rifle, _rifle_mag, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_microDAGR,1],[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
+		[[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
 		[[_flashBang,3],[_smokegrenadeG,5],[_grenademini,2],[_rifle_mag_tr,5]] call _addToVest;
 		[[_smokegrenadeG,5]] call _addToBackpack;
 		_rangefinder call _addBino;
@@ -55,7 +55,7 @@ switch (toLower(_role)) do {
 		[_rifleGL, _rifle_mag_tr, _glsmokeR] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_microDAGR,1],[_pistol_mag,2],[_grenademini,2]] call _addToUniform;
+		[[_pistol_mag,2],[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,3],[_smokegrenadeY,6],[_smokegrenadeG,6],[_smokegrenadeB,2],[_smokegrenadeP,2]] call _addToVest;
 		[[_flashBang,3],[_battery,1],[_glsmokeR,5],[_glsmokeG,2],[_smokegrenadeG,5]] call _addToBackpack;
 		if (call EFUNC(Common,isNight)) then {
@@ -215,12 +215,12 @@ switch (toLower(_role)) do {
 
 	case "crew": {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
-		[_rifle, _rifle_mag, ""] call _addPrimary;
+		[_rifleC, _rifleC_mag_tr, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
 		[[_pistol_mag,2],[_smokegrenadeY,2]] call _addToUniform;
-		[[_rifle_mag,4],[_smokegrenadeP,3],[_grenademini,1]] call _addToVest;
-		[[_toolkit,1]] call _addToBackPack;
+		[[_rifleC_mag_tr,4],[_smokegrenadeP,3],[_grenademini,1]] call _addToVest;
+		[[_toolkit,1]] call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
@@ -295,7 +295,7 @@ switch (toLower(_role)) do {
 		[_rifleMarksman, _rifleMarksman_mag, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_pistol_mag,2],[_rangecard,1],[_microDAGR,1],["ACE_ATragMX",1],["ACE_Kestrel4500",1]] call _addToUniform;
+		[[_pistol_mag,2],[_rangecard,1],[_ATrag,1],[_Kestrel,1]] call _addToUniform;
 		[[_rifleMarksman_mag,3],[_grenademini,2],[_smokegrenadeY,6],[_smokegrenadeG,6],[_smokegrenadeB,2],[_smokegrenadeP,2]] call _addToVest;
 		[[_rifleMarksman_mag_tr,2],[_smokegrenadeG,5]] call _addToBackpack;
 		_rangefinder call _addBino;
