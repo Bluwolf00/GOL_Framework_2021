@@ -492,3 +492,9 @@ class ace_zeus_autoAddObjects {
 	typeName = "BOOL";
 	force = 1;
 };
+
+class acex_sitting_enable {
+	value = 1;
+	typeName = "BOOL";
+	force = 1;
+};
