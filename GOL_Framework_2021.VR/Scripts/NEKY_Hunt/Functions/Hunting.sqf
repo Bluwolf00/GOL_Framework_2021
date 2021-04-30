@@ -7,6 +7,7 @@
 //	Made by NeKo-ArroW
 
 Params ["_Grp","_Player","_Zone","_UpdateFreq","_Distance","_Number","_Code","_ForceRespawnMultiplier","_Repeat"];
+Private ["_WP1","_WP2","_WPs"];
 
 if(isNil "_Grp") then {
 	if(isNull _Grp) exitWith { systemChat "Exited Hunting. _Grp not defined."};
@@ -33,9 +34,11 @@ else
 	_WP1 setWaypointBehaviour "AWARE";
 };
 
-// Waypoint at the prey's last updated position
-_WP2 = _Grp addWaypoint	[_Leader, 25, 2];
-_WP2 setWaypointBehaviour "COMBAT";
+
+	// Waypoint at the prey's last updated position
+	_WP2 = _Grp addWaypoint	[_Leader, 25, 2];
+	_WP2 setWaypointBehaviour "COMBAT";
+
 
 // Force Respawn distance
 _ForceRespawnDistance = _ForceRespawnMultiplier * _Distance;
@@ -50,9 +53,15 @@ While { Alive _Player && ({ (Alive _x) && !(Captive _x) } count _AI) != 0 && (Ve
 		_Leader = Leader _Grp;
 		_RelPos = _Player getPos [150, _Player getDir _Leader];
 		_WP1 SetWaypointPosition [_RelPos,75];
-		_WP2 SetWaypointPosition [_Player,75];
-
-		_WPs = [_WP1,_WP2];
+		if(isNull objectParent(Leader _Grp)) then {
+			_WP2 SetWaypointPosition [_Player,75];
+			_WPs = [_WP1,_WP2];
+		}
+		else
+		{
+			_WP2 SetWaypointPosition [_RelPos,50];
+			_WPs = [_WP1,_WP2];
+		};
 		_WPs Apply {[(WaypointPosition _x) distance2D _Leader]};
 		_WPs sort True;
 		_Grp setCurrentWaypoint (_WPs select 0);
@@ -62,10 +71,10 @@ While { Alive _Player && ({ (Alive _x) && !(Captive _x) } count _AI) != 0 && (Ve
 	// Reveal prey and its group.
 	if ((_Leader distance2D _Player) < 300) then
 	{
-		if ((_Grp knowsAbout _Player) < 2.0) then
+		if ((_Grp knowsAbout _Player) < 1.5) then
 		{
 			{
-				_Grp Reveal [_x, 2.0];
+				_Grp Reveal [_x, 1.5];
 			} forEach (Units _PlayerGrp);
 		};
 	} else {

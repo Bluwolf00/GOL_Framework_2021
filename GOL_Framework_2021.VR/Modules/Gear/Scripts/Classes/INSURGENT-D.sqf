@@ -1,40 +1,6 @@
 _allowedNightStuff = false;
 
 
-// O_Soldier_SL_F - epl
-// Equipment
-_goggles = "";
-_helmet = "LOP_H_Policeman_cap";
-_uniform = "LOP_U_AM_Fatigue_01_2";
-_vest = "V_BandollierB_rgr";
-_backpack = "";
-// Primary
-_silencer = "";
-_pointer = "";
-_sight = "";
-_bipod = "";
-_rifle = "hlc_rifle_akm";
-_rifle_mag = "hlc_30Rnd_762x39_b_ak";
-_rifle_mag_tr = "hlc_30Rnd_762x39_b_ak";
-
-// Secondary
-_silencer = "";
-_pointer = "";
-_sight = "";
-_bipod = "";
-_LAT = "launch_RPG7_F";
-_LAT_mag = "RPG7_F";
-
-// Handgun
-_silencer = "";
-_pointer = "";
-_sight = "";
-_bipod = "";
-_pistol = "hgun_Pistol_01_F";
-_pistolMag = "10Rnd_9x21_Mag";
-
-
-
 
 _goggles = "";
 _helmet = selectRandom ["LOP_H_Shemag_TAN","","LOP_H_Turban","LOP_H_Turban_Mask","LOP_H_Pakol"];

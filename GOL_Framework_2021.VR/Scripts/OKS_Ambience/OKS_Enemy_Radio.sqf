@@ -1,5 +1,5 @@
 OKS_EnemyFaction = _this select 0;
-// [Independent] spawn OKS_Hunt_Radio;
+// [Independent] spawn OKS_Enemy_Radio;
 //
 if (!isServer) exitWith {false};	// Ensures only server or HC runs this script - Tack Neky
 
@@ -22,20 +22,22 @@ OKS_Loop_Radio = {
 
 			//systemChat "Play Radio";
 			_Corpse setVariable ["OKS_Transmit_Currently",true];
-			playSound3D [MISSION_ROOT + "Scripts\OKS_HUNT\Radio\Radio1.ogg", _Corpse, false, getPosASL _Corpse, 2.5, 1, 14];
+			playSound3D [MISSION_ROOT + "Scripts\OKS_Ambience\Radio\Radio1.ogg", _Corpse, false, getPosASL _Corpse, 2.5, 1, 14];
 			sleep 30+(Random 90);
 
-			playSound3D [MISSION_ROOT + "Scripts\OKS_HUNT\Radio\Radio2.ogg", _Corpse, false, getPosASL _Corpse, 2.5, 1, 14];
+			playSound3D [MISSION_ROOT + "Scripts\OKS_Ambience\Radio\Radio2.ogg", _Corpse, false, getPosASL _Corpse, 2.5, 1, 14];
 			sleep 30+(Random 90);
 
-			playSound3D [MISSION_ROOT + "Scripts\OKS_HUNT\Radio\Radio3.ogg", _Corpse, false, getPosASL _Corpse, 2.5, 1, 14];
+			playSound3D [MISSION_ROOT + "Scripts\OKS_Ambience\Radio\Radio3.ogg", _Corpse, false, getPosASL _Corpse, 2.5, 1, 14];
 			sleep 30+(Random 90);
 
-			playSound3D [MISSION_ROOT + "Scripts\OKS_HUNT\Radio\Radio4.ogg", _Corpse, false, getPosASL _Corpse, 2.5, 1, 14];
+			playSound3D [MISSION_ROOT + "Scripts\OKS_Ambience\Radio\Radio4.ogg", _Corpse, false, getPosASL _Corpse, 2.5, 1, 14];
 			sleep 30+(Random 90);
 
-			playSound3D [MISSION_ROOT + "Scripts\OKS_HUNT\Radio\Radio5.ogg", _Corpse, false, getPosASL _Corpse, 2.5, 1, 14];
+			playSound3D [MISSION_ROOT + "Scripts\OKS_Ambience\Radio\Radio5.ogg", _Corpse, false, getPosASL _Corpse, 2.5, 1, 14];
 			_Corpse setVariable ["OKS_Transmit_Currently",false];
+			_Corpse pushBackUnique OKS_Radios;
+			publicVariable "OKS_Radios";
 			sleep 90;
 		};
 
@@ -48,7 +50,7 @@ OKS_Loop_Radio = {
 
 	while {true} do {
 
-	SystemChat "Radio Code Started";
+	//SystemChat "Radio Code Started";
 		{
 			if(!(_X getVariable["OKS_Transmit",false])) then
 			{

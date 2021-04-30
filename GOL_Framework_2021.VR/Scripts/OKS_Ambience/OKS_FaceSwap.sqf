@@ -3,6 +3,13 @@
 	_null = [east,"african"] execVM "OKS_FaceSwap.sqf";
 	[civilian_1,"african"] execVM "OKS_FaceSwap.sqf";
 
+	Options:
+	african
+	asian
+	caucasian
+	middleeast
+	russian
+
 */
 
 Params
@@ -24,14 +31,20 @@ switch (_Face) do
 		OKS_faces = ["AsianHead_A3_01","AsianHead_A3_07","AsianHead_A3_03","AsianHead_A3_04","AsianHead_A3_02","AsianHead_A3_05"];
 	};
 
-	case "white":
+	case "caucasian":
 	{
-		OKS_faces = [""];
+		OKS_faces = ["WhiteHead_01","WhiteHead_02","WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07","WhiteHead_08","WhiteHead_09","WhiteHead_10","WhiteHead_11","WhiteHead_12","WhiteHead_13",
+					"WhiteHead_14","WhiteHead_15","WhiteHead_16","WhiteHead_17","WhiteHead_18","WhiteHead_19","WhiteHead_20","WhiteHead_21","WhiteHead_22","WhiteHead_23","WhiteHead_24","WhiteHead_25","WhiteHead_26"];
 	};
 
-	case "arab":
+	case "middleeast":
 	{
-		OKS_faces = [""];
+		OKS_faces = ["PersianHead_A3_01","PersianHead_A3_02","PersianHead_A3_03"];
+	};
+
+	case "russian":
+	{
+		OKS_faces = ["RussianHead_1","RussianHead_2","RussianHead_3","RussianHead_4","RussianHead_5"];
 	};
 
 	default{

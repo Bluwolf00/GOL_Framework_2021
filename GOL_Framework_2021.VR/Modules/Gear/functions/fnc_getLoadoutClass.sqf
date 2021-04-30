@@ -40,7 +40,7 @@ switch (true) do {
 			_role = "mat";
 		};
 	};
-	case (_displayName isEqualTo "Grenadier") || (["Grenadier",_displayName] call BIS_fnc_inString;) : {
+	case ((_displayName isEqualTo "Grenadier") || (["Grenadier",_displayName] call BIS_fnc_inString)) : {
 		if (_groupType) then {
 			_role = "amat";
 		} else {
@@ -61,13 +61,13 @@ switch (true) do {
 			_role = "ar";
 		};
 	};
-	case (_displayName in ["Crewman","Crew"]) || (["Crew",_displayName] call BIS_fnc_inString;): {
+	case ((_displayName in ["Crewman","Crew"]) || (["Crew",_displayName] call BIS_fnc_inString)): {
 		_role = "crew";
 	};
 	case (_displayName in ["Helicopter Pilot","Pilot"]): {
 		_role = "p";
 	};
-	case (_displayName in ["Marksman","Sniper","Spotter"]) || (["Marksman",_displayName] call BIS_fnc_inString;) || (["Sniper",_displayName] call BIS_fnc_inString;): {
+	case ((_displayName in ["Marksman","Sniper","Spotter"]) || (["Marksman",_displayName] call BIS_fnc_inString) || (["Sniper",_displayName] call BIS_fnc_inString)): {
 		_role = "marksman";
 	};
 };

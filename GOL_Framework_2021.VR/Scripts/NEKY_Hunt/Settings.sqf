@@ -10,7 +10,7 @@
 _MinDistance = 100;	// Minimum distance in meters the AI spawn location has to be from all players.
 _ForceRespawnMultiplier = 100; // _MinDistance * Multiplier = if distance to hunting target is greater than this, change target or respawn hunting group closer to players.
 _UpdateFreq = 60; // Frequency in seconds that the hunting AI group will be updated with prey's position.
-_MaxCargoSeats = 8; // Max amount of Cargo seats regardless of amount available to vehicle.
+_MaxCargoSeats = 6; // Max amount of Cargo seats regardless of amount available to vehicle.
 
 // Skill Settings
 _SkillVariables = ["aimingspeed","aimingaccuracy","aimingshake","spotdistance","spottime","commanding","general"];	//	Add/Remove AI skill types here and add the number to unit skills below. ( https://community.bistudio.com/wiki/AI_Sub-skills#Sub-Skills )
