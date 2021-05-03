@@ -259,6 +259,19 @@ if (_isMan) then {
 
 				if(GVARMAIN(mod_ACE3)) then {
 					[_unit, _mortarRangeCard, 10] call _fnc_AddObjectsCargo;
+
+					_compatibleItems = _rifle call BIS_fnc_compatibleItems;
+					_compatibleItems append (_rifleC call BIS_fnc_compatibleItems);
+					_compatibleItems append (_LMG call BIS_fnc_compatibleItems);
+					_compatibleItems append (_MMG call BIS_fnc_compatibleItems);
+					_blackList = ["rhsusf_acc_g33_t1","rhsusf_acc_g33_t1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip"];
+					{If (_x in _compatibleItems) then {
+					  _compatibleItems deleteAt (_compatibleItems find _x)
+					}
+					} forEach _blacklist;
+
+					[_unit, _compatibleItems] call ace_arsenal_fnc_initBox;
+					
 				};
 				if (GVARMAIN(mod_TFAR)) then {
 					[_unit, "TFAR_pnr1000a", 10] call _fnc_AddObjectsCargo;
