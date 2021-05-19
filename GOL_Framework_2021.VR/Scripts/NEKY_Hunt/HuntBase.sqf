@@ -148,48 +148,57 @@ while {alive _Base && _Waves > 0} do
 						};
 
 						_Vehicle setDir getDir _SpawnPos;
-						createVehicleCrew _Vehicle;
+
+						// Count (TypeOf _Vehicle call BIS_fnc_AllTurrets) == 0
+						if((_Vehicle emptyPositions "gunner" == 0)) then {
+
+							SystemChat "Vehicle is a transport";
+							_CargoSeats = ([TypeOf _Vehicle,true] call BIS_fnc_crewCount) - (["TypeOf _Vehicle",false] call BIS_fnc_crewCount);
+							if(_CargoSeats > _MaxCargoSeats) then { _CargoSeats = _MaxCargoSeats };
+
+							_AliveCurrentCount = NEKY_Hunt_CurrentCount select {alive _X};
+							_AliveNumber = count _AliveCurrentCount;
+
+							if((_AliveNumber + (_CargoSeats + 1)) <= NEKY_Hunt_MaxCount && _Vehicle emptyPositions "cargo" > 0) then {
+
+									createVehicleCrew _Vehicle;
+									sleep 1;
+									_Group = group (driver _Vehicle);
+
+									SystemChat "Creating Transport Cargo...";
+									 ///Create Leader
+									_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,50], [], 0, "NONE"];
+									_Unit setRank "SERGEANT";
+									_Unit MoveInCargo _Vehicle;
+									_Group selectLeader _Unit;
+									NEKY_Hunt_CurrentCount pushBackUnique _Unit;
+
+								for "_i" from 1 to (_CargoSeats - 1) do
+								{
+									Private "_Unit";
+									_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,50], [], 0, "NONE"];
+									_Unit setRank "PRIVATE";
+									NEKY_Hunt_CurrentCount pushBackUnique _Unit;
+									_Unit MoveInCargo _Vehicle;
+								};
+								_Group setVariable ["GW_Performance_autoDelete", false, true];
+								///SystemChat str [_Skill,_SkillVariables,_Group];
+								[_Group, _SkillVariables, _Skill] Spawn NEKY_Hunt_SetSkill;
+								_Group AllowFleeing 0;
+							};
+						}
+						else
+						{
+							createVehicleCrew _Vehicle;
+						};
+
 						sleep 3;
 						{NEKY_Hunt_CurrentCount pushBackUnique _X} foreach crew _Vehicle;
 						_Group = group (driver _Vehicle);
 					};
 
 					sleep 2;
-	 				// Count (TypeOf _Vehicle call BIS_fnc_AllTurrets) == 0
-					if((isNull gunner _Vehicle) || (_Vehicle emptyPositions "gunner" == 0)) then {
-						SystemChat "Vehicle is a transport";
-						_CargoSeats = ([TypeOf _Vehicle,true] call BIS_fnc_crewCount) - (["TypeOf _Vehicle",false] call BIS_fnc_crewCount);
-						if(_CargoSeats > _MaxCargoSeats) then { _CargoSeats = _MaxCargoSeats };
 
-						_AliveCurrentCount = NEKY_Hunt_CurrentCount select {alive _X};
-						_AliveNumber = count _AliveCurrentCount;
-
-						if((_AliveNumber + (_CargoSeats + 1)) <= NEKY_Hunt_MaxCount && _Vehicle emptyPositions "cargo" > 0) then {
-
-								SystemChat "Creating Transport Cargo...";
-								 ///Create Leader
-								_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,50], [], 0, "NONE"];
-								_Unit setRank "SERGEANT";
-								_Unit MoveInCargo _Vehicle;
-								_Group selectLeader _Unit;
-								NEKY_Hunt_CurrentCount pushBackUnique _Unit;
-
-							for "_i" from 1 to (_CargoSeats - 1) do
-							{
-								Private "_Unit";
-								_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,50], [], 0, "NONE"];
-								_Unit setRank "PRIVATE";
-								NEKY_Hunt_CurrentCount pushBackUnique _Unit;
-								_Unit MoveInCargo _Vehicle;
-							};
-							_Group setVariable ["GW_Performance_autoDelete", false, true];
-							///SystemChat str [_Skill,_SkillVariables,_Group];
-							[_Group, _SkillVariables, _Skill] Spawn NEKY_Hunt_SetSkill;
-							_Group AllowFleeing 0;
-
-						};
-
-					};
 
 					sleep 5;
 

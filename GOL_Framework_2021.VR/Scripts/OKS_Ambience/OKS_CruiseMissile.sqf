@@ -1,11 +1,12 @@
 
 /*
- 	Usage: _null = [LauncherName,TargetName,LaserName(Laser1)] execVM "Scripts\OKS_Ambience\OKS_CruiseMissile.sqf";
+ 	Usage: [LauncherName,TargetName] execVM "Scripts\OKS_Ambience\OKS_CruiseMissile.sqf";
+ 	Example: [Cruise_1,Target_1] execVM "Scripts\OKS_Ambience\OKS_CruiseMissile.sqf";
 
  	Parameters:
 	LauncherName - Object name
 	TargetName - Object name (will be destroyed by code when missile hits)
-	Lasername - Script requires global variables for some reason, so name it differently for all cruiseMissile launchers. No need to place these down, just write a name.
+
 */
 
 
@@ -29,8 +30,8 @@ OKS_Delete_Missile = {
 		deleteVehicle _Missile;
 		SystemChat "Missile Hit";
 	*/
-	_Missile setPos [getPos _Missile select 0,getPos _Missile select 1,0];
-	_Missile setVelocity [0,0,-5];
+	_Missile setVectorDirAndUp [[1,0,0], [0,1,0]];
+	_Missile setVelocity [0,0,-50];
 	_Targeted setDamage 1;
 
 	if(true) exitWith {};
@@ -42,16 +43,16 @@ if(isServer) then
 {
 	_Launcher = _this select 0;
 	_Target = _this select 1;
-	_Laser = _this select 2;
+
 	publicVariable "_Missile";
 
 	//SystemChat Format ["%1 %2",_Launcher,_Target];
 	_Launcher setVariable ["TARGET",_Target];
 	_Launcher addEventHandler ["Fired",{ _Strike = [(_this select 6),(_this select 0)] spawn OKS_Delete_Missile; }];
-	_Laser = createVehicle ["Land_HelipadEmpty_F" ,getPos _Target, [],0,"CAN_COLLIDE"];
-	west reportRemoteTarget [_Laser, 3600];
-	_Laser confirmSensorTarget [west, true];
-	_Launcher fireAtTarget [_Laser, "weapon_vls_01"];
+	THELASER = createVehicle ["Land_HelipadEmpty_F" ,getPos _Target, [],0,"CAN_COLLIDE"];
+	west reportRemoteTarget [THELASER, 3600];
+	THELASER confirmSensorTarget [west, true];
+	_Launcher fireAtTarget [THELASER, "weapon_vls_01"];
 
 };
 

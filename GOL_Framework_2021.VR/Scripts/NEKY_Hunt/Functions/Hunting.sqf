@@ -9,8 +9,8 @@
 Params ["_Grp","_Player","_Zone","_UpdateFreq","_Distance","_Number","_Code","_ForceRespawnMultiplier","_Repeat"];
 Private ["_WP1","_WP2","_WPs"];
 
-if(isNil "_Grp") then {
-	if(isNull _Grp) exitWith { systemChat "Exited Hunting. _Grp not defined."};
+if(isNil "_Grp") exitWith {
+	systemChat "Exited Hunting. _Grp not defined.";
 };
 
 if (_Grp getVariable ["NEKY_Hunt_GroupEnabled",false]) exitWith {}; // Exit if Group is already hunting
