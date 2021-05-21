@@ -262,9 +262,11 @@ if (_isMan) then {
 
 					_compatibleItems = ((_rifle select 0) call BIS_fnc_compatibleItems);
 					_compatibleItems append ((_rifleC select 0) call BIS_fnc_compatibleItems);
+					_compatibleItems append ((_pistol select 0) call BIS_fnc_compatibleItems);
 					_compatibleItems append ((_LMG select 0) call BIS_fnc_compatibleItems);
 					_compatibleItems append ((_MMG select 0) call BIS_fnc_compatibleItems);
 					_blackList = ["rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip"];
+					_whiteList = ["rhs_weap_optic_smaw"];
 
 						_CV = 0;
 						For [{_CV = 1}, {_CV < (count _compatibleItems)}, {_CV = _CV + 1}] do {
@@ -282,6 +284,7 @@ if (_isMan) then {
 							};
 							};
 
+							_compatibleItems append _whiteList;
 					[_unit, _compatibleItems] call ace_arsenal_fnc_initBox;
 				};
 				if (GVARMAIN(mod_TFAR)) then {
