@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=4525;
+		nextID=4548;
 	};
 	class Camera
 	{
-		pos[]={-33.475842,108.85522,38.6796};
-		dir[]={0.73437029,-0.49173424,0.46793941};
-		up[]={0.41471273,0.870736,0.26425603};
-		aside[]={0.53739595,-4.0489249e-007,-0.84336835};
+		pos[]={70.094925,15.186079,25.588102};
+		dir[]={-0.78937954,-0.33536354,0.51422644};
+		up[]={-0.28100502,0.94208372,0.18305606};
+		aside[]={0.54583538,-4.2084139e-008,0.83789998};
 	};
 };
 binarizationWanted=0;
@@ -19171,7 +19171,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=2;
+														value=0;
 													};
 												};
 												class Item1
@@ -19354,7 +19354,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="CO@23 GOL NO ACE FINAL";
+		briefingName="CO@23 Mission Name";
 		resistanceEast=1;
 		timeOfChanges=1800.0002;
 		startWeather=0;
@@ -19420,7 +19420,7 @@ class Mission
 												description="Platoon Leader@1-Actual ";
 												isPlayer=1;
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1355;
 											type="B_Soldier_SL_F";
@@ -19483,7 +19483,7 @@ class Mission
 												name="wfac";
 												description="FAC@1-Actual ";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1356;
 											type="B_Soldier_F";
@@ -19551,7 +19551,7 @@ class Mission
 												name="w1a";
 												description="Squad Leader@1-1 Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1358;
 											type="B_Soldier_SL_F";
@@ -19572,7 +19572,7 @@ class Mission
 												name="w1m";
 												description="Squad Medic@1-1 Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1359;
 											type="B_Soldier_F";
@@ -19629,7 +19629,7 @@ class Mission
 												name="w1a1";
 												description="Fire Team Leader@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1361;
 											type="B_Soldier_TL_F";
@@ -19650,7 +19650,7 @@ class Mission
 												name="w1a2";
 												description="Rifleman@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1362;
 											type="B_Soldier_F";
@@ -19671,7 +19671,7 @@ class Mission
 												name="w1a3";
 												description="Grenadier@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1363;
 											type="B_Soldier_GL_F";
@@ -19691,7 +19691,7 @@ class Mission
 												name="w1a4";
 												description="Asst. Gunner@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1364;
 											type="B_medic_F";
@@ -19713,7 +19713,7 @@ class Mission
 												name="w1a5";
 												description="Automatic Rifleman@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1365;
 											type="B_soldier_AR_F";
@@ -19747,7 +19747,7 @@ class Mission
 												name="w1b1";
 												description="Fire Team Leader@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1367;
 											type="B_Soldier_TL_F";
@@ -19768,7 +19768,7 @@ class Mission
 												name="w1b2";
 												description="Rifleman@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1368;
 											type="B_Soldier_F";
@@ -19812,7 +19812,7 @@ class Mission
 												name="w1b3";
 												description="Grenadier@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1369;
 											type="B_Soldier_GL_F";
@@ -19832,7 +19832,7 @@ class Mission
 												name="w1b4";
 												description="Asst. Gunner@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1370;
 											type="B_medic_F";
@@ -19854,7 +19854,7 @@ class Mission
 												name="w1b5";
 												description="Automatic Rifleman@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1371;
 											type="B_soldier_AR_F";
@@ -19888,7 +19888,7 @@ class Mission
 												name="w1c1";
 												description="Fire Team Leader@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1373;
 											type="B_Soldier_TL_F";
@@ -19951,7 +19951,7 @@ class Mission
 												name="w1c2";
 												description="Rifleman@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1374;
 											type="B_Soldier_F";
@@ -19995,7 +19995,7 @@ class Mission
 												name="w1c3";
 												description="Grenadier@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1375;
 											type="B_Soldier_GL_F";
@@ -20015,7 +20015,7 @@ class Mission
 												name="w1c4";
 												description="Asst. Gunner@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1376;
 											type="B_medic_F";
@@ -20037,7 +20037,7 @@ class Mission
 												name="w1c5";
 												description="Automatic Rifleman@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1377;
 											type="B_soldier_AR_F";
@@ -22465,7 +22465,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={69.230019,5.6349964,22.42741};
+										position[]={73.465462,5.6349964,22.834881};
 										angles[]={0,0.057977352,0};
 									};
 									side="Empty";
@@ -22523,7 +22523,7 @@ class Mission
 									dataType="Comment";
 									class PositionInfo
 									{
-										position[]={69.270615,5,22.285168};
+										position[]={73.506058,5,22.692638};
 										angles[]={0,0.057977352,0};
 									};
 									title="Mobile Service Station";
@@ -22676,7 +22676,7 @@ class Mission
 			position[]={198.32678,22.872955,58.810684};
 			name="spectator";
 			type="Empty";
-			angle=227.03784;
+			angle=227.0378;
 			id=609;
 			atlOffset=17.872955;
 		};
@@ -24077,7 +24077,7 @@ class Mission
 					{
 						description="Vehicle Commander@Pig";
 						isPlayable=1;
-						stance="Middle";
+						stance="Up";
 					};
 					id=1400;
 					type="B_crew_F";
@@ -24138,7 +24138,7 @@ class Mission
 					{
 						description="Vehicle Driver@Pig";
 						isPlayable=1;
-						stance="Middle";
+						stance="Up";
 					};
 					id=1401;
 					type="B_crew_F";
@@ -24199,7 +24199,7 @@ class Mission
 					{
 						description="Vehicle Gunner@Pig";
 						isPlayable=1;
-						stance="Middle";
+						stance="Up";
 					};
 					id=1402;
 					type="B_crew_F";
