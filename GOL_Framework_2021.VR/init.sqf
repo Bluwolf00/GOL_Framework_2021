@@ -40,6 +40,9 @@ execVM "Scripts\NEKY_Supply\Ace_Med.sqf";
 	// Use this if you want to use OKS Ambience scripts, this initiates them, look into the specific functions to learn more on how to use.
 	//[] execVM "Scripts\OKS_Ambience\Init.sqf";
 
+	// Use this if you want OKS Mechanized Setup in your mission - This is only for the ACE-Interact action for creating AI crew
+	[] execVM "Scripts\OKS_Vehicles\OKS_Tanker.sqf";
+
 		sleep 10;
 
 		// Below are examples of how to use the hunt/airdrop bases

@@ -11,7 +11,7 @@ _Vehicle addItemCargo ["Toolkit",2];
 [_Vehicle, 30] call ace_cargo_fnc_setSpace;
 sleep 5;
 
-_Crate = "Box_T_NATO_WpsSpecial_F" createVehicle [0,0,0];
+_Crate = "Box_NATO_Support_F" createVehicle [0,0,0];
 ClearMagazineCargo _Crate;
 ClearWeaponCargo _Crate;
 ClearItemCargo _Crate;

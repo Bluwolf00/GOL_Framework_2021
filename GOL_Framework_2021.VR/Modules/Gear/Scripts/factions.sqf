@@ -57,6 +57,9 @@ switch (_side) do {
 	case "RUSSIAN-W": {
 		#include "Classes\RUSSIAN-W.sqf"
 	};
+	case "RUSSIAN-SF-W": {
+		#include "Classes\RUSSIAN-SF-W.sqf"
+	};
 	case "USMC-D": {
 		#include "Classes\USMC-D.sqf"
 	};

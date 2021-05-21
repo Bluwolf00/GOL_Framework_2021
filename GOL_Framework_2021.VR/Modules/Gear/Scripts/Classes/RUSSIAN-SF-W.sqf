@@ -1,7 +1,6 @@
 
 
 
-
 _glHE = "rhs_VOG25P";
 _glsmokeW = "rhs_GRD40_White";
 _glsmokeB = "";
@@ -14,18 +13,18 @@ _glsmokeY = "";
 _glflareG = "rhs_VG40OP_green";
 _glflareR = "rhs_VG40OP_red";
 
-_goggles = "";
-_helmet = ["rhs_ssh60"] call BIS_fnc_selectRandom;
-_uniform = "rhs_uniform_flora_patchless";
-_vest = "rhsgref_6b23_khaki";
-_backpack = "rhs_sidor";
+_goggles = "rhsusf_shemagh2_grn";
+_helmet = ["rhs_altyn_visordown","rhs_altyn","rhs_altyn_novisor_ess","rhs_altyn_novisor"] call BIS_fnc_selectRandom;
+_uniform = "rhs_uniform_gorka_r_g";
+_vest = "rhs_6b43";
+_backpack = "rhs_assault_umbts";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "tfar_mr3000_rhs";
 };
 
 if (_role in ["ag","ammg"]) then {
-	_backpack = "rhs_rd54";
+	_backpack = "B_Carryall_green_F";
 };
 
 if (_role isEqualTo "p") then {
@@ -44,29 +43,29 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "";
-_pointer = "";
-_sight = "";
-_bipod = "";
+_silencer = "rhs_acc_dtk";
+_pointer = "rhs_acc_perst3";
+_sight = "optic_Arco_AK_blk_F";
+_bipod = "rhs_acc_grip_rk2";
 
-_rifle = ["rhs_weap_aks74n", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["rhs_weap_aks74un", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["rhs_weap_aks74n_gp25", _silencer, _pointer, _sight, _bipod];
-_rifle_mag = "rhs_30Rnd_545x39_7N6M_AK";
+_rifle = ["rhs_weap_ak74m_zenitco01_b33", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["arifle_AK12U_F", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["rhs_weap_ak74m_gp25_npz", _silencer, _pointer, _sight, _bipod];
+_rifle_mag = "rhs_30Rnd_545x39_7N22_camo_AK";
 _rifle_mag_tr = "rhs_30Rnd_545x39_AK_green";
 
-_LMG = ["rhs_weap_pm63", _silencer, _pointer, _sight, _bipod];
+_LMG = ["arifle_RPK12_F", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "rhs_75Rnd_762x39mm_tracer";
 
-_MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "rhs_100Rnd_762x54mmR_green";
+_MMG = ["arifle_RPK12_F", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "rhs_75Rnd_762x39mm_tracer";
 
-_LAT = ["rhs_weap_rpg18", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "rhs_rpg18_mag";
-_LAT_ReUsable = false;
+_LAT = ["launch_RPG32_green_F", _silencer, _pointer, _sight, _bipod];
+_LAT_mag = "RPG32_F";
+_LAT_ReUsable = true;
 
-_MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
-_MAT_mag = "RPG7_F";
+_MAT = ["launch_RPG32_green_F", _silencer, _pointer, _sight, _bipod];
+_MAT_mag = "RPG32_F";
 
 _pistol = ["rhs_weap_pya", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhs_mag_9x19_17";
