@@ -129,7 +129,7 @@ switch (toLower(_role)) do {
 		[[_flashBang,3],[_grenademini,2],[_grenade,2],[_rifle_mag,4],[_rifle_mag_tr,4]] call _addToVest;
 		["","","","",_backpack] call _addEquipment;
 		[_LAT, _LAT_mag, ""] call _addLaunchers;
-		[[_cables,1],[_defusalKit,1]] call _addToBackpack;
+		[[_cables,4],[_defusalKit,1]] call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
@@ -235,8 +235,8 @@ switch (toLower(_role)) do {
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
 		[[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
-		[[_grenademini,2],[_grenade,2],[_rifle_mag_tr,5]] call _addToVest;
-		[[_MAT_mag,1],[_MAT_mag_HE,2]] call _addToBackpack;
+		[[_cables,4],[_grenademini,2],[_grenade,2],[_rifle_mag_tr,5]] call _addToVest;
+		[[_MAT_mag,1]] call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
@@ -251,7 +251,7 @@ switch (toLower(_role)) do {
 		_IFAK call _addToUniform;
 		[[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
 		[[_grenademini,2],[_grenade,2],[_rifle_mag_tr,6]] call _addToVest;
-		[[_MAT_mag,2],[_MAT_mag_HE,2]] call _addToBackpack;
+		[[_MAT_mag,2],[_MAT_mag_HE,1]] call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
@@ -265,8 +265,8 @@ switch (toLower(_role)) do {
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
 		[[_pistol_mag,2],[_smokegrenadeY,4],[_grenademini,2]] call _addToUniform;
-		[[_grenade,1],[_rifle_mag_tr,7]] call _addToVest;
-		(_FAKSmall + [[_MMG_mag_tr,COUNT_AG_MAGS(_MMG_mag_tr)]]) call _addToBackpack;
+		[[_grenade,1],[_rifle_mag_tr,5],[_clacker,1]] call _addToVest;
+		(_FAKSmall + [[_MMG_mag_tr,COUNT_AG_MAGS(_MMG_mag_tr)],[_demoCharge,2]]) call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
