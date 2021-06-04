@@ -1,10 +1,8 @@
-
-
 // Cloths
 _goggles = "G_Balaclava_TI_blk_F";
-_helmet = "helmet_ACH_FLECKTARN_4";
-_uniform = "rhsgref_uniform_flecktarn_full";
-_vest = "vest_spc_radio_FLECKTARN";
+_helmet = "helmet_lwh_FLECKTARN";
+_uniform = SelectRandom ["Uniform_Full_FLECKTARN","Uniform_Rolled_FLECKTARN"];
+_vest = "vest_spc_rifleman_FLECKTARN";
 _backpack = "FLECKTARN_Kitbag";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
