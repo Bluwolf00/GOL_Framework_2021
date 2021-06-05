@@ -66,6 +66,21 @@ switch (_side) do {
 	case "USMC-W": {
 		#include "Classes\USMC-W.sqf"
 	};
+	case "NORWEGIAN": {
+		#include "Classes\NORWEGIAN.sqf"
+	};
+	case "SWEDISH": {
+		#include "Classes\SWEDISH.sqf"
+	};
+	case "POLISH": {
+		#include "Classes\POLISH.sqf"
+	};
+	case "LATVIAN": {
+		#include "Classes\LATVIAN.sqf"
+	};
+	case "ISRAELI": {
+		#include "Classes\ISRAELI.sqf"
+	};
 	default {
 		_errorCode = true;
 		ERROR(FORMAT_1("Faction does not exist: %1", _side));
