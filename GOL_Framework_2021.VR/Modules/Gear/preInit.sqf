@@ -45,7 +45,7 @@ GVAR(StaminaCoef) = 0.5;
 			"NATO-Desert",
 			"NATO-Woodland",
 			"British Armed Forces",
-			"Bundeswehr-Flecktarn"
+			"Bundeswehr-Flecktarn",
 			"USMC-Desert",
 			"USMC-Woodland",
 			"INSURGENT Middle Eastern",
