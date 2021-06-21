@@ -87,6 +87,7 @@ class ace_common_forceAllSettings {
 	force = 1;
 };
 */
+
 class ace_common_checkPBOsAction {
 	value = 0;
 	typeName = "SCALAR";
@@ -123,7 +124,6 @@ class ace_cookoff_enableAmmobox {
 	force = 1;
 };
 */
-
 // -------------------------------------------
 
 class ace_explosives_punishNonSpecialists {
@@ -165,12 +165,6 @@ class ace_frag_maxTrack {
 class ace_frag_maxTrackPerFrame {
 	value = 50;
 	typeName = "SCALAR";
-	force = 1;
-};
-
-class ace_frag_enableDebugTrace {
-	value = 0;
-	typeName = "BOOL";
 	force = 1;
 };
 
@@ -374,19 +368,6 @@ class ace_respawn_removeDeadBodiesDisconnected {
 	typeName = "BOOL";
 	force = 1;
 };
-class ace_respawn_bodyRemoveTimer {
-	value = 0;
-	typeName = "SCALAR";
-	force = 1;
-};
-
-// -------------------------------------------
-
-class ace_spectator_filterUnits {
-	value = 1;
-	typeName = "SCALAR";
-	force = 1;
-};
 
 // -------------------------------------------
 
@@ -411,32 +392,13 @@ class ace_viewdistance_limitViewDistance {
 
 // -------------------------------------------
 
-class ace_weather_enableServerController {
+class ace_weather_enabled {
 	value = 1;
 	typeName = "BOOL";
 	force = 1;
 };
-class ace_weather_useACEWeather {
-	value = 0;
-	typeName = "BOOL";
-	force = 1;
-};
-class ace_weather_syncRain {
-	value = 0;
-	typeName = "BOOL";
-	force = 1;
-};
-class ace_weather_syncWind {
-	value = 0;
-	typeName = "BOOL";
-	force = 1;
-};
-class ace_weather_syncMisc {
-	value = 1;
-	typeName = "BOOL";
-	force = 1;
-};
-class ace_weather_serverUpdateInterval {
+
+class ace_weather_updateInterval {
 	value = 60;
 	typeName = "SCALAR";
 	force = 1;
@@ -454,8 +416,8 @@ class ace_winddeflection_vehicleEnabled {
 	typeName = "BOOL";
 	force = 1;
 };
-class ace_winddeflection_simulationRadius {
-	value = 1000;
+class ace_winddeflection_simulationInterval {
+	value = 0.05;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -489,12 +451,6 @@ class ace_zeus_revealMines {
 };
 class ace_zeus_autoAddObjects {
 	value = 0;
-	typeName = "BOOL";
-	force = 1;
-};
-
-class acex_sitting_enable {
-	value = 1;
 	typeName = "BOOL";
 	force = 1;
 };
