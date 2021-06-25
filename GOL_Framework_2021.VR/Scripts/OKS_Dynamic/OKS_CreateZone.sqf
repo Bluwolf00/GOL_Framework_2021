@@ -153,8 +153,9 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 
 		/* Create Infantry Strongpoints Main Area*/
 
-		[_MainTrigger,_Side,_StaticNumber] spawn OKS_Populate_Strongpoints;
-
+		if(_StaticNumber > 0) then {
+			[_MainTrigger,_Side,_StaticNumber] spawn OKS_Populate_Strongpoints;
+		};
 		/* Create Infantry Patrols for each sub-trigger */
 
 		Private ["_PatrolInfantry","_GroupPerTrigger"];
@@ -167,10 +168,11 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 			SystemChat format ["Patrols Total %1 - Per Trigger %2 of %3",_PatrolCount,_GroupPerTrigger,_PatrolInfantry];
 		};
 
-		for "_i" to (_GroupPerTrigger - 1) do {
-			{[_X,5,_MainTriggerSizeA * 0.5,_Side] spawn OKS_Patrol_Spawn; sleep 10;} foreach _SpawnTriggers
+		if(_PatrolNumber > 0) then {
+			for "_i" to (_GroupPerTrigger - 1) do {
+				{[_X,5,_MainTriggerSizeA * 0.5,_Side] spawn OKS_Patrol_Spawn; sleep 10;} foreach _SpawnTriggers
+			};
 		};
-
 
 	};
 

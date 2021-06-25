@@ -8,6 +8,7 @@ MISSION_ROOT = call {
 [] execVM "Scripts\NEKY_ServiceStation\Init.sqf";
 execVM "Scripts\NEKY_Supply\Ace_Resupply.sqf";
 execVM "Scripts\NEKY_Supply\Ace_Med.sqf";
+Call Compile PreProcessFileLineNumbers "Scripts\NEKY_CombatExperience\Init.sqf";
 // Do not remove these scripts ^
 // Adds backup supply lines if AAC is not playing (Luke's Script)
 // Sets up working Service Station
@@ -43,10 +44,41 @@ execVM "Scripts\NEKY_Supply\Ace_Med.sqf";
 	// Use this if you want OKS Mechanized Setup in your mission - This is only for the ACE-Interact action for creating AI crew
 	[] execVM "Scripts\OKS_Vehicles\OKS_Tanker.sqf";
 
-		sleep 10;
+	// Use this if you want to make use of the Dynamic Functions by Oksman
+	[] execVM "Scripts\OKS_Dynamic\Init.sqf";
+
+		sleep 15;
+
+
+		/*
+		   Params
+		   0 - Trigger Name (Object)
+		   1 - Split Trigger into 4 Sub-Triggers? (Boolean)
+		   1 - Number of Infantry - [Static Integer,Patrol Integer] (Array)
+		   2 - Side (WEST, EAST, INDEPENDENT)
+		   3 - Wheeled Patrols (Integer/Number)
+		   4 - APC Patrols (Integer/Number)
+		   5 - Tank Patrols (Integer/Number)
+		   6 - Roadblocks [RoadBlocksCount,OnlyOnTarmac] (Number/Bool)
+		   7 - Mortar Pits (Integer/Number)
+		   8 - Random Objectives (Integer/Number)
+		   9 - Hunt Array Bases [Infantry,Wheeled,APC,Tank,Helicopter]
+
+		   [Trigger_1,false,[30,40],independent,3,0,0,[2,true],1,2] spawn OKS_CreateZone;
+		*/
+
+		if(isServer) then {
+			[Trigger_1,false,[75,0],east,1,1,1,[0,true],0,2,[0,0,0,0,0]] spawn OKS_CreateZone;
+			//sleep 160;
+			//[Trigger_2,false,[20,25],east,1,0,0,[0,true],1,2,[0,0,0,0,0]] spawn OKS_CreateZone;
+		};
 
 		// Below are examples of how to use the hunt/airdrop bases
 		// These codes should be put in SpawnList unless you want them to start "searching" from the start of the mission.
 		// [Base_1, Spawn_1, NEKY_Hunt_Trigger_1, 5,30,independent,6,30] spawn NEKY_Hunt_HuntBase;
 		// [Base_2, Spawn_2, NEKY_Hunt_Trigger_1, 5,30,independent,"CUP_I_LR_MG_AAF",30] spawn NEKY_Hunt_HuntBase;
 		// [Base_3,Spawn_3, NEKY_Hunt_Trigger_1,independent,"I_Heli_Transport_02_F","Random",[2,1]] spawn NEKY_Airbase;
+
+		if(isServer) then {
+			[True,True] call NEKY_AI_ShareInfo;
+		};

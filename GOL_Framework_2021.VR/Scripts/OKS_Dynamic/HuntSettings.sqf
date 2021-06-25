@@ -11,27 +11,27 @@ Switch (_Side) do
 {
 	case BLUFOR:	// BLUFOR settings
 	{
-		_Wheeled = ["rhsusf_m1025_w_s_m2","CUP_B_UAZ_MG_CDF","CUP_B_UAZ_SPG9_CDF","CUP_B_UAZ_Unarmed_CDF","CUP_B_Kamaz_CDF","CUP_B_UAZ_Open_CDF"];
-		_APC = ["CUP_B_BTR80_CDF","CUP_B_BTR60_CDF","CUP_B_BRDM2_CDF","rhsusf_m113_usarmy"];
-		_Tank = ["CUP_B_T72_CDF"];
+		_Wheeled = ["rhsusf_m1025_w_s_m2","British_LandRover_WMIK_GPMG_Green_A", "LOP_CDF_UAZ", "LOP_CDF_UAZ_Open", "LOP_CDF_UAZ_SPG", "rhsgref_cdf_b_reg_uaz_dshkm", "rhsgref_cdf_b_gaz66o"];
+		_APC = ["rhsgref_BRDM2_b", "rhsgref_BRDM2_HQ_b", "rhsgref_cdf_b_btr60", "rhsgref_cdf_b_btr80", "rhsgref_cdf_b_btr70"];
+		_Tank = ["rhsgref_cdf_b_t72ba_tv"];
 		_Helicopter = ["RHS_UH1Y_UNARMED"];
 		_Vehicles = [_Wheeled,_APC,_Tank,_Helicopter];
 
 	};
 	case OPFOR:		// OPFOR settings
 	{
-		_Wheeled = ["CUP_O_Datsun_PK","CUP_O_Hilux_DSHKM_CHDKZ","CUP_O_Datsun_4seat","CUP_O_UAZ_Unarmed_CHDKZ","CUP_O_UAZ_Open_CHDKZ"];
-		_APC = ["CUP_O_BTR60_CHDKZ","CUP_O_BRDM2_CHDKZ","CUP_O_BTR80_CHDKZ"];
-		_Tank = ["CUP_O_T55_CHDKZ","CUP_O_T72_CHDKZ"];
+		_Wheeled = ["RHS_UAZ_MSV_01", "rhs_uaz_open_MSV_01", "LOP_US_UAZ_DshKM", "LOP_US_UAZ_SPG", "rhs_gaz66_vdv"];
+		_APC = ["rhs_btr60_vdv", "rhs_btr70_vdv", "rhs_btr80_vdv"];
+		_Tank = ["rhs_t72ba_tv", "LOP_NK_T55"];
 		_Helicopter = ["O_Heli_Light_02_unarmed_F"];
 		_Vehicles = [_Wheeled,_APC,_Tank,_Helicopter];
 
 	};
 	case INDEPENDENT:	// INDEPENDENT Settings
 	{
-		_Wheeled = ["CUP_I_Hilux_DSHKM_IND_G_F","I_G_Offroad_01_armed_F","CUP_I_Datsun_PK_TK","CUP_I_Datsun_4seat_TK","CUP_I_V3S_Covered_TKG","CUP_I_Datsun_4seat_TK","CUP_I_V3S_Covered_TKG","CUP_I_BTR40_TKG"];
-		_APC = ["CUP_I_BRDM2_NAPA","CUP_I_BMP2_NAPA","CUP_I_Hilux_btr60_TK"];
-		_Tank = ["CUP_I_T34_NAPA","CUP_I_T55_NAPA"];
+		_Wheeled = ["LOP_NAPA_Landrover_M2", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_F", "LOP_AM_Nissan_PKM"];
+		_APC = ["rhsgref_BRDM2_ins_g", "rhsgref_BRDM2_HQ_ins_g", "LOP_UKR_BTR60", "LOP_UKR_BTR70"];
+		_Tank = ["LOP_AFR_T55","LOP_AFR_T34"];
 		_Helicopter = ["I_Heli_light_03_unarmed_F"];
 		_Vehicles = [_Wheeled,_APC,_Tank,_Helicopter];
 
@@ -40,9 +40,9 @@ Switch (_Side) do
 	// DO NOT EDIT ANYTHING BELOW \\
 	default
 	{
-		_Wheeled = ["CUP_O_Datsun_PK","CUP_O_Hilux_DSHKM_CHDKZ","CUP_O_Datsun_4seat","CUP_O_UAZ_Unarmed_CHDKZ","CUP_O_UAZ_Open_CHDKZ"];
-		_APC = ["CUP_O_BTR60_CHDKZ","CUP_O_BRDM2_CHDKZ","CUP_O_BTR80_CHDKZ"];
-		_Tank = ["CUP_O_T55_CHDKZ","CUP_O_T72_CHDKZ"];
+		_Wheeled = ["RHS_UAZ_MSV_01", "rhs_uaz_open_MSV_01", "LOP_US_UAZ_DshKM", "LOP_US_UAZ_SPG", "rhs_gaz66_vdv"];
+		_APC = ["rhs_btr60_vdv", "rhs_btr70_vdv", "rhs_btr80_vdv"];
+		_Tank = ["rhs_t72ba_tv", "LOP_NK_T55"];
 		_Helicopter = ["O_Heli_Light_02_unarmed_F"];
 		_Vehicles = [_Wheeled,_APC,_Tank,_Helicopter];
 	};

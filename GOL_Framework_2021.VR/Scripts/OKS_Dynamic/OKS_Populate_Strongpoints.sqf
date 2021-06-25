@@ -11,14 +11,15 @@ private ["_House","_AllBuildings","_buildingArray","_SelectedBuildings","_HouseC
 _Settings = [_Side] call OKS_Dynamic_Setting;
 _Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
 
-_Debug_Variable = false;
+_Debug_Variable = true;
 _SelectedStrongpoints = [];
 _Strongpoints = [];
 _Locations = [];
 
 			{_Locations pushBackUnique (locationPosition _X)} foreach nearestLocations [_MainTrigger,["NameVillage","NameCity","NameCityCapital","Hill","Name","NameLocal","fakeTown"],(TriggerArea _MainTrigger select 0)];
-			{_Locations pushBackUnique getPos _X} foreach nearestObjects [_MainTrigger, ["LocationBase_F","LocationOutpost_F","LocationCamp_F","LocationResupplyPoint_F","LocationRespawnPoint_F","LocationEvacPoint_F","LocationFOB_F","LocationCityCapital_F","LocationCity_F","LocationVillage_F","LocationArea_F"], TriggerArea _MainTrigger select 0];
+			{_Locations pushBackUnique getPos _X} foreach nearestObjects [_MainTrigger, ["LocationBase_F","LocationOutpost_F","LocationCamp_F","LocationResupplyPoint_F","LocationRespawnPoint_F","LocationEvacPoint_F","LocationFOB_F","LocationCityCapital_F","LocationCity_F","LocationVillage_F","LocationArea_F"], (TriggerArea _MainTrigger select 0 / 2)];
 
+			if(count _Locations > 0) then {
 				{
 					_Location = nearestBuilding _X;
 					_AllBuildings = (_Location) nearObjects ["House",125];
@@ -39,7 +40,7 @@ _Locations = [];
 						};
 					};
 				} foreach _Locations;
-
+			};
 			_CountStrongpoints = count _SelectedStrongpoints;
 if(_CountStrongpoints > 0) then {
 
