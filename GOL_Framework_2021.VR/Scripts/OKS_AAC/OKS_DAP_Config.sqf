@@ -22,33 +22,24 @@ OKS_AIR_CONFIG = {
 
 			if (["UH1",TypeOf _Vehicle] call BIS_fnc_inString || ["MH47",TypeOf _Vehicle] call BIS_fnc_inString || ["CH47", TypeOf _Vehicle] call BIS_fnc_inString) then
 			{
-				_vehicle removeWeaponTurret ["CUP_Vlmg_M134_UH1Y_veh",[0]];
-				_vehicle removeWeaponTurret ["CUP_Vlmg_M134_UH1Y_veh2",[1]];
-
-				_vehicle removeWeaponTurret ["CUP_M134",[0]];
-				_vehicle removeWeaponTurret ["CUP_M134_2",[1]];
-
-				_vehicle removeWeaponTurret ["CUP_M240_uh1h_right_veh_W",[0]];
-				_vehicle removeWeaponTurret ["CUP_M240_uh1h_left_veh_W",[1]];
-
+				_vehicle removeWeaponTurret ["LMG_Minigun_Transport",[1]];
+				_vehicle removeWeaponTurret ["LMG_Minigun_Transport2",[2]];
+				_vehicle removeWeaponTurret ["rhs_weap_m134_minigun_1",[1]];
+				_vehicle removeWeaponTurret ["rhs_weap_m134_minigun_2",[2]];
 
 				//// Add Weapon
 				if (Count (_vehicle weaponsTurret [0]) < 1) then {
-				_vehicle addWeaponTurret ["CUP_Vacannon_Yakb_veh",[0]];
-				_vehicle addMagazineTurret ["CUP_1470Rnd_TE1_127x108_YakB_AP_M",[0]];
+				_vehicle addWeaponTurret ["rhs_weap_yakB",[0]];
+				_vehicle addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[0]];
 				};
 
 				if (Count (_vehicle weaponsTurret [1]) < 1) then {
-				_vehicle addWeaponTurret ["CUP_Vacannon_Yakb_veh",[1]];
-				_vehicle addMagazineTurret ["CUP_1470Rnd_TE1_127x108_YakB_AP_M",[1]];
+				_vehicle addWeaponTurret ["rhs_weap_yakB",[1]];
+				_vehicle addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[1]];
 				};
 			};
 			if (["UH60",TypeOf _Vehicle] call BIS_fnc_inString || ["MH60",TypeOf _Vehicle] call BIS_fnc_inString || ["RHS_UH1Y",TypeOf _Vehicle] call BIS_fnc_inString || ["RHS_CH_47",TypeOf _Vehicle] call BIS_fnc_inString) then {
 
-				_vehicle removeWeaponTurret ["CUP_Vlmg_M134_veh", [1]];
-				_vehicle removeWeaponTurret ["CUP_Vlmg_M134_veh2", [2]];
-				_vehicle removeWeaponTurret ["CUP_M134_2",[0]];
-				_vehicle removeWeaponTurret ["CUP_M134",[1]];
 				_vehicle removeWeaponTurret ["LMG_Minigun_Transport",[1]];
 				_vehicle removeWeaponTurret ["LMG_Minigun_Transport2",[2]];
 				_vehicle removeWeaponTurret ["rhs_weap_m134_minigun_1",[1]];
@@ -56,13 +47,13 @@ OKS_AIR_CONFIG = {
 
 				//// Add Weapon
 				if (Count (_vehicle weaponsTurret [1]) < 1) then {
-				_vehicle addWeaponTurret ["CUP_Vacannon_Yakb_veh",[1]];
-				_vehicle addMagazineTurret ["CUP_1470Rnd_TE1_127x108_YakB_AP_M",[1]];
+				_vehicle addWeaponTurret ["rhs_weap_yakB",[1]];
+				_vehicle addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[1]];
 				};
 
 				if (Count (_vehicle weaponsTurret [2]) < 1) then {
-				_vehicle addWeaponTurret ["CUP_Vacannon_Yakb_veh",[2]];
-				_vehicle addMagazineTurret ["CUP_1470Rnd_TE1_127x108_YakB_AP_M",[2]];
+				_vehicle addWeaponTurret ["rhs_weap_yakB",[2]];
+				_vehicle addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[2]];
 				};
 			};
 

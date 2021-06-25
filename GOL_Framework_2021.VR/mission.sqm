@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1641;
+		nextID=1644;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=4594;
+		nextID=4640;
 	};
 	class Camera
 	{
-		pos[]={33.817406,27.527697,-4.8477583};
-		dir[]={0.47553632,-0.31877181,0.8199147};
-		up[]={0.15993285,0.94783098,0.27575323};
-		aside[]={0.86504173,-8.1257895e-008,-0.50170976};
+		pos[]={23.209404,27.527697,2.4544878};
+		dir[]={0.66243941,-0.3286922,0.67316467};
+		up[]={0.23055156,0.94443744,0.23428303};
+		aside[]={0.71276861,1.1385418e-007,-0.70141304};
 	};
 };
 binarizationWanted=0;
@@ -340,7 +340,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=314;
+									items=316;
 									class Item0
 									{
 										class data
@@ -4737,6 +4737,34 @@ class CustomAttributes
 											value="gw_gear_autoremovecargo";
 										};
 									};
+									class Item314
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="diwako_dui_enable_compass_dir";
+										};
+									};
+									class Item315
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="diwako_dui_indicators_show";
+										};
+									};
 								};
 							};
 						};
@@ -4753,7 +4781,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=314;
+									items=316;
 									class Item0
 									{
 										class data
@@ -19428,7 +19456,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -19443,6 +19471,96 @@ class CustomAttributes
 															};
 														};
 														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item314
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=2;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item315
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=0;
 													};
 												};
 											};
@@ -19495,7 +19613,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=48;
+		items=50;
 		class Item0
 		{
 			dataType="Layer";
@@ -22798,7 +22916,7 @@ class Mission
 			position[]={198.32678,22.872955,58.810684};
 			name="spectator";
 			type="Empty";
-			angle=227.03775;
+			angle=227.03772;
 			id=609;
 			atlOffset=17.872955;
 		};
@@ -22940,7 +23058,7 @@ class Mission
 				position[]={59.941002,5,22.254};
 				angles[]={0,3.9625633,0};
 			};
-			title="Mechanized / 3CB Setup";
+			title="Mechanized / Motorized Setup";
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
 			id=1158;
 		};
@@ -26562,6 +26680,58 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item48
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={66.636574,7.1761513,23.132435};
+				angles[]={-0,0.011833332,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";}";
+			};
+			id=1642;
+			type="B_LSV_01_armed_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""arifle_MX_F"",""FirstAidKit""],[2,10]],[[""30Rnd_65x39_caseless_mag"",""100Rnd_65x39_caseless_mag"",""HandGrenade"",""MiniGrenade"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""SmokeShell"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellBlue"",""NLAW_F"",""Titan_AT"",""Titan_AP"",""Titan_AA""],[12,6,6,6,6,3,3,3,3,8,8,8,8,5,2,2,2]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item49
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={66.904999,5,23.694};
+				angles[]={-0,3.9625633,0};
+			};
+			title="Mechanized / Motorized Setup";
+			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
+			id=1643;
 		};
 	};
 };

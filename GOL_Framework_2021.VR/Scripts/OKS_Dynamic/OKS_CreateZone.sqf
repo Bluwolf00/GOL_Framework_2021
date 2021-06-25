@@ -101,17 +101,17 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 					SystemChat format ["Unable to initiate huntbases in %1 - HuntBase or Airbase not defined",_MainTrigger]
 				};
 			}
+			sleep 20;
 		};
 
-		sleep 20;
+
 
 		/* Create Compositions for Main Area */
 		SystemChat format ["Roadblock Count: %1",_RoadblockCount];
 		if(_RoadblockCount > 0) then {
 			[_MainTrigger,_RoadblockCount,_Side,_RoadblockTarmac] spawn OKS_Find_RoadBlocks;
+			sleep 20;
 		};
-
-		sleep 20;
 
 		/* Create Mortar Pits Main Area*/
 		SystemChat format ["Mortar Count: %1",_MortarCount];
@@ -173,11 +173,11 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 				{[_X,5,_MainTriggerSizeA * 0.5,_Side] spawn OKS_Patrol_Spawn; sleep 10;} foreach _SpawnTriggers
 			};
 		};
-
+		sleep 30;
 	};
 
 	/* Create Vehicle Patrols for each sub-trigger */
-	sleep 30;
+
 
 	if(_Debug_Variable) then {
 		SystemChat format ["Total %1 Wheeled",_WheeledCount];
