@@ -12,8 +12,8 @@ execVM "Scripts\NEKY_Supply\Ace_Med.sqf";
 // Adds backup supply lines if AAC is not playing (Luke's Script)
 // Sets up working Service Station
 
-
-
+	OKS_FRIENDLY_SIDE = [player] call GW_Common_Fnc_getSide;
+	publicVariable "OKS_FRIENDLY_SIDE";
 
 	//Comment if you want to disable Neky_HuntBase / AirBase
 	[] execVM "Scripts\NEKY_AirDrop\Init.sqf";
