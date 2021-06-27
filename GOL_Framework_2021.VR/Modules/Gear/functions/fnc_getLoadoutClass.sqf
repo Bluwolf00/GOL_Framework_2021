@@ -26,7 +26,7 @@ private _displayName = getText (configfile >> "CfgVehicles" >> (typeOf _unit) >>
 
 switch (true) do {
 	case (_displayName in ["Officer","Commander"]): {
-		_role = "high";
+		_role = "officer";
 	};
 	case (_displayName isEqualTo "Squad Leader"): {
 		_role = "sl";

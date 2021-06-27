@@ -11,7 +11,7 @@ private ["_House","_AllBuildings","_buildingArray","_SelectedBuildings","_HouseC
 _Settings = [_Side] call OKS_Dynamic_Setting;
 _Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
 
-_Debug_Variable = true;
+_Debug_Variable = false;
 _SelectedStrongpoints = [];
 _Strongpoints = [];
 _Locations = [];

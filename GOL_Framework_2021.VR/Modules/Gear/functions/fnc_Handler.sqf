@@ -40,15 +40,16 @@ private [
 	"_grenade","_grenademini",
 	"_smokegrenadeW","_smokegrenadeB","_smokegrenadeG","_smokegrenadeO","_smokegrenadeP","_smokegrenadeR","_smokegrenadeY",
 	"_chemB","_chemG","_chemR","_chemY",
-	"_glHE","_glsmokeW","_glsmokeB","_glsmokeG","_glsmokeO","_glsmokeP","_glsmokeR","_glsmokeY","_glflareG","_glflareR",
+	"_glHE","_glsmokeW","_glsmokeB","_glsmokeG","_glsmokeO","_glsmokeP","_glsmokeR","_glsmokeY","_glflareG","_glflareR","_glflareW",
 	"_map","_gps","_compass","_watch","_nvg","_parachute","_demoCharge","_satchelCharge","_toolKit",
 	"_cTab","_Android","_microDAGR","_HelmetCam",
 	"_bandage","_blood","_epi","_morph","_IFAK","_FAKSmall","_FAKBig",
 	"_barrel","_cables","_clacker","_defusalKit","_IRStrobe","_mapFlashLight","_mapTools","_rangefinder","_laserDesignator","_battery","_rangecard",
 	"_flashBang","_handFlareG","_handFlareR","_handFlareW","_handFlareY",
-	"_goggles","_helmet","_uniform","_vest","_backpack","_backpackRadio",
+	"_goggles","_helmet","_uniform","_vest","_backpack","_backpackRadio","_OfficerHelmet",
 	"_silencer","_pointer","_sight","_bipod",
 	"_rifle","_rifle_mag","_rifle_mag_tr",
+	"_rifleL","_rifleL_mag","_rifleL_mag_tr",
 	"_rifleC","_rifleC_mag","_rifleC_mag_tr",
 	"_rifleGL","_rifleGL_mag","_rifleGL_mag_tr",
 	"_rifleMarksman","_rifleMarksman_mag","_rifleMarksman_mag_tr",
@@ -265,7 +266,7 @@ if (_isMan) then {
 					_compatibleItems append ((_pistol select 0) call BIS_fnc_compatibleItems);
 					_compatibleItems append ((_LMG select 0) call BIS_fnc_compatibleItems);
 					_compatibleItems append ((_MMG select 0) call BIS_fnc_compatibleItems);
-					_blackList = ["rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip"];
+					_blackList = ["rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","rhsusf_acc_anpas13gv1","rhsusf_acc_acog2_usmc_pip","rhsusf_acc_acog3_usmc_pip","rhsusf_acc_acog_usmc_pip","rhsusf_acc_anpvs27","rhsusf_acc_elcan_ard_pip","rhsusf_acc_elcan_pip","rhsusf_acc_acog2_pip","rhsusf_acc_acog3_pip","rhsusf_acc_acog_pip","rhsusf_acc_acog_rmr_pip","rhsusf_acc_acog_d_pip","rhsusf_acc_acog_sa_pip","rhsusf_acc_acog_wd_pip","hlc_isopod"];
 					_whiteList = ["rhs_weap_optic_smaw"];
 
 						_CV = 0;
@@ -274,7 +275,7 @@ if (_isMan) then {
 							  _compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV - 1)));
 								_CV = _CV - 1;
 							};
-							
+
 							_opticMag = (["",(configfile >> "CfgWeapons" >> (_compatibleItems select (_CV - 1)))] call ace_arsenal_fnc_statTextStatement_scopeMag);
 							_opticMag = parseNumber _opticMag;
 
@@ -298,10 +299,58 @@ if (_isMan) then {
 				};
 			};
 
+			case "tiny_box": {
+				[_unit, _glHE, 10] call _fnc_AddObjectsCargo;
+				[_unit, _glsmokeR, 10] call _fnc_AddObjectsCargo;
+				[_unit, _glflareW, 10] call _fnc_AddObjectsCargo;
+				[_unit, _glflareR, 5] call _fnc_AddObjectsCargo;
+				[_unit, _glflareG, 5] call _fnc_AddObjectsCargo;
+				[_unit, _grenade, 8] call _fnc_AddObjectsCargo;
+				[_unit, _grenademini, 8] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeY, 12] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeB, 5] call _fnc_AddObjectsCargo;
+
+				[_unit, _bandage, 20] call _fnc_AddObjectsCargo;
+				if (GVARMAIN(mod_ACE3)) then {
+					[_unit, _morph, 10] call _fnc_AddObjectsCargo;
+					if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {
+						[_unit, "ACE_elasticBandage", 100] call _fnc_AddObjectsCargo;
+						[_unit, "ACE_tourniquet", 50] call _fnc_AddObjectsCargo;
+						[_unit, "ACE_quikclot", 50] call _fnc_AddObjectsCargo;
+						[_unit, "ACE_atropine", 50] call _fnc_AddObjectsCargo;
+						[_unit, "ACE_salineIV", 50] call _fnc_AddObjectsCargo;
+						[_unit, "ACE_personalAidKit", 50] call _fnc_AddObjectsCargo;
+						[_unit, "ACE_surgicalKit", 50] call _fnc_AddObjectsCargo;
+					};
+				};
+
+				[_unit, _pistol_mag, 6] call _fnc_AddObjectsCargo;
+				[_unit, _rifle_mag, 6] call _fnc_AddObjectsCargo;
+				[_unit, _rifle_mag_tr, 6] call _fnc_AddObjectsCargo;
+				[_unit, _rifleC_mag, 6] call _fnc_AddObjectsCargo;
+				[_unit, _rifleC_mag_tr, 6] call _fnc_AddObjectsCargo;
+				[_unit, _rifleGL_mag, 6] call _fnc_AddObjectsCargo;
+				[_unit, _rifleGL_mag_tr, 6] call _fnc_AddObjectsCargo;
+				[_unit, _LMG_mag_tr, (COUNT_AR_MAGS(_LMG_mag_tr) * 2)] call _fnc_AddObjectsCargo;
+				[_unit, _MMG_mag_tr, (COUNT_AR_MAGS(_MMG_mag_tr) * 1)] call _fnc_AddObjectsCargo;
+
+				if (_LAT_ReUsable) then {
+					[_unit, _LAT_mag, 4] call _fnc_AddObjectsCargo;
+				} else {
+					[_unit, (_LAT select 0), 4] call _fnc_AddObjectsCargo;
+				};
+				[_unit, _MAT_mag, 2] call _fnc_AddObjectsCargo;
+
+				[_unit, _demoCharge, 4] call _fnc_AddObjectsCargo;
+				[_unit, _satchelCharge, 2] call _fnc_AddObjectsCargo;
+			};
+
 			case "small_box": {
 				[_unit, _glHE, 20] call _fnc_AddObjectsCargo;
-				[_unit, _glsmokeY, 20] call _fnc_AddObjectsCargo;
+				[_unit, _glsmokeR, 20] call _fnc_AddObjectsCargo;
 				[_unit, _glflareW, 20] call _fnc_AddObjectsCargo;
+				[_unit, _glflareR, 10] call _fnc_AddObjectsCargo;
+				[_unit, _glflareG, 10] call _fnc_AddObjectsCargo;
 				[_unit, _grenade, 20] call _fnc_AddObjectsCargo;
 				[_unit, _grenademini, 20] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 20] call _fnc_AddObjectsCargo;
@@ -344,7 +393,9 @@ if (_isMan) then {
 
 			case "big_box": {
 				[_unit, _glHE, 50] call _fnc_AddObjectsCargo;
-				[_unit, _glsmokeY, 40] call _fnc_AddObjectsCargo;
+				[_unit, _glsmokeR, 40] call _fnc_AddObjectsCargo;
+				[_unit, _glflareR, 40] call _fnc_AddObjectsCargo;
+				[_unit, _glflareG, 40] call _fnc_AddObjectsCargo;
 				[_unit, _glflareW, 40] call _fnc_AddObjectsCargo;
 				[_unit, _grenade, 60] call _fnc_AddObjectsCargo;
 				[_unit, _grenademini, 60] call _fnc_AddObjectsCargo;

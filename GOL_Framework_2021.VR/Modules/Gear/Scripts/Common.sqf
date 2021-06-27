@@ -27,8 +27,9 @@ _glsmokeP = "1Rnd_SmokePurple_Grenade_shell";
 _glsmokeR = "1Rnd_SmokeRed_Grenade_shell";
 _glsmokeY = "1Rnd_SmokeYellow_Grenade_shell";
 
-_glflareG = "UGL_FlareGreen_F";
-_glflareR = "UGL_FlareRed_F";
+_glflareG = "ACE_40mm_Flare_green";
+_glflareR = "ACE_40mm_Flare_red";
+_glflareW = "ACE_40mm_Flare_white";
 
 // ===========================
 // Item

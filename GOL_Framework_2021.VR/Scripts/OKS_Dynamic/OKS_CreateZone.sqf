@@ -100,7 +100,7 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 				if(_Debug_Variable) then {
 					SystemChat format ["Unable to initiate huntbases in %1 - HuntBase or Airbase not defined",_MainTrigger]
 				};
-			}
+			};
 			sleep 20;
 		};
 

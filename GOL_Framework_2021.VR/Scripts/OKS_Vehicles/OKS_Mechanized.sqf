@@ -23,12 +23,15 @@ _Vehicle addItemCargo ["Toolkit",2];
 //add a new backpack to the vehicle
 _Vehicle addBackpackCargoGlobal ["PB_Bergen", 1];
 _Vehicle addWeaponCargoGlobal ["UK3CB_BAF_M6",1];
+_Vehicle addMagazineCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Shells", 16];
 
 //Find the added backpack
-_BP = (everyBackpack _vehicle) select (count (everyBackpack _vehicle));  //Last one added
+_BP = (everyBackpack _Vehicle) select (count (everyBackpack _Vehicle) - 1);
 
-//Fill it with your stuff
-_BP addMagazineCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Shells", 16];
+if(!isNil "_BP") then {
+	//Fill it with your stuff
+	_BP addMagazineCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Shells", 16];
+};
 
 if (["FV432_Mk3_GPMG",(typeOf _Vehicle)] call BIS_fnc_inString || ["Panther_GPMG",(typeOf _Vehicle)] call BIS_fnc_inString || ["WMIK_GPMG",(typeOf _Vehicle)] call BIS_fnc_inString ) then {
 	_Vehicle AddMagazineCargo ["UK3CB_BAF_762_200Rnd_T",10];
@@ -61,6 +64,7 @@ if(_Vehicle isKindOf "Tank") exitWith {
 
 	for [{private _i = 0}, {_i < 6}, {_i = _i + 1}] do {
 		_Vehicle addMagazineTurret ["SmokeLauncherMag",[0,0]];
+		_Vehicle addMagazineTurret ["rhsusf_mag_L8A3_8",[0,0]];
 	};
 };
 

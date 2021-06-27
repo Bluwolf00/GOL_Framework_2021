@@ -67,12 +67,11 @@ Call Compile PreProcessFileLineNumbers "Scripts\NEKY_CombatExperience\Init.sqf";
 		   [Trigger_1,false,[30,40],independent,3,0,0,[2,true],1,2] spawn OKS_CreateZone;
 		*/
 
-		if(isServer) then {
-			[Trigger_1,false,[75,0],east,1,1,1,[0,true],0,2,[0,0,0,0,0]] spawn OKS_CreateZone;
-			//sleep 160;
-			//[Trigger_2,false,[20,25],east,1,0,0,[0,true],1,2,[0,0,0,0,0]] spawn OKS_CreateZone;
-		};
-
+		/* Example of Dynamic Scripts
+			if(isServer) then {
+				[Trigger_1,false,[75,0],east,1,1,1,[0,true],0,2,[0,0,0,0,0]] spawn OKS_CreateZone;
+			};
+		*/
 		// Below are examples of how to use the hunt/airdrop bases
 		// These codes should be put in SpawnList unless you want them to start "searching" from the start of the mission.
 		// [Base_1, Spawn_1, NEKY_Hunt_Trigger_1, 5,30,independent,6,30] spawn NEKY_Hunt_HuntBase;

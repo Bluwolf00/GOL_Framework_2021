@@ -1,3 +1,0 @@
--Fix AAC Scripts to remove CUP Weapons
--Fix MMG, MAT & Assistants Kits (Add Explosives, Add Clacker, Reduce Ammo)
--Add more enemy gear roles and kits
