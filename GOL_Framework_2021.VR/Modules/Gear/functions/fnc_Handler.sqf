@@ -279,7 +279,7 @@ if (_isMan) then {
 							_opticMag = (["",(configfile >> "CfgWeapons" >> (_compatibleItems select (_CV - 1)))] call ace_arsenal_fnc_statTextStatement_scopeMag);
 							_opticMag = parseNumber _opticMag;
 
-							If (_opticMag > 2) then {
+							If (_opticMag > 2 || _opticMag == 0.9) then {
 								_compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV - 1)));
 								_CV = _CV - 1;
 							};
