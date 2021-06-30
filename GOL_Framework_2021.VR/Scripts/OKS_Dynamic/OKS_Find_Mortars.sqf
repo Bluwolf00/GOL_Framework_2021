@@ -48,7 +48,7 @@ _Debug_Variable = false;
 		if(_Debug_Variable) then {
 			systemChat format ["Find Mortar: %1 %2 %3 %4 %5",!(_SelectedPos isEqualTo [0,0,0]),{_SelectedPos Distance _X < 1000} count OKS_Mortar_Positions < 1,_SelectedPos inArea _MainTrigger,{_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1,{_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1];
 		};
-		if(!(_SelectedPos isEqualTo [0,0,0]) && {_SelectedPos Distance _X < 1000} count OKS_Mortar_Positions < 1 && _SelectedPos inArea _MainTrigger  && {_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {"Found"};
+		if(!(_SelectedPos isFlatEmpty  [-1, -1, 0.05, 45, 0] isEqualTo []) && !(_SelectedPos isEqualTo [0,0,0]) && {_SelectedPos Distance _X < 1000} count OKS_Mortar_Positions < 1 && _SelectedPos inArea _MainTrigger  && {_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {"Found"};
 		if(_Repetitions > 30) exitWith {};
 	};
 	if(_Repetitions > 30 || _SelectedPos isEqualTo [0,0,0]) exitWith { if(_Debug_Variable) then {systemChat "Failed to Find Mortar Position"} };

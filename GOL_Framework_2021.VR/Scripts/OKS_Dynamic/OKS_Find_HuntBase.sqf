@@ -1,6 +1,6 @@
 /*
-	[Trigger,SizeNumber,_Side] execVM "Scripts\OKS_Dynamic\OKS_Find_HuntBase.sqf";
-	[Trigger_1,35,_Side] spawn OKS_Find_Mortars;
+	[Trigger,Side] execVM "Scripts\OKS_Dynamic\OKS_Find_HuntBase.sqf";
+	[Trigger_1,EAST] spawn OKS_Find_HuntBase;
 */
 
 if(!isServer) exitWith {};
@@ -9,9 +9,12 @@ Params ["_MainTrigger","_Side","_HuntArray"];
 private ["_RandomPos","_Road","_marker","_SideMarker","_SelectedPos","_Composition","_Repetitions","_BaseType","_SideColor","_SideMarker"];
 private _Debug_Variable = false;
 
-_Settings = [_Side] call OKS_Hunt_Setting;
-_Settings Params ["_Vehicles","_Respawn","_Waves","_RefreshRate"];
-_Vehicles Params ["_WHEELED","_APC","_TANK","_HELICOPTER"];
+_Settings = [_Side] call OKS_Dynamic_Setting;
+_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+_Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Helicopter","_Transport","_Supply"];
+
+_HuntSettings = [] Call OKS_Hunt_Setting;
+_HuntSettings Params ["_Respawn","_Waves","_RefreshRate"];
 
 _Respawn Params ["_InfantryRespawnTime","_WheeledRespawnTime","_APCRespawnTime","_TankRespawnTime","_HelicopterRespawnTime"];
 _Waves Params ["_InfantryWaves","_WheeledWaves","_APCWaves","_TankWaves","_HelicopterWaves"];
@@ -66,7 +69,7 @@ Private _FindAndSpawnHuntBase = {
 		if(_Debug_Variable) then {
 			systemChat format ["Find Mortar: %1 %2 %3 %4 %5",!(_SelectedPos isEqualTo [0,0,0]),{_SelectedPos Distance _X < 1000} count OKS_Mortar_Positions < 1,_SelectedPos inArea _MainTrigger,{_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1,{_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1,{_SelectedPos distance _X < 200} count OKS_Hunt_Positions < 1];
 		};
-		if(!(_SelectedPos isEqualTo [0,0,0]) && {_SelectedPos Distance _X < 1000} count OKS_Mortar_Positions < 1 && _SelectedPos inArea _MainTrigger  && {_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1 && {_SelectedPos distance _X < 500} count OKS_Hunt_Positions < 1) exitWith { if(_Debug_Variable) then {"Found"}};
+		if(!(_SelectedPos isFlatEmpty  [-1, -1, 0.05, 25, 0] isEqualTo []) && !(_SelectedPos isEqualTo [0,0,0]) && {_SelectedPos Distance _X < 1000} count OKS_Mortar_Positions < 1 && _SelectedPos inArea _MainTrigger  && {_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1 && {_SelectedPos distance _X < 500} count OKS_Hunt_Positions < 1) exitWith { if(_Debug_Variable) then {"Found"}};
 		if(_Repetitions > 30) exitWith {};
 	};
 	if(_Repetitions > 30 || _SelectedPos isEqualTo [0,0,0]) exitWith { if(_Debug_Variable) then {systemChat "Failed to Find Hunt Position"} };
@@ -80,6 +83,7 @@ Private _FindAndSpawnHuntBase = {
 	publicVariable "OKS_Hunt_Positions";
 
 	_Base = createVehicle [_BaseType, _SelectedPos, [], 0, "NONE"];
+	OKS_Objective_Positions pushBackUnique _Base;
 	_Spawn = createVehicle ["Land_ClutterCutter_small_F", _SelectedPos getPos [20,(random 360)], [], 0, "NONE"];
 
 	Switch (_Type) do {

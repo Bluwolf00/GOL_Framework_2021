@@ -53,6 +53,9 @@ if(["WMIK",(typeOf _Vehicle)] call BIS_fnc_inString || ["Coyote",(typeOf _Vehicl
 	_Vehicle AddMagazineCargo ["UK3CB_BAF_762_100Rnd_T",10];
 };
 
+// Fix APS - Automatic Smoke
+_Vehicle setVariable["dapsCanSmoke",0,TRUE];
+
 if(_Vehicle isKindOf "Tank") exitWith {
 	//systemChat "Is tank, giving tracks";
 	["ACE_Track", _Vehicle,true] call ace_cargo_fnc_loadItem;

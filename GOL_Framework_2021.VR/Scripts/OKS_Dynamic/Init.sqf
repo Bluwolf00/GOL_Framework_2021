@@ -9,6 +9,7 @@
 // Functions
 OKS_Dynamic_Setting = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\Settings.sqf";
 OKS_Hunt_Setting = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\HuntSettings.sqf";
+OKS_Hunt_Setting = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\HuntSettings.sqf";
 OKS_CreateMarker = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_CreateMarker.sqf";
 OKS_CreateTrigger = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_CreateTrigger.sqf";
 OKS_Populate_Sandbag = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Populate_Sandbag.sqf";

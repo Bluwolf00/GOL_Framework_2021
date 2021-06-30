@@ -58,5 +58,6 @@
 			 * 5: True to fill building(s) from top to bottom <BOOL> (default: false) (note: only works with filling mode 0 and 1)
 			 * 6: Teleport units <BOOL> (default: false)
 		 */
-		[getPos (leader _Group), nil, units _Group, 5, 1, true, true] remoteExec  ["ace_ai_fnc_garrison",0];
+		//private _type = typeOf nearestBuilding (getPos (leader _group));
+		[getPos (leader _Group), nil, units _Group, 5, 0, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
 	};

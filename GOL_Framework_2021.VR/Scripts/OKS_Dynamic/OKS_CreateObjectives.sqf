@@ -1,8 +1,8 @@
 /*
 	OKS_Createobjectives
 
-	[GetPos player,"sector",300,EAST,_Settings] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
-	[GetPos player,"sector",300,EAST,_Settings] spawn OKS_CreateObjectives;
+	[GetPos player,"sector",300,EAST] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
+	[GetPos player,"sector",300,EAST] spawn OKS_CreateObjectives;
 
 	[Position,TypeOfObjective,Range,EAST] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
 	[Position,TypeOfObjective,Range,EAST] spawn OKS_CreateObjectives;
@@ -16,12 +16,11 @@ if(!isServer) exitWith {};
 	_Settings = [_Side] call OKS_Dynamic_Setting;
 	_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
 	_Civilian Params ["_CivilianUnits","_HVT"];
-	_Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Transport","_Supply"];
+	_Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Helicopter","_Transport","_Supply"];
 
-	_Debug_Variable = true;
+	_Debug_Variable = false;
 
 	switch(typeName _Position) do {
-
 		case "OBJECT":{
 			_Area = _Position;
 			_Position = getPos _Position;
@@ -72,7 +71,7 @@ switch (_TypeOfObjective) do {
 			};
 		};
 
-		//systemChat format["Enemy Marker: color%1",_EnemySideString];
+		if(_Debug_Variable) then {systemChat format["Enemy Marker: color%1",_EnemySideString]};
 		_marker setMarkerColor format["color%1",_EnemySideString];
 		_marker setMarkerBrush "SolidBorder";
 
@@ -114,14 +113,14 @@ switch (_TypeOfObjective) do {
 			};
 		};
 
-		if(!isNull _Area) then {
+		if(!isNil "_Area") then {
 			_Repetitions = 0;
 			while{true} do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
-				_SpawnPos = [_RandomPos, 1, 100, 12, 0, 0.1, 0] call BIS_fnc_findSafePos;
-				if(_SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
+				_SpawnPos = [_RandomPos, 1, 100, 12, 0, 0, 0] call BIS_fnc_findSafePos;
+				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 				if(_Repetitions > 100) exitWith {};
 			};
 		} else {
@@ -129,6 +128,10 @@ switch (_TypeOfObjective) do {
 		};
 
 		if(_Repetitions > 100) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Cache Objective"} };
+
+		OKS_Objective_Positions pushBackUnique _SpawnPos;
+		publicVariable "OKS_Objective_Positions";
+
 		_Crate = CreateVehicle [_ammoCrate, [_SpawnPos select 0,_SpawnPos select 1,0.5], [], 0, "NONE"];
 		_Crate setDir (random 360);
 		_Crate setVehicleVarName format["OKS_Crate_%1",round(random 9999)];
@@ -136,7 +139,7 @@ switch (_TypeOfObjective) do {
 		_Crate enableSimulation true;
 		_Crate setMass 9999;
 
-		_AmmoCamp = selectRandom ["AmmoCampSite_1","AmmoCampSite_2"];
+		_AmmoCamp = selectRandom ["AmmoCampSite_1","AmmoCampSite_2","AmmoCampSite_3"];
 		[_AmmoCamp,getPos _Crate, [0,0,0], getDir _Crate] call LARs_fnc_spawnComp;
 		_trg = createTrigger ["EmptyDetector", GetPos _Crate, true];
 		_trg setTriggerArea [15000,15000,0,false,1000];
@@ -154,12 +157,62 @@ switch (_TypeOfObjective) do {
 
 	};
 
+	case "motorpool": {
+
+		private ["_SupplyTruck","_Repetitions","_Crate","_SpawnPos","_trg","_Task"];
+
+		_SupplyTruck = selectRandom _Supply;
+
+		if(!isNil "_Area") then {
+			_Repetitions = 0;
+			while{true} do {
+				sleep 0.25;
+				_Repetitions = _Repetitions + 1;
+				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
+				_SpawnPos = [_RandomPos, 1, 100, 12, 0, 0, 0] call BIS_fnc_findSafePos;
+				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
+				if(_Repetitions > 50) exitWith {};
+			};
+		} else {
+			_Repetitions = 0;
+			_SpawnPos = [_Position, 1, 100, 30, 0, 0, 0] call BIS_fnc_findSafePos;
+		};
+
+		if(_Repetitions > 50) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Motor Pool Objective"} };
+
+		OKS_Objective_Positions pushBackUnique _SpawnPos;
+		publicVariable "OKS_Objective_Positions";
+		_Crate = CreateVehicle [_SupplyTruck, [_SpawnPos select 0,_SpawnPos select 1,0.5], [], 0, "NONE"];
+		_Crate setDir (random 360);
+		_Crate setVehicleVarName format["OKS_MotorPool_%1",round(random 9999)];
+		_Crate allowDamage true;
+		_Crate enableSimulation true;
+
+		_AmmoCamp = selectRandom ["AmmoCampSite_3"];
+		[_AmmoCamp,getPos _Crate, [0,0,0], getDir _Crate] call LARs_fnc_spawnComp;
+		_trg = createTrigger ["EmptyDetector", GetPos _Crate, true];
+		_trg setTriggerArea [15000,15000,0,false,1000];
+		_trg setTriggerActivation ["STATIC","NOT PRESENT",false];
+		_trg setTriggerTimeout [5, 7, 10, true];
+		_trg triggerAttachVehicle [_Crate];
+		SystemChat str _SpawnPos;
+		[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
+
+		//systemChat format["OKS_Sector_Objective_%1",(round(random 9000))];
+		_Task = [true,format["OKS_MotorPool_Objective_%1",(round(random 9000))], ["The Enemy forces use a motor pool located in the area of operations to resupply and repair their combat vehicles. Move in on the position and destroy the motorpool.", "Destroy Motorpool", "Destroy Motorpool"], getPos _Crate,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+		[_Task,"destroy"] call BIS_fnc_taskSetType;
+		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+		[_Crate getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+		[_Crate getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+
+	};
+
 	case "ammotruck": {
 
 		private ["_SupplyTruck","_Road","_RandomPos"];
 		_SupplyTruck = selectRandom(_Supply);
 
-		if(!isNull _Area) then {
+		if(!isNil "_Area") then {
 			_Repetitions = 0;
 			while{true} do {
 				sleep 0.25;
@@ -173,7 +226,11 @@ switch (_TypeOfObjective) do {
 		} else {
 			_SpawnPos = getPos([([_Position, 1, 100, 15, 0, 0, 0] call BIS_fnc_findSafePos), 300] call BIS_fnc_nearestRoad);
 		};
-		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Ammo Truck Objective"}} ;
+		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Ammo Truck Objective"}};
+
+		OKS_Objective_Positions pushBackUnique _SpawnPos;
+		publicVariable "OKS_Objective_Positions";
+
 		_Truck = CreateVehicle [_SupplyTruck, [_SpawnPos select 0,_SpawnPos select 1,0.5], [], 0, "NONE"];
 		_Truck setDir (random 360);
 		_Truck setVehicleVarName format["OKS_AmmoTruck_%1",round(random 9999)];
@@ -208,26 +265,80 @@ switch (_TypeOfObjective) do {
 
 	};
 
-	case "hvttruck": {
+	case "radiotower": {
 
-		private ["_Vehicles","_Road","_RandomPos","_CargoCount"];
-		_Wheeled = selectRandom(_Transport);
+		private ["_towerclass","_Repetitions","_Tower","_SpawnPos","_trg","_Task"];
 
-		if(!isNull _Area) then {
+		if(!isNil "_Area") then {
 			_Repetitions = 0;
 			while{true} do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
-				_SpawnPos = [getPos ([_RandomPos, 300] call BIS_fnc_nearestRoad), 1, 100, 15, 0.2, 0, 0] call BIS_fnc_findSafePos;
+				_SpawnPos = [_RandomPos, 1, 100, 12, 0, 0, 0] call BIS_fnc_findSafePos;
+				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
+				if(_Repetitions > 50) exitWith {};
+			};
+		} else {
+			_Repetitions = 0;
+			_SpawnPos = [_Position, 1, 100, 30, 0, 0, 0] call BIS_fnc_findSafePos;
+		};
 
-				if(_SpawnPos inArea _Area) exitWith {};
+		OKS_Objective_Positions pushBackUnique _SpawnPos;
+		publicVariable "OKS_Objective_Positions";
+
+		if(_Repetitions > 50) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Radio Tower Objective"} };
+
+		_towerclass = selectRandom ["radiotower_1"];
+		systemChat str [_towerclass,_SpawnPos];
+		[_towerclass,[_SpawnPos select 0,_SpawnPos select 1,0], [0,0,0], random 360] call LARs_fnc_spawnComp;
+
+		sleep 2;
+		_Tower = nearestObject [_SpawnPos, "Land_Vysilac_FM"];
+		systemChat str _Tower;
+		_Tower setVehicleVarName format["OKS_RadioTower_%1",round(random 9999)];
+		_Tower allowDamage true;
+		_Tower enableSimulation true;
+
+		_trg = createTrigger ["EmptyDetector", _SpawnPos, true];
+		_trg setTriggerArea [15000,15000,0,false,1000];
+		_trg setTriggerActivation ["STATIC","NOT PRESENT",false];
+		_trg setTriggerTimeout [5, 7, 10, true];
+		_trg triggerAttachVehicle [_Tower];
+
+		[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
+
+		_Task = [true,format["OKS_RadioTower_Objective_%1",(round(random 9000))], ["The Enemy forces have installed a radio tower in the area to boost their signal to relay information and request support. Destroy the radio tower.", "Sabotage Radio Tower", "Sabotage Radio Tower"], getPos _Tower,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+
+		[_Task,"destroy"] call BIS_fnc_taskSetType;
+		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+		[_SpawnPos getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+		[_SpawnPos getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+		//systemChat format["OKS_Sector_Objective_%1",(round(random 9000))];  */
+	};
+
+	case "hvttruck": {
+
+		private ["_Vehicles","_Road","_RandomPos","_CargoCount"];
+		_Wheeled = selectRandom(_Transport);
+
+		if(!isNil "_Area") then {
+			_Repetitions = 0;
+			while{true} do {
+				sleep 0.25;
+				_Repetitions = _Repetitions + 1;
+				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
+				_SpawnPos = [getPos ([_RandomPos, 300] call BIS_fnc_nearestRoad), 1, 20, 10, 0.2, 0, 0] call BIS_fnc_findSafePos;
+
+				if(_SpawnPos inArea _Area && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo [])) exitWith {};
 				if(_Repetitions > 30) exitWith {};
 			};
 		} else {
 			_SpawnPos = getPos([([_Position, 1, 100, 15, 0, 0, 0] call BIS_fnc_findSafePos), 300] call BIS_fnc_nearestRoad);
 		};
-		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: HVT Truck Objective"}} ;
+		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: HVT Truck Objective"}};
+
+		if(_Debug_Variable) then { systemChat format ["Spawning %1 at %2",_Wheeled,_SpawnPos]; };
 		_Truck = CreateVehicle [_Wheeled, [_SpawnPos select 0,_SpawnPos select 1,0.5], [], 0, "NONE"];
 		_Truck setDir (random 360);
 		_Truck setVehicleVarName format["OKS_HVTTruck_%1",round(random 9999)];
@@ -253,9 +364,10 @@ switch (_TypeOfObjective) do {
 		};
 		[_Area,_Group,6] spawn OKS_Vehicle_Waypoints;
 
-		_HVTGroup = CreateGroup _playerSide;
+		_HVTGroup = CreateGroup _Side;
 		_Civilian = _HVTGroup CreateUnit [(_HVT call BIS_FNC_selectRandom), [0,0,0], [], 0, "NONE"];
 		[_Civilian, true] call ACE_captives_fnc_setHandcuffed;
+		_Civilian setVariable ["ace_map_hideBlueForceMarker", true, true];
 		_Civilian moveInCargo _Truck;
 		_Civilian setCaptive true;
 		_Civilian setBehaviour "CARELESS";
@@ -301,21 +413,21 @@ switch (_TypeOfObjective) do {
 		private ["_Road","_RandomPos","_Target","_SpawnPos","_Arty"];
 		_Artillery = selectRandom(_Artillery);
 
-		if(!isNull _Area) then {
+		if(!isNil "_Area") then {
 			_Repetitions = 0;
 			while{true} do {
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
-				_SpawnPos = [_RandomPos, 1, 100, 15, 0, 0, 0] call BIS_fnc_findSafePos;
+				_SpawnPos = [_RandomPos, 1, 100, 25, 0, 0, 0] call BIS_fnc_findSafePos;
 				if(_Repetitions > 100) exitWith {};
 
 				if(_Debug_Variable) then {
 					systemChat str [_SpawnPos inArea _Area,{_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1,{_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1,{_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1]
 				};
-				if(_SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
+				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 35, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 			};
 		} else {
-			_SpawnPos = getPos([([_Position, 1, 100, 15, 0, 0.1, 0] call BIS_fnc_findSafePos), 300] call BIS_fnc_nearestRoad);
+			_SpawnPos = getPos([([_Position, 1, 100, 35, 0, 0, 0] call BIS_fnc_findSafePos), 300] call BIS_fnc_nearestRoad);
 		};
 		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Artillery Objective"}};
 		if(_SpawnPos distance [0,0,0] < 300) exitWith { if(_Debug_Variable) then {SystemChat "Location found near SW edge of map. Exiting..."}};
@@ -362,7 +474,7 @@ switch (_TypeOfObjective) do {
 
 		};
 
-		["ArtilleryCamp",getPos _Arty, [0,0,0], getDir _Arty] call LARs_fnc_spawnComp;
+		["ArtilleryNest",getPos _Arty, [0,0,0], getDir _Arty] call LARs_fnc_spawnComp;
 		sleep 5;
 		[getPos _Arty,_Side,(random 4),15] spawn OKS_Populate_Sandbag;
 		[getPos _Arty,40,_Side] spawn OKS_Populate_StaticWeapons;
@@ -370,7 +482,94 @@ switch (_TypeOfObjective) do {
 
 	};
 
-		default{
+	case "hostage": {
 
+		private ["_House","_GarrisonMaxSize","_GarrisonPositions","_Target","_HostageGroup","_Repetitions","_Task"];
+		_Repetitions = 0;
+		if(!isNil "_Area") then {
+			while{true} do {
+				_Repetitions = _Repetitions + 1;
+				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
+				_House = nearestBuilding _RandomPos;
+				_GarrisonPositions = [_House] call BIS_fnc_buildingPositions;
+				_GarrisonMaxSize = count _GarrisonPositions;
+				if(_Debug_Variable) then {systemChat format["Trigger - Finding Position - %1",_House]};
+				if(_Repetitions > 30 || (_GarrisonMaxSize > 5 && _House inArea _Area) ) exitWith {};
+
+				//if(!(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 35, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
+			};
+		} else {
+			_House = nearestBuilding _Position;
+			_GarrisonPositions = [_House] call BIS_fnc_buildingPositions;
+			_GarrisonMaxSize = count _GarrisonPositions;
+			if(_Debug_Variable) then {systemChat format["No Trigger - Selecting Position - %1",_House]}
+		};
+		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Hostage Objective"}};
+
+
+		_Group = CreateGroup _Side;
+		_HostageGroup = CreateGroup civilian;
+		_Hostage1 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
+		_Hostage2 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
+		_Hostage3 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
+
+		{
+			[_X, true] call ACE_captives_fnc_setHandcuffed;
+			_X setCaptive true;
+			_X setBehaviour "CARELESS";
+			_X disableAI "MOVE";
+		} foreach [_Hostage1,_Hostage2,_Hostage3];
+
+		if (_GarrisonMaxSize > 10) then { _GarrisonMaxSize = 10 };
+
+		for "_i" from 1 to (_GarrisonMaxSize - 3) do
+		{
+			Private "_Unit";
+			if ( (count (units _Group)) == 0 ) then
+			{
+				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
+				_Unit setRank "SERGEANT";
+			} else {
+				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
+				_Unit setRank "PRIVATE";
+			};
+		};
+
+		[getPos _House, nil, units _Group, 1, 1, true, true] remoteExec ["ace_ai_fnc_garrison",0];
+		sleep 0.5;
+
+		{[_X] join _HostageGroup} foreach [_Hostage1,_Hostage2,_Hostage3];
+
+		switch(_playerSide) do {
+			case west:{
+				_Target = getMarkerPos "respawn_west";
+			};
+
+			case east:{
+				_Target = getMarkerPos "respawn_east";
+			};
+
+			case independent:{
+				_Target = getMarkerPos "respawn_resistance";
+			};
+		};
+
+		_Task = [true,format["OKS_Hostage_Objective_%1",(round(random 9000))], ["The Enemy have taken hostages and are keeping them inside a building under guard. Rescue the hostages and extract them back to base", "Rescue Hostages", "Rescue Hostages"], getPos _House,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+
+		[_Task,"help"] call BIS_fnc_taskSetType;
+		[_Task,[_House,true]] call BIS_fnc_taskSetDestination;
+		[_House getPos [35,(random 360)],4,120,_Side,_Units] spawn OKS_Patrol_Spawn;
+		[_House getPos [35,(random 360)],4,120,_Side,_Units] spawn OKS_Patrol_Spawn;
+
+		waitUntil {sleep 10; {!alive _X || _X distance _Target < 300} count (units _HostageGroup) isEqualTo count (units _HostageGroup)};
+		if( {Alive _X} count (units _HostageGroup) < 1 ) then {
+			[_Task,'FAILED'] call BIS_fnc_taskSetState;
+		} else {
+			[_Task,'SUCCEEDED'] call BIS_fnc_taskSetState;
 		};
 	};
+
+	default{
+
+	};
+};
