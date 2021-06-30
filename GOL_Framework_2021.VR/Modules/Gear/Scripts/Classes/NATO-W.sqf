@@ -2,6 +2,7 @@ _useMineDetector = true;
 
 _goggles = "G_Balaclava_TI_blk_F";
 _helmet = "rhsusf_opscore_fg_pelt";
+_OfficerHelmet = "rhs_beret_vdv3";
 _uniform = "U_B_T_Soldier_F";
 _vest = "V_PlateCarrier2_tna_F";
 _backpack = "B_FieldPack_oli";
@@ -10,7 +11,7 @@ if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "unv_M05_big_rt1523g";
 };
 
-if (_role in ["ag","ammg"]) then {
+if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "B_Carryall_oli";
 };
 if (_role isEqualTo "crew") then {
@@ -50,8 +51,8 @@ _rifleL_mag = "30Rnd_65x39_caseless_khaki_mag";
 _rifleL_mag_tr = "30Rnd_65x39_caseless_khaki_mag_Tracer";
 
 _LMG = ["arifle_MX_SW_khk_F", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "100Rnd_65x39_caseless_mag";
-_LMG_mag_tr = "100Rnd_65x39_caseless_mag_Tracer";
+_LMG_mag = "100Rnd_65x39_caseless_khaki_mag";
+_LMG_mag_tr = "100Rnd_65x39_caseless_khaki_mag_Tracer";
 
 _MMG = ["LMG_Mk200_F", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "200Rnd_65x39_cased_Box";

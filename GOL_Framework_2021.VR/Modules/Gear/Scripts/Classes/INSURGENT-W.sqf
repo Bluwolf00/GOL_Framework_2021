@@ -5,6 +5,7 @@ _allowedNightStuff = false;
 
 _goggles = selectRandom ["G_Bandanna_oli","G_Balaclava_oli"];
 _helmet = selectRandom ["H_Bandanna_oli","rhs_ssh68","rhsgref_M56"];
+_OfficerHelmet = "rhs_beret_vdv3";
 _uniform = selectRandom ["LOP_U_ChDKZ_Fatigue_02","LOP_U_ChDKZ_Fatigue_03","LOP_U_ChDKZ_Fatigue_04"];
 _vest = selectRandom ["rhsgref_6b23_khaki_rifleman","rhsgref_6b23_khaki","rhsgref_6b23_khaki_sniper","rhsgref_6b23_khaki_medic"];
 _backpack = "rhs_sidor";
@@ -13,7 +14,7 @@ if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "tfar_mr3000_rhs";
 };
 
-if (_role in ["ag","ammg"]) then {
+if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "MTP_PB_Bergen";
 };
 

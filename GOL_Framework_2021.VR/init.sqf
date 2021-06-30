@@ -6,9 +6,24 @@ MISSION_ROOT = call {
 };
 [] execVM "Scripts\HeadlessClient\HeadlessClient.sqf";
 [] execVM "Scripts\NEKY_ServiceStation\Init.sqf";
+
+/* Resupply & Medical Resupply Scripts */
 execVM "Scripts\NEKY_Supply\Ace_Resupply.sqf";
 execVM "Scripts\NEKY_Supply\Ace_Med.sqf";
+
+/*	Initiate Paradrop / AI Helicopter Pickup Scripts	*/
+ [] execVM "Scripts\NEKY_Paradrop\Init.sqf";
+ [] execVM "Scripts\NEKY_Pickup\ACE_PickUp.sqf";
+
+/* Neky ShareInfo Script for AI */
 Call Compile PreProcessFileLineNumbers "Scripts\NEKY_CombatExperience\Init.sqf";
+/* Add this to bottom of script if you want to make AI share info
+
+	if(isServer) then {
+		[True,True] call NEKY_AI_ShareInfo;
+	};
+*/
+
 // Do not remove these scripts ^
 // Adds backup supply lines if AAC is not playing (Luke's Script)
 // Sets up working Service Station
@@ -47,14 +62,26 @@ Call Compile PreProcessFileLineNumbers "Scripts\NEKY_CombatExperience\Init.sqf";
 	// Use this if you want to make use of the Dynamic Functions by Oksman
 	[] execVM "Scripts\OKS_Dynamic\Init.sqf";
 
-		sleep 15;
+		sleep 5;
+		if(!isNil "NEKY_ACE_AddAction" && !isNil "NEKY_AddAction") then {
+			[] spawn NEKY_ACE_AddAction;
 
+			if(!isNil "flag_west_1" && OKS_FRIENDLY_SIDE isEqualTo west) then {
+				[flag_west_1, "Paradrop Reinsert", "DZ Alpha", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+			};
+			if(!isNil "flag_east_1" && OKS_FRIENDLY_SIDE isEqualTo east) then {
+				[flag_east_1, "Paradrop Reinsert", "DZ Bravo", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+			};
+			if(!isNil "flag_independent_1" && OKS_FRIENDLY_SIDE isEqualTo independent) then {
+				[flag_independent_1, "Paradrop Reinsert", "DZ Charlie", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+			};
+		};
 
 		/*
 		   Params
 		   0 - Trigger Name (Object)
 		   1 - Split Trigger into 4 Sub-Triggers? (Boolean)
-		   1 - Number of Infantry - [Static Integer,Patrol Integer] (Array)
+		   1 - Number of Infantry - [Static Integer,Patrol Integer,SearchLocationsAutomatically] (Array) - "Place Locations from Modules to decide the strongpoint position yourself"
 		   2 - Side (WEST, EAST, INDEPENDENT)
 		   3 - Wheeled Patrols (Integer/Number)
 		   4 - APC Patrols (Integer/Number)
@@ -69,7 +96,7 @@ Call Compile PreProcessFileLineNumbers "Scripts\NEKY_CombatExperience\Init.sqf";
 
 		/* Example of Dynamic Scripts
 			if(isServer) then {
-				[Trigger_1,false,[75,0],east,1,1,1,[0,true],0,2,[0,0,0,0,0]] spawn OKS_CreateZone;
+				[Trigger_1,false,[75,0,true],east,1,1,1,[0,true],0,2,[0,0,0,0,0]] spawn OKS_CreateZone;
 			};
 		*/
 		// Below are examples of how to use the hunt/airdrop bases
@@ -78,6 +105,6 @@ Call Compile PreProcessFileLineNumbers "Scripts\NEKY_CombatExperience\Init.sqf";
 		// [Base_2, Spawn_2, NEKY_Hunt_Trigger_1, 5,30,independent,"CUP_I_LR_MG_AAF",30] spawn NEKY_Hunt_HuntBase;
 		// [Base_3,Spawn_3, NEKY_Hunt_Trigger_1,independent,"I_Heli_Transport_02_F","Random",[2,1]] spawn NEKY_Airbase;
 
-		if(isServer) then {
+		if(isServer && !isNil "NEKY_AI_ShareInfo") then {
 			[True,True] call NEKY_AI_ShareInfo;
 		};

@@ -5,7 +5,7 @@
 
 if(HasInterface && !isServer) exitWith {};
 
-Params["_MainTrigger","_Side","_InfantryNumber"];
+Params["_MainTrigger","_Side","_InfantryNumber","_SearchLocation"];
 private ["_House","_AllBuildings","_buildingArray","_SelectedBuildings","_HouseCount","_i","_HouseMax","_Strongpoint","_Location","_CountStrongpoints","_Group","_GarrisonNumber","_Location","_Debug_Variable","_Strongpoint","_SortedBuildings","_SafePos","_Marker","_AllNumbers","_SelectedStrongpoints","_Strongpoints","_MarkerPos","_PlacedStrongpoints","_Locations"];
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
@@ -16,8 +16,12 @@ _SelectedStrongpoints = [];
 _Strongpoints = [];
 _Locations = [];
 
-			{_Locations pushBackUnique (locationPosition _X)} foreach nearestLocations [_MainTrigger,["NameVillage","NameCity","NameCityCapital","Hill","Name","NameLocal","fakeTown"],(TriggerArea _MainTrigger select 0)];
+
 			{_Locations pushBackUnique getPos _X} foreach nearestObjects [_MainTrigger, ["LocationBase_F","LocationOutpost_F","LocationCamp_F","LocationResupplyPoint_F","LocationRespawnPoint_F","LocationEvacPoint_F","LocationFOB_F","LocationCityCapital_F","LocationCity_F","LocationVillage_F","LocationArea_F"], (TriggerArea _MainTrigger select 0 / 2)];
+
+			if(_SearchLocation || _Locations isEqualTo []) then {
+				{_Locations pushBackUnique (locationPosition _X)} foreach nearestLocations [_MainTrigger,["NameVillage","NameCity","NameCityCapital","Hill","Name","NameLocal","fakeTown"],(TriggerArea _MainTrigger select 0 / 2)];
+			};
 
 			if(count _Locations > 0) then {
 				{

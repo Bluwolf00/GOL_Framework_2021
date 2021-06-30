@@ -3,6 +3,7 @@ _useMineDetector = true;
 
 _goggles = "";
 _helmet = "H_HelmetB";
+_OfficerHelmet = "rhs_beret_vdv3";
 _uniform = "U_B_CombatUniform_mcam";
 _vest = "V_PlateCarrier2_rgr";
 _backpack = "B_FieldPack_khk";
@@ -11,7 +12,7 @@ if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "tfar_rt1523g_big";
 };
 
-if (_role in ["ag","ammg"]) then {
+if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "B_Kitbag_rgr";
 };
 if (_role isEqualTo "crew") then {

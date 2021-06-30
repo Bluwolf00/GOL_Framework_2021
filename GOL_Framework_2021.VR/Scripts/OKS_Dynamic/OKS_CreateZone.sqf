@@ -100,18 +100,16 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 				if(_Debug_Variable) then {
 					SystemChat format ["Unable to initiate huntbases in %1 - HuntBase or Airbase not defined",_MainTrigger]
 				};
-			}
+			};
+			sleep 20;
 		};
-
-		sleep 20;
 
 		/* Create Compositions for Main Area */
 		SystemChat format ["Roadblock Count: %1",_RoadblockCount];
 		if(_RoadblockCount > 0) then {
 			[_MainTrigger,_RoadblockCount,_Side,_RoadblockTarmac] spawn OKS_Find_RoadBlocks;
+			sleep 20;
 		};
-
-		sleep 20;
 
 		/* Create Mortar Pits Main Area*/
 		SystemChat format ["Mortar Count: %1",_MortarCount];
@@ -134,15 +132,17 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 			sleep 20;
 		};
 
-	private ["_StaticNumber","_PatrolNumber","_Condition"];
+	private ["_StaticNumber","_PatrolNumber","_Condition","_SearchLocation"];
 
 	if(typeName _InfantryNumber isEqualTo "ARRAY") then {
 		_StaticNumber = _InfantryNumber select 0;
 		_PatrolNumber = _InfantryNumber select 1;
+		_SearchLocation = _InfantryNumber select 2;
 		_Condition = (_StaticNumber > 0 || _PatrolNumber > 0);
 	} else {
 		_StaticNumber = _InfantryNumber * 0.5;
 		_PatrolNumber = _InfantryNumber * 0.5;
+		_SearchLocation = true;
 		_Condition = (_InfantryNumber > 0);
 	};
 
@@ -154,7 +154,7 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		/* Create Infantry Strongpoints Main Area*/
 
 		if(_StaticNumber > 0) then {
-			[_MainTrigger,_Side,_StaticNumber] spawn OKS_Populate_Strongpoints;
+			[_MainTrigger,_Side,_StaticNumber,_SearchLocation] spawn OKS_Populate_Strongpoints;
 		};
 		/* Create Infantry Patrols for each sub-trigger */
 

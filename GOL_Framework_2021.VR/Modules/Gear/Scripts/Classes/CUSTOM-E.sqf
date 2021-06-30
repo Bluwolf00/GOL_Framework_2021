@@ -2,6 +2,7 @@
 // Cloths
 _goggles = "";
 _helmet = "";
+_OfficerHelmet = "";
 _uniform = "";
 _vest = "";
 _backpack = "";
@@ -10,7 +11,7 @@ if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "";
 };
 
-if (_role in ["ag","ammg"]) then {
+if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "";
 };
 if (_role isEqualTo "crew") then {

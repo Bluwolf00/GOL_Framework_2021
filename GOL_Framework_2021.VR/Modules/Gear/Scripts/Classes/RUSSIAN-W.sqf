@@ -16,6 +16,7 @@ _glflareR = "rhs_VG40OP_red";
 
 _goggles = "";
 _helmet = ["rhs_ssh60"] call BIS_fnc_selectRandom;
+_OfficerHelmet = "rhs_beret_vdv3";
 _uniform = "rhs_uniform_flora_patchless";
 _vest = "rhsgref_6b23_khaki";
 _backpack = "rhs_sidor";
@@ -24,7 +25,7 @@ if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "tfar_mr3000_rhs";
 };
 
-if (_role in ["ag","ammg"]) then {
+if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "rhs_rd54";
 };
 

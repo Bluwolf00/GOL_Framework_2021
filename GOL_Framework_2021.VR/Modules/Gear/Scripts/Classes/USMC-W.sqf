@@ -1,14 +1,9 @@
 
-_goggles = "";
-_helmet = "";
-_uniform = "";
-_vest = "";
-_backpack = "";
 
 _goggles = "rhs_googles_clear";
 _helmet = selectRandom ["rhsusf_lwh_helmet_marpatwd_ess","rhsusf_lwh_helmet_marpatwd"];
+_OfficerHelmet = "rhs_beret_vdv3";
 _uniform = "rhs_uniform_FROG01_wd";
-//_vest = "rhsusf_spc_rifleman";
 _vest = "rhsusf_spc_light";
 _backpack = "rhsusf_falconii_coy_gr";
 if (GVARMAIN(mod_TFAR)) then {
@@ -19,7 +14,7 @@ if (_role in ["ftl","sl"]) then {
 	_vest = "rhsusf_spc_teamleader";
 };
 
-if (_role in ["ag","ammg"]) then {
+if (_role in ["ag","ammg","lr","ab"]) then {
 	_vest = "rhsusf_spc_corpsman";
 	_backpack = "rhsusf_assault_eagleaiii_coy_medic";
 };

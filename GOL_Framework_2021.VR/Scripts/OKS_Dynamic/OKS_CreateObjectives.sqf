@@ -119,7 +119,7 @@ switch (_TypeOfObjective) do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
-				_SpawnPos = [_RandomPos, 1, 100, 12, 0, 0, 0] call BIS_fnc_findSafePos;
+				_SpawnPos = [_RandomPos, 1, 100, 5, 0, 0, 0] call BIS_fnc_findSafePos;
 				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 				if(_Repetitions > 100) exitWith {};
 			};
@@ -169,8 +169,8 @@ switch (_TypeOfObjective) do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
-				_SpawnPos = [_RandomPos, 1, 100, 12, 0, 0, 0] call BIS_fnc_findSafePos;
-				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
+				_SpawnPos = [_RandomPos, 1, 100, 5, 0, 0, 0] call BIS_fnc_findSafePos;
+				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 5, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 				if(_Repetitions > 50) exitWith {};
 			};
 		} else {
@@ -218,13 +218,13 @@ switch (_TypeOfObjective) do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
-				_SpawnPos = [getPos ([_RandomPos, 300] call BIS_fnc_nearestRoad), 1, 100, 15, 0.2, 0, 0] call BIS_fnc_findSafePos;
+				_SpawnPos = [getPos ([_RandomPos, 300] call BIS_fnc_nearestRoad), 1, 100, 5, 0.2, 0, 0] call BIS_fnc_findSafePos;
 
 				if(_SpawnPos inArea _Area) exitWith {};
 				if(_Repetitions > 30) exitWith {};
 			};
 		} else {
-			_SpawnPos = getPos([([_Position, 1, 100, 15, 0, 0, 0] call BIS_fnc_findSafePos), 300] call BIS_fnc_nearestRoad);
+			_SpawnPos = getPos([([_Position, 1, 100, 5, 0, 0, 0] call BIS_fnc_findSafePos), 300] call BIS_fnc_nearestRoad);
 		};
 		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Ammo Truck Objective"}};
 
@@ -275,8 +275,8 @@ switch (_TypeOfObjective) do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
-				_SpawnPos = [_RandomPos, 1, 100, 12, 0, 0, 0] call BIS_fnc_findSafePos;
-				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
+				_SpawnPos = [_RandomPos, 1, 100, 5, 0, 0, 0] call BIS_fnc_findSafePos;
+				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 5, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 				if(_Repetitions > 50) exitWith {};
 			};
 		} else {
@@ -418,16 +418,16 @@ switch (_TypeOfObjective) do {
 			while{true} do {
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
-				_SpawnPos = [_RandomPos, 1, 100, 25, 0, 0, 0] call BIS_fnc_findSafePos;
+				_SpawnPos = [_RandomPos, 1, 100, 10, 0, 0, 0] call BIS_fnc_findSafePos;
 				if(_Repetitions > 100) exitWith {};
 
 				if(_Debug_Variable) then {
 					systemChat str [_SpawnPos inArea _Area,{_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1,{_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1,{_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1]
 				};
-				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 35, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
+				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 10, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 			};
 		} else {
-			_SpawnPos = getPos([([_Position, 1, 100, 35, 0, 0, 0] call BIS_fnc_findSafePos), 300] call BIS_fnc_nearestRoad);
+			_SpawnPos = getPos([([_Position, 1, 100, 10, 0, 0, 0] call BIS_fnc_findSafePos), 300] call BIS_fnc_nearestRoad);
 		};
 		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Artillery Objective"}};
 		if(_SpawnPos distance [0,0,0] < 300) exitWith { if(_Debug_Variable) then {SystemChat "Location found near SW edge of map. Exiting..."}};
@@ -535,7 +535,7 @@ switch (_TypeOfObjective) do {
 			};
 		};
 
-		[getPos _House, nil, units _Group, 1, 1, true, true] remoteExec ["ace_ai_fnc_garrison",0];
+		[getPos _House, nil, units _Group, 1, 1, false, true] remoteExec ["ace_ai_fnc_garrison",0];
 		sleep 0.5;
 
 		{[_X] join _HostageGroup} foreach [_Hostage1,_Hostage2,_Hostage3];

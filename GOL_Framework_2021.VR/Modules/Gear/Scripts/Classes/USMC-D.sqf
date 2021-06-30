@@ -1,6 +1,7 @@
 
 _goggles = "";
 _helmet = "rhsusf_lwh_helmet_marpatd";
+_OfficerHelmet = "rhs_beret_vdv3";
 _uniform = "rhs_uniform_FROG01_d";
 _vest = "rhsusf_spc_rifleman";
 _backpack = "rhsusf_assault_eagleaiii_coy_mg";
@@ -8,7 +9,7 @@ if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "unv_MARPAT_D_big_rt1523g";
 };
 
-if (_role in ["ag","ammg"]) then {
+if (_role in ["ag","ammg","lr","ab"]) then {
 	_vest = "rhsusf_spc_iar";
 };
 if (_role in ["ar","mmg"]) then {

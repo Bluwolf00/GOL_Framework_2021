@@ -1,6 +1,7 @@
 
 _goggles = "";
 _helmet = "helmet_plain_MTP";
+_OfficerHelmet = "rhs_beret_vdv3";
 _uniform = "Uniform_Full_MTP";
 _vest = "vest_spc_rifleman_MTP";
 _backpack = "MTP_Kitbag";
@@ -12,7 +13,7 @@ if (GVARMAIN(mod_TFAR)) then {
 if (_role isEqualTo "sl") then {
 	_vest = "vest_spc_radio_MTP";
 };
-if (_role in ["ag","ammg"]) then {
+if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "BRITISH_Assaultpack_Medic";
 };
 if (_role isEqualTo "crew") then {

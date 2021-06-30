@@ -1,6 +1,7 @@
 // Cloths
 _goggles = "";
 _helmet = "helmet_lwh_WZ2000";
+_OfficerHelmet = "rhs_beret_vdv3";
 _uniform = SelectRandom ["Uniform_Full_WZ2000","Uniform_Rolled_WZ2000"];
 _vest = "vest_spc_radio_WZ2000";
 _backpack = "WZ2000_Assaultpack";
@@ -9,7 +10,7 @@ if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "unv_WZ2000_big_rt1523g";
 };
 
-if (_role in ["ag","ammg","sm"]) then {
+if (_role in ["ag","ammg","sm","lr","ab"]) then {
 	_backpack = "POLISH_assaultpack_Medic";
 };
 

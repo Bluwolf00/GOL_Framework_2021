@@ -205,8 +205,7 @@ switch (toLower(_role)) do {
 	};
 
 	case "lr": {
-		[_goggles,_helmet,_uniform,_vest] call _addEquipment;
-
+		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		if(!isNil "_rifleL" && !isNil "_rifleL_mag" && !isNil "_rifleL_mag_tr") then {
 			[_rifleL, _rifleL_mag, ""] call _addPrimary;
 			[[_flashBang,3],[_grenademini,2],[_grenade,2],[_rifleL_mag,4],[_rifleL_mag_tr,4]] call _addToVest;
@@ -218,21 +217,28 @@ switch (toLower(_role)) do {
 		_IFAK call _addToUniform;
 		[[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
 
-		["","","","",_backpack] call _addEquipment;
-		[_LAT, _LAT_mag, ""] call _addLaunchers;
-		[[_cables,4],[_defusalKit,1]] call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
 			[[_mapFlashLight,1],[_handFlareG,1],[_handFlareR,1]] call _addToUniform;
 		};
-		if (_useMineDetector) then {
-			[["MineDetector",1]] call _addToBackpack;
-		};
-		if (_LAT_ReUsable) then {
-			[[_LAT_mag,1]] call _addToBackpack;
+	};
+
+	case "ab": {
+		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
+		[_rifleC, _rifleC_mag, ""] call _addPrimary;
+		[[_flashBang,3],[_grenademini,2],[_grenade,2],[_rifleC_mag,4],[_rifleC_mag_tr,4]] call _addToVest;
+		[_pistol, _pistol_mag, ""] call _addHandGun;
+		_IFAK call _addToUniform;
+		[[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
+		[[_rifleGL_mag_tr,6],[_rifleC_mag_tr,6],[_rifle_mag_tr,6],[_LMG_mag_tr,3],[_glHE,6]] call _addToBackpack;
+		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
+		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
+			_nvg call _addNVG;
+			[[_mapFlashLight,1],[_handFlareG,1],[_handFlareR,1]] call _addToUniform;
 		};
 	};
+
 
 	case "p": {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;

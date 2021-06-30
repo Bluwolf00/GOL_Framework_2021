@@ -1,6 +1,7 @@
 
 _goggles = "";
 _helmet = "H_HelmetAggressor_F";
+_OfficerHelmet = "rhs_beret_vdv3";
 _uniform = "U_O_CombatUniform_ocamo";
 _vest = "V_HarnessOSpec_brn";
 _backpack = "B_FieldPack_ocamo";
@@ -9,7 +10,7 @@ if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "tfar_mr3000";
 };
 
-if (_role in ["ag","ammg"]) then {
+if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "B_Carryall_ocamo";
 };
 if (_role isEqualTo "crew") then {

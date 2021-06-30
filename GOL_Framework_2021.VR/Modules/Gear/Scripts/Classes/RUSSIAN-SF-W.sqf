@@ -15,6 +15,7 @@ _glflareR = "rhs_VG40OP_red";
 
 _goggles = "rhsusf_shemagh2_grn";
 _helmet = ["rhs_altyn_visordown","rhs_altyn","rhs_altyn_novisor_ess","rhs_altyn_novisor"] call BIS_fnc_selectRandom;
+_OfficerHelmet = "rhs_beret_vdv3";
 _uniform = "rhs_uniform_gorka_r_g";
 _vest = "rhs_6b43";
 _backpack = "rhs_assault_umbts";
@@ -23,7 +24,7 @@ if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "tfar_mr3000_rhs";
 };
 
-if (_role in ["ag","ammg"]) then {
+if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "B_Carryall_green_F";
 };
 
