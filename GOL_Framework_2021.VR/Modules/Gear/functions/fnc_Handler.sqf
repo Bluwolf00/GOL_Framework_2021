@@ -272,7 +272,7 @@ if (_isMan) then {
 					_compatibleItems append ((_pistol select 0) call BIS_fnc_compatibleItems);
 					_compatibleItems append ((_LMG select 0) call BIS_fnc_compatibleItems);
 					_compatibleItems append ((_MMG select 0) call BIS_fnc_compatibleItems);
-					_blackList = ["rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","rhsusf_acc_anpas13gv1","rhsusf_acc_acog2_usmc_pip","rhsusf_acc_acog3_usmc_pip","rhsusf_acc_acog_usmc_pip","rhsusf_acc_anpvs27","rhsusf_acc_elcan_ard_pip","rhsusf_acc_elcan_pip","rhsusf_acc_acog2_pip","rhsusf_acc_acog3_pip","rhsusf_acc_acog_pip","rhsusf_acc_acog_rmr_pip","rhsusf_acc_acog_d_pip","rhsusf_acc_acog_sa_pip","rhsusf_acc_acog_wd_pip","hlc_isopod"];
+					_blackList = ["rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","ACE_acc_pointer_green","ACE_acc_pointer_green_ir","ACE_acc_pointer_red","acc_pointer_ir","acc_pointer_ir_broken","rhsusf_acc_anpeq15_top_h","rhsusf_acc_anpeq15_top_sc","rhsusf_acc_anpeq15_wmx_sc","rhsusf_acc_anpeq15_wmx_h","rhsusf_acc_anpeq15_wmx_light_sc","rhsusf_acc_anpeq15_wmx_light_h","rhsusf_acc_anpeq15_bk_top_h","rhsusf_acc_anpeq15_bk_top_sc","rhsusf_acc_anpeq15_h","rhsusf_acc_anpeq15_sc","rhsusf_acc_anpeq15_light_sc","rhsusf_acc_anpeq15_light_h","rhsusf_acc_anpeq15_bk_h","rhsusf_acc_anpeq15_bk_sc","rhsusf_acc_anpeq15_bk_light_sc","rhsusf_acc_anpeq15_bk_light_h","rhsusf_acc_anpeq16a_top_sc","rhsusf_acc_anpeq16a_top_h","rhsusf_acc_anpeq16a_light_top_sc","rhsusf_acc_anpeq16a_light_top_h","rhsusf_acc_anpas13gv1"];
 					_whiteList = ["rhs_weap_optic_smaw"];
 
 						_CV = 0;
