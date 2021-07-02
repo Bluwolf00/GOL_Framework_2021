@@ -77,7 +77,7 @@ if (isServer) then
 
 	if (Debug == 1) then {SystemChat "Starting Watch and Interval"};
 
-	_arty reveal _target;
+	_arty reveal [_target,4];
 	_arty doWatch [GetposATL _target select 0,GetposATL _target select 1,_angle];
 
 	sleep (10+(Random 20));
