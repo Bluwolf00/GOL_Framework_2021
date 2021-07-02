@@ -303,7 +303,7 @@ class ace_mk6mortar_useAmmoHandling {
 // -------------------------------------------
 
 class ace_nametags_showPlayerNames {
-	value = 1;
+	value = 0;
 	typeName = "SCALAR";
 	force = 0;
 };
@@ -453,4 +453,10 @@ class ace_zeus_autoAddObjects {
 	value = 0;
 	typeName = "BOOL";
 	force = 1;
+};
+
+class diwako_dui_indicators_show {
+	value = 0;
+	typeName = "BOOL";
+	force = 0;
 };
