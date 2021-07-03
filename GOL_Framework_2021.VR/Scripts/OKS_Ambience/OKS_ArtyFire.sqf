@@ -77,10 +77,12 @@ if (isServer) then
 
 	if (Debug == 1) then {SystemChat "Starting Watch and Interval"};
 
-	if(typeName _arty == "OBJECT") then {
+	if(typeName _target == "OBJECT") then {
 		_arty reveal [_target,4];
+		_arty doWatch [GetposATL _target select 0,GetposATL _target select 1,_angle];
+	} else {
+		_arty doWatch [_target select 0,_target select 1,_angle];
 	};
-	_arty doWatch [GetposATL _target select 0,GetposATL _target select 1,_angle];
 
 	sleep (10+(Random 20));
 	_gunner disableAI "WEAPONAIM";

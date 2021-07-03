@@ -5,22 +5,22 @@ class ace_advanced_fatigue_enabled {
 	force = 1;
 };
 class ace_advanced_fatigue_enableStaminaBar {
-	value = 0;
+	value = 1;
 	typeName = "BOOL";
 	force = 1;
 };
 class ace_advanced_fatigue_performanceFactor {
-	value = 1;
-	typeName = "SCALAR";
-	force = 1;
-};
-class ace_advanced_fatigue_recoveryFactor {
 	value = 2;
 	typeName = "SCALAR";
 	force = 1;
 };
+class ace_advanced_fatigue_recoveryFactor {
+	value = 3;
+	typeName = "SCALAR";
+	force = 1;
+};
 class ace_advanced_fatigue_loadFactor {
-	value = 0;
+	value = 1;
 	typeName = "SCALAR";
 	force = 1;
 };

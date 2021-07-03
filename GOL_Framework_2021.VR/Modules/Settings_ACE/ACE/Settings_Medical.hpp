@@ -60,12 +60,12 @@ class ace_medical_enableScreams {
 	force = 1;
 };
 class ace_medical_playerDamageThreshold {
-	value = 1.0;
+	value = 2.0;
 	typeName = "SCALAR";
 	force = 1;
 };
 class ace_medical_AIDamageThreshold {
-	value = 1;
+	value = 0.8;
 	typeName = "SCALAR";
 	force = 1;
 };
