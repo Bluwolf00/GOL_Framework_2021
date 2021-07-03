@@ -307,12 +307,12 @@ if (_isMan) then {
 
 			case "tiny_box": {
 				[_unit, _glHE, 10] call _fnc_AddObjectsCargo;
-				[_unit, _glsmokeR, 10] call _fnc_AddObjectsCargo;
-				[_unit, _glflareW, 10] call _fnc_AddObjectsCargo;
-				[_unit, _glflareR, 5] call _fnc_AddObjectsCargo;
-				[_unit, _glflareG, 5] call _fnc_AddObjectsCargo;
-				[_unit, _grenade, 8] call _fnc_AddObjectsCargo;
-				[_unit, _grenademini, 8] call _fnc_AddObjectsCargo;
+				[_unit, _glsmokeR, 6] call _fnc_AddObjectsCargo;
+				[_unit, _glflareW, 6] call _fnc_AddObjectsCargo;
+				[_unit, _glflareR, 6] call _fnc_AddObjectsCargo;
+				[_unit, _glflareG, 6] call _fnc_AddObjectsCargo;
+				[_unit, _grenade, 6] call _fnc_AddObjectsCargo;
+				[_unit, _grenademini, 6] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 12] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 5] call _fnc_AddObjectsCargo;
 
@@ -341,9 +341,9 @@ if (_isMan) then {
 				[_unit, _MMG_mag_tr, (COUNT_AR_MAGS(_MMG_mag_tr) * 1)] call _fnc_AddObjectsCargo;
 
 				if (_LAT_ReUsable) then {
-					[_unit, _LAT_mag, 4] call _fnc_AddObjectsCargo;
+					[_unit, _LAT_mag, 2] call _fnc_AddObjectsCargo;
 				} else {
-					[_unit, (_LAT select 0), 4] call _fnc_AddObjectsCargo;
+					[_unit, (_LAT select 0), 2] call _fnc_AddObjectsCargo;
 				};
 				[_unit, _MAT_mag, 2] call _fnc_AddObjectsCargo;
 

@@ -12,11 +12,12 @@ execVM "Scripts\NEKY_Supply\Ace_Resupply.sqf";
 execVM "Scripts\NEKY_Supply\Ace_Med.sqf";
 
 /*	Initiate Paradrop / AI Helicopter Pickup Scripts	*/
- [] execVM "Scripts\NEKY_Paradrop\Init.sqf";
- [] execVM "Scripts\NEKY_Pickup\ACE_PickUp.sqf";
+[] execVM "Scripts\NEKY_Paradrop\Init.sqf";
+[] execVM "Scripts\NEKY_Pickup\ACE_PickUp.sqf";
 
 /* Neky ShareInfo Script for AI */
 Call Compile PreProcessFileLineNumbers "Scripts\NEKY_CombatExperience\Init.sqf";
+
 /* Add this to bottom of script if you want to make AI share info
 
 	if(isServer) then {
