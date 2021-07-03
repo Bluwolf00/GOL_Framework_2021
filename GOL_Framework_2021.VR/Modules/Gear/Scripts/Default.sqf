@@ -63,7 +63,7 @@ switch (toLower(_role)) do {
 		_IFAK call _addToUniform;
 		[[_pistol_mag,2],[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,3],[_smokegrenadeY,6],[_smokegrenadeB,6],[_smokegrenadeB,2],[_smokegrenadeP,2]] call _addToVest;
-		[[_flashBang,3],[_battery,1],[_glsmokeR,5],[_glsmokeG,2],[_smokegrenadeB,5],["42cdo_marker_panel",5]] call _addToBackpack;
+		[[_flashBang,3],[_battery,1],[_glsmokeR,5],[_glsmokeG,2],[_smokegrenadeB,5],["42cdo_vs17_item",5]] call _addToBackpack;
 		if (call EFUNC(Common,isNight)) then {
 			[[_chemG,5],[_chemR,5],[_handFlareG,6],[_IRStrobe,3],[_glFlareR,10],[_glFlareG,10]] call _addToBackpack;
 		};

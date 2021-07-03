@@ -217,6 +217,7 @@ if (_isMan) then {
 				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_Flare_White", 20] call _fnc_AddObjectsCargo;
 				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_WPSmoke_White", 20] call _fnc_AddObjectsCargo;
 				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White", 20] call _fnc_AddObjectsCargo;
+				[_unit, "42cdo_vs17_item", 5] call _fnc_AddObjectsCargo;
 				[_unit, _glsmokeY, 20] call _fnc_AddObjectsCargo;
 				[_unit, _glflareW, 20] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 20] call _fnc_AddObjectsCargo;
