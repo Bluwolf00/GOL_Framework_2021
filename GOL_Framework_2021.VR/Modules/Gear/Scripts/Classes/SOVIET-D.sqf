@@ -1,4 +1,5 @@
 
+
 _glHE = "hlc_VOG25_AK";
 _glsmokeW = "hlc_GRD_White";
 _glsmokeB = "";
@@ -27,7 +28,8 @@ if (_role in ["ag","ammg","lr","ab"]) then {
 };
 
 if (_role isEqualTo "p") then {
-	_helmet = "rhs_altyn_novisor_ess_bala";
+	_helmet = "rhs_zsh7a_mike_green";
+	_uniform = "rhs_uniform_df15_tan";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "O_UAV_01_backpack_F";
@@ -35,10 +37,9 @@ if (_role isEqualTo "uav") then {
 
 };
 if (_role isEqualTo "jetp") then {
-	_goggles = "G_Aviator";
-	_helmet = "H_PilotHelmetFighter_B";
-	_uniform = "U_B_PilotCoveralls";
-	_vest = "V_Rangemaster_belt";
+	_helmet = "rhs_zsh7a";
+	_uniform = "rhs_uniform_df15_tan";
+	_vest = "rhsgref_6b23_khaki_medic";
 	_backpack = "B_Parachute";
 };
 
@@ -68,8 +69,8 @@ _LAT_ReUsable = false;
 _MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "RPG7_F";
 
-_pistol = ["rhs_weap_pya", _silencer, _pointer, _sight, _bipod];
-_pistol_mag = "rhs_mag_9x19_17";
+_pistol = ["rhs_weap_makarov_pm", _silencer, _pointer, _sight, _bipod];
+_pistol_mag = "rhs_mag_9x18_8_57N181S";
 
 _silencer = "";
 _pointer = "";

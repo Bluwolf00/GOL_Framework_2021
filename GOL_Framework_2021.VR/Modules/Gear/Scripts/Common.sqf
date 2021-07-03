@@ -76,7 +76,7 @@ if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
 	_epi = "ACE_epinephrine";
 	_morph = "ACE_morphine";
 	_tourn = "ACE_tourniquet";
-	_IFAK = [[_bandage,3]];
+	_IFAK = [[_bandage,6]];
 	if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {	// Advanced
 		_blood = "ACE_bloodIV";
 		_epi = "ACE_epinephrine";

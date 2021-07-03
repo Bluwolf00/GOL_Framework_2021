@@ -16,7 +16,7 @@
 #define	bullShit nil,1,false,false,"",""
 params [["_unit", objNull, [objNull]]];
 
-// _unit addAction ["<t color='#ffff00'>Attachment Menu</t>", {["player", [], -100, ["_this call GW_Gear_Fnc_replaceAttachments","main"]] call cba_fnc_fleximenu_openMenuByDef},bullShit,8];
+_unit addAction ["<t color='#ffff00'>Attachment Menu</t>", {[_this select 0, player] call ace_arsenal_fnc_openBox},bullShit,8];
 
 // Adds ACE Arsenal for Attachments
 /*
