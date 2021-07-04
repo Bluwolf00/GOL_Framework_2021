@@ -43,8 +43,8 @@ if (GVARMAIN(mod_TFAR_CORE)) then {
 };
 
 TF_west_radio_code = "_bluefor";
-TF_east_radio_code = "_opfor";
-TF_guer_radio_code = "_independent";
+TF_east_radio_code = "_bluefor";
+TF_guer_radio_code = "_bluefor";
 
 TF_freq_west =    [0 ,6, ["10","20","30","40","50.1","50.2","50.3","50.5"],0, nil, -1, 0];
 TF_freq_west_lr = [4 ,6, ["10","20","30","40","50.1","50.2","50.3","50.4","50.5"],0, nil, -1, 0];
