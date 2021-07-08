@@ -165,7 +165,10 @@ switch (toLower(_role)) do {
 		};
 		if (_LAT_ReUsable) then {
 			[[_LAT_mag,1]] call _addToBackpack;
+		} else {
+			[_LAT, _LAT_mag, ""] call _addLaunchers;
 		};
+
 	};
 
 	case "ag": {

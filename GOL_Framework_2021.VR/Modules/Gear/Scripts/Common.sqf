@@ -67,9 +67,9 @@ _bandage = "FirstAidKit";
 _blood = "MediKit";
 _epi = "";
 _morph = "";
-_IFAK = [[_bandage,1]];					//	Individual First Aid Kits
+_IFAK = [[_bandage,2]];					//	Individual First Aid Kits
 _FAKSmall = [[_bandage,15]];			//	Medic Kit Small
-_FAKBig = [[_bandage,10],[_blood,1]];	//	Medic Kit Big
+_FAKBig = [[_bandage,25],[_blood,1]];	//	Medic Kit Big
 if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
 	_bandage = "ACE_fieldDressing";
 	_blood = "ACE_bloodIV";
@@ -105,16 +105,17 @@ if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
 		];
 	} else {
 		_FAKSmall = [
-			[_bandage,20],
-			[_morph,5],
-			[_tourn,4]
+			[_bandage,30],
+			[_morph,10],
+			[_tourn,4],
+			[_blood,3]
 		];
 		_FAKBig = [
-			[_bandage,20],
-			[_morph,5],
-			[_epi,5],
+			[_bandage,40],
+			[_morph,15],
+			[_epi,10],
 			[_tourn,5],
-			[_blood,3]
+			[_blood,5]
 		];
 	};
 };

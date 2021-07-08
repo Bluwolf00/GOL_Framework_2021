@@ -262,11 +262,12 @@ if (_isMan) then {
 							private _action = [_action, _name, "", _statement, _condition, {}, _x] call ace_interact_menu_fnc_createAction;
 							[_unit, 0, ["ACE_MainActions","GW_GetStatics"], _action] call ace_interact_menu_fnc_addActionToObject;
 						} forEach _staticWeaponList;
+
 					};
+					[_unit, _mortarRangeCard, 10] call _fnc_AddObjectsCargo;
 				};
 
-				if(GVARMAIN(mod_ACE3)) then {
-					[_unit, _mortarRangeCard, 10] call _fnc_AddObjectsCargo;
+				if(GVARMAIN(mod_ACE3) && (isNil "GOL_ARSENAL_ALLOWED" || GOL_ARSENAL_ALLOWED isEqualTo 1)) then {
 
 					_compatibleItems = ((_rifle select 0) call BIS_fnc_compatibleItems);
 					_compatibleItems append ((_rifleC select 0) call BIS_fnc_compatibleItems);
@@ -286,10 +287,17 @@ if (_isMan) then {
 							_opticMag = (["",(configfile >> "CfgWeapons" >> (_compatibleItems select (_CV - 1)))] call ace_arsenal_fnc_statTextStatement_scopeMag);
 							_opticMag = parseNumber _opticMag;
 
-							If (_opticMag > 2 || _opticMag == 0.9) then {
-								_compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV - 1)));
-								_CV = _CV - 1;
-							};
+								if(GOL_MAGNIFIED_OPTICS isEqualTo 0 || isNil "GOL_MAGNIFIED_OPTICS") then {
+									If (_opticMag > 1 || _opticMag == 0.9) then {
+										_compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV - 1)));
+										_CV = _CV - 1;
+									};
+								} else {
+									if (_opticMag > 2 || _opticMag == 0.9) then {
+										_compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV - 1)));
+										_CV = _CV - 1;
+									};
+								};
 							};
 
 							_compatibleItems append _whiteList;

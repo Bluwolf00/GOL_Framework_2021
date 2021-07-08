@@ -1,5 +1,4 @@
 
-
 _glHE = "hlc_VOG25_AK";
 _glsmokeW = "hlc_GRD_White";
 _glsmokeB = "";
@@ -45,19 +44,17 @@ if (_role isEqualTo "jetp") then {
 
 _silencer = "";
 _pointer = "";
-_sight = "rhs_acc_okp7_dovetail";
+_sight = "";
 _bipod = "";
 
-_rifle = ["hlc_rifle_akm", _silencer, _pointer, _sight, _bipod];
+_rifle = ["hlc_rifle_aks74", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["hlc_rifle_aks74u", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_akmgl", _silencer, _pointer, _sight, _bipod];
-_rifleC_mag = "30Rnd_545x39_Mag_F";
-_rifleC_mag_tr = "30Rnd_545x39_Mag_Tracer_F";
-_rifle_mag = "30Rnd_762x39_Mag_F";
-_rifle_mag_tr = "30Rnd_762x39_Mag_Tracer_F";
+_rifleGL = ["hlc_rifle_aks74_GL", _silencer, _pointer, _sight, _bipod];
+_rifle_mag = "30Rnd_545x39_Mag_F";
+_rifle_mag_tr = "30Rnd_545x39_Mag_Tracer_F";
 
-_LMG = ["rhs_weap_pm63", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "rhs_75Rnd_762x39mm_tracer";
+_LMG = ["hlc_rifle_rpk74n", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "hlc_60Rnd_545x39_t_rpk";
 
 _MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhs_100Rnd_762x54mmR_green";

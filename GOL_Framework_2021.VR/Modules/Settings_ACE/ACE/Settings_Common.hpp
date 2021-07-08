@@ -10,7 +10,7 @@ class ace_advanced_fatigue_enableStaminaBar {
 	force = 1;
 };
 class ace_advanced_fatigue_performanceFactor {
-	value = 2;
+	value = 1;
 	typeName = "SCALAR";
 	force = 1;
 };

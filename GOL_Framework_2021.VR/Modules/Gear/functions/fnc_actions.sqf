@@ -16,8 +16,9 @@
 #define	bullShit nil,1,false,false,"",""
 params [["_unit", objNull, [objNull]]];
 
-_unit addAction ["<t color='#ffff00'>Attachment Menu</t>", {[_this select 0, player] call ace_arsenal_fnc_openBox},bullShit,8];
-
+if(isNil "GOL_ARSENAL_ALLOWED" || GOL_ARSENAL_ALLOWED isEqualTo 1) then {
+	_unit addAction ["<t color='#ffff00'>Attachment Menu</t>", {[_this select 0, player] call ace_arsenal_fnc_openBox},bullShit,8];
+};
 // Adds ACE Arsenal for Attachments
 /*
 [_unit, (currentWeapon player) call GW_Gear_Fnc_getAttachments select 0] call ace_arsenal_fnc_initbox;
