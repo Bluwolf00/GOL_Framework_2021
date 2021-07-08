@@ -200,7 +200,7 @@ switch (_TypeOfObjective) do {
 
 		//systemChat format["OKS_Sector_Objective_%1",(round(random 9000))];
 		_Task = [true,format["OKS_MotorPool_Objective_%1",(round(random 9000))], ["The Enemy forces use a motor pool located in the area of operations to resupply and repair their combat vehicles. Move in on the position and destroy the motorpool.", "Destroy Motorpool", "Destroy Motorpool"], getPos _Crate,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
-		[_Task,"destroy"] call BIS_fnc_taskSetType;
+		[_Task,"refuel"] call BIS_fnc_taskSetType;
 		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
 		[_Crate getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
 		[_Crate getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
@@ -290,9 +290,9 @@ switch (_TypeOfObjective) do {
 		if(_Repetitions > 50) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Radio Tower Objective"} };
 
 		_towerclass = selectRandom ["radiotower_1"];
+
 		systemChat str [_towerclass,_SpawnPos];
 		[_towerclass,[_SpawnPos select 0,_SpawnPos select 1,0], [0,0,0], random 360] call LARs_fnc_spawnComp;
-
 		sleep 2;
 		_Tower = nearestObject [_SpawnPos, "Land_Vysilac_FM"];
 		systemChat str _Tower;
@@ -300,21 +300,15 @@ switch (_TypeOfObjective) do {
 		_Tower allowDamage true;
 		_Tower enableSimulation true;
 
-		_trg = createTrigger ["EmptyDetector", _SpawnPos, true];
-		_trg setTriggerArea [15000,15000,0,false,1000];
-		_trg setTriggerActivation ["STATIC","NOT PRESENT",false];
-		_trg setTriggerTimeout [5, 7, 10, true];
-		_trg triggerAttachVehicle [_Tower];
-
 		[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
 
 		_Task = [true,format["OKS_RadioTower_Objective_%1",(round(random 9000))], ["The Enemy forces have installed a radio tower in the area to boost their signal to relay information and request support. Destroy the radio tower.", "Sabotage Radio Tower", "Sabotage Radio Tower"], getPos _Tower,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 
-		[_Task,"destroy"] call BIS_fnc_taskSetType;
-		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+		[_Task,"radio"] call BIS_fnc_taskSetType;
+
 		[_SpawnPos getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
 		[_SpawnPos getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
-		//systemChat format["OKS_Sector_Objective_%1",(round(random 9000))];  */
+		[_Tower,_Task] spawn { waitUntil{sleep 10; !Alive (_this select 0) || getDammage (_this select 0) > 0.8}; [_this select 1,'SUCCEEDED'] call BIS_fnc_taskSetState };
 	};
 
 	case "hvttruck": {
