@@ -56,19 +56,22 @@ if(["WMIK",(typeOf _Vehicle)] call BIS_fnc_inString || ["Coyote",(typeOf _Vehicl
 // Fix APS - Automatic Smoke
 _Vehicle setVariable["dapsCanSmoke",0,TRUE];
 
+// Add Smokegenerator and Smoke Screen Ammo
+_Vehicle addweaponTurret ["rhs_weap_smokegen",[-1]];
+_Vehicle AddMagazineTurret ["rhs_mag_smokegen",[-1]];
+
+for [{private _i = 0}, {_i < 6}, {_i = _i + 1}] do {
+	_Vehicle addMagazineTurret ["SmokeLauncherMag",[0,0]];
+	_Vehicle addMagazineTurret ["rhsusf_mag_L8A3_8",[0,0]];
+};
+
 if(_Vehicle isKindOf "Tank") exitWith {
 	//systemChat "Is tank, giving tracks";
 	["ACE_Track", _Vehicle,true] call ace_cargo_fnc_loadItem;
 	["ACE_Track", _Vehicle,true] call ace_cargo_fnc_loadItem;
 	["ACE_Track", _Vehicle,true] call ace_cargo_fnc_loadItem;
 	["ACE_Track", _Vehicle,true] call ace_cargo_fnc_loadItem;
-	_Vehicle addweaponTurret ["rhs_weap_smokegen",[-1]];
-	_Vehicle AddMagazineTurret ["rhs_mag_smokegen",[-1]];
 
-	for [{private _i = 0}, {_i < 6}, {_i = _i + 1}] do {
-		_Vehicle addMagazineTurret ["SmokeLauncherMag",[0,0]];
-		_Vehicle addMagazineTurret ["rhsusf_mag_L8A3_8",[0,0]];
-	};
 };
 
 if(_Vehicle isKindOf "Car") exitWith {

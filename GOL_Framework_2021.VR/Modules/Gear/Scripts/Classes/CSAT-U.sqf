@@ -15,7 +15,6 @@ if (_role in ["ag","ammg","lr","ab"]) then {
 };
 if (_role isEqualTo "crew") then {
 	_helmet = "H_HelmetLeaderO_oucamo";
-	_uniform = "U_O_CombatUniform_oucamo";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "H_PilotHelmetHeli_B";

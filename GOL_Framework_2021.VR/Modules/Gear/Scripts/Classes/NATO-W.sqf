@@ -38,7 +38,7 @@ if (_role isEqualTo "jetp") then {
 
 _silencer = "";
 _pointer = "acc_pointer_IR";
-_sight = "optic_Hamr_khk_F";
+_sight = "optic_hamr";
 _bipod = "";
 
 _rifle = ["arifle_MX_khk_F", _silencer, _pointer, _sight, _bipod];
@@ -54,9 +54,9 @@ _LMG = ["arifle_MX_SW_khk_F", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "100Rnd_65x39_caseless_khaki_mag";
 _LMG_mag_tr = "100Rnd_65x39_caseless_khaki_mag_Tracer";
 
-_MMG = ["LMG_Mk200_F", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "200Rnd_65x39_cased_Box";
-_MMG_mag_tr = "200Rnd_65x39_cased_Box_Tracer";
+_MMG = ["hlc_lmg_M60E4", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "hlc_200Rnd_762x51_M_M60E4";
+_MMG_mag_tr = "hlc_200Rnd_762x51_T_M60E4";
 
 _sight = "";
 
@@ -64,9 +64,9 @@ _LAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "MRAWS_HEAT_F";
 _LAT_ReUsable = true;
 
-_MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
-_MAT_mag = "MRAWS_HEAT_F";
-_MAT_mag_HE = "MRAWS_HE_F";
+_MAT = ["launch_I_Titan_short_F", _silencer, _pointer, _sight, _bipod];
+_MAT_mag = "Titan_AT";
+_MAT_mag_HE = "Titan_AP";
 
 _pistol = ["hgun_P07_khk_F", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "16Rnd_9x21_Mag";

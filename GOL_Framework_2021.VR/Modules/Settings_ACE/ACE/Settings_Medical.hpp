@@ -70,7 +70,7 @@ class ace_medical_fatalDamageSource {
 	force = 1;
 };
 class ace_medical_playerDamageThreshold {
-	value = 2;
+	value = 3;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -98,6 +98,12 @@ class ace_medical_gui_enableActions {
 	force = 0;
 };
 
+class ace_medical_feedback_bloodVolumeEffectType {
+	value = 2;
+	typeName = "SCALAR";
+	force = 0;
+};
+
 class ace_medical_statemachine_AIUnconsciousness {
 	value = 1;
 	typeName = "BOOL";
@@ -109,7 +115,7 @@ class ace_medical_statemachine_cardiacArrestTime {
 	force = 1;
 };
 class ace_medical_bleedingCoefficient {
-	value = 0.5;
+	value = 0.3;
 	typeName = "SCALAR";
 	force = 0;
 };
@@ -221,8 +227,53 @@ class ace_medical_treatment_allowSelfStitch {
 	force = 1;
 };
 
+class ace_medical_treatment_allowSharedEquipment {
+	value = 1;
+	typeName = "SCALAR";
+	force = 1;
+};
 
+class ace_medical_treatment_convertItems {
+	value = 1;
+	typeName = "SCALAR";
+	force = 1;
+};
 
+class ace_medical_treatment_treatmentTimeAutoinjector {
+	value = 3;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class ace_medical_treatment_treatmentTimeTourniquet {
+	value = 4;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class ace_medical_treatment_medicIV {
+	value = 1;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class ace_medical_treatment_locationIV {
+	value = 0;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class ace_medical_treatment_allowSelfIV {
+	value = 1;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class ace_medical_treatment_treatmentTimeIV {
+	value = 9;
+	typeName = "SCALAR";
+	force = 1;
+};
 /*
 class ace_medical_remoteControlledAI {
 	value = 0;
