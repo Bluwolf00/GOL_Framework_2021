@@ -1,1 +1,2 @@
-Fix Fallbacks for RifleL, Mag, TR etc.
+Fix Fallbacks for RifleL, Mag, TR etc. define in all factions
+Get OfficerHelmets for all factions.

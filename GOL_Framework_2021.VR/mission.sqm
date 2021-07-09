@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=4763;
+		nextID=4838;
 	};
 	class Camera
 	{
-		pos[]={58.577843,32.193344,84.169807};
-		dir[]={-0.6968413,-0.55117011,0.45896593};
-		up[]={-0.46030307,0.8343913,0.30317292};
-		aside[]={0.55005568,-7.4511627e-007,0.83514398};
+		pos[]={85.38678,32.193344,86.986916};
+		dir[]={-0.77522337,-0.63096321,0.030235345};
+		up[]={-0.63048387,0.77581275,0.0245902};
+		aside[]={0.038972478,0,0.99924028};
 	};
 };
 binarizationWanted=0;
@@ -336,7 +336,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=338;
+									items=341;
 									class Item0
 									{
 										class data
@@ -5069,6 +5069,48 @@ class CustomAttributes
 											value="emr_main_enableweightcheck";
 										};
 									};
+									class Item338
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_medical_treatment_treatmenttimeautoinjector";
+										};
+									};
+									class Item339
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_medical_treatment_treatmenttimetourniquet";
+										};
+									};
+									class Item340
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_medical_treatment_treatmenttimeiv";
+										};
+									};
 								};
 							};
 						};
@@ -5085,7 +5127,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=338;
+									items=341;
 									class Item0
 									{
 										class data
@@ -5336,7 +5378,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0.40000001;
+														value=0.50074589;
 													};
 												};
 												class Item1
@@ -5381,7 +5423,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=3;
+														value=5;
 													};
 												};
 												class Item1
@@ -5561,7 +5603,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -5876,7 +5918,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=300;
+														value=1;
 													};
 												};
 												class Item1
@@ -6326,7 +6368,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -20860,6 +20902,141 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item338
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=3;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item339
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=4;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item340
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=9;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -28125,7 +28302,7 @@ class Mission
 			position[]={198.32678,22.872955,58.810684};
 			name="spectator";
 			type="Empty";
-			angle=227.03738;
+			angle=227.03726;
 			id=609;
 			atlOffset=17.872955;
 		};

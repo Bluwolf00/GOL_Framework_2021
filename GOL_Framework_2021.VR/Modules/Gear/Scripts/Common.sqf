@@ -71,11 +71,12 @@ _IFAK = [[_bandage,2]];					//	Individual First Aid Kits
 _FAKSmall = [[_bandage,15]];			//	Medic Kit Small
 _FAKBig = [[_bandage,25],[_blood,1]];	//	Medic Kit Big
 if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
-	_bandage = "ACE_fieldDressing";
+	_bandage = "ACE_elasticBandage";
 	_blood = "ACE_bloodIV";
 	_epi = "ACE_epinephrine";
 	_morph = "ACE_morphine";
 	_tourn = "ACE_tourniquet";
+	_pak = "ACE_personalAidKit";
 	_IFAK = [[_bandage,6]];
 	if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {	// Advanced
 		_blood = "ACE_bloodIV";
@@ -108,14 +109,16 @@ if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
 			[_bandage,30],
 			[_morph,10],
 			[_tourn,4],
-			[_blood,3]
+			[_blood,3],
+			[_pak,1]
 		];
 		_FAKBig = [
 			[_bandage,40],
 			[_morph,15],
 			[_epi,10],
 			[_tourn,5],
-			[_blood,5]
+			[_blood,5],
+			[_pak,1]
 		];
 	};
 };

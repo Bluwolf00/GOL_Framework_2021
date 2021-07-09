@@ -1,14 +1,5 @@
+/*
 
-class ace_medical_level {
-	value = 1;
-	typeName = "SCALAR";
-	force = 1;
-};
-class ace_medical_medicSetting {
-	value = 1;
-	typeName = "SCALAR";
-	force = 1;
-};
 class ace_medical_increaseTrainingInLocations {
 	value = 0;
 	typeName = "BOOL";
@@ -24,26 +15,13 @@ class ace_medical_enableOverdosing {
 	typeName = "BOOL";
 	force = 1;
 };
-class ace_medical_bleedingCoefficient {
-	value = 1;
-	typeName = "SCALAR";
-	force = 0;
-};
-class ace_medical_painCoefficient {
-	value = 1;
-	typeName = "SCALAR";
-	force = 0;
-};
+
 class ace_medical_enableAirway {
 	value = 0;
 	typeName = "BOOL";
 	force = 1;
 };
-class ace_medical_enableFractures {
-	value = 0;
-	typeName = "BOOL";
-	force = 1;
-};
+
 class ace_medical_enableAdvancedWounds {
 	value = 0;
 	typeName = "BOOL";
@@ -59,8 +37,40 @@ class ace_medical_enableScreams {
 	typeName = "BOOL";
 	force = 1;
 };
+*/
+
+// Only Used to Define Bandages in GW Framework
+class ace_medical_level {
+	value = 1;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class ace_medical_medicSetting {
+	value = 1;
+	typeName = "SCALAR";
+	force = 1;
+};
+//
+
+class ace_medical_fractures {
+	value = 0;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class ace_medical_spontaneousWakeUpChance {
+	value = 0.5;
+	typeName = "SCALAR";
+	force = 1;
+};
+class ace_medical_fatalDamageSource {
+	value = 0;
+	typeName = "SCALAR";
+	force = 1;
+};
 class ace_medical_playerDamageThreshold {
-	value = 2.0;
+	value = 1.5;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -69,11 +79,151 @@ class ace_medical_AIDamageThreshold {
 	typeName = "SCALAR";
 	force = 1;
 };
-class ace_medical_enableUnconsciousnessAI {
+
+class ace_medical_ai_enabledFor {
+	value = 0;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class ace_medical_blood_enabledfor {
 	value = 2;
 	typeName = "SCALAR";
 	force = 1;
 };
+
+class ace_medical_gui_enableActions {
+	value = 0;
+	typeName = "SCALAR";
+	force = 0;
+};
+
+class ace_medical_statemachine_AIUnconsciousness {
+	value = 1;
+	typeName = "BOOL";
+	force = 1;
+};
+class ace_medical_statemachine_cardiacArrestTime {
+	value = 0;
+	typeName = "SCALAR";
+	force = 1;
+};
+class ace_medical_bleedingCoefficient {
+	value = 0.5;
+	typeName = "SCALAR";
+	force = 0;
+};
+class ace_medical_painCoefficient {
+	value = 0.5;
+	typeName = "SCALAR";
+	force = 0;
+};
+class ace_medical_ivFlowRate {
+	value = 5;
+	typeName = "SCALAR";
+	force = 0;
+};
+
+class ace_medical_treatment_advancedBandages {
+	value = 0;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class ace_medical_treatment_advancedDiagnose {
+	value = 0;
+	typeName = "BOOL";
+	force = 1;
+};
+
+class ace_medical_treatment_advancedMedication {
+	value = 0;
+	typeName = "BOOL";
+	force = 1;
+};
+
+class ace_medical_treatment_clearTraumaAfterBandage {
+	value = 1;
+	typeName = "BOOL";
+	force = 1;
+};
+
+class ace_medical_treatment_locationsBoostTraining {
+	value = 1;
+	typeName = "BOOL";
+	force = 1;
+};
+
+class ace_medical_treatment_allowLitterCreation {
+	value = 1;
+	typeName = "BOOL";
+};
+class ace_medical_treatment_litterCleanUpDelay {
+	value = 900;
+	typeName = "SCALAR";
+};
+
+class ace_medical_treatment_medicEpinephrine {
+	value = 0;
+	typeName = "SCALAR";
+	force = 1;
+};
+class ace_medical_treatment_locationEpinephrine {
+	value = 0;
+	typeName = "SCALAR";
+	force = 1;
+};
+class ace_medical_treatment_medicPAK {
+	value = 0;
+	typeName = "SCALAR";
+	force = 1;
+};
+class ace_medical_treatment_locationPAK {
+	value = 0;
+	typeName = "SCALAR";
+	force = 1;
+};
+class ace_medical_treatment_consumePAK {
+	value = 0;
+	typeName = "SCALAR";
+	force = 1;
+};
+class ace_medical_treatment_allowSelfPAK {
+	value = 1;
+	typeName = "SCALAR";
+	force = 1;
+};
+class ace_medical_treatment_timeCoefficientPAK {
+	value = 1.5;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class ace_medical_treatment_medicSurgicalKit {
+	value = 1;
+	typeName = "SCALAR";
+	force = 1;
+};
+class ace_medical_treatment_locationSurgicalKit {
+	value = 0;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class ace_medical_treatment_consumeSurgicalKit {
+	value = 0;
+	typeName = "SCALAR";
+	force = 1;
+};
+class ace_medical_treatment_allowSelfStitch {
+	value = 1;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+
+
+/*
 class ace_medical_remoteControlledAI {
 	value = 0;
 	typeName = "BOOL";
@@ -89,74 +239,13 @@ class ace_medical_allowDeadBodyMovement {	// Remove ?
 	typeName = "BOOL";
 	force = 1;
 };
-class ace_medical_allowLitterCreation {
-	value = 1;
-	typeName = "BOOL";
-};
-class ace_medical_litterCleanUpDelay {
-	value = 900;
-	typeName = "SCALAR";
-};
-class ace_medical_medicSetting_basicEpi {
-	value = 0;
-	typeName = "SCALAR";
-	force = 1;
-};
-class ace_medical_useLocation_basicEpi {
-	value = 0;
-	typeName = "SCALAR";
-	force = 1;
-};
-class ace_medical_medicSetting_PAK {
-	value = 0;
-	typeName = "SCALAR";
-	force = 1;
-};
-class ace_medical_consumeItem_PAK {
-	value = 0;
-	typeName = "SCALAR";
-	force = 1;
-};
-class ace_medical_useCondition_PAK {
-	value = 0;
-	typeName = "SCALAR";
-	force = 1;
-};
-class ace_medical_useLocation_PAK {
-	value = 0;
-	typeName = "SCALAR";
-	force = 1;
-};
-class ace_medical_medicSetting_SurgicalKit {
-	value = 0;
-	typeName = "SCALAR";
-	force = 1;
-};
-class ace_medical_consumeItem_SurgicalKit {
-	value = 0;
-	typeName = "SCALAR";
-	force = 1;
-};
-class ace_medical_useCondition_SurgicalKit {
-	value = 0;
-	typeName = "SCALAR";
-	force = 1;
-};
-class ace_medical_useLocation_SurgicalKit {
-	value = 0;
-	typeName = "SCALAR";
-	force = 1;
-};
+
 class ace_medical_keepLocalSettingsSynced {
 	value = 1;
 	typeName = "BOOL";
 	force = 1;
 };
-class ace_medical_healHitPointAfterAdvBandage {
-	value = 0;
-	typeName = "BOOL";
-	force = 1;
-};
+
 class ace_medical_painIsOnlySuppressed {
 	value = 1;
 	typeName = "BOOL";
@@ -194,32 +283,4 @@ class ace_medical_amountOfReviveLives {
 	force = 1;
 };
 
-class ace_medical_ai_enabledFor {
-	value = 0;
-	typeName = "SCALAR";
-	force = 1;
-};
 
-class ace_medical_blood_enabledfor {
-	value = 2;
-	typeName = "SCALAR";
-	force = 1;
-};
-
-class ace_medical_treatment_advancedBandages {
-	value = 0;
-	typeName = "SCALAR";
-	force = 1;
-};
-
-class ace_medical_treatment_advancedDiagnose {
-	value = 0;
-	typeName = "BOOL";
-	force = 1;
-};
-
-class ace_medical_gui_enableActions {
-	value = 0;
-	typeName = "SCALAR";
-	force = 0;
-};
