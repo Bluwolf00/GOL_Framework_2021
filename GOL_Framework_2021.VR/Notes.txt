@@ -1,2 +1,12 @@
 Fix Fallbacks for RifleL, Mag, TR etc. define in all factions
 Get OfficerHelmets for all factions.
+
+LDF H_Beret_EAF_01_F
+CSAT 
+Soviet rhs_pilotka
+Russian W - rhs_ushanka
+Flekt cap_CADPAT
+usmc w rhs_8point_marpatwd
+usmc d rhs_8point_marpatd
+olive generic rhsgref_hat_M1951
+aaf H_MilCap_dgtl

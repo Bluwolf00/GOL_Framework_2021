@@ -13,7 +13,7 @@ _glflareR = "";
 
 _goggles = "";
 _helmet = ["rhs_ssh60"] call BIS_fnc_selectRandom;
-_OfficerHelmet = "rhs_beret_vdv3";
+_OfficerHelmet = "rhs_pilotka";
 _uniform = "rhs_uniform_afghanka_para";
 _vest = "rhsgref_6b23_khaki";
 _backpack = "rhs_sidor";

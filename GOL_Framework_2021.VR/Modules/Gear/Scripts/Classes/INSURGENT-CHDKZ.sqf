@@ -5,7 +5,7 @@ _allowedNightStuff = false;
 
 _goggles = selectRandom ["G_Bandanna_oli","G_Balaclava_oli",""];
 _helmet = selectRandom ["","rhs_ssh68","rhsgref_M56"];
-_OfficerHelmet = "rhs_beret_vdv3";
+_OfficerHelmet = "H_Beret_blk";
 _uniform = selectRandom ["LOP_U_ChDKZ_Fatigue_02","LOP_U_ChDKZ_Fatigue_03","LOP_U_ChDKZ_Fatigue_04"];
 _vest = selectRandom ["rhsgref_6b23_khaki_rifleman","rhsgref_6b23_khaki","rhsgref_6b23_khaki_sniper","rhsgref_6b23_khaki_medic"];
 _backpack = "rhs_sidor";

@@ -1,10 +1,8 @@
 _allowedNightStuff = false;
 
-
-
 _goggles = "";
 _helmet = selectRandom ["LOP_H_Shemag_TAN","","LOP_H_Turban","LOP_H_Turban_Mask","LOP_H_Pakol"];
-_OfficerHelmet = "rhs_beret_vdv3";
+_OfficerHelmet = "H_Beret_blk";
 _uniform = selectRandom ["LOP_U_AM_Fatigue_01","LOP_U_AM_Fatigue_02_3","LOP_U_AM_Fatigue_01_4","LOP_U_AM_Fatigue_01_6","LOP_U_AM_Fatigue_01_5","LOP_U_AM_Fatigue_02_3","LOP_U_AM_Fatigue_02_5"];
 _vest = selectRandom ["V_HarnessO_gry","V_BandollierB_rgr"];
 _backpack = "B_AssaultPack_cbr";

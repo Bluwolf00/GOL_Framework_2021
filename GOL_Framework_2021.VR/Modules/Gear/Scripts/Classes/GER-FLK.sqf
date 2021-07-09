@@ -1,7 +1,7 @@
 // Cloths
 _goggles = "G_Balaclava_TI_blk_F";
 _helmet = "helmet_lwh_FLECKTARN";
-_OfficerHelmet = "rhs_beret_vdv3";
+_OfficerHelmet = "cap_CADPAT";
 _uniform = SelectRandom ["Uniform_Full_FLECKTARN","Uniform_Rolled_FLECKTARN"];
 _vest = "vest_spc_rifleman_FLECKTARN";
 _backpack = "FLECKTARN_Kitbag";

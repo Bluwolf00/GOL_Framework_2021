@@ -15,7 +15,7 @@ class ace_advanced_fatigue_performanceFactor {
 	force = 1;
 };
 class ace_advanced_fatigue_recoveryFactor {
-	value = 3;
+	value = 2;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -30,6 +30,11 @@ class ace_advanced_fatigue_terrainGradientFactor {
 	force = 1;
 };
 
+class ace_advanced_fatigue_swayFactor {
+	value = 1;
+	typeName = "SCALAR";
+	force = 1;
+};
 // -------------------------------------------
 
 class ace_advanced_throwing_enabled {

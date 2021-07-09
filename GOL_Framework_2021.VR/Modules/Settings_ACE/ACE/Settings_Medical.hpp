@@ -120,7 +120,7 @@ class ace_medical_bleedingCoefficient {
 	force = 0;
 };
 class ace_medical_painCoefficient {
-	value = 0.5;
+	value = 0.8;
 	typeName = "SCALAR";
 	force = 0;
 };

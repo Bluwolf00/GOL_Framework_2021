@@ -1,7 +1,7 @@
 
 _goggles = "";
 _helmet = "helmet_plain_MTP";
-_OfficerHelmet = "rhs_beret_vdv3";
+_OfficerHelmet = "beret_Maroon";
 _uniform = "Uniform_Full_MTP";
 _vest = "vest_spc_rifleman_MTP";
 _backpack = "MTP_Kitbag";

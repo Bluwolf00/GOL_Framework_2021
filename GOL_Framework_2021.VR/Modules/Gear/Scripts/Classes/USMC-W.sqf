@@ -2,7 +2,7 @@
 
 _goggles = "rhs_googles_clear";
 _helmet = selectRandom ["rhsusf_lwh_helmet_marpatwd_ess","rhsusf_lwh_helmet_marpatwd"];
-_OfficerHelmet = "rhs_beret_vdv3";
+_OfficerHelmet = "rhs_8point_marpatwd";
 _uniform = "rhs_uniform_FROG01_wd";
 _vest = "rhsusf_spc_light";
 _backpack = "rhsusf_falconii_coy_gr";

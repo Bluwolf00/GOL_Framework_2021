@@ -1,7 +1,7 @@
 // Cloths
 _goggles = "";
 _helmet = "helmet_lwh_M98";
-_OfficerHelmet = "rhs_beret_vdv3";
+_OfficerHelmet = "beret_Maroon";
 _uniform = SelectRandom ["Uniform_Full_M98","Uniform_Rolled_M98"];
 _vest = "vest_spc_radio_M98";
 _backpack = "M98_Assaultpack";

@@ -1,6 +1,6 @@
 
 _goggles = "";
-_OfficerHelmet = "rhs_beret_vdv3";
+_OfficerHelmet = "H_MilCap_dgtl";
 _helmet = selectRandom ["H_HelmetIA_net","H_HelmetIA_camo","H_HelmetIA"];
 _uniform = selectRandom ["U_I_CombatUniform","U_I_CombatUniform_shortsleeve","U_I_CombatUniform_tshirt"];
 _vest = selectRandom ["V_PlateCarrierIA2_dgtl","V_PlateCarrierIA1_dgtl"];

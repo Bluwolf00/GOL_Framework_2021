@@ -6,7 +6,7 @@ _allowedNightStuff = false;
 
 _goggles = "";
 _helmet = selectRandom ["H_Bandanna_cbr","","","H_Beret_blk","H_Booniehat_oli","H_Cap_Oli","rhsgref_helmet_M1_painted"];
-_OfficerHelmet = "rhs_beret_vdv3";
+_OfficerHelmet = "H_Beret_blk";
 _uniform = selectRandom ["LOP_U_AFR_Civ_01","LOP_U_AFR_Civ_02","LOP_U_AFR_Civ_03","LOP_U_AFR_Civ_04","LOP_U_AFR_Civ_05","LOP_U_AFR_Civ_06","Uniform_Tanktop_WZ2000","Uniform_Tanktop_VZ95","Uniform_Tanktop_OLIVE"];
 _vest = selectRandom ["rhsgref_chestrig","rhsgref_chicom","V_HarnessO_gry","rhsgref_otv_khaki"];
 _backpack = "rhs_sidor";

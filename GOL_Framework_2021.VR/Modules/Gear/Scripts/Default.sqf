@@ -298,7 +298,7 @@ switch (toLower(_role)) do {
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
 		[[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
-		[[_grenademini,2],[_grenade,2],[_rifle_mag_tr,6]] call _addToVest;
+		[[_grenademini,2],[_grenade,2],[_rifle_mag_tr,6],[_glHE,6],[_glsmokeR,3]] call _addToVest;
 		[[_MAT_mag,2]] call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {

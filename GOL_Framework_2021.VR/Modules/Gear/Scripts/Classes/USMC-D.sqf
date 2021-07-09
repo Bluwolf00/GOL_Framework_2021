@@ -1,7 +1,7 @@
 
 _goggles = "";
 _helmet = "rhsusf_lwh_helmet_marpatd";
-_OfficerHelmet = "rhs_beret_vdv3";
+_OfficerHelmet = "rhs_8point_marpatd";
 _uniform = "rhs_uniform_FROG01_d";
 _vest = "rhsusf_spc_rifleman";
 _backpack = "rhsusf_assault_eagleaiii_coy_mg";

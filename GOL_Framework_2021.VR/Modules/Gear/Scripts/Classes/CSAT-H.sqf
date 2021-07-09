@@ -1,7 +1,7 @@
 
 _goggles = "";
-_helmet = "H_HelmetAggressor_F";
-_OfficerHelmet = "rhs_beret_vdv3";
+_helmet = "rhs_stsh81_butan";
+_OfficerHelmet = "H_Beret_CSAT_01_F";
 _uniform = "U_O_CombatUniform_ocamo";
 _vest = "V_HarnessOSpec_brn";
 _backpack = "B_FieldPack_ocamo";
