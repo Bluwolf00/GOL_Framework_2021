@@ -19,6 +19,11 @@ execVM "Scripts\NEKY_Supply\Ace_Med.sqf";
 
 /* ---- DO NOT EDIT THE ABOVE -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
+GOL_MAGNIFIED_OPTICS = 1;
+GOL_ARSENAL_ALLOWED = 1;
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 /*	Initiate Paradrop / AI Helicopter Pickup Scripts - Uncomment below to activate	*/
 //[] execVM "Scripts\NEKY_Paradrop\Init.sqf";
 //[] execVM "Scripts\NEKY_Pickup\ACE_PickUp.sqf";
