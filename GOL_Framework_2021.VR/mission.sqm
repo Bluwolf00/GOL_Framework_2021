@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=4938;
+		nextID=4963;
 	};
 	class Camera
 	{
-		pos[]={32.799824,83.601898,124.23089};
-		dir[]={0.25575849,-0.55476201,-0.7917335};
-		up[]={0.1705315,0.83200616,-0.52790183};
-		aside[]={-0.95158726,8.9872628e-008,-0.30739766};
+		pos[]={46.344955,26.438107,121.14141};
+		dir[]={0.20740514,-0.64966637,-0.73138011};
+		up[]={0.17724372,0.7602194,-0.62502086};
+		aside[]={-0.96206439,0,-0.27282268};
 	};
 };
 binarizationWanted=0;
@@ -21119,7 +21119,7 @@ class Mission
 											class PositionInfo
 											{
 												position[]={48.094723,5.0014391,90.97876};
-												angles[]={-0,0.11194798,0};
+												angles[]={0,0.11194798,0};
 											};
 											side="West";
 											flags=6;
@@ -23392,7 +23392,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={109.0288,5.149631,37.791061};
-										angles[]={-0,0.011088285,0};
+										angles[]={0,0.011088285,0};
 									};
 									side="Empty";
 									flags=4;
@@ -27744,7 +27744,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={7.9504757,5,71.443291};
-								angles[]={-0,1.6311014,0};
+								angles[]={0,1.6311014,0};
 							};
 							name="HC2";
 							isPlayable=1;
@@ -27758,7 +27758,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={7.7109737,5,67.450432};
-								angles[]={-0,1.6311014,0};
+								angles[]={0,1.6311014,0};
 							};
 							name="HC3";
 							isPlayable=1;
@@ -27772,7 +27772,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={3.9597533,5,71.684814};
-								angles[]={-0,1.6311014,0};
+								angles[]={0,1.6311014,0};
 							};
 							title="Headless Clients";
 							id=272;
@@ -27783,7 +27783,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={8.1927853,5,75.436089};
-								angles[]={-0,1.6311014,0};
+								angles[]={0,1.6311014,0};
 							};
 							name="HC1";
 							isPlayable=1;
@@ -27804,7 +27804,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={71.856873,5,43.207977};
-										angles[]={-0,0.11193988,0};
+										angles[]={0,0.11193988,0};
 									};
 									title="MHQ 1";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Small";
@@ -27816,7 +27816,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={65.970085,5,43.499241};
-										angles[]={-0,0.06433028,0};
+										angles[]={0,0.06433028,0};
 									};
 									title="MHQ 2";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
@@ -27828,7 +27828,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={66.031418,7.2059455,43.877125};
-										angles[]={-0,6.2733994,0};
+										angles[]={0,6.2733994,0};
 									};
 									side="Empty";
 									flags=4;
@@ -27871,7 +27871,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={58.015404,5,41.550293};
-										angles[]={-0,0.067988493,0};
+										angles[]={0,0.067988493,0};
 									};
 									title="MHQ 3";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Assembled as FOB (Large H-Barrier Compound, TEST before confirming its use!)";
@@ -27883,7 +27883,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={71.646049,7.1761513,42.91058};
-										angles[]={-0,0.0073909461,0};
+										angles[]={0,0.0073909461,0};
 									};
 									side="Empty";
 									flags=4;
@@ -27926,7 +27926,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={57.977501,7.3134775,41.630814};
-										angles[]={-0,6.2797446,0};
+										angles[]={0,6.2797446,0};
 									};
 									side="Empty";
 									flags=4;
@@ -27979,7 +27979,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={93.985146,5.6349964,41.903625};
-										angles[]={-0,0.057977352,0};
+										angles[]={0,0.057977352,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28019,7 +28019,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={109.18713,5,42.588703};
-										angles[]={-0,0.011088285,0};
+										angles[]={0,0.011088285,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28036,7 +28036,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={94.025742,5,41.761383};
-										angles[]={-0,0.057977352,0};
+										angles[]={0,0.057977352,0};
 									};
 									title="Mobile Service Station";
 									description="This also adds pylon configuration options";
@@ -28048,7 +28048,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={109.13932,5,41.86462};
-										angles[]={-0,0.011088285,0};
+										angles[]={0,0.011088285,0};
 									};
 									title="Service Station";
 									description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor.";
@@ -28083,7 +28083,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={78.020706,7.5393777,43.028358};
-										angles[]={-0,0.00065407134,0};
+										angles[]={0,0.00065407134,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28123,7 +28123,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={84.032806,7.1761513,42.964233};
-										angles[]={-0,0.00063570222,0};
+										angles[]={0,0.00063570222,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28289,7 +28289,7 @@ class Mission
 			position[]={198.32678,22.872955,58.810684};
 			name="spectator";
 			type="Empty";
-			angle=227.03709;
+			angle=227.03706;
 			id=609;
 			atlOffset=17.872955;
 		};
@@ -28324,7 +28324,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={78.026321,5,41.901371};
-				angles[]={-0,3.9513838,0};
+				angles[]={0,3.9513838,0};
 			};
 			title="Mechanized / Motorized Setup";
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -28336,7 +28336,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={84.294914,5,43.528767};
-				angles[]={-0,3.9513655,0};
+				angles[]={0,3.9513655,0};
 			};
 			title="Mechanized / Motorized Setup";
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
