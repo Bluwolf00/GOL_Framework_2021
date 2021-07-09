@@ -2,6 +2,7 @@
 
 ISNILS(_rifleC,_rifle);
 ISNILS(_rifleGL,_rifle);
+ISNILS(_rifleL,_rifle);
 ISNILS(_rifleMarksman,_rifle);
 ISNILS(_LMG,_rifle);
 ISNILS(_MMG,_LMG);
@@ -14,6 +15,8 @@ ISNILS(_rifleC_mag,_rifle_mag);
 ISNILS(_rifleC_mag_tr,_rifleC_mag);
 ISNILS(_rifleGL_mag,_rifle_mag);
 ISNILS(_rifleGL_mag_tr,_rifleGL_mag);
+ISNILS(_rifleL_mag,_rifle_mag);
+ISNILS(_rifleL_mag_tr,_rifleL_mag);
 ISNILS(_rifleMarksman_mag,_rifle_mag);
 ISNILS(_rifleMarksman_mag_tr,_rifleMarksman_mag);
 ISNILS(_LMG_mag_tr,_LMG_mag);

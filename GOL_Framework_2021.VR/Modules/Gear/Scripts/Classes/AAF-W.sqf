@@ -43,6 +43,7 @@ _bipod = "";
 _rifle = ["arifle_Mk20_F", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["arifle_Mk20C_F", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["arifle_Mk20_GL_F", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["arifle_Mk20_F", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_556x45_Stanag";
 _rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Yellow";
 

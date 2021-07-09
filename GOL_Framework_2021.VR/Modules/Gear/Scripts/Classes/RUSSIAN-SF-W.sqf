@@ -47,6 +47,8 @@ _bipod = "rhs_acc_grip_rk2";
 _rifle = ["rhs_weap_asval_grip", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["rhs_weap_aks74u", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["rhs_weap_ak74m_fullplum_gp25", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["rhs_weap_asval_grip", _silencer, _pointer, _sight, _bipod];
+
 _rifle_mag = "rhs_20rnd_9x39mm_SP6";
 _rifleC_mag = "rhs_30Rnd_545x39_7N22_camo_AK";
 _rifleC_mag_tr = "rhs_30Rnd_545x39_AK_green";

@@ -50,6 +50,7 @@ _bipod = "";
 _rifle = ["hlc_rifle_aks74", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["hlc_rifle_aks74u", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["hlc_rifle_aks74_GL", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["hlc_rifle_aks74", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_545x39_Mag_F";
 _rifle_mag_tr = "30Rnd_545x39_Mag_Tracer_F";
 

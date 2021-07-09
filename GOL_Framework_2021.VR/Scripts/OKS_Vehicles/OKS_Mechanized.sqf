@@ -3,7 +3,7 @@
 if(!isServer) exitWith {};
 
 Params ["_Vehicle"];
-Private _Debug_Variable = true;
+Private _Debug_Variable = false;
 
 _Vehicle disableTIEquipment true;
 [_Vehicle, 30] call ace_cargo_fnc_setSpace;

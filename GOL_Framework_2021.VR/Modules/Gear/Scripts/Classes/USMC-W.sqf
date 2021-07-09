@@ -52,6 +52,7 @@ _bipod = "";
 _rifle = ["rhs_weap_m4a1_blockII_bk", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["rhsusf_weap_MP7A2", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["rhs_weap_m4a1_blockII_M203_bk", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["rhs_weap_m4a1_blockII_bk", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_556x45_Stanag";
 _rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 _rifleC_mag = "rhsusf_mag_40Rnd_46x30_FMJ";

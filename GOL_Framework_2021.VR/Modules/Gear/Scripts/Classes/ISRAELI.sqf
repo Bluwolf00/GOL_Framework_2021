@@ -53,6 +53,7 @@ _bipod = "";
 _rifle = ["TAR21_Black", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["CTAR21_Black", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["GTAR21_EGLM_Black", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["TAR21_Black", _silencer, _pointer, _sight, _bipod];
 _rifleMarksman = ["rhs_weap_sr25", _silencer, _pointer, "hlc_optic_leupoldm3a", _bipod];
 _rifle_mag = "hlc_30rnd_556x45_EPR_G36";
 _rifle_mag_tr = "hlc_30rnd_556x45_Tracers_G36";

@@ -46,6 +46,7 @@ _bipod = "";
 _rifle = ["L85A3_LDS_Flashlight", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["UK3CB_BAF_L22A2", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["L85A3UGL_EOT552_Flashlight", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["L85A3_LDS_Flashlight", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "UK3CB_BAF_556_30Rnd";
 _rifle_mag_tr = "UK3CB_BAF_556_30Rnd_T";
 _rifleC_mag = "UK3CB_BAF_556_30Rnd";

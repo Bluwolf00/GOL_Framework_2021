@@ -45,6 +45,7 @@ _bipod = "";
 _rifle = ["hlc_rifle_G36MLIC", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["hlc_rifle_G36MLIC", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["hlc_rifle_G36MLIAG36", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["hlc_rifle_G36MLIC", _silencer, _pointer, _sight, _bipod];
 _rifleMarksman = ["hlc_rifle_G36MLIC", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_65x39_caseless_black_mag";
 _rifle_mag_tr = "30Rnd_65x39_caseless_black_mag_Tracer";
