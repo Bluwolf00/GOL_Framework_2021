@@ -70,7 +70,7 @@ class ace_medical_fatalDamageSource {
 	force = 1;
 };
 class ace_medical_playerDamageThreshold {
-	value = 1.5;
+	value = 2;
 	typeName = "SCALAR";
 	force = 1;
 };
