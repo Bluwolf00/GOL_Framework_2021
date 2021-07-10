@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={129.75899,32.728642,34.102192};
-		dir[]={-0.58085918,-0.40027535,0.70880145};
-		up[]={-0.25371942,0.91639215,0.30960348};
-		aside[]={0.77346414,3.8091093e-007,0.63385344};
+		pos[]={38.902225,81.380852,1.4538866};
+		dir[]={0.94328976,-0.31066778,-0.11721888};
+		up[]={0.30840802,0.95048475,-0.038323872};
+		aside[]={-0.12332035,6.0594175e-008,-0.99239171};
 	};
 };
 binarizationWanted=0;
@@ -20072,7 +20072,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0.50488955;
+														value=0.80;
 													};
 												};
 												class Item1
@@ -22885,7 +22885,7 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={43.403027,5.0014391,60.735901};
+												position[]={44.816849,5.0014391,62.879143};
 												angles[]={0,0.019480437,0};
 											};
 											side="West";
@@ -22941,7 +22941,7 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={46.147293,5.0014391,60.600685};
+												position[]={46.924816,5.0014391,62.768894};
 												angles[]={0,0.019480437,0};
 											};
 											side="West";
@@ -22996,7 +22996,7 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={48.451275,5.0014391,60.269112};
+												position[]={49.213673,5.0014391,62.78801};
 												angles[]={0,0.019480437,0};
 											};
 											side="West";
@@ -23051,7 +23051,7 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={50.549328,5.0014391,60.237976};
+												position[]={51.551506,5.0014391,62.696861};
 												angles[]={0,0.019480437,0};
 											};
 											side="West";
@@ -23106,7 +23106,7 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={52.68301,5.0014391,60.034775};
+												position[]={53.476833,5.0014391,62.668652};
 												angles[]={0,0.019480437,0};
 											};
 											side="West";
@@ -23161,7 +23161,7 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={55.202976,5.0014391,60.038643};
+												position[]={55.652119,5.0014391,62.814278};
 												angles[]={0,0.019480437,0};
 											};
 											side="West";
@@ -23932,7 +23932,7 @@ class Mission
 												name="e1a";
 												description="Squad Leader@1-1 Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1667;
 											type="O_Soldier_SL_F";
@@ -23953,7 +23953,7 @@ class Mission
 												name="e1m";
 												description="Squad Medic@1-1 Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1669;
 											type="O_Soldier_F";
@@ -24010,7 +24010,7 @@ class Mission
 												name="e1a1";
 												description="Fire Team Leader@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1671;
 											type="O_Soldier_TL_F";
@@ -24031,7 +24031,7 @@ class Mission
 												name="e1a2";
 												description="Rifleman@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1673;
 											type="O_Soldier_F";
@@ -24052,7 +24052,7 @@ class Mission
 												name="e1a3";
 												description="Grenadier@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1675;
 											type="O_Soldier_GL_F";
@@ -24072,7 +24072,7 @@ class Mission
 												name="e1a4";
 												description="Asst. Gunner@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1677;
 											type="O_medic_F";
@@ -24094,7 +24094,7 @@ class Mission
 												name="e1a5";
 												description="Automatic Rifleman@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1679;
 											type="O_Soldier_AR_F";
@@ -24128,7 +24128,7 @@ class Mission
 												name="e1b1";
 												description="Fire Team Leader@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1682;
 											type="O_Soldier_TL_F";
@@ -24149,7 +24149,7 @@ class Mission
 												name="e1b2";
 												description="Rifleman@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1684;
 											type="O_Soldier_F";
@@ -24170,7 +24170,7 @@ class Mission
 												name="e1b3";
 												description="Grenadier@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1686;
 											type="O_Soldier_GL_F";
@@ -24190,7 +24190,7 @@ class Mission
 												name="e1b4";
 												description="Asst. Gunner@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1688;
 											type="O_medic_F";
@@ -24212,7 +24212,7 @@ class Mission
 												name="e1b5";
 												description="Automatic Rifleman@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1690;
 											type="O_Soldier_AR_F";
@@ -24246,7 +24246,7 @@ class Mission
 												name="e1c1";
 												description="Fire Team Leader@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1692;
 											type="O_Soldier_TL_F";
@@ -24290,7 +24290,7 @@ class Mission
 												name="e1c2";
 												description="Rifleman@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1694;
 											type="O_Soldier_F";
@@ -24334,7 +24334,7 @@ class Mission
 												name="e1c3";
 												description="Grenadier@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1696;
 											type="O_Soldier_GL_F";
@@ -24377,7 +24377,7 @@ class Mission
 												name="e1c4";
 												description="Asst. Gunner@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1698;
 											type="O_medic_F";
@@ -24422,7 +24422,7 @@ class Mission
 												name="e1c5";
 												description="Automatic Rifleman@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1700;
 											type="O_Soldier_AR_F";
@@ -24468,8 +24468,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={82.534233,5.0014391,68.377342};
-												angles[]={0,0.019480437,0};
+												position[]={83.218224,5.0014391,67.425949};
+												angles[]={0,0.042348113,0};
 											};
 											side="East";
 											flags=7;
@@ -24477,7 +24477,7 @@ class Mission
 											{
 												description="Vehicle Commander@Pig";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1736;
 											type="O_crew_F";
@@ -24529,8 +24529,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={84.616776,5.0014391,68.409294};
-												angles[]={0,0.019480437,0};
+												position[]={85.300949,5.0014391,67.410271};
+												angles[]={0,0.042348113,0};
 											};
 											side="East";
 											flags=5;
@@ -24538,7 +24538,7 @@ class Mission
 											{
 												description="Vehicle Driver@Pig";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1738;
 											type="O_crew_F";
@@ -24590,8 +24590,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={86.741898,5.0014391,68.357262};
-												angles[]={0,0.019480437,0};
+												position[]={87.424324,5.0014391,67.309662};
+												angles[]={0,0.042348113,0};
 											};
 											side="East";
 											flags=5;
@@ -24599,7 +24599,7 @@ class Mission
 											{
 												description="Vehicle Gunner@Pig";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1740;
 											type="O_crew_F";
@@ -24686,7 +24686,7 @@ class Mission
 												name="e2a";
 												description="Squad Leader@1-2 Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1702;
 											type="O_Soldier_SL_F";
@@ -24707,7 +24707,7 @@ class Mission
 												name="e2m";
 												description="Squad Medic@1-2 Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1704;
 											type="O_Soldier_F";
@@ -24764,7 +24764,7 @@ class Mission
 												name="e2a1";
 												description="Fire Team Leader@1-2 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1706;
 											type="O_Soldier_TL_F";
@@ -24785,7 +24785,7 @@ class Mission
 												name="e2a2";
 												description="Rifleman@1-2 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1708;
 											type="O_Soldier_F";
@@ -24806,7 +24806,7 @@ class Mission
 												name="e2a3";
 												description="Grenadier@1-2 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1710;
 											type="O_Soldier_GL_F";
@@ -24826,7 +24826,7 @@ class Mission
 												name="e2a4";
 												description="Asst. Gunner@1-2 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1712;
 											type="O_medic_F";
@@ -24848,7 +24848,7 @@ class Mission
 												name="e2a5";
 												description="Automatic Rifleman@1-2 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1714;
 											type="O_Soldier_AR_F";
@@ -24882,7 +24882,7 @@ class Mission
 												name="e2b1";
 												description="Fire Team Leader@1-2 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1716;
 											type="O_Soldier_TL_F";
@@ -24903,7 +24903,7 @@ class Mission
 												name="e2b2";
 												description="Rifleman@1-2 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1718;
 											type="O_Soldier_F";
@@ -24924,7 +24924,7 @@ class Mission
 												name="e2b3";
 												description="Grenadier@1-2 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1720;
 											type="O_Soldier_GL_F";
@@ -24944,7 +24944,7 @@ class Mission
 												name="e2b4";
 												description="Asst. Gunner@1-2 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1722;
 											type="O_medic_F";
@@ -24966,7 +24966,7 @@ class Mission
 												name="e2b5";
 												description="Automatic Rifleman@1-2 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1724;
 											type="O_Soldier_AR_F";
@@ -25000,7 +25000,7 @@ class Mission
 												name="e2c1";
 												description="Fire Team Leader@1-2 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1726;
 											type="O_Soldier_TL_F";
@@ -25044,7 +25044,7 @@ class Mission
 												name="e2c2";
 												description="Rifleman@1-2 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1728;
 											type="O_Soldier_F";
@@ -25088,7 +25088,7 @@ class Mission
 												name="e2c3";
 												description="Grenadier@1-2 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1730;
 											type="O_Soldier_GL_F";
@@ -25131,7 +25131,7 @@ class Mission
 												name="e2c4";
 												description="Asst. Gunner@1-2 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1732;
 											type="O_medic_F";
@@ -25176,7 +25176,7 @@ class Mission
 												name="e2c5";
 												description="Automatic Rifleman@1-2 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1734;
 											type="O_Soldier_AR_F";
@@ -25232,8 +25232,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={78.554329,5.0014391,64.379532};
-												angles[]={0,0.028829068,0};
+												position[]={79.981926,5.0014391,62.834633};
+												angles[]={0,0.033686601,0};
 											};
 											side="East";
 											flags=7;
@@ -25243,7 +25243,7 @@ class Mission
 												name="eecho1";
 												description=" @Echo 1";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1742;
 											type="O_Pilot_F";
@@ -25266,8 +25266,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={81.059486,5.0014391,64.517258};
-												angles[]={0,0.028829068,0};
+												position[]={82.487724,5.0014391,62.960186};
+												angles[]={0,0.033686601,0};
 											};
 											side="East";
 											flags=7;
@@ -25276,7 +25276,7 @@ class Mission
 												name="eecho2";
 												description=" @Echo 2";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1744;
 											type="O_Pilot_F";
@@ -25299,8 +25299,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={83.71537,5.0014391,64.689804};
-												angles[]={0,0.028829068,0};
+												position[]={85.162048,5.0014391,62.93951};
+												angles[]={0,0.033686601,0};
 											};
 											side="East";
 											flags=7;
@@ -25309,7 +25309,7 @@ class Mission
 												name="eecho3";
 												description=" @Echo 3";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1746;
 											type="O_Pilot_F";
@@ -25332,8 +25332,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={86.655479,5.0014391,64.819397};
-												angles[]={0,0.028829068,0};
+												position[]={87.165543,5.0014391,62.931549};
+												angles[]={0,0.033686601,0};
 											};
 											side="East";
 											flags=7;
@@ -25342,7 +25342,7 @@ class Mission
 												name="eecho4";
 												description=" @Echo 4";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1748;
 											type="O_Pilot_F";
@@ -25365,8 +25365,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={89.19162,5.0014391,64.894913};
-												angles[]={0,0.028829068,0};
+												position[]={89.256287,5.0014391,63.058235};
+												angles[]={0,0.033686601,0};
 											};
 											side="East";
 											flags=7;
@@ -25375,7 +25375,7 @@ class Mission
 												name="eecho5";
 												description=" @Echo 5";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1750;
 											type="O_Pilot_F";
@@ -25398,8 +25398,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={91.896866,5.0014391,65.050552};
-												angles[]={0,0.028829068,0};
+												position[]={91.598404,5.0014391,63.133728};
+												angles[]={0,0.033686601,0};
 											};
 											side="East";
 											flags=7;
@@ -25408,7 +25408,7 @@ class Mission
 												name="eecho6";
 												description=" @Echo 6";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1752;
 											type="O_Pilot_F";
@@ -25707,7 +25707,7 @@ class Mission
 												name="epl";
 												description="Platoon Leader@1-Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1663;
 											type="O_Soldier_SL_F";
@@ -25770,7 +25770,7 @@ class Mission
 												name="efac";
 												description="FAC@1-Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1665;
 											type="O_Soldier_F";
@@ -25849,7 +25849,7 @@ class Mission
 												name="i2a";
 												description="Squad Leader@1-2 Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1587;
 											type="I_Soldier_SL_F";
@@ -25871,7 +25871,7 @@ class Mission
 												name="i2m";
 												description="Squad Medic@1-2 Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1589;
 											type="I_soldier_F";
@@ -25928,7 +25928,7 @@ class Mission
 												name="i2a1";
 												description="Fire Team Leader@1-2 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1591;
 											type="I_Soldier_TL_F";
@@ -25949,7 +25949,7 @@ class Mission
 												name="i2a2";
 												description="Rifleman@1-2 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1593;
 											type="I_soldier_F";
@@ -25970,7 +25970,7 @@ class Mission
 												name="i2a3";
 												description="Grenadier@1-2 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1595;
 											type="I_Soldier_GL_F";
@@ -25990,7 +25990,7 @@ class Mission
 												name="i2a4";
 												description="Asst. Gunner@1-2 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1597;
 											type="I_medic_F";
@@ -26012,7 +26012,7 @@ class Mission
 												name="i2a5";
 												description="Automatic Rifleman@1-2 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1599;
 											type="I_Soldier_AR_F";
@@ -26046,7 +26046,7 @@ class Mission
 												name="i2b1";
 												description="Fire Team Leader@1-2 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1601;
 											type="I_Soldier_TL_F";
@@ -26067,7 +26067,7 @@ class Mission
 												name="i2b2";
 												description="Rifleman@1-2 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1603;
 											type="I_soldier_F";
@@ -26088,7 +26088,7 @@ class Mission
 												name="i2b3";
 												description="Grenadier@1-2 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1605;
 											type="I_Soldier_GL_F";
@@ -26108,7 +26108,7 @@ class Mission
 												name="o2b4";
 												description="Asst. Gunner@1-2 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1607;
 											type="I_medic_F";
@@ -26130,7 +26130,7 @@ class Mission
 												name="i2b5";
 												description="Automatic Rifleman@1-2 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1609;
 											type="I_Soldier_AR_F";
@@ -26164,7 +26164,7 @@ class Mission
 												name="i2c1";
 												description="Fire Team Leader@1-2 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1619;
 											type="I_Soldier_TL_F";
@@ -26208,7 +26208,7 @@ class Mission
 												name="i2c2";
 												description="Rifleman@1-2 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1611;
 											type="I_soldier_F";
@@ -26252,7 +26252,7 @@ class Mission
 												name="i2c3";
 												description="Grenadier@1-2 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1613;
 											type="I_Soldier_GL_F";
@@ -26295,7 +26295,7 @@ class Mission
 												name="i2c4";
 												description="Asst. Gunner@1-2 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1615;
 											type="I_medic_F";
@@ -26340,7 +26340,7 @@ class Mission
 												name="i2c5";
 												description="Automatic Rifleman@1-2 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1617;
 											type="I_Soldier_AR_F";
@@ -26396,8 +26396,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={116.27113,5.0014391,60.998676};
-												angles[]={0,0.019963712,0};
+												position[]={116.08741,5.0014391,62.933041};
+												angles[]={0,0.0069024842,0};
 											};
 											side="Independent";
 											flags=7;
@@ -26407,7 +26407,7 @@ class Mission
 												name="iecho1";
 												description=" @Echo 1";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1627;
 											type="I_pilot_F";
@@ -26430,8 +26430,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={119.49857,5.0014391,60.758255};
-												angles[]={0,0.019963712,0};
+												position[]={118.94559,5.0014391,62.970436};
+												angles[]={0,0.0069024842,0};
 											};
 											side="Independent";
 											flags=7;
@@ -26440,7 +26440,7 @@ class Mission
 												name="iecho2";
 												description=" @Echo 2";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1629;
 											type="I_pilot_F";
@@ -26463,8 +26463,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={122.83115,5.0014391,60.73391};
-												angles[]={0,0.019963712,0};
+												position[]={121.45083,5.0014391,63.038826};
+												angles[]={0,0.0069024842,0};
 											};
 											side="Independent";
 											flags=7;
@@ -26473,7 +26473,7 @@ class Mission
 												name="iecho3";
 												description=" @Echo 3";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1631;
 											type="I_pilot_F";
@@ -26496,8 +26496,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={125.71951,5.0014391,60.617332};
-												angles[]={0,0.019963712,0};
+												position[]={124.06611,5.0014391,63.05125};
+												angles[]={0,0.0069024842,0};
 											};
 											side="Independent";
 											flags=7;
@@ -26506,7 +26506,7 @@ class Mission
 												name="iecho4";
 												description=" @Echo 4";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1633;
 											type="I_pilot_F";
@@ -26529,8 +26529,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={128.08887,5.0014391,60.30167};
-												angles[]={0,0.019963712,0};
+												position[]={126.73289,5.0014391,62.957184};
+												angles[]={0,0.0069024842,0};
 											};
 											side="Independent";
 											flags=7;
@@ -26539,7 +26539,7 @@ class Mission
 												name="iecho5";
 												description=" @Echo 5";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1635;
 											type="I_pilot_F";
@@ -26562,8 +26562,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={130.535,5.0014391,60.533409};
-												angles[]={0,0.019963712,0};
+												position[]={129.09732,5.0014391,63.136112};
+												angles[]={0,0.0069024842,0};
 											};
 											side="Independent";
 											flags=7;
@@ -26572,7 +26572,7 @@ class Mission
 												name="iecho6";
 												description=" @Echo 6";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1637;
 											type="I_pilot_F";
@@ -26618,7 +26618,7 @@ class Mission
 												name="ipl";
 												description="Platoon Leader@1-Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1551;
 											type="I_Soldier_SL_F";
@@ -26681,7 +26681,7 @@ class Mission
 												name="ifac";
 												description="FAC@1-Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1549;
 											type="I_soldier_F";
@@ -26749,7 +26749,7 @@ class Mission
 												name="i1a";
 												description="Squad Leader@1-1 Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1553;
 											type="I_Soldier_SL_F";
@@ -26770,7 +26770,7 @@ class Mission
 												name="i1m_1";
 												description="Squad Medic@1-1 Actual";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1555;
 											type="I_soldier_F";
@@ -26827,7 +26827,7 @@ class Mission
 												name="i1a1";
 												description="Fire Team Leader@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1557;
 											type="I_Soldier_TL_F";
@@ -26848,7 +26848,7 @@ class Mission
 												name="i1a2";
 												description="Rifleman@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1559;
 											type="I_soldier_F";
@@ -26869,7 +26869,7 @@ class Mission
 												name="i1a3";
 												description="Grenadier@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1561;
 											type="I_Soldier_GL_F";
@@ -26889,7 +26889,7 @@ class Mission
 												name="i1a4";
 												description="Asst. Gunner@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1563;
 											type="I_medic_F";
@@ -26911,7 +26911,7 @@ class Mission
 												name="i1a5";
 												description="Automatic Rifleman@1-1 Alpha";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1565;
 											type="I_Soldier_AR_F";
@@ -26945,7 +26945,7 @@ class Mission
 												name="i1b1";
 												description="Fire Team Leader@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1575;
 											type="I_Soldier_TL_F";
@@ -26966,7 +26966,7 @@ class Mission
 												name="i1b2";
 												description="Rifleman@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1567;
 											type="I_soldier_F";
@@ -26987,7 +26987,7 @@ class Mission
 												name="i1b3";
 												description="Grenadier@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1569;
 											type="I_Soldier_GL_F";
@@ -27007,7 +27007,7 @@ class Mission
 												name="i1b4";
 												description="Asst. Gunner@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1571;
 											type="I_medic_F";
@@ -27029,7 +27029,7 @@ class Mission
 												name="i1b5";
 												description="Automatic Rifleman@1-1 Bravo";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1573;
 											type="I_Soldier_AR_F";
@@ -27063,7 +27063,7 @@ class Mission
 												name="i1c1";
 												description="Fire Team Leader@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1577;
 											type="I_Soldier_TL_F";
@@ -27107,7 +27107,7 @@ class Mission
 												name="i1c2";
 												description="Rifleman@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1579;
 											type="I_soldier_F";
@@ -27151,7 +27151,7 @@ class Mission
 												name="i1c3";
 												description="Grenadier@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1581;
 											type="I_Soldier_GL_F";
@@ -27194,7 +27194,7 @@ class Mission
 												name="i1c4";
 												description="Asst. Gunner@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1583;
 											type="I_medic_F";
@@ -27239,7 +27239,7 @@ class Mission
 												name="i1c5";
 												description="Automatic Rifleman@1-1 Charlie";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1585;
 											type="I_Soldier_AR_F";
@@ -27294,7 +27294,7 @@ class Mission
 											{
 												description="Vehicle Commander@Pig";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1621;
 											type="I_crew_F";
@@ -27355,7 +27355,7 @@ class Mission
 											{
 												description="Vehicle Driver@Pig";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1625;
 											type="I_crew_F";
@@ -27416,7 +27416,7 @@ class Mission
 											{
 												description="Vehicle Gunner@Pig";
 												isPlayable=1;
-												stance="Middle";
+												stance="Up";
 											};
 											id=1623;
 											type="I_crew_F";
@@ -28287,7 +28287,7 @@ class Mission
 			position[]={198.32678,22.872955,58.810684};
 			name="spectator";
 			type="Empty";
-			angle=227.03705;
+			angle=227.03703;
 			id=609;
 			atlOffset=17.872955;
 		};
