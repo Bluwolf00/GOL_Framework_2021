@@ -35,7 +35,7 @@
 
 
 		_Statics = nearestObjects [_Position,["StaticWeapon"],_Range];
-
+		_Statics = _Statics select {_X emptyPositions "gunner" > 0};
 		_StaticGroup = CreateGroup _Side;
 		{
 			_Unit = _StaticGroup CreateUnit [(_Units call BIS_FNC_selectRandom), _Position, [], 5, "NONE"];

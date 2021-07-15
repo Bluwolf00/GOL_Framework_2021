@@ -152,7 +152,7 @@ while {oks_activated} do
 		} foreach _playerHunted;
 
 	};
-	_null = [OKS_EnemyFaction] spawn OKS_Hunt_Radio;
+	//_null = [OKS_EnemyFaction] spawn OKS_Hunt_Radio;
 	sleep OKS_RefreshRate;
 
 };

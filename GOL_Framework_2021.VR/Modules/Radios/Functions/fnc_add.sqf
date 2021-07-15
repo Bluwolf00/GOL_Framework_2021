@@ -17,7 +17,7 @@
 
 params ["_unit","_role"];
 
-private _radioSmall = ["sl","sm","ftl","r","g","ag","ar","mat","amat","ammg","mmg"];
+private _radioSmall = ["sl","sm","ftl","r","g","ag","ar","mat","amat","ammg","mmg","lr","ab"];
 private _radioMedium = ["pl","fac","ftl","p","crew","marksman"];
 
 if (GVARMAIN(mod_TFAR)) then {

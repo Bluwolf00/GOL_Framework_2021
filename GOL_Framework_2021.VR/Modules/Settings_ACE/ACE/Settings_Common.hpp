@@ -10,17 +10,17 @@ class ace_advanced_fatigue_enableStaminaBar {
 	force = 1;
 };
 class ace_advanced_fatigue_performanceFactor {
-	value = 1;
+	value = 1.25;
 	typeName = "SCALAR";
 	force = 1;
 };
 class ace_advanced_fatigue_recoveryFactor {
-	value = 2;
+	value = 3;
 	typeName = "SCALAR";
 	force = 1;
 };
 class ace_advanced_fatigue_loadFactor {
-	value = 1;
+	value = 0.7;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -31,7 +31,7 @@ class ace_advanced_fatigue_terrainGradientFactor {
 };
 
 class ace_advanced_fatigue_swayFactor {
-	value = 1;
+	value = 0.8;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -320,13 +320,19 @@ class ace_nametags_playerNamesViewDistance {
 };
 
 class ace_nightvision_effectScaling {
-	value = 0.5;
+	value = 1;
 	typeName = "SCALAR";
 	force = 1;
 };
 
 class ace_nightvision_fogScaling {
-	value = 0.0;
+	value = 0.5;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class ace_nightvision_noiseScaling {
+	value = 2;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -460,8 +466,154 @@ class ace_zeus_autoAddObjects {
 	force = 1;
 };
 
+// -------------------------------------------------
+
 class diwako_dui_indicators_show {
 	value = 0;
 	typeName = "BOOL";
 	force = 0;
 };
+
+// Enhanced Movement Rework -----------------------------
+
+class emr_main_allowMidairClimbing {
+	value = 0;
+	typeName = "BOOL";
+	force = 0;
+};
+
+
+class emr_main_animSpeedCoef {
+	value = 0.8;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_animSpeedStaminaCoef {
+	value = 0.4;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_climbingEnabled {
+	value = 1;
+	typeName = "BOOL";
+	force = 0;
+};
+
+class emr_main_climbOnDuty {
+	value = 3.4;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_climbOverDuty {
+	value = 3;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_dropDuty {
+	value = 0.7;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_dropViewElevation {
+	value = -0.7;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_enableWalkableSurface {
+	value = 1;
+	typeName = "BOOL";
+	force = 0;
+};
+
+class emr_main_enableWeightCheck {
+	value = 1;
+	typeName = "BOOL";
+	force = 0;
+};
+
+class emr_main_hintType {
+	value = 4;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_jumpDuty {
+	value = 1;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_jumpingEnabled {
+	value = 0;
+	typeName = "BOOL";
+	force = 0;
+};
+
+class emr_main_jumpingLoadCoefficient {
+	value = 1;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_jumpVelocity {
+	value = 3.4;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_maxClimbHeight {
+	value = 2.3;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_maxDropHeight {
+	value = 3;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_maxWeightClimb1 {
+	value = 100;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_maxWeightClimb2 {
+	value = 78;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_maxWeightClimb3 {
+	value = 56;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_maxWeightJump {
+	value = 100;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+class emr_main_preventHighVaulting {
+	value = 0;
+	typeName = "BOOL";
+	force = 0;
+};
+
+class emr_main_staminaCoefficient {
+	value = 4;
+	typeName = "SCALAR";
+	force = 1;
+};
+
+
+

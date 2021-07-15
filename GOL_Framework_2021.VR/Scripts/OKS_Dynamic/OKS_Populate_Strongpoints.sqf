@@ -5,7 +5,7 @@
 
 if(HasInterface && !isServer) exitWith {};
 
-Params["_MainTrigger","_Side","_InfantryNumber","_SearchLocation"];
+Params["_MainTrigger","_Side","_InfantryNumber","_SearchLocation","_CreateObjective"];
 private ["_House","_AllBuildings","_buildingArray","_SelectedBuildings","_HouseCount","_i","_HouseMax","_Strongpoint","_Location","_CountStrongpoints","_Group","_GarrisonNumber","_Location","_Debug_Variable","_Strongpoint","_SortedBuildings","_SafePos","_Marker","_AllNumbers","_SelectedStrongpoints","_Strongpoints","_MarkerPos","_PlacedStrongpoints","_Locations"];
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
@@ -63,7 +63,11 @@ if(_CountStrongpoints > 0) then {
 		};
 		_MarkerPos = _X;
 
-		if({_X getVariable ["isSectorTrigger",false]} count (_X nearObjects ["EmptyDetector", 250]) < 1) then {
+		if(!isNil "OKS_Populate_StaticWeapons") then {
+			[_MarkerPos,300,_Side] spawn OKS_Populate_StaticWeapons;
+		};
+
+		if(_CreateObjective && {_X getVariable ["isSectorTrigger",false]} count (_X nearObjects ["EmptyDetector", 250]) < 1) then {
 			[_MarkerPos,"sector",125,_Side,_Settings] spawn OKS_CreateObjectives;
 		};
 

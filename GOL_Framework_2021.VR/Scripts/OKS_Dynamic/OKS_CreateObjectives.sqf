@@ -478,7 +478,7 @@ switch (_TypeOfObjective) do {
 
 	case "hostage": {
 
-		private ["_House","_GarrisonMaxSize","_GarrisonPositions","_Target","_HostageGroup","_Repetitions","_Task"];
+		private ["_House","_GarrisonMaxSize","_GarrisonPositions","_Target","_HostageGroup","_Repetitions","_Task","_Hostage1","_Hostage2","_Hostage3"];
 		_Repetitions = 0;
 		if(!isNil "_Area") then {
 			while{true} do {
@@ -500,21 +500,8 @@ switch (_TypeOfObjective) do {
 		};
 		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Hostage Objective"}};
 
-
-		_Group = CreateGroup _Side;
-		_HostageGroup = CreateGroup civilian;
-		_Hostage1 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
-		_Hostage2 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
-		_Hostage3 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
-
-		{
-			[_X, true] call ACE_captives_fnc_setHandcuffed;
-			_X setCaptive true;
-			_X setBehaviour "CARELESS";
-			_X disableAI "MOVE";
-		} foreach [_Hostage1,_Hostage2,_Hostage3];
-
 		if (_GarrisonMaxSize > 10) then { _GarrisonMaxSize = 10 };
+		_Group = CreateGroup _Side;
 
 		for "_i" from 1 to (_GarrisonMaxSize - 3) do
 		{
@@ -529,9 +516,20 @@ switch (_TypeOfObjective) do {
 			};
 		};
 
+		_Hostage1 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
+		_Hostage2 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
+		_Hostage3 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
+
+		{
+			[_X, true] call ACE_captives_fnc_setHandcuffed;
+			_X setCaptive true;
+			_X setBehaviour "CARELESS";
+			_X disableAI "MOVE";
+		} foreach [_Hostage1,_Hostage2,_Hostage3];
+
 		[getPos _House, nil, units _Group, 1, 1, false, true] remoteExec ["ace_ai_fnc_garrison",0];
 		sleep 0.5;
-
+		_HostageGroup = CreateGroup civilian;
 		{[_X] join _HostageGroup} foreach [_Hostage1,_Hostage2,_Hostage3];
 
 		switch(_playerSide) do {
