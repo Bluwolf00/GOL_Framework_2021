@@ -7,7 +7,7 @@ _vest = "vest_spc_rifleman_MTP";
 _backpack = "MTP_Kitbag";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "unv_mtp_big_rt1523g";
+	_backpackRadio = "MTP_B_RadioBag_01";
 };
 
 if (_role isEqualTo "sl") then {

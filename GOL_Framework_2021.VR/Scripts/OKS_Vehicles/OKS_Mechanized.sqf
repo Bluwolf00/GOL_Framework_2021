@@ -5,8 +5,11 @@ if(!isServer) exitWith {};
 Params ["_Vehicle"];
 Private _Debug_Variable = false;
 
+["ACE_Wheel", _Vehicle, 2] call ace_cargo_fnc_removeCargoItem;
+["ACE_Track", _Vehicle, 2] call ace_cargo_fnc_removeCargoItem;
+
 _Vehicle disableTIEquipment true;
-[_Vehicle, 30] call ace_cargo_fnc_setSpace;
+[_Vehicle, 40] call ace_cargo_fnc_setSpace;
 if(_Debug_Variable) then {SystemChat "Seting Cargo Space"};
 sleep 5;
 
