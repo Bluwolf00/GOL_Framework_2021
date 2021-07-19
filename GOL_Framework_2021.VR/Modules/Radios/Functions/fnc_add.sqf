@@ -31,13 +31,13 @@ if (GVARMAIN(mod_TFAR)) then {
 	};
 
 	if (_role in _radioSmall) then {
-		_unit linkItem "tf_pnr1000a";
+		_unit linkItem "TFAR_rf7800str";
 	};
 	if (_role in _radioMedium) then {
 		if (_role in _radioSmall) then {
-			_unit addItem "tf_anprc152";
+			_unit addItem "TFAR_rf7800str";
 		} else {
-			_unit linkItem "tf_anprc152";
+			_unit linkItem "tfar_anprc152";
 		};
 	};
 } else {

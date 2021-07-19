@@ -33,6 +33,12 @@ switch (_side) do {
 	case "CUSTOM-W": {
 		#include "Classes\CUSTOM-W.sqf"
 	};
+	case "ISLAMICSTATE": {
+		#include "Classes\ISLAMICSTATE.sqf"
+	};
+	case "TAKISTAN-D": {
+		#include "Classes\TAKISTAN-D.sqf"
+	};
 	case "INSURGENT-ME": {
 		#include "Classes\INSURGENT-ME.sqf"
 	};
@@ -41,6 +47,12 @@ switch (_side) do {
 	};
 	case "INSURGENT-AFRICA": {
 		#include "Classes\INSURGENT-AFRICA.sqf"
+	};
+	case "AUS-TAN": {
+		#include "Classes\AUS-TAN.sqf"
+	};
+	case "IRAQ-SF": {
+		#include "Classes\IRAQ-SF.sqf"
 	};
 	case "NATO-D": {
 		#include "Classes\NATO-D.sqf"

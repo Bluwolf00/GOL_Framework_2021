@@ -1,30 +1,26 @@
-
-
-
-
 _allowedNightStuff = false;
 
 _goggles = "";
-_helmet = selectRandom ["H_Bandanna_cbr","","","H_Beret_blk","H_Booniehat_oli","H_Cap_Oli","rhsgref_helmet_M1_painted"];
-_OfficerHelmet = "rhs_beret_vdv3";
-_uniform = selectRandom ["LOP_U_AFR_Civ_01","LOP_U_AFR_Civ_02","LOP_U_AFR_Civ_03","LOP_U_AFR_Civ_04","LOP_U_AFR_Civ_05","LOP_U_AFR_Civ_06","Uniform_Tanktop_WZ2000","Uniform_Tanktop_VZ95","Uniform_Tanktop_OLIVE"];
-_vest = selectRandom ["rhsgref_chestrig","rhsgref_chicom","V_HarnessO_gry","rhsgref_otv_khaki"];
-_backpack = "rhs_sidor";
+_helmet = selectRandom ["LOP_H_SSh68Helmet_TAN","rhs_ssh60","rhs_ssh68_2"];
+_OfficerHelmet = "H_Beret_blk";
+_uniform = selectRandom ["LOP_U_TKA_Fatigue_01","LOP_U_TKA_Fatigue_02"];
+_vest = selectRandom ["LOP_V_6B23_Rifleman_TAN","LOP_V_6B23_OLV"];
+_backpack = "rhs_rd54";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "unv_tan_big_rt1523g";
 };
 
-if ((random 1) > 0.90) then {
-	_goggles = "G_Squares";
+if(_role in ["r","lr"]) then {
+	_backpack = "rhs_rpg_2";
 };
 
-if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "rhs_sidor";
+if (_role in ["ag","ammg","ab"]) then {
+	_backpack = "rhs_medic_bag";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "H_Booniehat_khk_hs";
-	_uniform = "Uniform_Coveralls_VZ85";
+	_uniform = "LOP_U_TKA_Fatigue_01";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
@@ -56,15 +52,6 @@ _LMG_mag = "hlc_60Rnd_545x39_t_rpk";
 _MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhs_100Rnd_762x54mmR_green";
 
-/*
-if (GVARMAIN(mod_CUP_WEAPONS)) then {
-	_LMG = ["CUP_arifle_RPK74_45", _silencer, _pointer, _sight, _bipod];
-	_LMG_mag = "CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M";
-
-	_MMG = ["CUP_lmg_Pecheneg", _silencer, _pointer, _sight, _bipod];
-	_MMG_mag = "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M";
-};
-*/
 _LAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "RPG7_F";
 _LAT_ReUsable = true;

@@ -34,15 +34,15 @@ _unit addAction ["<t color='#ff962c'>Remove Night gear</t>", {
 	if (GVARMAIN(mod_ACE3)) then {
 		player removeItem "ACE_IR_Strobe_Item";
 		player removeItem "ACE_Flashlight_XL50";
-		player removeItems "ACE_40mm_Flare_green";
-		player removeItems "ACE_40mm_Flare_red";
-		player removeItems "ACE_40mm_Flare_white";
-		player removeItems "ACE_HandFlare_Green";
-		player removeItems "ACE_HandFlare_Red";
-		player removeItems "ACE_HandFlare_White";
-		player removeItems "ACE_HandFlare_Yellow";
-		player removeItems "rhs_VG40OP_green";
-		player removeItems "rhs_VG40OP_red";
+		player removeMagazines  "ACE_40mm_Flare_green";
+		player removeMagazines  "ACE_40mm_Flare_red";
+		player removeMagazines  "ACE_40mm_Flare_white";
+		player removeMagazines  "ACE_HandFlare_Green";
+		player removeMagazines  "ACE_HandFlare_Red";
+		player removeMagazines  "ACE_HandFlare_White";
+		player removeMagazines  "ACE_HandFlare_Yellow";
+		player removeMagazines  "rhs_VG40OP_green";
+		player removeMagazines  "rhs_VG40OP_red";
 	};
 },nil,1,false,false,"","!((((getUnitLoadout player) select 9) select 5) isEqualTo '')",8];
 

@@ -37,6 +37,8 @@ GVAR(StaminaCoef) = 0.5;
 			"NORWEGIAN",
 			"SWEDISH",
 			"POLISH",
+			"AUS-TAN",
+			"IRAQ-SF",
 			"LATVIAN",
 			"ISRAELI",
 			"CUSTOM-W"
@@ -54,6 +56,8 @@ GVAR(StaminaCoef) = 0.5;
 			"Norwegian Army",
 			"Swedish Army",
 			"Polish Army",
+			"Austrian Tan",
+			"Iraqi Special Forces",
 			"Latvian Army",
 			"Israeli Defence Force",
 			"CUSTOM-West"
@@ -74,6 +78,8 @@ GVAR(StaminaCoef) = 0.5;
 			"RUSSIAN-W",
 			"RUSSIAN-SF-W",
 			"SOVIET-D",
+			"TAKISTAN-D",
+			"ISLAMICSTATE",
 			"INSURGENT-ME",
 			"INSURGENT-CHDKZ",
 			"INSURGENT-AFRICA",
@@ -86,6 +92,8 @@ GVAR(StaminaCoef) = 0.5;
 			"Russian Woodland",
 			"Russian SF Woodland",
 			"Soviet Desert",
+			"Takistani Desert",
+			"Islamic State",
 			"INSURGENT Middle Eastern",
 			"INSURGENT ChDkz",
 			"INSURGENT African",
@@ -104,6 +112,8 @@ GVAR(StaminaCoef) = 0.5;
 		[
 			"AAF-W",
 			"PMC",
+			"TAKISTAN-D",
+			"ISLAMICSTATE",
 			"INSURGENT-ME",
 			"INSURGENT-CHDKZ",
 			"INSURGENT-AFRICA",
@@ -112,6 +122,8 @@ GVAR(StaminaCoef) = 0.5;
 		[
 			"AAF-Woodland",
 			"PMC",
+			"Takistani Desert",
+			"Islamic State",
 			"INSURGENT Middle Eastern",
 			"INSURGENT ChDkz",
 			"INSURGENT African",

@@ -53,10 +53,10 @@ TF_freq_east_lr = TF_freq_west_lr;
 TF_freq_guer  =   TF_freq_west;
 TF_freq_guer_lr = TF_freq_west_lr;
 
-TF_defaultWestAirborneRadio = "TF_rt1523g";
-TF_defaultWestBackpack = "TF_rt1523g";
-TF_defaultWestPersonalRadio = "TF_anprc152";
-TF_defaultWestRiflemanRadio = "TF_pnr1000a";
+TF_defaultWestAirborneRadio = "TFAR_rt1523g_big_bwmod";
+TF_defaultWestBackpack = "TFAR_rt1523g_big_bwmod";
+TF_defaultWestPersonalRadio = "TFAR_anprc152";
+TF_defaultWestRiflemanRadio = "TFAR_rf7800str";
 
 TF_defaultEastAirborneRadio = TF_defaultWestAirborneRadio;
 TF_defaultEastBackpack = TF_defaultWestBackpack;
