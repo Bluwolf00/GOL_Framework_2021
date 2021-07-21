@@ -127,7 +127,7 @@ switch (_TypeOfObjective) do {
 			_SpawnPos = [_Position, 1, 100, 30, 0, 0, 0] call BIS_fnc_findSafePos;
 		};
 
-		if(_Repetitions > 100) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Cache Objective"} };
+		if(_Repetitions > 100) exitWith { systemChat "Unable to find position: Cache Objective" };
 
 		OKS_Objective_Positions pushBackUnique _SpawnPos;
 		publicVariable "OKS_Objective_Positions";
@@ -226,7 +226,7 @@ switch (_TypeOfObjective) do {
 		} else {
 			_SpawnPos = getPos([([_Position, 1, 100, 5, 0, 0, 0] call BIS_fnc_findSafePos), 300] call BIS_fnc_nearestRoad);
 		};
-		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Ammo Truck Objective"}};
+		if(_Repetitions > 50) exitWith { systemChat "Unable to find position: Ammo Truck Objective" };
 
 		OKS_Objective_Positions pushBackUnique _SpawnPos;
 		publicVariable "OKS_Objective_Positions";
@@ -287,7 +287,7 @@ switch (_TypeOfObjective) do {
 		OKS_Objective_Positions pushBackUnique _SpawnPos;
 		publicVariable "OKS_Objective_Positions";
 
-		if(_Repetitions > 50) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Radio Tower Objective"} };
+		if(_Repetitions > 50) exitWith { systemChat "Unable to find position: Radio Tower Objective" };
 
 		_towerclass = selectRandom ["radiotower_1"];
 
@@ -478,7 +478,7 @@ switch (_TypeOfObjective) do {
 
 	case "hostage": {
 
-		private ["_House","_GarrisonMaxSize","_GarrisonPositions","_Target","_HostageGroup","_Repetitions","_Task","_Hostage1","_Hostage2","_Hostage3"];
+		private ["_House","_GarrisonMaxSize","_GarrisonPositions","_Target","_HostageGroup","_Repetitions","_Task"];
 		_Repetitions = 0;
 		if(!isNil "_Area") then {
 			while{true} do {
@@ -498,10 +498,23 @@ switch (_TypeOfObjective) do {
 			_GarrisonMaxSize = count _GarrisonPositions;
 			if(_Debug_Variable) then {systemChat format["No Trigger - Selecting Position - %1",_House]}
 		};
-		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Hostage Objective"}};
+		if(_Repetitions > 30) exitWith { systemChat "Unable to find position: Hostage Objective"};
+
+
+		_Group = CreateGroup _Side;
+		_HostageGroup = CreateGroup civilian;
+		_Hostage1 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
+		_Hostage2 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
+		_Hostage3 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
+
+		{
+			[_X, true] call ACE_captives_fnc_setHandcuffed;
+			_X setCaptive true;
+			_X setBehaviour "CARELESS";
+			_X disableAI "MOVE";
+		} foreach [_Hostage1,_Hostage2,_Hostage3];
 
 		if (_GarrisonMaxSize > 10) then { _GarrisonMaxSize = 10 };
-		_Group = CreateGroup _Side;
 
 		for "_i" from 1 to (_GarrisonMaxSize - 3) do
 		{
@@ -516,20 +529,9 @@ switch (_TypeOfObjective) do {
 			};
 		};
 
-		_Hostage1 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
-		_Hostage2 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
-		_Hostage3 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
-
-		{
-			[_X, true] call ACE_captives_fnc_setHandcuffed;
-			_X setCaptive true;
-			_X setBehaviour "CARELESS";
-			_X disableAI "MOVE";
-		} foreach [_Hostage1,_Hostage2,_Hostage3];
-
 		[getPos _House, nil, units _Group, 1, 1, false, true] remoteExec ["ace_ai_fnc_garrison",0];
 		sleep 0.5;
-		_HostageGroup = CreateGroup civilian;
+
 		{[_X] join _HostageGroup} foreach [_Hostage1,_Hostage2,_Hostage3];
 
 		switch(_playerSide) do {

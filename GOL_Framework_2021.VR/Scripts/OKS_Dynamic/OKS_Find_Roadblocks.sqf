@@ -160,7 +160,7 @@ For "_i" from 1 to _RoadblockCount do {
 	if(_Debug_Variable) then {
 		SystemChat format ["%1 %2 created at %3",_Side,_typeString,getMarkerPos _marker];
 	};
-		[_RoadPos,_Side,4 + (random 2),15] spawn OKS_Populate_Sandbag;
+		waitUntil{sleep 10; !isNil "OKS_Populate_Sandbag"};
+		[getMarkerPos _marker,_Side,3 + (random 2),35] spawn OKS_Populate_Sandbag;
 	};
-	sleep 10;
 }
