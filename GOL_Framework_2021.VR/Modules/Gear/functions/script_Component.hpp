@@ -12,6 +12,9 @@
 #define COUNT_MAGS(Class, Amount) [Class, Amount, MAGCOUNT(Class)]
 
 #define COUNT_AG_MAGS(Class) (400 / (getNumber (configfile >> "CfgMagazines" >> Class >> "count")))
-#define COUNT_AR_MAGS(Class) ((400 / (getNumber (configfile >> "CfgMagazines" >> Class >> "count"))) / 2)	// Dividing for tracers
+#define COUNT_AR_MAGS(Class) ((800 / (getNumber (configfile >> "CfgMagazines" >> Class >> "count"))) / 2)	// Dividing for tracers
+
+#define COUNT_AMMG_MAGS(Class) (300 / (getNumber (configfile >> "CfgMagazines" >> Class >> "count")))
+#define COUNT_MMG_MAGS(Class) ((450 / (getNumber (configfile >> "CfgMagazines" >> Class >> "count"))))	// Dividing for tracers
 
 #define ISNILS(VARIABLE,DEFAULT_VALUE) if (isNil #VARIABLE) then { VARIABLE = DEFAULT_VALUE }

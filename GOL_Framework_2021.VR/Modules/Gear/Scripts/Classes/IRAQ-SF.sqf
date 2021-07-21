@@ -5,14 +5,14 @@ _helmet = "PO_H_mich_bare_isof_3_nortos_alt_blk";
 _OfficerHelmet = "rhs_beret_vdv3";
 _uniform = "LOP_U_IA_Fatigue_SF_01";
 _vest = "V_PlateCarrier2_blk";
-_backpack = "B_AssaultPack_blk";
+_backpack = "B_ViperLightHarness_blk_F";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "B_RadioBag_01_black_F";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "B_FieldPack_blk";
+	_backpack = "B_ViperHarness_blk_F";
 };
 
 if (_role isEqualTo "p") then {
