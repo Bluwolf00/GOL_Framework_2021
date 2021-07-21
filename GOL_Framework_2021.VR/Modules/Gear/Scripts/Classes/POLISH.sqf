@@ -1,21 +1,22 @@
+
 // Cloths
 _goggles = "";
-_helmet = "helmet_lwh_WZ2000";
+_helmet = selectRandom ["helmet_lwh_WZ2000","helmet_lwh_WZ2000_2"];
 _OfficerHelmet = "beret_Maroon";
 _uniform = SelectRandom ["Uniform_Full_WZ2000","Uniform_Rolled_WZ2000"];
 _vest = "vest_spc_radio_WZ2000";
-_backpack = "WZ2000_Assaultpack";
+_backpack = "WZ2000_Kitbag";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "unv_WZ2000_big_rt1523g";
 };
 
 if (_role in ["ag","ammg","sm","lr","ab"]) then {
-	_backpack = "POLISH_assaultpack_Medic";
+	_backpack = "WZ2000_PB_Rucksack";
 };
 
 if (_role in ["ar","mmg"]) then {
-	_backpack = "WZ2000_Kitbag_MachineGunner";
+	_backpack = "WZ2000_PB_Rucksack";
 };
 
 if (_role in ["pl","sl","ftl","fac"]) then {
@@ -44,30 +45,26 @@ if (_role isEqualTo "jetp") then {
 };
 
 // Attachments
-_silencer = "";
-_pointer = "";
-_sight = "";
+_silencer = "hlc_muzzle_SF3P_556";
+_pointer = "rhsusf_acc_anpeq15side_bk";
+_sight = "optic_ERCO_blk_F";
 _bipod = "";
 
-// Primary Weapon
-_rifle = ["hlc_rifle_ACR_carb_black", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_smg_mp5a3", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_ACR_GL_carb_black", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_ACR_carb_black", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman = ["rhs_weap_svdp_npz", _silencer, _pointer, "hlc_optic_zf95base", _bipod];
-_rifle_mag = "hlc_30rnd_556x45_EPR";
-_rifle_mag_tr = "hlc_30rnd_556x45_t_PMAG";
-_rifleC_mag = "hlc_30Rnd_9x19_B_MP5";
-_rifleMarksman_mag = "rhs_10Rnd_762x54mmR_7N1";
-_rifleMarksman_mag_tr = "rhs_10Rnd_762x54mmR_7N14";
+// Primary Weapons
+_rifle = ["hlc_rifle_SG551SB_TAC", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["hlc_rifle_SG553SB_TAC", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["hlc_rifle_SG551SB_TAC_GL", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["hlc_rifle_SG550Sniper_RIS", _silencer, _pointer, _sight, _bipod];
+_rifle_mag = "hlc_30Rnd_556x45_SOST_sg550";
+_rifle_mag_tr = "hlc_30Rnd_556x45_T_sg550";
 
-_LMG = ["hlc_lmg_MG3KWS_b", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "hlc_250Rnd_762x51_B_MG3";
-_LMG_mag_tr = "hlc_250Rnd_762x51_T_MG3";
+_LMG = ["rhs_weap_pkp", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "rhs_100Rnd_762x54mmR";
+_LMG_mag_tr = "rhs_100Rnd_762x54mmR_green";
 
-_MMG = ["rhs_weap_pkp", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "rhs_100Rnd_762x54mmR";
-_MMG_mag_tr = "rhs_100Rnd_762x54mmR_green";
+_MMG = ["hlc_lmg_MG3KWS_b", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "hlc_250Rnd_762x51_B_MG3";
+_MMG_mag_tr = "hlc_250Rnd_762x51_T_MG3";
 
 // Launchers
 _silencer = "";
@@ -86,3 +83,7 @@ _MAT_mag_HE = "MRAWS_HE_F";
 // Pistol
 _pistol = ["hlc_pistol_p226US", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "hlc_15Rnd_9x19_B_P226";
+
+_rifleMarksman = ["arifle_MSBS65_Mark_black_F", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman_mag = "30Rnd_65x39_caseless_msbs_mag";
+_rifleMarksman_mag_tr = "30Rnd_65x39_caseless_msbs_mag_Tracer";
