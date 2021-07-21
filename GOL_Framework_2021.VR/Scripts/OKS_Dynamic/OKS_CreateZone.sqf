@@ -1,6 +1,6 @@
 
 /*
-	[TriggerName,SplitTriggerBool,NumberofInfantry,_Side,NumberOfWheeled,NumberOfAPC,NumberofTank,[CompositionCount,OnlyTarmac],MortarPitCount,ObjectiveCount]
+	[TriggerName,SplitTriggerBool,[StaticContacts,PatrolContacts,CreateSectorObjective,LocalPatrols],_Side,NumberOfWheeled,NumberOfAPC,NumberofTank,[CompositionCount,OnlyTarmac],MortarPitCount,ObjectiveCount]
 	[Trigger_1,true,[50,25,true,true],EAST,1,1,1,[2,true],1,3] execVM "Scripts\OKS_Dynamic\CreateZone.sqf";
 
 */
@@ -132,18 +132,18 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 			sleep 20;
 		};
 
-	private ["_StaticNumber","_PatrolNumber","_Condition","_SearchLocation","_CreateObjective"];
+	private ["_StaticNumber","_PatrolNumber","_Condition","_LocalPatrols","_CreateObjective"];
 
 	if(typeName _InfantryNumber isEqualTo "ARRAY") then {
 		_StaticNumber = _InfantryNumber select 0;
-		_CreateObjective = _InfantryNumber select 1;
-		_PatrolNumber = _InfantryNumber select 2;
-		_SearchLocation = _InfantryNumber select 3;
+		_PatrolNumber = _InfantryNumber select 1;
+		_CreateObjective = _InfantryNumber select 2;
+		_LocalPatrols = _InfantryNumber select 3;
 		_Condition = (_StaticNumber > 0 || _PatrolNumber > 0);
 	} else {
 		_StaticNumber = _InfantryNumber * 0.5;
 		_PatrolNumber = _InfantryNumber * 0.5;
-		_SearchLocation = true;
+		_LocalPatrols = true;
 		_CreateObjective = true;
 		_Condition = (_InfantryNumber > 0);
 	};
@@ -156,7 +156,7 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		/* Create Infantry Strongpoints Main Area*/
 
 		if(_StaticNumber > 0) then {
-			[_MainTrigger,_Side,_StaticNumber,_SearchLocation,_CreateObjective] spawn OKS_Populate_Strongpoints;
+			[_MainTrigger,_Side,_StaticNumber,_LocalPatrols,_CreateObjective] spawn OKS_Populate_Strongpoints;
 		};
 		/* Create Infantry Patrols for each sub-trigger */
 		Private ["_PatrolInfantry","_GroupPerTrigger"];

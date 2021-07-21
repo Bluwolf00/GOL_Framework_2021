@@ -1,12 +1,12 @@
 //
-//  [_Trigger,_Side,_InfantryNumber] spawn OKS_Populate_Strongpoints;
+//  [_Trigger,_Side,_InfantryNumber,_CreateObjective,_CreateLocalPatrols] spawn OKS_Populate_Strongpoints;
 //  execVM "Scripts\OKS_Dynamic\OKS_Populate_Strongpoints.sqf"
 //
 
 if(HasInterface && !isServer) exitWith {};
 
-Params["_MainTrigger","_Side","_InfantryNumber","_SearchLocation","_CreateObjective"];
-private ["_House","_AllBuildings","_buildingArray","_SelectedBuildings","_HouseCount","_i","_HouseMax","_Strongpoint","_Location","_CountStrongpoints","_Group","_GarrisonNumber","_Location","_Debug_Variable","_Strongpoint","_SortedBuildings","_SafePos","_Marker","_AllNumbers","_SelectedStrongpoints","_Strongpoints","_MarkerPos","_PlacedStrongpoints","_Locations"];
+Params["_MainTrigger","_Side","_InfantryNumber","_CreateObjective","_CreateLocalPatrols"];
+private ["_House","_AllBuildings","_buildingArray","_SelectedBuildings","_HouseCount","_i","_HouseMax","_Strongpoint","_Location","_CountStrongpoints","_Group","_GarrisonNumber","_Location","_Debug_Variable","_Strongpoint","_SortedBuildings","_SafePos","_Marker","_AllNumbers","_SelectedStrongpoints","_Strongpoints","_MarkerPos","_PlacedStrongpoints","_Locations","_PatrolNumber"];
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
 _Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
@@ -19,7 +19,7 @@ _Locations = [];
 
 			{_Locations pushBackUnique getPos _X} foreach nearestObjects [_MainTrigger, ["LocationBase_F","LocationOutpost_F","LocationCamp_F","LocationResupplyPoint_F","LocationRespawnPoint_F","LocationEvacPoint_F","LocationFOB_F","LocationCityCapital_F","LocationCity_F","LocationVillage_F","LocationArea_F"], (TriggerArea _MainTrigger select 0 / 2)];
 
-			if(_SearchLocation || _Locations isEqualTo []) then {
+			if(_Locations isEqualTo []) then {
 				{_Locations pushBackUnique (locationPosition _X)} foreach nearestLocations [_MainTrigger,["NameVillage","NameCity","NameCityCapital","Hill","Name","NameLocal","fakeTown"],(TriggerArea _MainTrigger select 0 / 2)];
 			};
 
@@ -49,8 +49,14 @@ _Locations = [];
 if(_CountStrongpoints > 0) then {
 
 	_AllNumbers = round(_InfantryNumber / _CountStrongpoints);
-	_GarrisonNumber = round(_AllNumbers * 0.7);
-	_PatrolNumber = round((_AllNumbers * 0.3) / 3);
+
+	if(_CreateLocalPatrols) then {
+		_GarrisonNumber = round(_AllNumbers * 0.7);
+		_PatrolNumber = round((_AllNumbers * 0.3) / 3);
+	} else {
+		_GarrisonNumber = _AllNumbers;
+		_PatrolNumber = 0;
+	};
 
 	if(_Debug_Variable) then {
 		systemChat format ["Garrison Number: %1 | Count Strongpoints: %2 | AllNumbers: %3",_GarrisonNumber,_CountStrongpoints,_AllNumbers];
@@ -70,6 +76,8 @@ if(_CountStrongpoints > 0) then {
 		if(_CreateObjective && {_X getVariable ["isSectorTrigger",false]} count (_X nearObjects ["EmptyDetector", 250]) < 1) then {
 			[_MarkerPos,"sector",125,_Side,_Settings] spawn OKS_CreateObjectives;
 		};
+
+		if(_PatrolNumber > 0) then {
 
 			{
 				Private _DirectionPos = _MarkerPos getPos [75,(random 360)];
@@ -92,6 +100,8 @@ if(_CountStrongpoints > 0) then {
 				_Group setBehaviour "SAFE";
 
 			} foreach [1,2,3];
+
+		};
 
 			_SelectedBuildings = [];
 			_AllBuildings = nearestObjects [_X,["House"],125];
