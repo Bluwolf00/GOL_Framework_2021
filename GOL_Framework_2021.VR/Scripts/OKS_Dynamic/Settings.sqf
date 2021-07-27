@@ -31,16 +31,16 @@ Switch (_Side) do
 		_Leaders = ["O_Soldier_TL_F","O_Soldier_TL_F"];
 		_Units = ["O_Soldier_LAT_F","O_Soldier_GL_F","O_medic_F","O_Soldier_AR_F","O_Soldier_A_F"];
 		_Officer = ["O_officer_F"];
-		_Wheeled = ["LOP_TKA_UAZ_SPG","LOP_TKA_UAZ_DshKM","rhsgref_tla_offroad_at","LOP_TKA_BMP1"];
-		_APC = ["LOP_TKA_T34","LOP_TKA_BTR70","LOP_TKA_BTR60","LOP_TKA_T55"];
-		_Tank = ["LOP_TKA_T55"];
-		_Artillery = ["LOP_TKA_BM21", "LOP_TKA_Static_D30"];
-		_Helicopter = ["LOP_TKA_Mi8MTV3_UPK23"];
-		_Transport = ["LOP_TKA_Ural_open"];
-		_Supply = ["rhs_gaz66_ammo_msv","rhs_gaz66_r142_vdv","rhs_gaz66_ap2_vdv"];
+		_Wheeled = ["rhsgref_ins_uaz_dshkm","rhsgref_ins_uaz_spg9","rhsgref_ins_uaz_open","rhsgref_ins_uaz","rhsgref_ins_gaz66"];
+		_APC = ["rhsgref_ins_btr60","rhsgref_ins_btr70","rhsgref_ins_bmd1","rhsgref_ins_bmd1p","rhsgref_ins_bmd2"];
+		_Tank = ["rhsgref_ins_t72ba"];
+		_Artillery = ["rhsgref_ins_2b14","rhsgref_ins_2s1","rhsgref_ins_BM21"];
+		_Helicopter = ["rhsgref_ins_Mi8amt"];
+		_Transport = ["rhsgref_ins_ural"];
+		_Supply = ["rhsgref_ins_gaz66_r142","rhsgref_ins_gaz66_ap2","rhsgref_ins_kraz255b1_fuel","rhsgref_ins_ural_repair","rhsgref_ins_gaz66_ammo"];
 		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply];
 		_SideMarker = "o_inf";
-		_SideColor = "ColorOpfor";
+		_SideColor = "ColorOpfor"
 	};
 	case INDEPENDENT:	// INDEPENDENT Settings
 	{
@@ -71,6 +71,42 @@ Switch (_Side) do
 
 _CivilianUnits = ["C_man_polo_1_F","C_man_polo_2_F","C_man_polo_3_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_6_F"];
 _Civilian = [_CivilianUnits,_Officer];
+_ObjectiveTypes = ["cache","artillery","hostage","motorpool","radiotower"];
 
 // DO NOT EDIT ANYTHING BELOW \\
-[_Units,_SideMarker,_SideColor,_Vehicles,_Civilian]
+[_Units,_SideMarker,_SideColor,_Vehicles,_Civilian,_ObjectiveTypes]
+
+/*
+		EAST - Takistani Army Settings
+
+		_Leaders = ["O_Soldier_TL_F","O_Soldier_TL_F"];
+		_Units = ["O_Soldier_LAT_F","O_Soldier_GL_F","O_medic_F","O_Soldier_AR_F","O_Soldier_A_F"];
+		_Officer = ["O_officer_F"];
+		_Wheeled = ["LOP_TKA_UAZ_SPG","LOP_TKA_UAZ_DshKM","rhsgref_tla_offroad_at","LOP_TKA_BMP1"];
+		_APC = ["LOP_TKA_T34","LOP_TKA_BTR70","LOP_TKA_BTR60","LOP_TKA_T55"];
+		_Tank = ["LOP_TKA_T55"];
+		_Artillery = ["LOP_TKA_BM21", "LOP_TKA_Static_D30"];
+		_Helicopter = ["LOP_TKA_Mi8MTV3_UPK23"];
+		_Transport = ["LOP_TKA_Ural_open"];
+		_Supply = ["rhs_gaz66_ammo_msv","rhs_gaz66_r142_vdv","rhs_gaz66_ap2_vdv"];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply];
+		_SideMarker = "o_inf";
+		_SideColor = "ColorOpfor"
+*/
+/*
+		EAST - Chedaki Army Settings
+
+		_Leaders = ["O_Soldier_TL_F","O_Soldier_TL_F"];
+		_Units = ["O_Soldier_LAT_F","O_Soldier_GL_F","O_medic_F","O_Soldier_AR_F","O_Soldier_A_F"];
+		_Officer = ["O_officer_F"];
+		_Wheeled = ["rhsgref_ins_uaz_dshkm","rhsgref_ins_uaz_spg9","rhsgref_ins_uaz_open","rhsgref_ins_uaz","rhsgref_ins_gaz66"];
+		_APC = ["rhsgref_ins_btr60","rhsgref_ins_btr70","rhsgref_ins_bmd1","rhsgref_ins_bmd1p","rhsgref_ins_bmd2"];
+		_Tank = ["rhsgref_ins_t72ba"];
+		_Artillery = ["rhsgref_ins_d30","rhsgref_ins_2b14","rhsgref_ins_2s1","rhsgref_ins_BM21"];
+		_Helicopter = ["rhsgref_ins_Mi8amt"];
+		_Transport = ["rhsgref_ins_ural"];
+		_Supply = ["rhsgref_ins_gaz66_r142","rhsgref_ins_gaz66_ap2","rhsgref_ins_kraz255b1_fuel","rhsgref_ins_ural_repair","rhsgref_ins_gaz66_ammo"];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply];
+		_SideMarker = "o_inf";
+		_SideColor = "ColorOpfor"
+*/

@@ -5,7 +5,7 @@
 
 if(!isServer) exitWith {};
 
-Params ["_MainTrigger","_RoadblockCount","_Side","_OnlyTarmac"];
+Params ["_MainTrigger","_RoadblockCount","_Side","_OnlyTarmac","_RoadblockPatrols"];
 private ["_RandomPos","_Road","_marker","_typeString","_Repetitions","_Debug_Variable","_Condition","_RoadPos"];
 
 _Debug_Variable = true;
@@ -136,7 +136,9 @@ For "_i" from 1 to _RoadblockCount do {
 
 		*/
 		//copyToClipboard str _GarrisonPositions;
-		[_RoadPos,5,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+		if(_RoadblockPatrols) then {
+			[_RoadPos,5,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+		};
 
 		sleep 2;
 		_Objects = nearestObjects [getpos _Road,[],55];

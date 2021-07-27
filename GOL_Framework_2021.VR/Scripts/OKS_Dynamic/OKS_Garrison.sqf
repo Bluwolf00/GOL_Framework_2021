@@ -59,5 +59,5 @@
 			 * 6: Teleport units <BOOL> (default: false)
 		 */
 		//private _type = typeOf nearestBuilding (getPos (leader _group));
-		[getPos (leader _Group), nil, units _Group, 5, 0, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
+		[getPos (leader _Group), [typeOf _House], units _Group, 5, 2, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
 	};

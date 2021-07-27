@@ -1,13 +1,13 @@
 
 /*
-	[TriggerName,SplitTriggerBool,[StaticContacts,PatrolContacts,CreateSectorObjective,LocalPatrols],_Side,NumberOfWheeled,NumberOfAPC,NumberofTank,[CompositionCount,OnlyTarmac],MortarPitCount,ObjectiveCount]
+	[TriggerName,SplitTriggerBool,[StaticContacts,PatrolContacts,CreateSectorObjective,LocalPatrols],_Side,NumberOfWheeled,NumberOfAPC,NumberofTank,[CompositionCount,OnlyTarmac],MortarPitCount,[ObjectiveCount,LocalPatrols],[0,0,0,0,0]]
 	[Trigger_1,true,[50,25,true,true],EAST,1,1,1,[2,true],1,3] execVM "Scripts\OKS_Dynamic\CreateZone.sqf";
 
 */
 
 if(!isServer) exitWith {};
 
-Params ["_MainTrigger","_SplitTrigger","_InfantryNumber","_Side","_WheeledCount","_apcCount","_tankCount","_RoadblockArray","_MortarCount","_Objectives","_HuntbaseArray"];
+Params ["_MainTrigger","_SplitTrigger","_InfantryNumber","_Side","_WheeledCount","_apcCount","_tankCount","_RoadblockArray","_MortarArray","_ObjectiveArray","_HuntbaseArray"];
 
 Private ["_MainTriggerArea","_Section_N","_Section_E","_Section_S","_Section_W","_MainTriggerSizeA","_MainTriggerSizeB","_MainTriggerAngle","_MainTriggerIsRectangle","_Section_N_Marker","_Section_E_Marker","_Section_S_Marker","_Section_W_Marker","_CountStrongpoints","_GarrisonNumber","_Section_N_Trigger","_Section_E_Trigger","_Section_S_Trigger","_Section_W_Trigger","_marker","_MainMarker","_WheeledPerTrigger","_APCPerTrigger","_TankPerTrigger","_SpawnTriggers"];
 
@@ -17,9 +17,10 @@ Private _Debug_Variable = false;
 _SpawnTriggers = [];
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
-_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
-
-_RoadblockArray Params ["_RoadblockCount","_RoadblockTarmac"];
+_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes"];
+_ObjectiveArray Params ["_Objectives","_ObjectivePatrols"];
+_RoadblockArray Params ["_RoadblockCount","_RoadblockTarmac","_RoadblockPatrols"];
+_MortarArray Params ["_MortarCount","_MortarPatrol"];
 
 /* Create Sub-Triggers based on the Main trigger */
 _MainTriggerArea = triggerArea _MainTrigger;
@@ -107,7 +108,7 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		/* Create Compositions for Main Area */
 		SystemChat format ["Roadblock Count: %1",_RoadblockCount];
 		if(_RoadblockCount > 0) then {
-			[_MainTrigger,_RoadblockCount,_Side,_RoadblockTarmac] spawn OKS_Find_RoadBlocks;
+			[_MainTrigger,_RoadblockCount,_Side,_RoadblockTarmac,_RoadBlockPatrols] spawn OKS_Find_RoadBlocks;
 			sleep 20;
 		};
 
@@ -115,7 +116,7 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		SystemChat format ["Mortar Count: %1",_MortarCount];
 		if(_MortarCount > 0) then {
 			For "_i" to (_MortarCount - 1) do {
-				[_MainTrigger,_Side] spawn OKS_Find_Mortars;
+				[_MainTrigger,_Side,_MortarPatrol] spawn OKS_Find_Mortars;
 				sleep 10;
 			};
 		};
@@ -125,8 +126,8 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		if(_Objectives > 0) then {
 			Private ["_RandomObjective"];
 			For "_i" to (_Objectives - 1) do {
-				_RandomObjective = selectRandom ["ammotruck","cache","artillery","hvttruck","hostage","motorpool","radiotower"];
-				[_MainTrigger,_RandomObjective,300,_Side] spawn OKS_CreateObjectives;
+				_RandomObjective = selectRandom _ObjectiveTypes;
+				[_MainTrigger,_RandomObjective,300,_Side,_ObjectivePatrols] spawn OKS_CreateObjectives;
 				sleep 15;
 			};
 			sleep 20;
@@ -156,7 +157,7 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		/* Create Infantry Strongpoints Main Area*/
 
 		if(_StaticNumber > 0) then {
-			[_MainTrigger,_Side,_StaticNumber,_LocalPatrols,_CreateObjective] spawn OKS_Populate_Strongpoints;
+			[_MainTrigger,_Side,_StaticNumber,_CreateObjective,_LocalPatrols] spawn OKS_Populate_Strongpoints;
 		};
 		/* Create Infantry Patrols for each sub-trigger */
 		Private ["_PatrolInfantry","_GroupPerTrigger"];

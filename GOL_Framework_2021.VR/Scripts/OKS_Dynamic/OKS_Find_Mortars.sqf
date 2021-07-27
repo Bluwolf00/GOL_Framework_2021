@@ -5,7 +5,7 @@
 
 if(!isServer) exitWith {};
 
-Params ["_MainTrigger","_Side"];
+Params ["_MainTrigger","_Side","_MortarPatrol"];
 private ["_RandomPos","_Road","_marker","_SideMarker","_typeString","_Units","_SideMarker","_SideColor","_SelectedPos","_Composition","_Repetitions","_Debug_Variable"];
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
@@ -59,7 +59,10 @@ _Debug_Variable = false;
 	_Mortar = createVehicle ["I_G_Mortar_01_F", _SelectedPos, [], 0, "NONE"];
 	[_Mortar, _Side, "precise", "light", ["auto", 40],250,1000,30] execVM "Scripts\NEKY_Mortars\NEKY_Mortars.sqf";
 
-	[_SelectedPos,5,50,_Side,_Units] spawn OKS_Patrol_Spawn;
+	if(_MortarPatrol) then {
+		[_SelectedPos,5,50,_Side,_Units] spawn OKS_Patrol_Spawn;
+	};
+
 	[_SelectedPos,_Side,(random 4),15] spawn OKS_Populate_Sandbag;
 
 	_Objects = nearestObjects [_SelectedPos,[],45];

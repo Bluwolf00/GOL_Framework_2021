@@ -1,16 +1,17 @@
 /*
 	OKS_Createobjectives
+	Params: Position, Type, Range, Side, Patrols?
 
-	[GetPos player,"sector",300,EAST] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
-	[GetPos player,"sector",300,EAST] spawn OKS_CreateObjectives;
+	[GetPos player,"sector",300,EAST,false] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
+	[GetPos player,"sector",300,EAST,false] spawn OKS_CreateObjectives;
 
-	[Position,TypeOfObjective,Range,EAST] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
-	[Position,TypeOfObjective,Range,EAST] spawn OKS_CreateObjectives;
+	[Position,TypeOfObjective,Range,EAST,Patrols?] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
+	[Position,TypeOfObjective,Range,EAST,Patrols?] spawn OKS_CreateObjectives;
 */
 
 if(!isServer) exitWith {};
 
-	Params ["_Position","_TypeOfObjective","_Range","_Side"];
+	Params ["_Position","_TypeOfObjective","_Range","_Side","_ObjectivePatrols"];
 	private ["_marker","_Condition","_playerSide","_trg","_EnemySideString","_playerSideString","_playerColor","_Area","_SpawnPos","_Repetitions","_Debug_Variable"];
 
 	_Settings = [_Side] call OKS_Dynamic_Setting;
@@ -153,8 +154,10 @@ switch (_TypeOfObjective) do {
 		_Task = [true,format["OKS_Cache_Objective_%1",(round(random 9000))], ["The Enemy forces have access to weapons and ammunitions caches in the area of operations. Find them and destroy them.", "Destroy Ammo Cache", "Destroy Ammo Cache"], getPos _Crate,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 		[_Task,"destroy"] call BIS_fnc_taskSetType;
 		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
-		[_Crate getPos [25,(random 360)],5,150,_Side,_Units] spawn OKS_Patrol_Spawn;
 
+		if(_ObjectivePatrols) then {
+			[_Crate getPos [25,(random 360)],5,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+		};
 	};
 
 	case "motorpool": {
@@ -202,9 +205,11 @@ switch (_TypeOfObjective) do {
 		_Task = [true,format["OKS_MotorPool_Objective_%1",(round(random 9000))], ["The Enemy forces use a motor pool located in the area of operations to resupply and repair their combat vehicles. Move in on the position and destroy the motorpool.", "Destroy Motorpool", "Destroy Motorpool"], getPos _Crate,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 		[_Task,"refuel"] call BIS_fnc_taskSetType;
 		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
-		[_Crate getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
-		[_Crate getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
 
+		if(_ObjectivePatrols) then {
+			[_Crate getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+			[_Crate getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+		};
 	};
 
 	case "ammotruck": {
@@ -306,8 +311,10 @@ switch (_TypeOfObjective) do {
 
 		[_Task,"radio"] call BIS_fnc_taskSetType;
 
-		[_SpawnPos getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
-		[_SpawnPos getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+		if(_ObjectivePatrols) then {
+			[_SpawnPos getPos [25,(random 360)],3,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+			[_SpawnPos getPos [25,(random 360)],3,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+		};
 		[_Tower,_Task] spawn { waitUntil{sleep 10; !Alive (_this select 0) || getDammage (_this select 0) > 0.8}; [_this select 1,'SUCCEEDED'] call BIS_fnc_taskSetState };
 	};
 
@@ -438,7 +445,10 @@ switch (_TypeOfObjective) do {
 
 			[_Task,"destroy"] call BIS_fnc_taskSetType;
 			[_Task,[_Arty,true]] call BIS_fnc_taskSetDestination;
-			[_Arty getPos [25,(random 360)],5,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+
+			if(_ObjectivePatrols) then {
+				[_Arty getPos [25,(random 360)],5,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+			};
 
 		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
 
@@ -461,7 +471,7 @@ switch (_TypeOfObjective) do {
 			if(_Debug_Variable) then {
 				systemChat "RemoteExec Artillery..";
 			};
-			[_Side,_Arty,_Target,6,300,30,true] remoteExec ["OKS_ArtyFire",0];
+			[_Side,_Arty,_Target,8,300,30] remoteExec ["OKS_ArtyFire",0];
 		} else {
 
 			createVehicleCrew _Arty;
@@ -488,7 +498,7 @@ switch (_TypeOfObjective) do {
 				_GarrisonPositions = [_House] call BIS_fnc_buildingPositions;
 				_GarrisonMaxSize = count _GarrisonPositions;
 				if(_Debug_Variable) then {systemChat format["Trigger - Finding Position - %1",_House]};
-				if(_Repetitions > 30 || (_GarrisonMaxSize > 5 && _House inArea _Area) ) exitWith {};
+				if(_Repetitions > 30 || (_GarrisonMaxSize > 8 && _House inArea _Area) ) exitWith {};
 
 				//if(!(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 35, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 			};
@@ -552,8 +562,11 @@ switch (_TypeOfObjective) do {
 
 		[_Task,"help"] call BIS_fnc_taskSetType;
 		[_Task,[_House,true]] call BIS_fnc_taskSetDestination;
-		[_House getPos [35,(random 360)],4,120,_Side,_Units] spawn OKS_Patrol_Spawn;
-		[_House getPos [35,(random 360)],4,120,_Side,_Units] spawn OKS_Patrol_Spawn;
+
+		if(_ObjectivePatrols) then {
+			[_House getPos [35,(random 360)],3,120,_Side,_Units] spawn OKS_Patrol_Spawn;
+			[_House getPos [35,(random 360)],3,120,_Side,_Units] spawn OKS_Patrol_Spawn;
+		};
 
 		waitUntil {sleep 10; {!alive _X || _X distance _Target < 300} count (units _HostageGroup) isEqualTo count (units _HostageGroup)};
 		if( {Alive _X} count (units _HostageGroup) < 1 ) then {

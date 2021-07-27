@@ -11,7 +11,7 @@ private ["_House","_AllBuildings","_buildingArray","_SelectedBuildings","_HouseC
 _Settings = [_Side] call OKS_Dynamic_Setting;
 _Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
 
-_Debug_Variable = false;
+_Debug_Variable = true;
 _SelectedStrongpoints = [];
 _Strongpoints = [];
 _Locations = [];
@@ -28,7 +28,7 @@ _Locations = [];
 					_Location = nearestBuilding _X;
 					_AllBuildings = (_Location) nearObjects ["House",125];
 					_SortedBuildings = [_AllBuildings,[],{(_Location) distance _x},"ASCEND"] call BIS_fnc_sortBy;
-					_SortedBuildings = _SortedBuildings select { 5 < count([_X] call BIS_fnc_buildingPositions) };
+					_SortedBuildings = _SortedBuildings select { 6 < count([_X] call BIS_fnc_buildingPositions) };
 					sleep 2;
 					if(count _SortedBuildings >= 3) then {
 						_Strongpoint = createMarker [format ["oks_SP_Marker_%1",str round(random 90000)],_Location];
@@ -51,9 +51,15 @@ if(_CountStrongpoints > 0) then {
 	_AllNumbers = round(_InfantryNumber / _CountStrongpoints);
 
 	if(_CreateLocalPatrols) then {
+		if(_Debug_Variable) then {
+			systemChat format ["CreateLocalPatrols is True."];
+		};
 		_GarrisonNumber = round(_AllNumbers * 0.7);
 		_PatrolNumber = round((_AllNumbers * 0.3) / 3);
 	} else {
+		if(_Debug_Variable) then {
+			systemChat format ["CreateLocalPatrols is False."];
+		};
 		_GarrisonNumber = _AllNumbers;
 		_PatrolNumber = 0;
 	};
@@ -77,8 +83,10 @@ if(_CountStrongpoints > 0) then {
 			[_MarkerPos,"sector",125,_Side,_Settings] spawn OKS_CreateObjectives;
 		};
 
-		if(_PatrolNumber > 0) then {
-
+		if(_CreateLocalPatrols) then {
+			if(_Debug_Variable) then {
+				systemChat format ["%1 Patrol Number - Creating patrols",_PatrolNumber];
+			};
 			{
 				Private _DirectionPos = _MarkerPos getPos [75,(random 360)];
 				_SafePos = [_MarkerPos, 1, 75, 5, 0, 0.2, 0] call BIS_fnc_findSafePos;
@@ -98,7 +106,6 @@ if(_CountStrongpoints > 0) then {
 				};
 				[_Group, _DirectionPos, 100] call CBA_fnc_taskPatrol;
 				_Group setBehaviour "SAFE";
-
 			} foreach [1,2,3];
 
 		};
@@ -110,7 +117,7 @@ if(_CountStrongpoints > 0) then {
 			_AllBuildings = _AllBuildings - _RemoveBuildings;
 
 			_SortedBuildings = [_AllBuildings,[],{_MarkerPos distance _x},"ASCEND"] call BIS_fnc_sortBy;
-			_SortedBuildings = _SortedBuildings select { 5 < count([_X] call BIS_fnc_buildingPositions) };
+			_SortedBuildings = _SortedBuildings select { 6 < count([_X] call BIS_fnc_buildingPositions) };
 
 			sleep 1;
 

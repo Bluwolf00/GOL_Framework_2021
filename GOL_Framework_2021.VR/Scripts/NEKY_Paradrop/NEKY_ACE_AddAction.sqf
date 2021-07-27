@@ -6,9 +6,6 @@
 	_change = ["ChangeDrop","Reposition Dropzone","\A3\ui_f\data\map\markers\HandDrawn\end_CA.paa",_code,_condition] call ace_interact_menu_fnc_createAction;
 
 	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _change] call ace_interact_menu_fnc_addActionToClass;
-	//[_unit, 1, ["ACE_SelfActions","ACE_Equipment"], ] call ace_interact_menu_fnc_addActionToObject;
 
-    //ChangeDropZone = ["ChangeDropZone","Reposition Dropzone","",{ [NEKY_Paradrop] spawn NEKY_OnMapClick; },{visibleMap}] call ace_interact_menu_fnc_createAction;
-    //[_unit, 0, ["ACE_SelfActions","ACE_Equipment"], ChangeDropZone] call ace_interact_menu_fnc_addActionToObject;
 
 }
