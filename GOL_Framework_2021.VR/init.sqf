@@ -19,8 +19,6 @@ sleep 5;
 	};
 	if(GOL_NEKY_RESUPPLY isEqualTo 1) then {
 		execVM "Scripts\NEKY_Supply\Ace_Resupply.sqf";
-	};
-	if(GOL_NEKY_MED_RESUPPLY isEqualTo 1) then {
 		execVM "Scripts\NEKY_Supply\Ace_Med.sqf";
 	};
 	if(GOL_NEKY_PARADROP isEqualTo 1) then {
@@ -38,7 +36,7 @@ sleep 5;
 	if(GOL_NEKY_HUNT isEqualTo 1) then {
 		[] execVM "Scripts\NEKY_Hunt\Init.sqf";
 	};
-	if(GOL_NEKY_SERVICESTATION isEqualTo 1 || GOL_NEKY_SERVICESTATION isEqualTo 1) then {
+	if(GOL_NEKY_HUNT isEqualTo 1 || GOL_NEKY_AIRDROP isEqualTo 1) then {
 		NEKY_Hunt_MaxCount = 40;
 		NEKY_Hunt_CurrentCount = [];
 		publicVariable "NEKY_Hunt_MaxCount";
@@ -69,10 +67,10 @@ sleep 5;
 			[] spawn NEKY_ACE_AddAction;
 
 			if(!isNil "flag_west_1" && OKS_FRIENDLY_SIDE isEqualTo west) then {
-				[flag_west_1, "Paradrop Reinsert", "DZ Alpha", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+				[flag_west_1, "Paradrop Reinsert", "DZ Alpha", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
 			};
 			if(!isNil "flag_east_1" && OKS_FRIENDLY_SIDE isEqualTo east) then {
-				[flag_east_1, "Paradrop Reinsert", "DZ Bravo", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+				[flag_east_1, "Paradrop Reinsert", "DZ Bravo", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
 			};
 			if(!isNil "flag_independent_1" && OKS_FRIENDLY_SIDE isEqualTo independent) then {
 				[flag_independent_1, "Paradrop Reinsert", "DZ Charlie", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
@@ -97,11 +95,12 @@ sleep 5;
 		   [Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false],[0,false],[0,false],[0,0,0,0,0]] spawn OKS_CreateZone;
 		*/
 
-		/* Example of Dynamic Scripts
-			if(isServer) then {
-				[Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false],[0,false],[0,false],[0,0,0,0,0]] spawn OKS_CreateZone;
-			};
-		*/
+		/* Example of Dynamic Scripts */
+		/*
+		if(isServer) then {
+			[Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false],[0,false],[0,false],[0,0,0,0,0]] spawn OKS_CreateZone;
+		};
+
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
