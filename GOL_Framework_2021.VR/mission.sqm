@@ -21849,8 +21849,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={48.687813,5.0014391,93.029999};
-												angles[]={0,0.0015503997,0};
+												position[]={48.688,5.0014391,93.030006};
+												angles[]={0,0.001553343,0};
 											};
 											side="West";
 											flags=6;
@@ -21860,6 +21860,7 @@ class Mission
 												rank="LIEUTENANT";
 												name="wpl";
 												description="Platoon Leader@1-Actual ";
+												isPlayer=1;
 												isPlayable=1;
 												stance="Up";
 											};
@@ -22090,7 +22091,6 @@ class Mission
 												skill=0.40000001;
 												name="w1a2";
 												description="Rifleman@1-1 Alpha";
-												isPlayer=1;
 												isPlayable=1;
 												stance="Up";
 											};
