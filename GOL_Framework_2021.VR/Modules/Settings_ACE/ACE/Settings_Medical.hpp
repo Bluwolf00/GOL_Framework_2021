@@ -65,17 +65,17 @@ class ace_medical_spontaneousWakeUpChance {
 	force = 1;
 };
 class ace_medical_fatalDamageSource {
-	value = 0;
+	value = 1;
 	typeName = "SCALAR";
 	force = 1;
 };
 class ace_medical_playerDamageThreshold {
-	value = 2;
+	value = 1.5;
 	typeName = "SCALAR";
 	force = 1;
 };
 class ace_medical_AIDamageThreshold {
-	value = 0.8;
+	value = 0.7;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -115,7 +115,7 @@ class ace_medical_statemachine_cardiacArrestTime {
 	force = 1;
 };
 class ace_medical_bleedingCoefficient {
-	value = 0.6;
+	value = 1.3;
 	typeName = "SCALAR";
 	force = 0;
 };

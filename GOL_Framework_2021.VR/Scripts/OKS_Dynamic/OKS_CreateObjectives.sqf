@@ -31,13 +31,11 @@ if(!isServer) exitWith {};
 		}
 	};
 
-_playerSide = OKS_FRIENDLY_SIDE;
-
 switch (_TypeOfObjective) do {
 
 	case "sector": {
 
-		switch(_playerSide) do {
+		switch(OKS_FRIENDLY_SIDE) do {
 			case west:{
 				_playerSideString = "WEST";
 				_playerColor = "ColorBLUFOR";
@@ -85,7 +83,7 @@ switch (_TypeOfObjective) do {
 		_trg setVariable ["isSectorTrigger",true];
 
 		if(_Debug_Variable) then {
-			systemChat format["OKS_Sector_Objective_%1",(round(random 9000))];
+			systemChat format["OKS_Sector_Objective: Player %1 - Enemy %2 - Condition %3",_playerSideString,_EnemySideString,_Condition];
 		};
 		_Task = [true,format["OKS_Sector_Objective_%1",(round(random 9000))], ["The Enemy is in control of this area. To secure the objective, you must seize the area and destroy the majority of enemy forces.", "Seize Sector", "Seize Sector"], getPos _trg,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 		[_Task,"attack"] call BIS_fnc_taskSetType;
@@ -389,7 +387,7 @@ switch (_TypeOfObjective) do {
 		_trg setTriggerStatements ["this", format ["['%1','FAILED'] call BIS_fnc_taskSetState;",_Task], ""];
 
 		private "_base";
-		switch(_playerSide) do {
+		switch(OKS_FRIENDLY_SIDE) do {
 			case west:{
 				_base = getMarkerPos "respawn_west";
 			};
@@ -454,7 +452,7 @@ switch (_TypeOfObjective) do {
 
 		if(!isNil "OKS_ArtyFire") then {
 
-			switch(_playerSide) do {
+			switch(OKS_FRIENDLY_SIDE) do {
 				case west:{
 					_Target = getMarkerPos "respawn_west";
 				};
@@ -544,7 +542,7 @@ switch (_TypeOfObjective) do {
 
 		{[_X] join _HostageGroup} foreach [_Hostage1,_Hostage2,_Hostage3];
 
-		switch(_playerSide) do {
+		switch(OKS_FRIENDLY_SIDE) do {
 			case west:{
 				_Target = getMarkerPos "respawn_west";
 			};

@@ -152,6 +152,13 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 	//SystemChat str [_StaticNumber,_PatrolNumber];
 	/* Check if there's Infantry */
 
+	/*
+		Populate all Static Weapons in Area
+	*/
+	if(!isNil "OKS_Populate_StaticWeapons") then {
+			[_MainTrigger,objNull,_Side] spawn OKS_Populate_StaticWeapons;
+	};
+
 	if(_Condition) then {
 
 		/* Create Infantry Strongpoints Main Area*/

@@ -23,7 +23,7 @@ if (!HasInterface || isServer) then
 		params["_side","_arty","_target","_rof","_time","_reload"];
 		private ["_gunner","_CfgMagazine","_Debug","_Range"];
 
-		_Debug = 1;
+		_Debug = 0;
 
 		if (_Debug == 1) then {SystemChat "Start"};
 
@@ -79,30 +79,54 @@ if (!HasInterface || isServer) then
 
 	waitUntil {sleep 1; !(isNull _gunner)};
 
-	_CfgMagazine = (getArray (configFile >> "CfgWeapons" >> (currentMuzzle (gunner _arty)) >> "magazines") select 0);
-    if(_Debug == 1) then {
-		systemChat str _CfgMagazine;
+	/*if(["d30",typeOf _arty] call BIS_fnc_inString) then {
+		_CfgMagazine = (getArray (configFile >> "CfgWeapons" >> (currentMuzzle (gunner _arty)) >> "magazines") select 1);
+	} else {
+		_CfgMagazine = (getArray (configFile >> "CfgWeapons" >> (currentMuzzle (gunner _arty)) >> "magazines") select 0);
+	};
+	*/
+	Private _FoundTarget = false;
+	Private _Selection = 0;
+	Private _SelectionMax = count (getArray (configFile >> "CfgWeapons" >> (currentMuzzle (gunner _arty)) >> "magazines"));
+	Private _MarkerArray = [];
+	_Range = 0;
+
+    while {_Selection < _SelectionMax} do {
+		_CfgMagazine = (getArray (configFile >> "CfgWeapons" >> (currentMuzzle (gunner _arty)) >> "magazines") select _Selection);
+		if(isNil "_CfgMagazine") then { _CfgMagazine = ""};
+	    if(_Debug == 1) then {
+			systemChat str [_CfgMagazine,_Selection];
+	    };
+
+		if (!(_CfgMagazine isEqualTo "") && !(_target inRangeOfArtillery [[_arty], _CfgMagazine])) then {
+			if (_Debug == 1) then {SystemChat "Artillery not in range.."};
+			_Range = 0;
+			while {_Range <= 10000} do {
+				_Range = _Range + 250;
+				_target = _arty getPos [_Range,(_arty getDir _target)];
+				if (_Debug == 1) then {
+					//SystemChat format["Arty Pos: %1 with %2",_target,_CfgMagazine];
+					_marker = createMarker [format ["oks_ArtyDebugMarker_%1",str round(random 80000 + random 9999)],_target];
+					_marker setMarkerSize [0.3,0.3];
+					_marker setMarkerShape "ICON";
+					_marker setMarkerType "hd_dot";
+					_marker setMarkerText format ["%1",_Selection];
+					_MarkerArray pushBack _marker;
+				};
+
+				SystemChat format ["%1 is in Range",_target inRangeOfArtillery [[_arty], _CfgMagazine]];
+				if(_target inRangeOfArtillery [[_arty], _CfgMagazine]) exitWith { _FoundTarget = true; if (_Debug == 1) then {SystemChat "Artillery Target in range..."}};
+			};
+		} else { if(true) exitWith { _FoundTarget = true; if (_Debug == 1) then {SystemChat "Artillery Target in range..."}}};
+
+		_Selection = _Selection + 1;
+		if( !(_FoundTarget) ) then {{deleteMarker _X} foreach _MarkerArray;};
+		_MarkerArray = [];
+		if(_Selection >= _SelectionMax || _FoundTarget) then {break};
+		sleep 10;
     };
 
-	if (!(_target inRangeOfArtillery [[_arty], _CfgMagazine])) then {
-		SystemChat "Artillery not in range..";
-		_Range = 0;
-		while {true} do {
-
-			sleep 0.25;
-			_Range = _Range + 250;
-			_target = _arty getPos [_Range,(_arty getDir _target)];
-			if (_Debug == 1) then {
-				SystemChat format["Artillery Position: %1",_target];
-				_marker = createMarker [format ["oks_ArtyDebugMarker_%1",str round(random 80000 + random 9999)],_target];
-				_marker setMarkerSize [0.6,0.6];
-				_marker setMarkerShape "ICON";
-				_marker setMarkerType "hd_dot";
-			};
-			if((_target inRangeOfArtillery [[_arty], _CfgMagazine])) exitWith {"Artillery Target in range..."};
-		};
-	};
-
+	if(_Range >= 10000 || !(_FoundTarget) && _Selection >= _SelectionMax) exitWith { if (_Debug == 1) then { SystemChat "Unable to fire at target. Exiting.."}};
 
 	/*
 	if (_Debug == 1) then {SystemChat "Starting Watch and Interval"};
@@ -124,9 +148,8 @@ if (!HasInterface || isServer) then
 		_gunner setCombatMode "BLUE";
 	*/
 
-
-
 	if (_Debug == 1) then {SystemChat "Disable AI"};
+
 	/// While Arty is not destroyed - Continue the loop
 	while {Alive _arty} do
 	{
@@ -147,7 +170,7 @@ if (!HasInterface || isServer) then
 	        if(_Debug == 1) then {
         		systemChat "Firing Artillery..";
 	        };
-	        _arty doArtilleryFire [_target getPos [(_arty distance _target),_arty getDir _target], _CfgMagazine, _rof];
+	        _arty doArtilleryFire [_target, _CfgMagazine,_rof];
 	        sleep _reload;
 		};
 

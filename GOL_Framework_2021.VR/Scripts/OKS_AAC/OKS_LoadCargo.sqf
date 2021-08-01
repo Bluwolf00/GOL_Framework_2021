@@ -1,4 +1,4 @@
-//	[] execVM "Scripts\OKS_AAC\Init.sqf";
+//	[] execVM "Scripts\OKS_AAC\OKS_LoadCargo.sqf";
 //
 //	This initializes all the functions for OKS AAC.
 //

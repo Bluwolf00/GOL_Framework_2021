@@ -1,6 +1,10 @@
 		/*
 			[Position,30,EAST] spawn OKS_Populate_StaticWeapons;
 			[GetPos Object,30,EAST] spawn OKS_Populate_StaticWeapons;
+
+
+			[Trigger,0,EAST] spawn OKS_Populate_StaticWeapons;
+			[Trigger_1,0,EAST] spawn OKS_Populate_StaticWeapons;
 		*/
 
 		if(HasInterface && !isServer) exitWith {};
@@ -33,15 +37,38 @@
 			};
 		};
 
+		Switch (typeName _Position) do {
 
-		_Statics = nearestObjects [_Position,["StaticWeapon"],_Range];
-		_Statics = _Statics select {_X emptyPositions "gunner" > 0};
-		_StaticGroup = CreateGroup _Side;
-		{
-			_Unit = _StaticGroup CreateUnit [(_Units call BIS_FNC_selectRandom), _Position, [], 5, "NONE"];
-			_Unit setRank "PRIVATE";
-			//systemChat str [_Unit,_X];
-			_Unit assignAsGunner _X;
-			[_Unit] orderGetIn true;
-			_Unit moveInAny _X;
-		} foreach _Statics;
+			case "OBJECT":{
+				_Statics = Vehicles select {_X isKindOf "StaticWeapon" && _X inArea _Position && _X emptyPositions "gunner" > 0};
+				_StaticGroup = CreateGroup _Side;
+				if(!(_Statics isEqualTo [])) then {
+					{
+						_Unit = _StaticGroup CreateUnit [(_Units call BIS_FNC_selectRandom), _Position, [], 5, "NONE"];
+						_Unit setRank "PRIVATE";
+						//systemChat str [_Unit,_X];
+						_Unit assignAsGunner _X;
+						[_Unit] orderGetIn true;
+						_Unit moveInAny _X;
+					} foreach _Statics;
+				};
+			};
+
+			case "ARRAY":{
+				_Statics = nearestObjects [_Position,["StaticWeapon"],_Range];
+				_Statics = _Statics select {_X emptyPositions "gunner" > 0};
+				_StaticGroup = CreateGroup _Side;
+
+				if(!(_Statics isEqualTo [])) then {
+					{
+						_Unit = _StaticGroup CreateUnit [(_Units call BIS_FNC_selectRandom), _Position, [], 5, "NONE"];
+						_Unit setRank "PRIVATE";
+						//systemChat str [_Unit,_X];
+						_Unit assignAsGunner _X;
+						[_Unit] orderGetIn true;
+						_Unit moveInAny _X;
+					} foreach _Statics;
+				};
+			};
+		};
+

@@ -8,7 +8,7 @@ if(!isServer) exitWith {};
 Params ["_MainTrigger","_RoadblockCount","_Side","_OnlyTarmac","_RoadblockPatrols"];
 private ["_RandomPos","_Road","_marker","_typeString","_Repetitions","_Debug_Variable","_Condition","_RoadPos"];
 
-_Debug_Variable = true;
+_Debug_Variable = false;
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
 _Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
