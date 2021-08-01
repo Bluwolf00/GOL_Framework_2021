@@ -6,6 +6,9 @@ switch (_side) do {
 	case "BAF-W": {
 		#include "Classes\BAF-W.sqf"
 	};
+	case "BAF-W-FALK": {
+		#include "Classes\BAF-W-FALK.sqf"
+	};
 	case "CIVI-ALTIS": {
 		#include "Classes\CIVI-ALTIS.sqf"
 	};
@@ -53,6 +56,9 @@ switch (_side) do {
 	};
 	case "INSURGENT-AFRICA": {
 		#include "Classes\INSURGENT-AFRICA.sqf"
+	};
+	case "INSURGENT-TANOA": {
+		#include "Classes\INSURGENT-TANOA.sqf"
 	};
 	case "AUS-TAN": {
 		#include "Classes\AUS-TAN.sqf"

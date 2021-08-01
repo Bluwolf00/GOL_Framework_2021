@@ -35,7 +35,20 @@ switch (true) do {
 		_role = "ftl";
 	};
 	case (_displayName isEqualTo "Rifleman"): {
-		_role = "r";
+		if ((random 1) >= 0.6 && !(isPlayer _unit)) then {
+			_role = "lr";
+		} else {
+			_role = "r";
+			if (_groupType) then {
+				_role = "mat";
+			};
+		};
+	};
+	case (_displayName in ["Engineer","Ammo Bearer"]): {
+		_role = "ab";
+	};
+	case (_displayName in ["Rifleman (AT)","Rifleman (Heavy AT)","Missile Specialist (AT)"]): {
+		_role = "mat";
 		if (_groupType) then {
 			_role = "mat";
 		};
@@ -54,11 +67,18 @@ switch (true) do {
 			_role = "ag";
 		};
 	};
-	case (_displayName in ["Autorifleman","Machinegunner","Automatic Rifleman","Auto Rifleman","Machine Gunner","Machine Gunner Assistant","Heavy Gunner"]): {
+	case (_displayName in ["Autorifleman","Machinegunner","Automatic Rifleman","Auto Rifleman"]): {
 		if (_groupType) then {
 			_role = "mmg";
 		} else {
 			_role = "ar";
+		};
+	};
+	case (_displayName in ["Machine Gunner","Machine Gunner Assistant","Heavy Gunner"]): {
+		if (_groupType) then {
+			_role = "mmg";
+		} else {
+			_role = "mmg";
 		};
 	};
 	case ((_displayName in ["Crewman","Crew"]) || (["Crew",_displayName] call BIS_fnc_inString)): {

@@ -13,7 +13,21 @@ Switch (_Side) do
 	{
 		// Unit classes are compatible with multiple class names, will select randomly. Example: ["B_Pilot_F","B_Crewman_F"];
 		_Leaders = ["B_Soldier_TL_F","B_Soldier_TL_F"];	// Squad/Team leader classes.
-		_Units = ["B_Soldier_LAT_F","B_Soldier_GL_F","B_medic_F","B_Soldier_AR_F","B_Soldier_A_F"]; // Class names for infantry units.
+		_Units = [
+			"B_Soldier_A_F",
+			"B_Soldier_AR_F",
+			"B_Soldier_AR_F",
+			"B_medic_F",
+			"B_medic_F",
+			"B_crew_F",
+			"B_Soldier_GL_F",
+			"B_HeavyGunner_F",
+			"B_soldier_M_F",
+			"B_Soldier_F",
+			"B_Soldier_F",
+			"B_Soldier_F",
+			"B_Soldier_LAT_F"
+		]; // Class names for infantry units.
 		_Officer = ["B_officer_F"];
 		_Wheeled = ["rhsusf_m1025_w_s_m2","British_LandRover_WMIK_GPMG_Green_A", "LOP_CDF_UAZ", "LOP_CDF_UAZ_Open", "LOP_CDF_UAZ_SPG", "rhsgref_cdf_b_reg_uaz_dshkm", "rhsgref_cdf_b_gaz66o"];
 		_APC = ["rhsgref_BRDM2_b", "rhsgref_BRDM2_HQ_b", "rhsgref_cdf_b_btr60", "rhsgref_cdf_b_btr80", "rhsgref_cdf_b_btr70"];
@@ -29,7 +43,21 @@ Switch (_Side) do
 	case OPFOR:		// OPFOR settings
 	{
 		_Leaders = ["O_Soldier_TL_F","O_Soldier_TL_F"];
-		_Units = ["O_Soldier_LAT_F","O_Soldier_GL_F","O_medic_F","O_Soldier_AR_F","O_Soldier_A_F"];
+		_Units = [
+			"O_Soldier_A_F",
+			"O_Soldier_AR_F",
+			"O_Soldier_AR_F",
+			"O_medic_F",
+			"O_medic_F",
+			"O_crew_F",
+			"O_Soldier_GL_F",
+			"O_HeavyGunner_F",
+			"O_soldier_M_F",
+			"O_Soldier_F",
+			"O_Soldier_F",
+			"O_Soldier_F",
+			"O_Soldier_LAT_F"
+		];
 		_Officer = ["O_officer_F"];
 		_Wheeled = ["rhsgref_ins_uaz_dshkm","rhsgref_ins_uaz_spg9","rhsgref_ins_uaz_open","rhsgref_ins_uaz","rhsgref_ins_gaz66"];
 		_APC = ["rhsgref_ins_btr60","rhsgref_ins_btr70","rhsgref_ins_bmd1","rhsgref_ins_bmd1p","rhsgref_ins_bmd2"];
@@ -45,7 +73,21 @@ Switch (_Side) do
 	case INDEPENDENT:	// INDEPENDENT Settings
 	{
 		_Leaders = ["I_Soldier_TL_F","I_Soldier_TL_F"];
-		_Units = ["I_Soldier_LAT_F","I_Soldier_GL_F","I_medic_F","I_Soldier_AR_F","I_Soldier_A_F"];
+		_Units = [
+			"I_Soldier_A_F",
+			"I_Soldier_AR_F",
+			"I_Soldier_AR_F",
+			"I_medic_F",
+			"I_medic_F",
+			"I_crew_F",
+			"I_Soldier_GL_F",
+			"I_HeavyGunner_F",
+			"I_soldier_M_F",
+			"I_Soldier_F",
+			"I_Soldier_F",
+			"I_Soldier_F",
+			"I_Soldier_LAT_F"
+		];
 		_Officer = ["I_officer_F"];
 		_Wheeled = ["LOP_NAPA_Landrover_M2", "I_G_Offroad_01_armed_F", "I_G_Offroad_01_F", "LOP_AM_Nissan_PKM"];
 		_APC = ["rhsgref_BRDM2_ins_g", "rhsgref_BRDM2_HQ_ins_g", "LOP_UKR_BTR60", "LOP_UKR_BTR70"];

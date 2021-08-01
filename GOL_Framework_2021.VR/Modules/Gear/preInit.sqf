@@ -28,6 +28,7 @@ GVAR(StaminaCoef) = 0.5;
 			"NATO-D",
 			"NATO-W",
 			"BAF-W",
+			"BAF-W-FALK",
 			"GER-FLK",
 			"USMC-D",
 			"USMC-W",
@@ -49,6 +50,7 @@ GVAR(StaminaCoef) = 0.5;
 			"NATO-Desert",
 			"NATO-Woodland",
 			"British Armed Forces",
+			"Falklands Royal Marines",
 			"Bundeswehr-Flecktarn",
 			"USMC-Desert",
 			"USMC-Woodland",
@@ -87,6 +89,7 @@ GVAR(StaminaCoef) = 0.5;
 			"INSURGENT-ME",
 			"INSURGENT-CHDKZ",
 			"INSURGENT-AFRICA",
+			"INSURGENT-TANOA",
 			"CUSTOM-E"
 		],
 		[
@@ -101,6 +104,7 @@ GVAR(StaminaCoef) = 0.5;
 			"INSURGENT Middle Eastern",
 			"INSURGENT ChDkz",
 			"INSURGENT African",
+			"INSURGENT Tanoan",
 			"CUSTOM-East"
 		],
 		0
