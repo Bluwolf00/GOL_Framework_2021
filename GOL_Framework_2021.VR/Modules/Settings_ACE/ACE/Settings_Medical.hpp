@@ -70,7 +70,7 @@ class ace_medical_fatalDamageSource {
 	force = 1;
 };
 class ace_medical_playerDamageThreshold {
-	value = 1.5;
+	value = 1.25;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -115,12 +115,12 @@ class ace_medical_statemachine_cardiacArrestTime {
 	force = 1;
 };
 class ace_medical_bleedingCoefficient {
-	value = 1.3;
+	value = 1.2;
 	typeName = "SCALAR";
 	force = 0;
 };
 class ace_medical_painCoefficient {
-	value = 0.8;
+	value = 1.5;
 	typeName = "SCALAR";
 	force = 0;
 };
@@ -200,7 +200,7 @@ class ace_medical_treatment_allowSelfPAK {
 	force = 1;
 };
 class ace_medical_treatment_timeCoefficientPAK {
-	value = 1.5;
+	value = 1;
 	typeName = "SCALAR";
 	force = 1;
 };

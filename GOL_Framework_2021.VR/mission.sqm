@@ -8,15 +8,15 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1755;
+		nextID=1758;
 	};
 	class MarkerIDProvider
 	{
-		nextID=2;
+		nextID=3;
 	};
 	class LayerIndexProvider
 	{
-		nextID=5013;
+		nextID=5038;
 	};
 	class Camera
 	{
@@ -5335,7 +5335,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=1;
+														value=1.2;
 													};
 												};
 												class Item1
@@ -5380,7 +5380,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=1.3;
+														value=1.5;
 													};
 												};
 												class Item1
@@ -6910,7 +6910,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0.60000002;
+														value=1;
 													};
 												};
 												class Item1
@@ -21568,7 +21568,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0.25;
+														value=0.2;
 													};
 												};
 												class Item1
@@ -21815,7 +21815,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=10;
+		items=13;
 		class Item0
 		{
 			dataType="Layer";
@@ -24149,7 +24149,7 @@ class Mission
 								class Item5
 								{
 									dataType="Marker";
-									position[]={54.444328,5943464,88.609085};
+									position[]={51.765896,5943464,88.809769};
 									name="respawn_west";
 									text=" respawn_west";
 									type="Empty";
@@ -29057,7 +29057,7 @@ class Mission
 		class Item2
 		{
 			dataType="Marker";
-			position[]={20.589504,22.872955,63.066055};
+			position[]={7.6670022,22.872955,62.890274};
 			name="spectator";
 			type="Empty";
 			angle=227.03697;
@@ -29070,7 +29070,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={576.70404,5,808.3515};
-				angles[]={-0,3.1306186,0};
+				angles[]={0,3.1306186,0};
 			};
 			title="These are activated through the init.sqf";
 			description="If you check the init.sqf you'll find examples of how these 3 bases are used. One is for infantry, the other for aircraft and the last for ground vehicles.";
@@ -29138,7 +29138,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={610.14716,5,799.70404};
-						angles[]={-0,6.2779589,0};
+						angles[]={0,6.2779589,0};
 					};
 					side="Empty";
 					flags=4;
@@ -29198,7 +29198,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={578.8183,5,799.34009};
-						angles[]={-0,6.2756772,0};
+						angles[]={0,6.2756772,0};
 					};
 					side="Empty";
 					flags=4;
@@ -29258,7 +29258,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={549.90155,5,797.54639};
-						angles[]={-0,4.6569281,0};
+						angles[]={0,4.6569281,0};
 					};
 					side="Empty";
 					flags=4;
@@ -29318,7 +29318,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={616.18054,8.8823891,786.41815};
-						angles[]={-0,3.1306186,0};
+						angles[]={0,3.1306186,0};
 					};
 					side="Empty";
 					flags=4;
@@ -29336,7 +29336,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={578.19806,8.8754005,786.65564};
-						angles[]={-0,3.1306186,0};
+						angles[]={0,3.1306186,0};
 					};
 					side="Empty";
 					flags=4;
@@ -29354,7 +29354,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={549.10779,6.3984251,787.2486};
-						angles[]={-0,3.1306186,0};
+						angles[]={0,3.1306186,0};
 					};
 					side="Empty";
 					flags=4;
@@ -29413,6 +29413,33 @@ class Mission
 			title="Paradrop Trigger";
 			description="This is the Paradrop Trigger that is required for NEKY Paradrop to be used.";
 			id=1754;
+		};
+		class Item10
+		{
+			dataType="Marker";
+			position[]={8.0439997,5,44.847};
+			name="helicopter_spawn";
+			type="Empty";
+			id=1755;
+		};
+		class Item11
+		{
+			dataType="Marker";
+			position[]={8.0089998,5,41.235001};
+			name="helicopter_despawn";
+			type="Empty";
+			id=1756;
+		};
+		class Item12
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={7.9036493,5,43.219727};
+			};
+			title="NEKY Resupply / Pick up Markers";
+			description="Spawn / Despawn Position for Resupply & Pickup helicopters";
+			id=1757;
 		};
 	};
 };
