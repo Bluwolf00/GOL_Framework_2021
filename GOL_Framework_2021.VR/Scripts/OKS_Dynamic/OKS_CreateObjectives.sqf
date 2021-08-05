@@ -451,7 +451,6 @@ switch (_TypeOfObjective) do {
 		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
 
 		if(!isNil "OKS_ArtyFire") then {
-
 			switch(OKS_FRIENDLY_SIDE) do {
 				case west:{
 					_Target = getMarkerPos "respawn_west";
@@ -471,17 +470,14 @@ switch (_TypeOfObjective) do {
 			};
 			[_Side,_Arty,_Target,8,300,30] remoteExec ["OKS_ArtyFire",0];
 		} else {
-
 			createVehicleCrew _Arty;
-
 		};
 
 		["ArtilleryNest",getPos _Arty, [0,0,0], getDir _Arty] call LARs_fnc_spawnComp;
 		sleep 5;
-		[getPos _Arty,_Side,(random 4),15] spawn OKS_Populate_Sandbag;
+		[getPos _Arty,_Side,(round random 4),15] spawn OKS_Populate_Sandbag;
 		[getPos _Arty,40,_Side] spawn OKS_Populate_StaticWeapons;
-	 	[getPos _Arty,_Side,(3+(round random 4)),40] spawn OKS_Populate_Bunkers;
-
+	 	//[getPos _Arty,_Side,(1+(round random 3)),40] spawn OKS_Populate_Bunkers;
 	};
 
 	case "hostage": {

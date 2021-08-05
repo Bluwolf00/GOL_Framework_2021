@@ -4,6 +4,8 @@ Edited by the GOL Technical Team.</br>
 
 USE THE RELEASE FOR THE LATEST **STABLE** BUILD
 
+Video Guides of GOL Setup: https://www.youtube.com/playlist?list=PLdTW1xaImQYUvXiP5KYoTlrf0XG6qixZ5
+
 # Functions
 
 The main functions of the framework include:

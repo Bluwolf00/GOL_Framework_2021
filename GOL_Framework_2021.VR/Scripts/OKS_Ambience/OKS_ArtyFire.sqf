@@ -21,7 +21,8 @@ if (!HasInterface || isServer) then
 	};
 
 		params["_side","_arty","_target","_rof","_time","_reload"];
-		private ["_gunner","_CfgMagazine","_Debug","_Range"];
+		private ["_gunner","_CfgMagazine","_Debug","_Range","_displayName"];
+		_displayName = getText (configfile >> "CfgVehicles" >> (typeOf _arty) >> "displayName");
 
 		_Debug = 0;
 
@@ -92,16 +93,17 @@ if (!HasInterface || isServer) then
 	_Range = 0;
 
     while {_Selection < _SelectionMax} do {
+    	_Range = 0;
 		_CfgMagazine = (getArray (configFile >> "CfgWeapons" >> (currentMuzzle (gunner _arty)) >> "magazines") select _Selection);
 		if(isNil "_CfgMagazine") then { _CfgMagazine = ""};
 	    if(_Debug == 1) then {
-			systemChat str [_CfgMagazine,_Selection];
+			systemChat str [_CfgMagazine,_SelectionMax,_target];
 	    };
 
 		if (!(_CfgMagazine isEqualTo "") && !(_target inRangeOfArtillery [[_arty], _CfgMagazine])) then {
 			if (_Debug == 1) then {SystemChat "Artillery not in range.."};
-			_Range = 0;
-			while {_Range <= 10000} do {
+
+			while {_Range <= 15000} do {
 				_Range = _Range + 250;
 				_target = _arty getPos [_Range,(_arty getDir _target)];
 				if (_Debug == 1) then {
@@ -114,19 +116,19 @@ if (!HasInterface || isServer) then
 					_MarkerArray pushBack _marker;
 				};
 
-				SystemChat format ["%1 is in Range",_target inRangeOfArtillery [[_arty], _CfgMagazine]];
-				if(_target inRangeOfArtillery [[_arty], _CfgMagazine]) exitWith { _FoundTarget = true; if (_Debug == 1) then {SystemChat "Artillery Target in range..."}};
+				//SystemChat format ["%1 is in Range",_target inRangeOfArtillery [[_arty], _CfgMagazine]];
+				if(_target inRangeOfArtillery [[_arty], _CfgMagazine]) exitWith { _FoundTarget = true; if (_Debug == 1) then {SystemChat format["%3 %2 in range: %1",_Range,_CfgMagazine,_displayName]}};
 			};
-		} else { if(true) exitWith { _FoundTarget = true; if (_Debug == 1) then {SystemChat "Artillery Target in range..."}}};
+		} else { if(true) exitWith { _FoundTarget = true; if (_Debug == 1) then {SystemChat format["%3 %2 in range of %1",_Target,_CfgMagazine,_displayName]}}};
 
 		_Selection = _Selection + 1;
 		if( !(_FoundTarget) ) then {{deleteMarker _X} foreach _MarkerArray;};
 		_MarkerArray = [];
 		if(_Selection >= _SelectionMax || _FoundTarget) then {break};
-		sleep 10;
+		sleep 0.5;
     };
 
-	if(_Range >= 10000 || !(_FoundTarget) && _Selection >= _SelectionMax) exitWith { if (_Debug == 1) then { SystemChat "Unable to fire at target. Exiting.."}};
+	if(_Range >= 15000 || !(_FoundTarget) && _Selection > _SelectionMax) exitWith { if (_Debug == 1) then { SystemChat Format ["Unable to fire at target. _Range: %1, _FoundTarget: %2, _Selection: %3",_Range >= 15000,!(_FoundTarget),_Selection > _SelectionMax]}};
 
 	/*
 	if (_Debug == 1) then {SystemChat "Starting Watch and Interval"};
