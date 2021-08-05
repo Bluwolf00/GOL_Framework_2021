@@ -119,6 +119,7 @@ GVAR(StaminaCoef) = 0.5;
 	[
 		[
 			"AAF-W",
+			"AAF-SF-W",
 			"PMC",
 			"TAKISTAN-D",
 			"ISLAMICSTATE",
@@ -129,6 +130,7 @@ GVAR(StaminaCoef) = 0.5;
 		],
 		[
 			"AAF-Woodland",
+			"AAF SF Woodland",
 			"PMC",
 			"Takistani Desert",
 			"Islamic State",

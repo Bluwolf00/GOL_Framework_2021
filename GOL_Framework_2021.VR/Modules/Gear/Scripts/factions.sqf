@@ -3,6 +3,9 @@ switch (_side) do {
 	case "AAF-W": {
 		#include "Classes\AAF-W.sqf"
 	};
+	case "AAF-SF-W": {
+		#include "Classes\AAF-SF-W.sqf"
+	};
 	case "BAF-W": {
 		#include "Classes\BAF-W.sqf"
 	};
