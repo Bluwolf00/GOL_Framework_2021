@@ -1,5 +1,5 @@
 
-_goggles = "";
+_goggles = "rhsusf_shemagh_grn";
 _OfficerHelmet = "H_MilCap_dgtl";
 _helmet = selectRandom ["H_HelmetHBK_headset_F","H_HelmetHBK_chops_F","H_HelmetHBK_ear_F","H_HelmetHBK_F"];
 _uniform = selectRandom ["U_I_CombatUniform","U_I_CombatUniform_shortsleeve","U_I_CombatUniform_tshirt"];
@@ -35,9 +35,9 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "hlc_muzzle_snds_ROTEX3P";
+_silencer = "";
 _pointer = "UK3CB_BAF_LLM_Flashlight_Black";
-_sight = "optic_MRCO";
+_sight = "rksl_optic_eot552x";
 _bipod = "rhsusf_acc_grip1";
 
 _rifle = ["hlc_rifle_g3ka4", _silencer, _pointer, _sight, _bipod];
@@ -47,9 +47,9 @@ _rifleL = ["hlc_rifle_g3sg1ris", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "hlc_20rnd_762x51_barrier_G3";
 _rifle_mag_tr = "hlc_20rnd_762x51_T_G3";
 
-_LMG = ["LMG_Mk200_black_F", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "200Rnd_65x39_cased_Box";
-_LMG_mag_tr = "200Rnd_65x39_cased_Box_Tracer";
+_LMG = ["hlc_lmg_mk46mod1_grip", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "hlc_200rnd_556x45_M_SAW";
+_LMG_mag_tr = "hlc_200rnd_556x45_T_SAW";
 
 _MMG = ["UK3CB_BAF_L7A2", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "UK3CB_BAF_762_100Rnd";
@@ -60,9 +60,9 @@ _LAT = ["rhs_weap_M136_hp", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "";
 _LAT_ReUsable = false;
 
-_MAT = ["rhs_weap_maaws", _silencer, _pointer, _sight, _bipod];
-_MAT_mag = "rhs_mag_maaws_HEAT";
-_MAT_mag_HE = "rhs_mag_maaws_HEDP";
+_MAT = ["launch_MRAWS_olive_rail_F", _silencer, _pointer, _sight, _bipod];
+_MAT_mag = "MRAWS_HEAT_F";
+_MAT_mag_HE = "MRAWS_HE_F";
 
 _pistol = ["hgun_ACPC2_F", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "9Rnd_45ACP_Mag";

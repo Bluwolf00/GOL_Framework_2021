@@ -83,7 +83,7 @@ switch (_Side) do
 };
 
 // Whether it'll have a smoke grenade or a chemlight for signal
-if ((dayTime > 04.30) and (dayTime < 19.30)) then {_SignalClass = "SmokeShellGreen"} else {_SignalClass = "Chemlight_green"};
+if ((dayTime > 04.30) and (dayTime < 19.30)) then {_SignalClass = "SmokeShellGreen"} else {_SignalClass = "F_40mm_Green"};
 
 // Spawning Heli & Crew
 _Heli = CreateVehicle [_HeliClass, (_STD select 0), [], 0, "FLY"];

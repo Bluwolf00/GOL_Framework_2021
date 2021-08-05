@@ -12,7 +12,7 @@ if (hasInterface) then {
 				Case independent: { _Classname = "I_Heli_Transport_02_F" };
 			};
 			SystemChat str _Classname;
-			[Side player,"RHS_UH60M_d", ["spawn","_pos","_pos","despawn"], true] execVM "Scripts\NEKY_PickUp\NEKY_PickUpTrigger.sqf";
+			[Side player,"", ["spawn","_pos","_pos","despawn"], true] execVM "Scripts\NEKY_PickUp\NEKY_PickUpTrigger.sqf";
 	};
 
 	// NEKY EDIT END
