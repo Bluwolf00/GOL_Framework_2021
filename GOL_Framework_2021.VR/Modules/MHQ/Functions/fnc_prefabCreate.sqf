@@ -31,7 +31,9 @@ _can setPosATL (getPos _mhq);
 	_veh setDir (_dir + (getdir _mhq));
 	_veh setVehiclePosition [(_can modelToWorld _pos), [], 0, "CAN_COLLIDE"];
 	_veh setVectorUp surfaceNormal position _veh;
-	_veh enableSimulationGlobal false;
+	if(typeOf _veh != "Box_NATO_Equip_F") then {
+		_veh enableSimulationGlobal false;
+	};
 	_veh allowDamage false;
 	if (count _x isEqualTo 4) then {
 		[_veh, _inventory] call EFUNC(Gear,Init);

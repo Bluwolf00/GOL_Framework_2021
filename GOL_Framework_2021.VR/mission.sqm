@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5038;
+		nextID=5063;
 	};
 	class Camera
 	{
 		pos[]={25.970327,28.28274,98.884476};
-		dir[]={0.89065272,-0.21769349,-0.39918572};
-		up[]={0.19865403,0.97601634,-0.089035615};
-		aside[]={-0.40899411,7.4505806e-009,-0.91253716};
+		dir[]={0.66558552,-0.68900537,-0.2868281};
+		up[]={0.63275129,0.72475511,-0.27267855};
+		aside[]={-0.39575708,-7.8231096e-008,-0.91835582};
 	};
 };
 binarizationWanted=0;
@@ -336,7 +336,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=354;
+									items=355;
 									class Item0
 									{
 										class data
@@ -5293,6 +5293,20 @@ class CustomAttributes
 											value="diwako_dui_radar_pointer_style";
 										};
 									};
+									class Item354
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="diwako_dui_radar_leadingzeroes";
+										};
+									};
 								};
 							};
 						};
@@ -5309,7 +5323,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=354;
+									items=355;
 									class Item0
 									{
 										class data
@@ -21763,6 +21777,51 @@ class CustomAttributes
 															};
 														};
 														value=0;
+													};
+												};
+											};
+										};
+									};
+									class Item354
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
 													};
 												};
 											};
