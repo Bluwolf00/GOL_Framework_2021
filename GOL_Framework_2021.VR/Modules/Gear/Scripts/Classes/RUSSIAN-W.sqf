@@ -1,7 +1,3 @@
-
-
-
-
 _glHE = "rhs_VOG25P";
 _glsmokeW = "rhs_GRD40_White";
 _glsmokeB = "";
@@ -13,6 +9,7 @@ _glsmokeY = "";
 
 _glflareG = "rhs_VG40OP_green";
 _glflareR = "rhs_VG40OP_red";
+_glflareW = "rhs_VG40OP_white";
 
 _goggles = "";
 _helmet = ["rhs_ssh60"] call BIS_fnc_selectRandom;
@@ -50,15 +47,16 @@ _pointer = "";
 _sight = "";
 _bipod = "";
 
-_rifle = ["rhs_weap_aks74n", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["rhs_weap_aks74un", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["rhs_weap_aks74n_gp25", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["rhs_weap_aks74n", _silencer, _pointer, _sight, _bipod];
-_rifle_mag = "rhs_30Rnd_545x39_7N6M_AK";
-_rifle_mag_tr = "rhs_30Rnd_545x39_AK_green";
+_rifle = ["rhs_weap_aks74", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["rhs_weap_aks74u", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["rhs_weap_aks74_gp25", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["rhs_weap_akms", _silencer, _pointer, _sight, _bipod];
+_rifle_mag = "30Rnd_545x39_Mag_F";
+_rifle_mag_tr = "30Rnd_545x39_Mag_Tracer_F";
+_rifleL_mag = "rhs_30Rnd_762x39mm_bakelite_tracer";
 
-_LMG = ["rhs_weap_pm63", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "rhs_75Rnd_762x39mm_tracer";
+_LMG = ["hlc_rifle_rpk74n", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "hlc_60Rnd_545x39_t_rpk";
 
 _MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhs_100Rnd_762x54mmR_green";

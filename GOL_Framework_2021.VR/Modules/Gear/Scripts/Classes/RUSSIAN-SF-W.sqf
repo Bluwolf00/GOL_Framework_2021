@@ -1,4 +1,3 @@
-
 _glHE = "rhs_VOG25P";
 _glsmokeW = "rhs_GRD40_White";
 _glsmokeB = "";
@@ -10,6 +9,7 @@ _glsmokeY = "";
 
 _glflareG = "rhs_VG40OP_green";
 _glflareR = "rhs_VG40OP_red";
+_glflareW = "rhs_VG40OP_white";
 
 _goggles = ["rhsusf_shemagh2_grn","rhsusf_shemagh_grn"] call BIS_fnc_selectRandom;
 _helmet = ["rhs_beanie_green"] call BIS_fnc_selectRandom;
@@ -39,27 +39,25 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "hlc_muzzle_545sup_ak";
+_silencer = "rhs_acc_dtk2";
 _pointer = "rhs_acc_perst3";
 _sight = "";
-_bipod = "rhs_acc_grip_rk2";
+_bipod = "rhs_acc_grip_rk6";
 
-_rifle = ["rhs_weap_asval_grip", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["rhs_weap_aks74u", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["rhs_weap_ak74m_fullplum_gp25", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["rhs_weap_asval_grip", _silencer, _pointer, _sight, _bipod];
+_rifle = ["rhs_weap_ak74mr", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["rhs_weap_aks74un", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["rhs_weap_ak74mr_gp25", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["rhs_weap_svdp", _silencer, _pointer, _sight, _bipod];
 
-_rifle_mag = "rhs_20rnd_9x39mm_SP6";
-_rifleC_mag = "rhs_30Rnd_545x39_7N22_camo_AK";
-_rifleC_mag_tr = "rhs_30Rnd_545x39_AK_green";
-_rifleGL_mag = "rhs_30Rnd_545x39_7N22_camo_AK";
-_rifleGL_mag_tr = "rhs_30Rnd_545x39_AK_green";
+_rifle_mag = "rhs_30Rnd_545x39_7N22_camo_AK";
+_rifle_mag_tr = "rhs_30Rnd_545x39_AK_green";
+_rifleL_mag = "ACE_10Rnd_762x54_Tracer_mag";
 
-_LMG = ["rhs_weap_pm63", "hlc_muzzle_762SUP_AK", _pointer, _sight, _bipod];
-_LMG_mag = "75Rnd_762x39_Mag_Tracer_F";
+_LMG = ["hlc_rifle_rpk74n", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "hlc_60Rnd_545x39_t_rpk";
 
-_MMG = ["arifle_RPK12_F", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "rhs_75Rnd_762x39mm_tracer";
+_MMG = ["rhs_weap_pkp", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "150Rnd_762x54_Box_Tracer";
 
 _LAT = ["rhs_weap_rpg26", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "rhs_rpg26_mag";

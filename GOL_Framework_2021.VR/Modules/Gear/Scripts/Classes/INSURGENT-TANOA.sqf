@@ -1,3 +1,15 @@
+_glHE = "rhs_VOG25P";
+_glsmokeW = "rhs_GRD40_White";
+_glsmokeB = "";
+_glsmokeG = "rhs_GRD40_Green";
+_glsmokeO = "";
+_glsmokeP = "";
+_glsmokeR = "rhs_GRD40_Red";
+_glsmokeY = "";
+
+_glflareG = "rhs_VG40OP_green";
+_glflareR = "rhs_VG40OP_red";
+_glflareW = "rhs_VG40OP_white";
 
 _allowedNightStuff = false;
 
@@ -42,10 +54,10 @@ _bipod = "";
 
 _rifle = ["rhs_weap_m21a", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["rhs_weap_m3a1", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["rhs_weap_MP44", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["rhs_weap_aks74_gp25", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_kar98k", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "rhsgref_30rnd_556x45_m21";
-_rifleGL_mag = "rhsgref_30Rnd_792x33_SmE_StG";
+_rifleGL_mag = "30Rnd_545x39_Mag_F";
 _rifleC_mag = "rhsgref_30rnd_1143x23_M1911B_SMG";
 _rifleL_mag = "rhsgref_5Rnd_792x57_kar98k";
 
