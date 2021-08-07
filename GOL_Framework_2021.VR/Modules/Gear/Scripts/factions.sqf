@@ -30,6 +30,9 @@ switch (_side) do {
 	case "CZECH-D": {
 		#include "Classes\CZECH-D.sqf"
 	};
+	case "CZECH-SOVIET-W":{
+		#include "Classes\CZECH-SOVIET-W.sqf"
+	};
 	case "CSAT-H": {
 		#include "Classes\CSAT-H.sqf"
 	};
