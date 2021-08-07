@@ -21,6 +21,9 @@ switch (_side) do {
 	case "CIVI-TAKISTAN": {
 		#include "Classes\CIVI-TAKISTAN.sqf"
 	};
+	case "LIVONIA-W": {
+		#include "Classes\LIVONIA-W.sqf"
+	};
 	case "CZECH-W": {
 		#include "Classes\CZECH-W.sqf"
 	};
