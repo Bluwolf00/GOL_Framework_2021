@@ -87,18 +87,18 @@ sleep 5;
 		   3 - Wheeled Patrols (Integer/Number)
 		   4 - APC Patrols (Integer/Number)
 		   5 - Tank Patrols (Integer/Number)
-		   6 - Roadblocks [RoadBlocksCount,OnlyOnTarmac,LocalPatrols?] (Array)
+		   6 - Roadblocks [RoadBlocksCount,OnlyOnTarmac,LocalPatrols?,NumberChanceForVehicle(0-1)] (Array)
 		   7 - Mortar Pits [MortarCount,LocalPatrols?] (Array)
 		   8 - Random Objectives [ObjectiveCount,LocalPatrols?] (Array)
 		   9 - Hunt Array Bases [Infantry,Wheeled,APC,Tank,Helicopter]
 
-		   [Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false],[0,false],[0,false],[0,0,0,0,0]] spawn OKS_CreateZone;
+		   [Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false,0.5],[0,false],[0,false],[0,0,0,0,0]] spawn OKS_CreateZone;
 		*/
 
 		/* Example of Dynamic Scripts */
 		/*
 		if(isServer) then {
-			[Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false],[0,false],[0,false],[0,0,0,0,0]] spawn OKS_CreateZone;
+			[Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false,0],[0,false],[0,false],[0,0,0,0,0]] spawn OKS_CreateZone;
 		};
 
 
