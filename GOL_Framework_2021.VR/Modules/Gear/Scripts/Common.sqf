@@ -106,11 +106,11 @@ if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
 		];
 	} else {
 		_FAKSmall = [
-			[_bandage,30],
+			[_bandage,20],
 			[_morph,10],
-			[_epi,4],
-			[_tourn,1],
-			[_blood,4],
+			[_epi,5],
+			[_saline,5],
+			[_salineSm,10],
 			[_pak,1]
 		];
 		_FAKBig = [
@@ -118,7 +118,8 @@ if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
 			[_morph,15],
 			[_epi,10],
 			[_tourn,2],
-			[_blood,6],
+			[_saline,8],
+			[_salineSm,10],
 			[_pak,1]
 		];
 	};

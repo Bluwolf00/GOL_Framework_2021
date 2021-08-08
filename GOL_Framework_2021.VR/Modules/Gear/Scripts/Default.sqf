@@ -176,8 +176,8 @@ switch (toLower(_role)) do {
 		[_rifle, _rifle_mag, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_pistol_mag,2],[_smokegrenadeY,4],[_grenademini,2]] call _addToUniform;
-		[[_clacker,1],[_demoCharge,2],[_flashBang,3],[_grenade,1],[_rifle_mag,4],[_rifle_mag_tr,4]] call _addToVest;
+		[[_smokegrenadeY,4],[_grenademini,2]] call _addToUniform;
+		[[_pistol_mag,2],[_flashBang,3],[_rifle_mag,3],[_rifle_mag_tr,3]] call _addToVest;
 		[[_LMG_mag_tr,COUNT_AG_MAGS(_LMG_mag_tr)]] call _addToBackpack;
 		if (GVAR(extraGear)) then {
 			(_FAKBig) call _addToBackpack;
@@ -294,7 +294,7 @@ switch (toLower(_role)) do {
 		_IFAK call _addToUniform;
 		[[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
 		[[_grenademini,2],[_grenade,2],[_rifle_mag_tr,6],[_glHE,6],[_glsmokeR,3]] call _addToVest;
-		[[_MAT_mag,2]] call _addToBackpack;
+		[[_MAT_mag,2],[_demoCharge,2],[_clacker,1]] call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
@@ -308,8 +308,8 @@ switch (toLower(_role)) do {
 		[_rifle, _rifle_mag, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_pistol_mag,2],[_smokegrenadeY,4],[_grenademini,2]] call _addToUniform;
-		[[_grenade,1],[_rifle_mag_tr,5],[_clacker,1],[_demoCharge,2]] call _addToVest;
+		[[_smokegrenadeY,4],[_grenademini,2]] call _addToUniform;
+		[[_pistol_mag,2],[_rifle_mag_tr,6]] call _addToVest;
 		(_FAKSmall + [[_MMG_mag_tr,COUNT_AMMG_MAGS(_MMG_mag_tr)]]) call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
