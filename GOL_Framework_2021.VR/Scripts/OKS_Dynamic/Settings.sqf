@@ -5,7 +5,7 @@
 //	Returns: [Settings]
 
 Params["_Side"];
-Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tank","_Artillery","_Supply","_Transport","_Civilian","_Officer"];
+Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tank","_Artillery","_Supply","_Transport","_Civilian","_Officer","_Configuration"];
 
 Switch (_Side) do
 {
@@ -114,9 +114,11 @@ Switch (_Side) do
 _CivilianUnits = ["C_man_polo_1_F","C_man_polo_2_F","C_man_polo_3_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_6_F"];
 _Civilian = [_CivilianUnits,_Officer];
 _ObjectiveTypes = ["cache","artillery","hostage","motorpool","radiotower"];
+_CompoundSize = 35;
+_Configuration = [_CompoundSize];
 
 // DO NOT EDIT ANYTHING BELOW \\
-[_Units,_SideMarker,_SideColor,_Vehicles,_Civilian,_ObjectiveTypes]
+[_Units,_SideMarker,_SideColor,_Vehicles,_Civilian,_ObjectiveTypes,_Configuration]
 
 /*
 		EAST - Takistani Army Settings

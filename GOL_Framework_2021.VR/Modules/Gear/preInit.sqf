@@ -43,6 +43,7 @@ GVAR(StaminaCoef) = 0.5;
 			"CZECH-D",
 			"AUS-TAN",
 			"IRAQ-SF",
+			"AFGHAN-W",
 			"LATVIAN",
 			"ISRAELI",
 			"CUSTOM-W"
@@ -66,6 +67,7 @@ GVAR(StaminaCoef) = 0.5;
 			"Czech Desert",
 			"Austrian Tan",
 			"Iraqi Special Forces",
+			"Afghan National Army - Woodland",
 			"Latvian Army",
 			"Israeli Defence Force",
 			"CUSTOM-West"

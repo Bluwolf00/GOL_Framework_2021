@@ -23,6 +23,7 @@ OKS_Find_Mortars = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Fi
 OKS_Find_Huntbase = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Find_Huntbase.sqf";
 
 OKS_Garrison = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Garrison.sqf";
+OKS_Garrison_Compound = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Garrison_Compound.sqf";
 OKS_Vehicle_Waypoints = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Vehicle_Waypoints.sqf";
 OKS_Check_Waypoints = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Check_Waypoints.sqf";
 OKS_Vehicle_Patrol = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Vehicle_Patrol.sqf";
