@@ -5,7 +5,7 @@ _ltd = "LIEUTENANT";
 _sgt = "SERGEANT";
 _cpl = "CORPORAL";
 
-_uid = getPlayerUID player;
+_uid = getPlayerUID (_this select 0);
 
 switch _uid do {
 case "76561198005972885": {_rank = _ltd};
@@ -18,4 +18,4 @@ case "76561198024730389": {_rank = _cpl};
 default {_rank ="PRIVATE";};
 };
 
-player setrank _rank;
+(_this select 0) setrank _rank;
