@@ -15,7 +15,7 @@ _glflareW = "rhs_VG40OP_white";
 _goggles = "";
 _helmet = ["rhs_ssh60"] call BIS_fnc_selectRandom;
 _OfficerHelmet = "rhs_pilotka";
-_uniform = "LOP_U_US_Fatigue_03";
+_uniform = "Uniform_Full_VZ95";
 _vest = "rhs_6b3";
 _backpack = "rhs_sidor";
 _backpackRadio = _backpack;
@@ -48,22 +48,22 @@ _pointer = "";
 _sight = "";
 _bipod = "";
 
-_rifle = ["rhs_weap_savz58p", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["rhs_weap_savz58v", _silencer, _pointer, _sight, _bipod];
+_rifle = ["rhs_weap_ak74", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["rhs_weap_aks74un", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["rhs_weap_aks74_gp25", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["rhs_weap_m76", _silencer, _pointer, _sight, _bipod];
-_rifle_mag = "rhs_30Rnd_762x39mm_Savz58";
-_rifle_mag_tr = "rhs_30Rnd_762x39mm_Savz58_tracer";
+_rifleL = ["rhs_weap_m76", _silencer, _pointer, "rhs_acc_1p78", _bipod];
+_rifle_mag = "rhs_30Rnd_545x39_7N22_plum_AK";
+_rifle_mag_tr = "rhs_30Rnd_545x39_AK_plum_green";
 _rifleL_mag = "rhsgref_10Rnd_792x57_m76";
 
-_LMG = ["hlc_rifle_rpk74n", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "hlc_60Rnd_545x39_t_rpk";
+_LMG = ["rhs_weap_rpk74m", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "rhs_100Rnd_762x54mmR_green";
 
 _MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhs_100Rnd_762x54mmR_green";
 
-_LAT = ["rhs_weap_rpg18", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "rhs_rpg18_mag";
+_LAT = ["rhs_weap_rpg26", _silencer, _pointer, _sight, _bipod];
+_LAT_mag = "";
 _LAT_ReUsable = false;
 
 _MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];

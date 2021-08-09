@@ -2,7 +2,7 @@ _useMineDetector = true;
 _allowedNightStuff = false;
 
 _goggles = "rhsusf_shemagh_grn";
-_helmet = "H_HelmetHBK_F";
+_helmet = selectRandom ["PO_H_M1_OLV_2","PO_H_M1_OLV_1"];
 _OfficerHelmet = "H_Beret_EAF_01_F";
 _uniform = selectRandom ["U_I_E_Uniform_01_F","U_I_E_Uniform_01_sweater_F","U_I_E_Uniform_01_shortsleeve_F"];
 _vest = "rhs_6b2_chicom";
@@ -49,8 +49,8 @@ _rifleL = ["hlc_rifle_STG58F", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_556x45_Stanag_Tracer_Yellow";
 _rifleL_mag = "hlc_20Rnd_762x51_T_fal";
 
-_LMG = ["hlc_lmg_M249E2", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "200Rnd_556x45_Box_Tracer_F";
+_LMG = ["hlc_lmg_minimi_railed", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "hlc_200rnd_556x45_T_SAW";
 
 _MMG = ["rhs_weap_mg42", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "hlc_100Rnd_792x57_T_MG42";
@@ -63,6 +63,7 @@ _LAT_ReUsable = true;
 
 _MAT = ["rhs_weap_rpg7", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "RPG7_F";
+_MAT_mag_HE = "";
 
 _pistol = ["hgun_Pistol_heavy_01_F", _silencer, _pointer, "optic_MRD", _bipod];
 _pistol_mag = "11Rnd_45ACP_Mag";
