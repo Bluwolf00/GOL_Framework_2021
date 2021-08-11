@@ -47,7 +47,10 @@ _rifle_mag_tr = "hlc_30Rnd_762x39_m_ak";
 _rifleC_mag = "rhsgref_30rnd_1143x23_M1911B_SMG";
 
 _LMG = ["hlc_rifle_rpk", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "hlc_45Rnd_762x39_t_rpk";
+_LMG_mag = "rhs_75Rnd_762x39mm_tracer";
+
+_MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "rhs_100Rnd_762x54mmR_green";
 
 _LAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "RPG7_F";

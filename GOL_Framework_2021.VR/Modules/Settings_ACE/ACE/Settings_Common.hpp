@@ -568,7 +568,7 @@ class emr_main_jumpVelocity {
 };
 
 class emr_main_maxClimbHeight {
-	value = 2.3;
+	value = 2.6;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -586,13 +586,13 @@ class emr_main_maxWeightClimb1 {
 };
 
 class emr_main_maxWeightClimb2 {
-	value = 78;
+	value = 83;
 	typeName = "SCALAR";
 	force = 1;
 };
 
 class emr_main_maxWeightClimb3 {
-	value = 56;
+	value = 70;
 	typeName = "SCALAR";
 	force = 1;
 };

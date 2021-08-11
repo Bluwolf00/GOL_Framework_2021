@@ -48,12 +48,11 @@ _rifle_mag = "30Rnd_556x45_Stanag";
 _rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Yellow";
 
 _LMG = ["LMG_Mk200_F", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "200Rnd_65x39_cased_Box";
-_LMG_mag_tr = "200Rnd_65x39_cased_Box_Tracer";
+_LMG_mag = "200Rnd_65x39_cased_Box_Tracer";
 
 _MMG = ["LMG_Mk200_F", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "200Rnd_65x39_cased_Box";
-_MMG_mag_tr = "200Rnd_65x39_cased_Box_Tracer";
+_MMG_mag = "200Rnd_65x39_cased_Box_Tracer";
+
 
 
 _LAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];

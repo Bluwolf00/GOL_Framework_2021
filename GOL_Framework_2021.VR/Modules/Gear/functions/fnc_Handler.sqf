@@ -354,8 +354,8 @@ if (_isMan) then {
 				[_unit, _rifleC_mag_tr, 6] call _fnc_AddObjectsCargo;
 				[_unit, _rifleGL_mag, 6] call _fnc_AddObjectsCargo;
 				[_unit, _rifleGL_mag_tr, 6] call _fnc_AddObjectsCargo;
-				[_unit, _LMG_mag_tr, (COUNT_AR_MAGS(_LMG_mag_tr) * 2)] call _fnc_AddObjectsCargo;
-				[_unit, _MMG_mag_tr, (COUNT_AR_MAGS(_MMG_mag_tr) * 1)] call _fnc_AddObjectsCargo;
+				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 2)] call _fnc_AddObjectsCargo;
+				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 1)] call _fnc_AddObjectsCargo;
 
 				if (_LAT_ReUsable) then {
 					[_unit, _LAT_mag, 2] call _fnc_AddObjectsCargo;
@@ -400,8 +400,8 @@ if (_isMan) then {
 				[_unit, _rifleC_mag_tr, 3] call _fnc_AddObjectsCargo;
 				[_unit, _rifleGL_mag, 7] call _fnc_AddObjectsCargo;
 				[_unit, _rifleGL_mag_tr, 7] call _fnc_AddObjectsCargo;
-				[_unit, _LMG_mag_tr, (COUNT_AR_MAGS(_LMG_mag_tr) * 4)] call _fnc_AddObjectsCargo;
-				[_unit, _MMG_mag_tr, (COUNT_AR_MAGS(_MMG_mag_tr) * 2)] call _fnc_AddObjectsCargo;
+				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 4)] call _fnc_AddObjectsCargo;
+				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 2)] call _fnc_AddObjectsCargo;
 
 				if (_LAT_ReUsable) then {
 					[_unit, _LAT_mag, 3] call _fnc_AddObjectsCargo;
@@ -446,8 +446,8 @@ if (_isMan) then {
 				[_unit, _rifleC_mag_tr, 10] call _fnc_AddObjectsCargo;
 				[_unit, _rifleGL_mag, 15] call _fnc_AddObjectsCargo;
 				[_unit, _rifleGL_mag_tr, 15] call _fnc_AddObjectsCargo;
-				[_unit, _LMG_mag_tr, ((COUNT_AR_MAGS(_LMG_mag_tr)) * 8)] call _fnc_AddObjectsCargo;
-				[_unit, _MMG_mag_tr, ((COUNT_AR_MAGS(_MMG_mag_tr)) * 4)] call _fnc_AddObjectsCargo;
+				[_unit, _LMG_mag, ((COUNT_AR_MAGS(_LMG_mag)) * 8)] call _fnc_AddObjectsCargo;
+				[_unit, _MMG_mag, ((COUNT_AR_MAGS(_MMG_mag)) * 4)] call _fnc_AddObjectsCargo;
 
 				if (_LAT_ReUsable) then {
 					[_unit, _LAT_mag, 8] call _fnc_AddObjectsCargo;

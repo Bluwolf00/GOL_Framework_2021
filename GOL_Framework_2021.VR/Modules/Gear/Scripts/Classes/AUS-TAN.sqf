@@ -56,11 +56,9 @@ _rifleL_mag_tr = "hlc_20Rnd_762x51_T_fal";
 
 _LMG = ["hlc_lmg_M60E4", _silencer, _pointer, "optic_Hamr", _bipod];
 _LMG_mag = "hlc_100Rnd_762x51_T_M60E4";
-_LMG_mag_tr = "hlc_100Rnd_762x51_T_M60E4";
 
 _MMG = ["hlc_lmg_MG3KWS_b", _silencer, _pointer, "optic_Hamr", _bipod];
-_MMG_mag = "hlc_250Rnd_762x51_Barrier_MG3";
-_MMG_mag_tr = "hlc_250Rnd_762x51_Barrier_MG3";
+_MMG_mag = "hlc_100Rnd_762x51_T_MG3";
 
 // Launchers
 _silencer = "";

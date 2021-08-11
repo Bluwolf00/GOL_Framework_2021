@@ -51,12 +51,10 @@ _rifleL_mag = "30Rnd_65x39_caseless_khaki_mag";
 _rifleL_mag_tr = "30Rnd_65x39_caseless_khaki_mag_Tracer";
 
 _LMG = ["arifle_MX_SW_khk_F", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "100Rnd_65x39_caseless_khaki_mag";
-_LMG_mag_tr = "100Rnd_65x39_caseless_khaki_mag_Tracer";
+_LMG_mag = "100Rnd_65x39_caseless_khaki_mag_Tracer";
 
 _MMG = ["hlc_lmg_M60E4", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "hlc_200Rnd_762x51_M_M60E4";
-_MMG_mag_tr = "hlc_200Rnd_762x51_T_M60E4";
+_MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
 
 _sight = "";
 

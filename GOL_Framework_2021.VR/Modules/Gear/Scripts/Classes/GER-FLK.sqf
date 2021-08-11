@@ -52,11 +52,9 @@ _rifle_mag_tr = "30Rnd_65x39_caseless_black_mag_Tracer";
 
 _LMG = ["hlc_lmg_minimipara_railed", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "hlc_200rnd_556x45_T_SAW";
-_LMG_mag_tr = "hlc_200rnd_556x45_T_SAW";
 
 _MMG = ["hlc_lmg_MG3KWS_b", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "hlc_250Rnd_762x51_Barrier_MG3";
-_MMG_mag_tr = "hlc_250Rnd_762x51_Barrier_MG3";
+_MMG_mag = "hlc_100Rnd_762x51_T_MG3";
 
 // Launchers
 _silencer = "";

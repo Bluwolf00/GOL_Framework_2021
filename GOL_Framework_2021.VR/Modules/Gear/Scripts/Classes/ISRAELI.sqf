@@ -64,12 +64,10 @@ _rifleMarksman_mag = "rhsusf_20Rnd_762x51_SR25_m993_Mag";
 _rifleMarksman_mag_tr = "rhsusf_20Rnd_762x51_SR25_m62_Mag";
 
 _LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "200Rnd_556x45_Box_Red_F";
-_LMG_mag_tr = "200Rnd_556x45_Box_Tracer_Red_F";
+_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 
 _MMG = ["LMG_Zafir_F", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "150Rnd_762x54_Box_Tracer_Red";
-_MMG_mag_tr = "150Rnd_762x54_Box_Tracer_Red";
 
 // Launchers
 _silencer = "";
