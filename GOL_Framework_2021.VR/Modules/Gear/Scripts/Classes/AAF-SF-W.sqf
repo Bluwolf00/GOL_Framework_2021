@@ -67,8 +67,8 @@ _MAT_mag_HE = "MRAWS_HE_F";
 _pistol = ["hgun_ACPC2_F", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "9Rnd_45ACP_Mag";
 
-_silencer = "muzzle_snds_B_khk_F";
-_pointer = "acc_pointer_IR";
+_silencer = "";
+_pointer = "";
 _sight = "optic_LRPS_tna_F";
 _bipod = "bipod_03_F_oli";
 

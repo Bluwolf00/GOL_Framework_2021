@@ -75,7 +75,7 @@ _pointer = "";
 _sight = "";
 _bipod = "";
 
-_LAT = ["rhs_weap_M136_hedp", _silencer, _pointer, _sight, _bipod];
+_LAT = ["rhs_weap_M136_hp", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "";
 _LAT_ReUsable = false;
 

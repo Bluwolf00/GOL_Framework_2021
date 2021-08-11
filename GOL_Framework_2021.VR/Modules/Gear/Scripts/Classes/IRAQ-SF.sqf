@@ -66,11 +66,11 @@ _MAT_mag_HE = "rhs_rpg7_PG7VL_mag";
 _pistol = ["hlc_Pistol_P228", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "ACE_16Rnd_9x19_mag";
 
-_silencer = "muzzle_snds_338_green";
-_pointer = "acc_pointer_IR";
-_sight = "optic_LRPS";
-_bipod = "bipod_01_F_mtp";
+_silencer = "";
+_pointer = "";
+_sight = "rhs_acc_pso1m21";
+_bipod = "";
 
-_rifleMarksman = ["srifle_DMR_02_camo_F", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "10Rnd_338_Mag";
-_rifleMarksman_mag_tr = "10Rnd_338_Mag";
+_rifleMarksman = ["rhs_weap_svdp_wd", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman_mag = "rhs_10Rnd_762x54mmR_7N1";
+_rifleMarksman_mag_tr = "rhs_10Rnd_762x54mmR_7N14";

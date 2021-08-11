@@ -57,7 +57,7 @@ _LMG_mag = "UK3CB_BAF_556_200Rnd_T";
 _MMG = ["UK3CB_BAF_L7A2", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "UK3CB_BAF_762_100Rnd_T";
 
-_LAT = ["rhs_weap_M136_hedp", _silencer, _pointer, _sight, _bipod];
+_LAT = ["rhs_weap_M136_hp", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "";
 _LAT_ReUsable = false;
 

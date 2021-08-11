@@ -35,7 +35,7 @@ if (_role isEqualTo "jetp") then {
 };
 
 _silencer = "";
-_pointer = "";
+_pointer = "gvl_x2000_wide";
 _sight = "";
 _bipod = "";
 
@@ -55,7 +55,7 @@ _MMG_mag = "hlc_100Rnd_762x51_T_M60E4";
 
 _sight = "";
 
-_LAT = ["rhs_weap_rpg18", _silencer, _pointer, _sight, _bipod];
+_LAT = ["rhs_weap_m72a7", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "";
 _LAT_ReUsable = false;
 

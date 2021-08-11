@@ -60,13 +60,12 @@ _MMG_mag_tr = "hlc_200Rnd_762x51_T_M60E4";
 
 _sight = "";
 
-_LAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "MRAWS_HEAT_F";
-_LAT_ReUsable = true;
+_LAT = ["rhs_weap_M136_hp", _silencer, _pointer, _sight, _bipod];
+_LAT_mag = "";
+_LAT_ReUsable = false;
 
-_MAT = ["launch_I_Titan_short_F", _silencer, _pointer, _sight, _bipod];
-_MAT_mag = "Titan_AT";
-_MAT_mag_HE = "Titan_AP";
+_MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
+_MAT_mag = "MRAWS_HEAT_F";
 
 _pistol = ["hgun_P07_khk_F", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "16Rnd_9x21_Mag";
