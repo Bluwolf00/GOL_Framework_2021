@@ -38,7 +38,7 @@ switch (toLower(_role)) do {
 		[[_flashBang,3],[_rifleGL_mag,7],[_glHE,1],[_glsmokeR,1]] call _addToBackpack;
 		_rangefinder call _addBino;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
-		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
+		if ((call EFUNC(Common,isNight))) then {
 			[[_glFlareW,4]] call _addToBackpack;
 		};
 	};
@@ -50,7 +50,7 @@ switch (toLower(_role)) do {
 		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
 		[[_rifleGL_mag_tr,13],[_glHE,1]] call _addToVest;
 		["", "", "", "", "", _nvg] call _addLinkedItems;
-		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
+		if ((call EFUNC(Common,isNight))) then {
 			[[_glFlareW,4]] call _addToBackpack;
 		};
 	};
@@ -84,7 +84,7 @@ switch (toLower(_role)) do {
 		if (_LAT_ReUsable) then {
 			[[_LAT_mag,1],[_LAT_mag_HE,1]] call _addToBackpack;
 		};
-		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
+		if ((call EFUNC(Common,isNight))) then {
 			[[_glFlareW,4]] call _addToBackpack;
 		};
 	};

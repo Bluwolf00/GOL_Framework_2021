@@ -2,7 +2,7 @@ _useMineDetector = true;
 
 
 _goggles = "";
-_helmet = "rhs_ssh60";
+_helmet = "rhsusf_opscore_fg";
 _OfficerHelmet = "PO_H_PASGT_ANA";
 _uniform = "LOP_U_ANA_M93_spec4e_01";
 _vest = "rhsgref_otv_khaki";
