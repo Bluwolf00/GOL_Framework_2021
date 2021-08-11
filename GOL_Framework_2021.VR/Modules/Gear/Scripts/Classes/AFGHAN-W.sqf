@@ -40,9 +40,9 @@ _sight = "";
 _bipod = "";
 
 _rifle = ["hlc_rifle_M4", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["ArmaReTex_C7", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["hlc_rifle_CQBR", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["hlc_rifle_m4m203", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["ArmaReTex_C7", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["hlc_rifle_CQBR", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "rhs_mag_30Rnd_556x45_Mk318_Stanag";
 _rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 
