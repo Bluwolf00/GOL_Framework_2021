@@ -77,6 +77,9 @@ if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
 	_morph = "ACE_morphine";
 	_tourn = "ACE_tourniquet";
 	_pak = "ACE_personalAidKit";
+	_saline = "ACE_salineIV";
+	_salineSm = "ACE_Saline_500";
+
 	_IFAK = [[_bandage,6]];
 	if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {	// Advanced
 		_blood = "ACE_bloodIV";

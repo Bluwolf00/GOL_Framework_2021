@@ -152,6 +152,37 @@ _Configuration = [_CompoundSize];
 		_SideColor = "ColorOpfor"
 */
 /*
+		EAST - Middle East Militia
+
+		_Leaders = ["O_Soldier_TL_F","O_Soldier_TL_F"];
+		_Units = [
+			"O_Soldier_A_F",
+			"O_Soldier_AR_F",
+			"O_Soldier_AR_F",
+			"O_medic_F",
+			"O_medic_F",
+			"O_crew_F",
+			"O_Soldier_GL_F",
+			"O_HeavyGunner_F",
+			"O_soldier_M_F",
+			"O_Soldier_F",
+			"O_Soldier_F",
+			"O_Soldier_F",
+			"O_Soldier_LAT_F"
+		];
+		_Officer = ["O_officer_F"];
+		_Wheeled = ["LOP_AM_OPF_Nissan_PKM","LOP_AM_OPF_Landrover_M2","LOP_AM_OPF_Landrover","LOP_AM_OPF_Landrover_SPG9","LOP_AM_OPF_UAZ_Open"];
+		_APC = ["LOP_SYR_BTR60","LOP_SYR_BTR70","LOP_SYR_BMP1"];
+		_Tank = ["LOP_TKA_T55","LOP_TKA_T34"];
+		_Artillery = ["rhs_2b14_82mm_msv", "LOP_TKA_Static_D30"];
+		_Helicopter = ["LOP_TKA_Mi8MTV3_UPK23"];
+		_Transport = ["LOP_TKA_Ural_open"];
+		_Supply = ["rhs_gaz66_ammo_msv","rhs_gaz66_r142_vdv","rhs_gaz66_ap2_vdv"];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply];
+		_SideMarker = "o_inf";
+		_SideColor = "ColorOpfor"
+*/
+/*
 		EAST - Chedaki Army Settings
 
 		_Leaders = ["O_Soldier_TL_F","O_Soldier_TL_F"];
