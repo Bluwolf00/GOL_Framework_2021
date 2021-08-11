@@ -5,7 +5,7 @@
 //	Returns: [Settings]
 
 Params["_Side"];
-Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tank","_Artillery","_Supply","_Transport","_Civilian","_Officer","_Configuration"];
+Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tank","_Artillery","_Supply","_Transport","_Civilian","_Officer","_Settings"];
 
 Switch (_Side) do
 {

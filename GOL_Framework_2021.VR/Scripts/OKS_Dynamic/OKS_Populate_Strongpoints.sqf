@@ -174,11 +174,7 @@ if(_CountStrongpoints > 0) then {
 				{
 					[4,_X,_Side,_Units] spawn OKS_Garrison;
 					_Marker = createMarker [format ["oks_SP_Marker_%1",str round(random 90000)],getPos _X];
-					_Marker setMarkerShape "ICON";
-					_Marker setMarkerType _SideMarker;
-					_Marker setMarkerSize [0.6,0.6];
-					//_Marker setMarkerText format["%1",_SelectedBuildings find _X];
-					_Marker setMarkerColor _SideColor;
+					[_marker,_Side,"infantry",4] spawn OKS_CreateUnitMarker;
 
 				} foreach _SelectedBuildings;
 

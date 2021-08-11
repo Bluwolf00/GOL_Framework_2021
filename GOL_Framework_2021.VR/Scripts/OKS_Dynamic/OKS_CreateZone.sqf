@@ -17,7 +17,7 @@ Private _Debug_Variable = false;
 _SpawnTriggers = [];
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
-_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configuration"];
+_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Settings"];
 _ObjectiveArray Params ["_Objectives","_ObjectivePatrols"];
 _RoadblockArray Params ["_RoadblockCount","_RoadblockTarmac","_RoadblockPatrols"];
 _MortarArray Params ["_MortarCount","_MortarPatrol"];

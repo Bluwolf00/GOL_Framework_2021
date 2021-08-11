@@ -31,16 +31,9 @@
 			 * 6: Teleport units <BOOL> (default: false)
 		 */
 		//private _type = typeOf nearestBuilding (getPos (leader _group));
-
+		_Compound = createMarker [format ["oks_Compound_Marker_%1",str round(random 90000)],_Position];
 		if(_Debug_Variable) then {
 			SystemChat format ["Compound at %1 Units: %2 Range: %3",_Position,count units _Group,_Range];
-
-			_Compound = createMarker [format ["oks_Compound_Marker_%1",str round(random 90000)],_Position];
-			if(_Debug_Variable) then {
-				_Compound setMarkerShape "ICON";
-				_Compound setMarkerType "hd_dot";
-				_Compound setMarkerText "Compound";
-				_Compound setMarkerColor "ColorBLACK";
-			};
 		};
+		[_Compound,_Side,"infantry",(count units _Group)] spawn OKS_CreateUnitMarker;
 		[_Position, nil, units _Group, _Range, 2, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
