@@ -5,13 +5,14 @@
 
 if(!isServer) exitWith {};
 
-Params ["_MainTrigger","_RoadblockCount","_Side","_OnlyTarmac","_RoadblockPatrols"];
-private ["_RandomPos","_Road","_marker","_typeString","_Repetitions","_Debug_Variable","_Condition","_RoadPos"];
+Params ["_MainTrigger","_RoadblockCount","_Side","_OnlyTarmac","_RoadblockPatrols","_VehicleChance"];
+private ["_RandomPos","_Road","_marker","_typeString","_Repetitions","_Debug_Variable","_Condition","_RoadPos","_Type","_VehicleClass"];
 
 _Debug_Variable = false;
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
 _Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+_Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Helicopter","_Transport","_Supply"];
 
 Switch (_Side) do
 {
@@ -39,6 +40,9 @@ For "_i" from 1 to _RoadblockCount do {
 	_Repetitions = 0;
 	private _Condition = true;
 	while {_Condition} do {
+
+		_Type = selectRandom [_Wheeled,_APC,_Tank];
+		_VehicleClass = selectRandom _Type;
 
 		_Repetitions = _Repetitions + 1;
 		if(_Repetitions >= 100) then {break};
@@ -164,5 +168,13 @@ For "_i" from 1 to _RoadblockCount do {
 	};
 		waitUntil{sleep 10; !isNil "OKS_Populate_Sandbag"};
 		[getMarkerPos _marker,_Side,3 + (random 2),35] spawn OKS_Populate_Sandbag;
+
+		if((random 1) <= _VehicleChance) then {
+			if(_Debug_Variable) then {SystemChat str _VehicleClass};
+			_Vehicle = createVehicle [_VehicleClass, getMarkerPos _Marker, [], 0, "NONE"];
+			_Vehicle setDir _RoadDir;
+			createVehicleCrew _Vehicle;
+			_Vehicle setFuel 0;
+		};
 	};
 }
