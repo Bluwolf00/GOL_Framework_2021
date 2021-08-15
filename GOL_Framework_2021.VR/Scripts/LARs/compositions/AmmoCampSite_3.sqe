@@ -20,8 +20,8 @@ class items
 					text="HideTrigger";
 					condition="true";
 					onActivation="[thisTrigger, true, []] call GW_Common_fnc_setHideTerrainObjects";
-					sizeA=11;
-					sizeB=11;
+					sizeA=15;
+					sizeB=15;
 					sizeC=15;
 					isServerOnly=1;
 				};

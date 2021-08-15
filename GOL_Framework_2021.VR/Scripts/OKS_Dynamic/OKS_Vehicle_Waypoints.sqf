@@ -17,8 +17,8 @@
 			_Roads = _Roads select {GetRoadInfo _X select 0 != "TRAIL"};
 			_Road = selectRandom _Roads;
 
-			if(!isNil "_Road") then { if (!((getRoadInfo _Road select 0) isEqualTo "TRAIL")) then {Break}};
-			if(_Repetitions >= 30) then {_Road = [_Location, 800] call BIS_fnc_nearestRoad; Break};
+			if(!isNil "_Road") then { if (!((getRoadInfo _Road select 0) isEqualTo "TRAIL") && _Road inArea _Area) then {Break}};
+			if(_Repetitions >= 50) then {_Road = [_Location, 800] call BIS_fnc_nearestRoad; Break};
 		};
 		//_Location = _Area call BIS_fnc_randomPosTrigger;
 		//systemChat str _Location;

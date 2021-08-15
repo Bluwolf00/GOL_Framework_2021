@@ -20,6 +20,8 @@ _TaskInfo = [_faction, [format["%1",_taskID],format["%1",_taskParent]], [format[
 _TaskVariable = format ["OKS_TASK_INFO_%1",_TaskNumber];
 _unit setVariable [_TaskVariable,_TaskInfo];
 
+//systemChat format ["%1 with %2",_TaskVariable,_TaskInfo];
+
 	_Statement = {
 
 		params["_Object","_Target","_Array"];

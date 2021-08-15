@@ -10,7 +10,7 @@ private ["_House","_AllBuildings","_buildingArray","_SelectedBuildings","_HouseC
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
 _Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configuration"];
-_Configuration Params ["_CompoundSize"];
+_Configuration Params ["_CompoundSize","_EnableEnemyMarkers"];
 
 _Debug_Variable = false;
 _SelectedStrongpoints = [];
@@ -81,6 +81,10 @@ if(_CountStrongpoints > 0) then {
 
 	if(_Compounds isNotEqualTo []) then {
 		{
+			_Compound = createMarker [format ["oks_Compound_Marker_%1",str round(random 90000)],_X];
+			if(_EnableEnemyMarkers) then {
+				[_Compound,_Side,"infantry",_GarrisonNumber] spawn OKS_CreateUnitMarker;
+			};
 			[_GarrisonNumber,_X,_Side,_Units,_CompoundSize] spawn OKS_Garrison_Compound;
 			if(_CreateLocalPatrols) then {
 				if(_Debug_Variable) then {
@@ -173,9 +177,10 @@ if(_CountStrongpoints > 0) then {
 				For "_i" to (_HouseMax - 1) do {_House = (selectRandom _SortedBuildings); if(!isNil "_House") then {_SelectedBuildings pushBackUnique _House; _SortedBuildings deleteAt (_SortedBuildings find _House)}};
 				{
 					[4,_X,_Side,_Units] spawn OKS_Garrison;
-					_Marker = createMarker [format ["oks_SP_Marker_%1",str round(random 90000)],getPos _X];
-					[_marker,_Side,"infantry",4] spawn OKS_CreateUnitMarker;
-
+					if(_EnableEnemyMarkers) then {
+						_Marker = createMarker [format ["oks_SP_Marker_%1",str round(random 90000)],getPos _X];
+						[_marker,_Side,"infantry",4] spawn OKS_CreateUnitMarker;
+					};
 				} foreach _SelectedBuildings;
 
 				if(_Debug_Variable) then {

@@ -9,7 +9,7 @@ if(!isServer) exitWith {};
 
 Params ["_MainTrigger","_SplitTrigger","_InfantryNumber","_Side","_WheeledCount","_apcCount","_tankCount","_RoadblockArray","_MortarArray","_ObjectiveArray","_HuntbaseArray"];
 
-Private ["_MainTriggerArea","_Section_N","_Section_E","_Section_S","_Section_W","_MainTriggerSizeA","_MainTriggerSizeB","_MainTriggerAngle","_MainTriggerIsRectangle","_Section_N_Marker","_Section_E_Marker","_Section_S_Marker","_Section_W_Marker","_CountStrongpoints","_GarrisonNumber","_Section_N_Trigger","_Section_E_Trigger","_Section_S_Trigger","_Section_W_Trigger","_marker","_MainMarker","_WheeledPerTrigger","_APCPerTrigger","_TankPerTrigger","_SpawnTriggers"];
+Private ["_MainTriggerArea","_Section_N","_Section_E","_Section_S","_Section_W","_MainTriggerSizeA","_MainTriggerSizeB","_MainTriggerAngle","_MainTriggerIsRectangle","_Section_N_Marker","_Section_E_Marker","_Section_S_Marker","_Section_W_Marker","_CountStrongpoints","_GarrisonNumber","_Section_N_Trigger","_Section_E_Trigger","_Section_S_Trigger","_Section_W_Trigger","_marker","_MainMarker","_WheeledPerTrigger","_APCPerTrigger","_TankPerTrigger","_SpawnTriggers","_Configurations","_ZoneEnemyType","_CountInfantryNumber","_UnitTypes","_UnitSelect"];
 
 // ,"_Units","_Leaders","_SideMarker","_SideColor"
 
@@ -17,10 +17,11 @@ Private _Debug_Variable = false;
 _SpawnTriggers = [];
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
-_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Settings"];
+_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configurations"];
 _ObjectiveArray Params ["_Objectives","_ObjectivePatrols"];
 _RoadblockArray Params ["_RoadblockCount","_RoadblockTarmac","_RoadblockPatrols"];
 _MortarArray Params ["_MortarCount","_MortarPatrol"];
+_Configurations Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker"];
 
 /* Create Sub-Triggers based on the Main trigger */
 _MainTriggerArea = triggerArea _MainTrigger;
@@ -31,11 +32,55 @@ _MainTriggerAngle = 0;
 _MainTriggerAngle = _MainTriggerArea select 2;
 _MainTriggerIsRectangle = _MainTriggerArea select 3;
 
+	_ZoneType = createMarker [format ["oks_ZoneTypeMarker_%1",str round(random 80000 + random 9999)], getPos _MainTrigger];
+
+	if(typeName _InfantryNumber isEqualTo "ARRAY") then {
+		_CountInfantryNumber = (_InfantryNumber select 0) + (_InfantryNumber select 1);
+	} else {
+		_CountInfantryNumber = _InfantryNumber;
+	};
+
+	private _SortArray = [_WheeledCount,_APCCount,_TankCount];
+
+	if(!(_SortArray isEqualTo [0,0,0])) then {
+		_UnitTypes = [_SortArray, [], {_x}, "DESCEND"] call BIS_fnc_sortBy;
+		SystemChat str [_SortArray,_UnitTypes];
+		_UnitSelect = _UnitTypes select 0;
+		private _ZoneEnemyType = "";
+
+		if({_X > 0} count _UnitTypes > 0 && _EnableEnemyMarkers && _EnableZoneMarker) then {
+			switch(_UnitSelect) do {
+				case _WheeledCount: {
+					systemChat "Wheeled Majority";
+					_ZoneEnemyType = "motorised";
+				};
+				case _APCCount: {
+					systemChat "APC Majority";
+					_ZoneEnemyType = "mechanized";
+				};
+				case _TankCount: {
+					systemChat "Tank Majority";
+					_ZoneEnemyType = "armor";
+				};
+				default{
+					systemChat "Defaulted";
+					_ZoneEnemyType = "infantry";
+				}
+			};
+			private _TotalNumber = _CountInfantryNumber + (_WheeledCount * 4) + (_APCCount * 3) + (_TankCount * 3);
+			[_ZoneType,_Side,_ZoneEnemyType,_TotalNumber,0.8] spawn OKS_CreateUnitMarker;
+		};
+	} else {
+		if(_EnableEnemyMarkers) then {
+			[_ZoneType,_Side,"infantry",_CountInfantryNumber,0.8] spawn OKS_CreateUnitMarker;
+		};
+	};
+
 	_MainMarker = createMarker [format ["oks_MainMarker_%1",str round(random 80000 + random 9999)], getPos _MainTrigger];
-	if(_Debug_Variable) then {
-		_MainMarker setMarkerBrush "SolidBorder";
-		_MainMarker setMarkerColor "ColorWhite";
-		_MainMarker setMarkerAlpha 0.3;
+	if(_Debug_Variable || _EnableZoneMarker) then {
+		_MainMarker setMarkerBrush "Border";
+		_MainMarker setMarkerColor _SideColor;
+		_MainMarker setMarkerAlpha 0.5;
 	} else {
 		_MainMarker setMarkerAlpha 0;
 	};

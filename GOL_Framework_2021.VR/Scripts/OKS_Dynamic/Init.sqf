@@ -14,6 +14,7 @@ OKS_CreateMarker = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Cr
 OKS_CreateTrigger = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_CreateTrigger.sqf";
 OKS_Populate_Sandbag = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Populate_Sandbag.sqf";
 OKS_CreateUnitMarker = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_CreateUnitMarker.sqf";
+OKS_EnablePath = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_EnablePath.sqf";
 
 //OKS_CreateComposition = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_CreateComposition.sqf";
 //OKS_GetComposition = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_GetComposition.sqf";

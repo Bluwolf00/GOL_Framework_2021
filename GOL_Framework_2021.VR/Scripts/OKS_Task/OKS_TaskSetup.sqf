@@ -35,11 +35,11 @@ switch (_TaskNumber) do {
 
 	case 1:{
 		_TaskID = "OKS_TASK_1";
-		_TaskTitle = "Destroy Stockpile";
-		_TaskDescription = "Intel found suggests a weapons cache west of Oreokastro. Expect enemy resistance in the area.";
-		_TaskAction = "Download Intel";
-		_TaskMarkerText = "Stockpile";
-		_TaskType = "destroy";
+		_TaskTitle = "Find and Capture HVT";
+		_TaskDescription = "Intel found suggests a high value target located in the area. Seize the HVT and take him back to base.";
+		_TaskAction = "Read Intel";
+		_TaskMarkerText = "HVT";
+		_TaskType = "kill";
 		[_Object,_TaskID,_TaskAction,[_TaskID,_TaskTitle,_TaskDescription,_TaskMarkerText,_TaskPos,_TaskParent],_Side,_TaskNumber,_TaskType] spawn OKS_TASK;
 	};
 

@@ -17,7 +17,7 @@ if(!isServer) exitWith {};
 	_Settings = [_Side] call OKS_Dynamic_Setting;
 	_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
 	_Civilian Params ["_CivilianUnits","_HVT"];
-	_Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Helicopter","_Transport","_Supply"];
+	_Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Helicopter","_Transport","_Supply","_AntiAir"];
 
 	_Debug_Variable = false;
 
@@ -430,6 +430,7 @@ switch (_TypeOfObjective) do {
 		};
 		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Artillery Objective"}};
 		if(_SpawnPos distance [0,0,0] < 300) exitWith { if(_Debug_Variable) then {SystemChat "Location found near SW edge of map. Exiting..."}};
+		OKS_Objective_Positions pushBackUnique _SpawnPos;
 
 		_Arty = CreateVehicle [_Artillery, [_SpawnPos select 0,_SpawnPos select 1,1], [], 0, "NONE"];
 		_Arty setDir (random 360);
@@ -477,6 +478,68 @@ switch (_TypeOfObjective) do {
 		sleep 5;
 		[getPos _Arty,_Side,(round random 4),15] spawn OKS_Populate_Sandbag;
 		[getPos _Arty,40,_Side] spawn OKS_Populate_StaticWeapons;
+	 	//[getPos _Arty,_Side,(1+(round random 3)),40] spawn OKS_Populate_Bunkers;
+	};
+
+	case "antiair": {
+
+		private ["_Road","_RandomPos","_Target","_SpawnPos","_AA"];
+		_AntiAir = selectRandom(_AntiAir);
+
+		if(!isNil "_Area") then {
+			_Repetitions = 0;
+			while{true} do {
+				_Repetitions = _Repetitions + 1;
+				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
+				_SpawnPos = [_RandomPos, 1, 100, 10, 0, 0, 0] call BIS_fnc_findSafePos;
+				if(_Repetitions > 100) exitWith {};
+
+				if(_Debug_Variable) then {
+					systemChat str [_SpawnPos inArea _Area,{_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1,{_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1,{_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1]
+				};
+				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 10, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
+			};
+		} else {
+			_SpawnPos = getPos([([_Position, 1, 100, 10, 0, 0, 0] call BIS_fnc_findSafePos), 300] call BIS_fnc_nearestRoad);
+		};
+		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Artillery Objective"}};
+		if(_SpawnPos distance [0,0,0] < 300) exitWith { if(_Debug_Variable) then {SystemChat "Location found near SW edge of map. Exiting..."}};
+		OKS_Objective_Positions pushBackUnique _SpawnPos;
+		_AA = CreateVehicle [_AntiAir, [_SpawnPos select 0,_SpawnPos select 1,1], [], 0, "NONE"];
+		_AA setDir (random 360);
+		_trg = createTrigger ["EmptyDetector", GetPos _AA, true];
+		_trg setTriggerActivation ["VEHICLE","NOT PRESENT",false];
+		_trg setTriggerTimeout [5, 7, 10, true];
+		_trg triggerAttachVehicle [_AA];
+		_trg setTriggerArea [15000,15000,0,false,1000];
+
+		_Task = [true,format["OKS_AntiAir_Objective_%1",(round(random 9000))], ["The Enemy have set up anti-air positions that engage our air assets. Locate the anti-air and neutralize it!", "Destroy Anti-Air", "Destroy Anti-Air"], getPos _AA,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+
+			[_Task,"destroy"] call BIS_fnc_taskSetType;
+			[_Task,[_AA,true]] call BIS_fnc_taskSetDestination;
+
+			if(_ObjectivePatrols) then {
+				[_AA getPos [25,(random 360)],5,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+			};
+
+		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+
+		if(!isNil "GW_Ambient_AAA") then {
+			if(_Debug_Variable) then {
+				systemChat "RemoteExec GW Ambient AAA..";
+			};
+			[_AA,_Side,3,false,1000] remoteExec ["GW_Ambient_AAA",0];
+		} else {
+			createVehicleCrew _AA;
+		};
+		sleep 2;
+		["AntiAir_1",getPos _AA, [0,0,0], getDir _AA] call LARs_fnc_spawnComp;
+		sleep 3;
+		[getPos _AA,_Side,(round random 4),15] spawn OKS_Populate_Sandbag;
+		[getPos _AA,40,_Side] spawn OKS_Populate_StaticWeapons;
+		_Objects = nearestObjects [getpos _AA,[],35];
+		_Objects = _Objects select { getPos _X select 2 > 0 && !(_X isKindOf "MAN") && !(_X isKindOf "StaticWeapon")};
+		{_X setPos [getPos _X select 0,getpos _X select 1,-0.1]; _X setVectorUp [0,0,1] } foreach _Objects;
 	 	//[getPos _Arty,_Side,(1+(round random 3)),40] spawn OKS_Populate_Bunkers;
 	};
 

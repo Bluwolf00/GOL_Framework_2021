@@ -1,7 +1,7 @@
 /*
 
 	_null = [east,"african"] execVM "OKS_FaceSwap.sqf";
-	[civilian_1,"african"] execVM "OKS_FaceSwap.sqf";
+	[civilian_1,"african"] execVM "Scripts\OKS_Ambience\OKS_FaceSwap.sqf";
 
 	Options:
 	african

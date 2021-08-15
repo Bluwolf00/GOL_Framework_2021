@@ -8,7 +8,7 @@
 	_Debug_Variable = false;
 
 	{
-		if(surfaceIsWater (waypointPosition _X)) then {
+		if(surfaceIsWater (waypointPosition _X) || !(waypointPosition _X inArea _Area)) then {
 			if(_Debug_Variable) then {
 				SystemChat "Waypoint found in water.. moving";
 			};
@@ -24,7 +24,7 @@
 				};
 				if(_SafePos inArea _Area) exitWith { _X setWaypointPosition [_SafePos,0]; if(_Debug_Variable) then {SystemChat "Waypoint SafePos Found."}}
 			};
-			if(_Repetitions > 30) exitWith {  if(_Debug_Variable) then { _DeleteTriggers pushBackUnique _X; SystemChat "Faied to Find Waypoint. Adding to Delete."}};
+			if(_Repetitions > 30) exitWith {  if(_Debug_Variable) then { _DeleteTriggers pushBackUnique _X; SystemChat "Failed to Find Waypoint. Adding to Delete."}};
 		};
 	} foreach _Waypoints;
 

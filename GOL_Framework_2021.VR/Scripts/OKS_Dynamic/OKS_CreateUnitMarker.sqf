@@ -1,7 +1,7 @@
     // OKS_CreateUnitMarker
     // [_marker,_Side,"mechanized",_Count] spawn OKS_CreateUnitMarker;
     // _null = ["respawn_west",east,"mechanized",10] execVM "Scripts\OKS_Dynamic\OKS_CreateUnitMarker.sqf";
-	Params["_Marker","_Side","_Type","_CountUnits"];
+	Params["_Marker","_Side","_Type","_CountUnits","_Size"];
 
 	private ["_marker","_sideMarker","_UnitType"];
 	private _Debug_Variable = false;
@@ -22,10 +22,10 @@
 		case "armor":{_UnitType = "armor"};
 	};
 	_Marker setMarkerType format["%1%2",_sideMarker,_UnitType];
-	_Marker setMarkerSize [0.6,0.6];
+	_Marker setMarkerSize [_Size,_Size];
 
 	private _sizeMarker = createMarker [format ["oks_UnitSizeMarker_%1",str round(random 80000 + random 9999)],getMarkerPos _Marker];
-	_sizeMarker setMarkerSize [1.2,1.2];
+	_sizeMarker setMarkerSize [(_Size * 2),(_Size * 2)];
 	_sizeMarker setMarkerShape "ICON";
 
 

@@ -1,9 +1,11 @@
-// _null = [this,east,3] spawn GW_Ambient_AAA;
+// _null = [this,east,3,false,1000] spawn GW_Ambient_AAA;
+// [AntiAirObject,Side,WeaponNumber,ShouldReplaceWeapons,Range] spawn GW_Ambient_AAA;
 
-params ["_arty","_side","_weaponType"];
+params ["_arty","_side","_weaponType","_ShouldReplaceWeapons","_Range"];
 
 if ((count(fullCrew [_arty, "gunner", true]) isEqualTo 0)) exitWith {systemChat "Vehicle does not have a gunner seat"; false};
-
+private _weapon = "";
+private _Debug_Variable = false;
 
 _updateTarget = 0;
 _targetPlayer = 0;
@@ -38,25 +40,25 @@ if (!alive (gunner _arty)) then {
     (gunner _arty) disableAI _x;
 } forEach ["TARGET","AUTOTARGET","FSM","AIMINGERROR","SUPPRESSION","CHECKVISIBLE","COVER","AUTOCOMBAT","MINEDETECTION","PATH","TEAMSWITCH"];
 
-_weapon = "M134_minigun";
-switch (_weaponType) do {
-    case 1: {
-        _weapon = "autocannon_35mm";
+if(_ShouldReplaceWeapons) then {
+    _weapon = "M134_minigun";
+    switch (_weaponType) do {
+        case 1: {
+            _weapon = "autocannon_35mm";
+        };
+        case 2: {
+            _weapon = "gatling_30mm";
+        };
+        case 3: {
+            _weapon = "RHS_weap_2a14";
+        };
+        case 4:{
+            _weapon = "CUP_Vacannon_2A14_veh";
+        };
+        case 5:{
+            _weapon = "CUP_Vhmg_DSHKM_veh";
+        };
     };
-    case 2: {
-        _weapon = "gatling_30mm";
-    };
-    case 3: {
-        _weapon = "RHS_weap_2a14";
-    };
-    case 4:{
-        _weapon = "CUP_Vacannon_2A14_veh";
-    };
-    case 5:{
-        _weapon = "CUP_Vhmg_DSHKM_veh";
-    };
-};
-
 {
     _arty removeWeaponTurret [_x, [0]];
 } forEach (_arty weaponsTurret [0]);
@@ -64,6 +66,10 @@ switch (_weaponType) do {
 _arty addWeaponTurret [_weapon,[0]];
 _arty addMagazineTurret [(getArray(configfile >> "CfgWeapons" >> _weapon >> "magazines") select 0), [0]];
 _arty selectWeaponTurret [_weapon,[0]];
+} else {
+    _weapon = (_arty weaponsTurret [0]) select 0;
+};
+
 
 _target = (_arty getRelPos [(random [0, 40, 100]), (10 + (random [-25, 0, 25]))]);
 _target set [2, 500];
@@ -78,11 +84,19 @@ _arty setVehicleAmmo 0;
 _arty setVehicleAmmo 1;
 
 _fnc_Fire = {
-    params ["_arty", "_weapon"];
+    params ["_arty", "_weapon","_targetPlayer"];
 
     _arty setVariable ["canFire", false];
 
-    sleep (random [1, 2.5, 4]);
+    if(typeName _targetPlayer isEqualTo "OBJECT") then {
+        if(_targetPlayer isKindOf "AIR") then {
+            sleep (random [2, 4, 5]);
+        } else {
+            sleep (random [6, 8, 10]);
+        };
+    } else {
+        sleep (random [2, 4, 5]);
+    };
 
     _weaponState = (weaponState [_arty, [0], _weapon]);
     for "_i" from 1 to 10 step 1 do {
@@ -99,7 +113,10 @@ _fnc_Fire = {
 
 while {Alive _arty} do {
     if (_updateTarget isEqualTo 0) then {
-        _closePlayers = (_arty nearObjects ["Air", 750]) select { (([_x, "VIEW", _arty] checkVisibility [(eyePos _arty), (eyePos _x)]) > 0) && !(typeOf _X in ["NonSteerable_Parachute_F","Steerable_Parachute_F"]) };
+        _closePlayers = (_arty nearEntities [["Man","LandVehicle","Air"], _Range]) select {(side _X != _side) && (_Arty knowsAbout _X >= 1.5) && (_side getFriend (side _X) <= 0.6) && (([_x, "VIEW", _arty] checkVisibility [(eyePos _arty), (eyePos _x)]) > 0) && !(typeOf _X in ["NonSteerable_Parachute_F","Steerable_Parachute_F"]) };
+        if(_Debug_Variable) then {
+            SystemChat str _closePlayers;
+        };
 
         if (!(_closePlayers isEqualTo []) && (_canShoot > 0)) then {
             _targetPlayer = (selectRandom _closePlayers);
@@ -134,7 +151,7 @@ while {Alive _arty} do {
     };
 
     if (_arty getVariable ["canFire", false]) then {
-        [_arty, _weapon] spawn _fnc_Fire;
+        [_arty, _weapon,_targetPlayer] spawn _fnc_Fire;
     };
     _updateTarget = _updateTarget - 1;
     sleep _delay;
