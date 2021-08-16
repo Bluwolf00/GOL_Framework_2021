@@ -41,7 +41,7 @@ For "_i" from 1 to _RoadblockCount do {
 	private _Condition = true;
 	while {_Condition} do {
 
-		_Type = selectRandom [_Wheeled,_APC,_Tank];
+		_Type = selectRandom [_APC,_Tank];
 		_VehicleClass = selectRandom _Type;
 
 		_Repetitions = _Repetitions + 1;

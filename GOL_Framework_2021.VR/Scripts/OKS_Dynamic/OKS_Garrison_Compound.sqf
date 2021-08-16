@@ -31,9 +31,11 @@
 			 * 6: Teleport units <BOOL> (default: false)
 		 */
 		//private _type = typeOf nearestBuilding (getPos (leader _group));
+		_Houses = _Position nearObjects ["House",_Range];
+		{_X setVariable ["OKS_isGarrisoned",true]} foreach _Houses;
 		if(_Debug_Variable) then {
 			SystemChat format ["Compound at %1 Units: %2 Range: %3",_Position,count units _Group,_Range];
+			//SystemChat format ["Houses to setVariable: %1",_Houses];
 		};
-
 		[_Position, nil, units _Group, (_Range - 10), 0, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
 		[_Group,0.3,15] spawn OKS_EnablePath;

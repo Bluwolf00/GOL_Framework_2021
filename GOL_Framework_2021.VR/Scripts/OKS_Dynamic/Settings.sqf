@@ -60,7 +60,7 @@ Switch (_Side) do
 			"O_Soldier_LAT_F"
 		];
 		_Officer = ["O_officer_F"];
-		_Wheeled = ["LOP_AM_OPF_Nissan_PKM","LOP_AM_OPF_Landrover_M2","LOP_AM_OPF_Landrover","LOP_AM_OPF_Landrover_SPG9"];
+		_Wheeled = ["LOP_AM_OPF_Nissan_PKM","LOP_AM_OPF_Landrover_M2","LOP_AM_OPF_Landrover","LOP_AM_OPF_Landrover_SPG9","LOP_AM_OPF_UAZ_Open"];
 		_APC = ["LOP_SYR_BMP1"];
 		_Tank = ["LOP_TKA_T55","LOP_TKA_T34"];
 		_Artillery = ["rhs_2b14_82mm_msv", "LOP_TKA_Static_D30"];
@@ -118,18 +118,19 @@ _CivilianUnits = ["C_man_polo_1_F","C_man_polo_2_F","C_man_polo_3_F","C_man_polo
 _Civilian = [_CivilianUnits,_Officer];
 
 /* ObjectiveTypes: ["cache","artillery","hostage","hvttruck","ammotruck","radiotower","motorpool","antiair"] If you wish to disable just remove them from the array above. */
-_ObjectiveTypes = ["antiair","artillery","cache"];
+_ObjectiveTypes = ["cache","artillery","hostage","hvttruck","ammotruck","radiotower","motorpool","antiair"];
 
 /* CompoundSize defines in meters how large a compound is conisdered in this mission. Garrisons will spread out at this distance*/
-_CompoundSize = 25;
+_CompoundSize = 20;
 
 /* EnableEnemyMarkers will place markers at enemy strongpoints & compounds populated by Static Targets */
-_EnableEnemyMarkers = false;
+_EnableEnemyMarkers = true;
 
 /* Mark Trigger Area with Zone Marker*/
-_EnableZoneMarker = true;
+_EnableZoneMarker = false;
+
 /* Mark Trigger Area with Zone Type Marker */
-_EnableZoneTypeMarker = true;
+_EnableZoneTypeMarker = false;
 
 _Configuration = [_CompoundSize,_EnableEnemyMarkers,_EnableZoneMarker,_EnableZoneTypeMarker];
 

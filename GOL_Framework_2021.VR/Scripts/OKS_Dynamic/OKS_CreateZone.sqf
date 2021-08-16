@@ -176,18 +176,6 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 			};
 		};
 
-		/* Create Objectives Main Area */
-		SystemChat format ["Objective Count: %1",_Objectives];
-		if(_Objectives > 0) then {
-			Private ["_RandomObjective"];
-			For "_i" to (_Objectives - 1) do {
-				_RandomObjective = selectRandom _ObjectiveTypes;
-				[_MainTrigger,_RandomObjective,300,_Side,_ObjectivePatrols] spawn OKS_CreateObjectives;
-				sleep 15;
-			};
-			sleep 20;
-		};
-
 	private ["_StaticNumber","_PatrolNumber","_Condition","_LocalPatrols","_CreateObjective"];
 
 	if(typeName _InfantryNumber isEqualTo "ARRAY") then {
@@ -253,7 +241,7 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		};
 		if (_WheeledPerTrigger isEqualTo 0) then { _WheeledPerTrigger = 1 };
 		{[_X,_WheeledPerTrigger,_MainTriggerSizeA,"WHEELED",_Side] spawn OKS_Vehicle_Patrol; sleep 25;} foreach _SpawnTriggers;
-		sleep 30;
+		sleep (_WheeledCount * 5);
 	};
 	if(_Debug_Variable) then {
 		SystemChat format ["Total %1 APC",_apcCount];
@@ -265,7 +253,7 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		};
 		if (_APCPerTrigger isEqualTo 0) then { _APCPerTrigger = 1 };
 		{[_X,_APCPerTrigger,_MainTriggerSizeA,"APC",_Side] spawn OKS_Vehicle_Patrol; sleep 25;} foreach _SpawnTriggers;
-		sleep 30;
+		sleep (_APCCount * 5);
 	};
 	if(_Debug_Variable) then {
 		SystemChat format ["Total %1 Tank",_TankCount];
@@ -278,7 +266,19 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		};
 		if (_TankPerTrigger isEqualTo 0) then { _TankPerTrigger = 1 };
 		{[_X,_TankPerTrigger,_MainTriggerSizeA,"TANK",_Side] spawn OKS_Vehicle_Patrol; sleep 25;} foreach _SpawnTriggers;
+		sleep (_TankCount * 5);
+	};
 
+	/* Create Objectives Main Area */
+	SystemChat format ["Objective Count: %1",_Objectives];
+	if(_Objectives > 0) then {
+		Private ["_RandomObjective"];
+		For "_i" to (_Objectives - 1) do {
+			_RandomObjective = selectRandom _ObjectiveTypes;
+			[_MainTrigger,_RandomObjective,300,_Side,_ObjectivePatrols] spawn OKS_CreateObjectives;
+			sleep 15;
+		};
+		sleep 20;
 	};
 
 

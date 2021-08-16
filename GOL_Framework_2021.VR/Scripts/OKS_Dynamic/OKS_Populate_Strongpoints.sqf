@@ -81,7 +81,7 @@ if(_CountStrongpoints > 0) then {
 		{
 			_Compound = createMarker [format ["oks_Compound_Marker_%1",str round(random 90000)],_X];
 			if(_EnableEnemyMarkers) then {
-				[_Compound,_Side,"infantry",_GarrisonNumber] spawn OKS_CreateUnitMarker;
+				[_Compound,_Side,"infantry",_GarrisonNumber,0.8] spawn OKS_CreateUnitMarker;
 			};
 			[_GarrisonNumber,_X,_Side,_Units,_CompoundSize] spawn OKS_Garrison_Compound;
 			if(_CreateLocalPatrols) then {
@@ -93,7 +93,7 @@ if(_CountStrongpoints > 0) then {
 					Private _DirectionPos = _X getPos [75,(random 360)];
 					_SafePos = [_X, 1, 75, 5, 0, 0.2, 0] call BIS_fnc_findSafePos;
 					_Group = CreateGroup _Side;
-					for "_i" from 1 to _PatrolNumber do
+					for "_i" from 0 to _PatrolNumber do
 					{
 						Private "_Unit";
 						if ( (count (units _Group)) == 0 ) then
@@ -106,12 +106,12 @@ if(_CountStrongpoints > 0) then {
 						};
 						sleep 1;
 					};
-					[_Group, _DirectionPos, 100] call CBA_fnc_taskPatrol;
+					[_Group, _DirectionPos, (_CompoundSize * 2)] call CBA_fnc_taskPatrol;
 					_Group setBehaviour "SAFE";
 				};
 			};
 			if(_CreateObjective && {_X getVariable ["isSectorTrigger",false]} count (_X nearObjects ["EmptyDetector",(_CompoundSize * 3)]) < 1) then {
-				[_X,"sector",_CompoundSize,_Side,_Settings] spawn OKS_CreateObjectives;
+				[_X,"sector",(_CompoundSize * 2),_Side,_Settings] spawn OKS_CreateObjectives;
 			};
 			sleep 3;
 		} foreach _Compounds;
@@ -179,7 +179,7 @@ if(_CountStrongpoints > 0) then {
 					[4,_X,_Side,_Units] spawn OKS_Garrison;
 					if(_EnableEnemyMarkers) then {
 						_Marker = createMarker [format ["oks_SP_Marker_%1",str round(random 90000)],getPos _X];
-						[_marker,_Side,"infantry",4] spawn OKS_CreateUnitMarker;
+						[_marker,_Side,"infantry",4,0.8] spawn OKS_CreateUnitMarker;
 					};
 				} foreach _SelectedBuildings;
 

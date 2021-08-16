@@ -59,6 +59,7 @@
 			 * 6: Teleport units <BOOL> (default: false)
 		 */
 		//private _type = typeOf nearestBuilding (getPos (leader _group));
+		_House setVariable ["OKS_isGarrisoned",true];
 		[getPos (leader _Group), [typeOf _House], units _Group, 5, 2, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
 		[_Group,0.3,15] spawn OKS_EnablePath;
 	};

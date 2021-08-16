@@ -119,7 +119,7 @@ switch (_TypeOfObjective) do {
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
 				_SpawnPos = [_RandomPos, 1, 100, 5, 0, 0, 0] call BIS_fnc_findSafePos;
-				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
+				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.07, 20, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 				if(_Repetitions > 100) exitWith {};
 			};
 		} else {
@@ -138,7 +138,7 @@ switch (_TypeOfObjective) do {
 		_Crate enableSimulation true;
 		_Crate setMass 9999;
 
-		_AmmoCamp = selectRandom ["AmmoCampSite_1","AmmoCampSite_2","AmmoCampSite_3"];
+		_AmmoCamp = selectRandom ["AmmoCampSite_1","AmmoCampSite_2","AmmoCampSite_3","Bunker_2","Bunker_3","Bunker_4"];
 		[_AmmoCamp,getPos _Crate, [0,0,0], getDir _Crate] call LARs_fnc_spawnComp;
 		_trg = createTrigger ["EmptyDetector", GetPos _Crate, true];
 		_trg setTriggerArea [15000,15000,0,false,1000];
@@ -555,7 +555,7 @@ switch (_TypeOfObjective) do {
 				_GarrisonPositions = [_House] call BIS_fnc_buildingPositions;
 				_GarrisonMaxSize = count _GarrisonPositions;
 				if(_Debug_Variable) then {systemChat format["Trigger - Finding Position - %1",_House]};
-				if(_Repetitions > 30 || (_GarrisonMaxSize > 8 && _House inArea _Area) ) exitWith {};
+				if(_Repetitions > 30 || (_GarrisonMaxSize > 8 && _House inArea _Area && !(_House getVariable ["OKS_HostageObjective",false]) && !(_House getVariable ["OKS_isGarrisoned",false]))) exitWith {};
 
 				//if(!(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 35, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 			};
@@ -567,7 +567,7 @@ switch (_TypeOfObjective) do {
 		};
 		if(_Repetitions > 30) exitWith { systemChat "Unable to find position: Hostage Objective"};
 
-
+		_House setVariable ["OKS_HostageObjective",true];
 		_Group = CreateGroup _Side;
 		_HostageGroup = CreateGroup civilian;
 		_Hostage1 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];

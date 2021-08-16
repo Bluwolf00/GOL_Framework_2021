@@ -10,11 +10,12 @@ private ["_RandomPos","_Road","_marker","_SideMarker","_SelectedPos","_Compositi
 private _Debug_Variable = false;
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
-_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configurations"];
 _Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Helicopter","_Transport","_Supply"];
 
 _HuntSettings = [] Call OKS_Hunt_Setting;
 _HuntSettings Params ["_Respawn","_Waves","_RefreshRate"];
+_Configurations Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker"];
 
 _Respawn Params ["_InfantryRespawnTime","_WheeledRespawnTime","_APCRespawnTime","_TankRespawnTime","_HelicopterRespawnTime"];
 _Waves Params ["_InfantryWaves","_WheeledWaves","_APCWaves","_TankWaves","_HelicopterWaves"];
@@ -104,31 +105,32 @@ Private _FindAndSpawnHuntBase = {
 		};
 	};
 
-	_marker = createMarker [format ["OKS_HuntBase_Marker_%1",str (random 5000)],_SelectedPos];
-	_marker setMarkerShape "ICON";
-	_marker setMarkerSize [0.6,0.6];
-	_marker setMarkerType _SideMarker;
-	_marker setMarkerColor _SideColor;
+	if(_EnableEnemyMarkers) then {
+		_marker = createMarker [format ["OKS_HuntBase_Marker_%1",str (random 5000)],_SelectedPos];
+		_marker setMarkerShape "ICON";
+		_marker setMarkerSize [0.6,0.6];
+		_marker setMarkerType _SideMarker;
+		_marker setMarkerColor _SideColor;
 
-	switch (_Waves) do {
-		case 1:{ _SizeMarker = "group_0"};
-		case 2:{ _SizeMarker = "group_1"};
-		case 3:{ _SizeMarker = "group_1"};
-		case 4:{ _SizeMarker = "group_2"};
-		case 5:{ _SizeMarker = "group_2"};
-		case 6:{ _SizeMarker = "group_3"};
-		case 7:{ _SizeMarker = "group_3"};
-		case 8:{ _SizeMarker = "group_4"};
-		case 9:{ _SizeMarker = "group_5"};
-		default {_SizeMarker = "group_6"};
+		switch (_Waves) do {
+			case 1:{ _SizeMarker = "group_0"};
+			case 2:{ _SizeMarker = "group_1"};
+			case 3:{ _SizeMarker = "group_1"};
+			case 4:{ _SizeMarker = "group_2"};
+			case 5:{ _SizeMarker = "group_2"};
+			case 6:{ _SizeMarker = "group_3"};
+			case 7:{ _SizeMarker = "group_3"};
+			case 8:{ _SizeMarker = "group_4"};
+			case 9:{ _SizeMarker = "group_5"};
+			default {_SizeMarker = "group_6"};
+		};
+
+		_marker = createMarker [format ["OKS_HuntBaseSize_Marker_%1",str (random 5000)],_SelectedPos];
+		_marker setMarkerShape "ICON";
+		_marker setMarkerSize [0.9,0.9];
+		_marker setMarkerType _SizeMarker;
+		_marker setMarkerColor _SideColor;
 	};
-
-	_marker = createMarker [format ["OKS_HuntBaseSize_Marker_%1",str (random 5000)],_SelectedPos];
-	_marker setMarkerShape "ICON";
-	_marker setMarkerSize [0.9,0.9];
-	_marker setMarkerType _SizeMarker;
-	_marker setMarkerColor _SideColor;
-
 	if(_Debug_Variable) then {
 		SystemChat format ["%1 Hunt Base created at %3",_Side,getMarkerPos _marker];
 		_marker = createMarker [format ["OKS_HuntBaseDebug_Marker_%1",str (random 5000)],getPos _Spawn];
