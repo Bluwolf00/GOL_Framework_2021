@@ -33,6 +33,6 @@
 		case (_CountUnits > 0 && _CountUnits <= 5):{ if(_Debug_Variable) then {systemChat "FireTeam"}; _sizeMarker setMarkerType "group_0"};
 		case (_CountUnits > 5 && _CountUnits <= 12):{ if(_Debug_Variable) then {systemChat "Squad"}; _sizeMarker setMarkerType "group_1"};
 		case (_CountUnits > 12 && _CountUnits <= 25):{ if(_Debug_Variable) then {systemChat "Section"}; _sizeMarker setMarkerType "group_2"};
-		case (_CountUnits > 25 && _CountUnits <= 50):{ if(_Debug_Variable) then {systemChat "Platoon"}; _sizeMarker setMarkerType "group_3"};
-		case (_CountUnits > 50):{if(_Debug_Variable) then {systemChat "Company"}; _sizeMarker setMarkerType "group_4"};
+		case (_CountUnits > 25 && _CountUnits <= 75):{ if(_Debug_Variable) then {systemChat "Platoon"}; _sizeMarker setMarkerType "group_3"};
+		case (_CountUnits > 75):{if(_Debug_Variable) then {systemChat "Company"}; _sizeMarker setMarkerType "group_4"};
  	};

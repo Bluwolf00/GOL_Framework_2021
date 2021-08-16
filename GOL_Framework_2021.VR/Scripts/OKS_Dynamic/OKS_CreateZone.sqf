@@ -19,9 +19,9 @@ _SpawnTriggers = [];
 _Settings = [_Side] call OKS_Dynamic_Setting;
 _Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configurations"];
 _ObjectiveArray Params ["_Objectives","_ObjectivePatrols"];
-_RoadblockArray Params ["_RoadblockCount","_RoadblockTarmac","_RoadblockPatrols"];
+_RoadblockArray Params ["_RoadblockCount","_RoadblockTarmac","_RoadblockPatrols","_RoadblockChance"];
 _MortarArray Params ["_MortarCount","_MortarPatrol"];
-_Configurations Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker"];
+_Configurations Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker"];
 
 /* Create Sub-Triggers based on the Main trigger */
 _MainTriggerArea = triggerArea _MainTrigger;
@@ -44,26 +44,36 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 
 	if(!(_SortArray isEqualTo [0,0,0])) then {
 		_UnitTypes = [_SortArray, [], {_x}, "DESCEND"] call BIS_fnc_sortBy;
-		SystemChat str [_SortArray,_UnitTypes];
+		if(_Debug_Variable) then {
+			SystemChat str [_SortArray,_UnitTypes];
+		};
 		_UnitSelect = _UnitTypes select 0;
 		private _ZoneEnemyType = "";
 
-		if({_X > 0} count _UnitTypes > 0 && _EnableEnemyMarkers && _EnableZoneMarker) then {
+		if({_X > 0} count _UnitTypes > 0 && _EnableZoneTypeMarker && _EnableZoneMarker) then {
 			switch(_UnitSelect) do {
 				case _WheeledCount: {
-					systemChat "Wheeled Majority";
+					if(_Debug_Variable) then {
+						systemChat "Wheeled Majority";
+					};
 					_ZoneEnemyType = "motorised";
 				};
 				case _APCCount: {
-					systemChat "APC Majority";
+					if(_Debug_Variable) then {
+						systemChat "APC Majority";
+					};
 					_ZoneEnemyType = "mechanized";
 				};
 				case _TankCount: {
-					systemChat "Tank Majority";
+					if(_Debug_Variable) then {
+						systemChat "Tank Majority";
+					};
 					_ZoneEnemyType = "armor";
 				};
 				default{
-					systemChat "Defaulted";
+					if(_Debug_Variable) then {
+						systemChat "Defaulted to Infantry";
+					};
 					_ZoneEnemyType = "infantry";
 				}
 			};
@@ -71,7 +81,7 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 			[_ZoneType,_Side,_ZoneEnemyType,_TotalNumber,0.8] spawn OKS_CreateUnitMarker;
 		};
 	} else {
-		if(_EnableEnemyMarkers) then {
+		if(_EnableEnemyMarkers && _EnableZoneTypeMarker) then {
 			[_ZoneType,_Side,"infantry",_CountInfantryNumber,0.8] spawn OKS_CreateUnitMarker;
 		};
 	};
@@ -153,7 +163,7 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		/* Create Compositions for Main Area */
 		SystemChat format ["Roadblock Count: %1",_RoadblockCount];
 		if(_RoadblockCount > 0) then {
-			[_MainTrigger,_RoadblockCount,_Side,_RoadblockTarmac,_RoadBlockPatrols] spawn OKS_Find_RoadBlocks;
+			[_MainTrigger,_RoadblockCount,_Side,_RoadblockTarmac,_RoadBlockPatrols,_RoadblockChance] spawn OKS_Find_RoadBlocks;
 			sleep 20;
 		};
 

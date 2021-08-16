@@ -37,8 +37,6 @@ if(!isNil "OKS_Populate_StaticWeapons") then {
 
 if(count _Locations > 0) then {
 	{
-
-
 		_Location = nearestBuilding _X;
 		_AllBuildings = (_Location) nearObjects ["House",125];
 		_SortedBuildings = [_AllBuildings,[],{(_Location) distance _x},"ASCEND"] call BIS_fnc_sortBy;
@@ -90,6 +88,7 @@ if(_CountStrongpoints > 0) then {
 				if(_Debug_Variable) then {
 					systemChat format ["%1 Patrol Number - Creating patrols",_PatrolNumber];
 				};
+				for "_i" from 0 to 3 step 1 do
 				{
 					Private _DirectionPos = _X getPos [75,(random 360)];
 					_SafePos = [_X, 1, 75, 5, 0, 0.2, 0] call BIS_fnc_findSafePos;
@@ -109,11 +108,12 @@ if(_CountStrongpoints > 0) then {
 					};
 					[_Group, _DirectionPos, 100] call CBA_fnc_taskPatrol;
 					_Group setBehaviour "SAFE";
-				} foreach [1,2,3];
+				};
 			};
-			if(_CreateObjective && {_X getVariable ["isSectorTrigger",false]} count (_X nearObjects ["EmptyDetector", 250]) < 1) then {
-				[_X,"sector",125,_Side,_Settings] spawn OKS_CreateObjectives;
+			if(_CreateObjective && {_X getVariable ["isSectorTrigger",false]} count (_X nearObjects ["EmptyDetector",(_CompoundSize * 3)]) < 1) then {
+				[_X,"sector",_CompoundSize,_Side,_Settings] spawn OKS_CreateObjectives;
 			};
+			sleep 3;
 		} foreach _Compounds;
 	};
 

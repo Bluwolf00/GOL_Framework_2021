@@ -35,5 +35,5 @@
 			SystemChat format ["Compound at %1 Units: %2 Range: %3",_Position,count units _Group,_Range];
 		};
 
-		[_Position, nil, units _Group, _Range, 0, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
+		[_Position, nil, units _Group, (_Range - 10), 0, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
 		[_Group,0.3,15] spawn OKS_EnablePath;
