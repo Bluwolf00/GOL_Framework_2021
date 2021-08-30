@@ -93,7 +93,7 @@ if (_isMan) then {
 		_unit setUnitTrait ["engineer", true];
 		_unit setUnitTrait ["explosiveSpecialist", true];
 		if (GVARMAIN(mod_ACE3)) then {
-			_unit setVariable ["ACE_Medical_MedicClass", 1];
+			_unit setVariable ["ACE_Medical_MedicClass", 2];
 			_unit setVariable ["ACE_IsEngineer", 1];
 			_unit setVariable ["ACE_GForceCoef", 0.5];			// IsPilot
 		};

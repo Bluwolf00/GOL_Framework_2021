@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5088;
+		nextID=5113;
 	};
 	class Camera
 	{
-		pos[]={111.23139,61.384304,116.66467};
-		dir[]={-0.65972394,-0.72136939,-0.21069628};
-		up[]={-0.68717581,0.69254953,-0.21946353};
-		aside[]={-0.30423191,-3.4458935e-008,0.95259911};
+		pos[]={199.62704,61.384304,103.84853};
+		dir[]={-0.88811982,-0.40286979,-0.22124743};
+		up[]={-0.39092904,0.91525483,-0.097387843};
+		aside[]={-0.24173321,-1.8626451e-008,0.97034907};
 	};
 };
 binarizationWanted=0;
@@ -336,7 +336,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=355;
+									items=356;
 									class Item0
 									{
 										class data
@@ -5307,6 +5307,20 @@ class CustomAttributes
 											value="diwako_dui_radar_leadingzeroes";
 										};
 									};
+									class Item355
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_medical_treatment_allowselfpak";
+										};
+									};
 								};
 							};
 						};
@@ -5323,7 +5337,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=355;
+									items=356;
 									class Item0
 									{
 										class data
@@ -5439,7 +5453,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=5;
+														value=15;
 													};
 												};
 												class Item1
@@ -5574,7 +5588,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0.50074589;
+														value=1;
 													};
 												};
 												class Item1
@@ -5844,7 +5858,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=1.25;
+														value=1;
 													};
 												};
 												class Item1
@@ -6069,7 +6083,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -6114,7 +6128,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=120;
+														value=60;
 													};
 												};
 												class Item1
@@ -21087,7 +21101,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=3;
+														value=2;
 													};
 												};
 												class Item1
@@ -21132,7 +21146,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=4;
+														value=2;
 													};
 												};
 												class Item1
@@ -21177,7 +21191,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=8;
+														value=4;
 													};
 												};
 												class Item1
@@ -21537,7 +21551,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=8;
+														value=4;
 													};
 												};
 												class Item1
@@ -21805,6 +21819,51 @@ class CustomAttributes
 															type[]=
 															{
 																"BOOL"
+															};
+														};
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item355
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
 															};
 														};
 														value=1;

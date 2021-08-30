@@ -11,7 +11,7 @@ publicVariable "OKS_FRIENDLY_SIDE";
 
 /* Headless & ServiceStation */
 [] execVM "Scripts\HeadlessClient\HeadlessClient.sqf";
-execVM "MissionSettings.sqf";
+Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 sleep 5;
 
 	if(GOL_NEKY_SERVICESTATION isEqualTo 1) then {

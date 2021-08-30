@@ -60,7 +60,7 @@ class ace_medical_fractures {
 };
 
 class ace_medical_spontaneousWakeUpChance {
-	value = 0.5;
+	value = 1;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -70,7 +70,7 @@ class ace_medical_fatalDamageSource {
 	force = 1;
 };
 class ace_medical_playerDamageThreshold {
-	value = 1.25;
+	value = 1;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -105,12 +105,12 @@ class ace_medical_feedback_bloodVolumeEffectType {
 };
 
 class ace_medical_statemachine_AIUnconsciousness {
-	value = 1;
+	value = 0;
 	typeName = "BOOL";
 	force = 1;
 };
 class ace_medical_statemachine_cardiacArrestTime {
-	value = 120;
+	value = 60;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -124,8 +124,15 @@ class ace_medical_painCoefficient {
 	typeName = "SCALAR";
 	force = 0;
 };
+
+class ace_medical_painUnconsciousChance {
+	value = 0.2;
+	typeName = "SCALAR";
+	force = 1;
+};
+
 class ace_medical_ivFlowRate {
-	value = 5;
+	value = 15;
 	typeName = "SCALAR";
 	force = 0;
 };
@@ -240,13 +247,13 @@ class ace_medical_treatment_convertItems {
 };
 
 class ace_medical_treatment_treatmentTimeAutoinjector {
-	value = 3;
+	value = 2;
 	typeName = "SCALAR";
 	force = 1;
 };
 
 class ace_medical_treatment_treatmentTimeTourniquet {
-	value = 4;
+	value = 2;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -270,7 +277,7 @@ class ace_medical_treatment_allowSelfIV {
 };
 
 class ace_medical_treatment_treatmentTimeIV {
-	value = 9;
+	value = 4;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -282,7 +289,7 @@ class ace_medical_treatment_cprSuccessChance {
 };
 
 class ace_medical_treatment_treatmentTimeCPR {
-	value = 8;
+	value = 4;
 	typeName = "SCALAR";
 	force = 1;
 };
