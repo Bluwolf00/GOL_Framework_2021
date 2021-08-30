@@ -40,7 +40,7 @@ if(count _Locations > 0) then {
 		_Location = nearestBuilding _X;
 		_AllBuildings = (_Location) nearObjects ["House",125];
 		_SortedBuildings = [_AllBuildings,[],{(_Location) distance _x},"ASCEND"] call BIS_fnc_sortBy;
-		_SortedBuildings = _SortedBuildings select { 6 < count([_X] call BIS_fnc_buildingPositions) };
+		_SortedBuildings = _SortedBuildings select { 6 < count([_X] call BIS_fnc_buildingPositions) && !(isObjectHidden _X) };
 		sleep 2;
 		if(count _SortedBuildings >= 3) then {
 			_Strongpoint = createMarker [format ["oks_SP_Marker_%1",str round(random 90000)],_Location];

@@ -555,7 +555,7 @@ switch (_TypeOfObjective) do {
 				_GarrisonPositions = [_House] call BIS_fnc_buildingPositions;
 				_GarrisonMaxSize = count _GarrisonPositions;
 				if(_Debug_Variable) then {systemChat format["Trigger - Finding Position - %1",_House]};
-				if(_Repetitions > 30 || (_GarrisonMaxSize > 8 && _House inArea _Area && !(_House getVariable ["OKS_HostageObjective",false]) && !(_House getVariable ["OKS_isGarrisoned",false]))) exitWith {};
+				if(_Repetitions > 30 || (_GarrisonMaxSize > 8 && _House inArea _Area && !(isObjectHidden _House) && !(_House getVariable ["OKS_HostageObjective",false]) && !(_House getVariable ["OKS_isGarrisoned",false]))) exitWith {};
 
 				//if(!(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 35, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 			};

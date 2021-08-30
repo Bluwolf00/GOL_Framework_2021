@@ -14,7 +14,7 @@ OPFOR FACTIONS:        CHEDAKI TKA DESERT_INSURGENTS
 INDEPENDENT FACTIONS:  NAPA
 
 */
-Private _Faction = "DESERT_INSURGENTS";
+Private _Faction = "TKA";
 
 /* ObjectiveTypes: ["cache","artillery","hostage","hvttruck","ammotruck","radiotower","motorpool","antiair"] If you wish to disable just remove them from the array above. */
 _ObjectiveTypes = ["cache","artillery","hostage","hvttruck","ammotruck","radiotower","motorpool","antiair"];
@@ -50,6 +50,7 @@ Switch (_Faction) do {
 		_APC = ["rhsgref_ins_btr60","rhsgref_ins_btr70","rhsgref_ins_bmd1","rhsgref_ins_bmd1p","rhsgref_ins_bmd2"];
 		_Tank = ["rhsgref_ins_t72ba"];
 		_Artillery = ["rhsgref_ins_d30","rhsgref_ins_2b14","rhsgref_ins_2s1","rhsgref_ins_BM21"];
+		_AntiAir = ["rhsgref_ins_zsu234"];
 		_Helicopter = ["rhsgref_ins_Mi8amt"];
 		_Transport = ["rhsgref_ins_ural"];
 		_Supply = ["rhsgref_ins_gaz66_r142","rhsgref_ins_gaz66_ap2","rhsgref_ins_kraz255b1_fuel","rhsgref_ins_ural_repair","rhsgref_ins_gaz66_ammo"];
@@ -58,10 +59,11 @@ Switch (_Faction) do {
 	case "TKA":
 	{
 		// Takistani Army - OPFOR
-		_Wheeled = ["LOP_TKA_UAZ_SPG","LOP_TKA_UAZ_DshKM","rhsgref_tla_offroad_at","LOP_TKA_BMP1"];
-		_APC = ["LOP_TKA_T34","LOP_TKA_BTR70","LOP_TKA_BTR60","LOP_TKA_T55"];
-		_Tank = ["LOP_TKA_T55"];
+		_Wheeled = ["LOP_TKA_UAZ_SPG","LOP_TKA_UAZ_DshKM","rhsgref_tla_offroad_at"];
+		_APC = ["LOP_TKA_BTR70","LOP_TKA_BTR60"];
+		_Tank = ["LOP_TKA_BTR60"];
 		_Artillery = ["LOP_TKA_BM21", "LOP_TKA_Static_D30"];
+		_AntiAir = ["LOP_TKA_ZU23"];
 		_Helicopter = ["LOP_TKA_Mi8MTV3_UPK23"];
 		_Transport = ["LOP_TKA_Ural_open"];
 		_Supply = ["rhs_gaz66_ammo_msv","rhs_gaz66_r142_vdv","rhs_gaz66_ap2_vdv"];
@@ -86,6 +88,7 @@ Switch (_Faction) do {
 		_APC = ["rhsgref_BRDM2_b", "rhsgref_cdf_b_btr60","M113_Olive_M240","rhsusf_stryker_m1127_m2_wd","rhsusf_m113_usarmy_M2_90"];
 		_Tank = ["rhsgref_cdf_b_t72ba_tv"];
 		_Artillery = ["rhsgref_cdf_b_2s1", "rhsgref_cdf_b_reg_d30"];
+		_AntiAir = ["LOP_GRE_ZU23"];
 		_Helicopter = ["rhs_uh1h_hidf"];
 		_Transport = ["rhsusf_m998_w_4dr_halftop"];
 		_Supply = ["rhsgref_cdf_b_gaz66_ammo", "rhsgref_cdf_b_gaz66_r142", "rhsgref_cdf_b_gaz66_zu23", "rhsgref_cdf_b_gaz66_ap2", "rhsgref_cdf_b_gaz66_repair", "rhsgref_cdf_b_zil131_flatbed"];
@@ -99,7 +102,7 @@ Switch (_Faction) do {
 		_APC = ["rhsgref_BRDM2_ins_g", "rhsgref_BRDM2_HQ_ins_g", "LOP_UKR_BTR60", "LOP_UKR_BTR70"];
 		_Tank = ["LOP_AFR_T55","LOP_AFR_T34"];
 		_Artillery = ["rhsgref_nat_d30"];
-		_AntiAir = ["LOP_AM_Static_ZU23"];
+		_AntiAir = ["rhsgref_nat_ZU23"];
 		_Helicopter = ["I_E_Heli_light_03_dynamicLoadout_F"];
 		_Transport = ["I_G_Offroad_01_F","I_G_Van_02_transport_F"];
 		_Supply = ["I_Truck_02_ammo_F","I_Truck_02_medical_F","I_Truck_02_fuel_F","I_Truck_02_box_F"];

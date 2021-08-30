@@ -84,6 +84,9 @@ switch (_side) do {
 	case "NATO-W": {
 		#include "Classes\NATO-W.sqf"
 	};
+	case "FRENCH-D": {
+		#include "Classes\FRENCH-D.sqf"
+	};
 	case "GER-FLK": {
 		#include "Classes\GER-FLK.sqf"
 	};
