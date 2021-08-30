@@ -111,7 +111,7 @@ _fnc_Fire = {
     _arty setVariable ["canFire", true];
 };
 
-while {Alive _arty && Alive (gunner _arty)} do {
+while {Alive _arty && Alive (gunner _arty) && (side (gunner _arty) isEqualTo _side)} do {
     if (_updateTarget isEqualTo 0) then {
         _closePlayers = (_arty nearEntities [["Man","LandVehicle","Air"], _Range]) select {(side _X != _side) && (_Arty knowsAbout _X >= 1.5) && (_side getFriend (side _X) <= 0.6) && (([_x, "VIEW", _arty] checkVisibility [(eyePos _arty), (eyePos _x)]) > 0) && !(typeOf _X in ["NonSteerable_Parachute_F","Steerable_Parachute_F"]) };
         if(_Debug_Variable) then {

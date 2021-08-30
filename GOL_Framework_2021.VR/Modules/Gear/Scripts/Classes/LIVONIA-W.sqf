@@ -42,9 +42,9 @@ _pointer = "";
 _sight = "";
 _bipod = "";
 
-_rifle = ["hlc_wp_xm4", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_wp_xm4", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_A1m203", _silencer, _pointer, _sight, _bipod];
+_rifle = ["hlc_wp_mod727", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["hlc_wp_mod727", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["hlc_rifle_Colt727_GL", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["hlc_rifle_STG58F", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_556x45_Stanag_Tracer_Yellow";
 _rifleL_mag = "hlc_20Rnd_762x51_T_fal";

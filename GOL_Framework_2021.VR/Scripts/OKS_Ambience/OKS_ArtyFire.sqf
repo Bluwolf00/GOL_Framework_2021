@@ -13,11 +13,11 @@ if (!HasInterface || isServer) then
 
 	OKS_CHECK_TRAVEL = {
 
-		Params["_Projectile","_Launcher"];
+		Params["_Projectile","_Launcher","_Side"];
 		//SystemChat str [_Projectile,_Launcher];
+
 		WaitUntil {_Projectile distance2D _Launcher > 1000};
 		deleteVehicle _Projectile;
-
 	};
 
 		params["_side","_arty","_target","_rof","_time","_reload"];
@@ -152,8 +152,9 @@ if (!HasInterface || isServer) then
 
 	if (_Debug == 1) then {SystemChat "Disable AI"};
 
+
 	/// While Arty is not destroyed - Continue the loop
-	while {Alive _arty} do
+	while {Alive _arty && (side (gunner _arty) isEqualTo _side)} do
 	{
 		/*
 		if(_this select 4 > 0) then { sleep _rof; } else { sleep 5; };
@@ -215,8 +216,8 @@ if (!HasInterface || isServer) then
 			if (_Debug == 1) then {SystemChat "Reloaded"};
 
 		};
-
-		sleep 0.5;
+		_arty removeAllEventHandlers "Fired";
+		sleep 5;
 	};
 
 };

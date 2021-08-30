@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1758;
+		nextID=1761;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5113;
+		nextID=5138;
 	};
 	class Camera
 	{
-		pos[]={199.62704,61.384304,103.84853};
-		dir[]={-0.88811982,-0.40286979,-0.22124743};
-		up[]={-0.39092904,0.91525483,-0.097387843};
-		aside[]={-0.24173321,-1.8626451e-008,0.97034907};
+		pos[]={49.498207,91.062538,-46.591499};
+		dir[]={0.20051643,-0.42840752,0.88106412};
+		up[]={0.095068842,0.90358424,0.41773137};
+		aside[]={0.97507292,-3.7369318e-008,-0.22191094};
 	};
 };
 binarizationWanted=0;
@@ -45,8 +45,6 @@ addons[]=
 	"A3_Soft_F_MRAP_01",
 	"ace_realisticnames",
 	"A3_Soft_F_Exp_LSV_01",
-	"A3_Soft_F_Gamma_Truck_01",
-	"A3_Soft_F_Exp_Truck_01",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Armor_F_Beta_APC_Wheeled_01",
 	"A3_Structures_F_System",
@@ -57,7 +55,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=17;
+		items=16;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -147,26 +145,19 @@ class AddonsMetaData
 		};
 		class Item13
 		{
-			className="A3_Soft_F_Gamma";
-			name="Arma 3 - Unarmored Land Vehicles";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item14
-		{
 			className="A3_Armor_F_Beta";
 			name="Arma 3 Beta - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item14
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item15
 		{
 			className="A3_Structures_F_Enoch_Military";
 			name="Arma 3 Contact Platform - Military Buildings and Structures";
@@ -21933,7 +21924,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=13;
+		items=14;
 		class Item0
 		{
 			dataType="Layer";
@@ -24281,8 +24272,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={109.0288,5.149631,37.791061};
-										angles[]={0,0.011088285,0};
+										position[]={105.99073,5.149631,39.557224};
+										angles[]={-0,0.011088285,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28686,14 +28677,14 @@ class Mission
 							name="MHQ";
 							class Entities
 							{
-								items=6;
+								items=4;
 								class Item0
 								{
 									dataType="Comment";
 									class PositionInfo
 									{
-										position[]={71.856873,5,43.207977};
-										angles[]={0,0.11193988,0};
+										position[]={65.667892,5,41.754219};
+										angles[]={-0,0.11193988,0};
 									};
 									title="MHQ 1";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Small";
@@ -28704,8 +28695,8 @@ class Mission
 									dataType="Comment";
 									class PositionInfo
 									{
-										position[]={65.970085,5,43.499241};
-										angles[]={0,0.06433028,0};
+										position[]={59.899563,5,42.719467};
+										angles[]={-0,0.06433028,0};
 									};
 									title="MHQ 2";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
@@ -28716,8 +28707,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={66.031418,7.2059455,43.877125};
-										angles[]={0,6.2733994,0};
+										position[]={59.960896,7.2059455,43.097351};
+										angles[]={-0,6.2733994,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28756,23 +28747,11 @@ class Mission
 								};
 								class Item3
 								{
-									dataType="Comment";
-									class PositionInfo
-									{
-										position[]={58.015404,5,41.550293};
-										angles[]={0,0.067988493,0};
-									};
-									title="MHQ 3";
-									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Assembled as FOB (Large H-Barrier Compound, TEST before confirming its use!)";
-									id=850;
-								};
-								class Item4
-								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={71.646049,7.1761513,42.91058};
-										angles[]={0,0.0073909461,0};
+										position[]={65.457069,7.1761513,41.456821};
+										angles[]={-0,0.0073909461,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28785,49 +28764,6 @@ class Mission
 									};
 									id=944;
 									type="B_LSV_01_unarmed_F";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="ammoBox";
-											expression="[_this,_value] call bis_fnc_initAmmoBox;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-												};
-											};
-										};
-										nAttributes=1;
-									};
-								};
-								class Item5
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={57.977501,7.3134775,41.630814};
-										angles[]={0,6.2797446,0};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										health=0.89999998;
-										lock="UNLOCKED";
-										init="call{[this, ""FOB""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf"";}";
-										name="mhq_3";
-									};
-									id=945;
-									type="B_Truck_01_box_F";
 									class CustomAttributes
 									{
 										class Attribute0
@@ -28867,8 +28803,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={93.985146,5.6349964,41.903625};
-										angles[]={0,0.057977352,0};
+										position[]={93.995964,5.6349964,44.034122};
+										angles[]={-0,3.1535928,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28907,8 +28843,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={109.18713,5,42.588703};
-										angles[]={0,0.011088285,0};
+										position[]={106.14906,5,44.354866};
+										angles[]={-0,0.011088285,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28924,8 +28860,8 @@ class Mission
 									dataType="Comment";
 									class PositionInfo
 									{
-										position[]={94.025742,5,41.761383};
-										angles[]={0,0.057977352,0};
+										position[]={93.948875,5,44.174351};
+										angles[]={-0,3.1535928,0};
 									};
 									title="Mobile Service Station";
 									description="This also adds pylon configuration options";
@@ -28936,8 +28872,8 @@ class Mission
 									dataType="Comment";
 									class PositionInfo
 									{
-										position[]={109.13932,5,41.86462};
-										angles[]={0,0.011088285,0};
+										position[]={106.10125,5,43.630783};
+										angles[]={-0,0.011088285,0};
 									};
 									title="Service Station";
 									description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor.";
@@ -28946,7 +28882,7 @@ class Mission
 								class Item4
 								{
 									dataType="Trigger";
-									position[]={8.3155413,5,100.52344};
+									position[]={6.8756962,5,113.85889};
 									class Attributes
 									{
 										name="NEKY_PARADROP_TRIGGER";
@@ -28971,8 +28907,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={78.020706,7.5393777,43.028358};
-										angles[]={0,0.00065407134,0};
+										position[]={78.423637,7.5393777,44.156342};
+										angles[]={-0,0.00065407134,0};
 									};
 									side="Empty";
 									flags=4;
@@ -29011,8 +28947,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={84.032806,7.1761513,42.964233};
-										angles[]={0,0.00063570222,0};
+										position[]={85.823311,7.1761513,43.922798};
+										angles[]={-0,0.00063570222,0};
 									};
 									side="Empty";
 									flags=4;
@@ -29212,8 +29148,8 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={78.026321,5,41.901371};
-				angles[]={0,3.9513838,0};
+				position[]={78.429253,5,43.029354};
+				angles[]={-0,3.9513838,0};
 			};
 			title="Mechanized / Motorized Setup";
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -29224,8 +29160,8 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={84.294914,5,43.528767};
-				angles[]={0,3.9513655,0};
+				position[]={86.085419,5,44.487331};
+				angles[]={-0,3.9513655,0};
 			};
 			title="Mechanized / Motorized Setup";
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -29526,16 +29462,16 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={8.5664339,5,100.60693};
+				position[]={7.1269999,5,113.942};
 			};
 			title="Paradrop Trigger";
-			description="This is the Paradrop Trigger that is required for NEKY Paradrop to be used.";
+			description="This is the Paradrop Trigger that is required for NEKY Paradrop to be used. It is the position that reinserts will be dropped at.";
 			id=1754;
 		};
 		class Item10
 		{
 			dataType="Marker";
-			position[]={8.0439997,5,44.847};
+			position[]={8.9844408,5,35.744461};
 			name="helicopter_spawn";
 			type="Empty";
 			id=1755;
@@ -29543,7 +29479,7 @@ class Mission
 		class Item11
 		{
 			dataType="Marker";
-			position[]={8.0089998,5,41.235001};
+			position[]={8.4874783,5,6.6501884};
 			name="helicopter_despawn";
 			type="Empty";
 			id=1756;
@@ -29553,11 +29489,22 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={7.9036493,5,43.219727};
+				position[]={9.1000004,5,35.839001};
 			};
-			title="NEKY Resupply / Pick up Markers";
-			description="Spawn / Despawn Position for Resupply & Pickup helicopters";
+			title="NEKY Resupply / Pick up SPAWN";
+			description="Spawn Position for Resupply & Pickup helicopters. IMPORTANT! Make sure the spawn & despawn are set apart!";
 			id=1757;
+		};
+		class Item13
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={8.8551245,5,6.2973633};
+			};
+			title="NEKY Resupply / Pick up DESPAWN";
+			description="Despawn Position for Resupply & Pickup helicopters. IMPORTANT! Make sure the spawn & despawn are set apart!";
+			id=1758;
 		};
 	};
 };
