@@ -119,6 +119,7 @@ switch (_TypeOfObjective) do {
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
 				_SpawnPos = [_RandomPos, 1, 100, 5, 0, 0, 0] call BIS_fnc_findSafePos;
+
 				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.07, 20, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 				if(_Repetitions > 100) exitWith {};
 			};
@@ -221,8 +222,8 @@ switch (_TypeOfObjective) do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
-				_SpawnPos = [getPos ([_RandomPos, 300] call BIS_fnc_nearestRoad), 1, 100, 5, 0.2, 0, 0] call BIS_fnc_findSafePos;
-
+				private _Road = [_RandomPos, 300] call BIS_fnc_nearestRoad;
+				_SpawnPos = getPos _Road;
 				if(_SpawnPos inArea _Area) exitWith {};
 				if(_Repetitions > 30) exitWith {};
 			};
@@ -278,8 +279,8 @@ switch (_TypeOfObjective) do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
-				_SpawnPos = [_RandomPos, 1, 100, 5, 0, 0, 0] call BIS_fnc_findSafePos;
-				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 5, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
+				_SpawnPos = [_RandomPos, 1, 100, 0.05, 0, 0, 0] call BIS_fnc_findSafePos;
+				if((_SpawnPos nearRoads 25) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 5, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 				if(_Repetitions > 50) exitWith {};
 			};
 		} else {
@@ -327,8 +328,8 @@ switch (_TypeOfObjective) do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
-				_SpawnPos = [getPos ([_RandomPos, 300] call BIS_fnc_nearestRoad), 1, 20, 10, 0.2, 0, 0] call BIS_fnc_findSafePos;
-
+				private _Road = [_RandomPos, 300] call BIS_fnc_nearestRoad;
+				_SpawnPos = getPos _Road;
 				if(_SpawnPos inArea _Area && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo [])) exitWith {};
 				if(_Repetitions > 30) exitWith {};
 			};

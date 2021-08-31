@@ -4,14 +4,10 @@ _goggles = "G_Balaclava_TI_blk_F";
 _helmet = selectRandom ["helmet_lwh_CCE"];
 _OfficerHelmet = "cap_CCE";
 _uniform = selectRandom ["Uniform_Rolled_CCE","Uniform_Full_CCE"];
-_vest = selectRandom ["vest_spc_rifleman_CCE"];
+_vest = selectRandom ["vest_spc_radio_CCE"];
 _backpack = "CCE_Kitbag";
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "CCE_B_RadioBag_01";
-};
-
-if (_role in ["ftl","sl"]) then {
-	_vest = "CCE_Kitbag";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
@@ -19,7 +15,7 @@ if (_role in ["ag","ammg","lr","ab"]) then {
 };
 
 if (_role isEqualTo "crew") then {
-	_helmet = "rhsusf_cvc_green_helmet";
+	_helmet = "rhsusf_cvc_green_alt_helmet";
 	_vest = "vest_spc_crewman_CCE";
 };
 if (_role isEqualTo "p") then {
