@@ -2,7 +2,7 @@
 	if(HasInterface && !isServer) exitWith {};
 
 	Params["_Area","_NumberOfVehicles","_Range","_Type","_Side"];
-	Private ["_SafePos","_nearRoads","_road","_roadConnectedTo","_connectedRoad","_direction","_VehicleWaypoints","_SelectedVehicles","_Debug_Variable","_Dir"];
+	Private ["_SafePos","_nearRoads","_road","_roadConnectedTo","_connectedRoad","_direction","_VehicleWaypoints","_SelectedVehicles","_Debug_Variable","_Dir","_Group"];
 
 	_Settings = [_Side] call OKS_Dynamic_Setting;
 	_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
@@ -65,10 +65,7 @@
 			if(_CargoSeats > 4) then { _CargoSeats = 4 };
 
 			if(_Vehicle emptyPositions "cargo" > 0) then {
-					createVehicleCrew _Vehicle;
-					sleep 1;
-					_Group = group (driver _Vehicle);
-
+					_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 					if(_Debug_Variable) then {
 						SystemChat "Creating Transport Cargo...";
 					};
@@ -98,12 +95,8 @@
 		}
 		else
 		{
-			createVehicleCrew _Vehicle;
+			_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 		};
-
-		sleep 5;
-		_Group = group (driver _Vehicle);
-		sleep 5;
 
 		if(count units _Group > 1) then {
 

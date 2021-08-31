@@ -12,7 +12,6 @@ publicVariable "OKS_FRIENDLY_SIDE";
 /* Headless & ServiceStation */
 [] execVM "Scripts\HeadlessClient\HeadlessClient.sqf";
 Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
-sleep 5;
 
 	if(GOL_NEKY_SERVICESTATION isEqualTo 1) then {
 		[] execVM "Scripts\NEKY_ServiceStation\Init.sqf";
@@ -62,20 +61,6 @@ sleep 5;
 	if(GOL_OKS_DYNAMIC isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Dynamic\Init.sqf";
 	};
-		sleep 5;
-		if(GOL_NEKY_PARADROP isEqualTo 1) then {
-			[] spawn NEKY_ACE_AddAction;
-
-			if(!isNil "flag_west_1" && OKS_FRIENDLY_SIDE isEqualTo west) then {
-				[flag_west_1, "Paradrop Reinsert", "DZ Alpha", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
-			};
-			if(!isNil "flag_east_1" && OKS_FRIENDLY_SIDE isEqualTo east) then {
-				[flag_east_1, "Paradrop Reinsert", "DZ Bravo", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
-			};
-			if(!isNil "flag_independent_1" && OKS_FRIENDLY_SIDE isEqualTo independent) then {
-				[flag_independent_1, "Paradrop Reinsert", "DZ Charlie", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
-			};
-		};
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -114,4 +99,19 @@ sleep 5;
 
 	if(isServer && GOL_NEKY_SHARE isEqualTo 1) then {
 		[True,True] call NEKY_AI_ShareInfo;
+	};
+
+	if(GOL_NEKY_PARADROP isEqualTo 1) then {
+		waitUntil {sleep 1; !(isNil "NEKY_ACE_AddAction") && !(isNil "OKS_FRIENDLY_SIDE")};
+		[] spawn NEKY_ACE_AddAction;
+
+		if(!isNil "flag_west_1" && OKS_FRIENDLY_SIDE isEqualTo west) then {
+			[flag_west_1, "Paradrop Reinsert", "DZ Alpha", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+		};
+		if(!isNil "flag_east_1" && OKS_FRIENDLY_SIDE isEqualTo east) then {
+			[flag_east_1, "Paradrop Reinsert", "DZ Bravo", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+		};
+		if(!isNil "flag_independent_1" && OKS_FRIENDLY_SIDE isEqualTo independent) then {
+			[flag_independent_1, "Paradrop Reinsert", "DZ Charlie", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+		};
 	};

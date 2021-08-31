@@ -160,11 +160,7 @@ while {alive _Base && _Waves > 0} do
 							_AliveNumber = count _AliveCurrentCount;
 
 							if((_AliveNumber + (_CargoSeats + 1)) <= NEKY_Hunt_MaxCount && _Vehicle emptyPositions "cargo" > 0) then {
-
-									createVehicleCrew _Vehicle;
-									sleep 1;
-									_Group = group (driver _Vehicle);
-
+									_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 									SystemChat "Creating Transport Cargo...";
 									 ///Create Leader
 									_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,50], [], 0, "NONE"];
@@ -189,18 +185,11 @@ while {alive _Base && _Waves > 0} do
 						}
 						else
 						{
-							createVehicleCrew _Vehicle;
+							_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 						};
 
-						sleep 3;
 						{NEKY_Hunt_CurrentCount pushBackUnique _X} foreach crew _Vehicle;
-						_Group = group (driver _Vehicle);
 					};
-
-					sleep 2;
-
-
-					sleep 5;
 
 					if(count units _Group > 1) then {
 						[_Group, nil, _HuntZone, 0, 30, 0, {}] Spawn NEKY_Hunt_Run;

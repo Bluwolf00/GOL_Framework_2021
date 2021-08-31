@@ -9,6 +9,7 @@ if (hasInterface && !isServer) exitWith {false};	// Ensures only server or HC ru
 // Functions
 NEKY_Hunt_Settings = compile preprocessFileLineNumbers "Scripts\NEKY_Hunt\Settings.sqf";
 NEKY_Hunt_Run = compile preprocessFileLineNumbers "Scripts\NEKY_Hunt\Run.sqf";
+OKS_AddVehicleCrew = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_AddVehicleCrew.sqf";
 NEKY_Hunt_ScanZone = compile preprocessFileLineNumbers "Scripts\NEKY_Hunt\Functions\ScanZone.sqf";
 NEKY_Hunt_SelectPlayer = compile preprocessFileLineNumbers "Scripts\NEKY_Hunt\Functions\SelectPlayer.sqf";
 NEKY_Hunt_Spawn = compile preprocessFileLineNumbers "Scripts\NEKY_Hunt\Functions\Spawn.sqf";

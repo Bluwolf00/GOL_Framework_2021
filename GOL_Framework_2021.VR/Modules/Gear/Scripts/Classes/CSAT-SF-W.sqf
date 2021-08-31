@@ -2,7 +2,7 @@
 _goggles = "rhs_balaclava1_olive";
 _helmet = "H_HelmetAggressor_F";
 _OfficerHelmet = "H_Beret_CSAT_01_F";
-_uniform = "rhs_uniform_gorka_r_g_gloves";
+_uniform = "U_O_V_Soldier_Viper_F";
 _vest = selectRandom ["rhs_6b3_AK","rhs_6b3","rhs_6b3_holster","rhs_6b3_AK_2","rhs_6b3_AK_3"];
 _backpack = selectRandom ["rhs_rk_sht_30_olive","rhs_rk_sht_30_olive_engineer_empty"];
 _backpackRadio = _backpack;
@@ -60,7 +60,7 @@ _rifleL_mag_tr = "10Rnd_50BW_Mag_F";
 _LMG = ["arifle_CTARS_blk_F", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "100Rnd_580x42_Mag_Tracer_F";
 
-_MMG = ["LMG_Zafir_F", _silencer, _pointer, _sight, _bipod];
+_MMG = ["LMG_Zafir_F", _silencer, _pointer, "rhsusf_acc_eotech_552", _bipod];
 _MMG_mag = "150Rnd_762x51_Box_Tracer";
 
 _sight = "";

@@ -9,7 +9,7 @@ Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tan
 
 /* Faction Selection for Vehicles spawned by OKS_Dynamic
 
-BLUFOR FACTIONS:       CDF LDF
+BLUFOR FACTIONS:       CDF LDF TANOA
 OPFOR FACTIONS:        CHEDAKI TKA DESERT_INSURGENTS
 INDEPENDENT FACTIONS:  NAPA
 
@@ -32,6 +32,19 @@ _EnableZoneMarker = false;
 _EnableZoneTypeMarker = false;
 
 Switch (_Faction) do {
+
+	case "TANOA":{
+		// Tanoa Horizon Forces (TANOA) - BLUFOR
+		_Wheeled = ["rhsgref_hidf_m113a3_unarmed","rhsgref_hidf_m1025_m2","rhsgref_hidf_M998_2dr_fulltop","rhsgref_hidf_m1025","rhsgref_hidf_M998_4dr_fulltop","rhsgref_hidf_M998_4dr_halftop","B_G_Offroad_01_armed_F"];
+		_APC = ["rhsgref_BRDM2_b", "rhsgref_BRDM2_HQ_b", "rhsgref_hidf_m113a3_m2"];
+		_Tank = ["rhsgref_cdf_b_t72ba_tv"];
+		_Artillery = ["rhsgref_cdf_b_2s1", "rhsgref_cdf_b_reg_d30"];
+		_AntiAir = ["rhsgref_cdf_b_zsu234"];
+		_Helicopter = ["rhs_uh1h_hidf"];
+		_Transport = ["rhsusf_m998_w_4dr_halftop"];
+		_Supply = ["rhsgref_cdf_b_gaz66_ammo", "rhsgref_cdf_b_gaz66_r142", "rhsgref_cdf_b_gaz66_zu23", "rhsgref_cdf_b_gaz66_ap2", "rhsgref_cdf_b_gaz66_repair", "rhsgref_cdf_b_zil131_flatbed"];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
+	};
 	case "CDF":
 	{
 		// Chernarussian Defence Force (CDF) - BLUFOR

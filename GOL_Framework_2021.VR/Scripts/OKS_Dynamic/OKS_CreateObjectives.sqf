@@ -472,7 +472,7 @@ switch (_TypeOfObjective) do {
 			};
 			[_Side,_Arty,_Target,8,300,30] remoteExec ["OKS_ArtyFire",0];
 		} else {
-			createVehicleCrew _Arty;
+			_Group = [_Arty,_Side] call OKS_AddVehicleCrew;
 		};
 
 		["ArtilleryNest",getPos _Arty, [0,0,0], getDir _Arty] call LARs_fnc_spawnComp;
@@ -531,7 +531,7 @@ switch (_TypeOfObjective) do {
 			};
 			[_AA,_Side,3,false,1000] remoteExec ["GW_Ambient_AAA",0];
 		} else {
-			createVehicleCrew _AA;
+			_Group = [_AA,_Side] call OKS_AddVehicleCrew;
 		};
 		sleep 2;
 		["AntiAir_1",getPos _AA, [0,0,0], getDir _AA] call LARs_fnc_spawnComp;
@@ -573,14 +573,13 @@ switch (_TypeOfObjective) do {
 		_HostageGroup = CreateGroup civilian;
 		_Hostage1 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
 		_Hostage2 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
-		_Hostage3 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
 
 		{
 			[_X, true] call ACE_captives_fnc_setHandcuffed;
 			_X setCaptive true;
 			_X setBehaviour "CARELESS";
 			_X disableAI "MOVE";
-		} foreach [_Hostage1,_Hostage2,_Hostage3];
+		} foreach [_Hostage1,_Hostage2];
 
 		if (_GarrisonMaxSize > 10) then { _GarrisonMaxSize = 10 };
 
@@ -600,7 +599,7 @@ switch (_TypeOfObjective) do {
 		[getPos _House, nil, units _Group, 1, 1, false, true] remoteExec ["ace_ai_fnc_garrison",0];
 		sleep 0.5;
 
-		{[_X] join _HostageGroup} foreach [_Hostage1,_Hostage2,_Hostage3];
+		{[_X] join _HostageGroup} foreach [_Hostage1,_Hostage2];
 
 		switch(OKS_FRIENDLY_SIDE) do {
 			case west:{
