@@ -20,33 +20,33 @@ private ["_gunner","_OKS_CHECK_TRAVEL"];
 
 	};
 
-
+		_gunner = gunner _arty;
 		if (isNull (gunner _arty)) then {
 
 			switch (_side) do
 			{
 				case blufor:
 				{
-					_gunner_group = createGroup west;
-					_gunner = _gunner_group createUnit ["B_Soldier_F",[0,0,10], [], 0, "FORM"];
+					_Group = createGroup west;
+					_gunner = _Group createUnit ["B_Soldier_F",[0,0,0], [], 0, "FORM"];
 				};
 
 				case opfor:
 				{
-					_gunner_group = createGroup east;
-					_gunner = _gunner_group createUnit ["O_Soldier_F",[0,0,10], [], 0, "FORM"];
+					_Group = createGroup east;
+					_gunner = _Group createUnit ["O_Soldier_F",[0,0,0], [], 0, "FORM"];
 				};
 
 				case independent:
 				{
-					_gunner_group = createGroup independent;
-					_gunner = _gunner_group createUnit ["I_Soldier_F",[0,0,10], [], 0, "FORM"];
+					_Group = createGroup independent;
+					_gunner = _Group createUnit ["I_Soldier_F",[0,0,0], [], 0, "FORM"];
 				};
 
 				default
 				{
-					_gunner_group = createGroup east;
-					_gunner = _gunner_group createUnit ["O_Soldier_F",[0,0,10], [], 0, "FORM"];
+					_Group = createGroup east;
+					_gunner = _Group createUnit ["O_Soldier_F",[0,0,0], [], 0, "FORM"];
 
 				};
 			};
@@ -58,13 +58,13 @@ private ["_gunner","_OKS_CHECK_TRAVEL"];
 	_gunner setVariable ["oks_disable_hunt",true];
 	_arty addEventHandler ["Fired",{ [(_this select 6),(_this select 0)] Spawn OKS_CHECK_TRAVEL;}];
 
-	sleep (30 + (random 30));
+	sleep (10 + (random 10));
 
 	while {alive _arty} do {
 
 		_arty setVehicleAmmo 1; sleep 1;
 		[_arty,1] spawn rhs_fnc_ss21_AI_prepare;
-		sleep (60 + (random 30));
+		sleep (120 + (random 120));
 
 		if(!alive gunner _arty) exitWith { systemChat "SCUD Gunner Dead. Killing Script" };
 			[_arty, getPos _target]spawn rhs_fnc_ss21_AI_launch;

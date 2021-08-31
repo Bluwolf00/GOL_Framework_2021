@@ -83,6 +83,7 @@ Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 		/* Example of Dynamic Scripts */
 		/*
 		if(isServer) then {
+			waitUntil{sleep 5; !(isNil "OKS_CreateZone")};
 			[Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false,0],[0,false],[0,false],[0,0,0,0,0]] spawn OKS_CreateZone;
 		};
 
