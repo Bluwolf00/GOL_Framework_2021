@@ -36,6 +36,9 @@ switch (_side) do {
 	case "CSAT-H": {
 		#include "Classes\CSAT-H.sqf"
 	};
+	case "CSAT-SF-W": {
+		#include "Classes\CSAT-SF-W.sqf"
+	};
 	case "CSAT-W": {
 		#include "Classes\CSAT-W.sqf"
 	};

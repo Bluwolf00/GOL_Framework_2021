@@ -20,7 +20,7 @@ Private _Faction = "TKA";
 _ObjectiveTypes = ["cache","artillery","hostage","hvttruck","ammotruck","radiotower","motorpool","antiair"];
 
 /* CompoundSize defines in meters how large a compound is conisdered in this mission. Garrisons will spread out at this distance*/
-_CompoundSize = 20;
+_CompoundSize = 25;
 
 /* EnableEnemyMarkers will place markers at enemy strongpoints & compounds populated by Static Targets */
 _EnableEnemyMarkers = true;
@@ -43,6 +43,7 @@ Switch (_Faction) do {
 		_Helicopter = ["rhs_uh1h_hidf"];
 		_Transport = ["rhsusf_m998_w_4dr_halftop"];
 		_Supply = ["rhsgref_cdf_b_gaz66_ammo", "rhsgref_cdf_b_gaz66_r142", "rhsgref_cdf_b_gaz66_zu23", "rhsgref_cdf_b_gaz66_ap2", "rhsgref_cdf_b_gaz66_repair", "rhsgref_cdf_b_zil131_flatbed"];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
 	};
 	case "CHEDAKI":
 	{
@@ -54,7 +55,7 @@ Switch (_Faction) do {
 		_Helicopter = ["rhsgref_ins_Mi8amt"];
 		_Transport = ["rhsgref_ins_ural"];
 		_Supply = ["rhsgref_ins_gaz66_r142","rhsgref_ins_gaz66_ap2","rhsgref_ins_kraz255b1_fuel","rhsgref_ins_ural_repair","rhsgref_ins_gaz66_ammo"];
-		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
 	};
 	case "TKA":
 	{
@@ -67,7 +68,7 @@ Switch (_Faction) do {
 		_Helicopter = ["LOP_TKA_Mi8MTV3_UPK23"];
 		_Transport = ["LOP_TKA_Ural_open"];
 		_Supply = ["rhs_gaz66_ammo_msv","rhs_gaz66_r142_vdv","rhs_gaz66_ap2_vdv"];
-		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
 	};
 	case "DESERT_INSURGENTS":
 	{
@@ -85,14 +86,14 @@ Switch (_Faction) do {
 	case "LDF": {
 		// Livonia Defence Force - 1980s
 		_Wheeled = ["Canadian_FMTV_M2","rhsgref_hidf_m1025_m2","rhsgref_hidf_m1025","rhsusf_m1152_rsv_usmc_wd","rhsusf_m1165_usmc_wd"];
-		_APC = ["rhsgref_BRDM2_b", "rhsgref_cdf_b_btr60","M113_Olive_M240","rhsusf_stryker_m1127_m2_wd","rhsusf_m113_usarmy_M2_90"];
+		_APC = ["rhsgref_BRDM2_b", "M113_Olive_M240","rhsusf_m113_usarmy_M2_90"];
 		_Tank = ["rhsgref_cdf_b_t72ba_tv"];
 		_Artillery = ["rhsgref_cdf_b_2s1", "rhsgref_cdf_b_reg_d30"];
-		_AntiAir = ["LOP_GRE_ZU23"];
+		_AntiAir = ["rhsgref_cdf_b_ZU23"];
 		_Helicopter = ["rhs_uh1h_hidf"];
 		_Transport = ["rhsusf_m998_w_4dr_halftop"];
 		_Supply = ["rhsgref_cdf_b_gaz66_ammo", "rhsgref_cdf_b_gaz66_r142", "rhsgref_cdf_b_gaz66_zu23", "rhsgref_cdf_b_gaz66_ap2", "rhsgref_cdf_b_gaz66_repair", "rhsgref_cdf_b_zil131_flatbed"];
-		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
 	};
 
 	case "NAPA":
@@ -123,6 +124,7 @@ Switch (_Faction) do {
 				_Helicopter = ["rhs_uh1h_hidf"];
 				_Transport = ["rhsusf_m998_w_4dr_halftop"];
 				_Supply = ["rhsgref_cdf_b_gaz66_ammo", "rhsgref_cdf_b_gaz66_r142", "rhsgref_cdf_b_gaz66_zu23", "rhsgref_cdf_b_gaz66_ap2", "rhsgref_cdf_b_gaz66_repair", "rhsgref_cdf_b_zil131_flatbed"];
+				_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
 			};
 
 			case OPFOR:

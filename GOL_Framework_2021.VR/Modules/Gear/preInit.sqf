@@ -86,6 +86,7 @@ GVAR(StaminaCoef) = 0.5;
 		[
 			"CSAT-H",
 			"CSAT-W",
+			"CSAT-SF-W",
 			"CSAT-U",
 			"RUSSIAN-W",
 			"RUSSIAN-SF-W",
@@ -102,6 +103,7 @@ GVAR(StaminaCoef) = 0.5;
 		[
 			"CSAT-Hex",
 			"CSAT-Woodland",
+			"CSAT-SF-Woodland",
 			"CSAT-Urban",
 			"Russian Woodland",
 			"Russian SF Woodland",

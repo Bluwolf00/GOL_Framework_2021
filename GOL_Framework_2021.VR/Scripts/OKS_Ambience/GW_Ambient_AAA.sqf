@@ -6,6 +6,7 @@ params ["_arty","_side","_weaponType","_ShouldReplaceWeapons","_Range"];
 if ((count(fullCrew [_arty, "gunner", true]) isEqualTo 0)) exitWith {systemChat "Vehicle does not have a gunner seat"; false};
 private _weapon = "";
 private _Debug_Variable = false;
+private ["_unitClass"];
 
 _updateTarget = 0;
 _targetPlayer = 0;
@@ -13,10 +14,9 @@ _canShoot = 1;
 _delay = 1;
 _arty setVariable ["canFire", true];
 
-if (!alive (gunner _arty)) then {
-    _unitClass = "O_Soldier_F";
-
-    switch {_side} do {
+if (isNull gunner _arty) then {
+    systemChat "Null Gunner";
+    switch (_side) do {
         case WEST: {
             _unitClass = "B_Soldier_F";
         };
@@ -27,6 +27,10 @@ if (!alive (gunner _arty)) then {
 
         case INDEPENDENT: {
             _unitClass = "I_Soldier_F";
+        };
+
+        default {
+            _unitClass = "O_Soldier_F";
         };
     };
     _group = createGroup _side;
