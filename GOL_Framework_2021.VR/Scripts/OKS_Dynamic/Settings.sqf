@@ -37,7 +37,7 @@ Switch (_Faction) do {
 		// Tanoa Horizon Forces (TANOA) - BLUFOR
 		_Wheeled = ["rhsgref_hidf_m113a3_unarmed","rhsgref_hidf_m1025_m2","rhsgref_hidf_M998_2dr_fulltop","rhsgref_hidf_m1025","rhsgref_hidf_M998_4dr_fulltop","rhsgref_hidf_M998_4dr_halftop","B_G_Offroad_01_armed_F"];
 		_APC = ["rhsgref_BRDM2_b", "rhsgref_BRDM2_HQ_b", "rhsgref_hidf_m113a3_m2"];
-		_Tank = ["rhsgref_cdf_b_t72ba_tv"];
+		_Tank = ["LOP_AFR_T34","LOP_NK_T55"];
 		_Artillery = ["rhsgref_cdf_b_2s1", "rhsgref_cdf_b_reg_d30"];
 		_AntiAir = ["rhsgref_cdf_b_zsu234"];
 		_Helicopter = ["rhs_uh1h_hidf"];
@@ -101,7 +101,7 @@ Switch (_Faction) do {
 		_Wheeled = ["Canadian_FMTV_M2","rhsgref_hidf_m1025_m2","rhsgref_hidf_m1025","rhsusf_m1152_rsv_usmc_wd","rhsusf_m1165_usmc_wd"];
 		_APC = ["rhsgref_BRDM2_b", "M113_Olive_M240","rhsusf_m113_usarmy_M2_90"];
 		_Tank = ["rhsgref_cdf_b_t72ba_tv"];
-		_Artillery = ["rhsgref_cdf_b_2s1", "rhsgref_cdf_b_reg_d30"];
+		_Artillery = ["I_E_Truck_02_MRL_F","rhsgref_cdf_b_2s1", "rhsgref_cdf_b_reg_d30"];
 		_AntiAir = ["rhsgref_cdf_b_ZU23"];
 		_Helicopter = ["rhs_uh1h_hidf"];
 		_Transport = ["rhsusf_m998_w_4dr_halftop"];
