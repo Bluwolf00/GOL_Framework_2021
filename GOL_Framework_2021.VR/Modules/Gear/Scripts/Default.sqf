@@ -124,6 +124,9 @@ switch (toLower(_role)) do {
 			[[_mapFlashLight,1],[_IRStrobe,1]] call _addToUniform;
 			[[_handFlareG,3],[_glFlareR,5],[_glFlareG,2],[_glFlareW,5]] call _addToBackpack;
 		};
+		if (!(_LAT_ReUsable)) then {
+			[_LAT, _LAT_mag, ""] call _addLaunchers;
+		};
 	};
 
 	case "r": {
