@@ -112,8 +112,7 @@ if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
 			[_bandage,20],
 			[_morph,10],
 			[_epi,5],
-			[_saline,5],
-			[_salineSm,10],
+			[_saline,6],
 			[_pak,1]
 		];
 		_FAKBig = [
@@ -121,8 +120,7 @@ if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
 			[_morph,15],
 			[_epi,10],
 			[_tourn,2],
-			[_saline,8],
-			[_salineSm,10],
+			[_saline,10],
 			[_pak,1]
 		];
 	};

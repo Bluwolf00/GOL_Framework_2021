@@ -173,7 +173,7 @@ For "_i" from 1 to _RoadblockCount do {
 			if(_Debug_Variable) then {SystemChat str _VehicleClass};
 			_Vehicle = createVehicle [_VehicleClass, getMarkerPos _Marker, [], 0, "NONE"];
 			_Vehicle setDir _RoadDir;
-			createVehicleCrew _Vehicle;
+			_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 			_Vehicle setFuel 0;
 		};
 	};
