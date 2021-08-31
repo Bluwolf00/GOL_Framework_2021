@@ -59,7 +59,7 @@ _sight = "";
 
 _LAT = ["rhs_weap_rpg75", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "";
-_LAT_ReUsable = true;
+_LAT_ReUsable = false;
 
 _MAT = ["rhs_weap_rpg7", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "RPG7_F";

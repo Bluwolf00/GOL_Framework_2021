@@ -53,8 +53,6 @@ _LMG_mag = "200Rnd_65x39_cased_Box_Tracer";
 _MMG = ["LMG_Mk200_F", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "200Rnd_65x39_cased_Box_Tracer";
 
-
-
 _LAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "RPG7_F";
 _LAT_ReUsable = true;
