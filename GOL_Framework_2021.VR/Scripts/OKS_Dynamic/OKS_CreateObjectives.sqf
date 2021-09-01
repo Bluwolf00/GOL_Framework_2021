@@ -224,7 +224,7 @@ switch (_TypeOfObjective) do {
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
 				private _Road = [_RandomPos, 300] call BIS_fnc_nearestRoad;
 				_SpawnPos = getPos _Road;
-				if(_SpawnPos inArea _Area) exitWith {};
+				if(_SpawnPos inArea _Area && ((getRoadInfo _Road) select 0) != "TRAIL") exitWith {};
 				if(_Repetitions > 30) exitWith {};
 			};
 		} else {
@@ -235,6 +235,7 @@ switch (_TypeOfObjective) do {
 		OKS_Objective_Positions pushBackUnique _SpawnPos;
 		publicVariable "OKS_Objective_Positions";
 
+		waitUntil{sleep 5; count (nearestObjects [_SpawnPos,["LandVehicle"],30]) <= 0 };
 		_Truck = CreateVehicle [_SupplyTruck, [_SpawnPos select 0,_SpawnPos select 1,0.5], [], 0, "NONE"];
 		_Truck setDir (random 360);
 		_Truck setVehicleVarName format["OKS_AmmoTruck_%1",round(random 9999)];
@@ -330,7 +331,7 @@ switch (_TypeOfObjective) do {
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
 				private _Road = [_RandomPos, 300] call BIS_fnc_nearestRoad;
 				_SpawnPos = getPos _Road;
-				if(_SpawnPos inArea _Area && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo [])) exitWith {};
+				if(_SpawnPos inArea _Area && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && ((getRoadInfo _Road) select 0) != "TRAIL") exitWith {};
 				if(_Repetitions > 30) exitWith {};
 			};
 		} else {
@@ -339,6 +340,8 @@ switch (_TypeOfObjective) do {
 		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: HVT Truck Objective"}};
 
 		if(_Debug_Variable) then { systemChat format ["Spawning %1 at %2",_Wheeled,_SpawnPos]; };
+
+		waitUntil{sleep 5; count (nearestObjects [_SpawnPos,["LandVehicle"],30]) < 0 };
 		_Truck = CreateVehicle [_Wheeled, [_SpawnPos select 0,_SpawnPos select 1,0.5], [], 0, "NONE"];
 		_Truck setDir (random 360);
 		_Truck setVehicleVarName format["OKS_HVTTruck_%1",round(random 9999)];

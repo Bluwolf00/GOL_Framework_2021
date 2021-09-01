@@ -35,23 +35,9 @@ Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 	if(GOL_NEKY_HUNT isEqualTo 1) then {
 		[] execVM "Scripts\NEKY_Hunt\Init.sqf";
 	};
-	if(GOL_NEKY_HUNT isEqualTo 1 || GOL_NEKY_AIRDROP isEqualTo 1) then {
-		NEKY_Hunt_MaxCount = 40;
-		NEKY_Hunt_CurrentCount = [];
-		publicVariable "NEKY_Hunt_MaxCount";
-		publicVariable "NEKY_Hunt_CurrentCount";
-	};
 	if(GOL_AAC_SETUP isEqualTo 1) then {
 		[] execVM "Scripts\OKS_AAC\Init.sqf";
 	};
-	if(GOL_OKS_HUNT isEqualTo 1) then {
-		[] execVM "Scripts\OKS_HUNT\Init.sqf";
-	};
-	/* [EAST,500,1000,90] spawn OKS_Dynamic_Hunt; */
-	if(GOL_OKS_TASK isEqualTo 1) then {
-		[] execVM "Scripts\OKS_TASK\Init.sqf";
-	};
-	/*	[Task_Object_1,1,GetMarkerPos "Task_1",west,O_Task] spawn OKS_TASKSETUP;	*/
 	if(GOL_OKS_AMBIENCE isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Ambience\Init.sqf";
 	};
@@ -61,11 +47,40 @@ Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 	if(GOL_OKS_DYNAMIC isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Dynamic\Init.sqf";
 	};
+	if(isServer && GOL_NEKY_SHARE isEqualTo 1) then {
+		[True,True] call NEKY_AI_ShareInfo;
+	};
+	if(GOL_NEKY_PARADROP isEqualTo 1) then {
+		waitUntil {sleep 1; !(isNil "NEKY_ACE_AddAction") && !(isNil "OKS_FRIENDLY_SIDE")};
+		[] spawn NEKY_ACE_AddAction;
 
-/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+		if(!isNil "flag_west_1" && OKS_FRIENDLY_SIDE isEqualTo west) then {
+			[flag_west_1, "Paradrop Reinsert", "DZ Alpha", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+		};
+		if(!isNil "flag_east_1" && OKS_FRIENDLY_SIDE isEqualTo east) then {
+			[flag_east_1, "Paradrop Reinsert", "DZ Bravo", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+		};
+		if(!isNil "flag_independent_1" && OKS_FRIENDLY_SIDE isEqualTo independent) then {
+			[flag_independent_1, "Paradrop Reinsert", "DZ Charlie", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+		};
+	};
+
+/* !! IGNORE AND DO NOT EDIT ALL OF THE ABOVE !! */
+
+	if(GOL_OKS_HUNT isEqualTo 1) then {
+		[] execVM "Scripts\OKS_HUNT\Init.sqf";
+		/* Run in SpawnList.sqf: [EAST,500,1000,90] spawn OKS_Dynamic_Hunt; */
+	};
+	if(GOL_OKS_TASK isEqualTo 1) then {
+		[] execVM "Scripts\OKS_TASK\Init.sqf";
+		waitUntil{sleep 1; !(isNil "OKS_TASKSETUP")};
+		/*	[Task_Object_1,1,GetMarkerPos "Task_1",west,O_Task] spawn OKS_TASKSETUP;	*/
+	};
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 		/*
-		   Params
+		   Dynamic Script Params
 		   0 - Trigger Name (Object)
 		   1 - Split Trigger into 4 Sub-Triggers? (Boolean)
 		   1 - Number of Infantry - [Static Integer,Patrol Integer,CreateSectorObjective?,LocalPatrols?] (Array) -
@@ -87,32 +102,52 @@ Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 			[Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false,0],[0,false],[0,false],[0,0,0,0,0]] spawn OKS_CreateZone;
 		};
 
-
-/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 		/*
-			Below are examples of how to use the hunt/airdrop bases
-			These codes should be put in SpawnList unless you want them to start "searching" from the start of the mission.
+		   	HuntBase Params
+
+		   	0 - Base Object (Object)
+		   	1 - Spawn Object (Object)
+		   	2 - Hunt Trigger (Trigger)
+		   	3 - Wave Count (Integer/Number)
+		   	4 - Respawn Delay in Seconds (Integer/Number)
+		   	5 - Enemy Side (Side)
+		   	6 - Unit Selection - (Integer/String/Array with Strings)
+		   	7 - Refresh Rate in Seconds (Integer/Number)
+
+			[Base_1, Spawn_1, NEKY_Hunt_Trigger_1, 5,30,independent,6,30] spawn NEKY_Hunt_HuntBase;
+			[Base_2, Spawn_2, NEKY_Hunt_Trigger_1, 5,30,independent,"CUP_I_LR_MG_AAF",30] spawn NEKY_Hunt_HuntBase;
+			[Base_2, Spawn_2, NEKY_Hunt_Trigger_1, 5,30,independent,["CUP_I_LR_MG_AAF","CUP_I_LR_MG_AAF"],30] spawn NEKY_Hunt_HuntBase;
 		*/
-		// [Base_1, Spawn_1, NEKY_Hunt_Trigger_1, 5,30,independent,6,30] spawn NEKY_Hunt_HuntBase;
-		// [Base_2, Spawn_2, NEKY_Hunt_Trigger_1, 5,30,independent,"CUP_I_LR_MG_AAF",30] spawn NEKY_Hunt_HuntBase;
-		// [Base_3,Spawn_3, NEKY_Hunt_Trigger_1,independent,"I_Heli_Transport_02_F","Random",[2,1]] spawn NEKY_Airbase
-
-	if(isServer && GOL_NEKY_SHARE isEqualTo 1) then {
-		[True,True] call NEKY_AI_ShareInfo;
-	};
-
-	if(GOL_NEKY_PARADROP isEqualTo 1) then {
-		waitUntil {sleep 1; !(isNil "NEKY_ACE_AddAction") && !(isNil "OKS_FRIENDLY_SIDE")};
-		[] spawn NEKY_ACE_AddAction;
-
-		if(!isNil "flag_west_1" && OKS_FRIENDLY_SIDE isEqualTo west) then {
-			[flag_west_1, "Paradrop Reinsert", "DZ Alpha", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+		/* Example of Hunt Bases */
+		/*
+		if(isServer && GOL_NEKY_HUNT isEqualTo 1) then {
+			waitUntil{sleep 5; !(isNil "NEKY_Hunt_HuntBase")};
+			[Base_1, Spawn_1, NEKY_Hunt_Trigger_1, 5,30,independent,6,30] spawn NEKY_Hunt_HuntBase;
 		};
-		if(!isNil "flag_east_1" && OKS_FRIENDLY_SIDE isEqualTo east) then {
-			[flag_east_1, "Paradrop Reinsert", "DZ Bravo", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+		/*
+		   AirBase Params
+
+		   0 - Base Object (Object)
+		   1 - Spawn Object (Object)
+		   2 - Hunt Trigger (Trigger)
+		   3 - Enemy Side (Side)
+		   4 - Classname of Helicopter (String)
+		   5 - Type of Insert (Unload ONLY) (String)
+		   6 - Cargo Split - [How many teams,Procent of Cargo] (Array)
+
+		   [Base_3,Spawn_3, NEKY_Hunt_Trigger_1,independent,"I_Heli_Transport_02_F","Random",[2,1]] spawn NEKY_Airbase;
+		*/
+		/* Example of Air Bases */
+		/*
+		if(isServer && GOL_NEKY_AIRDROP isEqualTo 1) then {
+			waitUntil{sleep 5; !(isNil "NEKY_Airbase")};
+			[Base_3,Spawn_3, NEKY_Hunt_Trigger_1,independent,"I_Heli_Transport_02_F","Random",[2,1]] spawn NEKY_Airbase;
 		};
-		if(!isNil "flag_independent_1" && OKS_FRIENDLY_SIDE isEqualTo independent) then {
-			[flag_independent_1, "Paradrop Reinsert", "DZ Charlie", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
-		};
-	};
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+

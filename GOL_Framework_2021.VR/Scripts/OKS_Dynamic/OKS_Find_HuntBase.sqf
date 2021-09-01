@@ -54,9 +54,10 @@ _HuntArray Params ["_InfantryCount","_WheeledCount","_APCCount","_TankCount","_H
 Private _FindAndSpawnHuntBase = {
 
 	/*
-		[_MainTrigger,_Side,_Vehicles,_BaseType,_Type,_Repsawn,_waves,_Refresh,_SideMarker,_SideColor] spawn _FindAndSpawnHuntBase;
+		[_MainTrigger,_Side,_Vehicles,_BaseType,_Type,_Repsawn,_waves,_Refresh,_SideMarker,_SideColor,_Configurations] spawn _FindAndSpawnHuntBase;
 	*/
-	Params["_MainTrigger","_Side","_Vehicles","_BaseType","_Type","_Respawn","_Waves","_Refresh","_SideMarker","_SideColor"];
+	Params["_MainTrigger","_Side","_Vehicles","_BaseType","_Type","_Respawn","_Waves","_Refresh","_SideMarker","_SideColor","_Configurations"];
+	_Configurations Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker"];
 	Private ["_SelectedPos","_Repetitions","_RandomPos","_Base","_Spawn","_marker","_SizeMarker"];
 	private _Debug_Variable = false;
 
@@ -68,9 +69,9 @@ Private _FindAndSpawnHuntBase = {
 		_SelectedPos = [_RandomPos, 1, (TriggerArea _MainTrigger select 0), 30, 0, 0, 0] call BIS_fnc_findSafePos;
 
 		if(_Debug_Variable) then {
-			systemChat format ["Find Mortar: %1 %2 %3 %4 %5",!(_SelectedPos isEqualTo [0,0,0]),{_SelectedPos Distance _X < 1000} count OKS_Mortar_Positions < 1,_SelectedPos inArea _MainTrigger,{_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1,{_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1,{_SelectedPos distance _X < 200} count OKS_Hunt_Positions < 1];
+			systemChat format ["Find Mortar: %1 %2 %3 %4 %5",!(_SelectedPos isEqualTo [0,0,0]),{_SelectedPos Distance _X < 200} count OKS_Mortar_Positions < 1,_SelectedPos inArea _MainTrigger,{_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1,{_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1,{_SelectedPos distance _X < 200} count OKS_Hunt_Positions < 1];
 		};
-		if(!(_SelectedPos isFlatEmpty  [-1, -1, 0.05, 25, 0] isEqualTo []) && !(_SelectedPos isEqualTo [0,0,0]) && {_SelectedPos Distance _X < 1000} count OKS_Mortar_Positions < 1 && _SelectedPos inArea _MainTrigger  && {_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1 && {_SelectedPos distance _X < 500} count OKS_Hunt_Positions < 1) exitWith { if(_Debug_Variable) then {"Found"}};
+		if(!(_SelectedPos isFlatEmpty  [-1, -1, 0.35, 15, 0] isEqualTo []) && !(_SelectedPos isEqualTo [0,0,0]) && {_SelectedPos Distance _X < 200} count OKS_Mortar_Positions < 1 && _SelectedPos inArea _MainTrigger  && {_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1 && {_SelectedPos distance _X < 500} count OKS_Hunt_Positions < 1) exitWith { if(_Debug_Variable) then {"Found"}};
 		if(_Repetitions > 30) exitWith {};
 	};
 	if(_Repetitions > 30 || _SelectedPos isEqualTo [0,0,0]) exitWith { if(_Debug_Variable) then {systemChat "Failed to Find Hunt Position"} };
@@ -157,25 +158,25 @@ Private _FindAndSpawnHuntBase = {
 //SystemChat str [_MainTrigger,_Side,[4,5,6],_BaseType,"INFANTRY",_InfantryRespawnTime,_InfantryWaves,_RefreshRate,_SideMarker,_SideColor];
 
 For "_i" to (_InfantryCount - 1) do {
-	[_MainTrigger,_Side,[4,5,6],_BaseType,"INFANTRY",_InfantryRespawnTime,_InfantryWaves,_RefreshRate,_SideMarker,_SideColor] spawn _FindAndSpawnHuntBase;
+	[_MainTrigger,_Side,[4,5,6],_BaseType,"INFANTRY",_InfantryRespawnTime,_InfantryWaves,_RefreshRate,_SideMarker,_SideColor,_Configurations] spawn _FindAndSpawnHuntBase;
 };
 
 For "_i" to (_WheeledCount - 1) do {
-	[_MainTrigger,_Side,_WHEELED,_BaseType,"WHEELED",_WheeledRespawnTime,_WheeledWaves,_RefreshRate,_SideMarker,_SideColor] spawn _FindAndSpawnHuntBase;
+	[_MainTrigger,_Side,_WHEELED,_BaseType,"WHEELED",_WheeledRespawnTime,_WheeledWaves,_RefreshRate,_SideMarker,_SideColor,_Configurations] spawn _FindAndSpawnHuntBase;
 	sleep 5;
 };
 
 For "_i" to (_APCCount - 1) do {
-	[_MainTrigger,_Side,_APC,_BaseType,"APC",_APCRespawnTime,_APCWaves,_RefreshRate,_SideMarker,_SideColor] spawn _FindAndSpawnHuntBase;
+	[_MainTrigger,_Side,_APC,_BaseType,"APC",_APCRespawnTime,_APCWaves,_RefreshRate,_SideMarker,_SideColor,_Configurations] spawn _FindAndSpawnHuntBase;
 	sleep 5;
 };
 
 For "_i" to (_TankCount - 1) do {
-	[_MainTrigger,_Side,_TANK,_BaseType,"TANK",_TankRespawnTime,_TankWaves,_RefreshRate,_SideMarker,_SideColor] spawn _FindAndSpawnHuntBase;
+	[_MainTrigger,_Side,_TANK,_BaseType,"TANK",_TankRespawnTime,_TankWaves,_RefreshRate,_SideMarker,_SideColor,_Configurations] spawn _FindAndSpawnHuntBase;
 	sleep 5;
 };
 
 For "_i" to (_HelicopterCount - 1) do {
-	[_MainTrigger,_Side,_HELICOPTER,_BaseType,"HELICOPTER",_HelicopterRespawnTime,_HelicopterWaves,_RefreshRate,_SideMarker,_SideColor] spawn _FindAndSpawnHuntBase;
+	[_MainTrigger,_Side,_HELICOPTER,_BaseType,"HELICOPTER",_HelicopterRespawnTime,_HelicopterWaves,_RefreshRate,_SideMarker,_SideColor,_Configurations] spawn _FindAndSpawnHuntBase;
 	sleep 5;
 };

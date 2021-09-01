@@ -18,8 +18,11 @@ _Strongpoints = [];
 _Locations = [];
 private _Compounds = [];
 
-{_Locations pushBackUnique getPos _X} foreach nearestObjects [_MainTrigger, ["LocationCamp_F","LocationResupplyPoint_F","LocationRespawnPoint_F","LocationEvacPoint_F","LocationFOB_F","LocationCityCapital_F","LocationCity_F","LocationVillage_F","LocationArea_F"], (TriggerArea _MainTrigger select 0 / 2)];
-{_Compounds pushBackUnique getPos _X} foreach nearestObjects [_MainTrigger, ["LocationBase_F","LocationOutpost_F"], (TriggerArea _MainTrigger select 0 / 2)];
+{_Locations pushBackUnique getPos _X} foreach nearestObjects [_MainTrigger, ["LocationCamp_F","LocationResupplyPoint_F","LocationRespawnPoint_F","LocationEvacPoint_F","LocationFOB_F","LocationCityCapital_F","LocationCity_F","LocationVillage_F","LocationArea_F"], (TriggerArea _MainTrigger select 0)];
+{_Compounds pushBackUnique getPos _X} foreach nearestObjects [_MainTrigger, ["LocationBase_F","LocationOutpost_F"], (TriggerArea _MainTrigger select 0)];
+
+_Locations = _Locations select {_X inArea _MainTrigger};
+_Compounds = _Compounds select {_X inArea _MainTrigger};
 
 if(_Debug_Variable) then {
 	systemChat format ["Locations: %1",count _Locations];
@@ -28,7 +31,8 @@ if(_Debug_Variable) then {
 
 if(_Locations isEqualTo [] && _Compounds isEqualTo []) then {
 	if(_Debug_Variable) then {systemChat format ["Locations is Empty. Compounds is not Empty."]};
-	{_Locations pushBackUnique (locationPosition _X)} foreach nearestLocations [_MainTrigger,["NameVillage","NameCity","NameCityCapital","Hill","Name","NameLocal","fakeTown"],(TriggerArea _MainTrigger select 0 / 2)];
+	{_Locations pushBackUnique (locationPosition _X)} foreach nearestLocations [_MainTrigger,["NameVillage","NameCity","NameCityCapital","Hill","Name","NameLocal","fakeTown"],(TriggerArea _MainTrigger select 0)];
+	_Locations = _Locations select {_X inArea _MainTrigger};
 };
 
 if(!isNil "OKS_Populate_StaticWeapons") then {

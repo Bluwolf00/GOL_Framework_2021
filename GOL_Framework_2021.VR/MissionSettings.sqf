@@ -17,6 +17,12 @@ GOL_OKS_HUNT = 0;
 GOL_NEKY_HUNT = 0;
 GOL_NEKY_AIRDROP = 0;
 
+/* HuntBases Settings */
+NEKY_Hunt_MaxCount = 40;
+NEKY_Hunt_CurrentCount = [];
+publicVariable "NEKY_Hunt_MaxCount";
+publicVariable "NEKY_Hunt_CurrentCount";
+
 /* Optional Settings */
 GOL_AAC_SETUP = 0;
 GOL_OKS_TASK = 0;

@@ -33,16 +33,17 @@
 	For "_i" to (_NumberOfVehicles - 1) do {
 
 		_VehicleClass = _SelectedVehicles call BIS_fnc_selectRandom;
+		Private _Repetitions = 0;
 		while {true} do {
-
-			_SafePos = [_Area, 1, (TriggerArea _Area select 0), 30, 0, 0, 0] call BIS_fnc_findSafePos;
-			//_RoadList = _SafePos nearRoads 150;
-			//_Road selectRandom _RoadList;
-			_Road = getPos ([_SafePos, 500] call BIS_fnc_nearestRoad);
-			private _info = getRoadInfo ([_SafePos, 500] call BIS_fnc_nearestRoad);
+			sleep 0.25;
+			_Repetitions = _Repetitions + 1;
+			_RandomPos = _Area call BIS_fnc_randomPosTrigger;
+			private _Road = [_RandomPos, 300] call BIS_fnc_nearestRoad;
+			_SafePos = getPos _Road;
+			private _info = getRoadInfo _Road;
 			_Dir = (_info select 6) getDir (_info select 7);
-			if(_Road inArea _Area) exitWith {};
-
+			if(_SafePos inArea _Area && !(_SafePos isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && ((getRoadInfo _Road) select 0) != "TRAIL") exitWith {};
+			if(_Repetitions > 30) exitWith {};
 		};
 
 		sleep 5;
@@ -53,6 +54,7 @@
 			};
 		};
 
+		waitUntil{sleep 5; count (nearestObjects [_SafePos,["LandVehicle"],30]) <= 0 };
 		_Vehicle = CreateVehicle [_VehicleClass, _SafePos, [], 0, "NONE"];
 		_Vehicle setDir _Dir;
 
