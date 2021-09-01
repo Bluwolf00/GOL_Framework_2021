@@ -7,7 +7,6 @@ if(!isServer) exitWith {};
 
 Params ["_MainTrigger","_Side","_HuntArray"];
 private ["_RandomPos","_Road","_marker","_SideMarker","_SelectedPos","_Composition","_Repetitions","_BaseType","_SideColor","_SideMarker"];
-private _Debug_Variable = false;
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
 _Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configurations"];
@@ -58,35 +57,42 @@ Private _FindAndSpawnHuntBase = {
 	*/
 	Params["_MainTrigger","_Side","_Vehicles","_BaseType","_Type","_Respawn","_Waves","_Refresh","_SideMarker","_SideColor","_Configurations"];
 	_Configurations Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker"];
-	Private ["_SelectedPos","_Repetitions","_RandomPos","_Base","_Spawn","_marker","_SizeMarker"];
-	private _Debug_Variable = false;
+	Private ["_SelectedPos","_Repetitions","_RandomPos","_Base","_Spawn","_marker","_SizeMarker","_Location","_Position"];
+	private _Debug_Variable = true;
 
 	_Repetitions = 0;
-	While {true} do {
-		sleep 0.5;
-		_Repetitions = _Repetitions + 1;
-		_RandomPos = _MainTrigger call BIS_fnc_randomPosTrigger;
-		_SelectedPos = [_RandomPos, 1, (TriggerArea _MainTrigger select 0), 30, 0, 0, 0] call BIS_fnc_findSafePos;
+	Private _LocationsInArea = OKS_HuntLocations select {_X inArea _MainTrigger};
+	if(count _LocationsInArea > 0) then {
 
-		if(_Debug_Variable) then {
-			systemChat format ["Find Mortar: %1 %2 %3 %4 %5",!(_SelectedPos isEqualTo [0,0,0]),{_SelectedPos Distance _X < 200} count OKS_Mortar_Positions < 1,_SelectedPos inArea _MainTrigger,{_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1,{_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1,{_SelectedPos distance _X < 200} count OKS_Hunt_Positions < 1];
+		_Location = SelectRandom _LocationsInArea;
+		OKS_HuntLocations deleteAt (OKS_HuntLocations find _Location);
+		_SelectedPos = getPos _Location;
+		if(_Debug_Variable) then { SystemChat format ["HuntBase Logic found."]};
+
+	} else {
+
+		if(_Debug_Variable) then { SystemChat format ["No Hunt Base Logic Found"]};
+		While {true} do {
+			sleep 0.5;
+			_Repetitions = _Repetitions + 1;
+			_RandomPos = _MainTrigger call BIS_fnc_randomPosTrigger;
+			_SelectedPos = [_RandomPos, 1, (TriggerArea _MainTrigger select 0), 30, 0, 0, 0] call BIS_fnc_findSafePos;
+
+			if(_Debug_Variable) then {
+				systemChat format ["Find HuntBase: %1 %2 %3 %4 %5",!(_SelectedPos isFlatEmpty  [-1, -1, 0.25, 5, 0,false] isEqualTo []),{_SelectedPos Distance _X < 200} count OKS_Mortar_Positions < 1,_SelectedPos inArea _MainTrigger,{_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1,{_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1,{_SelectedPos distance _X < 200} count OKS_Hunt_Positions < 1];
+			};
+			if(!(_SelectedPos isFlatEmpty  [-1, -1, 0.25, 5, 0,false] isEqualTo []) && !(_SelectedPos isEqualTo [0,0,0]) && {_SelectedPos Distance _X < 200} count OKS_Mortar_Positions < 1 && _SelectedPos inArea _MainTrigger  && {_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1 && {_SelectedPos distance _X < 200} count OKS_Hunt_Positions < 1) exitWith { if(_Debug_Variable) then {"Found"}};
+			if(_Repetitions > 30) exitWith {};
 		};
-		if(!(_SelectedPos isFlatEmpty  [-1, -1, 0.35, 15, 0] isEqualTo []) && !(_SelectedPos isEqualTo [0,0,0]) && {_SelectedPos Distance _X < 200} count OKS_Mortar_Positions < 1 && _SelectedPos inArea _MainTrigger  && {_SelectedPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SelectedPos distance _X < 200} count OKS_RoadBlock_Positions < 1 && {_SelectedPos distance _X < 500} count OKS_Hunt_Positions < 1) exitWith { if(_Debug_Variable) then {"Found"}};
-		if(_Repetitions > 30) exitWith {};
 	};
+
 	if(_Repetitions > 30 || _SelectedPos isEqualTo [0,0,0]) exitWith { if(_Debug_Variable) then {systemChat "Failed to Find Hunt Position"} };
 
-	/*
-		_Composition = selectRandom ["mortar_1","mortar_2","mortar_3"];
-		[_Composition, [_SelectedPos select 0,_SelectedPos select 1,0], [0,0,0], (random 360)] call LARs_fnc_spawnComp;
-	*/
-
 	OKS_Hunt_Positions pushBackUnique _SelectedPos;
-	publicVariable "OKS_Hunt_Positions";
-
 	_Base = createVehicle [_BaseType, _SelectedPos, [], 0, "NONE"];
 	OKS_Objective_Positions pushBackUnique _Base;
 	_Spawn = createVehicle ["Land_ClutterCutter_small_F", _SelectedPos getPos [20,(random 360)], [], 0, "NONE"];
+	publicVariable "OKS_Hunt_Positions";
 
 	Switch (_Type) do {
 		case "INFANTRY":{

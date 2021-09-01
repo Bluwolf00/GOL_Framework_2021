@@ -12,6 +12,7 @@ publicVariable "OKS_FRIENDLY_SIDE";
 /* Headless & ServiceStation */
 [] execVM "Scripts\HeadlessClient\HeadlessClient.sqf";
 Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
+Sleep 5;
 
 	if(GOL_NEKY_SERVICESTATION isEqualTo 1) then {
 		[] execVM "Scripts\NEKY_ServiceStation\Init.sqf";
@@ -64,6 +65,8 @@ Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 			[flag_independent_1, "Paradrop Reinsert", "DZ Charlie", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
 		};
 	};
+
+Sleep 10;
 
 /* !! IGNORE AND DO NOT EDIT ALL OF THE ABOVE !! */
 

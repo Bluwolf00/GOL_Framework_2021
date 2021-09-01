@@ -12,7 +12,7 @@
 if(!isServer) exitWith {};
 
 	Params ["_Position","_TypeOfObjective","_Range","_Side","_ObjectivePatrols"];
-	private ["_marker","_Condition","_playerSide","_trg","_EnemySideString","_playerSideString","_playerColor","_Area","_SpawnPos","_Repetitions","_Debug_Variable"];
+	private ["_marker","_Condition","_playerSide","_trg","_EnemySideString","_playerSideString","_playerColor","_Area","_SpawnPos","_Repetitions","_Debug_Variable","_LocationsInArea"];
 
 	_Settings = [_Side] call OKS_Dynamic_Setting;
 	_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
@@ -21,10 +21,20 @@ if(!isServer) exitWith {};
 
 	_Debug_Variable = false;
 
+
 	switch(typeName _Position) do {
 		case "OBJECT":{
 			_Area = _Position;
 			_Position = getPos _Position;
+			Private _LocationsInArea = OKS_Objectives select {_X inArea _Area};
+
+			if(!(_TypeOfObjective in ["sector","hostage","ammotruck","hvttruck"])  && count _LocationsInArea > 0) then {
+				_Location = SelectRandom _LocationsInArea;
+				OKS_Objectives deleteAt (OKS_Objectives find _Location);
+				_Position = getPos _Location;
+				_Area = nil;
+				if(_Debug_Variable) then { SystemChat format ["Objective Logic found."]};
+			};
 		};
 		default {
 
@@ -111,9 +121,9 @@ switch (_TypeOfObjective) do {
 				_ammoCrate = "Box_FIA_Wps_F";
 			};
 		};
-
+		_Repetitions = 0;
 		if(!isNil "_Area") then {
-			_Repetitions = 0;
+
 			while{true} do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
@@ -124,7 +134,7 @@ switch (_TypeOfObjective) do {
 				if(_Repetitions > 100) exitWith {};
 			};
 		} else {
-			_SpawnPos = [_Position, 1, 100, 30, 0, 0, 0] call BIS_fnc_findSafePos;
+			_SpawnPos = _Position;
 		};
 
 		if(_Repetitions > 100) exitWith { systemChat "Unable to find position: Cache Objective" };
@@ -164,9 +174,9 @@ switch (_TypeOfObjective) do {
 		private ["_SupplyTruck","_Repetitions","_Crate","_SpawnPos","_trg","_Task"];
 
 		_SupplyTruck = selectRandom _Supply;
-
+		_Repetitions = 0;
 		if(!isNil "_Area") then {
-			_Repetitions = 0;
+
 			while{true} do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
@@ -176,8 +186,7 @@ switch (_TypeOfObjective) do {
 				if(_Repetitions > 50) exitWith {};
 			};
 		} else {
-			_Repetitions = 0;
-			_SpawnPos = [_Position, 1, 100, 30, 0, 0, 0] call BIS_fnc_findSafePos;
+			_SpawnPos = _Position;
 		};
 
 		if(_Repetitions > 50) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Motor Pool Objective"} };
@@ -215,9 +224,9 @@ switch (_TypeOfObjective) do {
 
 		private ["_SupplyTruck","_Road","_RandomPos"];
 		_SupplyTruck = selectRandom(_Supply);
-
+		_Repetitions = 0;
 		if(!isNil "_Area") then {
-			_Repetitions = 0;
+
 			while{true} do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
@@ -273,9 +282,9 @@ switch (_TypeOfObjective) do {
 	case "radiotower": {
 
 		private ["_towerclass","_Repetitions","_Tower","_SpawnPos","_trg","_Task"];
-
+		_Repetitions = 0;
 		if(!isNil "_Area") then {
-			_Repetitions = 0;
+
 			while{true} do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
@@ -285,8 +294,7 @@ switch (_TypeOfObjective) do {
 				if(_Repetitions > 50) exitWith {};
 			};
 		} else {
-			_Repetitions = 0;
-			_SpawnPos = [_Position, 1, 100, 30, 0, 0, 0] call BIS_fnc_findSafePos;
+			_SpawnPos = _Position;
 		};
 
 		OKS_Objective_Positions pushBackUnique _SpawnPos;
@@ -322,9 +330,9 @@ switch (_TypeOfObjective) do {
 
 		private ["_Vehicles","_Road","_RandomPos","_CargoCount"];
 		_Wheeled = selectRandom(_Transport);
-
+		_Repetitions = 0;
 		if(!isNil "_Area") then {
-			_Repetitions = 0;
+
 			while{true} do {
 				sleep 0.25;
 				_Repetitions = _Repetitions + 1;
@@ -415,9 +423,8 @@ switch (_TypeOfObjective) do {
 
 		private ["_Road","_RandomPos","_Target","_SpawnPos","_Arty"];
 		_Artillery = selectRandom(_Artillery);
-
+		_Repetitions = 0;
 		if(!isNil "_Area") then {
-			_Repetitions = 0;
 			while{true} do {
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
@@ -430,7 +437,7 @@ switch (_TypeOfObjective) do {
 				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 10, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 			};
 		} else {
-			_SpawnPos = getPos([([_Position, 1, 100, 10, 0, 0, 0] call BIS_fnc_findSafePos), 300] call BIS_fnc_nearestRoad);
+			_SpawnPos = _Position;
 		};
 		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Artillery Objective"}};
 		if(_SpawnPos distance [0,0,0] < 300) exitWith { if(_Debug_Variable) then {SystemChat "Location found near SW edge of map. Exiting..."}};
@@ -489,9 +496,9 @@ switch (_TypeOfObjective) do {
 
 		private ["_Road","_RandomPos","_Target","_SpawnPos","_AA"];
 		_AntiAir = selectRandom(_AntiAir);
-
+		_Repetitions = 0;
 		if(!isNil "_Area") then {
-			_Repetitions = 0;
+
 			while{true} do {
 				_Repetitions = _Repetitions + 1;
 				_RandomPos = _Area call BIS_fnc_randomPosTrigger;
@@ -504,7 +511,7 @@ switch (_TypeOfObjective) do {
 				if((_SpawnPos nearRoads 35) isEqualTo [] && !(_SpawnPos isFlatEmpty  [-1, -1, 0.05, 10, 0] isEqualTo []) && _SpawnPos inArea _Area && {_SpawnPos distance _X < 200} count OKS_Objective_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_Mortar_Positions < 1 && {_SpawnPos distance _X < 200} count OKS_RoadBlock_Positions < 1) exitWith {};
 			};
 		} else {
-			_SpawnPos = getPos([([_Position, 1, 100, 10, 0, 0, 0] call BIS_fnc_findSafePos), 300] call BIS_fnc_nearestRoad);
+			_SpawnPos = _Position;
 		};
 		if(_Repetitions > 30) exitWith { if(_Debug_Variable) then {systemChat "Unable to find position: Artillery Objective"}};
 		if(_SpawnPos distance [0,0,0] < 300) exitWith { if(_Debug_Variable) then {SystemChat "Location found near SW edge of map. Exiting..."}};

@@ -10,11 +10,11 @@ Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tan
 /* Faction Selection for Vehicles spawned by OKS_Dynamic
 
 BLUFOR FACTIONS:       CDF LDF TANOA
-OPFOR FACTIONS:        CHEDAKI TKA DESERT_INSURGENTS
+OPFOR FACTIONS:        CHEDAKI TKA DESERT_INSURGENTS RUSSIA
 INDEPENDENT FACTIONS:  NAPA
 
 */
-Private _Faction = "TKA";
+Private _Faction = "RUSSIA";
 
 /* ObjectiveTypes: ["cache","artillery","hostage","hvttruck","ammotruck","radiotower","motorpool","antiair"] If you wish to disable just remove them from the array above. */
 _ObjectiveTypes = ["cache","artillery","hostage","hvttruck","ammotruck","radiotower","motorpool","antiair"];
@@ -32,6 +32,19 @@ _EnableZoneMarker = false;
 _EnableZoneTypeMarker = false;
 
 Switch (_Faction) do {
+
+	case "RUSSIA":{
+		// Modern Russian Armed Forces (RUSSIA) - OPFOR
+		_Wheeled = ["rhs_tigr_msv","rhs_tigr_m_msv","RHS_UAZ_MSV_01","rhs_gaz66_msv","rhs_kamaz5350_msv"];
+		_APC = ["rhs_btr80a_vdv","rhs_btr80_vdv","rhs_bmd4_vdv","rhs_bmp3_msv","rhs_bmp2_msv"];
+		_Tank = ["rhs_t90sab_tv","rhs_t90saa_tv","rhs_t90_tv","rhs_t80bvk"];
+		_Artillery = ["rhs_2s1_tv","rhs_2s3_tv","rhs_D30_vmf","RHS_BM21_VMF_01"];
+		_AntiAir = ["rhs_zsu234_aa","RHS_ZU23_VDV"];
+		_Helicopter = ["RHS_Mi24P_vdv","RHS_Mi8MTV3_vdv"];
+		_Transport = ["rhs_kamaz5350_open_msv"];
+		_Supply = ["rhs_gaz66_r142_vdv","rhs_gaz66_repair_vdv","rhs_kamaz5350_ammo_vdv","RHS_Ural_Repair_VDV_01"];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
+	};
 
 	case "TANOA":{
 		// Tanoa Horizon Forces (TANOA) - BLUFOR

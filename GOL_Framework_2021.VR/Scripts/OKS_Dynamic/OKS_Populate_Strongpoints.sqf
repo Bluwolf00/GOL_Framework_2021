@@ -18,11 +18,11 @@ _Strongpoints = [];
 _Locations = [];
 private _Compounds = [];
 
-{_Locations pushBackUnique getPos _X} foreach nearestObjects [_MainTrigger, ["LocationCamp_F","LocationResupplyPoint_F","LocationRespawnPoint_F","LocationEvacPoint_F","LocationFOB_F","LocationCityCapital_F","LocationCity_F","LocationVillage_F","LocationArea_F"], (TriggerArea _MainTrigger select 0)];
-{_Compounds pushBackUnique getPos _X} foreach nearestObjects [_MainTrigger, ["LocationBase_F","LocationOutpost_F"], (TriggerArea _MainTrigger select 0)];
+//{_Locations pushBackUnique getPos _X} foreach nearestObjects [_MainTrigger, ["LocationCamp_F","LocationResupplyPoint_F","LocationRespawnPoint_F","LocationEvacPoint_F","LocationFOB_F","LocationCityCapital_F","LocationCity_F","LocationVillage_F","LocationArea_F"], (TriggerArea _MainTrigger select 0)];
+//{_Compounds pushBackUnique getPos _X} foreach nearestObjects [_MainTrigger, ["LocationBase_F","LocationOutpost_F"], (TriggerArea _MainTrigger select 0)];
 
-_Locations = _Locations select {_X inArea _MainTrigger};
-_Compounds = _Compounds select {_X inArea _MainTrigger};
+_Locations = OKS_Locations select {_X inArea _MainTrigger};
+_Compounds = OKS_Compounds select {_X inArea _MainTrigger};
 
 if(_Debug_Variable) then {
 	systemChat format ["Locations: %1",count _Locations];
@@ -41,7 +41,7 @@ if(!isNil "OKS_Populate_StaticWeapons") then {
 
 if(count _Locations > 0) then {
 	{
-		_Location = nearestBuilding _X;
+		_Location = nearestBuilding (getPos _X);
 		_AllBuildings = (_Location) nearObjects ["House",125];
 		_SortedBuildings = [_AllBuildings,[],{(_Location) distance _x},"ASCEND"] call BIS_fnc_sortBy;
 		_SortedBuildings = _SortedBuildings select { 6 < count([_X] call BIS_fnc_buildingPositions) && !(isObjectHidden _X) };
@@ -87,15 +87,15 @@ if(_CountStrongpoints > 0) then {
 			if(_EnableEnemyMarkers) then {
 				[_Compound,_Side,"infantry",_GarrisonNumber,0.8] spawn OKS_CreateUnitMarker;
 			};
-			[_GarrisonNumber,_X,_Side,_Units,_CompoundSize] spawn OKS_Garrison_Compound;
+			[_GarrisonNumber,getPos _X,_Side,_Units,_CompoundSize] spawn OKS_Garrison_Compound;
 			if(_CreateLocalPatrols) then {
 				if(_Debug_Variable) then {
 					systemChat format ["%1 Patrol Number - Creating patrols",_PatrolNumber];
 				};
 				for "_i" from 0 to 3 step 1 do
 				{
-					Private _DirectionPos = _X getPos [75,(random 360)];
-					_SafePos = [_X, 1, 75, 5, 0, 0.2, 0] call BIS_fnc_findSafePos;
+					Private _DirectionPos = (getPos _X) getPos [75,(random 360)];
+					_SafePos = [getPos _X, 1, 75, 5, 0, 0.2, 0] call BIS_fnc_findSafePos;
 					_Group = CreateGroup _Side;
 					for "_i" from 0 to _PatrolNumber do
 					{
@@ -115,7 +115,7 @@ if(_CountStrongpoints > 0) then {
 				};
 			};
 			if(_CreateObjective && {_X getVariable ["isSectorTrigger",false]} count (_X nearObjects ["EmptyDetector",(_CompoundSize * 3)]) < 1) then {
-				[_X,"sector",(_CompoundSize * 2),_Side,_Settings] spawn OKS_CreateObjectives;
+				[getPos _X,"sector",(_CompoundSize * 2),_Side,_Settings] spawn OKS_CreateObjectives;
 			};
 			sleep 3;
 		} foreach _Compounds;

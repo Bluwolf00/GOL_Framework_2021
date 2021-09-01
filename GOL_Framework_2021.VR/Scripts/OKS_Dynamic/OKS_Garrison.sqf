@@ -1,4 +1,5 @@
 	// OKS_Garrison
+	// [5,nearestBuilding player,east,["O_Soldier_F"]] spawn OKS_Garrison_Compound;
 	if(HasInterface && !isServer) exitWith {};
 
 	Params ["_NumberInfantry","_House","_Side","_Units"];
@@ -6,6 +7,7 @@
 
 	_GarrisonPositions = [_House] call BIS_fnc_buildingPositions;
 	_GarrisonMaxSize = count _GarrisonPositions;
+
 
 	if(_NumberInfantry > _GarrisonMaxSize) then {
 		_NumberInfantry = _GarrisonMaxSize;
@@ -60,6 +62,10 @@
 		 */
 		//private _type = typeOf nearestBuilding (getPos (leader _group));
 		_House setVariable ["OKS_isGarrisoned",true];
+
+		waitUntil {sleep 5; !(isNil "ace_ai_fnc_garrison") && !(isNil "OKS_EnablePath")};
 		[getPos (leader _Group), [typeOf _House], units _Group, 5, 2, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
+		sleep 2;
+		[_Group] remoteExec ["OKS_SetStatic",0];
 		[_Group,0.3,15] spawn OKS_EnablePath;
 	};

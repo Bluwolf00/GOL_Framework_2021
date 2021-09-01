@@ -1,4 +1,5 @@
 	// OKS_Garrison_Compound
+	// [5,getPos player,east,["O_Soldier_F"],30] spawn OKS_Garrison_Compound;
 	if(HasInterface && !isServer) exitWith {};
 
 	Params ["_NumberInfantry","_Position","_Side","_Units","_Range"];
@@ -16,10 +17,11 @@
 			} else {
 				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _Position getPos [(random 8),(random 360)], [], 0, "NONE"];
 				_Unit setRank "PRIVATE";
+
 			};
 			_Unit disableAI "PATH";
 			_Unit setUnitPos (selectRandom ["UP","MIDDLE"]);
-			sleep 0.5;
+			sleep 0.2;
 		};
 		 /* Arguments:
 			 * 0: The building(s) nearest this position are used <POSITION>
@@ -37,5 +39,9 @@
 			SystemChat format ["Compound at %1 Units: %2 Range: %3",_Position,count units _Group,_Range];
 			//SystemChat format ["Houses to setVariable: %1",_Houses];
 		};
+
+		waitUntil {sleep 5; !(isNil "ace_ai_fnc_garrison") && !(isNil "OKS_EnablePath")};
 		[_Position, nil, units _Group, (_Range - 10), 0, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
+		sleep 2;
+		[_Group] remoteExec ["OKS_SetStatic",0];
 		[_Group,0.3,15] spawn OKS_EnablePath;

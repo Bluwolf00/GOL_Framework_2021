@@ -49,6 +49,9 @@ if(HasInterface && !isServer) exitWith {};
 			_Unit doWatch (_Unit getPos [50,((_Unit getDir _Position) - 180)]);
 			if(count units _Group >= _InfantryNumber) exitWith { if(_Debug_Variable) then { SystemChat "_Group reached Max. Exiting.."}}
 		} foreach _Sandbags;
+
+		sleep 2;
+		[_Group] remoteExec ["OKS_SetStatic",0];
 		_Group;
 	};
 	false;
