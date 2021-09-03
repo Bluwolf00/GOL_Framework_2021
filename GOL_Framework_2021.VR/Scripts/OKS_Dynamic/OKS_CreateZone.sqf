@@ -164,7 +164,7 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		SystemChat format ["Roadblock Count: %1",_RoadblockCount];
 		if(_RoadblockCount > 0) then {
 			[_MainTrigger,_RoadblockCount,_Side,_RoadblockTarmac,_RoadBlockPatrols,_RoadblockChance] spawn OKS_Find_RoadBlocks;
-			sleep 20;
+			sleep 30;
 		};
 
 		/* Create Mortar Pits Main Area*/

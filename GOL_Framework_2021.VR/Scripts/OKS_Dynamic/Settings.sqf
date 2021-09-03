@@ -5,7 +5,7 @@
 //	Returns: [Settings]
 
 Params["_Side"];
-Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tank","_Artillery","_Supply","_Transport","_Civilian","_Officer","_Settings","_AntiAir","_EnableEnemyMarkers"];
+Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tank","_Artillery","_Supply","_Transport","_Civilian","_Officer","_Settings","_AntiAir","_EnableEnemyMarkers","_RoadblockVehicleType"];
 
 /* Faction Selection for Vehicles spawned by OKS_Dynamic
 
@@ -15,22 +15,6 @@ INDEPENDENT FACTIONS:  NAPA
 
 */
 Private _Faction = "RUSSIA";
-
-/* ObjectiveTypes: ["cache","artillery","hostage","hvttruck","ammotruck","radiotower","motorpool","antiair"] If you wish to disable just remove them from the array above. */
-_ObjectiveTypes = ["cache","artillery","hostage","hvttruck","ammotruck","radiotower","motorpool","antiair"];
-
-/* CompoundSize defines in meters how large a compound is conisdered in this mission. Garrisons will spread out at this distance*/
-_CompoundSize = 25;
-
-/* EnableEnemyMarkers will place markers at enemy strongpoints & compounds populated by Static Targets */
-_EnableEnemyMarkers = true;
-
-/* Mark Trigger Area with Zone Marker*/
-_EnableZoneMarker = false;
-
-/* Mark Trigger Area with Zone Type Marker */
-_EnableZoneTypeMarker = false;
-
 Switch (_Faction) do {
 
 	case "RUSSIA":{
@@ -264,10 +248,32 @@ Switch (_Side) do
 	};
 };
 
+/* ADDITIONAL SETTINGS */
+
+/* ObjectiveTypes: ["cache","artillery","hostage","hvttruck","ammotruck","radiotower","motorpool","antiair"] If you wish to disable just remove them from the array above. */
+_ObjectiveTypes = ["cache","artillery","hostage","hvttruck","ammotruck","radiotower","motorpool","antiair"];
+
+/* CompoundSize defines in meters how large a compound is conisdered in this mission. Garrisons will spread out at this distance*/
+_CompoundSize = 25;
+
+/* EnableEnemyMarkers will place markers at enemy strongpoints & compounds populated by Static Targets */
+_EnableEnemyMarkers = true;
+
+/* Mark Trigger Area with Zone Marker*/
+_EnableZoneMarker = false;
+
+/* Mark Trigger Area with Zone Type Marker */
+_EnableZoneTypeMarker = false;
+
+/* Vehicle Type for Roadblock Vehicles - Options: _Wheeled, _APC, _Tank, _AntiAir */
+_RoadblockVehicleType = _Wheeled;
+
+
+/* Civilian Units for Hostage Objectives & HVT Objectives */
 _CivilianUnits = ["C_man_polo_1_F","C_man_polo_2_F","C_man_polo_3_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_6_F"];
 _Civilian = [_CivilianUnits,_Officer];
 
-_Configuration = [_CompoundSize,_EnableEnemyMarkers,_EnableZoneMarker,_EnableZoneTypeMarker];
 
 // DO NOT EDIT ANYTHING BELOW \\
+_Configuration = [_CompoundSize,_EnableEnemyMarkers,_EnableZoneMarker,_EnableZoneTypeMarker,_RoadblockVehicleType];
 [_Units,_SideMarker,_SideColor,_Vehicles,_Civilian,_ObjectiveTypes,_Configuration]

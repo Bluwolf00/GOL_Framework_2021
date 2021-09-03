@@ -11,8 +11,9 @@ private ["_RandomPos","_Road","_marker","_typeString","_Repetitions","_Debug_Var
 _Debug_Variable = false;
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
-_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configuration"];
 _Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Helicopter","_Transport","_Supply"];
+_Configuration Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker","_RoadblockVehicleType"];
 
 Switch (_Side) do
 {
@@ -42,7 +43,7 @@ For "_i" from 1 to _RoadblockCount do {
 	while {_Condition} do {
 
 		_Type = selectRandom [_APC,_Tank];
-		_VehicleClass = selectRandom _Type;
+		_VehicleClass = selectRandom _RoadblockVehicleType;
 
 		_Repetitions = _Repetitions + 1;
 		if(_Repetitions >= 100) then {break};
