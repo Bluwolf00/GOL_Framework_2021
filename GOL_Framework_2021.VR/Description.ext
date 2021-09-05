@@ -79,6 +79,7 @@ class Params {
 
 class CfgFunctions {
 	#include "Scripts\LARs\spawnComp\functions\functions.cpp"
+	#include "Modules\Callsigns\Functions\functions.hpp"
 };
 
 class GW_Modules_Base {
@@ -115,3 +116,6 @@ class ACE_Settings {
 		#include "Modules\Modules.cpp"
 	#undef LOAD_ACE
 };
+
+#include "Modules\Callsigns\defines.hpp"
+#include "Modules\Callsigns\dialogs.hpp"
