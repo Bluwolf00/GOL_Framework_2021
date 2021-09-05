@@ -69,11 +69,11 @@ _MAT_mag = "MRAWS_HEAT_F";
 _pistol = ["hgun_Pistol_heavy_01_F", _silencer, _pointer, "optic_MRD", _bipod];
 _pistol_mag = "11Rnd_45ACP_Mag";
 
-_silencer = "muzzle_snds_338_sand";
-_pointer = "acc_pointer_IR";
+_silencer = "";
+_pointer = "";
 _sight = "optic_LRPS";
 _bipod = "bipod_01_F_snd";
 
-_rifleMarksman = ["srifle_DMR_02_sniper_F", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "10Rnd_338_Mag";
-_rifleMarksman_mag_tr = "10Rnd_338_Mag";
+_rifleMarksman = ["srifle_DMR_06_hunter_F", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman_mag = "20Rnd_762x51_Mag";
+_rifleMarksman_mag_tr = "ACE_20Rnd_762x51_Mag_Tracer";

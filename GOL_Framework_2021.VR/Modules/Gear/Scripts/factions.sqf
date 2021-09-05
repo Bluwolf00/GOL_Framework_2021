@@ -99,11 +99,17 @@ switch (_side) do {
 	case "SOVIET-D": {
 		#include "Classes\SOVIET-D.sqf"
 	};
+	case "SOVIET-W": {
+		#include "Classes\SOVIET-W.sqf"
+	};
 	case "RUSSIAN-W": {
 		#include "Classes\RUSSIAN-W.sqf"
 	};
 	case "RUSSIAN-SF-W": {
 		#include "Classes\RUSSIAN-SF-W.sqf"
+	};
+	case "USA-CW-W": {
+		#include "Classes\USA-CW-W.sqf"
 	};
 	case "USA-W": {
 		#include "Classes\USA-W.sqf"

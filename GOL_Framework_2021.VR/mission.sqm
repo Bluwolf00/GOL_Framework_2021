@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1763;
+		nextID=1769;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5163;
+		nextID=5188;
 	};
 	class Camera
 	{
-		pos[]={90.162262,129.79358,157.72722};
-		dir[]={0.19013904,-0.28621846,0.93912297};
-		up[]={0.056798689,0.95816159,0.28053781};
-		aside[]={0.98012745,-2.3120083e-007,-0.19844124};
+		pos[]={23.88422,34.428753,75.10408};
+		dir[]={0.81477505,-0.49411833,0.30329919};
+		up[]={0.46307528,0.86939484,0.17237936};
+		aside[]={0.34886244,8.760253e-009,-0.93717515};
 	};
 };
 binarizationWanted=0;
@@ -327,7 +327,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=356;
+									items=357;
 									class Item0
 									{
 										class data
@@ -5312,6 +5312,20 @@ class CustomAttributes
 											value="ace_medical_treatment_allowselfpak";
 										};
 									};
+									class Item356
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="lambs_eventhandlers_explosioneventhandlerenabled";
+										};
+									};
 								};
 							};
 						};
@@ -5328,7 +5342,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=356;
+									items=357;
 									class Item0
 									{
 										class data
@@ -5399,7 +5413,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=1.5;
+														value=2;
 													};
 												};
 												class Item1
@@ -5849,7 +5863,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=1;
+														value=1.25;
 													};
 												};
 												class Item1
@@ -5894,7 +5908,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0.69999999;
+														value=0.60000002;
 													};
 												};
 												class Item1
@@ -6074,7 +6088,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -6119,7 +6133,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=60;
+														value=90;
 													};
 												};
 												class Item1
@@ -21587,7 +21601,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0.2;
+														value=1;
 													};
 												};
 												class Item1
@@ -21858,6 +21872,51 @@ class CustomAttributes
 															};
 														};
 														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item356
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=0;
 													};
 												};
 												class Item1
@@ -24452,11 +24511,11 @@ class Mission
 								};
 							};
 							id=413;
-							atlOffset=181.37997;
+							atlOffset=185733.09;
 						};
 					};
 					id=403;
-					atlOffset=90.689987;
+					atlOffset=92866.547;
 				};
 				class Item1
 				{
@@ -26166,7 +26225,7 @@ class Mission
 								};
 							};
 							id=423;
-							atlOffset=102370.16;
+							atlOffset=1637922.5;
 						};
 						class Item4
 						{
@@ -26301,7 +26360,7 @@ class Mission
 						};
 					};
 					id=404;
-					atlOffset=25592.539;
+					atlOffset=409480.63;
 				};
 				class Item2
 				{
@@ -28143,11 +28202,11 @@ class Mission
 								};
 							};
 							id=433;
-							atlOffset=155717.91;
+							atlOffset=2491486.5;
 						};
 					};
 					id=405;
-					atlOffset=77858.953;
+					atlOffset=1245743.3;
 				};
 				class Item3
 				{
@@ -28162,7 +28221,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={140.60153,5,163.97498};
-								angles[]={-0,1.6311014,0};
+								angles[]={0,1.6311014,0};
 							};
 							name="HC2";
 							isPlayable=1;
@@ -28176,7 +28235,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={140.36203,5,159.98212};
-								angles[]={-0,1.6311014,0};
+								angles[]={0,1.6311014,0};
 							};
 							name="HC3";
 							isPlayable=1;
@@ -28190,7 +28249,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={136.61081,5,164.21649};
-								angles[]={-0,1.6311014,0};
+								angles[]={0,1.6311014,0};
 							};
 							title="Headless Clients";
 							id=272;
@@ -28201,7 +28260,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={140.84384,5,167.96777};
-								angles[]={-0,1.6311014,0};
+								angles[]={0,1.6311014,0};
 							};
 							name="HC1";
 							isPlayable=1;
@@ -28234,7 +28293,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={59.611286,5,42.582996};
-										angles[]={-0,0.06816864,0};
+										angles[]={0,0.06816864,0};
 									};
 									title="MHQ 2";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
@@ -28246,7 +28305,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={59.674072,7.2059455,42.960644};
-										angles[]={-0,6.2772379,0};
+										angles[]={0,6.2772379,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28486,7 +28545,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={84.777382,7.1761513,43.557442};
-										angles[]={-0,0.00063570222,0};
+										angles[]={0,0.00063570222,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28528,7 +28587,7 @@ class Mission
 				};
 			};
 			id=402;
-			atlOffset=22675.143;
+			atlOffset=374229.22;
 		};
 		class Item1
 		{
@@ -28699,7 +28758,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={85.03949,5,44.121975};
-				angles[]={-0,3.9513655,0};
+				angles[]={0,3.9513655,0};
 			};
 			title="Mechanized / Motorized Setup";
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -28993,7 +29052,7 @@ class Mission
 				};
 			};
 			id=1661;
-			atlOffset=0.60879135;
+			atlOffset=0.60890102;
 		};
 		class Item9
 		{

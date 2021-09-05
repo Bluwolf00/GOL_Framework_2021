@@ -42,9 +42,11 @@ private ["_Units"];
 		{
 			_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
 			_Unit setRank "SERGEANT";
+			_Unit setUnitPos "UP";
 		} else {
 			_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
 			_Unit setRank "PRIVATE";
+			_Unit setUnitPos "UP";
 		};
 	};
 	[[_Position select 0,_Position select 1,0], nil, units _Group, _Range, 0, true, true] remoteExec ["ace_ai_fnc_garrison",0];

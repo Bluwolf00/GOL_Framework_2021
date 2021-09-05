@@ -59,11 +59,11 @@ _LAT_ReUsable = true;
 _pistol = ["hgun_Pistol_01_F", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "10Rnd_9x21_Mag";
 
-_silencer = "muzzle_snds_B";
+_silencer = "";
 _pointer = "";
-_sight = "optic_LRPS";
-_bipod = "bipod_03_F_oli";
+_sight = "rhs_acc_pso1m21";
+_bipod = "";
 
-_rifleMarksman = ["srifle_DMR_06_hunter_F", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "20Rnd_762x51_Mag";
-_rifleMarksman_mag_tr = "20Rnd_762x51_Mag";
+_rifleMarksman = ["rhs_weap_svdp_wd", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman_mag = "rhs_10Rnd_762x54mmR_7N1";
+_rifleMarksman_mag_tr = "rhs_10Rnd_762x54mmR_7N14";

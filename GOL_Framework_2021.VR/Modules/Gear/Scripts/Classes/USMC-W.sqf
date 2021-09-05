@@ -74,11 +74,8 @@ _MAT_mag_HE = "MRAWS_HE_F";
 _pistol = ["rhsusf_weap_m9", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhsusf_mag_15Rnd_9x19_FMJ";
 
-_silencer = "rhsusf_acc_m2010s_wd";
+_silencer = "";
 _pointer = "";
-_sight = "optic_LRPS";
-_bipod = "rhsusf_acc_harris_bipod";
-
-_rifleMarksman = ["rhs_weap_XM2010_wd", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "rhsusf_5Rnd_300winmag_xm2010";
-_rifleMarksman_mag_tr = "";
+_rifleMarksman = ["rhs_weap_sr25", _silencer, _pointer, "optic_dms", "bipod_01_f_blk"];
+_rifleMarksman_mag = "rhsusf_20Rnd_762x51_SR25_m993_Mag";
+_rifleMarksman_mag_tr = "rhsusf_20Rnd_762x51_SR25_m62_Mag";

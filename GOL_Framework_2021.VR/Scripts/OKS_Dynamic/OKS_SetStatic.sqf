@@ -4,4 +4,4 @@
 	Params ["_Group"];
 
 	_Units = units _Group;
-	{_X disableAI "PATH"; _X setUnitPos (selectRandom ["UP","MIDDLE"])} foreach _Units;
+	{_X disableAI "PATH"; _X setUnitPos "UP"} foreach _Units;

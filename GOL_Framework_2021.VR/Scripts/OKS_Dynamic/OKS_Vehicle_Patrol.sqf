@@ -42,7 +42,7 @@
 			_SafePos = getPos _Road;
 			private _info = getRoadInfo _Road;
 			_Dir = (_info select 6) getDir (_info select 7);
-			if(_SafePos inArea _Area && !(_SafePos isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && ((getRoadInfo _Road) select 0) != "TRAIL") exitWith {};
+			if(_SafePos inArea _Area && ((getRoadInfo _Road) select 0) != "TRAIL") exitWith {};
 			if(_Repetitions > 30) exitWith {};
 		};
 

@@ -67,7 +67,7 @@ _MAT_mag = "MRAWS_HEAT_F";
 _pistol = ["rhsusf_weap_glock17g4", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhsusf_mag_17Rnd_9x19_JHP";
 
-_silencer = "uk3cb_baf_silencer_l115a3";
+_silencer = "";
 _pointer = "";
 _sight = "optic_LRPS";
 _bipod = "";

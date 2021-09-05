@@ -55,7 +55,7 @@ For "_i" from 1 to _RoadblockCount do {
 			if(_Debug_Variable) then {
 				//systemChat format ["Tarmac RoadBlock: %1",(!(isNull _Road) && {_Road Distance _X < 300} count OKS_RoadBlock_Positions < 1 && (getPos _Road) inArea _MainTrigger && [_Road] call OKS_CheckRoadConnections && [_Road] call OKS_CheckIfTarmac)];
 			};
-			if(!(getPos _Road isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && {_Road Distance _X < 300} count OKS_RoadBlock_Positions < 1 && (getPos _Road) inArea _MainTrigger && [_Road] call OKS_CheckRoadConnections && [_Road] call OKS_CheckIfTarmac) exitWith { if(_Debug_Variable) then {
+			if(!((getRoadInfo _Road select 0) isEqualTo "TRAIL") && !(getPos _Road isFlatEmpty  [-1, -1, 0.15, 25, 0] isEqualTo []) && {_Road Distance _X < 300} count OKS_RoadBlock_Positions < 1 && (getPos _Road) inArea _MainTrigger && [_Road] call OKS_CheckRoadConnections && [_Road] call OKS_CheckIfTarmac) exitWith { if(_Debug_Variable) then {
 				systemChat format ["Road Found: %1",_Road]}; _Condition = false};
 		} else {
 			if(_Debug_Variable) then {

@@ -27,26 +27,26 @@ _HuntArray Params ["_InfantryCount","_WheeledCount","_APCCount","_TankCount","_H
 		{
 			_SideMarker = "B_";
 			_SideColor = "ColorBlufor";
-			_BaseType = "USMC_WarfareBBarracks";
+			_BaseType = "USMC_WarfareB";
 		};
 		case OPFOR:		// OPFOR settings
 		{
 			_SideMarker = "O_";
 			_SideColor = "ColorOpfor";
-			_BaseType = "RU_WarfareBBarracks";
+			_BaseType = "RU_WarfareB";
 		};
 		case INDEPENDENT:	// INDEPENDENT Settings
 		{
 			_SideMarker = "N_";
 			_SideColor = "ColorIndependent";
-			_BaseType = "Ins_WarfareBBarracks";
+			_BaseType = "Ins_WarfareB";
 		};
 
 		default
 		{
 			_SideMarker = "O_";
 			_SideColor = "ColorOpfor";
-			_BaseType = "RU_WarfareBBarracks";
+			_BaseType = "RU_WarfareB";
 		};
 	};
 
@@ -57,8 +57,8 @@ Private _FindAndSpawnHuntBase = {
 	*/
 	Params["_MainTrigger","_Side","_Vehicles","_BaseType","_Type","_Respawn","_Waves","_Refresh","_SideMarker","_SideColor","_Configurations"];
 	_Configurations Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker"];
-	Private ["_SelectedPos","_Repetitions","_RandomPos","_Base","_Spawn","_marker","_SizeMarker","_Location","_Position"];
-	private _Debug_Variable = true;
+	Private ["_SelectedPos","_Repetitions","_RandomPos","_Base","_Spawn","_marker","_SizeMarker","_Location","_Position","_BaseDir","_BaseDistance"];
+	private _Debug_Variable = false;
 
 	_Repetitions = 0;
 	Private _LocationsInArea = OKS_HuntLocations select {_X inArea _MainTrigger};
@@ -67,6 +67,7 @@ Private _FindAndSpawnHuntBase = {
 		_Location = SelectRandom _LocationsInArea;
 		OKS_HuntLocations deleteAt (OKS_HuntLocations find _Location);
 		_SelectedPos = getPos _Location;
+		_BaseDir = getDir _Location;
 		if(_Debug_Variable) then { SystemChat format ["HuntBase Logic found."]};
 
 	} else {
@@ -89,29 +90,45 @@ Private _FindAndSpawnHuntBase = {
 	if(_Repetitions > 30 || _SelectedPos isEqualTo [0,0,0]) exitWith { if(_Debug_Variable) then {systemChat "Failed to Find Hunt Position"} };
 
 	OKS_Hunt_Positions pushBackUnique _SelectedPos;
-	_Base = createVehicle [_BaseType, _SelectedPos, [], 0, "NONE"];
-	OKS_Objective_Positions pushBackUnique _Base;
-	_Spawn = createVehicle ["Land_ClutterCutter_small_F", _SelectedPos getPos [20,(random 360)], [], 0, "NONE"];
-	publicVariable "OKS_Hunt_Positions";
 
 	Switch (_Type) do {
 		case "INFANTRY":{
 			_sideMarker = _sideMarker + "inf";
+			_BaseType = _BaseType + "Barracks";
+			_BaseDistance = 15;
 		};
 		case "WHEELED":{
 			_sideMarker = _sideMarker + "motor_inf";
+			_BaseType = _BaseType + "LightFactory";
+			_BaseDistance = 20;
 		};
 		case "APC":{
 			_sideMarker = _sideMarker + "mech_inf";
+			_BaseType = _BaseType + "HeavyFactory";
+			_BaseDistance = 20;
 		};
 		case "TANK":{
 			_sideMarker = _sideMarker + "armor";
+			_BaseType = _BaseType + "HeavyFactory";
+			_BaseDistance = 20;
 		};
 		case "HELICOPTER":{
 			_sideMarker = _sideMarker + "air";
+			_BaseType = _BaseType + "AircraftFactory";
+			_BaseDistance = 25;
 		};
 	};
 
+	_Base = createVehicle [_BaseType, _SelectedPos, [], 0, "NONE"];
+	OKS_Objective_Positions pushBackUnique _Base;
+	if(isNil "_BaseDir") then {
+		_BaseDir = random 360;
+		_Base setDir _BaseDir;
+	} else {
+		_Base setDir _BaseDir;
+	};
+	_Spawn = createVehicle ["Land_ClutterCutter_small_F", _SelectedPos getPos [15,_BaseDir], [], 0, "NONE"];
+	publicVariable "OKS_Hunt_Positions";
 	if(_EnableEnemyMarkers) then {
 		_marker = createMarker [format ["OKS_HuntBase_Marker_%1",str (random 5000)],_SelectedPos];
 		_marker setMarkerShape "ICON";

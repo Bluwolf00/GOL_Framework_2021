@@ -62,7 +62,7 @@ _LAT_ReUsable = true;
 _pistol = ["hgun_Pistol_01_F", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "10Rnd_9x21_Mag";
 
-_silencer = "muzzle_snds_B";
+_silencer = "";
 _pointer = "";
 _sight = "optic_LRPS";
 _bipod = "bipod_03_F_oli";

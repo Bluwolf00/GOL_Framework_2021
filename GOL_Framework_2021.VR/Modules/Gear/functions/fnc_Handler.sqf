@@ -59,7 +59,7 @@ private [
 	"_LAT","_LAT_mag","_LAT_mag_HE","_LAT_ReUsable",
 	"_MAT","_MAT_mag","_MAT_mag_HE",
 	"_pistol","_pistol_mag","_pistol_mag_tr",
-	"_useFactionRadio","_roleUseRadio","_useMineDetector","_mortarRangeCard"
+	"_useFactionRadio","_roleUseRadio","_useMineDetector","_mortarRangeCard","_ATrag","_Kestrel"
 ];
 
 params [

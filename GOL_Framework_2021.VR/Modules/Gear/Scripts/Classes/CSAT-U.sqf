@@ -62,8 +62,8 @@ _LAT_ReUsable = true;
 _pistol = ["hgun_Rook40_F", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "16Rnd_9x21_Mag";
 
-_silencer = "muzzle_snds_93mmg";
-_pointer = "acc_pointer_IR";
+_silencer = "";
+_pointer = "";
 _sight = "optic_LRPS";
 _bipod = "bipod_02_F_blk";
 
