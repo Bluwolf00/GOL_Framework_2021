@@ -75,7 +75,7 @@ class ace_medical_playerDamageThreshold {
 	force = 1;
 };
 class ace_medical_AIDamageThreshold {
-	value = 0.6;
+	value = 0.8;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -120,7 +120,7 @@ class ace_medical_bleedingCoefficient {
 	force = 0;
 };
 class ace_medical_painCoefficient {
-	value = 0.8;
+	value = 0.7;
 	typeName = "SCALAR";
 	force = 0;
 };

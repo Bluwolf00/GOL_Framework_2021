@@ -2,7 +2,8 @@
 	// [5,getPos player,east,["O_Soldier_F"],30] spawn OKS_Garrison_Compound;
 	if(HasInterface && !isServer) exitWith {};
 
-	Params ["_NumberInfantry","_Position","_Side","_Units","_Range"];
+	Params ["_NumberInfantry","_Position","_Side","_UnitArray","_Range"];
+	_UnitArray Params ["_Leaders","_Units","_Officer"];
 	Private ["_GarrisonPositions","_GarrisonMaxSize","_GarrisonMaxSize","_Unit"];
 		Private _Debug_Variable = false;
 
@@ -12,13 +13,14 @@
 			Private "_Unit";
 			if ( (count (units _Group)) == 0 ) then
 			{
-				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _Position, [], 0, "NONE"];
+				_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), _Position, [], 0, "NONE"];
 				_Unit setRank "SERGEANT";
 			} else {
 				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _Position getPos [(random 8),(random 360)], [], 0, "NONE"];
 				_Unit setRank "PRIVATE";
 
 			};
+			if(_Debug_Variable) then {SystemChat format ["%1 Pos %2",group _unit,getPos _Unit]};
 			_Unit disableAI "PATH";
 			_Unit setUnitPos (selectRandom ["UP","MIDDLE"]);
 			sleep 0.2;

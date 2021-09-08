@@ -225,6 +225,9 @@ if (_isMan) then {
 				[_unit, "B_UavTerminal", 10] call _fnc_AddObjectsCargo;
 				[_unit, "O_UavTerminal", 10] call _fnc_AddObjectsCargo;
 				[_unit, "I_UavTerminal", 10] call _fnc_AddObjectsCargo;
+				if(!(_LAT_ReUsable)) then {
+					[_unit, (_LAT select 0), 10] call _fnc_AddObjectsCargo;
+				};
 				if (GVARMAIN(mod_ACE3)) then {
 					[_unit, "ACE_EarPlugs", 50] call _fnc_AddObjectsCargo;
 					if (isClass (configFile >> "CfgPatches" >> "GW_StaticWeapons")) then {

@@ -10,17 +10,17 @@ class ace_advanced_fatigue_enableStaminaBar {
 	force = 1;
 };
 class ace_advanced_fatigue_performanceFactor {
-	value = 1.25;
+	value = 1;
 	typeName = "SCALAR";
 	force = 1;
 };
 class ace_advanced_fatigue_recoveryFactor {
-	value = 3;
+	value = 3.5;
 	typeName = "SCALAR";
 	force = 1;
 };
 class ace_advanced_fatigue_loadFactor {
-	value = 0.7;
+	value = 0.6;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -484,13 +484,13 @@ class emr_main_allowMidairClimbing {
 
 
 class emr_main_animSpeedCoef {
-	value = 0.8;
+	value = 0.9;
 	typeName = "SCALAR";
 	force = 1;
 };
 
 class emr_main_animSpeedStaminaCoef {
-	value = 0.4;
+	value = 0.5;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -502,7 +502,7 @@ class emr_main_climbingEnabled {
 };
 
 class emr_main_climbOnDuty {
-	value = 3.4;
+	value = 3.5;
 	typeName = "SCALAR";
 	force = 1;
 };
@@ -586,13 +586,13 @@ class emr_main_maxWeightClimb1 {
 };
 
 class emr_main_maxWeightClimb2 {
-	value = 83;
+	value = 90;
 	typeName = "SCALAR";
 	force = 1;
 };
 
 class emr_main_maxWeightClimb3 {
-	value = 70;
+	value = 90;
 	typeName = "SCALAR";
 	force = 1;
 };

@@ -12,10 +12,11 @@
 if(!isServer) exitWith {};
 
 	Params ["_Position","_TypeOfObjective","_Range","_Side","_ObjectivePatrols"];
-	private ["_marker","_Condition","_playerSide","_trg","_EnemySideString","_playerSideString","_playerColor","_Area","_SpawnPos","_Repetitions","_Debug_Variable","_LocationsInArea"];
+	private ["_marker","_Condition","_playerSide","_trg","_EnemySideString","_playerSideString","_playerColor","_Area","_SpawnPos","_Repetitions","_Debug_Variable","_LocationsInArea","_Dir"];
 
 	_Settings = [_Side] call OKS_Dynamic_Setting;
-	_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+	_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+	_UnitArray Params ["_Leaders","_Units","_Officer"];
 	_Civilian Params ["_CivilianUnits","_HVT"];
 	_Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Helicopter","_Transport","_Supply","_AntiAir"];
 
@@ -28,11 +29,12 @@ if(!isServer) exitWith {};
 			_Position = getPos _Position;
 			Private _LocationsInArea = OKS_Objectives select {_X inArea _Area};
 
-			if(!(_TypeOfObjective in ["sector","hostage","ammotruck","hvttruck"])  && count _LocationsInArea > 0) then {
+			if(!(_TypeOfObjective in ["sector","hostage","ammotruck","hvttruck"]) && count _LocationsInArea > 0) then {
 				_Location = SelectRandom _LocationsInArea;
 				OKS_Objectives deleteAt (OKS_Objectives find _Location);
 				_Position = getPos _Location;
 				_Area = nil;
+				_Dir = getdir _Location;
 				if(_Debug_Variable) then { SystemChat format ["Objective Logic found."]};
 			};
 		};
@@ -142,8 +144,12 @@ switch (_TypeOfObjective) do {
 		OKS_Objective_Positions pushBackUnique _SpawnPos;
 		publicVariable "OKS_Objective_Positions";
 
-		_Crate = CreateVehicle [_ammoCrate, [_SpawnPos select 0,_SpawnPos select 1,0.5], [], 0, "NONE"];
-		_Crate setDir (random 360);
+		_Crate = CreateVehicle [_ammoCrate, [_SpawnPos select 0,_SpawnPos select 1,0.5], [], 0, "CAN_COLLIDE"];
+
+		if(isNil "_Dir") then {
+			_Dir = (random 360);
+		};
+		_Crate setDir _Dir;
 		_Crate setVehicleVarName format["OKS_Crate_%1",round(random 9999)];
 		_Crate allowDamage true;
 		_Crate enableSimulation true;
@@ -165,7 +171,7 @@ switch (_TypeOfObjective) do {
 		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
 
 		if(_ObjectivePatrols) then {
-			[_Crate getPos [25,(random 360)],5,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+			[_Crate getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
 		};
 	};
 
@@ -193,20 +199,23 @@ switch (_TypeOfObjective) do {
 
 		OKS_Objective_Positions pushBackUnique _SpawnPos;
 		publicVariable "OKS_Objective_Positions";
-		_Crate = CreateVehicle [_SupplyTruck, [_SpawnPos select 0,_SpawnPos select 1,0.5], [], 0, "NONE"];
-		_Crate setDir (random 360);
+		_Crate = CreateVehicle [_SupplyTruck, [_SpawnPos select 0,_SpawnPos select 1,0.5], [], 0, "CAN_COLLIDE"];
+		if(isNil "_Dir") then {
+			_Dir = (random 360);
+		};
+		_Crate setDir _Dir;
 		_Crate setVehicleVarName format["OKS_MotorPool_%1",round(random 9999)];
 		_Crate allowDamage true;
 		_Crate enableSimulation true;
 
 		_AmmoCamp = selectRandom ["AmmoCampSite_3"];
-		[_AmmoCamp,getPos _Crate, [0,0,0], getDir _Crate] call LARs_fnc_spawnComp;
+		[_AmmoCamp,getPos _Crate, [0,0,0], _Dir] call LARs_fnc_spawnComp;
 		_trg = createTrigger ["EmptyDetector", GetPos _Crate, true];
 		_trg setTriggerArea [15000,15000,0,false,1000];
 		_trg setTriggerActivation ["STATIC","NOT PRESENT",false];
 		_trg setTriggerTimeout [5, 7, 10, true];
 		_trg triggerAttachVehicle [_Crate];
-		SystemChat str _SpawnPos;
+		//SystemChat str _SpawnPos;
 		[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
 
 		//systemChat format["OKS_Sector_Objective_%1",(round(random 9000))];
@@ -215,8 +224,8 @@ switch (_TypeOfObjective) do {
 		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
 
 		if(_ObjectivePatrols) then {
-			[_Crate getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
-			[_Crate getPos [25,(random 360)],4,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+			[_Crate getPos [25,(random 360)],4,150,_Side] spawn OKS_Patrol_Spawn;
+			[_Crate getPos [25,(random 360)],4,150,_Side] spawn OKS_Patrol_Spawn;
 		};
 	};
 
@@ -304,11 +313,14 @@ switch (_TypeOfObjective) do {
 
 		_towerclass = selectRandom ["radiotower_1"];
 
-		systemChat str [_towerclass,_SpawnPos];
-		[_towerclass,[_SpawnPos select 0,_SpawnPos select 1,0], [0,0,0], random 360] call LARs_fnc_spawnComp;
+		if(isNil "_Dir") then {
+			_Dir = (random 360);
+		};
+		//systemChat str [_towerclass,_SpawnPos];
+		[_towerclass,[_SpawnPos select 0,_SpawnPos select 1,0], [0,0,0], _Dir] call LARs_fnc_spawnComp;
 		sleep 2;
 		_Tower = nearestObject [_SpawnPos, "Land_Vysilac_FM"];
-		systemChat str _Tower;
+		//systemChat str _Tower;
 		_Tower setVehicleVarName format["OKS_RadioTower_%1",round(random 9999)];
 		_Tower allowDamage true;
 		_Tower enableSimulation true;
@@ -320,8 +332,8 @@ switch (_TypeOfObjective) do {
 		[_Task,"radio"] call BIS_fnc_taskSetType;
 
 		if(_ObjectivePatrols) then {
-			[_SpawnPos getPos [25,(random 360)],3,150,_Side,_Units] spawn OKS_Patrol_Spawn;
-			[_SpawnPos getPos [25,(random 360)],3,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+			[_SpawnPos getPos [25,(random 360)],3,150,_Side] spawn OKS_Patrol_Spawn;
+			[_SpawnPos getPos [25,(random 360)],3,150,_Side] spawn OKS_Patrol_Spawn;
 		};
 		[_Tower,_Task] spawn { waitUntil{sleep 10; !Alive (_this select 0) || getDammage (_this select 0) > 0.8}; [_this select 1,'SUCCEEDED'] call BIS_fnc_taskSetState };
 	};
@@ -357,7 +369,7 @@ switch (_TypeOfObjective) do {
 		private _CargoSeats = (([TypeOf _Truck,true] call BIS_fnc_crewCount) - ([TypeOf _Truck,false] call BIS_fnc_crewCount) - 1);
 		if(_CargoSeats > 6) then {_CargoSeats = 6};
 		_Group = CreateGroup _Side;
-		_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,0], [], 0, "NONE"];
+		_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [0,0,0], [], 0, "NONE"];
 		_Unit setRank "SERGEANT";
 		_Unit MoveInDriver _Truck;
 
@@ -443,8 +455,11 @@ switch (_TypeOfObjective) do {
 		if(_SpawnPos distance [0,0,0] < 300) exitWith { if(_Debug_Variable) then {SystemChat "Location found near SW edge of map. Exiting..."}};
 		OKS_Objective_Positions pushBackUnique _SpawnPos;
 
-		_Arty = CreateVehicle [_Artillery, [_SpawnPos select 0,_SpawnPos select 1,1], [], 0, "NONE"];
-		_Arty setDir (random 360);
+		_Arty = CreateVehicle [_Artillery, [_SpawnPos select 0,_SpawnPos select 1,1], [], 0, "CAN_COLLIDE"];
+		if(isNil "_Dir") then {
+			_Dir = (random 360);
+		};
+		_Arty setDir _Dir;
 		_trg = createTrigger ["EmptyDetector", GetPos _Arty, true];
 		_trg setTriggerActivation ["VEHICLE","NOT PRESENT",false];
 		_trg setTriggerTimeout [5, 7, 10, true];
@@ -457,7 +472,7 @@ switch (_TypeOfObjective) do {
 			[_Task,[_Arty,true]] call BIS_fnc_taskSetDestination;
 
 			if(_ObjectivePatrols) then {
-				[_Arty getPos [25,(random 360)],5,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+				[_Arty getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
 			};
 
 		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
@@ -517,7 +532,10 @@ switch (_TypeOfObjective) do {
 		if(_SpawnPos distance [0,0,0] < 300) exitWith { if(_Debug_Variable) then {SystemChat "Location found near SW edge of map. Exiting..."}};
 		OKS_Objective_Positions pushBackUnique _SpawnPos;
 		_AA = CreateVehicle [_AntiAir, [_SpawnPos select 0,_SpawnPos select 1,1], [], 0, "NONE"];
-		_AA setDir (random 360);
+		if(isNil "_Dir") then {
+			_Dir = (random 360);
+		};
+		_AA setDir _Dir;
 		_trg = createTrigger ["EmptyDetector", GetPos _AA, true];
 		_trg setTriggerActivation ["VEHICLE","NOT PRESENT",false];
 		_trg setTriggerTimeout [5, 7, 10, true];
@@ -530,7 +548,7 @@ switch (_TypeOfObjective) do {
 			[_Task,[_AA,true]] call BIS_fnc_taskSetDestination;
 
 			if(_ObjectivePatrols) then {
-				[_AA getPos [25,(random 360)],5,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+				[_AA getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
 			};
 
 		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
@@ -598,7 +616,7 @@ switch (_TypeOfObjective) do {
 			Private "_Unit";
 			if ( (count (units _Group)) == 0 ) then
 			{
-				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
+				_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
 				_Unit setRank "SERGEANT";
 			} else {
 				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
@@ -631,8 +649,8 @@ switch (_TypeOfObjective) do {
 		[_Task,[_House,true]] call BIS_fnc_taskSetDestination;
 
 		if(_ObjectivePatrols) then {
-			[_House getPos [35,(random 360)],3,120,_Side,_Units] spawn OKS_Patrol_Spawn;
-			[_House getPos [35,(random 360)],3,120,_Side,_Units] spawn OKS_Patrol_Spawn;
+			[_House getPos [35,(random 360)],3,120,_Side] spawn OKS_Patrol_Spawn;
+			[_House getPos [35,(random 360)],3,120,_Side] spawn OKS_Patrol_Spawn;
 		};
 
 		waitUntil {sleep 10; {!alive _X || _X distance _Target < 300} count (units _HostageGroup) isEqualTo count (units _HostageGroup)};

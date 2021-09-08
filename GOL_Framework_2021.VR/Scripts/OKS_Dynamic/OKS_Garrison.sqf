@@ -2,7 +2,8 @@
 	// [5,nearestBuilding player,east,["O_Soldier_F"]] spawn OKS_Garrison_Compound;
 	if(HasInterface && !isServer) exitWith {};
 
-	Params ["_NumberInfantry","_House","_Side","_Units"];
+	Params ["_NumberInfantry","_House","_Side","_UnitArray"];
+	_UnitArray Params ["_Leaders","_Units","_Officer"];
 	Private ["_GarrisonPositions","_GarrisonMaxSize","_GarrisonMaxSize","_Unit"];
 
 	_GarrisonPositions = [_House] call BIS_fnc_buildingPositions;
@@ -15,7 +16,7 @@
 		{
 			if ( (count (units _Group)) == 0 ) then
 			{
-				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _X, [], 0, "NONE"];
+				_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), _X, [], 0, "NONE"];
 				_Unit setRank "SERGEANT";
 			} else {
 				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _X, [], 0, "NONE"];
@@ -33,7 +34,7 @@
 			Private "_Unit";
 			if ( (count (units _Group)) == 0 ) then
 			{
-				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,0], [], 0, "NONE"];
+				_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [0,0,0], [], 0, "NONE"];
 				_Unit setRank "SERGEANT";
 			} else {
 				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,0], [], 0, "NONE"];

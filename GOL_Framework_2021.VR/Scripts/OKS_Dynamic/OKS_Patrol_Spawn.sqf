@@ -5,11 +5,12 @@
 
  	if(!isServer) exitWith {};
 
-	Params ["_Area","_NumberInfantry","_Range","_Side","_Units"];
+	Params ["_Area","_NumberInfantry","_Range","_Side"];
 	private ["_Spawnpos","_RandomPos"];
 
 	_Settings = [_Side] call OKS_Dynamic_Setting;
-	_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_Trigger"];
+	_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian","_Trigger"];
+	_UnitArray Params ["_Leaders","_Units","_Officer"];
 
 		if(typeName _Area == "ARRAY") then {
 			_SpawnPos = _Area;
@@ -29,7 +30,7 @@
 			Private "_Unit";
 			if ( (count (units _Group)) == 0 ) then
 			{
-				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_SpawnPos select 0,_SpawnPos select 1,0], [], 30, "NONE"];
+				_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [_SpawnPos select 0,_SpawnPos select 1,0], [], 30, "NONE"];
 				_Unit setRank "SERGEANT";
 			} else {
 				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_SpawnPos select 0,_SpawnPos select 1,0], [], 30, "NONE"];

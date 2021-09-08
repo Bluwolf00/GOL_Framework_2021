@@ -5,7 +5,8 @@
 	Private ["_SafePos","_nearRoads","_road","_roadConnectedTo","_connectedRoad","_direction","_VehicleWaypoints","_SelectedVehicles","_Debug_Variable","_Dir","_Group"];
 
 	_Settings = [_Side] call OKS_Dynamic_Setting;
-	_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+	_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+	_UnitArray Params ["_Leaders","_Units","_Officer"];
 
 	_Debug_Variable = false;
 	_Dir = round(Random 360);
@@ -73,7 +74,7 @@
 					};
 
 					///Create Leader
-					_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,50], [], 0, "NONE"];
+					_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [0,0,50], [], 0, "NONE"];
 					_Unit setRank "SERGEANT";
 					_Unit MoveInCargo _Vehicle;
 					_Group selectLeader _Unit;

@@ -8,6 +8,7 @@ OKS_Locations = OKS_Logics select {typeOf _X in ["LocationCamp_F","LocationResup
 OKS_Compounds = OKS_Logics select {typeOf _X in ["LocationBase_F","LocationOutpost_F"]};
 OKS_Objectives = OKS_Logics select {typeOf _X in ["LocationCamp_F"]};
 OKS_HuntLocations = OKS_Logics select {typeOf _X in ["LocationRespawnPoint_F"]};
+OKS_RoadBlocks = OKS_Logics select {typeOf _X in ["LocationFOB_F"]};
 
 // Functions
 OKS_Dynamic_Setting = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\Settings.sqf";

@@ -13,19 +13,19 @@
 
     switch (_side) do {
         case WEST: {
-            _unitClass = "B_Soldier_F";
+            _unitClass = "B_crew_F";
         };
 
         case EAST: {
-            _unitClass = "O_Soldier_F";
+            _unitClass = "O_crew_F";
         };
 
         case INDEPENDENT: {
-            _unitClass = "I_Soldier_F";
+            _unitClass = "I_crew_F";
         };
 
         default {
-            _unitClass = "O_Soldier_F";
+            _unitClass = "O_crew_F";
         };
     };
 

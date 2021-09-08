@@ -44,7 +44,7 @@
 				_StaticGroup = CreateGroup _Side;
 				if(!(_Statics isEqualTo [])) then {
 					{
-						_Unit = _StaticGroup CreateUnit [(_Units call BIS_FNC_selectRandom), _Position, [], 5, "NONE"];
+						_Unit = _StaticGroup CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,0], [], 5, "NONE"];
 						_Unit setRank "PRIVATE";
 						//systemChat str [_Unit,_X];
 						_Unit assignAsGunner _X;
@@ -61,7 +61,7 @@
 
 				if(!(_Statics isEqualTo [])) then {
 					{
-						_Unit = _StaticGroup CreateUnit [(_Units call BIS_FNC_selectRandom), _Position, [], 5, "NONE"];
+						_Unit = _StaticGroup CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,0], [], 5, "NONE"];
 						_Unit setRank "PRIVATE";
 						//systemChat str [_Unit,_X];
 						_Unit assignAsGunner _X;

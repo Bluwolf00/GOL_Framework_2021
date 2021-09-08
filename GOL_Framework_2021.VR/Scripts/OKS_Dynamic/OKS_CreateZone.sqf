@@ -225,12 +225,21 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 				{[_X,5,_MainTriggerSizeA * 0.5,_Side] spawn OKS_Patrol_Spawn; sleep 10;} foreach _SpawnTriggers
 			};
 		};
+		sleep 20;
+	};
 
+	/* Create Objectives Main Area */
+	SystemChat format ["Objective Count: %1",_Objectives];
+	if(_Objectives > 0) then {
+		Private ["_RandomObjective"];
+		For "_i" to (_Objectives - 1) do {
+			_RandomObjective = selectRandom _ObjectiveTypes;
+			[_MainTrigger,_RandomObjective,300,_Side,_ObjectivePatrols] spawn OKS_CreateObjectives;
+			sleep 15;
+		};
 	};
 
 	/* Create Vehicle Patrols for each sub-trigger */
-	sleep 30;
-
 	if(_Debug_Variable) then {
 		SystemChat format ["Total %1 Wheeled",_WheeledCount];
 	};
@@ -267,18 +276,6 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		if (_TankPerTrigger isEqualTo 0) then { _TankPerTrigger = 1 };
 		{[_X,_TankPerTrigger,_MainTriggerSizeA,"TANK",_Side] spawn OKS_Vehicle_Patrol; sleep 25;} foreach _SpawnTriggers;
 		sleep (_TankCount * 5);
-	};
-
-	/* Create Objectives Main Area */
-	SystemChat format ["Objective Count: %1",_Objectives];
-	if(_Objectives > 0) then {
-		Private ["_RandomObjective"];
-		For "_i" to (_Objectives - 1) do {
-			_RandomObjective = selectRandom _ObjectiveTypes;
-			[_MainTrigger,_RandomObjective,300,_Side,_ObjectivePatrols] spawn OKS_CreateObjectives;
-			sleep 15;
-		};
-		sleep 20;
 	};
 
 

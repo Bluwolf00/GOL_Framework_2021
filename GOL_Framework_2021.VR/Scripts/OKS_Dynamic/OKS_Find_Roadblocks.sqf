@@ -6,12 +6,13 @@
 if(!isServer) exitWith {};
 
 Params ["_MainTrigger","_RoadblockCount","_Side","_OnlyTarmac","_RoadblockPatrols","_VehicleChance"];
-private ["_RandomPos","_Road","_marker","_typeString","_Repetitions","_Debug_Variable","_Condition","_RoadPos","_Type","_VehicleClass"];
+private ["_RandomPos","_Road","_marker","_typeString","_Repetitions","_Debug_Variable","_Condition","_RoadPos","_Type","_VehicleClass","_BaseDir","_SelectedPos","_Location"];
 
 _Debug_Variable = false;
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
-_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configuration"];
+_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configuration"];
+_UnitArray Params ["_Leaders","_Units","_Officer"];
 _Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Helicopter","_Transport","_Supply"];
 _Configuration Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker","_RoadblockVehicleType"];
 
@@ -39,39 +40,51 @@ Switch (_Side) do
 For "_i" from 1 to _RoadblockCount do {
 
 	_Repetitions = 0;
+	_VehicleClass = selectRandom _RoadblockVehicleType;
+
 	private _Condition = true;
-	while {_Condition} do {
 
-		_Type = selectRandom [_APC,_Tank];
-		_VehicleClass = selectRandom _RoadblockVehicleType;
+	Private _LocationsInArea = OKS_Roadblocks select {_X inArea _MainTrigger};
+	if(count _LocationsInArea > 0) then {
+		_Location = SelectRandom _LocationsInArea;
+		OKS_Roadblocks deleteAt (OKS_Roadblocks find _Location);
+		_SelectedPos = getPos _Location;
+		_BaseDir = getDir _Location;
+		_Road = [_SelectedPos, 20] call BIS_fnc_nearestRoad;
+		if(_Debug_Variable) then { SystemChat format ["HuntBase Logic found."]};
+	} else {
+		while {_Condition} do {
 
-		_Repetitions = _Repetitions + 1;
-		if(_Repetitions >= 100) then {break};
-		_RandomPos = _MainTrigger call BIS_fnc_randomPosTrigger;
-		_Road = [_RandomPos,500] call BIS_fnc_nearestRoad;
+			_Repetitions = _Repetitions + 1;
+			if(_Repetitions >= 100) then {break};
+			_RandomPos = _MainTrigger call BIS_fnc_randomPosTrigger;
+			_Road = [_RandomPos,500] call BIS_fnc_nearestRoad;
 
-		if(_OnlyTarmac) then {
+			if(_OnlyTarmac) then {
 
-			if(_Debug_Variable) then {
-				//systemChat format ["Tarmac RoadBlock: %1",(!(isNull _Road) && {_Road Distance _X < 300} count OKS_RoadBlock_Positions < 1 && (getPos _Road) inArea _MainTrigger && [_Road] call OKS_CheckRoadConnections && [_Road] call OKS_CheckIfTarmac)];
+				if(_Debug_Variable) then {
+					//systemChat format ["Tarmac RoadBlock: %1",(!(isNull _Road) && {_Road Distance _X < 300} count OKS_RoadBlock_Positions < 1 && (getPos _Road) inArea _MainTrigger && [_Road] call OKS_CheckRoadConnections && [_Road] call OKS_CheckIfTarmac)];
+				};
+				if(!((getRoadInfo _Road select 0) isEqualTo "TRAIL") && !(getPos _Road isFlatEmpty  [-1, -1, 0.15, 25, 0] isEqualTo []) && {_Road Distance _X < 300} count OKS_RoadBlock_Positions < 1 && (getPos _Road) inArea _MainTrigger && [_Road] call OKS_CheckRoadConnections && [_Road] call OKS_CheckIfTarmac) exitWith { if(_Debug_Variable) then {
+					systemChat format ["Road Found: %1",_Road]}; _Condition = false};
+			} else {
+				if(_Debug_Variable) then {
+					//systemChat format ["Non Tarmac Road Block: %1",(!(getPos _Road isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && !(isNull _Road) && {_Road Distance _X < 300} count OKS_RoadBlock_Positions < 1 && (getPos _Road) inArea _MainTrigger && [_Road] call OKS_CheckRoadConnections)];
+				};
+				if( !((getRoadInfo _Road select 0) isEqualTo "TRAIL") && !(getPos _Road isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && {_Road Distance _X < 300} count OKS_RoadBlock_Positions < 1 && (getPos _Road) inArea _MainTrigger && [_Road] call OKS_CheckRoadConnections) exitWith { if(_Debug_Variable) then {
+					systemChat format ["Non Tarmac Road Found: %1",_Road]}; _Condition = false};
 			};
-			if(!((getRoadInfo _Road select 0) isEqualTo "TRAIL") && !(getPos _Road isFlatEmpty  [-1, -1, 0.15, 25, 0] isEqualTo []) && {_Road Distance _X < 300} count OKS_RoadBlock_Positions < 1 && (getPos _Road) inArea _MainTrigger && [_Road] call OKS_CheckRoadConnections && [_Road] call OKS_CheckIfTarmac) exitWith { if(_Debug_Variable) then {
-				systemChat format ["Road Found: %1",_Road]}; _Condition = false};
-		} else {
-			if(_Debug_Variable) then {
-				//systemChat format ["Non Tarmac Road Block: %1",(!(getPos _Road isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && !(isNull _Road) && {_Road Distance _X < 300} count OKS_RoadBlock_Positions < 1 && (getPos _Road) inArea _MainTrigger && [_Road] call OKS_CheckRoadConnections)];
-			};
-			if( !((getRoadInfo _Road select 0) isEqualTo "TRAIL") && !(getPos _Road isFlatEmpty  [-1, -1, 0.05, 15, 0] isEqualTo []) && {_Road Distance _X < 300} count OKS_RoadBlock_Positions < 1 && (getPos _Road) inArea _MainTrigger && [_Road] call OKS_CheckRoadConnections) exitWith { if(_Debug_Variable) then {
-				systemChat format ["Non Tarmac Road Found: %1",_Road]}; _Condition = false};
+			sleep 0.5;
 		};
-		sleep 0.5;
 	};
-	if(_Repetitions > 100) exitWith { if(_Debug_Variable) then {systemChat "Failed to Find Roadblock Position"} };
+	if(_Repetitions > 100 || isNil "_Road") exitWith { if(_Debug_Variable) then {systemChat "Failed to Find Roadblock Position"} };
 
 	if(!isNil "_Road") then {
 		if(_Debug_Variable) then {systemChat "_Road Exists."};
 		_RoadInfo = getRoadInfo _Road;
-		_RoadDir = (_RoadInfo select 6) getDir (_RoadInfo select 7);
+		if(isNil "_BaseDir") then {
+			_BaseDir = (_RoadInfo select 6) getDir (_RoadInfo select 7);
+		};
 		_RoadPos = _RoadInfo select 6;
 		_RoadTexture = _RoadInfo select 3;
 
@@ -79,18 +92,17 @@ For "_i" from 1 to _RoadblockCount do {
 
 		//systemChat str _RoadPos;
 		private _can = createVehicle ["Land_Compass_F", _RoadPos, [], 0, "NONE"];
-		_can setDir _RoadDir;
-
+		_can setDir _BaseDir;
 
 		if(["tarmac", _RoadTexture] call BIS_fnc_inString) then {
 
 			if(_Debug_Variable) then {systemChat "Roadblock is Wide: Spawn Comp"};
-			[ "roadblock_basic_wide", _RoadPos, [0,0,0], _RoadDir] call LARs_fnc_spawnComp;
+			[ "roadblock_basic_wide", _RoadPos, [0,0,0], _BaseDir] call LARs_fnc_spawnComp;
 			_typeString = "roadblock_basic_wide";
 		} else {
 
 			if(_Debug_Variable) then {systemChat "Roadblock is Small: Spawn Comp"};
-			[ "roadblock_basic_small", _RoadPos, [0,0,0], _RoadDir] call LARs_fnc_spawnComp;
+			[ "roadblock_basic_small", _RoadPos, [0,0,0], _BaseDir] call LARs_fnc_spawnComp;
 			_typeString = "roadblock_basic_small";
 		};
 
@@ -106,7 +118,7 @@ For "_i" from 1 to _RoadblockCount do {
 				Private "_Unit";
 				if ( (count (units _Group)) == 0 ) then
 				{
-					_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [getPos _can select 0,getPos _can select 1,0], [], 10, "NONE"];
+					_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [getPos _can select 0,getPos _can select 1,0], [], 10, "NONE"];
 					_Unit setRank "SERGEANT";
 				} else {
 					_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [getPos _can select 0,getPos _can select 1,0], [], 10, "NONE"];
@@ -142,7 +154,7 @@ For "_i" from 1 to _RoadblockCount do {
 		*/
 		//copyToClipboard str _GarrisonPositions;
 		if(_RoadblockPatrols) then {
-			[_RoadPos,5,150,_Side,_Units] spawn OKS_Patrol_Spawn;
+			[_RoadPos,5,150,_Side] spawn OKS_Patrol_Spawn;
 		};
 
 		sleep 2;
@@ -173,7 +185,7 @@ For "_i" from 1 to _RoadblockCount do {
 		if((random 1) <= _VehicleChance) then {
 			if(_Debug_Variable) then {SystemChat str _VehicleClass};
 			_Vehicle = createVehicle [_VehicleClass, getMarkerPos _Marker, [], 0, "NONE"];
-			_Vehicle setDir _RoadDir;
+			_Vehicle setDir _BaseDir;
 			_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 			_Vehicle setFuel 0;
 		};

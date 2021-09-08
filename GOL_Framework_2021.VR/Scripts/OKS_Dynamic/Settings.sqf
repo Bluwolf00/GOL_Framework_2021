@@ -5,7 +5,7 @@
 //	Returns: [Settings]
 
 Params["_Side"];
-Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tank","_Artillery","_Supply","_Transport","_Civilian","_Officer","_Settings","_AntiAir","_EnableEnemyMarkers","_RoadblockVehicleType"];
+Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tank","_Artillery","_Supply","_Transport","_Civilian","_Officer","_Settings","_AntiAir","_EnableEnemyMarkers","_RoadblockVehicleType","_UnitArray"];
 
 /* Faction Selection for Vehicles spawned by OKS_Dynamic
 
@@ -212,7 +212,7 @@ Switch (_Side) do
 	case BLUFOR:	// BLUFOR settings
 	{
 		// Unit classes are compatible with multiple class names, will select randomly. Example: ["B_Pilot_F","B_Crewman_F"];
-		_Leaders = ["B_Soldier_TL_F","B_Soldier_TL_F"];	// Squad/Team leader classes.
+		_Leaders = ["B_Soldier_SL_F","B_Soldier_TL_F"];	// Squad/Team leader classes.
 		_Units = [
 			"B_Soldier_A_F",
 			"B_Soldier_AR_F",
@@ -231,10 +231,11 @@ Switch (_Side) do
 		_Officer = ["B_officer_F"];
 		_SideMarker = "b_inf";
 		_SideColor = "ColorBlufor";
+		_UnitArray = [_Leaders,_Units,_Officer];
 	};
 	case OPFOR:		// OPFOR settings
 	{
-		_Leaders = ["O_Soldier_TL_F","O_Soldier_TL_F"];
+		_Leaders = ["O_Soldier_SL_F","O_Soldier_TL_F"];
 		_Units = [
 			"O_Soldier_A_F",
 			"O_Soldier_AR_F",
@@ -252,11 +253,12 @@ Switch (_Side) do
 		];
 		_Officer = ["O_officer_F"];
 		_SideMarker = "o_inf";
-		_SideColor = "ColorOpfor"
+		_SideColor = "ColorOpfor";
+		_UnitArray = [_Leaders,_Units,_Officer];
 	};
 	case INDEPENDENT:	// INDEPENDENT Settings
 	{
-		_Leaders = ["I_Soldier_TL_F","I_Soldier_TL_F"];
+		_Leaders = ["I_Soldier_SL_F","I_Soldier_TL_F"];
 		_Units = [
 			"I_Soldier_A_F",
 			"I_Soldier_AR_F",
@@ -275,6 +277,7 @@ Switch (_Side) do
 		_Officer = ["I_officer_F"];
 		_SideMarker = "n_inf";
 		_SideColor = "ColorIndependent";
+		_UnitArray = [_Leaders,_Units,_Officer];
 	};
 
 	// DO NOT EDIT ANYTHING BELOW \\
@@ -284,6 +287,7 @@ Switch (_Side) do
 		_Skill = "";
 		_Leaders = "";
 		_Units = "";
+		_UnitArray = "";
 	};
 };
 
@@ -315,4 +319,4 @@ _Civilian = [_CivilianUnits,_Officer];
 
 // DO NOT EDIT ANYTHING BELOW \\
 _Configuration = [_CompoundSize,_EnableEnemyMarkers,_EnableZoneMarker,_EnableZoneTypeMarker,_RoadblockVehicleType];
-[_Units,_SideMarker,_SideColor,_Vehicles,_Civilian,_ObjectiveTypes,_Configuration]
+[_UnitArray,_SideMarker,_SideColor,_Vehicles,_Civilian,_ObjectiveTypes,_Configuration]

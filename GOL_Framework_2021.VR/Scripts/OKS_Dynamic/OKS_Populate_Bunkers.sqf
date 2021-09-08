@@ -8,31 +8,9 @@ if(HasInterface && !isServer) exitWith {};
 
 Params["_Position","_Side","_InfantryNumber","_Range"];
 private ["_Units"];
-
-	Switch (_Side) do
-	{
-		case BLUFOR:	// BLUFOR settings
-		{
-			_Units = ["B_Soldier_LAT_F","B_Soldier_GL_F","B_medic_F","B_Soldier_AR_F","B_Soldier_A_F"]; // Class names for infantry units.
-		};
-		case OPFOR:		// OPFOR settings
-		{
-			_Units = ["O_Soldier_LAT_F","O_Soldier_GL_F","O_medic_F","O_Soldier_AR_F","O_Soldier_A_F"];
-		};
-		case INDEPENDENT:	// INDEPENDENT Settings
-		{
-			_Units = ["I_Soldier_LAT_F","I_Soldier_GL_F","I_medic_F","I_Soldier_AR_F","I_Soldier_A_F"];
-		};
-
-		// DO NOT EDIT ANYTHING BELOW \\
-		default
-		{
-			_SkillVariables = "";
-			_Skill = "";
-			_Leaders = "";
-			_Units = "";
-		};
-	};
+_Settings = [_Side] call OKS_Dynamic_Setting;
+_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+_UnitArray Params ["_Leaders","_Units","_Officer"];
 
 	_Group = CreateGroup _Side;
 	for "_i" from 1 to (_InfantryNumber - 1) do
@@ -40,7 +18,7 @@ private ["_Units"];
 		Private "_Unit";
 		if ( (count (units _Group)) == 0 ) then
 		{
-			_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
+			_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
 			_Unit setRank "SERGEANT";
 			_Unit setUnitPos "UP";
 		} else {

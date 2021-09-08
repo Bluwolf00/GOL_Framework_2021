@@ -9,7 +9,8 @@ Params["_MainTrigger","_Side","_InfantryNumber","_CreateObjective","_CreateLocal
 private ["_House","_AllBuildings","_buildingArray","_SelectedBuildings","_HouseCount","_i","_HouseMax","_Strongpoint","_Location","_CountStrongpoints","_Group","_GarrisonNumber","_Location","_Debug_Variable","_Strongpoint","_SortedBuildings","_SafePos","_Marker","_AllNumbers","_SelectedStrongpoints","_Strongpoints","_MarkerPos","_PlacedStrongpoints","_Locations","_PatrolNumber"];
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
-_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configuration"];
+_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configuration"];
+_UnitArray Params ["_Leaders","_Units","_Officer"];
 _Configuration Params ["_CompoundSize","_EnableEnemyMarkers"];
 
 _Debug_Variable = false;
@@ -34,11 +35,11 @@ if(_Locations isEqualTo [] && _Compounds isEqualTo []) then {
 	{_Locations pushBackUnique (locationPosition _X)} foreach nearestLocations [_MainTrigger,["NameVillage","NameCity","NameCityCapital","Hill","Name","NameLocal","fakeTown"],(TriggerArea _MainTrigger select 0)];
 	_Locations = _Locations select {_X inArea _MainTrigger};
 };
-
+/*
 if(!isNil "OKS_Populate_StaticWeapons") then {
 	[_MainTrigger,(TriggerArea _MainTrigger select 0 / 2),_Side] spawn OKS_Populate_StaticWeapons;
 };
-
+*/
 if(count _Locations > 0) then {
 	{
 		_Location = nearestBuilding (getPos _X);
@@ -87,7 +88,7 @@ if(_CountStrongpoints > 0) then {
 			if(_EnableEnemyMarkers) then {
 				[_Compound,_Side,"infantry",_GarrisonNumber,0.8] spawn OKS_CreateUnitMarker;
 			};
-			[_GarrisonNumber,getPos _X,_Side,_Units,_CompoundSize] spawn OKS_Garrison_Compound;
+			[_GarrisonNumber,getPos _X,_Side,_UnitArray,_CompoundSize] spawn OKS_Garrison_Compound;
 			if(_CreateLocalPatrols) then {
 				if(_Debug_Variable) then {
 					systemChat format ["%1 Patrol Number - Creating patrols",_PatrolNumber];
@@ -102,7 +103,7 @@ if(_CountStrongpoints > 0) then {
 						Private "_Unit";
 						if ( (count (units _Group)) == 0 ) then
 						{
-							_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
+							_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
 							_Unit setRank "SERGEANT";
 						} else {
 							_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
@@ -152,7 +153,7 @@ if(_CountStrongpoints > 0) then {
 					Private "_Unit";
 					if ( (count (units _Group)) == 0 ) then
 					{
-						_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
+						_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
 						_Unit setRank "SERGEANT";
 					} else {
 						_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
@@ -180,7 +181,7 @@ if(_CountStrongpoints > 0) then {
 			if(count _SortedBuildings > 0) then {
 				For "_i" to (_HouseMax - 1) do {_House = (selectRandom _SortedBuildings); if(!isNil "_House") then {_SelectedBuildings pushBackUnique _House; _SortedBuildings deleteAt (_SortedBuildings find _House)}};
 				{
-					[4,_X,_Side,_Units] spawn OKS_Garrison;
+					[4,_X,_Side,_UnitArray] spawn OKS_Garrison;
 					if(_EnableEnemyMarkers) then {
 						_Marker = createMarker [format ["oks_SP_Marker_%1",str round(random 90000)],getPos _X];
 						[_marker,_Side,"infantry",4,0.8] spawn OKS_CreateUnitMarker;

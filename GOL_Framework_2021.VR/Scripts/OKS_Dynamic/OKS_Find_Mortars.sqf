@@ -9,8 +9,8 @@ Params ["_MainTrigger","_Side","_MortarPatrol"];
 private ["_RandomPos","_Road","_marker","_SideMarker","_typeString","_Units","_SideMarker","_SideColor","_SelectedPos","_Composition","_Repetitions","_Debug_Variable"];
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
-_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
-
+_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+_UnitArray Params ["_Leaders","_Units","_Officer"];
 _Debug_Variable = false;
 
 	Switch (_Side) do
@@ -60,7 +60,7 @@ _Debug_Variable = false;
 	[_Mortar, _Side, "precise", "light", ["auto", 40],250,1000,30] execVM "Scripts\NEKY_Mortars\NEKY_Mortars.sqf";
 
 	if(_MortarPatrol) then {
-		[_SelectedPos,5,50,_Side,_Units] spawn OKS_Patrol_Spawn;
+		[_SelectedPos,5,50,_Side] spawn OKS_Patrol_Spawn;
 	};
 
 	[_SelectedPos,_Side,(random 4),15] spawn OKS_Populate_Sandbag;
@@ -78,7 +78,7 @@ _Debug_Variable = false;
 			Private "_Unit";
 			if ( (count (units _Group)) == 0 ) then
 			{
-				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_SelectedPos select 0,_SelectedPos select 1,0], [], 10, "NONE"];
+				_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [_SelectedPos select 0,_SelectedPos select 1,0], [], 10, "NONE"];
 				_Unit setRank "SERGEANT";
 			} else {
 				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_SelectedPos select 0,_SelectedPos select 1,0], [], 10, "NONE"];

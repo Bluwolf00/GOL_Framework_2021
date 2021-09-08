@@ -7,7 +7,8 @@ if(HasInterface && !isServer) exitWith {};
 
 	Params["_Position","_Side","_InfantryNumber","_Range"];
 	_Settings = [_Side] call OKS_Dynamic_Setting;
-	_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+	_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+	_UnitArray Params ["_Leaders","_Units","_Officer"];
 
 	Private ["_TempSandbags"];
 	Private _Debug_Variable = false;
