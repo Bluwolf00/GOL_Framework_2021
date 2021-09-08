@@ -33,6 +33,12 @@ switch (_side) do {
 	case "CZECH-SOVIET-W":{
 		#include "Classes\CZECH-SOVIET-W.sqf"
 	};
+	case "TURKEY-D": {
+		#include "Classes\TURKEY-D.sqf"
+	};
+	case "SYRIA-D": {
+		#include "Classes\SYRIA-D.sqf"
+	};
 	case "CSAT-H": {
 		#include "Classes\CSAT-H.sqf"
 	};

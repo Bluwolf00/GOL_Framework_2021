@@ -10,12 +10,38 @@ Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tan
 /* Faction Selection for Vehicles spawned by OKS_Dynamic
 
 BLUFOR FACTIONS:       CDF LDF TANOA
-OPFOR FACTIONS:        CHEDAKI TKA DESERT_INSURGENTS RUSSIA_MODERN SOVIET
-INDEPENDENT FACTIONS:  NAPA
+OPFOR FACTIONS:        CHEDAKI TKA DESERT_INSURGENTS RUSSIA_MODERN SOVIET TURKEY
+INDEPENDENT FACTIONS:  NAPA SYRIA
 
 */
-Private _Faction = "SOVIET";
+Private _Faction = "SYRIA";
 Switch (_Faction) do {
+
+	case "SYRIA":{
+		// Modern Russian Armed Forces (RUSSIA) - OPFOR
+		_Wheeled = ["LOP_SYR_UAZ_DshKM","LOP_SYR_UAZ","LOP_SYR_UAZ_Open","LOP_SYR_KAMAZ_Transport","LOP_SYR_KAMAZ_Covered"];
+		_APC = ["LOP_SYR_BTR60","LOP_SYR_BTR70"];
+		_Tank = ["LOP_SYR_T55"];
+		_Artillery = ["LOP_SYR_2S1","rhs_D30_vmf"];
+		_AntiAir = ["LOP_SYR_ZSU234","LOP_SYR_Static_ZU23"];
+		_Helicopter = ["RHS_Mi24P_vdv","RHS_Mi8MTV3_vdv"];
+		_Transport = ["LOP_SYR_UAZ_Open"];
+		_Supply = ["LOP_SYR_KAMAZ_Medical","LOP_SYR_KAMAZ_Fuel","LOP_SYR_KAMAZ_Ammo","LOP_SYR_KAMAZ_Repair"];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
+	};
+
+	case "TURKEY":{
+		// Modern Russian Armed Forces (RUSSIA) - OPFOR
+		_Wheeled = ["LOP_TRK_Landrover","LOP_TRK_Landrover_M2","rhsusf_m998_w_s_2dr","rhsgref_nat_uaz"];
+		_APC = ["LOP_TRK_BTR80","LOP_TRK_M113_W"];
+		_Tank = ["Leopard_Olive"];
+		_Artillery = ["rhs_2s1_tv","RHS_M119_WD","B_MBT_01_arty_F"];
+		_AntiAir = ["LOP_UKR_ZSU234","rhsgref_nat_ZU23"];
+		_Helicopter = ["rhs_uh1h_hidf_gunship","RHS_UH60M"];
+		_Transport = ["rhsusf_m998_w_s_2dr"];
+		_Supply = ["LOP_TRK_HEMTT_Ammo_D","LOP_TRK_HEMTT_Fuel_D","LOP_TRK_HEMTT_Medical_D","LOP_TRK_HEMTT_Repair_D"];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
+	};
 
 	case "SOVIET":{
 		// Modern Russian Armed Forces (RUSSIA) - OPFOR
@@ -279,7 +305,7 @@ _EnableZoneMarker = false;
 _EnableZoneTypeMarker = false;
 
 /* Vehicle Type for Roadblock Vehicles - Options: _Wheeled, _APC, _Tank, _AntiAir */
-_RoadblockVehicleType = _Wheeled;
+_RoadblockVehicleType = _APC;
 
 
 /* Civilian Units for Hostage Objectives & HVT Objectives */
