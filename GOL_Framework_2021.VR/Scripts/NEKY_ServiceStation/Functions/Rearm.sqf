@@ -205,12 +205,59 @@ if !(((Count _Turrets) isEqualTo 0) && ((Count _Pylons) isEqualTo 0)) then
 	};
 	if (_Veh in NEKY_ServiceStationArray) then {[[_Veh],{(_This select 0) setVehicleAmmo 1}] remoteExec ["BIS_FNC_SPAWN",0]; ["Rearming Complete!", _Veh] spawn NEKY_ServiceStation_Hints};
 } else {
-	["Rearming not needed", _Veh] spawn NEKY_ServiceStation_Hints;
+	["Default Rearming not needed", _Veh] spawn NEKY_ServiceStation_Hints;
 	Sleep 2;
 };
 
 /// Drongos APS
 _Veh call DAPS_fnc_RearmAPS;
+sleep 2;
+
+if (["FV432_Mk3_GPMG",(typeOf _Veh)] call BIS_fnc_inString || ["Panther_GPMG",(typeOf _Veh)] call BIS_fnc_inString || ["WMIK_GPMG",(typeOf _Veh)] call BIS_fnc_inString ) then {
+	private _Index = ((getMagazineCargo _Veh) select 0) find "UK3CB_BAF_762_200Rnd_T";
+	private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
+	private _rearm = 5 - _AmmoCount;
+	_Veh AddMagazineCargo ["UK3CB_BAF_762_200Rnd_T",_rearm];
+	["Primary Ammunition Added", _Veh] spawn NEKY_ServiceStation_Hints;
+	sleep 2;
+};
+
+if (["Passenger_HMG",(typeOf _Veh)] call BIS_fnc_inString || ["L111A1",(typeOf _Veh)] call BIS_fnc_inString || ["FV432_Mk3_RWS",(typeOf _Veh)] call BIS_fnc_inString || ["LandRover_WMIK_HMG",(typeOf _Veh)] call BIS_fnc_inString ) then {
+	private _Index = ((getMagazineCargo _Veh) select 0) find "UK3CB_BAF_127_100Rnd";
+	private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
+	private _rearm = 5 - _AmmoCount;
+	_Veh AddMagazineCargo ["UK3CB_BAF_127_100Rnd",_rearm];
+	["Primary Ammunition Added", _Veh] spawn NEKY_ServiceStation_Hints;
+	sleep 2;
+};
+
+if(["L134A1",(typeOf _Veh)] call BIS_fnc_inString || ["WMIK_GMG",(typeOf _Veh)] call BIS_fnc_inString) then {
+	private _Index = ((getMagazineCargo _Veh) select 0) find "UK3CB_BAF_32Rnd_40mm_G_Box";
+	private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
+	private _rearm = 5 - _AmmoCount;
+	_Veh AddMagazineCargo ["UK3CB_BAF_32Rnd_40mm_G_Box",_rearm];
+	["Primary Ammunition Added", _Veh] spawn NEKY_ServiceStation_Hints;
+	sleep 2;
+};
+
+if(["WMIK_Milan",(typeOf _Veh)] call BIS_fnc_inString) then {
+	private _Index = ((getMagazineCargo _Veh) select 0) find "UK3CB_BAF_1Rnd_Milan";
+	private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
+	private _rearm = 5 - _AmmoCount;
+	_Veh AddMagazineCargo ["UK3CB_BAF_1Rnd_Milan",_rearm];
+	["Primary Ammunition Added", _Veh] spawn NEKY_ServiceStation_Hints;
+	sleep 2;
+};
+
+if(["WMIK",(typeOf _Veh)] call BIS_fnc_inString || ["Coyote",(typeOf _Veh)] call BIS_fnc_inString || ["Jackal2",(typeOf _Veh)] call BIS_fnc_inString  ) then {
+	private _Index = ((getMagazineCargo _Veh) select 0) find "UK3CB_BAF_762_100Rnd_T";
+	private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
+	private _rearm = 5 - _AmmoCount;
+	_Veh AddMagazineCargo ["UK3CB_BAF_762_100Rnd_T",_rearm];
+	["Secondary Ammunition Added", _Veh] spawn NEKY_ServiceStation_Hints;
+	sleep 2;
+};
+
 
 if (!(_Veh in NEKY_ServiceStationArray)) exitWith {[_SS,true] call NEKY_ServiceStation_Available; ["You have left the service station, service ending",_Veh] call NEKY_ServiceStation_Hints};
 if (_FullService) then {["Service complete!", _Veh] spawn NEKY_ServiceStation_Hints};

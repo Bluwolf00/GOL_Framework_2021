@@ -6,6 +6,10 @@ class EditorData
 	scaleGridStep=10;
 	autoGroupingDist=10;
 	toggles=513;
+	mods[]=
+	{
+		"3denEnhanced"
+	};
 	class ItemIDProvider
 	{
 		nextID=1769;
@@ -16,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5188;
+		nextID=5238;
 	};
 	class Camera
 	{
-		pos[]={23.88422,34.428753,75.10408};
-		dir[]={0.81477505,-0.49411833,0.30329919};
-		up[]={0.46307528,0.86939484,0.17237936};
-		aside[]={0.34886244,8.760253e-009,-0.93717515};
+		pos[]={-2.1536198,34.428753,81.969978};
+		dir[]={0.88654888,-0.43875179,-0.14673175};
+		up[]={0.43286368,0.89860803,-0.071642779};
+		aside[]={-0.16328792,2.1551386e-008,-0.98657942};
 	};
 };
 binarizationWanted=0;
@@ -5413,7 +5417,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=2;
+														value=0.69999999;
 													};
 												};
 												class Item1
@@ -5458,7 +5462,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=15;
+														value=20;
 													};
 												};
 												class Item1
@@ -5908,7 +5912,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0.60000002;
+														value=0.69999999;
 													};
 												};
 												class Item1
@@ -6088,7 +6092,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=1;
+														value=0;
 													};
 												};
 												class Item1

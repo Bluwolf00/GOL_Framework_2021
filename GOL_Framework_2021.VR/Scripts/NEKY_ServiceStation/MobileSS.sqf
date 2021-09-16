@@ -1,6 +1,6 @@
 //	null = [This, Radius, (is a Mobile Service Station), ["NearestObjects"]] execVM "Scripts\NEKY_ServiceStation\MobileSS.sqf";
 ///////////////////////////////////////////
-//	
+//
 //	1. Object or Vehicle name, the name of the Object or Vehicle that will be the Mobile Service Station.
 //		a. Can be the actual name of the Object or Vehicle. Generally used when activating Service Stations later in to the mission.
 // 		b. This, when entered in the init line of an object or Vehicle, adds an action to activate the Mobile Service Station.
@@ -17,14 +17,14 @@
 //////////////
 //	How To
 //////////////
-//	
+//
 //	1.
 //	2. Place an object or vehicle that you want to be the Mobile Service Station (Vehicle Ammo Crate for slingloading or any truck for a vehicle).
 //	3. Modify the code to your liking.
 //	4. Place the code in the init line of the object or vehicle you want to be the Mobile Service Station.
-//	
+//
 //	Note: If you want to make a stationary Service Station look in to NEKY_ServiceStation.sqf.
-//	
+//
 ///////////////
 //	Examples:
 ///////////////
@@ -49,13 +49,13 @@ Params
 	["_IsMSS", true, [true]],
 	["_Filter", ["LandVehicle","AIR","SHIP"], [[]]]
 ];
-
+_Object setVariable ["GOL_isMSS",true];
 _Object addAction ["<t color='#00FF00'>Activate Service Station</t>",
 {
 	Params ["_Object"];
 	_Params = _This select 3;
 	_Params Params ["_MRadius","_IsMSS","_Filter"];
-	
+
 	Hint "Service Station Activated.";
 	[[_Object,_MRadius,_IsMSS,_Filter],{_This ExecVM "Scripts\NEKY_ServiceStation\ServiceStation.sqf"}] RemoteExec ["BIS_FNC_SPAWN",0];
 	_Object setVariable ["NEKY_ServiceStation_MSS_Active",True,true];
