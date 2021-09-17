@@ -17,16 +17,13 @@ _goggles = "";
 _helmet = selectRandom ["H_Bandanna_cbr","","","H_Beret_blk","H_Booniehat_oli","H_Cap_Oli","rhsgref_helmet_M1_painted"];
 _OfficerHelmet = "rhs_beret_vdv3";
 _uniform = selectRandom ["LOP_U_AFR_Civ_01","LOP_U_AFR_Civ_02","LOP_U_AFR_Civ_03","LOP_U_AFR_Civ_04","LOP_U_AFR_Civ_05","LOP_U_AFR_Civ_06","Uniform_Tanktop_WZ2000","Uniform_Tanktop_VZ95","Uniform_Tanktop_OLIVE"];
-_vest = selectRandom ["rhsgref_chestrig","rhsgref_chicom","V_HarnessO_gry","rhsgref_otv_khaki"];
+_vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_holster","rhs_6b2_lifchik","rhs_6b2_RPK","rhs_6b2_SVD","rhs_6b2"];
 _backpack = "rhs_sidor";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "unv_tan_big_rt1523g";
 };
 
-if ((random 1) > 0.90) then {
-	_goggles = "G_Squares";
-};
 
 if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "rhs_sidor";

@@ -1,6 +1,6 @@
 
-_goggles = "";
-_helmet = "helmet_plain_MTP";
+_goggles = selectRandom ["rhsusf_shemagh_od","rhsusf_shemagh2_od","rhs_googles_clear"];
+_helmet = "helmet_sf_MTP";
 _OfficerHelmet = "beret_Maroon";
 _uniform = "Uniform_Full_MTP";
 _vest = "vest_spc_rifleman_MTP";
@@ -38,15 +38,15 @@ if (_role isEqualTo "jetp") then {
 	_backpack = _backpackRadio;
 };
 
-_silencer = "";
+_silencer = "uk3cb_baf_sffh";
 _pointer = "";
-_sight = "";
+_sight = "optic_erco_blk_f";
 _bipod = "";
 
-_rifle = ["L85A3_LDS_Flashlight", _silencer, _pointer, _sight, _bipod];
+_rifle = ["UK3CB_BAF_L85A3", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["UK3CB_BAF_L22A2", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["L85A3UGL_EOT552_Flashlight", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["L85A3_LDS_Flashlight", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["UK3CB_BAF_L85A3_UGL", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["UK3CB_BAF_L86A2", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "UK3CB_BAF_556_30Rnd";
 _rifle_mag_tr = "UK3CB_BAF_556_30Rnd_T";
 _rifleC_mag = "UK3CB_BAF_556_30Rnd";

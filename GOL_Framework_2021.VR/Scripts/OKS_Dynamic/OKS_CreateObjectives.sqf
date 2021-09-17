@@ -144,7 +144,7 @@ switch (_TypeOfObjective) do {
 		OKS_Objective_Positions pushBackUnique _SpawnPos;
 		publicVariable "OKS_Objective_Positions";
 
-		_Crate = CreateVehicle [_ammoCrate, [_SpawnPos select 0,_SpawnPos select 1,0.5], [], 0, "CAN_COLLIDE"];
+		_Crate = CreateVehicle [_ammoCrate, [_SpawnPos select 0,_SpawnPos select 1,1.2], [], 0, "CAN_COLLIDE"];
 
 		if(isNil "_Dir") then {
 			_Dir = (random 360);
@@ -153,9 +153,8 @@ switch (_TypeOfObjective) do {
 		_Crate setVehicleVarName format["OKS_Crate_%1",round(random 9999)];
 		_Crate allowDamage true;
 		_Crate enableSimulation true;
-		_Crate setMass 9999;
 
-		_AmmoCamp = selectRandom ["AmmoCampSite_1","AmmoCampSite_2","AmmoCampSite_3","Bunker_2","Bunker_3","Bunker_4"];
+		_AmmoCamp = selectRandom ["AmmoCampSite_1","AmmoCampSite_2","AmmoCampSite_3","AmmoCampSite_4","Bunker_2","Bunker_3","Bunker_4"];
 		[_AmmoCamp,getPos _Crate, [0,0,0], getDir _Crate] call LARs_fnc_spawnComp;
 		_trg = createTrigger ["EmptyDetector", GetPos _Crate, true];
 		_trg setTriggerArea [15000,15000,0,false,1000];
@@ -499,8 +498,8 @@ switch (_TypeOfObjective) do {
 		} else {
 			_Group = [_Arty,_Side] call OKS_AddVehicleCrew;
 		};
-
-		["ArtilleryNest",getPos _Arty, [0,0,0], getDir _Arty] call LARs_fnc_spawnComp;
+		_Composition = selectRandom ["ArtilleryNest","ArtilleryNest_3"];
+		[_Composition,getPos _Arty, [0,0,0], getDir _Arty] call LARs_fnc_spawnComp;
 		sleep 5;
 		[getPos _Arty,_Side,(round random 4),15] spawn OKS_Populate_Sandbag;
 		[getPos _Arty,40,_Side] spawn OKS_Populate_StaticWeapons;
