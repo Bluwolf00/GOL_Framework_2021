@@ -202,6 +202,7 @@ Switch (_Faction) do {
 				_Supply = ["I_Truck_02_ammo_F","I_Truck_02_medical_F","I_Truck_02_fuel_F","I_Truck_02_box_F"];
 				_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
 			};
+
 		};
 	};
 };
@@ -278,6 +279,35 @@ Switch (_Side) do
 		_SideMarker = "n_inf";
 		_SideColor = "ColorIndependent";
 		_UnitArray = [_Leaders,_Units,_Officer];
+	};
+
+	case civilian:
+	{
+		_Leaders = ["C_man_1"];
+		_Units = [
+			"C_man_polo_1_F",
+			"C_man_polo_2_F",
+			"C_man_polo_3_F",
+			"C_man_polo_4_F",
+			"C_man_polo_5_F",
+			"C_man_polo_6_F",
+			"C_man_1_1_F",
+			"C_man_1_2_F",
+			"C_man_1_3_F"
+		];
+		_Officer = ["C_man_1"];
+		_SideMarker = "empty";
+		_SideColor = "ColorCivilian";
+		_UnitArray = [_Leaders,_Units,_Officer];
+		_Wheeled = ["UK3CB_Civ_LandRover_Soft_Green_A","C_Offroad_01_F","C_Offroad_01_covered_F","C_Offroad_01_repair_F","C_SUV_01_F","C_Van_02_transport_F","LOP_CHR_Civ_Landrover","LOP_CHR_Civ_UAZ","LOP_CHR_Civ_UAZ_Open",""];
+		_APC = ["LOP_AFR_Civ_Hatchback"];
+		_Tank = ["LOP_TAK_Civ_Ural"];
+		_Artillery = [""];
+		_AntiAir = [""];
+		_Helicopter = ["RHS_Mi8t_civilian"];
+		_Transport = ["LOP_TAK_Civ_Ural"];
+		_Supply = ["C_Van_01_box_F","C_Truck_02_fuel_F","C_Truck_02_box_F","C_Van_01_fuel_F"];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
 	};
 
 	// DO NOT EDIT ANYTHING BELOW \\

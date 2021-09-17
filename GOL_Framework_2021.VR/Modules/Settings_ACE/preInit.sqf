@@ -49,6 +49,7 @@ if (!GVARMAIN(mod_ACE3)) exitWith {false};
 [QGVAR(setMedical), {
 	params ["_type"];
 	if (_type isEqualTo 1) then {
+		/*
 		["ACE_Medical_level", 1] call GW_Fnc_changeSetting;
 		["ACE_Medical_medicSetting", 1] call GW_Fnc_changeSetting;
 		["ACE_Medical_enableOverdosing", true] call GW_Fnc_changeSetting;
@@ -59,7 +60,9 @@ if (!GVARMAIN(mod_ACE3)) exitWith {false};
 		["ace_medical_treatment_advancedDiagnose", 0] call GW_Fnc_changeSetting;
 		["ace_medical_gui_enableActions", 0] call GW_Fnc_changeSetting;
 	//	ACE_Medical_allowDeadBodyMovement = false;		// Does nothing
+	*/
 	} else {
+		/*
 		["ACE_Medical_level", 2] call GW_Fnc_changeSetting;
 		["ACE_Medical_medicSetting", 2] call GW_Fnc_changeSetting;
 		["ACE_Medical_enableOverdosing", true] call GW_Fnc_changeSetting;
@@ -68,6 +71,7 @@ if (!GVARMAIN(mod_ACE3)) exitWith {false};
 		["ACE_Medical_playerDamageThreshold", 1.5] call GW_Fnc_changeSetting;
 		["ACE_Medical_AIDamageThreshold", 1] call GW_Fnc_changeSetting;
 		["ACE_Medical_enableUnconsciousnessAI", 0] call GW_Fnc_changeSetting;
+		*/
 	};
 }] call CBA_fnc_addEventHandler;
 

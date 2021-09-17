@@ -211,9 +211,13 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		};
 		/* Create Infantry Patrols for each sub-trigger */
 		Private ["_PatrolInfantry","_GroupPerTrigger"];
+		Private _PatrolSize = 4;
+		if(_Side isEqualTo civilian) then {
+			_PatrolSize = 1;
+		}
 
 		//_PatrolInfantry = round(_InfantryNumber * 0.5);
-		_PatrolCount = _PatrolNumber / 4;
+		_PatrolCount = _PatrolNumber / _PatrolSize;
 		_GroupPerTrigger = round(_PatrolCount / (count _SpawnTriggers));
 
 		if(_Debug_Variable) then {
@@ -222,7 +226,7 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 
 		if(_PatrolNumber > 0) then {
 			for "_i" to (_GroupPerTrigger - 1) do {
-				{[_X,5,_MainTriggerSizeA * 0.5,_Side] spawn OKS_Patrol_Spawn; sleep 10;} foreach _SpawnTriggers
+				{[_X,_PatrolSize,_MainTriggerSizeA * 0.5,_Side] spawn OKS_Patrol_Spawn; sleep 10;} foreach _SpawnTriggers
 			};
 		};
 		sleep 20;
