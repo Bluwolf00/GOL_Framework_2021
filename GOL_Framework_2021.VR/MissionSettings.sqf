@@ -27,6 +27,7 @@ publicVariable "NEKY_Hunt_CurrentCount";
 GOL_AAC_SETUP = 0;
 GOL_OKS_TASK = 0;
 GOL_OKS_TANKER = 0;
+GOL_NEKY_TASK = 0;
 
 /* GOL Dynamic Scripts */
 GOL_OKS_DYNAMIC = 1;

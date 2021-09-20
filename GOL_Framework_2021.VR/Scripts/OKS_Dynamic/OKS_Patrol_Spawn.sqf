@@ -25,7 +25,7 @@
 		};
 
 		_Group = CreateGroup _Side;
-		for "_i" from 1 to (_NumberInfantry - 1) do
+		for "_i" from 1 to (_NumberInfantry) do
 		{
 			Private "_Unit";
 			if ( (count (units _Group)) == 0 ) then
@@ -39,6 +39,9 @@
 		};
 		_Group setBehaviour "SAFE";
 		[_Group, _Spawnpos, _Range] call CBA_fnc_taskPatrol;
+		if(_Side isEqualTo civilian) then {
+			_Group setSpeedMode "LIMITED";
+		};
 
 		waitUntil {sleep 10; count waypoints _Group > 0};
 		[_Area,_Group,_Range] spawn OKS_Check_Waypoints;

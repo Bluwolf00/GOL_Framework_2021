@@ -22,7 +22,11 @@
 			};
 			if(_Debug_Variable) then {SystemChat format ["%1 Pos %2",group _unit,getPos _Unit]};
 			_Unit disableAI "PATH";
-			_Unit setUnitPos (selectRandom ["UP","MIDDLE"]);
+
+			if(_Side isNotEqualTo civilian) then {
+				_Unit setUnitPos (selectRandom ["UP","MIDDLE"]);
+			};
+
 			sleep 0.2;
 		};
 		 /* Arguments:
@@ -46,4 +50,6 @@
 		[_Position, nil, units _Group, (_Range - 10), 0, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
 		sleep 2;
 		[_Group] remoteExec ["OKS_SetStatic",0];
-		[_Group,0.3,15] spawn OKS_EnablePath;
+		if(_Side isNotEqualTo civilian) then {
+			[_Group,0.3,15] spawn OKS_EnablePath;
+		};

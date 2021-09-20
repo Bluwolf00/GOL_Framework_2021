@@ -50,7 +50,7 @@ _LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 _MMG = ["hlc_lmg_M60E4", _silencer, _pointer, "optic_hamr", _bipod];
 _MMG_mag = "hlc_100Rnd_762x51_T_M60E4";
 
-_LAT = ["rhs_weap_rpg75", _silencer, _pointer, _sight, _bipod];
+_LAT = ["rhs_weap_M136_hp", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "";
 _LAT_ReUsable = false;
 

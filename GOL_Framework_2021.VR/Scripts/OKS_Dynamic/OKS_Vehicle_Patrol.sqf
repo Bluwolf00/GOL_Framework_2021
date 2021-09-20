@@ -1,4 +1,5 @@
 	// OKS_Vehicle_Patrol
+	// [Trigger_1,4,0,"WHEELED",civilian] spawn OKS_Vehicle_Patrol
 	if(HasInterface && !isServer) exitWith {};
 
 	Params["_Area","_NumberOfVehicles","_Range","_Type","_Side"];
@@ -60,7 +61,7 @@
 		_Vehicle setDir _Dir;
 
 		// Count (TypeOf _Vehicle call BIS_fnc_AllTurrets) == 0
-		if((_Vehicle emptyPositions "gunner" == 0)) then {
+		if((_Vehicle emptyPositions "gunner" == 0 && _Side != civilian)) then {
 			if(_Debug_Variable) then {
 				SystemChat "Vehicle is a transport";
 			};
@@ -101,7 +102,7 @@
 			_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 		};
 
-		if(count units _Group > 1) then {
+		if(count units _Group > 1 || _Side == civilian) then {
 
 			[_vehicle] spawn {
 				Params["_Vehicle"];

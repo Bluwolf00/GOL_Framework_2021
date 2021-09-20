@@ -80,6 +80,18 @@ class Params {
 class CfgFunctions {
 	#include "Scripts\LARs\spawnComp\functions\functions.cpp"
 	#include "Modules\Callsigns\Functions\functions.hpp"
+
+    class NEKY
+    {
+        class Tasks
+        {
+			class Tasks_Init
+			{
+				file = "Scripts\NEKY_Tasks\Init.sqf";
+				PreInit = 1;
+			};
+        };
+    };
 };
 
 class GW_Modules_Base {

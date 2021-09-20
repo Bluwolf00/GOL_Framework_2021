@@ -15,7 +15,8 @@ if(!isServer) exitWith {};
 	private ["_marker","_Condition","_playerSide","_trg","_EnemySideString","_playerSideString","_playerColor","_Area","_SpawnPos","_Repetitions","_Debug_Variable","_LocationsInArea","_Dir"];
 
 	_Settings = [_Side] call OKS_Dynamic_Setting;
-	_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+	_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configuration"];
+	_Configuration Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker","_RoadblockVehicleType","_EnableObjectiveTasks"];
 	_UnitArray Params ["_Leaders","_Units","_Officer"];
 	_Civilian Params ["_CivilianUnits","_HVT"];
 	_Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Helicopter","_Transport","_Supply","_AntiAir"];
@@ -88,22 +89,25 @@ switch (_TypeOfObjective) do {
 
 		//systemChat str _Position;
 		//systemChat format["Player Condition: %1",_Condition];
+
+		if(_Debug_Variable) then {
+			systemChat format["OKS_Sector_Objective: Player %1 - Enemy %2 - Condition %3",_playerSideString,_EnemySideString,_Condition];
+		};
+
 		_trg = createTrigger ["EmptyDetector", _Position, true];
 		_trg setTriggerArea [_Range,_Range, 0, false];
 		_trg setTriggerActivation [_Condition,"PRESENT",false];
 		_trg setTriggerTimeout [5, 7, 10, true];
 		_trg setVariable ["isSectorTrigger",true];
 
-		if(_Debug_Variable) then {
-			systemChat format["OKS_Sector_Objective: Player %1 - Enemy %2 - Condition %3",_playerSideString,_EnemySideString,_Condition];
+		if(_EnableObjectiveTasks) then {
+			_Task = [true,format["OKS_Sector_Objective_%1",(round(random 9000))], ["The Enemy is in control of this area. To secure the objective, you must seize the area and destroy the majority of enemy forces.", "Seize Sector", "Seize Sector"], getPos _trg,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+			[_Task,"attack"] call BIS_fnc_taskSetType;
+			_trg setTriggerStatements ["this", format ["'%1' setMarkerColor '%2'; ['%3','SUCCEEDED'] call BIS_fnc_taskSetState;",_marker,_playerColor,_Task], ""];
+		} else {
+			_trg setTriggerStatements ["this", format ["'%1' setMarkerColor '%2';",_marker,_playerColor], ""];
 		};
-		_Task = [true,format["OKS_Sector_Objective_%1",(round(random 9000))], ["The Enemy is in control of this area. To secure the objective, you must seize the area and destroy the majority of enemy forces.", "Seize Sector", "Seize Sector"], getPos _trg,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
-		[_Task,"attack"] call BIS_fnc_taskSetType;
-
 		//systemchat format ["%1 setMarkerColor '%2' - Task %3",_marker,_playerColor,_Task];
-		_trg setTriggerStatements ["this", format ["'%1' setMarkerColor '%2'; ['%3','SUCCEEDED'] call BIS_fnc_taskSetState;",_marker,_playerColor,_Task], ""];
-
-
 	};
 
 	case "cache": {
@@ -144,7 +148,7 @@ switch (_TypeOfObjective) do {
 		OKS_Objective_Positions pushBackUnique _SpawnPos;
 		publicVariable "OKS_Objective_Positions";
 
-		_Crate = CreateVehicle [_ammoCrate, [_SpawnPos select 0,_SpawnPos select 1,1.2], [], 0, "CAN_COLLIDE"];
+		_Crate = CreateVehicle [_ammoCrate, [_SpawnPos select 0,_SpawnPos select 1,0.5], [], 0, "CAN_COLLIDE"];
 
 		if(isNil "_Dir") then {
 			_Dir = (random 360);
@@ -156,19 +160,20 @@ switch (_TypeOfObjective) do {
 
 		_AmmoCamp = selectRandom ["AmmoCampSite_1","AmmoCampSite_2","AmmoCampSite_3","AmmoCampSite_4","Bunker_2","Bunker_3","Bunker_4"];
 		[_AmmoCamp,getPos _Crate, [0,0,0], getDir _Crate] call LARs_fnc_spawnComp;
-		_trg = createTrigger ["EmptyDetector", GetPos _Crate, true];
-		_trg setTriggerArea [15000,15000,0,false,1000];
-		_trg setTriggerActivation ["STATIC","NOT PRESENT",false];
-		_trg setTriggerTimeout [5, 7, 10, true];
-		_trg triggerAttachVehicle [_Crate];
-
 		[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
 
 		//systemChat format["OKS_Sector_Objective_%1",(round(random 9000))];
-		_Task = [true,format["OKS_Cache_Objective_%1",(round(random 9000))], ["The Enemy forces have access to weapons and ammunitions caches in the area of operations. Find them and destroy them.", "Destroy Ammo Cache", "Destroy Ammo Cache"], getPos _Crate,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
-		[_Task,"destroy"] call BIS_fnc_taskSetType;
-		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
 
+		if(_EnableObjectiveTasks) then {
+			_trg = createTrigger ["EmptyDetector", GetPos _Crate, true];
+			_trg setTriggerArea [15000,15000,0,false,1000];
+			_trg setTriggerActivation ["STATIC","NOT PRESENT",false];
+			_trg setTriggerTimeout [5, 7, 10, true];
+			_trg triggerAttachVehicle [_Crate];
+			_Task = [true,format["OKS_Cache_Objective_%1",(round(random 9000))], ["The Enemy forces have access to weapons and ammunitions caches in the area of operations. Find them and destroy them.", "Destroy Ammo Cache", "Destroy Ammo Cache"], getPos _Crate,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+			[_Task,"destroy"] call BIS_fnc_taskSetType;
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+		};
 		if(_ObjectivePatrols) then {
 			[_Crate getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
 		};
@@ -209,19 +214,21 @@ switch (_TypeOfObjective) do {
 
 		_AmmoCamp = selectRandom ["AmmoCampSite_3"];
 		[_AmmoCamp,getPos _Crate, [0,0,0], _Dir] call LARs_fnc_spawnComp;
-		_trg = createTrigger ["EmptyDetector", GetPos _Crate, true];
-		_trg setTriggerArea [15000,15000,0,false,1000];
-		_trg setTriggerActivation ["STATIC","NOT PRESENT",false];
-		_trg setTriggerTimeout [5, 7, 10, true];
-		_trg triggerAttachVehicle [_Crate];
 		//SystemChat str _SpawnPos;
 		[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
 
 		//systemChat format["OKS_Sector_Objective_%1",(round(random 9000))];
-		_Task = [true,format["OKS_MotorPool_Objective_%1",(round(random 9000))], ["The Enemy forces use a motor pool located in the area of operations to resupply and repair their combat vehicles. Move in on the position and destroy the motorpool.", "Destroy Motorpool", "Destroy Motorpool"], getPos _Crate,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
-		[_Task,"refuel"] call BIS_fnc_taskSetType;
-		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+		if(_EnableObjectiveTasks) then {
+			_trg = createTrigger ["EmptyDetector", GetPos _Crate, true];
+			_trg setTriggerArea [15000,15000,0,false,1000];
+			_trg setTriggerActivation ["STATIC","NOT PRESENT",false];
+			_trg setTriggerTimeout [5, 7, 10, true];
+			_trg triggerAttachVehicle [_Crate];
 
+			_Task = [true,format["OKS_MotorPool_Objective_%1",(round(random 9000))], ["The Enemy forces use a motor pool located in the area of operations to resupply and repair their combat vehicles. Move in on the position and destroy the motorpool.", "Destroy Motorpool", "Destroy Motorpool"], getPos _Crate,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+			[_Task,"refuel"] call BIS_fnc_taskSetType;
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+		};
 		if(_ObjectivePatrols) then {
 			[_Crate getPos [25,(random 360)],4,150,_Side] spawn OKS_Patrol_Spawn;
 			[_Crate getPos [25,(random 360)],4,150,_Side] spawn OKS_Patrol_Spawn;
@@ -270,20 +277,20 @@ switch (_TypeOfObjective) do {
 		};
 		[_Area,_Group,6] spawn OKS_Vehicle_Waypoints;
 
+		if(_EnableObjectiveTasks) then {
+			_trg = createTrigger ["EmptyDetector", GetPos _Truck, true];
+			_trg setTriggerActivation ["VEHICLE","NOT PRESENT",false];
+			_trg setTriggerTimeout [5, 7, 10, true];
+			_trg triggerAttachVehicle [_Truck];
+			_trg setTriggerArea [15000,15000,0,false,1000];
 
-		_trg = createTrigger ["EmptyDetector", GetPos _Truck, true];
-		_trg setTriggerActivation ["VEHICLE","NOT PRESENT",false];
-		_trg setTriggerTimeout [5, 7, 10, true];
-		_trg triggerAttachVehicle [_Truck];
-		_trg setTriggerArea [15000,15000,0,false,1000];
+			//systemChat format["OKS_Sector_Objective_%1",(round(random 9000))];
+			_Task = [true,format["OKS_AmmoTruck_Objective_%1",(round(random 9000))], ["The Enemy forces have access to supply trucks in the area of operations. Intercept the truck and destroy it", "Destroy Supply Truck", "Destroy Supply Truck"], getPos _Truck,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 
-		//systemChat format["OKS_Sector_Objective_%1",(round(random 9000))];
-		_Task = [true,format["OKS_AmmoTruck_Objective_%1",(round(random 9000))], ["The Enemy forces have access to supply trucks in the area of operations. Intercept the truck and destroy it", "Destroy Supply Truck", "Destroy Supply Truck"], getPos _Truck,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
-
-			[_Task,"truck"] call BIS_fnc_taskSetType;
-			[_Task,[_Truck,true]] call BIS_fnc_taskSetDestination;
-		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
-
+				[_Task,"truck"] call BIS_fnc_taskSetType;
+				[_Task,[_Truck,true]] call BIS_fnc_taskSetDestination;
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+		};
 
 	};
 
@@ -325,16 +332,15 @@ switch (_TypeOfObjective) do {
 		_Tower enableSimulation true;
 
 		[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
-
-		_Task = [true,format["OKS_RadioTower_Objective_%1",(round(random 9000))], ["The Enemy forces have installed a radio tower in the area to boost their signal to relay information and request support. Destroy the radio tower.", "Sabotage Radio Tower", "Sabotage Radio Tower"], getPos _Tower,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
-
-		[_Task,"radio"] call BIS_fnc_taskSetType;
-
 		if(_ObjectivePatrols) then {
 			[_SpawnPos getPos [25,(random 360)],3,150,_Side] spawn OKS_Patrol_Spawn;
 			[_SpawnPos getPos [25,(random 360)],3,150,_Side] spawn OKS_Patrol_Spawn;
 		};
-		[_Tower,_Task] spawn { waitUntil{sleep 10; !Alive (_this select 0) || getDammage (_this select 0) > 0.8}; [_this select 1,'SUCCEEDED'] call BIS_fnc_taskSetState };
+		if(_EnableObjectiveTasks) then {
+			_Task = [true,format["OKS_RadioTower_Objective_%1",(round(random 9000))], ["The Enemy forces have installed a radio tower in the area to boost their signal to relay information and request support. Destroy the radio tower.", "Sabotage Radio Tower", "Sabotage Radio Tower"], getPos _Tower,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+			[_Task,"radio"] call BIS_fnc_taskSetType;
+			[_Tower,_Task] spawn { waitUntil{sleep 10; !Alive (_this select 0) || getDammage (_this select 0) > 0.8}; [_this select 1,'SUCCEEDED'] call BIS_fnc_taskSetState };
+		};
 	};
 
 	case "hvttruck": {
@@ -396,38 +402,40 @@ switch (_TypeOfObjective) do {
 		_Civilian disableAI "MOVE";
 
 		//systemChat format["OKS_Sector_Objective_%1",(round(random 9000))];
-		_Task = [true,format["OKS_HVTTruck_Objective_%1",(round(random 9000))], ["Intel suggests that an enemy officer is patrolling the area of operations and reviewing their positions. Take this opportunity to undermine their leadership. Capture the HVT alive and bring him to your base.", "Capture HVT", "Capture HVT"], getPos _Truck,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+		if(_EnableObjectiveTasks) then {
+			_Task = [true,format["OKS_HVTTruck_Objective_%1",(round(random 9000))], ["Intel suggests that an enemy officer is patrolling the area of operations and reviewing their positions. Take this opportunity to undermine their leadership. Capture the HVT alive and bring him to your base.", "Capture HVT", "Capture HVT"], getPos _Truck,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 
-		[_Task,"kill"] call BIS_fnc_taskSetType;
-		[_Task,[_Civilian,true]] call BIS_fnc_taskSetDestination;
+			[_Task,"kill"] call BIS_fnc_taskSetType;
+			[_Task,[_Civilian,true]] call BIS_fnc_taskSetDestination;
 
-		_trg = createTrigger ["EmptyDetector", GetPos _Truck, true];
-		_trg setTriggerActivation ["VEHICLE","NOT PRESENT",false];
-		_trg setTriggerTimeout [5, 7, 10, true];
-		_trg triggerAttachVehicle [_Civilian];
-		_trg setTriggerArea [15000,15000,0,false,1000];
+			_trg = createTrigger ["EmptyDetector", GetPos _Truck, true];
+			_trg setTriggerActivation ["VEHICLE","NOT PRESENT",false];
+			_trg setTriggerTimeout [5, 7, 10, true];
+			_trg triggerAttachVehicle [_Civilian];
+			_trg setTriggerArea [15000,15000,0,false,1000];
 
-		_trg setTriggerStatements ["this", format ["['%1','FAILED'] call BIS_fnc_taskSetState;",_Task], ""];
+			_trg setTriggerStatements ["this", format ["['%1','FAILED'] call BIS_fnc_taskSetState;",_Task], ""];
 
-		private "_base";
-		switch(OKS_FRIENDLY_SIDE) do {
-			case west:{
-				_base = getMarkerPos "respawn_west";
+			private "_base";
+			switch(OKS_FRIENDLY_SIDE) do {
+				case west:{
+					_base = getMarkerPos "respawn_west";
+				};
+				case independent:{
+					_base = getMarkerPos "respawn_resistance";
+				};
+				case east:{
+					_base = getMarkerPos "respawn_east";
+				};
 			};
-			case independent:{
-				_base = getMarkerPos "respawn_resistance";
-			};
-			case east:{
-				_base = getMarkerPos "respawn_east";
-			};
+
+			_exfil = createTrigger ["EmptyDetector", _base, true];
+			_exfil setTriggerActivation ["VEHICLE","PRESENT",false];
+			_exfil setTriggerTimeout [5, 7, 10, true];
+			_exfil triggerAttachVehicle [_Civilian];
+			_exfil setTriggerArea [200,200,0,false,5];
+			_exfil setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
 		};
-
-		_exfil = createTrigger ["EmptyDetector", _base, true];
-		_exfil setTriggerActivation ["VEHICLE","PRESENT",false];
-		_exfil setTriggerTimeout [5, 7, 10, true];
-		_exfil triggerAttachVehicle [_Civilian];
-		_exfil setTriggerArea [200,200,0,false,5];
-		_exfil setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
 	};
 
 	case "artillery": {
@@ -459,22 +467,25 @@ switch (_TypeOfObjective) do {
 			_Dir = (random 360);
 		};
 		_Arty setDir _Dir;
-		_trg = createTrigger ["EmptyDetector", GetPos _Arty, true];
-		_trg setTriggerActivation ["VEHICLE","NOT PRESENT",false];
-		_trg setTriggerTimeout [5, 7, 10, true];
-		_trg triggerAttachVehicle [_Arty];
-		_trg setTriggerArea [15000,15000,0,false,1000];
 
-		_Task = [true,format["OKS_Artillery_Objective_%1",(round(random 9000))], ["The Enemy have set up artillery positions that shell nearby friendly positions. Locate the artillery and spike it! Destroy to complete.", "Destroy Artillery", "Destroy Artillery"], getPos _Arty,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+		if(_EnableObjectiveTasks) then {
+			_trg = createTrigger ["EmptyDetector", GetPos _Arty, true];
+			_trg setTriggerActivation ["VEHICLE","NOT PRESENT",false];
+			_trg setTriggerTimeout [5, 7, 10, true];
+			_trg triggerAttachVehicle [_Arty];
+			_trg setTriggerArea [15000,15000,0,false,1000];
 
-			[_Task,"destroy"] call BIS_fnc_taskSetType;
-			[_Task,[_Arty,true]] call BIS_fnc_taskSetDestination;
+			_Task = [true,format["OKS_Artillery_Objective_%1",(round(random 9000))], ["The Enemy have set up artillery positions that shell nearby friendly positions. Locate the artillery and spike it! Destroy to complete.", "Destroy Artillery", "Destroy Artillery"], getPos _Arty,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 
-			if(_ObjectivePatrols) then {
-				[_Arty getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
-			};
+				[_Task,"destroy"] call BIS_fnc_taskSetType;
+				[_Task,[_Arty,true]] call BIS_fnc_taskSetDestination;
 
-		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+				if(_ObjectivePatrols) then {
+					[_Arty getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
+				};
+
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+		};
 
 		if(!isNil "OKS_ArtyFire") then {
 			switch(OKS_FRIENDLY_SIDE) do {
@@ -498,8 +509,8 @@ switch (_TypeOfObjective) do {
 		} else {
 			_Group = [_Arty,_Side] call OKS_AddVehicleCrew;
 		};
-		_Composition = selectRandom ["ArtilleryNest","ArtilleryNest_3"];
-		[_Composition,getPos _Arty, [0,0,0], getDir _Arty] call LARs_fnc_spawnComp;
+
+		["ArtilleryNest",getPos _Arty, [0,0,0], getDir _Arty] call LARs_fnc_spawnComp;
 		sleep 5;
 		[getPos _Arty,_Side,(round random 4),15] spawn OKS_Populate_Sandbag;
 		[getPos _Arty,40,_Side] spawn OKS_Populate_StaticWeapons;
@@ -535,22 +546,23 @@ switch (_TypeOfObjective) do {
 			_Dir = (random 360);
 		};
 		_AA setDir _Dir;
-		_trg = createTrigger ["EmptyDetector", GetPos _AA, true];
-		_trg setTriggerActivation ["VEHICLE","NOT PRESENT",false];
-		_trg setTriggerTimeout [5, 7, 10, true];
-		_trg triggerAttachVehicle [_AA];
-		_trg setTriggerArea [15000,15000,0,false,1000];
 
-		_Task = [true,format["OKS_AntiAir_Objective_%1",(round(random 9000))], ["The Enemy have set up anti-air positions that engage our air assets. Locate the anti-air and neutralize it!", "Destroy Anti-Air", "Destroy Anti-Air"], getPos _AA,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+		if(_EnableObjectiveTasks) then {
+			_trg = createTrigger ["EmptyDetector", GetPos _AA, true];
+			_trg setTriggerActivation ["VEHICLE","NOT PRESENT",false];
+			_trg setTriggerTimeout [5, 7, 10, true];
+			_trg triggerAttachVehicle [_AA];
+			_trg setTriggerArea [15000,15000,0,false,1000];
+			_Task = [true,format["OKS_AntiAir_Objective_%1",(round(random 9000))], ["The Enemy have set up anti-air positions that engage our air assets. Locate the anti-air and neutralize it!", "Destroy Anti-Air", "Destroy Anti-Air"], getPos _AA,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 
-			[_Task,"destroy"] call BIS_fnc_taskSetType;
-			[_Task,[_AA,true]] call BIS_fnc_taskSetDestination;
+				[_Task,"destroy"] call BIS_fnc_taskSetType;
+				[_Task,[_AA,true]] call BIS_fnc_taskSetDestination;
 
-			if(_ObjectivePatrols) then {
-				[_AA getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
-			};
-
-		_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+				if(_ObjectivePatrols) then {
+					[_AA getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
+				};
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+		};
 
 		if(!isNil "GW_Ambient_AAA") then {
 			if(_Debug_Variable) then {
@@ -642,21 +654,23 @@ switch (_TypeOfObjective) do {
 			};
 		};
 
-		_Task = [true,format["OKS_Hostage_Objective_%1",(round(random 9000))], ["The Enemy have taken hostages and are keeping them inside a building under guard. Rescue the hostages and extract them back to base", "Rescue Hostages", "Rescue Hostages"], getPos _House,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+		if(_EnableObjectiveTasks) then {
+			_Task = [true,format["OKS_Hostage_Objective_%1",(round(random 9000))], ["The Enemy have taken hostages and are keeping them inside a building under guard. Rescue the hostages and extract them back to base", "Rescue Hostages", "Rescue Hostages"], getPos _House,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 
-		[_Task,"help"] call BIS_fnc_taskSetType;
-		[_Task,[_House,true]] call BIS_fnc_taskSetDestination;
+			[_Task,"help"] call BIS_fnc_taskSetType;
+			[_Task,[_House,true]] call BIS_fnc_taskSetDestination;
 
-		if(_ObjectivePatrols) then {
-			[_House getPos [35,(random 360)],3,120,_Side] spawn OKS_Patrol_Spawn;
-			[_House getPos [35,(random 360)],3,120,_Side] spawn OKS_Patrol_Spawn;
-		};
+			if(_ObjectivePatrols) then {
+				[_House getPos [35,(random 360)],3,120,_Side] spawn OKS_Patrol_Spawn;
+				[_House getPos [35,(random 360)],3,120,_Side] spawn OKS_Patrol_Spawn;
+			};
 
-		waitUntil {sleep 10; {!alive _X || _X distance _Target < 300} count (units _HostageGroup) isEqualTo count (units _HostageGroup)};
-		if( {Alive _X} count (units _HostageGroup) < 1 ) then {
-			[_Task,'FAILED'] call BIS_fnc_taskSetState;
-		} else {
-			[_Task,'SUCCEEDED'] call BIS_fnc_taskSetState;
+			waitUntil {sleep 10; {!alive _X || _X distance _Target < 300} count (units _HostageGroup) isEqualTo count (units _HostageGroup)};
+			if( {Alive _X} count (units _HostageGroup) < 1 ) then {
+				[_Task,'FAILED'] call BIS_fnc_taskSetState;
+			} else {
+				[_Task,'SUCCEEDED'] call BIS_fnc_taskSetState;
+			};
 		};
 	};
 

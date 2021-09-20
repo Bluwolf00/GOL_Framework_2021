@@ -57,7 +57,7 @@ _MMG_mag = "hlc_100Rnd_792x57_T_MG42";
 
 _sight = "";
 
-_LAT = ["rhs_weap_rpg75", _silencer, _pointer, _sight, _bipod];
+_LAT = ["rhs_weap_m72a7", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "";
 _LAT_ReUsable = false;
 

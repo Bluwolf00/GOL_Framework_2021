@@ -50,6 +50,9 @@ Sleep 5;
 	if(GOL_OKS_DYNAMIC isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Dynamic\Init.sqf";
 	};
+	if(GOL_NEKY_TASK isEqualTo 1) then {
+		[] execVM "Scripts\NEKY_Tasks\Init.sqf";
+	};
 	if(isServer && GOL_NEKY_SHARE isEqualTo 1) then {
 		[True,True] call NEKY_AI_ShareInfo;
 	};
@@ -96,15 +99,16 @@ Sleep 10;
 		   7 - Mortar Pits [MortarCount,LocalPatrols?] (Array)
 		   8 - Random Objectives [ObjectiveCount,LocalPatrols?] (Array)
 		   9 - Hunt Array Bases [Infantry,Wheeled,APC,Tank,Helicopter]
+		   10 - Dynamic Civilians on? (Boolean)
 
-		   [Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false,0.5],[0,false],[0,false],[0,0,0,0,0]] spawn OKS_CreateZone;
+		   [Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false,0.5],[0,false],[0,false],[0,0,0,0,0],false] spawn OKS_CreateZone;
 		*/
 
 		/* Example of Dynamic Scripts */
 		/*
 		if(isServer) then {
 			waitUntil{sleep 5; !(isNil "OKS_CreateZone")};
-			[Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false,0],[0,false],[0,false],[0,0,0,0,0]] spawn OKS_CreateZone;
+			[Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false,0],[0,false],[0,false],[0,0,0,0,0],false] spawn OKS_CreateZone;
 		};
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/

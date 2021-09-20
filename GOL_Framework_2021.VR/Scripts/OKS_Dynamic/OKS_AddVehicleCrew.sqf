@@ -24,13 +24,19 @@
             _unitClass = "I_crew_F";
         };
 
+        case civilian:{
+            _unitClass = "C_man_1_1_F";
+        };
+
         default {
             _unitClass = "O_crew_F";
         };
     };
 
     _Group = createGroup _Side;
+    if(_Debug_Variable) then {systemChat format ["Group: %3 Side: %2 - %1 Class Selected",_unitClass,_Side,_Group]};
     if(_Vehicle emptyPositions "commander" > 0) then {
+        if(_Debug_Variable) then { systemChat "Creating Commander"};
         _Commander = _Group CreateUnit [_UnitClass, [0,0,0], [], 5, "NONE"];
         _Commander setRank "SERGEANT";
         //_Commander assignAsCommander _Vehicle;
@@ -39,6 +45,7 @@
     };
 
     if(_Vehicle emptyPositions "gunner" > 0) then {
+        if(_Debug_Variable) then { systemChat "Creating Gunner"};
         _Gunner = _Group CreateUnit [_UnitClass, [0,0,0], [], 5, "NONE"];
         _Gunner setRank "CORPORAL";
         //_Gunner assignAsCommander _Vehicle;
@@ -47,6 +54,8 @@
     };
 
     if(_Vehicle emptyPositions "driver" > 0) then {
+
+        if(_Debug_Variable) then { systemChat "Creating Driver"};
         _Driver = _Group CreateUnit [_UnitClass, [0,0,0], [], 5, "NONE"];
         _Driver setRank "PRIVATE";
         //_Driver assignAsCommander _Vehicle;

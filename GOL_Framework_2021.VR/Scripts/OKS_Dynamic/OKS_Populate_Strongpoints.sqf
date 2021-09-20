@@ -85,7 +85,7 @@ if(_CountStrongpoints > 0) then {
 	if(_Compounds isNotEqualTo []) then {
 		{
 			_Compound = createMarker [format ["oks_Compound_Marker_%1",str round(random 90000)],_X];
-			if(_EnableEnemyMarkers) then {
+			if(_EnableEnemyMarkers && _Side != civilian) then {
 				[_Compound,_Side,"infantry",_GarrisonNumber,0.8] spawn OKS_CreateUnitMarker;
 			};
 			[_GarrisonNumber,getPos _X,_Side,_UnitArray,_CompoundSize] spawn OKS_Garrison_Compound;
@@ -182,7 +182,7 @@ if(_CountStrongpoints > 0) then {
 				For "_i" to (_HouseMax - 1) do {_House = (selectRandom _SortedBuildings); if(!isNil "_House") then {_SelectedBuildings pushBackUnique _House; _SortedBuildings deleteAt (_SortedBuildings find _House)}};
 				{
 					[4,_X,_Side,_UnitArray] spawn OKS_Garrison;
-					if(_EnableEnemyMarkers) then {
+					if(_EnableEnemyMarkers && _Side != civilian) then {
 						_Marker = createMarker [format ["oks_SP_Marker_%1",str round(random 90000)],getPos _X];
 						[_marker,_Side,"infantry",4,0.8] spawn OKS_CreateUnitMarker;
 					};

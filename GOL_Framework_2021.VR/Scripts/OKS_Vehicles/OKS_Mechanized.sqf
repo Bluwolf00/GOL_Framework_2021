@@ -1,10 +1,15 @@
-/// [this,"MHQ",true] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";
-/// Type: "MHQ" nil
+/// [this, true,true] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";
+/// [vehicle,AddMHQGear,AddServiceStationInCargo]
 /// Add MSS Box true/false
 
 if(!isServer) exitWith {};
 
-Params ["_Vehicle","_Type","_ServiceStation"];
+Params
+[
+	["_Vehicle", ObjNull, [ObjNull]],
+	["_MHQ", false, [ObjNull]],
+	["_ServiceStation", false, [ObjNull]]
+];
 Private _Debug_Variable = false;
 
 clearItemCargoGlobal _Vehicle;
@@ -37,7 +42,7 @@ if(_ServiceStation && !(_Vehicle getVariable ["GOL_isMSS",false])) then {
 
 _Vehicle addItemCargo ["Toolkit",2];
 
-if(!isNil "_Type") then {
+if(_MHQ) then {
 	if(_Debug_Variable) then {SystemChat "Adding Mortar Equipment"};
 	//add a new backpack to the vehicle
 
@@ -87,6 +92,7 @@ for [{private _i = 0}, {_i < 6}, {_i = _i + 1}] do {
 	_Vehicle addMagazineTurret ["rhsusf_mag_L8A3_8",[0,0]];
 };
 
+waitUntil {sleep 1; !(isNil "ace_cargo_fnc_loadItem") && (isNil "ace_cargo_fnc_removeCargoItem")};
 if(!(_Vehicle getVariable ["GOL_isMHQ",false])) then {
 	["ACE_Wheel", _Vehicle, 10] call ace_cargo_fnc_removeCargoItem;
 	["ACE_Track", _Vehicle, 10] call ace_cargo_fnc_removeCargoItem;

@@ -173,9 +173,12 @@ For "_i" from 1 to _RoadblockCount do {
 	};
 	_marker setMarkerShape "ICON";
 	_marker setMarkerSize [0.6,0.6];
-	_marker setMarkerType _SideMarker;
-	_marker setMarkerColor _SideColor;
-	_marker setMarkerText "";
+
+	if(_EnableEnemyMarkers) then {
+		_marker setMarkerType _SideMarker;
+		_marker setMarkerColor _SideColor;
+		_marker setMarkerText "";
+	};
 	if(_Debug_Variable) then {
 		SystemChat format ["%1 %2 created at %3",_Side,_typeString,getMarkerPos _marker];
 	};

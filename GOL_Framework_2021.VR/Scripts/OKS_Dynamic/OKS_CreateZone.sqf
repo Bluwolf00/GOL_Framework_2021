@@ -7,7 +7,7 @@
 
 if(!isServer) exitWith {};
 
-Params ["_MainTrigger","_SplitTrigger","_InfantryNumber","_Side","_WheeledCount","_apcCount","_tankCount","_RoadblockArray","_MortarArray","_ObjectiveArray","_HuntbaseArray"];
+Params ["_MainTrigger","_SplitTrigger","_InfantryNumber","_Side","_WheeledCount","_apcCount","_tankCount","_RoadblockArray","_MortarArray","_ObjectiveArray","_HuntbaseArray","_DynamicCivilians"];
 
 Private ["_MainTriggerArea","_Section_N","_Section_E","_Section_S","_Section_W","_MainTriggerSizeA","_MainTriggerSizeB","_MainTriggerAngle","_MainTriggerIsRectangle","_Section_N_Marker","_Section_E_Marker","_Section_S_Marker","_Section_W_Marker","_CountStrongpoints","_GarrisonNumber","_Section_N_Trigger","_Section_E_Trigger","_Section_S_Trigger","_Section_W_Trigger","_marker","_MainMarker","_WheeledPerTrigger","_APCPerTrigger","_TankPerTrigger","_SpawnTriggers","_Configurations","_ZoneEnemyType","_CountInfantryNumber","_UnitTypes","_UnitSelect"];
 
@@ -18,6 +18,8 @@ _SpawnTriggers = [];
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
 _Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configurations"];
+_Civilian Params ["_CivilianUnits","_HVT","_DynamicCivilianArray"];
+_DynamicCivilianArray Params ["_CivilianTriggerSize","_CivilianCount","_HouseWaypoints","_RandomWaypoints","_ShouldBeAgent","_ShouldPanic","_Ethnicity"];
 _ObjectiveArray Params ["_Objectives","_ObjectivePatrols"];
 _RoadblockArray Params ["_RoadblockCount","_RoadblockTarmac","_RoadblockPatrols","_RoadblockChance"];
 _MortarArray Params ["_MortarCount","_MortarPatrol"];
@@ -161,14 +163,19 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		};
 
 		/* Create Compositions for Main Area */
-		SystemChat format ["Roadblock Count: %1",_RoadblockCount];
+		if(_Debug_Variable) then {
+			SystemChat format ["Roadblock Count: %1",_RoadblockCount];
+		};
+
 		if(_RoadblockCount > 0) then {
 			[_MainTrigger,_RoadblockCount,_Side,_RoadblockTarmac,_RoadBlockPatrols,_RoadblockChance] spawn OKS_Find_RoadBlocks;
 			sleep 30;
 		};
 
 		/* Create Mortar Pits Main Area*/
-		SystemChat format ["Mortar Count: %1",_MortarCount];
+		if(_Debug_Variable) then {
+			SystemChat format ["Mortar Count: %1",_MortarCount];
+		};
 		if(_MortarCount > 0) then {
 			For "_i" to (_MortarCount - 1) do {
 				[_MainTrigger,_Side,_MortarPatrol] spawn OKS_Find_Mortars;
@@ -214,16 +221,15 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		Private _PatrolSize = 4;
 		if(_Side isEqualTo civilian) then {
 			_PatrolSize = 1;
-		}
+		};
 
 		//_PatrolInfantry = round(_InfantryNumber * 0.5);
 		_PatrolCount = _PatrolNumber / _PatrolSize;
 		_GroupPerTrigger = round(_PatrolCount / (count _SpawnTriggers));
 
 		if(_Debug_Variable) then {
-			SystemChat format ["Patrols Total %1 - Per Trigger %2 of %3",_PatrolCount,_GroupPerTrigger,_PatrolInfantry];
+			SystemChat format ["Patrols Total %1 x %4 - Per Trigger %2 of %3",_PatrolCount,_GroupPerTrigger,_PatrolNumber,_PatrolSize];
 		};
-
 		if(_PatrolNumber > 0) then {
 			for "_i" to (_GroupPerTrigger - 1) do {
 				{[_X,_PatrolSize,_MainTriggerSizeA * 0.5,_Side] spawn OKS_Patrol_Spawn; sleep 10;} foreach _SpawnTriggers
@@ -233,7 +239,9 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 	};
 
 	/* Create Objectives Main Area */
-	SystemChat format ["Objective Count: %1",_Objectives];
+	if(_Debug_Variable) then {
+		SystemChat format ["Objective Count: %1",_Objectives];
+	};
 	if(_Objectives > 0) then {
 		Private ["_RandomObjective"];
 		For "_i" to (_Objectives - 1) do {
@@ -280,6 +288,20 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		if (_TankPerTrigger isEqualTo 0) then { _TankPerTrigger = 1 };
 		{[_X,_TankPerTrigger,_MainTriggerSizeA,"TANK",_Side] spawn OKS_Vehicle_Patrol; sleep 25;} foreach _SpawnTriggers;
 		sleep (_TankCount * 5);
+	};
+
+	/* Spawn Dynamic Civilians */
+	_VillagesInTrigger = OKS_Villages select {_X inArea _MainTrigger};
+	if(_Debug_Variable) then {
+		systemChat format ["Villages %1",count _VillagesInTrigger];
+	};
+	if(count _VillagesInTrigger > 0 && _DynamicCivilians) then {
+		{
+			_trg = createTrigger ["EmptyDetector", _X, true];
+			_trg setTriggerArea [(_CivilianTriggerSize),(_CivilianTriggerSize), 0, false];
+			[_trg,_CivilianCount,_HouseWaypoints,_RandomWaypoints,_ShouldBeAgent,_ShouldPanic,_Ethnicity] spawn OKS_Civilians;
+			sleep 10;
+		} foreach _VillagesInTrigger;
 	};
 
 

@@ -9,8 +9,11 @@ Params ["_MainTrigger","_Side","_MortarPatrol"];
 private ["_RandomPos","_Road","_marker","_SideMarker","_typeString","_Units","_SideMarker","_SideColor","_SelectedPos","_Composition","_Repetitions","_Debug_Variable"];
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
-_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configuration"];
 _UnitArray Params ["_Leaders","_Units","_Officer"];
+_Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Helicopter","_Transport","_Supply"];
+_Configuration Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker","_RoadblockVehicleType"];
+
 _Debug_Variable = false;
 
 	Switch (_Side) do
@@ -57,7 +60,12 @@ _Debug_Variable = false;
 
 	[_Composition, [_SelectedPos select 0,_SelectedPos select 1,0], [0,0,0], (random 360)] call LARs_fnc_spawnComp;
 	_Mortar = createVehicle ["I_G_Mortar_01_F", _SelectedPos, [], 0, "NONE"];
-	[_Mortar, _Side, "precise", "light", ["auto", 40],250,1000,30] execVM "Scripts\NEKY_Mortars\NEKY_Mortars.sqf";
+
+	if(_EnableEnemyMarkers) then {
+		[_Mortar, _Side, "precise", "light", ["auto", 40],250,1000,30] execVM "Scripts\NEKY_Mortars\NEKY_Mortars.sqf";
+	} else {
+		[_Mortar, _Side, "precise", "light", ["auto", 40],150,500,30] execVM "Scripts\NEKY_Mortars\NEKY_Mortars.sqf";
+	};
 
 	if(_MortarPatrol) then {
 		[_SelectedPos,5,50,_Side] spawn OKS_Patrol_Spawn;
@@ -92,18 +100,21 @@ _Debug_Variable = false;
 	OKS_Mortar_Positions pushBackUnique _SelectedPos;
 	publicVariable "OKS_Mortar_Positions";
 
-	_marker = createMarker [format ["OKS_Mortar_Marker_%1",str (random 5000)],_SelectedPos];
-	_marker setMarkerShape "ICON";
-	_marker setMarkerSize [0.6,0.6];
-	_marker setMarkerType _SideMarker;
-	_marker setMarkerColor _SideColor;
+	if(_EnableEnemyMarkers) then {
+		_marker = createMarker [format ["OKS_Mortar_Marker_%1",str (random 5000)],_SelectedPos];
+		_marker setMarkerShape "ICON";
+		_marker setMarkerSize [0.6,0.6];
+		_marker setMarkerType _SideMarker;
+		_marker setMarkerColor _SideColor;
 
-	_Zone = createMarker [format ["OKS_MortarZone_Marker_%1",str (random 5000)],_SelectedPos];
-	_Zone setMarkerShape "ELLIPSE";
-	_Zone setMarkerSize [1000,1000];
-	_Zone setMarkerBrush "Border";
-	_Zone setMarkerType _SideMarker;
-	_Zone setMarkerColor _SideColor;
+		_Zone = createMarker [format ["OKS_MortarZone_Marker_%1",str (random 5000)],_SelectedPos];
+		_Zone setMarkerShape "ELLIPSE";
+		_Zone setMarkerSize [1000,1000];
+		_Zone setMarkerBrush "Border";
+		_Zone setMarkerType _SideMarker;
+		_Zone setMarkerColor _SideColor;
+	};
+
 
 	if(_Debug_Variable) then {
 		SystemChat format ["%1 Mortar created at %3",_Side,getMarkerPos _marker];

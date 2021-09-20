@@ -66,9 +66,9 @@ _pointer = "";
 _sight = "";
 _bipod = "";
 
-_LAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "MRAWS_HEAT_F";
-_LAT_ReUsable = true;
+_LAT = ["rhs_weap_M136_hp", _silencer, _pointer, _sight, _bipod];
+_LAT_mag = "";
+_LAT_ReUsable = false;
 
 _MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "MRAWS_HEAT_F";

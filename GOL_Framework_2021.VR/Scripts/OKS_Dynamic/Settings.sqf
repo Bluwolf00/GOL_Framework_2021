@@ -14,7 +14,7 @@ OPFOR FACTIONS:        CHEDAKI TKA DESERT_INSURGENTS RUSSIA_MODERN SOVIET TURKEY
 INDEPENDENT FACTIONS:  NAPA SYRIA
 
 */
-Private _Faction = "SYRIA";
+Private _Faction = "DESERT_INSURGENTS";
 Switch (_Faction) do {
 
 	case "SYRIA":{
@@ -295,11 +295,11 @@ Switch (_Side) do
 			"C_man_1_2_F",
 			"C_man_1_3_F"
 		];
-		_Officer = ["C_man_1"];
+		_Officer = ["C_man_1_1_F"];
 		_SideMarker = "empty";
 		_SideColor = "ColorCivilian";
 		_UnitArray = [_Leaders,_Units,_Officer];
-		_Wheeled = ["UK3CB_Civ_LandRover_Soft_Green_A","C_Offroad_01_F","C_Offroad_01_covered_F","C_Offroad_01_repair_F","C_SUV_01_F","C_Van_02_transport_F","LOP_CHR_Civ_Landrover","LOP_CHR_Civ_UAZ","LOP_CHR_Civ_UAZ_Open",""];
+		_Wheeled = ["UK3CB_Civ_LandRover_Soft_Green_A","C_Offroad_01_covered_F","C_Offroad_01_repair_F","C_Van_02_transport_F","LOP_CHR_Civ_Landrover","LOP_CHR_Civ_UAZ","LOP_CHR_Civ_UAZ_Open",""];
 		_APC = ["LOP_AFR_Civ_Hatchback"];
 		_Tank = ["LOP_TAK_Civ_Ural"];
 		_Artillery = [""];
@@ -329,14 +329,17 @@ _ObjectiveTypes = ["cache","artillery","hostage","hvttruck","ammotruck","radioto
 /* CompoundSize defines in meters how large a compound is conisdered in this mission. Garrisons will spread out at this distance*/
 _CompoundSize = 25;
 
-/* EnableEnemyMarkers will place markers at enemy strongpoints & compounds populated by Static Targets */
+/* EnableEnemyMarkers will place markers at enemy strongpoints, compounds, roadblocks & mortar pits populated by Static Targets */
 _EnableEnemyMarkers = true;
 
 /* Mark Trigger Area with Zone Marker*/
 _EnableZoneMarker = false;
 
 /* Mark Trigger Area with Zone Type Marker */
-_EnableZoneTypeMarker = false;
+_EnableZoneTypeMarker = true;
+
+/* Enable Tasking on Objectives - False if you want objectives without tasks attached */
+_EnableObjectiveTasks = true;
 
 /* Vehicle Type for Roadblock Vehicles - Options: _Wheeled, _APC, _Tank, _AntiAir */
 _RoadblockVehicleType = _APC;
@@ -344,9 +347,31 @@ _RoadblockVehicleType = _APC;
 
 /* Civilian Units for Hostage Objectives & HVT Objectives */
 _CivilianUnits = ["C_man_polo_1_F","C_man_polo_2_F","C_man_polo_3_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_6_F"];
-_Civilian = [_CivilianUnits,_Officer];
+
+/* Settings for Dynamic Civilian Module */
+_CivilianTriggerSize = 200;
+_CivilianCount = 8;
+_HouseWaypoints = 15;
+_RandomWaypoints = 5;
+_ShouldBeAgent = false;
+_ShouldPanic = true;
+
+_Ethnicity = "african";
+/*
+	_Ethnicity - OKS_FaceSwap - Only works if OKS_Ambience is enabled in MissionSettings.sqf & _ShouldBeAgent is false
+	african
+	asian
+	english
+	american
+	middleeast
+	russian
+	french
+ */
+
 
 
 // DO NOT EDIT ANYTHING BELOW \\
-_Configuration = [_CompoundSize,_EnableEnemyMarkers,_EnableZoneMarker,_EnableZoneTypeMarker,_RoadblockVehicleType];
+_DynamicCivilianArray = [_CivilianTriggerSize,_CivilianCount,_HouseWaypoints,_RandomWaypoints,_ShouldBeAgent,_ShouldPanic,_Ethnicity];
+_Civilian = [_CivilianUnits,_Officer,_DynamicCivilianArray];
+_Configuration = [_CompoundSize,_EnableEnemyMarkers,_EnableZoneMarker,_EnableZoneTypeMarker,_RoadblockVehicleType,_EnableObjectiveTasks];
 [_UnitArray,_SideMarker,_SideColor,_Vehicles,_Civilian,_ObjectiveTypes,_Configuration]

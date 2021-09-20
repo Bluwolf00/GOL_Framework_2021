@@ -6,10 +6,6 @@ class EditorData
 	scaleGridStep=10;
 	autoGroupingDist=10;
 	toggles=513;
-	mods[]=
-	{
-		"3denEnhanced"
-	};
 	class ItemIDProvider
 	{
 		nextID=1769;
@@ -20,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5263;
+		nextID=5288;
 	};
 	class Camera
 	{
-		pos[]={-2.1536198,34.428753,81.969978};
-		dir[]={0.88654792,-0.43875128,-0.14673154};
-		up[]={0.43286261,0.89860851,-0.071642593};
-		aside[]={-0.16328749,7.4505806e-009,-0.98657858};
+		pos[]={50.651825,16.890865,20.097393};
+		dir[]={0.49487886,-0.060812466,0.86684138};
+		up[]={0.030153621,0.99814802,0.052817758};
+		aside[]={0.86845082,-2.1065352e-007,-0.4957988};
 	};
 };
 binarizationWanted=0;
@@ -22133,7 +22129,6 @@ class Mission
 								};
 							};
 							id=406;
-							atlOffset=-5;
 						};
 						class Item1
 						{
@@ -22903,7 +22898,6 @@ class Mission
 								};
 							};
 							id=407;
-							atlOffset=-5;
 						};
 						class Item2
 						{
@@ -23812,7 +23806,6 @@ class Mission
 								};
 							};
 							id=408;
-							atlOffset=-5;
 						};
 						class Item3
 						{
@@ -24154,7 +24147,6 @@ class Mission
 								};
 							};
 							id=409;
-							atlOffset=-5;
 						};
 						class Item4
 						{
@@ -24523,7 +24515,7 @@ class Mission
 						};
 					};
 					id=403;
-					atlOffset=92864.047;
+					atlOffset=92866.547;
 				};
 				class Item1
 				{
@@ -25285,7 +25277,6 @@ class Mission
 								};
 							};
 							id=420;
-							atlOffset=-5;
 						};
 						class Item1
 						{
@@ -25844,7 +25835,6 @@ class Mission
 								};
 							};
 							id=421;
-							atlOffset=-5;
 						};
 						class Item2
 						{
@@ -26054,7 +26044,6 @@ class Mission
 								};
 							};
 							id=422;
-							atlOffset=-5;
 						};
 						class Item3
 						{
@@ -26368,11 +26357,10 @@ class Mission
 								};
 							};
 							id=419;
-							atlOffset=-5;
 						};
 					};
 					id=404;
-					atlOffset=409476.88;
+					atlOffset=409480.63;
 				};
 				class Item2
 				{
@@ -26939,7 +26927,6 @@ class Mission
 								};
 							};
 							id=430;
-							atlOffset=-5;
 						};
 						class Item1
 						{
@@ -27149,7 +27136,6 @@ class Mission
 								};
 							};
 							id=431;
-							atlOffset=-5;
 						};
 						class Item2
 						{
@@ -27282,7 +27268,6 @@ class Mission
 								};
 							};
 							id=432;
-							atlOffset=-5;
 						};
 						class Item3
 						{
@@ -28037,7 +28022,6 @@ class Mission
 								};
 							};
 							id=429;
-							atlOffset=-5;
 						};
 						class Item4
 						{
@@ -28222,7 +28206,7 @@ class Mission
 						};
 					};
 					id=405;
-					atlOffset=1245740.8;
+					atlOffset=1245743.3;
 				};
 				class Item3
 				{
@@ -28520,14 +28504,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={78.423637,7.5393777,44.156342};
-										angles[]={0,0.00065407134,0};
+										position[]={78.424004,7.5393777,44.155998};
+										angles[]={0,0.00064577186,0};
 									};
 									side="Empty";
 									flags=4;
 									class Attributes
 									{
-										init="call{[this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";}";
+										init="call{[this,false,true] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";}";
 									};
 									id=986;
 									type="B_APC_Wheeled_01_cannon_F";
@@ -28560,14 +28544,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={84.777382,7.1761513,43.557442};
-										angles[]={0,0.00063570222,0};
+										position[]={84.777,7.1761513,43.557915};
+										angles[]={0,0.00062831852,0};
 									};
 									side="Empty";
 									flags=4;
 									class Attributes
 									{
-										init="call{[this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";}";
+										init="call{[this,false,true] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";}";
 									};
 									id=1642;
 									type="B_LSV_01_armed_F";
@@ -28603,7 +28587,7 @@ class Mission
 				};
 			};
 			id=402;
-			atlOffset=374227.81;
+			atlOffset=374229.22;
 		};
 		class Item1
 		{
