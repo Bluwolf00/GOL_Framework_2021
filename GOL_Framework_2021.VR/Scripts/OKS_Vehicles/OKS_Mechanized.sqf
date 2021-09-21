@@ -7,8 +7,8 @@ if(!isServer) exitWith {};
 Params
 [
 	["_Vehicle", ObjNull, [ObjNull]],
-	["_MHQ", false, [ObjNull]],
-	["_ServiceStation", false, [ObjNull]]
+	["_MHQ", false, [true]],
+	["_ServiceStation", false, [true]]
 ];
 Private _Debug_Variable = false;
 
