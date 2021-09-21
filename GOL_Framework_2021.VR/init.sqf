@@ -101,6 +101,21 @@ Sleep 10;
 		   9 - Hunt Array Bases [Infantry,Wheeled,APC,Tank,Helicopter]
 		   10 - Dynamic Civilians on? (Boolean)
 
+		   Note:
+		   The Dynamic Scripts does work on its own however is very limited in selecting positions for strongpoints.
+		   You as an editor can assist the dynamic script by placing down locations for pinpointing different positions.
+		   In Eden-Editor "Location"s can be found in Systems (F5) and Game Logics > Locations.
+
+		   Area, Base, City, Evac Point, Resupply Point & Town -> Spawns Strongpoints & Sector Tasks (Selects Random Buildings in Area. Generally more contacts per building)
+		   Outpost -> Spawns Compounds & Sector Tasks (Selects all buildings in range of compoundSize (Settings) and spawns even-spread over all buildings)
+		   FOB -> Spawns Roadblocks, use the direction of the logic to define the direction of the roadblock.
+		   Respawn Point -> If you use HuntBases these locations will be picked, use the direction of the logic to choose the spawn direction 15-25m away from logic.
+		   Camp -> Static Objective positions, once again direction of logic defines direction of Objective compositions.
+		   Village -> Defines village area for the Dynamic Civilian presence, radius is found in Settings.sqf
+
+		   All Locations are not required, the script will find its own locations, however for the best experience and best result, help the dynamic script by placing these logics.
+
+		   Example:
 		   [Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false,0.5],[0,false],[0,false],[0,0,0,0,0],false] spawn OKS_CreateZone;
 		*/
 
