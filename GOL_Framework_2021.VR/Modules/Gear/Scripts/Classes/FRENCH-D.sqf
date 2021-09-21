@@ -37,10 +37,10 @@ if (_role isEqualTo "jetp") then {
 
 _silencer = "";
 _pointer = "";
-_sight = "rhsusf_acc_t1_low";
+_sight = "rhsusf_acc_eotech_xps3";
 _bipod = "rhsusf_acc_harris_bipod";
 
-_rifle = ["bg21_famas_HG", _silencer, _pointer, _sight, _bipod];
+_rifle = ["hlc_rifle_416D145_CAG", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["bg21_famas_HG", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["hlc_rifle_416D145_gl", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["hlc_rifle_416D20", _silencer, _pointer, _sight, _bipod];

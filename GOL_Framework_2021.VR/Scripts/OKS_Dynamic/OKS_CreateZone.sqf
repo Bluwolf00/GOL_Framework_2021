@@ -7,7 +7,24 @@
 
 if(!isServer) exitWith {};
 
-Params ["_MainTrigger","_SplitTrigger","_InfantryNumber","_Side","_WheeledCount","_apcCount","_tankCount","_RoadblockArray","_MortarArray","_ObjectiveArray","_HuntbaseArray","_DynamicCivilians"];
+//Params ["_MainTrigger","_SplitTrigger","_InfantryNumber","_Side","_WheeledCount","_apcCount","_tankCount","_RoadblockArray","_MortarArray","_ObjectiveArray","_HuntbaseArray","_DynamicCivilians"];
+
+//[Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false,0],[0,false],[0,false],[0,0,0,0,0],false] spawn OKS_CreateZone;
+
+Params [
+	["_MainTrigger", ObjNull, [ObjNull]],
+	["_SplitTrigger", false, [true]],
+	["_InfantryNumber", [0,0,false,false], []],
+	["_Side", sideUnknown, [sideUnknown]],
+	["_WheeledCount", 0, [0]],
+	["_apcCount", 0, [0]],
+	["_tankCount", 0, [0]],
+	["_RoadblockArray", [0,false,false,0], []],
+	["_MortarArray", [0,false], []],
+	["_ObjectiveArray", [0,false], []],
+	["_HuntbaseArray",[0,0,0,0,0],[]],
+	["_DynamicCivilians",false,[true]]
+];
 
 Private ["_MainTriggerArea","_Section_N","_Section_E","_Section_S","_Section_W","_MainTriggerSizeA","_MainTriggerSizeB","_MainTriggerAngle","_MainTriggerIsRectangle","_Section_N_Marker","_Section_E_Marker","_Section_S_Marker","_Section_W_Marker","_CountStrongpoints","_GarrisonNumber","_Section_N_Trigger","_Section_E_Trigger","_Section_S_Trigger","_Section_W_Trigger","_marker","_MainMarker","_WheeledPerTrigger","_APCPerTrigger","_TankPerTrigger","_SpawnTriggers","_Configurations","_ZoneEnemyType","_CountInfantryNumber","_UnitTypes","_UnitSelect"];
 

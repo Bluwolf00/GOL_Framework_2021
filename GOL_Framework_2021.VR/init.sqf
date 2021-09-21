@@ -91,7 +91,7 @@ Sleep 10;
 		   Dynamic Script Params
 		   0 - Trigger Name (Object)
 		   1 - Split Trigger into 4 Sub-Triggers? (Boolean)
-		   1 - Number of Infantry - [Static Integer,Patrol Integer,CreateSectorObjective?,LocalPatrols?] (Array) -
+		   2 - Number of Infantry - [Static Integer,Patrol Integer,CreateSectorObjective?,LocalPatrols?] (Array) -
 		   3 - Wheeled Patrols (Integer/Number)
 		   4 - APC Patrols (Integer/Number)
 		   5 - Tank Patrols (Integer/Number)
