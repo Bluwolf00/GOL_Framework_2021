@@ -31,7 +31,7 @@ Private _CreateSafeSpot = {
 	_SafeSpot setVariable ["#terminal",false];
 	//_m1 setVariable ["#type",5];
 
-	if(_SpawnPosition && _Spawns < _CivilianCount) then {
+	if(_SpawnPosition && _Spawns < 4) then {
 		_SpawnSpot = _Group createUnit ["ModuleCivilianPresenceUnit_F", _Position, [], 0, "NONE"];
 		_Spawns = _Spawns + 1;
 	};
