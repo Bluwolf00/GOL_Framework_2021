@@ -66,7 +66,7 @@ addMissionEventHandler ["EntityKilled",
 	if (isNil {MissionNameSpace getVariable _Var}) exitWith {}; // Exit if not defined by Tasks
 
 	if (!isPlayer _Killed) exitWith {}; // Exit if not player
-	[_Var] Spawn NEKY_Tasks_AvoidCasualties_Killed;
+	[_Var] Spawn NEKY_Tasks_AvoidDeaths_Killed;
 }];
 
 
