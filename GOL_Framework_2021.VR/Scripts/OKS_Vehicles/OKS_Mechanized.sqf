@@ -12,6 +12,8 @@ Params
 ];
 Private _Debug_Variable = false;
 
+sleep 30;
+
 clearItemCargoGlobal _Vehicle;
 clearWeaponCargoGlobal _Vehicle;
 clearMagazineCargoGlobal _Vehicle;

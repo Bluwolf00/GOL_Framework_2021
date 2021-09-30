@@ -6,9 +6,13 @@ class EditorData
 	scaleGridStep=10;
 	autoGroupingDist=10;
 	toggles=513;
+	mods[]=
+	{
+		"3denEnhanced"
+	};
 	class ItemIDProvider
 	{
-		nextID=1769;
+		nextID=1785;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5288;
+		nextID=5313;
 	};
 	class Camera
 	{
-		pos[]={50.651825,16.890865,20.097393};
-		dir[]={0.49487886,-0.060812466,0.86684138};
-		up[]={0.030153621,0.99814802,0.052817758};
-		aside[]={0.86845082,-2.1065352e-007,-0.4957988};
+		pos[]={53.54977,22.869106,73.285736};
+		dir[]={-0.26680714,-0.35139495,0.89742512};
+		up[]={-0.10014369,0.93622094,0.3368398};
+		aside[]={0.95855057,-3.8999133e-007,0.28498057};
 	};
 };
 binarizationWanted=0;
@@ -49,13 +53,14 @@ addons[]=
 	"A3_Armor_F_Beta_APC_Wheeled_01",
 	"A3_Structures_F_System",
 	"A3_Structures_F_Mil_Cargo",
-	"A3_Structures_F_Enoch_Military_Camps"
+	"A3_Structures_F_Enoch_Military_Camps",
+	"A3_Modules_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=16;
+		items=17;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -161,6 +166,13 @@ class AddonsMetaData
 		{
 			className="A3_Structures_F_Enoch_Military";
 			name="Arma 3 Contact Platform - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item16
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -21983,7 +21995,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=15;
+		items=31;
 		class Item0
 		{
 			dataType="Layer";
@@ -24279,13 +24291,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={55.104633,8.9768047,98.548126};
-										angles[]={0,0.036663502,0};
+										position[]={55.105,8.9768047,98.547997};
+										angles[]={0,0.03666937,0};
 									};
 									side="Empty";
 									flags=5;
 									class Attributes
 									{
+										init="if(!isNull NEKY_Paradrop_Trigger) then {[flag_west_1, ""Paradrop Reinsert"", ""DZ Alpha"", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM ""Scripts\NEKY_Paradrop\NEKY_AddAction.sqf"";}";
 										name="flag_west_1";
 									};
 									id=262;
@@ -26098,13 +26111,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={85.533554,8.9768047,99.369469};
-										angles[]={0,0.028829068,0};
+										position[]={85.533997,8.9768047,99.369003};
+										angles[]={0,0.028832838,0};
 									};
 									side="Empty";
 									flags=4;
 									class Attributes
 									{
+										init="if(!isNull NEKY_Paradrop_Trigger) then {[flag_east_1, ""Paradrop Reinsert"", ""DZ Bravo"", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM ""Scripts\NEKY_Paradrop\NEKY_AddAction.sqf"";}";
 										name="flag_east_1";
 									};
 									id=337;
@@ -28076,13 +28090,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={121.87757,8.9768047,98.68779};
-										angles[]={0,0.019963712,0};
+										position[]={121.878,8.9768047,98.688004};
+										angles[]={0,0.019966567,0};
 									};
 									side="Empty";
 									flags=4;
 									class Attributes
 									{
+										init="if(!isNull NEKY_Paradrop_Trigger) then {[flag_independent_1, ""Paradrop Reinsert"", ""DZ Charlie"", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM ""Scripts\NEKY_Paradrop\NEKY_AddAction.sqf"";}";
 										name="flag_independent_1";
 									};
 									id=338;
@@ -28511,7 +28526,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="call{[this,false,true] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";}";
+										init="[this,false,true] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
 									};
 									id=986;
 									type="B_APC_Wheeled_01_cannon_F";
@@ -28551,7 +28566,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="call{[this,false,true] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";}";
+										init="[this,false,true] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
 									};
 									id=1642;
 									type="B_LSV_01_armed_F";
@@ -28773,7 +28788,7 @@ class Mission
 				angles[]={0,3.0554278,0};
 			};
 			title="This is a dynamic spawn trigger";
-			description="This zone defines the area in which the dynamic scripts will generate content. Check the init.sqf for more information on how it is used.";
+			description="This zone defines the area in which the dynamic scripts will generate content. Check the init.sqf for more information on how it is used. The location markers surrounding this trigger need to be inside the trigger for them to be used by the zone";
 			id=1658;
 		};
 		class Item8
@@ -29059,10 +29074,10 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={38.574615,5,162.38184};
+				position[]={38.575001,5,162.382};
 			};
 			title="Paradrop Trigger";
-			description="This is the Paradrop Trigger that is required for NEKY Paradrop to be used. It is the position that reinserts will be dropped at.";
+			description="This is the Paradrop Trigger that is required for NEKY Paradrop to be used. It is the position that reinserts will be dropped at. Delete this if you want to disable Paradrop reinsert in your mission";
 			id=1754;
 		};
 		class Item10
@@ -29113,6 +29128,172 @@ class Mission
 			title="SpawnList Triggers";
 			description="These Triggers activate the different cases inside the SpawnList.sqf. When players enter these zones the scripts / zones will spawn. Used to spawn static units & moving groups using the Framework functions Shift + 1 & Shift + 2.";
 			id=1762;
+		};
+		class Item15
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={648.09259,5,327.12042};
+			};
+			id=1769;
+			type="LocationRespawnPoint_F";
+		};
+		class Item16
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={655.56622,5,400.91666};
+			};
+			id=1770;
+			type="LocationVillage_F";
+		};
+		class Item17
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={643.53259,5,125.04752};
+			};
+			id=1771;
+			type="LocationOutpost_F";
+		};
+		class Item18
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={643.21997,5,26.304924};
+			};
+			id=1772;
+			type="LocationFOB_F";
+		};
+		class Item19
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={646.46869,5,223.3882};
+			};
+			id=1773;
+			type="LocationCamp_F";
+		};
+		class Item20
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={451.26471,5,194.10126};
+			};
+			id=1774;
+			type="LocationCityCapital_F";
+		};
+		class Item21
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={451.43625,5,231.51712};
+			};
+			id=1775;
+			type="LocationBase_F";
+		};
+		class Item22
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={450.54312,5,179.04761};
+			};
+			id=1776;
+			type="LocationArea_F";
+		};
+		class Item23
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={451.71704,5,246.77498};
+			};
+			id=1777;
+			type="LocationEvacPoint_F";
+		};
+		class Item24
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={451.285,5,213.96655};
+			};
+			id=1778;
+			type="LocationCity_F";
+		};
+		class Item25
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={456.30719,5,213.85721};
+			};
+			title="Strongpoints Locations";
+			description="All these location logics are strongpoint definitions for dynamic scripts. If you have static infantry contacts in the array, they will spread among the strongpoints defined. If not defined they will automatically find towns.";
+			id=1779;
+		};
+		class Item26
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={661.12402,5,401.117};
+			};
+			title="Civilian Presence Location";
+			description="This logic, defines the areas which should be populated by the dynamic scripts, if enabled in the array. Settings for the amount of waypoints and civilians can be found in ""Scritps\OKS_Dynamic\Settings.sqf""";
+			id=1780;
+		};
+		class Item27
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={655.45001,5,328.26801};
+			};
+			title="HuntBase Locations";
+			description="This logic defines the huntbase locations for a zone, the direction of this logic will also point out where the spawn will be. The spawn positions for huntbases will be located about 20-30m towards the direction of the logic.";
+			id=1781;
+		};
+		class Item28
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={653.00299,5,224.27901};
+			};
+			title="Objective Locations";
+			description="Defines locations for Static Objectives such as Ammo cache, Artillery & Motor pool";
+			id=1782;
+		};
+		class Item29
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={650.89301,5,126.075};
+			};
+			title="Compound Strongpoints";
+			description="This is the second type of strongpoints used by static infantry contacts. This will fill out a compound (size defined in settings) evenly. Wheras the other strongpoints types will populate a few buidings with more enemies instead.";
+			id=1783;
+		};
+		class Item30
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={651.23901,5,30.868};
+			};
+			title="Roadblock Locations";
+			description="This logic is used for defining roadblock locations, the direction of the logic is also the direction of which the roadblock will be facing, including the static vehicle if present.";
+			id=1784;
 		};
 	};
 };
