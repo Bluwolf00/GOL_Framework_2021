@@ -64,15 +64,15 @@ if(_MHQ) then {
 
 
 if (["FV432_Mk3_GPMG",(typeOf _Vehicle)] call BIS_fnc_inString || ["Panther_GPMG",(typeOf _Vehicle)] call BIS_fnc_inString || ["WMIK_GPMG",(typeOf _Vehicle)] call BIS_fnc_inString ) then {
-	_Vehicle AddMagazineCargoGlobal ["UK3CB_BAF_762_200Rnd_T",5];
+	_Vehicle AddMagazineCargoGlobal ["UK3CB_BAF_762_200Rnd_T",10];
 };
 
 if (["Passenger_HMG",(typeOf _Vehicle)] call BIS_fnc_inString || ["L111A1",(typeOf _Vehicle)] call BIS_fnc_inString || ["FV432_Mk3_RWS",(typeOf _Vehicle)] call BIS_fnc_inString || ["LandRover_WMIK_HMG",(typeOf _Vehicle)] call BIS_fnc_inString ) then {
-	_Vehicle AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",5];
+	_Vehicle AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",10];
 };
 
 if(["L134A1",(typeOf _Vehicle)] call BIS_fnc_inString || ["WMIK_GMG",(typeOf _Vehicle)] call BIS_fnc_inString) then {
-	_Vehicle AddMagazineCargoGlobal ["UK3CB_BAF_32Rnd_40mm_G_Box",5];
+	_Vehicle AddMagazineCargoGlobal ["UK3CB_BAF_32Rnd_40mm_G_Box",10];
 };
 
 if(["WMIK_Milan",(typeOf _Vehicle)] call BIS_fnc_inString) then {
@@ -80,7 +80,7 @@ if(["WMIK_Milan",(typeOf _Vehicle)] call BIS_fnc_inString) then {
 };
 
 if(["WMIK",(typeOf _Vehicle)] call BIS_fnc_inString || ["Coyote",(typeOf _Vehicle)] call BIS_fnc_inString || ["Jackal2",(typeOf _Vehicle)] call BIS_fnc_inString  ) then {
-	_Vehicle AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",5];
+	_Vehicle AddMagazineCargoGlobal ["UK3CB_BAF_762_100Rnd_T",10];
 };
 
 

@@ -12,7 +12,7 @@
 #include "script_Component.hpp"
 #define	COMPONENT spawnList
 
-if !(isServer) then {false};
+if !(isServer) exitWith {false};
 
 params [
 	"_case"
