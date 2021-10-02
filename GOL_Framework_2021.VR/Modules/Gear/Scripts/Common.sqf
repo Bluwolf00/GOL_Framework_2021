@@ -155,7 +155,7 @@ if (GVARMAIN(mod_ACE3)) then {
 	_Earplugs = "ACE_EarPlugs";
 	_ATrag = "ACE_ATragMX";
 	_Kestrel = "ACE_Kestrel4500";
-
+	_glHE = "rhs_mag_M433_HEDP";
 	_flashBang = "ACE_M84";
 	_handFlareG = "ACE_HandFlare_Green";
 	_handFlareR = "ACE_HandFlare_Red";
