@@ -6,8 +6,10 @@ MISSION_ROOT = call {
 };
 
 /* Define Player Side for Scripts */
-OKS_FRIENDLY_SIDE = [player] call GW_Common_Fnc_getSide;
-publicVariable "OKS_FRIENDLY_SIDE";
+if(HasInterface && isNil "OKS_FRIENDLY_SIDE") then {
+	OKS_FRIENDLY_SIDE = [player] call GW_Common_Fnc_getSide;
+	publicVariable "OKS_FRIENDLY_SIDE";
+};
 
 /* Headless & ServiceStation */
 [] execVM "Scripts\HeadlessClient\HeadlessClient.sqf";
@@ -56,12 +58,10 @@ Sleep 5;
 	if(isServer && GOL_NEKY_SHARE isEqualTo 1) then {
 		[True,True] call NEKY_AI_ShareInfo;
 	};
-
-
 	if(GOL_NEKY_PARADROP isEqualTo 1) then {
 		waitUntil {sleep 1; !(isNil "NEKY_ACE_AddAction") && !(isNil "OKS_FRIENDLY_SIDE")};
 		[] spawn NEKY_ACE_AddAction;
-		/*
+
 		if(!isNil "flag_west_1" && OKS_FRIENDLY_SIDE isEqualTo west) then {
 			[flag_west_1, "Paradrop Reinsert", "DZ Alpha", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
 		};
@@ -71,7 +71,6 @@ Sleep 5;
 		if(!isNil "flag_independent_1" && OKS_FRIENDLY_SIDE isEqualTo independent) then {
 			[flag_independent_1, "Paradrop Reinsert", "DZ Charlie", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
 		};
-		*/
 	};
 
 Sleep 10;
@@ -84,7 +83,9 @@ Sleep 10;
 	};
 	if(GOL_OKS_TASK isEqualTo 1) then {
 		[] execVM "Scripts\OKS_TASK\Init.sqf";
-		waitUntil{sleep 1; !(isNil "OKS_TASKSETUP")};
+		waitUntil{sleep 1; !(isNil "OKS_TASKSETUP") && !(isNil "OKS_FRIENDLY_SIDE")};
+
+		[1,Base,Spawn1,4,west,dropoff,8,"Reinforce Balota Airfield"] spawn OKS_Escort_Base;
 		/*	[Task_Object_1,1,GetMarkerPos "Task_1",west,O_Task] spawn OKS_TASKSETUP;	*/
 	};
 

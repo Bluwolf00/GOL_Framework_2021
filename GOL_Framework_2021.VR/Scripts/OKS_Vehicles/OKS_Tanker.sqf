@@ -24,9 +24,9 @@ if (hasInterface) then {
 	_action = ["Vehicle Crew", "Vehicle Crew","\A3\ui_f\data\map\markers\nato\b_mech_inf.paa", {}, _condition,{},[]] call ace_interact_menu_fnc_createAction;
 	_create = ["Create Crew", "Create Crew","\a3\Ui_f\data\GUI\Cfg\Ranks\private_gs.paa",  { [[_this select 2, "Scripts\OKS_Vehicles\OKS_CreateCrew.sqf"], "BIS_fnc_ExecVM", false] call BIS_fnc_MP; }, _condition,{},[player,_unit]] call ace_interact_menu_fnc_createAction;
 	_delete = ["Delete Crew", "Delete Crew","\A3\Modules_F_Kart\data\TimeTrials\quit_igui_ca.paa",  { [[_this select 0, "Scripts\OKS_Vehicles\OKS_DeleteCrew.sqf"], "BIS_fnc_ExecVM", false] call BIS_fnc_MP}, _condition] call ace_interact_menu_fnc_createAction;
-	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
-	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment","Vehicle Crew"], _delete] call ace_interact_menu_fnc_addActionToClass;
-	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment","Vehicle Crew"], _create] call ace_interact_menu_fnc_addActionToClass;
+	[typeOf player, 1, ["ACE_SelfActions","ACE_TeamManagement"], _action] call ace_interact_menu_fnc_addActionToClass;
+	[typeOf player, 1, ["ACE_SelfActions","ACE_TeamManagement","Vehicle Crew"], _delete] call ace_interact_menu_fnc_addActionToClass;
+	[typeOf player, 1, ["ACE_SelfActions","ACE_TeamManagement","Vehicle Crew"], _create] call ace_interact_menu_fnc_addActionToClass;
 
 
 };
