@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={50.107956,55.07449,148.42744};
-		dir[]={0.51352972,-0.33982861,-0.787911};
-		up[]={0.18555494,0.94048738,-0.2846978};
-		aside[]={-0.83776885,0,-0.5460251};
+		pos[]={81.669823,52.670414,-12.94386};
+		dir[]={-0.0038486524,-0.4691948,0.88309091};
+		up[]={-0.0020442831,0.88309413,0.46919161};
+		aside[]={0.99999309,2.656725e-008,0.0043575303};
 	};
 };
 binarizationWanted=0;
@@ -22040,6 +22040,7 @@ class Mission
 												rank="LIEUTENANT";
 												name="wpl";
 												description="Platoon Leader@1-Actual ";
+												isPlayer=1;
 												isPlayable=1;
 												stance="Up";
 											};
@@ -26276,7 +26277,6 @@ class Mission
 												rank="LIEUTENANT";
 												name="epl";
 												description="Platoon Leader@1-Actual";
-												isPlayer=1;
 												isPlayable=1;
 												stance="Up";
 											};

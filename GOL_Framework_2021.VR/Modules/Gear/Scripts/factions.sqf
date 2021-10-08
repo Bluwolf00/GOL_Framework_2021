@@ -117,6 +117,9 @@ switch (_side) do {
 	case "USA-CW-W": {
 		#include "Classes\USA-CW-W.sqf"
 	};
+	case "USA-XM8-W": {
+		#include "Classes\USA-XM8-W.sqf"
+	};
 	case "USA-W": {
 		#include "Classes\USA-W.sqf"
 	};
