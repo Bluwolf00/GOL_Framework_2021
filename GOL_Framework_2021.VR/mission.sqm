@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5388;
+		nextID=5413;
 	};
 	class Camera
 	{
-		pos[]={66.534752,50.954613,19.506081};
-		dir[]={0.30500892,-0.59324741,0.74500227};
-		up[]={0.22477147,0.80501997,0.54901773};
-		aside[]={0.92544496,4.3946784e-009,-0.37888339};
+		pos[]={50.107956,55.07449,148.42744};
+		dir[]={0.51352972,-0.33982861,-0.787911};
+		up[]={0.18555494,0.94048738,-0.2846978};
+		aside[]={-0.83776885,0,-0.5460251};
 	};
 };
 binarizationWanted=0;
@@ -19633,7 +19633,7 @@ class CustomAttributes
 																"STRING"
 															};
 														};
-														value="CSAT-H";
+														value="RUSSIAN-W";
 													};
 												};
 												class Item1
@@ -19678,7 +19678,7 @@ class CustomAttributes
 																"STRING"
 															};
 														};
-														value="AAF-W";
+														value="SYRIA-D";
 													};
 												};
 												class Item1
@@ -22040,7 +22040,6 @@ class Mission
 												rank="LIEUTENANT";
 												name="wpl";
 												description="Platoon Leader@1-Actual ";
-												isPlayer=1;
 												isPlayable=1;
 												stance="Up";
 											};
@@ -24193,8 +24192,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={53.813141,5.3815289,97.473351};
-										angles[]={0,4.725883,0};
+										position[]={53.175812,5.3815289,97.355141};
+										angles[]={-0,4.725883,0};
 									};
 									side="Empty";
 									flags=4;
@@ -24235,8 +24234,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={55.812317,5.1799846,97.401512};
-										angles[]={0,0.036663502,0};
+										position[]={56.32328,5.1799846,97.480988};
+										angles[]={-0,0.036663502,0};
 									};
 									side="Empty";
 									flags=4;
@@ -24294,7 +24293,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={55.105,8.9768047,98.547997};
+										position[]={54.863049,8.9768047,97.696236};
 										angles[]={0,0.03666937,0};
 									};
 									side="Empty";
@@ -26277,6 +26276,7 @@ class Mission
 												rank="LIEUTENANT";
 												name="epl";
 												description="Platoon Leader@1-Actual";
+												isPlayer=1;
 												isPlayable=1;
 												stance="Up";
 											};
@@ -28304,8 +28304,8 @@ class Mission
 									dataType="Comment";
 									class PositionInfo
 									{
-										position[]={65.667892,5,41.754219};
-										angles[]={0,0.11193988,0};
+										position[]={53.882,5,42.24115};
+										angles[]={-0,0.11193988,0};
 									};
 									title="MHQ 1";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Small";
@@ -28328,8 +28328,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={59.674072,7.2059455,42.960644};
-										angles[]={0,6.2772379,0};
+										position[]={59.674,7.2059455,42.960438};
+										angles[]={0,6.2772336,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28338,7 +28338,7 @@ class Mission
 										health=0.89999998;
 										lock="UNLOCKED";
 										init="call{[this, ""medium""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf"";}";
-										name="mhq_2";
+										name="mhq_1";
 									};
 									id=849;
 									type="B_MRAP_01_F";
@@ -28371,8 +28371,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={65.457069,7.1761513,41.456821};
-										angles[]={0,0.0073909461,0};
+										position[]={53.671074,7.1761513,41.943481};
+										angles[]={-0,0.0073827426,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28381,7 +28381,7 @@ class Mission
 										health=0.89999998;
 										lock="UNLOCKED";
 										init="call{[this, ""small""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf"";}";
-										name="mhq_1";
+										name="mhq_2";
 									};
 									id=944;
 									type="B_LSV_01_unarmed_F";
