@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5313;
+		nextID=5388;
 	};
 	class Camera
 	{
-		pos[]={41.306519,59.494541,16.996902};
-		dir[]={0.34177813,-0.51263016,0.78768063};
-		up[]={0.20405635,0.85860193,0.47028062};
-		aside[]={0.91738361,-5.6764111e-007,-0.39805633};
+		pos[]={66.534752,50.954613,19.506081};
+		dir[]={0.30500892,-0.59324741,0.74500227};
+		up[]={0.22477147,0.80501997,0.54901773};
+		aside[]={0.92544496,4.3946784e-009,-0.37888339};
 	};
 };
 binarizationWanted=0;
@@ -22724,13 +22724,14 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={48.256699,5.0014391,66.196304};
-												angles[]={0,0.019480437,0};
+												position[]={48.257,5.0014391,66.196007};
+												angles[]={0,0.019477876,0};
 											};
 											side="West";
 											flags=7;
 											class Attributes
 											{
+												name="wcrew1";
 												description="Vehicle Commander@Pig";
 												isPlayable=1;
 												stance="Up";
@@ -22785,13 +22786,14 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={50.007095,5.0014391,66.162376};
-												angles[]={0,0.019480437,0};
+												position[]={50.007,5.0014391,66.162003};
+												angles[]={0,0.019477876,0};
 											};
 											side="West";
 											flags=5;
 											class Attributes
 											{
+												name="wcrew2";
 												description="Vehicle Driver@Pig";
 												isPlayable=1;
 												stance="Up";
@@ -22846,13 +22848,14 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={51.820297,5.0014391,66.126854};
-												angles[]={0,0.019480437,0};
+												position[]={51.82,5.0014391,66.127007};
+												angles[]={0,0.019477876,0};
 											};
 											side="West";
 											flags=5;
 											class Attributes
 											{
+												name="wcrew3";
 												description="Vehicle Gunner@Pig";
 												isPlayable=1;
 												stance="Up";
@@ -25104,13 +25107,14 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={83.218224,5.0014391,67.425949};
-												angles[]={0,0.042348113,0};
+												position[]={83.218002,5.0014391,67.426003};
+												angles[]={0,0.042341691,0};
 											};
 											side="East";
 											flags=7;
 											class Attributes
 											{
+												name="ecrew1";
 												description="Vehicle Commander@Pig";
 												isPlayable=1;
 												stance="Up";
@@ -25165,13 +25169,14 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={85.300949,5.0014391,67.410271};
-												angles[]={0,0.042348113,0};
+												position[]={85.301003,5.0014391,67.410004};
+												angles[]={0,0.042341691,0};
 											};
 											side="East";
 											flags=5;
 											class Attributes
 											{
+												name="ecrew2";
 												description="Vehicle Driver@Pig";
 												isPlayable=1;
 												stance="Up";
@@ -25226,13 +25231,14 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={87.424324,5.0014391,67.309662};
-												angles[]={0,0.042348113,0};
+												position[]={87.424004,5.0014391,67.310005};
+												angles[]={0,0.042341691,0};
 											};
 											side="East";
 											flags=5;
 											class Attributes
 											{
+												name="ecrew3";
 												description="Vehicle Gunner@Pig";
 												isPlayable=1;
 												stance="Up";
@@ -27850,13 +27856,14 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={120.44941,5.0014391,67.086639};
-												angles[]={0,0.019480437,0};
+												position[]={120.449,5.0014391,67.087006};
+												angles[]={0,0.019477876,0};
 											};
 											side="Independent";
 											flags=7;
 											class Attributes
 											{
+												name="icrew1";
 												description="Vehicle Commander@Pig";
 												isPlayable=1;
 												stance="Up";
@@ -27911,13 +27918,14 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={122.74391,5.0014391,67.041595};
-												angles[]={0,0.019480437,0};
+												position[]={122.744,5.0014391,67.042};
+												angles[]={0,0.019477876,0};
 											};
 											side="Independent";
 											flags=5;
 											class Attributes
 											{
+												name="icrew2";
 												description="Vehicle Driver@Pig";
 												isPlayable=1;
 												stance="Up";
@@ -27972,13 +27980,14 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={124.89964,5.0014391,66.99942};
-												angles[]={0,0.019480437,0};
+												position[]={124.9,5.0014391,66.999001};
+												angles[]={0,0.019477876,0};
 											};
 											side="Independent";
 											flags=5;
 											class Attributes
 											{
+												name="icrew3";
 												description="Vehicle Gunner@Pig";
 												isPlayable=1;
 												stance="Up";

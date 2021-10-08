@@ -124,9 +124,6 @@ switch (toLower(_role)) do {
 			[[_mapFlashLight,1],[_IRStrobe,1]] call _addToUniform;
 			[[_handFlareG,1],[_glFlareR,5],[_glFlareW,5]] call _addToBackpack;
 		};
-		if (!(_LAT_ReUsable)) then {
-			[_LAT, _LAT_mag, ""] call _addLaunchers;
-		};
 	};
 
 	case "r": {
@@ -134,11 +131,10 @@ switch (toLower(_role)) do {
 		[_rifle, _rifle_mag, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_grenade,2],[_flashBang,3],[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
+		[[_cables,4],[_defusalKit,1],[_flashBang,3],[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
 		[[_grenade,2],[_rifle_mag,4],[_rifle_mag_tr,4]] call _addToVest;
 		["","","","",_backpack] call _addEquipment;
 		[_LAT, _LAT_mag, ""] call _addLaunchers;
-		[[_cables,4],[_defusalKit,1],[_clacker,1],[_demoCharge,2]] call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
@@ -149,6 +145,9 @@ switch (toLower(_role)) do {
 		};
 		if (_LAT_ReUsable) then {
 			[[_LAT_mag,1]] call _addToBackpack;
+		} else {
+			///((_loadout select 5) select 1) append [[_LAT,1]];
+			((_loadout select 5) select 1) append [[[(_LAT select 0),"","","",[],[],""],1]];
 		};
 	};
 
@@ -181,7 +180,7 @@ switch (toLower(_role)) do {
 		_IFAK call _addToUniform;
 		[[_rifle_mag,2],[_pistol_mag,2],[_smokegrenadeY,4]] call _addToUniform;
 		[[_rifle_mag,2],[_rifle_mag_tr,2],[_grenade,2],[_flashBang,2]] call _addToVest;
-		[[_LMG_mag,COUNT_AG_MAGS(_LMG_mag)],[_clacker,1],[_demoCharge,2]] call _addToBackpack;
+		[[_LMG_mag,COUNT_AG_MAGS(_LMG_mag)],[_clacker,1],[_demoCharge,3]] call _addToBackpack;
 		if (GVAR(extraGear)) then {
 			(_FAKBig) call _addToBackpack;
 		} else {
