@@ -9,7 +9,12 @@
 	_TaskNumber = _this select 1;
 	_State = _this select 2;
 
+
 	_Task = _TaskObject getVariable [format ["OKS_TASK_ID_%1",_TaskNumber],false];
+
+	//SystemChat format ["Change TaskState: %1 %2 %3",_TaskObject,_TaskNumber,_State];
+	//SystemChat format ["%1",_Task];
+
 	_Action = _TaskObject getVariable [format ["OKS_TASK_ACTION_%1",_TaskNumber],false];
 	[_TaskObject,0,["ACE_MainActions",_Action]] call ace_interact_menu_fnc_removeActionFromObject;
 
@@ -17,10 +22,10 @@
 	if("STRING" != typeName _Task) then {
 		if(!_Task) then {
 			_TaskInfo = (_this select 0) getVariable [format ["OKS_TASK_INFO_%1",_TaskNumber],false];
-			_Task = _TaskInfo call BIS_fnc_taskCreate;
+			_Task = _TaskInfo call BIS_fnc_taskCreate; sleep 2;
 			[_Task,_State] call BIS_fnc_taskSetState;
 		};
 	}
 	else {
-			[_Task,_State] call BIS_fnc_taskSetState;
+		[_Task,_State] call BIS_fnc_taskSetState;
 	};

@@ -8,7 +8,13 @@
 
 */
 
-params ["_Object","_TaskNumber","_TaskPos","_Side","_TaskParent"];
+params [
+	["_Object",[objNull],[]],
+	["_TaskNumber",1,[0]],
+	["_TaskPos",[0,0,0],[[]]],
+	["_Side",[sideUnknown],[sideUnknown]],
+	["_TaskParent",objNull,[objNull]]
+];
 private ["_TaskID","_TaskTitle","_TaskAction","_TaskDescription","_TaskMarkerText"];
 
 
@@ -35,23 +41,61 @@ switch (_TaskNumber) do {
 
 	case 1:{
 		_TaskID = "OKS_TASK_1";
-		_TaskTitle = "Find and Capture HVT";
-		_TaskDescription = "Intel found suggests a high value target located in the area. Seize the HVT and take him back to base.";
+		_TaskTitle = "Intel: Ammo Cache";
+		_TaskDescription = "Intel found suggests an ammo cache in the near vicintiy of the camp. Find it and destroy it, expect Insurgents in the area, they will protect their equipment.";
 		_TaskAction = "Read Intel";
-		_TaskMarkerText = "HVT";
-		_TaskType = "kill";
+		_TaskMarkerText = "Ammo Cache";
+		_TaskType = "Destroy";
 		[_Object,_TaskID,_TaskAction,[_TaskID,_TaskTitle,_TaskDescription,_TaskMarkerText,_TaskPos,_TaskParent],_Side,_TaskNumber,_TaskType] spawn OKS_TASK;
 	};
 
 	case 2:{
 		_TaskID = "OKS_TASK_2";
-		_TaskTitle = "Neutralize Enemy Reserves";
-		_TaskDescription = "Enemy reserves are located north-west. Eliminate them!";
-		_TaskAction = "Download Intel";
-		_TaskMarkerText = "Reserves";
+		_TaskTitle = "Intel: Ammo Cache";
+		_TaskDescription = "Intel found suggests an ammo cache in the near vicintiy of the camp. Find it and destroy it, expect Insurgents in the area, they will protect their equipment.";
+		_TaskAction = "Read Intel";
+		_TaskMarkerText = "Ammo Cache";
+		_TaskType = "Destroy";
+		[_Object,_TaskID,_TaskAction,[_TaskID,_TaskTitle,_TaskDescription,_TaskMarkerText,_TaskPos,_TaskParent],_Side,_TaskNumber,_TaskType] spawn OKS_TASK;
+	};
+
+	case 3:{
+		_TaskID = "OKS_TASK_3";
+		_TaskTitle = "Intel: Insurgent Camp";
+		_TaskDescription = "Intel found suggests an insurgent camp is in the near vicintiy of the cache. Investigate the camp";
+		_TaskAction = "Read Document";
+		_TaskMarkerText = "Possible Insurgent Camp";
 		_TaskType = "attack";
 		[_Object,_TaskID,_TaskAction,[_TaskID,_TaskTitle,_TaskDescription,_TaskMarkerText,_TaskPos,_TaskParent],_Side,_TaskNumber,_TaskType] spawn OKS_TASK;
 	};
 
+	case 4:{
+		_TaskID = "OKS_TASK_4";
+		_TaskTitle = "Intel: Unknown";
+		_TaskDescription = "Intel found suggests insurgent activity in the compound marked on the map. Proceed with caution.";
+		_TaskAction = "Read Document";
+		_TaskMarkerText = "Possible Insurgent Camp";
+		_TaskType = "unknown";
+		[_Object,_TaskID,_TaskAction,[_TaskID,_TaskTitle,_TaskDescription,_TaskMarkerText,_TaskPos,_TaskParent],_Side,_TaskNumber,_TaskType] spawn OKS_TASK;
+	};
 
+	case 5:{
+		_TaskID = "OKS_TASK_5";
+		_TaskTitle = "Intel: Explosives Cache";
+		_TaskDescription = "The doctor explains that they have been held hostage by Al-Shabab for weeks, and they have know where the insurgent explosives supplies are located. Check your map";
+		_TaskAction = "Question Doctor";
+		_TaskMarkerText = "Possible Insurgent Cache";
+		_TaskType = "destroy";
+		[_Object,_TaskID,_TaskAction,[_TaskID,_TaskTitle,_TaskDescription,_TaskMarkerText,_TaskPos,_TaskParent],_Side,_TaskNumber,_TaskType] spawn OKS_TASK;
+	};
+
+	case 6:{
+		_TaskID = "OKS_TASK_6";
+		_TaskTitle = "Intel: Convoy";
+		_TaskDescription = "Intel found suggests a convoy of Insurgents are heading towards the town of Masakali. We assume they are planning to gather their forces for an attack on our positions in Geydam-Tchoukou. Reach the ambush-site and prepare an ambush. You must reach the ambush-site but you do not need to ambush at that specific position.";
+		_TaskAction = "Read Map";
+		_TaskMarkerText = "Convoy Ambush";
+		_TaskType = "mine";
+		[_Object,_TaskID,_TaskAction,[_TaskID,_TaskTitle,_TaskDescription,_TaskMarkerText,_TaskPos,_TaskParent],_Side,_TaskNumber,_TaskType] spawn OKS_TASK;
+	};
 };

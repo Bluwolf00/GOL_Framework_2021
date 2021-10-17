@@ -13,9 +13,15 @@ _taskTitle = [(_this select 3), 1, "No Title Found"] call BIS_fnc_param;
 _taskDesc = [(_this select 3), 2, ""] call BIS_fnc_param;
 _taskMarker = [(_this select 3), 3, ""] call BIS_fnc_param;
 _taskLocation = [(_this select 3), 4, objNull] call BIS_fnc_param;
-_taskParent = [(_this select 3), 5, ""] call BIS_fnc_param;
+_taskParent = [(_this select 3), 5, objNull] call BIS_fnc_param;
 
-_TaskInfo = [_faction, [format["%1",_taskID],format["%1",_taskParent]], [format["%1",_taskDesc], format["%1",_taskTitle], format["%1",_taskMarker]], _taskLocation,"CREATED",-1,false];
+private ["_TaskInfo"];
+
+if(isNull _taskParent) then {
+	_TaskInfo = [_faction, format["%1",_taskID], [format["%1",_taskDesc], format["%1",_taskTitle], format["%1",_taskMarker]], _taskLocation,"CREATED",-1,false];
+} else {
+	_TaskInfo = [_faction, [format["%1",_taskID],format["%1",_taskParent]], [format["%1",_taskDesc], format["%1",_taskTitle], format["%1",_taskMarker]], _taskLocation,"CREATED",-1,false];
+};
 
 _TaskVariable = format ["OKS_TASK_INFO_%1",_TaskNumber];
 _unit setVariable [_TaskVariable,_TaskInfo];
@@ -58,7 +64,12 @@ _unit setVariable [_TaskVariable,_TaskInfo];
 		_taskNumber = _Array select 6;
 		_taskType = _Array select 7;
 
-		_Task = [_faction, [format["%1",_taskID],_taskParent], [format["%1",_taskDesc], format["%1",_taskTitle], format["%1",_taskMarker]], _taskLocation,"AUTOASSIGNED",-1,true] call BIS_fnc_taskCreate;
+		private ["_Task"];
+		if(isNil _taskParent || _taskParent isEqualTo "") then {
+			_Task = [_faction, _taskID, [format["%1",_taskDesc], format["%1",_taskTitle], format["%1",_taskMarker]], _taskLocation,"AUTOASSIGNED",-1,true] call BIS_fnc_taskCreate;
+		} else {
+			_Task = [_faction, [format["%1",_taskID],_taskParent], [format["%1",_taskDesc], format["%1",_taskTitle], format["%1",_taskMarker]], _taskLocation,"AUTOASSIGNED",-1,true] call BIS_fnc_taskCreate;
+		};
 		[_Task,_TaskType] call BIS_fnc_taskSetType;
 		_TaskIdVariable = format ["OKS_TASK_ID_%1",_TaskNumber];
 		_Object setVariable [_TaskIdVariable,_Task];

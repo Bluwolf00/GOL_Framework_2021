@@ -6,11 +6,10 @@ Params ["_Unit","_Anim"];
 if (HasInterface && !isServer) exitWith {false};	// Ensures only server or HC runs this script - Tack Neky
 
 _Unit disableAI "MOVE";
-_Unit disableAI "ANIM";
 
 while{alive _Unit} do {
 	_Unit switchMove _Anim;
 	sleep 0.5;
-	waitUntil { ((animationState _Unit) != _Anim) };
+	waitUntil { /*systemChat str [(animationState _Unit),toLower _Anim]; */ ((animationState _Unit) != toLower _Anim) };
 };
 

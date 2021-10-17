@@ -41,12 +41,12 @@ MissionNameSpace setVariable [_Var,0];
 _SubTasks = [];
 UISleep 0.1;
 
-For "_i" from 0 to 4 step 1 do
+For "_i" from 0 to 7 step 1 do
 {
 	_Index = _i;
 	_TempName = Format ["%1_%2",_TaskName,_i];
 	_TempCount = (_i * 2);
-	_NewDescription = [Format ["No more than %1 casualties caused by your side.",_TempCount], Format ["%1 or less",_TempCount], ""];
+	_NewDescription = [Format ["No more than %1 casualties caused by your side.",_TempCount], Format ["Civilian: %1 or less",_TempCount,_Side], ""];
 	[true, [_TempName, _TaskName], _NewDescription, ObjNull, "Succeeded", 1, false, "Defend"] call BIS_FNC_TaskCreate;
 	_SubTasks pushBack [_TempName,_TempCount];
 	UISleep 0.1;

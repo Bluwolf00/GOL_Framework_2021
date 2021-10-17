@@ -31,6 +31,8 @@ GVAR(StaminaCoef) = 0.5;
 			"BAF-W-FALK",
 			"GER-FLK",
 			"FRENCH-D",
+			"FRENCH-UN",
+			"RWANDA-W",
 			"USMC-D",
 			"USMC-W",
 			"USA-W",
@@ -61,6 +63,8 @@ GVAR(StaminaCoef) = 0.5;
 			"Falklands Royal Marines",
 			"Bundeswehr Flecktarn",
 			"French Army Desert",
+			"French Army United Nations",
+			"Rwanda Defence Force Woodland",
 			"USMC Desert",
 			"USMC Woodland",
 			"US Army Modern MTP",
@@ -146,6 +150,7 @@ GVAR(StaminaCoef) = 0.5;
 		[
 			"AAF-W",
 			"AAF-SF-W",
+			"FRENCH-UN",
 			"PMC",
 			"TAKISTAN-D",
 			"ISLAMICSTATE",
@@ -158,6 +163,7 @@ GVAR(StaminaCoef) = 0.5;
 		[
 			"AAF-Woodland",
 			"AAF SF Woodland",
+			"French Army United Nations",
 			"PMC",
 			"Takistani Desert",
 			"Islamic State",
@@ -179,12 +185,14 @@ GVAR(StaminaCoef) = 0.5;
 		[
 			"CIVI-ALTIS",
 			"CIVI-CHERNARUS",
-			"CIVI-TAKISTAN"
+			"CIVI-TAKISTAN",
+			"CIVI-AFRICA"
 		],
 		[
 			"ALTIS",
 			"CHERNARUS",
-			"TAKISTAN"
+			"TAKISTAN",
+			"AFRICAN"
 		],
 		0
 	], CBA_SERVEROVERWRITE
