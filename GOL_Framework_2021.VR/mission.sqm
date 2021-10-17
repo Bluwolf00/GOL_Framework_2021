@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5413;
+		nextID=5438;
 	};
 	class Camera
 	{
-		pos[]={81.669823,52.670414,-12.94386};
-		dir[]={-0.0038486524,-0.4691948,0.88309091};
-		up[]={-0.0020442831,0.88309413,0.46919161};
-		aside[]={0.99999309,2.656725e-008,0.0043575303};
+		pos[]={48.155327,54.849663,37.578842};
+		dir[]={0.026255637,-0.54421943,0.83853257};
+		up[]={0.017031943,0.83894312,0.543953};
+		aside[]={0.99951041,-4.6129571e-009,-0.031296033};
 	};
 };
 binarizationWanted=0;
@@ -24194,7 +24194,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={53.175812,5.3815289,97.355141};
-										angles[]={-0,4.725883,0};
+										angles[]={0,4.725883,0};
 									};
 									side="Empty";
 									flags=4;
@@ -24236,7 +24236,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={56.32328,5.1799846,97.480988};
-										angles[]={-0,0.036663502,0};
+										angles[]={0,0.036663502,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28305,7 +28305,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={53.882,5,42.24115};
-										angles[]={-0,0.11193988,0};
+										angles[]={0,0.11193988,0};
 									};
 									title="MHQ 1";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Small";
@@ -28372,7 +28372,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={53.671074,7.1761513,41.943481};
-										angles[]={-0,0.0073827426,0};
+										angles[]={0,0.0073827426,0};
 									};
 									side="Empty";
 									flags=4;

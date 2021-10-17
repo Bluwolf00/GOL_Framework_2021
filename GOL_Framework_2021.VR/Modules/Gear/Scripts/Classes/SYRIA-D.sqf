@@ -42,7 +42,7 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "";
+_silencer = "rhs_acc_dtk1983";
 _pointer = "";
 _sight = "";
 _bipod = "";
@@ -61,15 +61,6 @@ _LMG_mag = "rhs_75Rnd_762x39mm_tracer";
 _MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhs_100Rnd_762x54mmR_green";
 
-/*
-if (GVARMAIN(mod_CUP_WEAPONS)) then {
-	_LMG = ["CUP_arifle_RPK74_45", _silencer, _pointer, _sight, _bipod];
-	_LMG_mag = "CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M";
-
-	_MMG = ["CUP_lmg_Pecheneg", _silencer, _pointer, _sight, _bipod];
-	_MMG_mag = "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M";
-};
-*/
 _LAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "RPG7_F";
 _LAT_ReUsable = true;

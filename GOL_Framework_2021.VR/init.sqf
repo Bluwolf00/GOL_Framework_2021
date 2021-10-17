@@ -84,8 +84,6 @@ Sleep 10;
 	if(GOL_OKS_TASK isEqualTo 1) then {
 		[] execVM "Scripts\OKS_TASK\Init.sqf";
 		waitUntil{sleep 1; !(isNil "OKS_TASKSETUP") && !(isNil "OKS_FRIENDLY_SIDE")};
-
-		[1,Base,Spawn1,4,west,dropoff,8,"Reinforce Balota Airfield"] spawn OKS_Escort_Base;
 		/*	[Task_Object_1,1,GetMarkerPos "Task_1",west,O_Task] spawn OKS_TASKSETUP;	*/
 	};
 

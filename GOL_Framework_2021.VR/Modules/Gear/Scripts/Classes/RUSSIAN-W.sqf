@@ -49,7 +49,7 @@ if (_role isEqualTo "jetp") then {
 };
 
 
-_silencer = "";
+_silencer = "rhs_acc_dtk2";
 _pointer = "";
 _sight = "";
 _bipod = "";

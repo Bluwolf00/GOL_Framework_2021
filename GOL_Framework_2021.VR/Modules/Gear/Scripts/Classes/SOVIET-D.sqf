@@ -42,15 +42,15 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "";
+_silencer = "rhs_acc_dtk1983";
 _pointer = "";
 _sight = "";
 _bipod = "";
 
 _rifle = ["rhs_weap_aks74", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["rhs_weap_aks74u", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["rhs_weap_aks74u", "rhs_acc_pgs64_un", _pointer, _sight, _bipod];
 _rifleGL = ["rhs_weap_aks74_gp25", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["rhs_weap_akms", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["rhs_weap_akms", "rhs_acc_dtkakm", _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_545x39_Mag_F";
 _rifle_mag_tr = "30Rnd_545x39_Mag_Tracer_F";
 _rifleL_mag = "rhs_30Rnd_762x39mm_bakelite_tracer";

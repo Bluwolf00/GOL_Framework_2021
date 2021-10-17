@@ -39,6 +39,7 @@ OKS_Vehicle_Waypoints = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\O
 OKS_Check_Waypoints = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Check_Waypoints.sqf";
 OKS_Vehicle_Patrol = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Vehicle_Patrol.sqf";
 OKS_Patrol_Spawn = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Patrol_Spawn.sqf";
+OKS_Rush_Spawn = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Rush_Spawn.sqf";
 OKS_Populate_Strongpoints = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Populate_Strongpoints.sqf";
 OKS_Populate_StaticWeapons = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Populate_StaticWeapons.sqf";
 OKS_Populate_Bunkers = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Populate_Bunkers.sqf";
