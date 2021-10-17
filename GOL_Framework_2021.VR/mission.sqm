@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1789;
+		nextID=1843;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={25.122717,22.703632,41.121876};
-		dir[]={0.86396241,-0.47194451,0.17561653};
-		up[]={0.46248731,0.88162607,0.094008975};
-		aside[]={0.19919536,-2.8288923e-008,-0.97996074};
+		pos[]={69.895195,49.022049,85.04068};
+		dir[]={-0.15440032,-0.67769927,-0.71894795};
+		up[]={-0.14229754,0.73533911,-0.66259289};
+		aside[]={-0.97770947,-2.3108441e-008,0.2099715};
 	};
 };
 binarizationWanted=0;
@@ -24535,11 +24535,11 @@ class Mission
 								};
 							};
 							id=413;
-							atlOffset=185733.09;
+							atlOffset=11608.318;
 						};
 					};
 					id=403;
-					atlOffset=92866.547;
+					atlOffset=5804.1592;
 				};
 				class Item1
 				{
@@ -28312,8 +28312,8 @@ class Mission
 									dataType="Comment";
 									class PositionInfo
 									{
-										position[]={53.882,5,42.241001};
-										angles[]={0,0.11193988,0};
+										position[]={55.86108,5,42.310791};
+										angles[]={-0,0.11193988,0};
 									};
 									title="MHQ 2";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Small";
@@ -28324,8 +28324,8 @@ class Mission
 									dataType="Comment";
 									class PositionInfo
 									{
-										position[]={59.611,5,42.583};
-										angles[]={0,0.06816864,0};
+										position[]={68.461746,5,42.568836};
+										angles[]={-0,0.06816864,0};
 									};
 									title="MHQ 1";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
@@ -28336,8 +28336,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={59.674,7.2059455,42.960438};
-										angles[]={0,6.2772336,0};
+										position[]={68.217125,7.2059455,44.481571};
+										angles[]={-0,6.2772336,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28379,8 +28379,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={53.671074,7.1761513,41.943481};
-										angles[]={0,0.0073827426,0};
+										position[]={55.854027,7.1761513,43.21434};
+										angles[]={-0,0.0073827426,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28422,8 +28422,8 @@ class Mission
 									dataType="Comment";
 									class PositionInfo
 									{
-										position[]={47.215,5,42.825001};
-										angles[]={0,0.11193988,0};
+										position[]={42.64455,5,43.068512};
+										angles[]={-0,0.11193988,0};
 									};
 									title="MHQ 3";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Boat";
@@ -28434,8 +28434,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={47.004002,8.3238735,42.527};
-										angles[]={0,0.0073827426,0};
+										position[]={42.433552,8.3238735,42.770512};
+										angles[]={-0,0.0073827426,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28591,8 +28591,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={78.424004,7.5393777,44.155998};
-										angles[]={0,0.00064577186,0};
+										position[]={81.09391,7.5393777,43.637993};
+										angles[]={-0,0.00064577186,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28631,8 +28631,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={84.777,7.1761513,43.557915};
-										angles[]={0,0.00062831852,0};
+										position[]={87.446907,7.1761513,43.039909};
+										angles[]={-0,0.00062831852,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28674,7 +28674,7 @@ class Mission
 				};
 			};
 			id=402;
-			atlOffset=374229.22;
+			atlOffset=363346.41;
 		};
 		class Item1
 		{
@@ -28832,8 +28832,8 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={78.429253,5,43.029354};
-				angles[]={0,3.9513838,0};
+				position[]={81.099159,5,42.511349};
+				angles[]={-0,3.9513838,0};
 			};
 			title="Mechanized / Motorized Setup";
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -28844,8 +28844,8 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={85.03949,5,44.121975};
-				angles[]={0,3.9513655,0};
+				position[]={87.709396,5,43.60397};
+				angles[]={-0,3.9513655,0};
 			};
 			title="Mechanized / Motorized Setup";
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";

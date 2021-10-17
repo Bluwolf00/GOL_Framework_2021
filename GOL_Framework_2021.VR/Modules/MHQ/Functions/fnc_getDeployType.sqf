@@ -29,40 +29,39 @@ switch (_type) do {
 			["SatelliteAntenna_01_Olive_F",(166+180),[-0.5,8,-0.381792]],
 			["Land_BagFence_01_round_green_F",(343-180),[0.0244141,9.5,0.133886]]
 		];
-		/*
-		_return = [
-			["Box_Syndicate_WpsLaunch_F",337,[0.625977,7.3042,-0.468469],["med_box",(_mhq getVariable QGVAR(Side))]],
-			["Box_NATO_Equip_F",35,[-2.49023,6.33691,-0.547469],["gearbox",(_mhq getVariable QGVAR(Side))]],
-			["Land_BagFence_01_round_green_F",(305-180),[-4.63672,6.69434,-0.732886]],
-			["Land_BagFence_01_round_green_F",(348-180),[0.167969,9.39551,-0.768324]],
-			["Land_BagFence_01_round_green_F",(44+180),[3.61523,6.64502,-0.795714]]];
-			*/
 	};
 	case "small": {
-
-		 _return = [
-			 ["Land_IRMaskingCover_02_F",90,[-0.796722,-3.09734,-0.00529003]],
-			 ["Land_CampingTable_F",189.946,[-1.85233,-6.61244,-0.00528622]],
-			 ["Land_CampingChair_V2_F",230,[-2.26124,-7.54794,-0.00528622]],
-			 ["Land_CampingChair_V2_F",353.474,[-1.2665,-5.82129,-0.00528622]],
-			 ["Land_Portable_generator_F",110,[-2.7164,-5.33063,-0.00528622]],
-			 ["Land_CanisterFuel_F",320,[-2.04576,-5.67267,-0.00528622]],
-			 ["PortableHelipadLight_01_red_F",340,[-1.69991,-6.54645,0.807719]],
-			 ["Land_Sleeping_bag_folded_F",38,[-1.80033,-6.83354,0.807719]],
-			 ["Land_Sleeping_bag_folded_F",121.391,[-2.10519,-6.41302,0.807719]],
-			 ["Box_NATO_Equip_F",90,[-2.64225,-2.79993,-0.00528622],["gearbox",(_mhq getVariable QGVAR(Side))]]
+		_return = [
+			["Box_NATO_Equip_F",268,[-0.19632,4.67848,-2.17615],["gearbox",(_mhq getVariable QGVAR(Side))]],
+			["Box_NATO_Equip_F",271,[0.0817223,-6.44015,-2.17615],["gearbox",(_mhq getVariable QGVAR(Side))]],
+			["CamoNet_BLUFOR_open_F",88,[-0.580032,-0.977325,-2.17615]],
+			["Land_BagFence_01_round_green_F",23,[-2.69328,-7.52737,-2.17745]],
+			["Land_BagFence_01_round_green_F",320,[3.15591,-7.21935,-2.17745]],
+			["Land_BagFence_01_round_green_F",201,[2.13588,5.71606,-2.17745]],
+			["Land_BagFence_01_round_green_F",155,[-2.906,5.49521,-2.17745]],
+			["Land_BagFence_01_long_green_F",269,[-4.28108,-3.35187,-2.17715]],
+			["Land_BagFence_01_long_green_F",269,[-4.33076,0.936893,-2.17715]],
+			["Land_BagFence_01_long_green_F",269,[4.3396,-2.86632,-2.17715]],
+			["Land_BagFence_01_long_green_F",269,[4.19077,1.29527,-2.17715]]
 		];
 	};
 
 	case "medium": {
 		_return = [
-			["Land_IRMaskingCover_01_F",90,[-0.500839,-5.47292,-0.00528622]],
-			["CargoNet_01_barrels_F",210,[3.62416,-6.34792,-0.00528622]],
-			["Land_WaterBarrel_F",0,[3.74916,-7.97292,-0.00528622]],
-			["Land_CampingTable_F",230,[-3.12584,-10.5979,-0.00528622]],
-			["Land_CampingChair_V1_F",30,[-2.87584,-9.47292,-0.00528622]],
-			["PortableHelipadLight_01_red_F",0,[-2.87584,-11.2229,0.807719]],
-			["Box_NATO_Equip_F",133.672,[3.37416,-8.97292,-0.00528622],["gearbox",(_mhq getVariable QGVAR(Side))]]
+			["Box_NATO_Equip_F",268,[-4.02506,-1.39868,-2.20595],["gearbox",(_mhq getVariable QGVAR(Side))]],
+			["Box_NATO_Equip_F",268,[3.92525,-1.25739,-2.20595],["gearbox",(_mhq getVariable QGVAR(Side))]],
+			["CamoNet_BLUFOR_big_F",180,[0.109093,-2.48904,-2.20595]],
+			["Land_BagFence_01_round_green_F",121,[-6.79787,2.03528,-2.20725]],
+			["Land_BagFence_01_round_green_F",144,[-4.97442,3.68629,-2.20725]],
+			["Land_BagFence_01_round_green_F",207,[4.83183,4.01045,-2.20725]],
+			["Land_BagFence_01_long_green_F",348,[-2.44761,4.40547,-2.20695]],
+			["Land_BagFence_01_long_green_F",80,[-6.90128,-1.83427,-2.20695]],
+			["Land_BagFence_01_long_green_F",56,[-5.02162,-6.55472,-2.20695]],
+			["Land_BagFence_01_long_green_F",13,[-1.70855,-8.84624,-2.20695]],
+			["Land_BagFence_01_long_green_F",354,[1.96452,-9.2169,-2.20695]],
+			["Land_BagFence_01_long_green_F",307,[5.95254,-7.16691,-2.20695]],
+			["Land_BagFence_01_long_green_F",245,[6.41019,1.50032,-2.20695]],
+			["Land_BagFence_01_long_green_F",272,[7.04918,-2.94966,-2.20695]]
 		];
 	};
 	case "fob": {
