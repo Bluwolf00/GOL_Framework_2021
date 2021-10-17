@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1785;
+		nextID=1789;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5438;
+		nextID=5463;
 	};
 	class Camera
 	{
-		pos[]={48.155327,54.849663,37.578842};
-		dir[]={0.026255637,-0.54421943,0.83853257};
-		up[]={0.017031943,0.83894312,0.543953};
-		aside[]={0.99951041,-4.6129571e-009,-0.031296033};
+		pos[]={25.122717,22.703632,41.121876};
+		dir[]={0.86396241,-0.47194451,0.17561653};
+		up[]={0.46248731,0.88162607,0.094008975};
+		aside[]={0.19919536,-2.8288923e-008,-0.97996074};
 	};
 };
 binarizationWanted=0;
@@ -49,6 +49,7 @@ addons[]=
 	"A3_Soft_F_MRAP_01",
 	"ace_realisticnames",
 	"A3_Soft_F_Exp_LSV_01",
+	"A3_Boat_F_Boat_Armed_01",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Armor_F_Beta_APC_Wheeled_01",
 	"A3_Structures_F_System",
@@ -60,7 +61,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=17;
+		items=18;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -150,26 +151,33 @@ class AddonsMetaData
 		};
 		class Item13
 		{
+			className="A3_Boat_F";
+			name="Arma 3 Alpha - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item14
+		{
 			className="A3_Armor_F_Beta";
 			name="Arma 3 Beta - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
+		class Item15
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item16
 		{
 			className="A3_Structures_F_Enoch_Military";
 			name="Arma 3 Contact Platform - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item17
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
@@ -28298,16 +28306,16 @@ class Mission
 							name="MHQ";
 							class Entities
 							{
-								items=4;
+								items=6;
 								class Item0
 								{
 									dataType="Comment";
 									class PositionInfo
 									{
-										position[]={53.882,5,42.24115};
+										position[]={53.882,5,42.241001};
 										angles[]={0,0.11193988,0};
 									};
-									title="MHQ 1";
+									title="MHQ 2";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Small";
 									id=271;
 								};
@@ -28316,10 +28324,10 @@ class Mission
 									dataType="Comment";
 									class PositionInfo
 									{
-										position[]={59.611286,5,42.582996};
+										position[]={59.611,5,42.583};
 										angles[]={0,0.06816864,0};
 									};
-									title="MHQ 2";
+									title="MHQ 1";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
 									id=848;
 								};
@@ -28385,6 +28393,61 @@ class Mission
 									};
 									id=944;
 									type="B_LSV_01_unarmed_F";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="ammoBox";
+											expression="[_this,_value] call bis_fnc_initAmmoBox;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+												};
+											};
+										};
+										nAttributes=1;
+									};
+								};
+								class Item4
+								{
+									dataType="Comment";
+									class PositionInfo
+									{
+										position[]={47.215,5,42.825001};
+										angles[]={0,0.11193988,0};
+									};
+									title="MHQ 3";
+									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Boat";
+									id=1785;
+								};
+								class Item5
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={47.004002,8.3238735,42.527};
+										angles[]={0,0.0073827426,0};
+									};
+									side="Empty";
+									flags=4;
+									class Attributes
+									{
+										health=0.89999998;
+										lock="UNLOCKED";
+										init="call{[this, ""boat""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf"";}";
+										name="mhq_3";
+									};
+									id=1788;
+									type="B_Boat_Armed_01_minigun_F";
 									class CustomAttributes
 									{
 										class Attribute0

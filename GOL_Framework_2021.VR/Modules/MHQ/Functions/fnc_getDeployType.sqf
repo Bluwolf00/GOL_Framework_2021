@@ -22,6 +22,22 @@ params [
 private _return = [];
 
 switch (_type) do {
+
+	case "boat": {
+		_return = [
+			["Box_NATO_Equip_F",165,[0.5,7,0.56345],["gearbox",(_mhq getVariable QGVAR(Side))]],
+			["SatelliteAntenna_01_Olive_F",(166+180),[-0.5,8,-0.381792]],
+			["Land_BagFence_01_round_green_F",(343-180),[0.0244141,9.5,0.133886]]
+		];
+		/*
+		_return = [
+			["Box_Syndicate_WpsLaunch_F",337,[0.625977,7.3042,-0.468469],["med_box",(_mhq getVariable QGVAR(Side))]],
+			["Box_NATO_Equip_F",35,[-2.49023,6.33691,-0.547469],["gearbox",(_mhq getVariable QGVAR(Side))]],
+			["Land_BagFence_01_round_green_F",(305-180),[-4.63672,6.69434,-0.732886]],
+			["Land_BagFence_01_round_green_F",(348-180),[0.167969,9.39551,-0.768324]],
+			["Land_BagFence_01_round_green_F",(44+180),[3.61523,6.64502,-0.795714]]];
+			*/
+	};
 	case "small": {
 
 		 _return = [
