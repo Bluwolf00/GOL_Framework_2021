@@ -1,3 +1,4 @@
+/*
 #include "script_Component.hpp"
 
 #ifdef LOAD_MODULES

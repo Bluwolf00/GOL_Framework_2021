@@ -469,11 +469,12 @@ if (_isMan) then {
 			case "med_box": {
 				[_unit, _bandage, 100] call _fnc_AddObjectsCargo;
 				if (GVARMAIN(mod_ACE3)) then {
-					[_unit, _morph, 50] call _fnc_AddObjectsCargo;
-					[_unit, _epi, 50] call _fnc_AddObjectsCargo;
+					//[_unit, _morph, 50] call _fnc_AddObjectsCargo;
+					//[_unit, _epi, 50] call _fnc_AddObjectsCargo;
+					[_unit, "ACE_personalAidKit", 20] call _fnc_AddObjectsCargo;
 					_tourn = "ACE_tourniquet";
 					[_unit, _tourn, 50] call _fnc_AddObjectsCargo;
-					[_unit, _blood, 50] call _fnc_AddObjectsCargo;
+					[_unit, "ACE_salineIV", 50] call _fnc_AddObjectsCargo;
 					if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {
 						[_unit, "ACE_elasticBandage", 100] call _fnc_AddObjectsCargo;
 						[_unit, "ACE_tourniquet", 50] call _fnc_AddObjectsCargo;
