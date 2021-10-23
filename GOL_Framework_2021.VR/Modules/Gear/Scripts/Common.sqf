@@ -81,33 +81,7 @@ if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
 	_salineSm = "ACE_SalineIV_500";
 
 	_IFAK = [[_bandage,6],["ACE_tourniquet",1]];
-	if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {	// Advanced
-		_blood = "ACE_bloodIV";
-		_epi = "ACE_epinephrine";
-		_morph = "ACE_morphine";
-		_IFAK = [["ACE_elasticBandage",5],["ACE_tourniquet",1]];
-		_tourn = "ACE_tourniquet";
-		_FAKSmall = [
-			[_bandage, 10],
-			["ACE_elasticBandage", 20],
-			["ACE_tourniquet", 1],
-			[_morph, 6],
-			[_epi, 6],
-			["ACE_salineIV", 4]
-		];
-		_FAKBig = [
-			[_bandage, 15],
-			["ACE_elasticBandage", 30],
-			["ACE_quikclot", 10],
-			["ACE_tourniquet", 4],
-			[_epi, 6],
-			[_morph, 6],
-			["ACE_atropine", 5],
-			["ACE_salineIV", 5],
-			["ACE_personalAidKit", 1],
-			[_blood, 3]
-		];
-	} else {
+
 		_FAKSmall = [
 			[_bandage,15],
 			[_saline,6],
@@ -120,7 +94,6 @@ if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
 			[_saline,10],
 			[_pak,1]
 		];
-	};
 };
 
 _barrel = "";
