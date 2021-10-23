@@ -6,7 +6,7 @@
 	#include "MiscSettings\Module.hpp"
 	#include "Radios\Module.hpp"
 	#include "SetDifficulty\Module.hpp"
-	#include "Settings_ACE\Module.hpp"
+//	#include "Settings_ACE\Module.hpp"
 	#include "StartUp\Module.hpp"
 
 //	Extra Modules

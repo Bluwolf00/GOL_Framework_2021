@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1843;
+		nextID=1859;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5513;
+		nextID=5538;
 	};
 	class Camera
 	{
-		pos[]={29.621286,49.022049,6.7222023};
-		dir[]={0.23281254,-0.38213322,0.89431018};
-		up[]={0.096274219,0.92410547,0.36981839};
-		aside[]={0.96775365,-2.4048495e-007,-0.25193256};
+		pos[]={33.30899,31.963398,127.68242};
+		dir[]={0.60929424,-0.49097899,-0.62265587};
+		up[]={0.343389,0.87117141,-0.3509194};
+		aside[]={-0.71473408,1.4901161e-008,-0.69939655};
 	};
 };
 binarizationWanted=0;
@@ -6020,7 +6020,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0.69999999;
+														value=0.89999998;
 													};
 												};
 												class Item1
@@ -6830,7 +6830,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -20062,7 +20062,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=1;
+														value=0;
 													};
 												};
 											};
@@ -22118,7 +22118,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0.50074589;
+														value=0.60000002;
 													};
 												};
 												class Item1
@@ -24664,14 +24664,13 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={54.863049,8.9768047,97.696236};
+										position[]={54.862999,8.9768047,97.695999};
 										angles[]={0,0.03666937,0};
 									};
 									side="Empty";
 									flags=5;
 									class Attributes
 									{
-										init="if(!isNull NEKY_Paradrop_Trigger) then {[flag_west_1, ""Paradrop Reinsert"", ""DZ Alpha"", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM ""Scripts\NEKY_Paradrop\NEKY_AddAction.sqf"";}";
 										name="flag_west_1";
 									};
 									id=262;
@@ -26494,7 +26493,6 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="if(!isNull NEKY_Paradrop_Trigger) then {[flag_east_1, ""Paradrop Reinsert"", ""DZ Bravo"", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM ""Scripts\NEKY_Paradrop\NEKY_AddAction.sqf"";}";
 										name="flag_east_1";
 									};
 									id=337;
@@ -28476,7 +28474,6 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="if(!isNull NEKY_Paradrop_Trigger) then {[flag_independent_1, ""Paradrop Reinsert"", ""DZ Charlie"", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM ""Scripts\NEKY_Paradrop\NEKY_AddAction.sqf"";}";
 										name="flag_independent_1";
 									};
 									id=338;
