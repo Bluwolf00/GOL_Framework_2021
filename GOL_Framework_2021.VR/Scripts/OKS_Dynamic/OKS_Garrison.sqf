@@ -13,6 +13,7 @@
 	if(_NumberInfantry > _GarrisonMaxSize) then {
 		_NumberInfantry = _GarrisonMaxSize;
 		_Group = CreateGroup _Side;
+		_Group setVariable ["lambs_danger_disableAI", true];
 		{
 			if ( (count (units _Group)) == 0 ) then
 			{
@@ -29,6 +30,7 @@
 	} else {
 
 		_Group = CreateGroup _Side;
+		_Group setVariable ["lambs_danger_disableAI", true];
 		for "_i" from 1 to _NumberInfantry do
 		{
 			Private "_Unit";

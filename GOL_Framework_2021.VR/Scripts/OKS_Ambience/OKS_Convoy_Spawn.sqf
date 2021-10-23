@@ -125,6 +125,7 @@ For "_i" from 1 to _Count do {
 
     _Group = createGroup _Side;
     _Group setVariable ["hc_blacklist",true];
+	_Group setVariable ["lambs_danger_disableAI", true];
 
     if(_Debug_Variable) then {systemChat format ["Group: %3 Side: %2 - %1 Class Selected",_crewClass,_Side,_Group]};
     if(_Vehicle emptyPositions "commander" > 0) then {
