@@ -50,7 +50,7 @@ _sight = "";
 _bipod = "";
 
 _rifle = ["rhs_weap_aks74", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["rhs_weap_aks74u", "rhs_acc_pgs64_un", _pointer, _sight, _bipod];
+_rifleC = ["rhs_weap_aks74u", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["rhs_weap_aks74_gp25", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_akms", "rhs_acc_dtkakm", _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_545x39_Mag_F";
