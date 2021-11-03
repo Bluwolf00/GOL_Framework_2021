@@ -12,7 +12,7 @@ Params
 ];
 Private _Debug_Variable = false;
 
-sleep 30;
+sleep 5;
 
 clearItemCargoGlobal _Vehicle;
 clearWeaponCargoGlobal _Vehicle;
@@ -23,7 +23,7 @@ _Vehicle disableTIEquipment true;
 _Vehicle setVariable ["A3TI_Disable", true];
 _Vehicle setVariable ["gw_gear_blackList",true];
 
-if(_Debug_Variable) then {SystemChat "Seting Cargo Space"};
+if(_Debug_Variable) then {SystemChat "Setting Cargo Space"};
 waitUntil {sleep 5; !(isNil "ace_cargo_fnc_setSpace")};
 [_Vehicle, 40] call ace_cargo_fnc_setSpace;
 sleep 5;
@@ -94,7 +94,7 @@ for [{private _i = 0}, {_i < 6}, {_i = _i + 1}] do {
 	_Vehicle addMagazineTurret ["rhsusf_mag_L8A3_8",[0,0]];
 };
 
-waitUntil {sleep 1; !(isNil "ace_cargo_fnc_loadItem") && (isNil "ace_cargo_fnc_removeCargoItem")};
+waitUntil {sleep 1; !(isNil "ace_cargo_fnc_loadItem") && !(isNil "ace_cargo_fnc_removeCargoItem")};
 if(!(_Vehicle getVariable ["GOL_isMHQ",false])) then {
 	["ACE_Wheel", _Vehicle, 10] call ace_cargo_fnc_removeCargoItem;
 	["ACE_Track", _Vehicle, 10] call ace_cargo_fnc_removeCargoItem;
