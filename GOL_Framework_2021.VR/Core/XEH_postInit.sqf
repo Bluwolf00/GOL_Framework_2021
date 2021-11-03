@@ -28,6 +28,7 @@ if (hasInterface) then {
 	player enableWeaponDisassembly false;	// 1.67
 //	disableRemoteSensors true;
 	enableEnvironment true;
+	enableRadio true;
 	setCompassOscillation [(rad 5), 0.1, 1];
 	player setVariable ["BIS_noCoreConversations", true, true];
 	player setVariable ["BIS_enableRandomization", false, true];
