@@ -1,9 +1,9 @@
 
-_goggles = selectRandom ["rhsusf_shemagh_grn","rhsusf_shemagh2_grn"];
-_helmet = "H_HelmetB_tna_F";
+_goggles = selectRandom ["rhsusf_shemagh_gogg_grn","rhsusf_shemagh2_gogg_grn"];
+_helmet = "helmet_ACH_M05";
 _OfficerHelmet = "beret_Green";
 _uniform = SelectRandom ["Uniform_Rolled_M05","Uniform_Full_M05"];
-_vest = "vest_spc_radio_M05";
+_vest = "V_EOD_olive_F";
 _backpack = "M05_PB_Rucksack";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
@@ -42,14 +42,14 @@ if (_role isEqualTo "jetp") then {
 
 // Attachments
 _silencer = "";
-_pointer = "";
-_sight = "";
+_pointer = "rhsusf_acc_anpeq15_bk";
+_sight = "rhsusf_acc_t1_high";
 _bipod = "";
 
 // Primary Weapon
-_rifle = ["hlc_rifle_RK62", _silencer, _pointer, _sight, _bipod];
+_rifle = ["arifle_AK12_F", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["hlc_smg_mp5a3", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_RK62", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["arifle_AK12_GL_F", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_svdp", _silencer, _pointer, "rhs_acc_pso1m21", _bipod];
 _rifleMarksman = ["rhs_weap_svdp", _silencer, _pointer, "rhs_acc_pso1m21", _bipod];
 _rifle_mag = "hlc_30Rnd_762x39_AP_ak_Valmet";
@@ -70,7 +70,7 @@ _pointer = "";
 _sight = "";
 _bipod = "";
 
-_LAT = ["rhs_weap_M136_hp", _silencer, _pointer, _sight, _bipod];
+_LAT = ["launch_NLAW_F", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "";
 _LAT_ReUsable = false;
 
@@ -79,9 +79,6 @@ _MAT_mag = "MRAWS_HEAT55_F";
 _MAT_mag_HE = "MRAWS_HE_F";
 
 // Pistol
-if(_role in ["sl","ftl","g"]) then {
-	_pistol = ["rhs_weap_M320", _silencer, _pointer, _sight, _bipod];
-} else {
-	_pistol = ["rhsusf_weap_glock17g4", _silencer, _pointer, _sight, _bipod];
-};
+_pistol = ["rhsusf_weap_glock17g4", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhsusf_mag_17Rnd_9x19_FMJ";
+
