@@ -8,7 +8,7 @@
 		Private _Debug_Variable = false;
 
 		_Group = CreateGroup _Side;
-		_Group setVariable ["lambs_danger_disableAI", true];
+		_Group setVariable ["lambs_danger_disableGroupAI", true];
 		for "_i" from 1 to _NumberInfantry do
 		{
 			Private "_Unit";

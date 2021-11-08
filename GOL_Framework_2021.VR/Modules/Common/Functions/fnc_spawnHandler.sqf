@@ -210,6 +210,8 @@ if !(_waypointArray isEqualTo []) then {
 
 	} forEach _waypointArray;
 	TRACE_2("Waypoints added to ", _group, (waypoints _group));
+} else {
+	_group setVariable ["lambs_danger_disableGroupAI", true];
 };
 
 if (GVAR(autoQueue) && !_skipQueue) then {

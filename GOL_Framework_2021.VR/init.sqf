@@ -118,14 +118,14 @@ Sleep 10;
 		   All Locations are not required, the script will find its own locations, however for the best experience and best result, help the dynamic script by placing these logics.
 
 		   Example:
-		   [Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false,0.5],[0,false],[0,false],[0,0,0,0,0],false] spawn OKS_CreateZone;
+		   [Trigger_1,false,[0,0,false,false],east,0,0,0,[0,true,false,0],[0,false],[0,false],[0,0,0,0,0],false] spawn OKS_CreateZone;
 		*/
 
 		/* Example of Dynamic Scripts */
 		/*
 		if(isServer) then {
 			waitUntil{sleep 5; !(isNil "OKS_CreateZone")};
-			[Trigger_1,false,[30,15,true,false],east,0,0,0,[0,true,false,0],[0,false],[0,false],[0,0,0,0,0],false] spawn OKS_CreateZone;
+			[Trigger_1,false,[0,0,false,false],east,0,0,0,[0,true,false,0],[0,false],[0,false],[0,0,0,0,0],false] spawn OKS_CreateZone;
 		};
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
