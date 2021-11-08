@@ -20,8 +20,8 @@ if (hasInterface) then {
     _action = ["Extraction", "Extraction","\A3\ui_f\data\map\markers\nato\b_air.paa", {}, _condition] call ace_interact_menu_fnc_createAction;
     _extraction = ["Helicopter Pickup", "Helicopter Pickup","\A3\ui_f\data\map\markers\military\pickup_CA.paa", _code, _condition] call ace_interact_menu_fnc_createAction;
 
-    [typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToClass;
-    [typeOf player, 1, ["ACE_SelfActions","ACE_Equipment","Extraction"], _extraction] call ace_interact_menu_fnc_addActionToClass;
+    [typeOf player, 1, ["ACE_SelfActions","Request Support"], _action] call ace_interact_menu_fnc_addActionToClass;
+    [typeOf player, 1, ["ACE_SelfActions","Request Support","Extraction"], _extraction] call ace_interact_menu_fnc_addActionToClass;
 
 };
 //_condition = {leader (group player) isEqualTo (leader player)}; for sp testing

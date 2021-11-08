@@ -18,6 +18,14 @@ Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 
 Sleep 5;
 
+	if(GOL_NEKY_PARADROP isEqualTo 1 || GOL_NEKY_RESUPPLY isEqualTo 1 || GOL_NEKY_PICKUP isEqualTo 1) then {
+		if (hasInterface) then {
+			_condition = {player in [w1a,w1a1,w1b1,w1c1,e1a,e1a1,e1b1,e1c1,i1a,i1a1,i1b1,i1c1]};
+     	 	_action = ["Request Support", "Request Support","\A3\ui_f\data\map\VehicleIcons\iconCrateVeh_ca.paa", {}, _condition] call ace_interact_menu_fnc_createAction;
+     		[typeOf player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToClass;
+		};
+	};
+
 	if(GOL_NEKY_SERVICESTATION isEqualTo 1) then {
 		[] execVM "Scripts\NEKY_ServiceStation\Init.sqf";
 	};
