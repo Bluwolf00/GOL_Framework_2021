@@ -69,11 +69,13 @@ if (_unit isKindOf "CAManBase") then {
 } else {
 	if (GVAR(autoRemoveCargo)) then {
 		if !(_unit isKindOf "ReammoBox_F") then {
-			_mainScope = false;
-			ClearWeaponCargoGlobal _unit;
-			ClearMagazineCargoGlobal _unit;
-			ClearItemCargoGlobal _unit;
-			ClearBackpackCargoGlobal _unit;
+			if !(_unit getVariable ["GW_Disable_autoRemoveCargo",false]) then {
+				_mainScope = false;
+				ClearWeaponCargoGlobal _unit;
+				ClearMagazineCargoGlobal _unit;
+				ClearItemCargoGlobal _unit;
+				ClearBackpackCargoGlobal _unit;
+			};
 		};
 	} else {
 		if (_unit isKindOf "Car") then {

@@ -1,9 +1,9 @@
 //	[] execVM "Scripts\NEKY_ServiceStation\Init.sqf";
-//	
+//
 //	Defines all neccessary functions
-//	
+//
 //	This has to be executed for all players + server during init.
-//	
+//
 //	Made by NeKo-ArroW
 
 // Variables
@@ -20,3 +20,5 @@ NEKY_ServiceStation_Busy = CompileFinal PreprocessFileLineNumbers "Scripts\NEKY_
 NEKY_ServiceStation_Actions = CompileFinal PreprocessFileLineNumbers "Scripts\NEKY_ServiceStation\Functions\AddActions.sqf";
 NEKY_ServiceStation_Lights = CompileFinal PreprocessFileLineNumbers "Scripts\NEKY_ServiceStation\Functions\Lights.sqf";
 NEKY_ServiceStation_Available = CompileFinal PreprocessFileLineNumbers "Scripts\NEKY_ServiceStation\Functions\Available.sqf";
+NEKY_ServiceStation = CompileFinal PreprocessFileLineNumbers "Scripts\NEKY_ServiceStation\ServiceStation.sqf";
+NEKY_MobileSS = CompileFinal PreprocessFileLineNumbers "Scripts\NEKY_ServiceStation\MobileSS.sqf";

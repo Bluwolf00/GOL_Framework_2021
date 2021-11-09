@@ -11,35 +11,38 @@ Params
 	["_ServiceStation", false, [true]]
 ];
 Private _Debug_Variable = false;
-
-sleep 5;
+_Vehicle setVariable ["GW_Disable_autoRemoveCargo",true];
 
 clearItemCargoGlobal _Vehicle;
 clearWeaponCargoGlobal _Vehicle;
 clearMagazineCargoGlobal _Vehicle;
-
+clearBackpackCargoGlobal _Vehicle;
 
 _Vehicle disableTIEquipment true;
 _Vehicle setVariable ["A3TI_Disable", true];
 _Vehicle setVariable ["gw_gear_blackList",true];
 
-if(_Debug_Variable) then {SystemChat "Setting Cargo Space"};
-waitUntil {sleep 5; !(isNil "ace_cargo_fnc_setSpace")};
-[_Vehicle, 40] call ace_cargo_fnc_setSpace;
-sleep 5;
+waitUntil{!isNil "OKS_MISSION_SETTINGS"};
 
-if(_ServiceStation && !(_Vehicle getVariable ["GOL_isMSS",false])) then {
+if(_Debug_Variable) then {SystemChat "Setting Cargo Space"};
+waitUntil {sleep 1; !(isNil "ace_cargo_fnc_setSpace")};
+[_Vehicle, 40] remoteExec ["ace_cargo_fnc_setSpace",0];
+
+if(_ServiceStation && !(_Vehicle getVariable ["GOL_isMSS",false]) && GOL_NEKY_SERVICESTATION isEqualTo 1) then {
 	if(_Debug_Variable) then {SystemChat "Adding Service Station Box"};
 	_Crate = "Box_NATO_Support_F" createVehicle [0,0,0];
-	ClearMagazineCargo _Crate;
-	ClearWeaponCargo _Crate;
-	ClearItemCargo _Crate;
+	ClearMagazineCargoGlobal _Crate;
+	ClearWeaponCargoGlobal _Crate;
+	ClearItemCargoGlobal _Crate;
 
 	//[_vehicle, ["car","west"]] call GW_Gear_Fnc_Init;
-
-	[_Crate,25,true] ExecVM "Scripts\NEKY_ServiceStation\MobileSS.sqf";
-	_Crate setVariable ["ace_rearm_isSupplyVehicle", true];
-	[_Crate,_Vehicle,true] call ace_cargo_fnc_loadItem;
+	waitUntil {!isNil "NEKY_MobileSS"};
+	_MSS = [_Crate,_Vehicle] spawn {
+		Params ["_Crate","_Vehicle"];
+		[_Crate,25,true] remoteExec ["NEKY_MobileSS",0];
+		_Crate setVariable ["ace_rearm_isSupplyVehicle", true];
+		[_Crate,_Vehicle,true] call ace_cargo_fnc_loadItem;
+	};
 };
 
 _Vehicle addItemCargo ["Toolkit",2];
@@ -60,7 +63,6 @@ if(_MHQ) then {
 		_BP addMagazineCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Shells", 16];
 	};
 };
-
 
 
 if (["FV432_Mk3_GPMG",(typeOf _Vehicle)] call BIS_fnc_inString || ["Panther_GPMG",(typeOf _Vehicle)] call BIS_fnc_inString || ["WMIK_GPMG",(typeOf _Vehicle)] call BIS_fnc_inString ) then {

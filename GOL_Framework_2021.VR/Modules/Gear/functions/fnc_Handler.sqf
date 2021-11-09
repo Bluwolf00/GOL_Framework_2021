@@ -201,10 +201,12 @@ if (_isMan) then {
 	#include "..\Scripts\factions.sqf"
 	#include "isNilCheck.hpp"
 
-	ClearWeaponCargoGlobal _unit;
-	ClearMagazineCargoGlobal _unit;
-	ClearItemCargoGlobal _unit;
-	ClearBackpackCargoGlobal _unit;
+	if !(_unit getVariable ["GW_Disable_autoRemoveCargo",false]) then {
+		ClearWeaponCargoGlobal _unit;
+		ClearMagazineCargoGlobal _unit;
+		ClearItemCargoGlobal _unit;
+		ClearBackpackCargoGlobal _unit;
+	};
 
 	if !(_errorCode) then {
 		switch (_class) do {

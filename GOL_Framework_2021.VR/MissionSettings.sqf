@@ -31,3 +31,6 @@ GOL_NEKY_TASK = 0;
 
 /* GOL Dynamic Scripts */
 GOL_OKS_DYNAMIC = 1;
+
+/* DO NOT EDIT BELOW */
+OKS_MISSION_SETTINGS = true;
