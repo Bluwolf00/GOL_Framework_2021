@@ -63,6 +63,7 @@ _unit addAction ["Special > Asst. Medium AT","[player,'amat'] call GW_Gear_Fnc_H
 _unit addAction ["Special > Medium AT","[player,'mat'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["Special > Asst. Medium Machine Gunner","[player,'ammg'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["Special > Medium Machine Gunner","[player,'mmg'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["Special > Anti-Air","[player,'aa'] call GW_Gear_Fnc_Handler;",bullShit,4];
 
 _unit addAction ["Special > Diver","[player,'diver'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["Special > UAV Operator","[player,'uav'] call GW_Gear_Fnc_Handler;",bullShit,4];

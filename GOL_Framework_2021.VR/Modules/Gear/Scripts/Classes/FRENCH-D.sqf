@@ -63,6 +63,9 @@ _MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "MRAWS_HEAT_F";
 _MAT_mag_HE = "MRAWS_HE_F";
 
+_AA = ["rhs_weap_fim92", _silencer, _pointer, _sight, _bipod];
+_AA_mag = "Titan_AA";
+
 _pistol = ["hlc_pistol_Mk25", _silencer, "hlc_acc_tlr1", "hlc_optic_vtac", _bipod];
 _pistol_mag = "hlc_15Rnd_9x19_B_P226";
 

@@ -23,6 +23,8 @@ ISNILS(_LMG_mag_tr,_LMG_mag);
 ISNILS(_MMG_mag,_LMG_mag);
 ISNILS(_MMG_mag_tr,_MMG_mag);
 
+ISNILS(_AA,_MAT);
+ISNILS(_AA_mag,_MAT_mag);
 ISNILS(_LAT_mag_HE,_LAT_mag);
 ISNILS(_MAT_mag,_LAT_mag);
 ISNILS(_MAT_mag_HE,_MAT_mag);

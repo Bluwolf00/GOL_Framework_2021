@@ -79,6 +79,9 @@ _MAT = ["rhs_weap_rpg7", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "RPG7_F";
 _MAT_mag_HE = "";
 
+_AA = ["rhs_weap_igla", _silencer, _pointer, _sight, _bipod];
+_AA_mag = "rhs_mag_9k38_rocket";
+
 _pistol = ["hlc_pistol_P226R_357Combat", _silencer, "acc_flashlight_pistol", "hlc_optic_hp", _bipod];
 _pistol_mag = "hlc_12Rnd_357SIG_JHP_P226";
 

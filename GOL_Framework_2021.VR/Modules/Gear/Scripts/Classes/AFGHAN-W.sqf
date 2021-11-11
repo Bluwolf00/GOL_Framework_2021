@@ -63,6 +63,9 @@ _MAT = ["rhs_weap_rpg7", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "rhs_rpg7_PG7VL_mag";
 _MAT_mag_HE = "rhs_rpg7_PG7VL_mag";
 
+_AA = ["rhs_weap_igla", _silencer, _pointer, _sight, _bipod];
+_AA_mag = "rhs_mag_9k38_rocket";
+
 _pistol = ["rhsusf_weap_m9", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhsusf_mag_15Rnd_9x19_JHP";
 

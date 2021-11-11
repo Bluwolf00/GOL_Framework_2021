@@ -90,6 +90,10 @@ switch (true) do {
 	case ((_displayName in ["Marksman","Sniper","Spotter"]) || (["Marksman",_displayName] call BIS_fnc_inString) || (["Sniper",_displayName] call BIS_fnc_inString)): {
 		_role = "marksman";
 	};
+	case ((_displayName in ["Missile Specialist (AA)","AA Specialist","Anti-Air Specialist"]) || (["Anti Aircraft",_displayName] call BIS_fnc_inString)): {
+		_role = "aa";
+	};
+
 };
 
 _role

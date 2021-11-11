@@ -206,6 +206,21 @@ switch (toLower(_role)) do {
 		};
 	};
 
+	case "aa": {
+		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
+		[_rifleC, _rifleC_mag, ""] call _addPrimary;
+		[_pistol, _pistol_mag, ""] call _addHandGun;
+		_IFAK call _addToUniform;
+		[_AA, _AA_mag, ""] call _addLaunchers;
+		[[_rifleC_mag,4],[_pistol_mag,2],[_smokegrenadeY,3],[_flashBang,3]] call _addToUniform;
+		[[_grenade,2],[_rifleC_mag_tr,4]] call _addToVest;
+		[[_AA_mag,1]] call _addToBackpack;
+		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
+		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
+			_nvg call _addNVG;
+		};
+	};
+
 	default {
 		ERROR(FORMAT_2("ERROR: Unit: %1 Role does not exist: %2", _unit, _role));
 		[_unit, "r"] call FUNC(Handler);

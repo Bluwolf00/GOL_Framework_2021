@@ -73,6 +73,9 @@ _MAT = ["launch_RPG32_green_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "RPG32_F";
 _MAT_mag_HE = "RPG32_HE_F";
 
+_AA = ["launch_O_Titan_ghex_F", _silencer, _pointer, _sight, _bipod];
+_AA_mag = "Titan_AA";
+
 _pistol = ["rhs_weap_pp2000_folded", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhs_mag_9x19mm_7n31_44";
 

@@ -15,3 +15,4 @@ OKS_TroopDismount = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_
 OKS_Enemy_Radio = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Enemy_Radio.sqf";
 OKS_Faceswap = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_FaceSwap.sqf";
 OKS_Convoy_Spawn = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Convoy_Spawn.sqf";
+OKS_AA_Guard = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_AA_Guard.sqf";

@@ -100,7 +100,7 @@ Sleep 10;
 		/*
 		   Dynamic Script Params
 		   0 - Trigger Name (Object)
-		   1 - Split Trigger into 4 Sub-Triggers? (Boolean)
+		   1 - Disabled - Keep False
 		   2 - Number of Infantry - [Static Integer,Patrol Integer,CreateSectorObjective?,LocalPatrols?] (Array) -
 		   3 - Wheeled Patrols (Integer/Number)
 		   4 - APC Patrols (Integer/Number)
@@ -110,6 +110,9 @@ Sleep 10;
 		   8 - Random Objectives [ObjectiveCount,LocalPatrols?] (Array)
 		   9 - Hunt Array Bases [Infantry,Wheeled,APC,Tank,Helicopter]
 		   10 - Dynamic Civilians on? (Boolean)
+
+			Local Patrols - This means that the strongpoints / roadblocks / mortar pits / objectives have their own local patrols near their position.
+			If you use it on Parameter 2, 30% of the static contacts will be turned into patrols.
 
 		   Note:
 		   The Dynamic Scripts does work on its own however is very limited in selecting positions for strongpoints.

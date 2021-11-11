@@ -67,6 +67,9 @@ _LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 _MMG = ["rhs_weap_m240B", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhsusf_100Rnd_762x51_m62_tracer";
 
+_AA = ["rhs_weap_fim92", _silencer, _pointer, _sight, _bipod];
+_AA_mag = "Titan_AA";
+
 // Launchers
 _silencer = "";
 _pointer = "";
@@ -80,6 +83,9 @@ _LAT_ReUsable = false;
 _MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "MRAWS_HEAT55_F";
 _MAT_mag_HE = "MRAWS_HE_F";
+
+_AA = "rhs_weap_fim92";
+_AA_mag = "Titan_AA";
 
 // Pistol
 _pistol = ["rhsusf_weap_glock17g4", _silencer, _pointer, _sight, _bipod];

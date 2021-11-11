@@ -68,6 +68,9 @@ _LAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "RPG7_F";
 _LAT_ReUsable = true;
 
+_AA = ["rhs_weap_igla", _silencer, _pointer, _sight, _bipod];
+_AA_mag = "rhs_mag_9k38_rocket";
+
 _pistol = ["hgun_Pistol_01_F", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "10Rnd_9x21_Mag";
 
