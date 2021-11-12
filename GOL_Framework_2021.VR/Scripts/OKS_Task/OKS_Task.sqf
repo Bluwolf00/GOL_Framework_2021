@@ -32,29 +32,6 @@ _unit setVariable [_TaskVariable,_TaskInfo];
 
 		params["_Object","_Target","_Array"];
 
-		if(_Object isKindOf "Man" && side _Object != west) then {
-			switch (selectRandom [1,2,3,4,5,6]) do {
-				case 1: {
-					playSound3D [MISSION_ROOT + "OKS_Talk\Voices\Arab_Talk_1.ogg", _Object, false, getPosASL _Object, 5, 1, 25];
-				};
-				case 2: {
-					playSound3D [MISSION_ROOT + "OKS_Talk\Voices\Arab_Talk_2.ogg", _Object, false, getPosASL _Object, 5, 1, 25];
-				};
-				case 3: {
-					playSound3D [MISSION_ROOT + "OKS_Talk\Voices\Arab_Talk_3.ogg", _Object, false, getPosASL _Object, 5, 1, 25];
-				};
-				case 4: {
-					playSound3D [MISSION_ROOT + "OKS_Talk\Voices\Arab_Talk_4.ogg", _Object, false, getPosASL _Object, 5, 1, 25];
-				};
-				case 5: {
-					playSound3D [MISSION_ROOT + "OKS_Talk\Voices\Arab_Talk_5.ogg", _Object, false, getPosASL _Object, 5, 1, 25];
-				};
-				case 6: {
-					playSound3D [MISSION_ROOT + "OKS_Talk\Voices\Arab_Talk_6.ogg", _Object, false, getPosASL _Object, 5, 1, 25];
-				};
-			};
-		};
-
 		_taskParent = _Array select 0;
 		_taskID = _Array select 1;
 		_taskDesc = _Array select 2;

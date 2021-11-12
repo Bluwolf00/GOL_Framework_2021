@@ -17,7 +17,7 @@ Switch (_Side) do
 	case BLUFOR:	// BLUFOR settings
 	{
 		// Unit classes are compatible with multiple class names, will select randomly. Example: ["B_Pilot_F","B_Crewman_F"];
-		_Leaders = ["B_Soldier_SL_F","B_Soldier_TL_F"];	// Squad/Team leader classes.
+		_Leaders = ["B_Soldier_SL_F","B_Officer_F"];	// Squad/Team leader classes.
 		_Units = [
 			"B_Soldier_A_F",
 			"B_Soldier_AR_F",
@@ -31,7 +31,7 @@ Switch (_Side) do
 	};
 	case OPFOR:		// OPFOR settings
 	{
-		_Leaders = ["O_Soldier_SL_F","O_Soldier_TL_F"];
+		_Leaders = ["O_Soldier_SL_F","O_Officer_F"];
 		_Units = [
 			"O_Soldier_A_F",
 			"O_Soldier_AR_F",
@@ -49,7 +49,7 @@ Switch (_Side) do
 	};
 	case INDEPENDENT:	// INDEPENDENT Settings
 	{
-		_Leaders = ["I_Soldier_SL_F","I_Soldier_TL_F"];
+		_Leaders = ["I_Soldier_SL_F","I_Officer_F"];
 		_Units = [
 			"I_Soldier_A_F",
 			"I_Soldier_AR_F",

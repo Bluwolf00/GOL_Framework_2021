@@ -31,7 +31,7 @@ if((_TurretArray find 0) isEqualTo -1) then {
 	if(_Debug_Variable) then { [format ["Checking Gunner %2 - Moving %1",_Unit,_Veh]] remoteExec ["systemChat",0]};
 
 };
-_Task = format["OKS_REPAIRTASK_%1",_TaskID];
+_Task = format["OKS_REPAIRTASK_%1",(round(random 99999))];
 {_X disableAI "path"; _X setUnitPos "Middle"; _X setBehaviour "COMBAT";} foreach units _Friendlies;
 
 if(_Debug_Variable) then {["Disable AI and CreateTask"] remoteExec ["systemChat",0]};
