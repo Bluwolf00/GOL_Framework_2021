@@ -25,7 +25,7 @@ if (hasInterface) then {
 	LOG("Loading Player Variables");
 	player addRating 100000;
 	player disableConversation true;
-	player enableWeaponDisassembly false;	// 1.67
+	player enableWeaponDisassembly true;	// 1.67
 //	disableRemoteSensors true;
 	enableEnvironment true;
 	enableRadio true;

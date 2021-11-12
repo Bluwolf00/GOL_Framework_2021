@@ -1,5 +1,5 @@
 /// [this, true,true] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";
-/// [vehicle,AddMHQGear,AddServiceStationInCargo]
+/// [vehicle,ShouldAddMortar,AddServiceStationInCargo]
 /// Add MSS Box true/false
 
 if(!isServer) exitWith {};
@@ -47,7 +47,7 @@ if(_ServiceStation && !(_Vehicle getVariable ["GOL_isMSS",false]) && GOL_NEKY_SE
 
 _Vehicle addItemCargo ["Toolkit",2];
 
-if(_MHQ) then {
+if(_AddMortar) then {
 	if(_Debug_Variable) then {SystemChat "Adding Mortar Equipment"};
 	//add a new backpack to the vehicle
 

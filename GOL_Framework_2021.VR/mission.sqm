@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5613;
+		nextID=5638;
 	};
 	class Camera
 	{
-		pos[]={73.596588,56.095417,-13.960911};
-		dir[]={0.085540585,-0.45378211,0.88700426};
-		up[]={0.043565392,0.89108211,0.45175016};
-		aside[]={0.99538803,-1.8117134e-008,-0.095993154};
+		pos[]={81.787445,79.169212,-24.494993};
+		dir[]={0.011298633,-0.49803373,0.86709124};
+		up[]={0.006489573,0.86712277,0.49805355};
+		aside[]={0.99992067,3.1832315e-009,-0.013029703};
 	};
 };
 binarizationWanted=0;
@@ -9409,7 +9409,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=1;
+														value=3;
 													};
 												};
 												class Item1
@@ -29009,7 +29009,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={81.09391,7.5393777,43.637993};
+										position[]={81.094002,7.5393777,43.638};
 										angles[]={0,0.00064577186,0};
 									};
 									side="Empty";
@@ -29049,14 +29049,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={87.446907,7.1761513,43.039909};
+										position[]={87.446999,7.1761513,43.039917};
 										angles[]={0,0.00062831852,0};
 									};
 									side="Empty";
 									flags=4;
 									class Attributes
 									{
-										init="[this,false,true] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
+										init="[this,false,false] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
 									};
 									id=1642;
 									type="B_LSV_01_armed_F";
