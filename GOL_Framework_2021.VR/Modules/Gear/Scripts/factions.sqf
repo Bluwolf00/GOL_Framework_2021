@@ -135,6 +135,9 @@ switch (_side) do {
 	case "USA-W": {
 		#include "Classes\USA-W.sqf"
 	};
+	case "USA-D": {
+		#include "Classes\USA-D.sqf"
+	};
 	case "USMC-D": {
 		#include "Classes\USMC-D.sqf"
 	};
