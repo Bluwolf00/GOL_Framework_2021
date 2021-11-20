@@ -1,20 +1,19 @@
-// _null = [this,east,3,false,1500,true] spawn GW_Ambient_AAA;
-// [this,east,3,false,1500,true] execVM "Scripts\OKS_Ambience\GW_Ambient_AAA.sqf";
-// [AntiAirObject,Side,WeaponNumber,ShouldReplaceWeapons,Range,RadarInfo] spawn GW_Ambient_AAA;
+// _null = [this,east,false,1500,true] spawn GW_Ambient_AAA;
+// [this,east,false,1500,true] execVM "Scripts\OKS_Ambience\GW_Ambient_AAA.sqf";
+// [AntiAirObject (ObjNull),Side(SideEmpty),isHMG (Bool),Range (Meters),RadarInfo (Bool)] spawn GW_Ambient_AAA;
 //
 
 params [
     ["_arty",objNull,[objnull]],
     ["_side",east,[sideUnknown]],
-    ["_weaponType",0,[0]],
-    ["_ShouldReplaceWeapons",false,[true]],
+    ["_isHMG",false,[true]],
     ["_Range",1500,[0]],
     ["_Radar",true,[true]]
 ];
 
 if ((count(fullCrew [_arty, "gunner", true]) isEqualTo 0)) exitWith {systemChat "Vehicle does not have a gunner seat"; false};
 private _weapon = "";
-private _Debug_Variable = true;
+private _Debug_Variable = false;
 private ["_unitClass","_arrow","_AddValue"];
 
 if(_Debug_Variable) then {
@@ -57,31 +56,8 @@ if (isNull gunner _arty) then {
     (gunner _arty) disableAI _x;
 } forEach ["TARGET","AUTOTARGET","FSM","AIMINGERROR","SUPPRESSION","CHECKVISIBLE","COVER","AUTOCOMBAT","MINEDETECTION","PATH","TEAMSWITCH"];
 
-if(_ShouldReplaceWeapons) then {
-    _weapon = "M134_minigun";
-    switch (_weaponType) do {
-        case 1: {
-            _weapon = "autocannon_35mm";
-        };
-        case 2: {
-            _weapon = "gatling_30mm";
-        };
-        case 3: {
-            _weapon = "RHS_weap_2a14";
-        };
-    };
-{
-    _arty removeWeaponTurret [_x, [0]];
-} forEach (_arty weaponsTurret [0]);
 
-_arty addWeaponTurret [_weapon,[0]];
-_arty addMagazineTurret [(getArray(configfile >> "CfgWeapons" >> _weapon >> "magazines") select 0), [0]];
-_arty selectWeaponTurret [_weapon,[0]];
-} else {
-    _weapon = (_arty weaponsTurret [0]) select 0;
-};
-
-
+_weapon = (_arty weaponsTurret [0]) select 0;
 _target = (_arty getRelPos [(random [0, 40, 100]), (10 + (random [-25, 0, 25]))]);
 _target set [2, 500];
 _arty doWatch _target;
@@ -162,16 +138,30 @@ while {Alive _arty && Alive (gunner _arty) && (side (gunner _arty) isEqualTo _si
             _vel = (velocityModelSpace _targetPlayer);
 
             _MuzzleVelocity = (getNumber(ConfigFile >> "cfgMagazines" >> currentMagazine _arty >> "initSpeed"));
+            //SystemChat str [(_arty distance _targetPlayer),_MuzzleVelocity];
             _TravelTime = (_arty distance _targetPlayer) / _MuzzleVelocity;
 
             if(_TravelTime < 1) then {
-                _AddValue = selectRandom [0.10,0.15,0.2,0.25]
+                if(_isHMG) then {
+                    _AddValue = selectRandom [0.25,0.3,0.35,0.3]
+                } else {
+                    _AddValue = selectRandom [0.15,0.25,0.2,0.3]
+                }
             };
             if(_TravelTime >= 1 && _TravelTime < 1.5) then {
-                _AddValue = selectRandom [0.20,0.25,0.3,0.35]
+                if(_isHMG) then {
+                    _AddValue = selectRandom [0.35,0.4,0.45,0.4]
+                } else {
+                    _AddValue = selectRandom [0.25,0.35,0.3,0.4]
+                };
             };
             if(_TravelTime >= 1.5) then {
-                _AddValue = selectRandom [0.30,0.35,0.4,0.45]
+                if(_isHMG) then {
+                    _AddValue = selectRandom [0.45,0.5,0.55,0.6]
+                } else {
+                    _AddValue = selectRandom [0.4,0.45,0.5,0.55]
+                };
+                _AddValue = selectRandom [0.40,0.45,0.5,0.55]
             };
 
             _RelPosX = ((_speed select 0) * (_TravelTime + _AddValue));
@@ -203,15 +193,29 @@ while {Alive _arty && Alive (gunner _arty) && (side (gunner _arty) isEqualTo _si
             _vel = (velocityModelSpace _targetPlayer);
 
             _MuzzleVelocity = (getNumber(ConfigFile >> "cfgMagazines" >> currentMagazine _arty >> "initSpeed"));
+            //SystemChat str [(_arty distance _targetPlayer),_MuzzleVelocity];
             _TravelTime = (_arty distance _targetPlayer) / _MuzzleVelocity;
 
             if(_TravelTime < 1) then {
-                _AddValue = selectRandom [0.15,0.25,0.2,0.3]
+                if(_isHMG) then {
+                    _AddValue = selectRandom [0.25,0.3,0.35,0.3]
+                } else {
+                    _AddValue = selectRandom [0.15,0.25,0.2,0.3]
+                }
             };
             if(_TravelTime >= 1 && _TravelTime < 1.5) then {
-                _AddValue = selectRandom [0.25,0.35,0.3,0.4]
+                if(_isHMG) then {
+                    _AddValue = selectRandom [0.35,0.4,0.45,0.4]
+                } else {
+                    _AddValue = selectRandom [0.25,0.35,0.3,0.4]
+                };
             };
             if(_TravelTime >= 1.5) then {
+                if(_isHMG) then {
+                    _AddValue = selectRandom [0.45,0.5,0.55,0.6]
+                } else {
+                    _AddValue = selectRandom [0.4,0.45,0.5,0.55]
+                };
                 _AddValue = selectRandom [0.40,0.45,0.5,0.55]
             };
 
@@ -227,6 +231,7 @@ while {Alive _arty && Alive (gunner _arty) && (side (gunner _arty) isEqualTo _si
     };
 
     _arty doWatch _target;
+
     if !(isNil "_arrow") then {
         _arrow setPosATL _target;
     };

@@ -26,16 +26,21 @@ if(_role in ["ftl","sl","fac","pl"]) then {
 	_vest = selectRandom ["rhs_6b3_off","rhs_6b3_R148"];
 };
 
+if(_role in ["mat"]) then {
+	_backpack = "rhs_rpg_6b3";
+};
+
 if(_role isEqualTo "rhs_6b3_VOG_2") then {
 	_vest = "rhs_6b3_VOG_2";
 };
 
 if(_role in ["mmg","ar"]) then {
 	_vest = "rhs_6b3_RPK";
+	_backpack = "rhs_rd54_vest";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "rhs_rd54";
+	_backpack = "rhs_rd54_vest";
 	_vest = "rhs_6b3_RPK";
 };
 
@@ -80,7 +85,7 @@ _LAT = ["rhs_weap_rpg18", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "rhs_rpg18_mag";
 _LAT_ReUsable = false;
 
-_MAT = ["rhs_weap_rpg7", _silencer, _pointer, _sight, _bipod];
+_MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "rhs_rpg7_PG7VM_mag";
 _MAT_mag_HE = "rhs_rpg7_OG7V_mag";
 

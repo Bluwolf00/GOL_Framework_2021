@@ -568,7 +568,7 @@ switch (_TypeOfObjective) do {
 			if(_Debug_Variable) then {
 				systemChat "RemoteExec GW Ambient AAA..";
 			};
-			[_AA,_Side,3,false,1000] remoteExec ["GW_Ambient_AAA",0];
+			[_AA,_Side,false,1500,true] remoteExec ["GW_Ambient_AAA",0];
 		} else {
 			_Group = [_AA,_Side] call OKS_AddVehicleCrew;
 		};
