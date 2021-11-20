@@ -56,6 +56,8 @@ _rifleGL = ["hlc_rifle_G36VAG36", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["hlc_rifle_g3sg1ris", _silencer, _pointer, "optic_hamr", _bipod];
 _rifle_mag = "hlc_30rnd_556x45_M_G36";
 _rifle_mag_tr = "hlc_30rnd_556x45_Tracers_G36";
+_rifleGL_mag = "hlc_30rnd_556x45_M_G36";
+_rifleGL_mag_tr = "hlc_30rnd_556x45_Tracers_G36";
 _rifleL_mag = "hlc_20rnd_762x51_T_G3";
 _rifleC_mag = "hlc_30Rnd_9x19_B_MP5";
 

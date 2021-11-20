@@ -42,6 +42,8 @@ _rifleGL = ["hlc_rifle_ACR_GL_carb_tan", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["hlc_rifle_ACR_carb_tan", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "hlc_30rnd_556x45_EPR";
 _rifle_mag_tr = "hlc_30rnd_556x45_t_PMAG";
+_rifleGL_mag = "hlc_30rnd_556x45_EPR";
+_rifleGL_mag_tr = "hlc_30rnd_556x45_t_PMAG";
 _rifleC_mag = "hlc_30Rnd_9x19_B_MP5";
 
 _LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];

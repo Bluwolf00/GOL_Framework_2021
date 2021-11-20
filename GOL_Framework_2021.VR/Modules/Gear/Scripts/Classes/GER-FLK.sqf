@@ -49,6 +49,8 @@ _rifleL = ["hlc_rifle_G36MLIC", _silencer, _pointer, _sight, _bipod];
 _rifleMarksman = ["hlc_rifle_G36MLIC", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_65x39_caseless_black_mag";
 _rifle_mag_tr = "30Rnd_65x39_caseless_black_mag_Tracer";
+_rifleGL_mag = "30Rnd_65x39_caseless_black_mag";
+_rifleGL_mag_tr = "30Rnd_65x39_caseless_black_mag_Tracer";
 
 _LMG = ["hlc_lmg_minimipara_railed", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "hlc_200rnd_556x45_T_SAW";

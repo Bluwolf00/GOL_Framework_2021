@@ -51,6 +51,8 @@ _rifleL = ["hlc_rifle_STG58F", _silencer, _pointer, "rhsusf_acc_g33_t1", _bipod]
 
 _rifle_mag = "hlc_30Rnd_556x45_B_AUG";
 _rifle_mag_tr = "hlc_30Rnd_556x45_T_AUG";
+_rifleGL_mag = "hlc_30Rnd_556x45_B_AUG";
+_rifleGL_mag_tr = "hlc_30Rnd_556x45_T_AUG";
 _rifleL_mag = "hlc_20Rnd_762x51_B_fal";
 _rifleL_mag_tr = "hlc_20Rnd_762x51_T_fal";
 

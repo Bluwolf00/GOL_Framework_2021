@@ -44,6 +44,8 @@ _rifleC = ["rhs_weap_m3a1", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["hlc_rifle_akmgl", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "hlc_30Rnd_762x39_b_ak";
 _rifle_mag_tr = "hlc_30Rnd_762x39_m_ak";
+_rifleGL_mag = "hlc_30Rnd_762x39_b_ak";
+_rifleGL_mag_tr = "hlc_30Rnd_762x39_m_ak";
 _rifleC_mag = "rhsgref_30rnd_1143x23_M1911B_SMG";
 
 _LMG = ["hlc_rifle_rpk", _silencer, _pointer, _sight, _bipod];

@@ -49,6 +49,8 @@ _rifleGL = ["UK3CB_BAF_L85A3_UGL", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["UK3CB_BAF_L86A2", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "UK3CB_BAF_556_30Rnd";
 _rifle_mag_tr = "UK3CB_BAF_556_30Rnd_T";
+_rifleGL_mag = "UK3CB_BAF_556_30Rnd";
+_rifleGL_mag_tr = "UK3CB_BAF_556_30Rnd_T";
 _rifleC_mag = "UK3CB_BAF_556_30Rnd";
 
 _LMG = ["UK3CB_BAF_L110A2RIS", _silencer, _pointer, _sight, _bipod];

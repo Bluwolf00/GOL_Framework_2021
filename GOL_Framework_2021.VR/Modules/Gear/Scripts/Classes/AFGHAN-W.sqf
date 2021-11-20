@@ -45,7 +45,8 @@ _rifleGL = ["hlc_rifle_m4m203", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["hlc_rifle_CQBR", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "rhs_mag_30Rnd_556x45_Mk318_Stanag";
 _rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
-
+_rifleGL_mag = "rhs_mag_30Rnd_556x45_Mk318_Stanag";
+_rifleGL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 
 _LMG = ["hlc_lmg_minimi", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";

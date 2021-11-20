@@ -48,6 +48,8 @@ _rifleGL = ["arifle_MX_GL_Black_F", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["arifle_MX_Black_F", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_65x39_caseless_mag";
 _rifle_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
+_rifleGL_mag = "30Rnd_65x39_caseless_mag";
+_rifleGL_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 _rifleL_mag = "30Rnd_65x39_caseless_mag";
 _rifleL_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 

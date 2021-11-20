@@ -44,6 +44,8 @@ _rifleGL = ["rhs_weap_vhsd2_bg", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_svdp_npz", _silencer, _pointer, "optic_arco_ak_blk_f", _bipod];
 _rifle_mag = "rhsgref_30rnd_556x45_vhs2";
 _rifle_mag_tr = "rhsgref_30rnd_556x45_vhs2_t";
+_rifleGL_mag = "rhsgref_30rnd_556x45_vhs2";
+_rifleGL_mag_tr = "rhsgref_30rnd_556x45_vhs2_t";
 _rifleL_mag = "10Rnd_762x54_Mag";
 _rifleL_mag_tr = "ACE_10Rnd_762x54_Tracer_mag";
 

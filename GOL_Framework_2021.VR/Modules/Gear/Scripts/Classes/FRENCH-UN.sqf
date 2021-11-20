@@ -46,6 +46,8 @@ _rifleGL = ["hlc_rifle_416D145_gl", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["arifle_SPAR_03_blk_F", _silencer, _pointer, "optic_erco_blk_f", _bipod];
 _rifle_mag = "hlc_30rnd_556x45_EPR";
 _rifle_mag_tr = "hlc_30rnd_556x45_t";
+_rifleGL_mag = "hlc_30rnd_556x45_EPR";
+_rifleGL_mag_tr = "hlc_30rnd_556x45_t";
 _rifleL_mag = "ACE_20Rnd_762x51_Mk319_Mod_0_Mag";
 _rifleL_mag_tr = "ACE_20Rnd_762x51_Mag_Tracer";
 

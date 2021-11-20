@@ -45,6 +45,8 @@ _rifleGL = ["arifle_Katiba_GL_F", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["arifle_Katiba_F", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_65x39_caseless_green";
 _rifle_mag_tr = "30Rnd_65x39_caseless_green_mag_Tracer";
+_rifleGL_mag = "30Rnd_65x39_caseless_green";
+_rifleGL_mag_tr = "30Rnd_65x39_caseless_green_mag_Tracer";
 
 _LMG = ["LMG_Mk200_F", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "200Rnd_65x39_cased_Box_Tracer";

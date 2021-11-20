@@ -51,6 +51,8 @@ _rifleL = ["rhs_weap_svdp", _silencer, _pointer, _sight, _bipod];
 
 _rifle_mag = "rhs_30Rnd_545x39_7N22_camo_AK";
 _rifle_mag_tr = "rhs_30Rnd_545x39_AK_green";
+_rifleGL_mag = "rhs_30Rnd_545x39_7N22_camo_AK";
+_rifleGL_mag_tr = "rhs_30Rnd_545x39_AK_green";
 _rifleL_mag = "ACE_10Rnd_762x54_Tracer_mag";
 
 _LMG = ["hlc_rifle_rpk74n", _silencer, _pointer, _sight, _bipod];

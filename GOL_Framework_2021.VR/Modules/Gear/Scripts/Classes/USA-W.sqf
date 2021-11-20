@@ -54,6 +54,8 @@ _rifleGL = ["rhs_weap_mk18_m320", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_m27iar_grip", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "hlc_30rnd_556x45_SOST_L5";
 _rifle_mag_tr = "hlc_30rnd_556x45_t_L5";
+_rifleGL_mag = "hlc_30rnd_556x45_SOST";
+_rifleGL_mag_tr = "hlc_30rnd_556x45_t";
 _rifleC_mag = "rhsusf_mag_40Rnd_46x30_FMJ";
 
 _LMG = ["LMG_03_F", _silencer, _pointer, _sight, ""];

@@ -46,7 +46,10 @@ _rifle = ["hlc_wp_mod727", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["hlc_wp_mod727", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["hlc_rifle_Colt727_GL", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["hlc_rifle_STG58F", _silencer, _pointer, _sight, _bipod];
-_rifle_mag = "30Rnd_556x45_Stanag_Tracer_Yellow";
+_rifle_mag = "30Rnd_545x39_Mag_F";
+_rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Yellow";
+_rifleGL_mag = "30Rnd_545x39_Mag_F";
+_rifleGL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Yellow";
 _rifleL_mag = "hlc_20Rnd_762x51_T_fal";
 
 _LMG = ["hlc_lmg_minimi_railed", _silencer, _pointer, _sight, _bipod];
