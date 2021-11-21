@@ -16,5 +16,6 @@ OKS_Enemy_Radio = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_En
 OKS_Faceswap = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_FaceSwap.sqf";
 OKS_Convoy_Spawn = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Convoy_Spawn.sqf";
 OKS_AA_Guard = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_AA_Guard.sqf";
+TFAR_Scrambler = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\TFAR_Scrambler.sqf";
 GW_DoParadrop = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\GW_DoParadrop.sqf";
 OKS_VehicleParadrop = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_VehicleParadrop.sqf";

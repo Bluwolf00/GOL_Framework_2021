@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1859;
+		nextID=1863;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5638;
+		nextID=5663;
 	};
 	class Camera
 	{
-		pos[]={81.787445,79.169212,-24.494993};
-		dir[]={0.011298633,-0.49803373,0.86709124};
-		up[]={0.006489573,0.86712277,0.49805355};
-		aside[]={0.99992067,3.1832315e-009,-0.013029703};
+		pos[]={77.668022,63.723942,-17.710365};
+		dir[]={-0.0011930048,-0.52544153,0.8508299};
+		up[]={-0.00073676388,0.85082901,0.52544141};
+		aside[]={0.99999994,-2.1351525e-009,0.0014021471};
 	};
 };
 binarizationWanted=0;
@@ -355,7 +355,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=364;
+									items=368;
 									class Item0
 									{
 										class data
@@ -5452,6 +5452,62 @@ class CustomAttributes
 											value="ace_overheating_cookoffcoef";
 										};
 									};
+									class Item364
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_overheating_heatcoef";
+										};
+									};
+									class Item365
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_overheating_displaytextonjam";
+										};
+									};
+									class Item366
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_overheating_jamchancecoef";
+										};
+									};
+									class Item367
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_overheating_unjamonswapbarrel";
+										};
+									};
 								};
 							};
 						};
@@ -5468,7 +5524,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=364;
+									items=368;
 									class Item0
 									{
 										class data
@@ -9859,7 +9915,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0.2;
+														value=0;
 													};
 												};
 												class Item1
@@ -20076,7 +20132,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0;
+														value=1;
 													};
 												};
 											};
@@ -22377,6 +22433,186 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item364
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=0.49500626;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item365
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item366
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=0.49500626;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item367
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -22424,7 +22660,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=31;
+		items=34;
 		class Item0
 		{
 			dataType="Layer";
@@ -24761,12 +24997,11 @@ class Mission
 								class Item5
 								{
 									dataType="Marker";
-									position[]={51.765896,5943464,88.809769};
+									position[]={50.226002,5943464,89.010002};
 									name="respawn_west";
 									text=" respawn_west";
 									type="Empty";
 									colorName="ColorWEST";
-									angle=181.47177;
 									id=436;
 									atlOffset=5943459;
 								};
@@ -26661,12 +26896,11 @@ class Mission
 								class Item5
 								{
 									dataType="Marker";
-									position[]={85.090324,3275850,88.435379};
+									position[]={85.089996,3275850,88.434998};
 									name="respawn_east";
 									text=" respawn_east";
 									type="Empty";
 									colorName="ColorEAST";
-									angle=177.06174;
 									id=437;
 									atlOffset=3275845;
 								};
@@ -28641,12 +28875,11 @@ class Mission
 								class Item5
 								{
 									dataType="Marker";
-									position[]={118.89916,4982978,88.42482};
+									position[]={118.899,4982978,88.425003};
 									name="respawn_resistance";
 									text=" respawn_resistance";
 									type="Empty";
 									colorName="ColorGUER";
-									angle=179.74103;
 									id=438;
 									atlOffset=4982973;
 								};
@@ -29573,7 +29806,7 @@ class Mission
 		class Item10
 		{
 			dataType="Marker";
-			position[]={99.68959,5,902.54169};
+			position[]={1180.0541,5,50.846863};
 			name="helicopter_spawn";
 			type="Empty";
 			id=1755;
@@ -29581,7 +29814,7 @@ class Mission
 		class Item11
 		{
 			dataType="Marker";
-			position[]={99.437149,5,701.34247};
+			position[]={80.071304,5,1004.6013};
 			name="helicopter_despawn";
 			type="Empty";
 			id=1756;
@@ -29591,7 +29824,7 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={99.804878,5,902.63574};
+				position[]={1180.1693,5,50.940918};
 			};
 			title="NEKY Resupply / Pick up SPAWN";
 			description="Spawn Position for Resupply & Pickup helicopters. IMPORTANT! Make sure the spawn & despawn are set apart! Minimum 300m apart!";
@@ -29602,7 +29835,7 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={99.804878,5,700.98926};
+				position[]={80.439034,5,1004.248};
 			};
 			title="NEKY Resupply / Pick up DESPAWN";
 			description="Despawn Position for Resupply & Pickup helicopters. IMPORTANT! Make sure the spawn & despawn are set apart! Minimum 300m apart!";
@@ -29784,6 +30017,39 @@ class Mission
 			title="Roadblock Locations";
 			description="This logic is used for defining roadblock locations, the direction of the logic is also the direction of which the roadblock will be facing, including the static vehicle if present.";
 			id=1784;
+		};
+		class Item31
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={50.212593,5,89.048828};
+			};
+			init="this setVariable [""GW_isRespawnPos"", ""west""];";
+			id=1860;
+			type="LocationRespawnPoint_F";
+		};
+		class Item32
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={85.096436,5,88.401367};
+			};
+			init="this setVariable [""GW_isRespawnPos"", ""east""];";
+			id=1861;
+			type="LocationRespawnPoint_F";
+		};
+		class Item33
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={118.708,5,88.160004};
+			};
+			init="this setVariable [""GW_isRespawnPos"", ""independent""];";
+			id=1862;
+			type="LocationRespawnPoint_F";
 		};
 	};
 };

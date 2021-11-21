@@ -52,7 +52,7 @@ OKS_AA_Check = {
                 if(_Debug_Variable) then { systemChat format["AA Value - %1 - %2",_Helicopter,_Value]};
             } else {
                 _Helicopter setVariable ["OKS_ANTIAIR_VALUE",0];
-                 if(_Debug_Variable) then { systemChat format["Reset AA Value - %1 - %2",_Helicopter,_Value]};
+                 if(_Debug_Variable) then { systemChat format["Reset AA Value - %1",_Helicopter]};
             };
         };
         _Helicopter setVariable ["OKS_ANTIAIR_CHECK",false,true];

@@ -71,6 +71,8 @@ _arty setVehicleAmmo 0;
 _arty setVehicleAmmo 1;
 _arty setVehicleReceiveRemoteTargets true;
 _arty setVehicleRadar 1;
+gunner _arty setSkill ["spotDistance", 0.9];
+gunner _arty setSkill ["spotTime", 0.9];
 
 _fnc_Fire = {
     params ["_arty", "_weapon","_targetPlayer"];

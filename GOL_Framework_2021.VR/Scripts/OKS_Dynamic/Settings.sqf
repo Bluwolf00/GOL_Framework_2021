@@ -5,7 +5,7 @@
 //	Returns: [Settings]
 
 Params["_Side"];
-Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tank","_Artillery","_Supply","_Transport","_Civilian","_Officer","_Settings","_AntiAir","_EnableEnemyMarkers","_RoadblockVehicleType","_UnitArray"];
+Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tank","_Artillery","_Supply","_Transport","_Civilian","_Officer","_Settings","_AntiAir","_EnableEnemyMarkers","_RoadblockVehicleType","_UnitArray","_MarkerColor"];
 
 /* Faction Selection for Vehicles spawned by OKS_Dynamic
 
@@ -334,6 +334,9 @@ _EnableZoneMarker = false;
 /* Mark Trigger Area with Zone Type Marker */
 _EnableZoneTypeMarker = true;
 
+/* Enemy Marker Color - Default SideColor set to _MarkerColor = false*/
+_MarkerColor = false;
+
 /* Enable Tasking on Objectives - False if you want objectives without tasks attached */
 _EnableObjectiveTasks = true;
 
@@ -350,9 +353,9 @@ _CivilianCount = 8;
 _HouseWaypoints = 15;
 _RandomWaypoints = 5;
 _ShouldBeAgent = false;
-_ShouldPanic = true;
+_ShouldPanic = false;
 
-_Ethnicity = "african";
+_Ethnicity = "middleeast";
 /*
 	_Ethnicity - OKS_FaceSwap - Only works if OKS_Ambience is enabled in MissionSettings.sqf & _ShouldBeAgent is false
 	african
@@ -369,5 +372,5 @@ _Ethnicity = "african";
 // DO NOT EDIT ANYTHING BELOW \\
 _DynamicCivilianArray = [_CivilianTriggerSize,_CivilianCount,_HouseWaypoints,_RandomWaypoints,_ShouldBeAgent,_ShouldPanic,_Ethnicity];
 _Civilian = [_CivilianUnits,_Officer,_DynamicCivilianArray];
-_Configuration = [_CompoundSize,_EnableEnemyMarkers,_EnableZoneMarker,_EnableZoneTypeMarker,_RoadblockVehicleType,_EnableObjectiveTasks];
+_Configuration = [_CompoundSize,_EnableEnemyMarkers,_EnableZoneMarker,_EnableZoneTypeMarker,_RoadblockVehicleType,_EnableObjectiveTasks,_MarkerColor];
 [_UnitArray,_SideMarker,_SideColor,_Vehicles,_Civilian,_ObjectiveTypes,_Configuration]

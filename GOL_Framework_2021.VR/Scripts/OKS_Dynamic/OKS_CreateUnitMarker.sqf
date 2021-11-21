@@ -4,15 +4,22 @@
 	Params["_Marker","_Side","_Type","_CountUnits","_Size"];
 
 	private ["_marker","_sideMarker","_UnitType"];
+
+	_Settings = [_Side] call OKS_Dynamic_Setting;
+_Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configurations"];
+_Configurations Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker","_RoadblockVehicleType","_EnableObjectiveTasks","_MarkerColor"];
 	private _Debug_Variable = false;
 	_sideMarker = "";
 	_UnitType = "";
 	// [_MainTrigger,_MainTriggerSizeA,_MainTriggerSizeB,0,_MainTriggerAngle,"colorGreen",0.5,"RECTANGLE"]
-
 	switch (_Side) do {
 		case west: {_Marker setMarkerColor "colorBLUFOR"; _sideMarker ="b_"};
 		case east: {_Marker setMarkerColor "colorOPFOR"; _sideMarker ="o_"};
 		case independent: {_Marker setMarkerColor "colorINDEPENDENT"; _sideMarker ="n_"};
+	};
+
+	if (_MarkerColor isEqualType "") then {
+		_Marker setMarkerColor _MarkerColor;
 	};
 
 	switch (_Type) do {

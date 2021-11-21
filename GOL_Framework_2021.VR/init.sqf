@@ -53,6 +53,11 @@ Sleep 5;
 	};
 	if(GOL_OKS_AMBIENCE isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Ambience\Init.sqf";
+		/* TFAR Jammer - Object, Range & Strength Parameters
+		waitUntil {!isNil "TFAR_Scrambler"};
+
+		[[JAMMER],500,50] spawn TFAR_Scrambler;
+		*/
 	};
 	if(GOL_OKS_TANKER isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Vehicles\OKS_Tanker.sqf";
