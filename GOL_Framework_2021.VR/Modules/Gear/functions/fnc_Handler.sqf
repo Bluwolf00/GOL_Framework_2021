@@ -335,13 +335,13 @@ if (_isMan) then {
 				[_unit, _glflareR, 6] call _fnc_AddObjectsCargo;
 				[_unit, _glflareG, 6] call _fnc_AddObjectsCargo;
 				[_unit, _grenade, 6] call _fnc_AddObjectsCargo;
-				[_unit, _grenademini, 6] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 12] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 5] call _fnc_AddObjectsCargo;
 
 				[_unit, _bandage, 20] call _fnc_AddObjectsCargo;
 				if (GVARMAIN(mod_ACE3)) then {
 					[_unit, "ACE_salineIV", 10] call _fnc_AddObjectsCargo;
+					[_unit, _flashBang, 8] call _fnc_AddObjectsCargo;
 					if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {
 						[_unit, "ACE_elasticBandage", 100] call _fnc_AddObjectsCargo;
 						[_unit, "ACE_tourniquet", 50] call _fnc_AddObjectsCargo;
@@ -381,13 +381,12 @@ if (_isMan) then {
 				[_unit, _glflareR, 10] call _fnc_AddObjectsCargo;
 				[_unit, _glflareG, 10] call _fnc_AddObjectsCargo;
 				[_unit, _grenade, 20] call _fnc_AddObjectsCargo;
-				[_unit, _grenademini, 20] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 20] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeG, 5] call _fnc_AddObjectsCargo;
-
 				[_unit, _bandage, 40] call _fnc_AddObjectsCargo;
 				if (GVARMAIN(mod_ACE3)) then {
 					[_unit, "ACE_salineIV", 15] call _fnc_AddObjectsCargo;
+					[_unit, _flashBang, 15] call _fnc_AddObjectsCargo;
 					if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {
 						[_unit, "ACE_elasticBandage", 100] call _fnc_AddObjectsCargo;
 						[_unit, "ACE_tourniquet", 50] call _fnc_AddObjectsCargo;
@@ -427,13 +426,13 @@ if (_isMan) then {
 				[_unit, _glflareG, 40] call _fnc_AddObjectsCargo;
 				[_unit, _glflareW, 40] call _fnc_AddObjectsCargo;
 				[_unit, _grenade, 60] call _fnc_AddObjectsCargo;
-				[_unit, _grenademini, 60] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 60] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeG, 15] call _fnc_AddObjectsCargo;
 
 				[_unit, _bandage, 50] call _fnc_AddObjectsCargo;
 				if (GVARMAIN(mod_ACE3)) then {
 					[_unit, "ACE_salineIV", 25] call _fnc_AddObjectsCargo;
+					[_unit, _flashBang, 25] call _fnc_AddObjectsCargo;
 					if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {
 						[_unit, "ACE_elasticBandage", 100] call _fnc_AddObjectsCargo;
 						[_unit, "ACE_tourniquet", 50] call _fnc_AddObjectsCargo;

@@ -67,7 +67,7 @@ switch (toLower(_role)) do {
 			[_LAT, _LAT_mag, ""] call _addLaunchers;
 			if (_LAT_ReUsable) then {
 				["","","","",_backpack] call _addEquipment;
-				[[_LAT_mag,2]] call _addToBackpack;
+				[[_LAT_mag,1]] call _addToBackpack;
 			};
 		};
 	};

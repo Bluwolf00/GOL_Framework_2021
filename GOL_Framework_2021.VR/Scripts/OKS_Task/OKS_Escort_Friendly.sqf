@@ -1,7 +1,7 @@
 	// OKS_Escort_Friendly
 	// [6,getPos escort1,east,true,getpos exfil] spawn OKS_Escort_Friendly;
 	// [6,getPos escort1,east,true,getpos exfil] execVM "Scripts\OKS_Task\OKS_Escort_Friendly.sqf";
-	if(HasInterface && !isServer) exitWith {};
+	if(!isServer) exitWith {};
 
 	Params ["_NumberInfantry","_Position","_Side","_ShouldCreateTasks","_Exfil"];
 	Private ["_GarrisonPositions","_GarrisonMaxSize","_Unit","_Casualties","_SelectedLeader","_GroupMarker","_sideMarker"];

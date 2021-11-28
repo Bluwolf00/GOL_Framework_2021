@@ -17,7 +17,7 @@
 params [["_unit", objNull, [objNull]]];
 
 if(isNil "GOL_ARSENAL_ALLOWED" || GOL_ARSENAL_ALLOWED isEqualTo 1) then {
-	_unit addAction ["<t color='#ffff00'>Attachment Menu</t>", {[_this select 0, player] call ace_arsenal_fnc_openBox},bullShit,8];
+	_unit addAction ["<t color='#ffff00'>Attachment Menu</t>", {[_this select 0, player] call ace_arsenal_fnc_openBox},bullShit,5];
 };
 // Adds ACE Arsenal for Attachments
 /*
@@ -44,7 +44,7 @@ _unit addAction ["<t color='#ff962c'>Remove Night gear</t>", {
 		player removeMagazines  "rhs_VG40OP_green";
 		player removeMagazines  "rhs_VG40OP_red";
 	};
-},nil,1,false,false,"","!((((getUnitLoadout player) select 9) select 5) isEqualTo '')",8];
+},nil,1,false,false,"","!((((getUnitLoadout player) select 9) select 5) isEqualTo '')",5];
 
 _unit addAction ["Platoon > Actual","[player,'pl'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["Platoon > Forward Air Controller","[player,'fac'] call GW_Gear_Fnc_Handler;",bullShit,4];
@@ -56,22 +56,21 @@ _unit addAction ["<t color='#ff3737'>Squad > Rifleman</t>","[player,'r'] call GW
 _unit addAction ["<t color='#ff3737'>Squad > Grenadier</t>","[player,'g'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#6a9fff'>Squad > Asst. Gunner</t>","[player,'ag'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#6a9fff'>Squad > Automatic Rifleman</t>","[player,'ar'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["<t color='#6a9fff'>Squad > Light Rifleman</t>","[player,'lr'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["<t color='#6a9fff'>Squad > Ammo Bearer</t>","[player,'ab'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#FDF916'>Squad > Vehicle Crew</t>","[player,'crew'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#FDF916'>Special > Light Rifleman</t>","[player,'lr'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#FDF916'>Special > Ammo Bearer</t>","[player,'ab'] call GW_Gear_Fnc_Handler;",bullShit,4];
 
-_unit addAction ["Special > Asst. Medium AT","[player,'amat'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["Special > Medium AT","[player,'mat'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["Special > Asst. Medium Machine Gunner","[player,'ammg'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["Special > Medium Machine Gunner","[player,'mmg'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["Special > Anti-Air","[player,'aa'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#ff3737'>Special > Asst. Medium AT</t>","[player,'amat'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#ff3737'>Special > Medium AT</t>","[player,'mat'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#6a9fff'>Special > Asst. Medium Machine Gunner</t>","[player,'ammg'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#6a9fff'>Special > Medium Machine Gunner</t>","[player,'mmg'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#FDF916'>Special > Anti-Air</t>","[player,'aa'] call GW_Gear_Fnc_Handler;",bullShit,4];
 
-_unit addAction ["Special > Diver","[player,'diver'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["Special > UAV Operator","[player,'uav'] call GW_Gear_Fnc_Handler;",bullShit,4];
+//_unit addAction ["Special > Diver","[player,'diver'] call GW_Gear_Fnc_Handler;",bullShit,4];
+//_unit addAction ["Special > UAV Operator","[player,'uav'] call GW_Gear_Fnc_Handler;",bullShit,4];
 
-_unit addAction ["Echo > Chopper Pilot","[player,'p'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["Echo > Para-Rescueman","[player,'pj'] call GW_Gear_Fnc_Handler;",bullShit,4];
-
-_unit addAction ["Echo Special > Jet Pilot","[player,'jetp'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["Echo Special > Vehicle Crew","[player,'crew'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["Echo Special > Dragon","[player,'dragon'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["Echo Special > Marksman","[player,'marksman'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#22B9FF'>Echo > Chopper Pilot</t>","[player,'p'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#22B9FF'>Echo > Para-Rescueman</t>","[player,'pj'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#22B9FF'>Echo Special > Jet Pilot</t>","[player,'jetp'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#22B9FF'>Echo Special > Dragon</t>","[player,'dragon'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#22B9FF'>Echo Special > Marksman</t>","[player,'marksman'] call GW_Gear_Fnc_Handler;",bullShit,4];

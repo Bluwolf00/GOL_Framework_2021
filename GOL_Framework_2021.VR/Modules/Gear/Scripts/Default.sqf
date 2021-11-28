@@ -141,7 +141,7 @@ switch (toLower(_role)) do {
 			[[_mapFlashLight,1],[_handFlareG,1]] call _addToUniform;
 		};
 		if (_useMineDetector) then {
-			[["MineDetector",1]] call _addToBackpack;
+			[["MineDetector",1]] call _addToUniform;
 		};
 		if (_LAT_ReUsable) then {
 			[[_LAT_mag,1]] call _addToBackpack;

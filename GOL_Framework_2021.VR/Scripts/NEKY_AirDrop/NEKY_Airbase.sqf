@@ -13,14 +13,14 @@
 		Trigger - Set up a trigger used to define the hunting space for these reinforcements, set it to Any Players and repeatable for best effect.
 		Side - The side of the faction you wanted spawned
 		Classname - The classname of the helicopter to spawn
-		Type of Insert - Unload/Paradrop (Unload makes the helicopter land, while Paradrop is paradrop)
+		Type of Insert - Unload/Paradrop (Unload makes the helicopter land, while Paradrop is paradrop, unloadthenpatrol lands the infantry then send the helicopter to patrol)
 		[
 			Number of Groups - This is the amount of groups/teams you want the troops to be split into.
 			Procentage of Cargo Space - This takes a scalar value and estimates a procentage of the cargo slots available in the helicopter. If a helicopter has 10 seats and the procentage is at 0.5 (50%) then 5 enemies will be spawned. Use 1 for 100% and 0.1-0.9 for 10% - 90%.
 		]
 
 		Examples on code:
-		[Object_1,Spawn_1,Trigger_1,EAST,"O_Heli_Light_02_unarmed_F","Unload",[2,1]] spawn NEKY_Airbase;
+		[Object_1,Spawn_1,Trigger_1,EAST,"O_Heli_Light_02_dynamicLoadout_F","Unload",[2,1]] spawn NEKY_Airbase;
 
 
 		Step-by-Step Guide:
@@ -104,7 +104,10 @@ While {Alive _Object && _AirbaseRespawnCount > 0 } do {
 			};
 
 			switch (_type) do {
-
+				case "unloadthenpatrol": {
+					SystemChat "Running Unload then Patrol";
+					[_OKS_Side, _Classname, true, _Type, _SpawnPos, _CalculatedIngress, _EgressPos, _Troops, [_CalculatedIngress],False,False,_ReinforcementZone] spawn NEKY_AirDrop;
+				};
 				case "unload": {
 					SystemChat "Running Unload";
 					[_OKS_Side, _Classname, False, _Type, _SpawnPos, _CalculatedIngress, _EgressPos, _Troops, [_CalculatedIngress],False,False,_ReinforcementZone] spawn NEKY_AirDrop;

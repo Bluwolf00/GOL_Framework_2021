@@ -1,7 +1,7 @@
 	// OKS_Rescue_Friendly
 	// [6,3,getPos house1,east,true,["lot","large","fatal"]] spawn OKS_Rescue_Friendly;
 	// [5,1,getPos player,east,true,["lot","large","fatal"]] execVM "Scripts\OKS_Task\OKS_Rescue_Friendly.sqf";
-	if(HasInterface && !isServer) exitWith {};
+	if(!isServer) exitWith {};
 
 	Params ["_NumberInfantry","_NumberOfCasualties","_Position","_Side","_ShouldCreateTasks","_Severity"];
 	Private ["_GarrisonPositions","_GarrisonMaxSize","_Unit","_Casualties","_sideMarker","_GroupMarker","_startmarker"];
