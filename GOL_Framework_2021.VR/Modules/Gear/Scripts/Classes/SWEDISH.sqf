@@ -24,6 +24,7 @@ if (_role in ["pl","sl","ftl","fac"]) then {
 if (_role isEqualTo "crew") then {
 	_helmet = "helmet_lwh_M90_3";
 	_vest = "vest_spc_crewman_M90";
+	_uniform = "Uniform_Coveralls_M90";
 };
 if (_role isEqualTo "p") then {
 	_uniform = "Uniform_Coveralls_M90";
@@ -44,27 +45,29 @@ if (_role isEqualTo "jetp") then {
 };
 
 // Attachments
-_silencer = "";
+_silencer = "rhsusf_acc_sfmb556";
 _pointer = "";
-_sight = "";
-_bipod = "";
+_sight = "optic_mrco";
+_bipod = "rhsusf_acc_tdstubby_blk";
 
 // Primary Weapon
-_rifle = ["hlc_rifle_416D145", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_smg_mp5a3", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_416D145_gl", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_416D145", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman = ["hlc_rifle_psg1A1", _silencer, _pointer, "hlc_optic_leupoldm3a_g3", _bipod];
-_rifle_mag = "hlc_30rnd_556x45_EPR";
-_rifle_mag_tr = "hlc_30rnd_556x45_t_PMAG";
-_rifleGL_mag = "hlc_30rnd_556x45_EPR";
-_rifleGL_mag_tr = "hlc_30rnd_556x45_t_PMAG";
+_rifle = ["hlc_rifle_SG551SB_TAC", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["SMG_05_F", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["hlc_rifle_SG551SB_TAC_GL", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["hlc_rifle_g3a3ris", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman = ["hlc_rifle_g3a3", _silencer, _pointer, "hlc_optic_zf95_g3", _bipod];
+_rifle_mag = "hlc_30Rnd_556x45_SOST_sg550";
+_rifle_mag_tr = "hlc_30Rnd_556x45_T_sg550";
+_rifleGL_mag = "hlc_30Rnd_556x45_SOST_sg550";
+_rifleGL_mag_tr = "hlc_30Rnd_556x45_T_sg550";
 _rifleC_mag = "hlc_30Rnd_9x19_B_MP5";
+_rifleL_mag = "hlc_20rnd_762x51_barrier_G3";
+_rifleL_mag_tr = "hlc_20rnd_762x51_T_G3";
 _rifleMarksman_mag = "hlc_20Rnd_762x51_b_G3";
-_rifleMarksman_mag_tr = "hlc_20Rnd_762x51_T_G3";
+_rifleMarksman_mag_tr = "hlc_20rnd_762x51_T_G3";
 
-_LMG = ["hlc_m249_pip4", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
+_LMG = ["hlc_lmg_mk48mod1", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "hlc_200Rnd_762x51_T_M60E4";
 
 _MMG = ["rhs_weap_m240B", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhsusf_100Rnd_762x51_m62_tracer";
@@ -78,9 +81,9 @@ _pointer = "";
 _sight = "";
 _bipod = "";
 
-_LAT = ["rhs_weap_M136_hp", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "";
-_LAT_ReUsable = false;
+_LAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
+_LAT_mag = "MRAWS_HEAT55_F";
+_LAT_ReUsable = true;
 
 _MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "MRAWS_HEAT55_F";

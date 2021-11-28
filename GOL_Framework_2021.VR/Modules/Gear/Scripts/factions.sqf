@@ -33,6 +33,12 @@ switch (_side) do {
 	case "LIVONIA-W": {
 		#include "Classes\LIVONIA-W.sqf"
 	};
+	case "LIVONIA-1950-W": {
+		#include "Classes\LIVONIA-1950-W.sqf"
+	};
+	case "CHDKZ-1950-W": {
+		#include "Classes\CHDKZ-1950-W.sqf"
+	};
 	case "CZECH-W": {
 		#include "Classes\CZECH-W.sqf"
 	};
