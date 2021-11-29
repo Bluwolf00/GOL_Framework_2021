@@ -1,4 +1,5 @@
 OKS_EnemyFaction = _this select 0;
+OKS_Radios = [];
 // [Independent] spawn OKS_Enemy_Radio;
 //
 if (!isServer) exitWith {false};	// Ensures only server or HC runs this script - Tack Neky
@@ -18,7 +19,7 @@ OKS_Loop_Radio = {
 		//systemChat str [count _AllMen,count _EnemyCorpses,count _TransmittingCorpses];
 		//systemChat format ["%1 Transmitting in Range of Corpse",{_Corpse distance _X < 20} count _TransmittingCorpses];
 		//SystemChat format ["Dead Corpses in Range - %1 - Transmit %2",count _DeadCorpses,count _TransmittingCorpses];
-		if( {_Corpse distance _X < 20} count AllPlayers > 0 && {_Corpse distance _X < 20} count _TransmittingCorpses == 0) then {
+		if( {_Corpse distance _X < 20} count AllPlayers > 0 && {_Corpse distance _X < 20} count _TransmittingCorpses == 0 && {OKS_EnemyFaction knowsAbout _X > 2.5 && getPos _X select 2 < 15} count AllPlayers > 0) then {
 
 			//systemChat "Play Radio";
 			_Corpse setVariable ["OKS_Transmit_Currently",true];
