@@ -93,10 +93,18 @@ _id2 = _ActionObject addAction ["<t color='#EC1508'>Cancel MHQ Paradrop</t>", {
 OKS_MHQ_Paradrop_Actions = [_id1,_id2];
 publicVariable "OKS_MHQ_Paradrop_Actions";
 
+OKS_MHQ_ChatMessage = {
+	if(player in OKS_MHQ_Paradrop_Array) then {
+		systemChat "Paradrop in 3 seconds..."
+	};
+};
+
 _FlyingMHQObject addAction ["<t color='#ECE808'>Deploy Paratroopers</t>", {
 
 		Params ["_ActionObject", "_Unit", "_id", "_ExtraParams"];
-		_ActionObject removeAction _id;
+		_ActionObject setVariable ["isParadropping",true];
+		{[] remoteExec ["OKS_MHQ_ChatMessage",0]} foreach OKS_MHQ_Paradrop_Array;
+		sleep 3;
 		_ExtraParams Params ["_FlyingMHQObject","_Steerable","_Height"];
 		{
 			_Any = (crew _FlyingMHQObject select 0);
@@ -106,19 +114,20 @@ _FlyingMHQObject addAction ["<t color='#ECE808'>Deploy Paratroopers</t>", {
 			OKS_MHQ_Paradrop_Array deleteAt (OKS_MHQ_Paradrop_Array find _X);
 			sleep 2.5;
 		} foreach OKS_MHQ_Paradrop_Array;
+		_ActionObject setVariable ["isParadropping",false];
 	},
 	[_FlyingMHQObject,_Steerable,_Height],
 	0,
 	false,
 	true,
 	"",
-	"count OKS_MHQ_Paradrop_Array > 0 && (driver (vehicle _target)) isEqualTo _this && getPos _target select 2 > 175"
+	"!(_target getVariable ['isParadropping',false]) && count OKS_MHQ_Paradrop_Array > 0 && (driver (vehicle _target)) isEqualTo _this && getPos _target select 2 > 200 && speed _target < 250"
 ];
 
 // Move unit to position and start falling
 OKS_EjectFromPlane = {
 
-	if(hasInterface && !isServer) then {
+	if(hasInterface) then {
 
 	Params ["_Unit","_FlyingMHQObject","_Steerable","_Height"];
 	_Unit allowDamage false;

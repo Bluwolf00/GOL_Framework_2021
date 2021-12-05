@@ -85,7 +85,23 @@ Sleep 5;
 			[flag_independent_1, "Paradrop Reinsert", "DZ Charlie", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
 		};
 	};
+	if(GOL_OKS_MHQ_PARADROP isEqualTo 1) then {
+		OKS_MHQ_Paradrop = compile preprocessFileLineNumbers "Scripts\NEKY_Paradrop\OKS_MHQ_Paradrop.sqf";
+		waitUntil {sleep 1; !(isNil "OKS_MHQ_Paradrop") && !(isNil "OKS_FRIENDLY_SIDE")};
+		private _AMHQ = AMHQ_1;     /* The Air Mobile Headquarters Vehicle */
+		private _Steerable = true; /* Decide if parachute should be steerable or not */
+		private _Height = 200;      /* Altitude in meters where parachute is opened automatically */
 
+		if(!isNil "flag_west_1" && OKS_FRIENDLY_SIDE isEqualTo west) then {
+			[flag_west_1, _AMHQ, _Steerable, _Height] execVM "Scripts\NEKY_Paradrop\OKS_MHQ_Paradrop.sqf";
+		};
+		if(!isNil "flag_east_1" && OKS_FRIENDLY_SIDE isEqualTo east) then {
+			[flag_east_1, _AMHQ, _Steerable, _Height] execVM "Scripts\NEKY_Paradrop\OKS_MHQ_Paradrop.sqf";
+		};
+		if(!isNil "flag_independent_1" && OKS_FRIENDLY_SIDE isEqualTo independent) then {
+			[flag_independent_1, _AMHQ, _Steerable, _Height] execVM "Scripts\NEKY_Paradrop\OKS_MHQ_Paradrop.sqf";
+		};
+	};
 Sleep 10;
 
 /* !! IGNORE AND DO NOT EDIT ALL OF THE ABOVE !! */

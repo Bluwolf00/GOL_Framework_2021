@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1945;
+		nextID=1947;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5907;
+		nextID=5926;
 	};
 	class Camera
 	{
-		pos[]={70.588417,49.829746,-3.3887732};
-		dir[]={0.003123509,-0.41741395,0.90872246};
-		up[]={0.0014350862,0.90871423,0.41741815};
-		aside[]={1.0000057,1.7959792e-008,-0.0034374394};
+		pos[]={62.155144,53.205112,-12.045816};
+		dir[]={-0.0001311173,-0.45490715,0.89054483};
+		up[]={-6.7229848e-005,0.89053547,0.45490992};
+		aside[]={1.0000035,5.4398697e-008,0.00014778739};
 	};
 };
 binarizationWanted=0;
@@ -56,13 +56,14 @@ addons[]=
 	"A3_Structures_F_System",
 	"A3_Structures_F_Mil_Cargo",
 	"A3_Structures_F_Enoch_Military_Camps",
-	"A3_Modules_F"
+	"A3_Modules_F",
+	"A3_Air_F_Exp_VTOL_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=19;
+		items=20;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -189,6 +190,13 @@ class AddonsMetaData
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item19
+		{
+			className="A3_Air_F_Exp";
+			name="Arma 3 Apex - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -23053,7 +23061,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=33;
+		items=35;
 		class Item0
 		{
 			dataType="Layer";
@@ -25179,7 +25187,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={49.539856,5.2840548,97.406509};
-										angles[]={-0,1.5941365,0};
+										angles[]={0,1.5941365,0};
 									};
 									side="Empty";
 									flags=4;
@@ -25220,7 +25228,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={81.218239,5.2840548,97.569443};
-										angles[]={-0,1.5079343,0};
+										angles[]={0,1.5079343,0};
 									};
 									side="Empty";
 									flags=4;
@@ -25261,7 +25269,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={50.499798,5.2840548,97.411377};
-										angles[]={-0,1.5939879,0};
+										angles[]={0,1.5939879,0};
 									};
 									side="Empty";
 									flags=4;
@@ -25302,7 +25310,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={82.23497,5.2840548,97.643173};
-										angles[]={-0,1.5939918,0};
+										angles[]={0,1.5939918,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28300,7 +28308,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={127.87863,5.6349964,47.493557};
-										angles[]={-0,6.2606683,0};
+										angles[]={0,6.2606683,0};
 									};
 									side="Empty";
 									flags=4;
@@ -28357,7 +28365,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={127.93053,5,47.355038};
-										angles[]={-0,6.2606683,0};
+										angles[]={0,6.2606683,0};
 									};
 									title="Mobile Service Station";
 									description="This also adds pylon configuration options";
@@ -29200,6 +29208,59 @@ class Mission
 			init="this setVariable [""GW_isRespawnPos"", ""east""];";
 			id=1861;
 			type="LocationRespawnPoint_F";
+		};
+		class Item33
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8.0410004,11.68958,76.973999};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="AMHQ_1";
+				reportRemoteTargets=1;
+				receiveRemoteTargets=1;
+				reportOwnPosition=1;
+			};
+			id=1945;
+			type="B_T_VTOL_01_armed_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit"",""Medikit""],[10,1]],[[],[]],[[""ToolKit""],[1]],[[""B_Parachute""],[4]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item34
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={7.8959999,5,78.273003};
+			};
+			title="MHQ Paradrop";
+			description="This vehicle is used for scripted paradrops that AAC can conduct while flying non-cargo airframes.  The player who requests reinsert can do so at the flag and the pilots can start the drop once they are below 250km/h and above 200m altitude. MHQ paradrop must be enabled in MissionSettings.sqf to work.";
+			id=1946;
 		};
 	};
 };
