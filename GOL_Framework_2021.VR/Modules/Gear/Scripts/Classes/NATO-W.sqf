@@ -44,7 +44,7 @@ _bipod = "";
 _rifle = ["arifle_MX_khk_F", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["arifle_MXC_khk_F", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["arifle_MX_GL_khk_F", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["arifle_MX_khk_F", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["arifle_MXM_khk_F", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_65x39_caseless_khaki_mag";
 _rifle_mag_tr = "30Rnd_65x39_caseless_khaki_mag_Tracer";
 _rifleGL_mag = "30Rnd_65x39_caseless_khaki_mag";
@@ -76,7 +76,7 @@ _pistol_mag = "16Rnd_9x21_Mag";
 _silencer = "";
 _pointer = "";
 _sight = "optic_LRPS";
-_bipod = "bipod_01_F_snd";
+_bipod = "rhsusf_acc_harris_bipod";
 
 _rifleMarksman = ["srifle_DMR_06_hunter_F", _silencer, _pointer, _sight, _bipod];
 _rifleMarksman_mag = "20Rnd_762x51_Mag";

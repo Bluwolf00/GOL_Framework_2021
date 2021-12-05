@@ -329,49 +329,49 @@ if (_isMan) then {
 			};
 
 			case "tiny_box": {
-				[_unit, _glHE, 10] call _fnc_AddObjectsCargo;
-				[_unit, _glsmokeR, 6] call _fnc_AddObjectsCargo;
-				[_unit, _glflareW, 6] call _fnc_AddObjectsCargo;
-				[_unit, _glflareR, 6] call _fnc_AddObjectsCargo;
-				[_unit, _glflareG, 6] call _fnc_AddObjectsCargo;
-				[_unit, _grenade, 6] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeY, 12] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeB, 5] call _fnc_AddObjectsCargo;
+				[_unit, _glHE, 4] call _fnc_AddObjectsCargo;
+				[_unit, _glsmokeR, 3] call _fnc_AddObjectsCargo;
+				[_unit, _glflareW, 2] call _fnc_AddObjectsCargo;
+				[_unit, _glflareR, 2] call _fnc_AddObjectsCargo;
+				[_unit, _grenade, 4] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeY, 4] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeB, 2] call _fnc_AddObjectsCargo;
 
-				[_unit, _bandage, 20] call _fnc_AddObjectsCargo;
+				[_unit, _bandage, 12] call _fnc_AddObjectsCargo;
 				if (GVARMAIN(mod_ACE3)) then {
-					[_unit, "ACE_salineIV", 10] call _fnc_AddObjectsCargo;
-					[_unit, _flashBang, 8] call _fnc_AddObjectsCargo;
-					if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {
-						[_unit, "ACE_elasticBandage", 100] call _fnc_AddObjectsCargo;
-						[_unit, "ACE_tourniquet", 50] call _fnc_AddObjectsCargo;
-						[_unit, "ACE_quikclot", 50] call _fnc_AddObjectsCargo;
-						[_unit, "ACE_atropine", 50] call _fnc_AddObjectsCargo;
-						[_unit, "ACE_salineIV", 50] call _fnc_AddObjectsCargo;
-						[_unit, "ACE_personalAidKit", 50] call _fnc_AddObjectsCargo;
-						[_unit, "ACE_surgicalKit", 50] call _fnc_AddObjectsCargo;
-					};
+					[_unit, "ACE_salineIV", 4] call _fnc_AddObjectsCargo;
+					[_unit, _flashBang, 2] call _fnc_AddObjectsCargo;
 				};
 
-				[_unit, _pistol_mag, 6] call _fnc_AddObjectsCargo;
-				[_unit, _rifle_mag, 6] call _fnc_AddObjectsCargo;
-				[_unit, _rifle_mag_tr, 6] call _fnc_AddObjectsCargo;
-				[_unit, _rifleC_mag, 6] call _fnc_AddObjectsCargo;
-				[_unit, _rifleC_mag_tr, 6] call _fnc_AddObjectsCargo;
-				[_unit, _rifleGL_mag, 6] call _fnc_AddObjectsCargo;
-				[_unit, _rifleGL_mag_tr, 6] call _fnc_AddObjectsCargo;
-				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 2)] call _fnc_AddObjectsCargo;
-				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 1)] call _fnc_AddObjectsCargo;
-
+				[_unit, _pistol_mag, 2] call _fnc_AddObjectsCargo;
+				[_unit, _rifle_mag_tr, 4] call _fnc_AddObjectsCargo;
+				[_unit, _rifleC_mag_tr, 3] call _fnc_AddObjectsCargo;
+				[_unit, _rifleGL_mag_tr, 4] call _fnc_AddObjectsCargo;
+				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 1)] call _fnc_AddObjectsCargo;
 				if (_LAT_ReUsable) then {
-					[_unit, _LAT_mag, 2] call _fnc_AddObjectsCargo;
+					[_unit, _LAT_mag, 1] call _fnc_AddObjectsCargo;
 				} else {
-					[_unit, (_LAT select 0), 2] call _fnc_AddObjectsCargo;
+					[_unit, (_LAT select 0), 1] call _fnc_AddObjectsCargo;
 				};
-				[_unit, _MAT_mag, 2] call _fnc_AddObjectsCargo;
 
-				[_unit, _demoCharge, 4] call _fnc_AddObjectsCargo;
-				[_unit, _satchelCharge, 2] call _fnc_AddObjectsCargo;
+				[_unit, _demoCharge, 1] call _fnc_AddObjectsCargo;
+			};
+
+			case "tiny_box_special": {
+				[_unit, _grenade, 4] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeY, 4] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeB, 2] call _fnc_AddObjectsCargo;
+				[_unit, _bandage, 12] call _fnc_AddObjectsCargo;
+				if (GVARMAIN(mod_ACE3)) then {
+					[_unit, "ACE_salineIV", 4] call _fnc_AddObjectsCargo;
+				};
+
+				[_unit, _pistol_mag, 2] call _fnc_AddObjectsCargo;
+				[_unit, _rifleL_mag_tr, 4] call _fnc_AddObjectsCargo;
+				[_unit, _rifleMarksman_mag_tr, 2] call _fnc_AddObjectsCargo;
+				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 1)] call _fnc_AddObjectsCargo;
+				[_unit, _MAT_mag, 2] call _fnc_AddObjectsCargo;
+				[_unit, _demoCharge, 2] call _fnc_AddObjectsCargo;
 			};
 
 			case "small_box": {

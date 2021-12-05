@@ -1,13 +1,12 @@
 // [west,"CUP_B_CH53E_VIV_USMC","B_LSV_01_armed_F",getPos start,getpos drop,getpos exit,trigger_1] execVM "Scripts\NEKY_AirDrop\SlingDrop.sqf"
 
-params ["_OKS_Side","_Classname","_DropVehicle","_Start","_Drop","_Exit","_HuntZone"];
+params ["_Side","_Classname","_DropVehicle","_Start","_Drop","_Exit","_HuntZone"];
 private ["_Unit","_UnitArray","_PilotClasses"];
 
-systemchat str [_OKS_Side,_Classname,_DropVehicle,_Start,_Drop,_Exit,_HuntZone];
+systemchat str [_Side,_Classname,_DropVehicle,_Start,_Drop,_Exit,_HuntZone];
 
 
-switch (_OKS_Side) do {
-
+switch (_Side) do {
 	case blufor:{
 		_PilotClasses = ["B_Pilot_F"];
 		_UnitArray = ["B_Soldier_TL_F","B_Soldier_TL_F","B_Soldier_LAT_F","B_Soldier_GL_F","B_medic_F","B_Soldier_AR_F","B_Soldier_A_F"];
@@ -20,12 +19,14 @@ switch (_OKS_Side) do {
 		_PilotClasses = ["I_Pilot_F"];
 		_UnitArray = ["I_Soldier_TL_F","I_Soldier_TL_F","I_Soldier_LAT_F","I_Soldier_GL_F","I_medic_F","I_Soldier_AR_F","I_Soldier_A_F"];
 	};
-
 };
 
 	_heli = createVehicle [_Classname, _Start, [], 0, "NONE"];
-	_crew = createGroup west;
-	_cargo = createGroup west;
+	_crew = createGroup _Side;
+	_cargo = createGroup _Side;
+	_crew setVariable ["hc_blacklist",true];
+	_crew setVariable ["lambs_danger_disableGroupAI",true];
+
 	_pilot = _crew CreateUnit [(_PilotClasses call BIS_fnc_selectRandom), [0,0,0], [], 0, "NONE"];
 	_pilot moveInDriver _heli;
 	_pilot setBehaviour "CARELESS";
@@ -43,9 +44,10 @@ switch (_OKS_Side) do {
 	_vehicle setDir getDir _Heli;
 	_vehicle setFuel 0;
 	_vehicle enableRopeAttach true;
-	createVehicleCrew _vehicle;
-	_Cargo = group (driver _vehicle);
 
+	_Cargo = [_vehicle,_Side] call OKS_AddVehicleCrew;
+	_Cargo setVariable ["hc_blacklist",true];
+	_Cargo setVariable ["lambs_danger_disableGroupAI",true];
 	//_driver = _Cargo CreateUnit [(_UnitTypes call BIS_fnc_selectRandom), [0,0,0], [], 0, "NONE"];
 	//_gunner = _Cargo CreateUnit [(_UnitTypes call BIS_fnc_selectRandom), [0,0,0], [], 0, "NONE"];
 	//_driver moveInDriver _vehicle;

@@ -1,7 +1,20 @@
-// _null = [this,east,false,1500,true] spawn GW_Ambient_AAA;
-// [this,east,false,1500,true] execVM "Scripts\OKS_Ambience\GW_Ambient_AAA.sqf";
-// [AntiAirObject (ObjNull),Side(SideEmpty),isHMG (Bool),Range (Meters),RadarInfo (Bool)] spawn GW_Ambient_AAA;
-//
+/*
+    Ambient AAA Script by GuzzenVonLidl - Edited by Oksman
+
+    Examples:
+    _null = [this,east,false,1500,true] spawn GW_Ambient_AAA; - CANNOT be used without enabling OKS_Ambience in MissionSettings.sqf
+    [this,east,false,1500,true] execVM "Scripts\OKS_Ambience\GW_Ambient_AAA.sqf"; - CAN be used without enabling OKS_Ambience in MissionSettings.sqf
+
+    Parameters:
+    [AntiAirObject (ObjNull),Side(SideEmpty),isHMG (Bool),Range (Meters),RadarInfo (Bool)] spawn GW_Ambient_AAA;
+    Sides: east, west, independent
+    isHMG: True/False - Will get more accuracy to compensate for non-cannon projectiles.
+    Range: 2000 - Range it is allowed to engage any target
+    RadarInfo: True/False - If it should receive info from nearby radar dishes. Needs to be manned and placed in editor.
+
+    Run the code anywhere it can be executed. Init.sqf, Init of Unit (only execVM), SpawnList, Triggers.
+
+ */
 
 params [
     ["_arty",objNull,[objnull]],

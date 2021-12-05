@@ -1,19 +1,19 @@
 // [west,"CUP_B_CH53E_USMC",[2,1],getPos start,getpos drop,getpos exit,trigger_1] spawn OKS_FastRope
 
-params ["_OKS_Side","_Classname","_Troops","_Start","_Drop","_Exit","_HuntZone"];
+params ["_Side","_Classname","_Troops","_Start","_Drop","_Exit","_HuntZone"];
 
 private ["_Unit","_UnitArray","_PilotClasses","_pilot","_Leader","_Groups","_y","_i","_Group","_NewGroup","_heli"];
 _Groups = [];
 
-systemchat str ["FASTROPE",_OKS_Side,_Classname,_Start,_Drop,_Exit,_HuntZone];
+systemchat str ["FASTROPE",_Side,_Classname,_Start,_Drop,_Exit,_HuntZone];
 
-	switch (_OKS_Side) do {
+	switch (_Side) do {
 
-		case blufor:{
+		case west:{
 			_PilotClasses = ["B_Pilot_F"];
 			_UnitArray = ["B_Soldier_TL_F","B_Soldier_TL_F","B_Soldier_LAT_F","B_Soldier_GL_F","B_medic_F","B_Soldier_AR_F","B_Soldier_A_F"];
 		};
-		case opfor:{
+		case east:{
 			_PilotClasses = ["O_Pilot_F"];
 			_UnitArray = ["O_Soldier_TL_F","O_Soldier_TL_F","O_Soldier_LAT_F","O_Soldier_GL_F","O_medic_F","O_Soldier_AR_F","O_Soldier_A_F"];
 		};
@@ -26,7 +26,10 @@ systemchat str ["FASTROPE",_OKS_Side,_Classname,_Start,_Drop,_Exit,_HuntZone];
 
 		_heli = createVehicle [_Classname, _Start, [], 0, "NONE"];
 		[_heli] call ace_fastroping_fnc_equipFRIES;
-		_crew = createGroup _OKS_Side;
+		_crew = createGroup _Side;
+		_crew setVariable ["hc_blacklist",true];
+		_crew setVariable ["lambs_danger_disableGroupAI",true];
+
 		_pilot = _crew CreateUnit [(_PilotClasses call BIS_fnc_selectRandom), [0,0,0], [], 0, "NONE"];
 		_pilot moveInDriver _heli;
 		_pilot setBehaviour "CARELESS";
@@ -41,7 +44,9 @@ systemchat str ["FASTROPE",_OKS_Side,_Classname,_Start,_Drop,_Exit,_HuntZone];
 			_UnitsPerGroup = 8;
 		};
 
-		_Group = CreateGroup _OKS_Side;
+		_Group = CreateGroup _Side;
+		_Group setVariable ["hc_blacklist",true];
+		_Group setVariable ["lambs_danger_disableGroupAI",true];
 		_Groups pushBack _Group;
 		for "_i" from 1 to _EmptyCargoSeats do
 		{

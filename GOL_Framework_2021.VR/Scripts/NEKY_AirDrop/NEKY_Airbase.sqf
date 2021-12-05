@@ -100,7 +100,7 @@ While {Alive _Object && _AirbaseRespawnCount > 0 } do {
 			//SystemChat str _EgressPos; // OKS_FastRope
 
 			if(_type == "random") then {
-				_type = ["Unload","SlingDrop","FastRope"] call BIS_fnc_selectRandom;
+				_type = ["unloadthenpatrol","unload","slingdrop","fastrope"] call BIS_fnc_selectRandom;
 			};
 
 			switch (_type) do {
