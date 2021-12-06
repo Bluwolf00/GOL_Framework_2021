@@ -38,20 +38,20 @@ switch (toLower(_role)) do {
 		[[_rifle_mag,7]] call _addToBackpack;
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight))) then {
-			[[_glFlareW,4]] call _addToBackpack;
+			[[_glFlareW,1]] call _addToBackpack;
 		};
 	};
 
 	case "sl": {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
-		[_rifleGL, _rifleGL_mag, _glHE] call _addPrimary;
+		[_rifle, _rifle_mag, ""] call _addPrimary;
 		_IFAK call _addToUniform;
 		[[_smokegrenadeW,4]] call _addToUniform;
-		[[_grenademini,2],[_rifleGL_mag_tr,5]] call _addToVest;
-		[[_rifleGL_mag,7],[_glHE,1]] call _addToBackpack;
+		[[_grenademini,2],[_rifle_mag_tr,5]] call _addToVest;
+		[[_rifle_mag,7]] call _addToBackpack;
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight))) then {
-			[[_glFlareW,4]] call _addToBackpack;
+
 		};
 	};
 
@@ -63,7 +63,7 @@ switch (toLower(_role)) do {
 		[[_rifleGL_mag_tr,13],[_glHE,1]] call _addToVest;
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight))) then {
-			[[_glFlareW,4]] call _addToBackpack;
+			[[_glFlareW,1]] call _addToBackpack;
 		};
 	};
 
