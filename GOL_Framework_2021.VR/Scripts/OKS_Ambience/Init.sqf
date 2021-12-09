@@ -19,3 +19,4 @@ OKS_AA_Guard = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_AA_Gu
 TFAR_Scrambler = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\TFAR_Scrambler.sqf";
 GW_DoParadrop = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\GW_DoParadrop.sqf";
 OKS_VehicleParadrop = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_VehicleParadrop.sqf";
+OKS_Chat = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Chat.sqf";
