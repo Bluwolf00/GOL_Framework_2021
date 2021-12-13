@@ -488,6 +488,15 @@ if (_isMan) then {
 				};
 			};
 
+			case "med_box_tiny": {
+				[_unit, _bandage, 20] call _fnc_AddObjectsCargo;
+				if (GVARMAIN(mod_ACE3)) then {
+					_tourn = "ACE_tourniquet";
+					[_unit, _tourn, 4] call _fnc_AddObjectsCargo;
+					[_unit, "ACE_salineIV", 10] call _fnc_AddObjectsCargo;
+				};
+			};
+
 			case "car": {
 
 				[_unit, _bandage, 5] call _fnc_AddObjectsCargo;
