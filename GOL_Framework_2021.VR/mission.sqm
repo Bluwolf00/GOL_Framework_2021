@@ -20,11 +20,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5945;
+		nextID=5964;
 	};
 	class Camera
 	{
-		pos[]={65.402626,34.264919,6.7193933};
+		pos[]={73.778656,34.264919,10.191933};
 		dir[]={0.0087161316,-0.37956813,0.92513645};
 		up[]={0.0035756705,0.92515868,0.3795568};
 		aside[]={0.99996585,7.7874574e-008,-0.0094213868};
@@ -605,7 +605,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=369;
+									items=371;
 									class Item0
 									{
 										class data
@@ -5772,6 +5772,34 @@ class CustomAttributes
 											value="gw_setdifficulty_damageresistance";
 										};
 									};
+									class Item369
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="gw_headlesscontroller_enable";
+										};
+									};
+									class Item370
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="gw_common_autolock";
+										};
+									};
 								};
 							};
 						};
@@ -5788,7 +5816,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=369;
+									items=371;
 									class Item0
 									{
 										class data
@@ -20697,7 +20725,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0.80000001;
+														value=1.0049183;
 													};
 												};
 												class Item1
@@ -22903,6 +22931,96 @@ class CustomAttributes
 															};
 														};
 														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item369
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item370
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=0;
 													};
 												};
 												class Item1
