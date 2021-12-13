@@ -139,7 +139,7 @@
 			[_X,_SubTaskID] spawn OKS_MedicalCheck;
 
 		}foreach _Casualties;
-		leader _Group SideChat format["1-1 this is %1, we have taken casualties. Requesting Immediate medical attention, out.",(format["%1",[str _Group, 7] call BIS_fnc_trimString])];
+		[leader _Group,format["1-1 this is %1, we have taken casualties. Requesting Immediate medical attention, out.",(format["%1",[str _Group, 7] call BIS_fnc_trimString])]] remoteExec ["sideChat",0];
 
 		if({Alive _X} count units _Group < 1) exitWith {
 			[_Task,"FAILED"] call BIS_fnc_taskSetState;
@@ -154,7 +154,7 @@
 			[_Task,"FAILED"] call BIS_fnc_taskSetState;
 		} else {
 			[_Task,"CANCELED"] call BIS_fnc_taskSetState;
-			leader _Group SideChat format["1-1 this is %1, our casualties are stable. Thanks for the assist, out.",(format["%1",[str _Group, 7] call BIS_fnc_trimString])];
+			[leader _Group,format["1-1 this is %1, our casualties are stable. Thanks for the assist, out.",(format["%1",[str _Group, 7] call BIS_fnc_trimString])]] remoteExec ["sideChat",0];
 		};
 
 

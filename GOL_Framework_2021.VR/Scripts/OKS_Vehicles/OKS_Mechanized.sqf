@@ -1,5 +1,5 @@
 /// [this, true,true] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";
-/// [vehicle,ShouldAddMortar,AddServiceStationInCargo]
+/// [vehicle,ShouldAddMortar,AddServiceStationInCargo,ShouldDisableThermals,ShouldDisableNVG]
 /// Add MSS Box true/false
 
 if(!isServer) exitWith {};
@@ -8,22 +8,32 @@ Params
 [
 	["_Vehicle", ObjNull, [ObjNull]],
 	["_AddMortar", false, [true]],
-	["_ServiceStation", false, [true]]
+	["_ServiceStation", true, [true]],
+	["_ShouldDisableThermal", true, [true]],
+	["_shouldDisableNVG", false, [true]],
+	["_MortarType","heavy",[""]]
 ];
+
+sleep 5;
+
 Private _Debug_Variable = false;
-_Vehicle setVariable ["GW_Disable_autoRemoveCargo",true];
+_Vehicle setVariable ["GW_Disable_autoRemoveCargo",true,true];
 
 clearItemCargoGlobal _Vehicle;
 clearWeaponCargoGlobal _Vehicle;
 clearMagazineCargoGlobal _Vehicle;
 clearBackpackCargoGlobal _Vehicle;
 
-_Vehicle disableTIEquipment true;
-_Vehicle setVariable ["A3TI_Disable", true];
-_Vehicle setVariable ["gw_gear_blackList",true];
+if(_ShouldDisableThermal) then {
+	_Vehicle disableTIEquipment true;
+	_Vehicle setVariable ["A3TI_Disable", true,true];
+};
+if(_shouldDisableNVG) then {
+	_Vehicle disableNVGEquipment true;
+};
 
+_Vehicle setVariable ["gw_gear_blackList",true,true];
 waitUntil{!isNil "OKS_MISSION_SETTINGS"};
-
 if(_Debug_Variable) then {SystemChat "Setting Cargo Space"};
 waitUntil {sleep 1; !(isNil "ace_cargo_fnc_setSpace")};
 [_Vehicle, 40] remoteExec ["ace_cargo_fnc_setSpace",0];
@@ -45,15 +55,23 @@ if(_ServiceStation && !(_Vehicle getVariable ["GOL_isMSS",false]) && GOL_NEKY_SE
 	};
 };
 
-_Vehicle addItemCargo ["Toolkit",2];
-
+_Vehicle addItemCargoGlobal ["Toolkit",2];
+_Vehicle addMagazineCargoGlobal ["SatchelCharge_Remote_Mag",5];
 if(_AddMortar) then {
 	if(_Debug_Variable) then {SystemChat "Adding Mortar Equipment"};
 	//add a new backpack to the vehicle
+	Switch (_MortarType) do {
+		case "light": {
+			_Vehicle addBackpackCargoGlobal ["PB_Bergen", 1];
+			_Vehicle addWeaponCargoGlobal ["UK3CB_BAF_M6",2];
+			_Vehicle addMagazineCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Shells", 32];
+		};
+		case "heavy":{
+			_Vehicle addBackpackCargoGlobal ["I_Mortar_01_weapon_F",1];
+			_Vehicle addBackpackCargoGlobal ["I_Mortar_01_support_F",1];
+		};
+	};
 
-	_Vehicle addBackpackCargoGlobal ["PB_Bergen", 1];
-	_Vehicle addWeaponCargoGlobal ["UK3CB_BAF_M6",2];
-	_Vehicle addMagazineCargoGlobal ["UK3CB_BAF_1Rnd_60mm_Mo_Shells", 32];
 
 	//Find the added backpack
 	_BP = (everyBackpack _Vehicle) select (count (everyBackpack _Vehicle) - 1);
