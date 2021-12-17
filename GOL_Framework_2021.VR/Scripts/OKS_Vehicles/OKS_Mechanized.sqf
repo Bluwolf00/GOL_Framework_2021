@@ -36,7 +36,7 @@ _Vehicle setVariable ["gw_gear_blackList",true,true];
 waitUntil{!isNil "OKS_MISSION_SETTINGS"};
 if(_Debug_Variable) then {SystemChat "Setting Cargo Space"};
 waitUntil {sleep 1; !(isNil "ace_cargo_fnc_setSpace")};
-[_Vehicle, 40] remoteExec ["ace_cargo_fnc_setSpace",0];
+[_Vehicle, 40] call ace_cargo_fnc_setSpace;
 
 if(_ServiceStation && !(_Vehicle getVariable ["GOL_isMSS",false]) && GOL_NEKY_SERVICESTATION isEqualTo 1) then {
 	if(_Debug_Variable) then {SystemChat "Adding Service Station Box"};
@@ -116,8 +116,8 @@ for [{private _i = 0}, {_i < 6}, {_i = _i + 1}] do {
 
 waitUntil {sleep 1; !(isNil "ace_cargo_fnc_loadItem") && !(isNil "ace_cargo_fnc_removeCargoItem")};
 if(!(_Vehicle getVariable ["GOL_isMHQ",false])) then {
-	["ACE_Wheel", _Vehicle, 10] call ace_cargo_fnc_removeCargoItem;
-	["ACE_Track", _Vehicle, 10] call ace_cargo_fnc_removeCargoItem;
+	["ACE_Wheel", _Vehicle, 4] call ace_cargo_fnc_removeCargoItem;
+	["ACE_Track", _Vehicle, 4] call ace_cargo_fnc_removeCargoItem;
 };
 
 if(_Vehicle isKindOf "Tank" && !(_Vehicle getVariable ["GOL_isMHQ",false])) then {
@@ -131,7 +131,6 @@ if(_Vehicle isKindOf "Tank" && !(_Vehicle getVariable ["GOL_isMHQ",false])) then
 
 if(_Vehicle isKindOf "Car" && !(_Vehicle getVariable ["GOL_isMHQ",false])) then {
 	if(_Debug_Variable) then {SystemChat "Is Wheeled, giving Wheels"};
-	["ACE_Wheel", _Vehicle,true] call ace_cargo_fnc_loadItem;
 	["ACE_Wheel", _Vehicle,true] call ace_cargo_fnc_loadItem;
 	["ACE_Wheel", _Vehicle,true] call ace_cargo_fnc_loadItem;
 	["ACE_Wheel", _Vehicle,true] call ace_cargo_fnc_loadItem;

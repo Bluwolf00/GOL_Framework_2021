@@ -11,8 +11,12 @@ if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "B_RadioBag_01_black_F";
 };
 
-if (_role in ["ag","ammg","lr","ab"]) then {
+if (_role in ["ag","ammg","lr"]) then {
 	_backpack = "B_ViperHarness_blk_F";
+};
+
+if(_role in ["ab","lr"]) then {
+	_backpack = "OLIVE_PB_Bergen";
 };
 
 if (_role isEqualTo "p") then {
@@ -35,24 +39,26 @@ if (_role isEqualTo "jetp") then {
 
 _silencer = "";
 _pointer = "";
-_sight = "rhsusf_acc_compm4";
+_sight = "rhsusf_acc_eotech_xps3";
 _bipod = "rhsusf_acc_rvg_blk";
 
-_rifle = ["rhs_weap_vhsd2", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["rhs_weap_vhsk2", _silencer, _pointer, _sight, _bipod];
+_rifle = ["hlc_rifle_aek971worn", "rhs_acc_dtk3", _pointer, "rhs_acc_pkas", _bipod];
+_rifleC = ["hlc_wp_mod733", _silencer, _pointer, "", _bipod];
 _rifleGL = ["rhs_weap_vhsd2_bg", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["rhs_weap_svdp_npz", _silencer, _pointer, "optic_arco_ak_blk_f", _bipod];
-_rifle_mag = "rhsgref_30rnd_556x45_vhs2";
-_rifle_mag_tr = "rhsgref_30rnd_556x45_vhs2_t";
-_rifleGL_mag = "rhsgref_30rnd_556x45_vhs2";
-_rifleGL_mag_tr = "rhsgref_30rnd_556x45_vhs2_t";
-_rifleL_mag = "10Rnd_762x54_Mag";
-_rifleL_mag_tr = "ACE_10Rnd_762x54_Tracer_mag";
+_rifleL = ["hlc_rifle_M14dmr_Rail", _silencer, _pointer, "optic_hamr", _bipod];
+_rifleC_mag = "hlc_30rnd_556x45_SOST_STANAGHD";
+_rifleC_mag_tr = "hlc_30rnd_556x45_t_STANAGHD";
+_rifle_mag = "hlc_60Rnd_545x39_b_rpk";
+_rifle_mag_tr = "hlc_60Rnd_545x39_t_rpk";
+_rifleGL_mag = "hlc_30rnd_556x45_SOST_G36";
+_rifleGL_mag_tr = "hlc_30rnd_556x45_Tracers_G36";
+_rifleL_mag = "hlc_20Rnd_762x51_barrier_M14";
+_rifleL_mag_tr = "hlc_20Rnd_762x51_T_M14";
 
 _LMG = ["rhs_weap_m249", _silencer, _pointer, _sight, "rhsusf_acc_saw_bipod"];
 _LMG_mag = "rhsusf_200rnd_556x45_mixed_box";
 
-_MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
+_MMG = ["rhs_weap_pkp", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhs_100Rnd_762x54mmR_green";
 
 _sight = "";
