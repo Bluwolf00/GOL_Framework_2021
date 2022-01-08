@@ -4,7 +4,7 @@ _goggles = "";
 _helmet = selectRandom ["LOP_H_SSh68Helmet_TAN","rhs_ssh60","rhs_ssh68_2"];
 _OfficerHelmet = "H_Beret_blk";
 _uniform = selectRandom ["LOP_U_TKA_Fatigue_01","LOP_U_TKA_Fatigue_02"];
-_vest = selectRandom ["LOP_V_6B23_Rifleman_TAN","LOP_V_6B23_OLV"];
+_vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
 _backpack = "rhs_rd54";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {

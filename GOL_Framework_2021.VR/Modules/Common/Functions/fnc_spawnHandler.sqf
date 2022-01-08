@@ -107,7 +107,6 @@ if ((count _vehicleArray) > 0) then {
 		};
 
 		if (_waypointArray isEqualTo []) then {
-			_vehicle setFuel 0;
 			_vehicle allowCrewInImmobile true;
 		};
 
@@ -129,7 +128,7 @@ if ((count _vehicleArray) > 0) then {
 		};
 
 		_unitClass = _leader;
-
+		Private ["_Driver"];
 		{
 			if !(count (units _group) isEqualTo 0) then {
 				_unitClass = (selectRandom _unitList);
@@ -142,7 +141,17 @@ if ((count _vehicleArray) > 0) then {
 			TRACE_1("Created", _unit);
 			switch (toLower(_x select 0)) do {
 				case "driver": {
-					_unit moveInDriver _vehicle;
+					if !(_waypointArray isEqualTo []) then {
+						_unit moveInDriver _vehicle;
+					} else {
+						_unit moveInDriver _vehicle;
+						_Driver = _unit;
+						_vehicle setFuel 1;
+						_vehicle forceSpeed 0;
+						_Driver forceSpeed 0;
+						_vehicle enableSimulationGlobal false;
+						_vehicle engineOn true;
+					};
 				};
 				case "commander": {
 					_unit moveInCommander _vehicle;
@@ -163,6 +172,11 @@ if ((count _vehicleArray) > 0) then {
 				sleep 1;
 			};
 		} forEach _crewList;
+
+		if(!isNil "_Driver") then {
+			deleteVehicle _Driver;
+			_vehicle enableSimulationGlobal true;
+		};
 		TRACE_1("Units added to vehicle", _groupNew);
 		if (((count _vehicleArray) > 1) && !_skipDelays) then {
 			sleep 5;

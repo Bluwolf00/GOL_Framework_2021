@@ -15,33 +15,19 @@ _goggles = "";
 _helmet = ["rhs_stsh81"] call BIS_fnc_selectRandom;
 _OfficerHelmet = "rhs_pilotka";
 _uniform = "rhs_uniform_afghanka_spetsodezhda";
-_vest = selectRandom ["rhs_6b3_AK_3","rhs_6b3"];
+_vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
 _backpack = "rhs_sidor";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "OLIVE_B_RadioBag_01";
 };
 
-if(_role in ["ftl","sl","fac","pl"]) then {
-	_vest = selectRandom ["rhs_6b3_off","rhs_6b3_R148"];
-};
-
-if(_role in ["mat"]) then {
-	_backpack = "rhs_rpg_6b3";
-};
-
-if(_role isEqualTo "rhs_6b3_VOG_2") then {
-	_vest = "rhs_6b3_VOG_2";
-};
-
 if(_role in ["mmg","ar"]) then {
-	_vest = "rhs_6b3_RPK";
 	_backpack = "rhs_rd54_vest";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "rhs_rd54_vest";
-	_vest = "rhs_6b3_RPK";
 };
 
 if (_role isEqualTo "p") then {
@@ -56,7 +42,6 @@ if (_role isEqualTo "uav") then {
 if (_role isEqualTo "jetp") then {
 	_helmet = "rhs_zsh7a";
 	_uniform = "rhs_uniform_df15_tan";
-	_vest = "rhsgref_6b23_khaki_medic";
 	_backpack = "B_Parachute";
 };
 

@@ -3,8 +3,9 @@
 //	This initializes all the functions for OKS Ambience.
 //
 //	Made by Oksman
-if (hasInterface && !isServer) exitWith {false};	// Ensures only server or HC runs this script
 
+OKS_Chat = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Chat.sqf"; // Used by Clients only
+if (hasInterface && !isServer) exitWith {false};	// Ensures only server or HC runs this script
 
 // Functions
 GW_Ambient_AAA = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\GW_Ambient_AAA.sqf";
@@ -19,4 +20,4 @@ OKS_AA_Guard = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_AA_Gu
 TFAR_Scrambler = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\TFAR_Scrambler.sqf";
 GW_DoParadrop = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\GW_DoParadrop.sqf";
 OKS_VehicleParadrop = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_VehicleParadrop.sqf";
-OKS_Chat = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Chat.sqf";
+

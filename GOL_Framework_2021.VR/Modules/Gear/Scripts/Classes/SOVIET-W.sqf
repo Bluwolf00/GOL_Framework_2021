@@ -17,7 +17,7 @@ _goggles = "";
 _helmet = ["rhs_ssh60"] call BIS_fnc_selectRandom;
 _OfficerHelmet = "rhs_pilotka";
 _uniform = "rhs_uniform_afghanka_ttsko_2";
-_vest = "rhsgref_6b23_khaki";
+_vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
 _backpack = "rhs_sidor";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
@@ -40,7 +40,6 @@ if (_role isEqualTo "uav") then {
 if (_role isEqualTo "jetp") then {
 	_helmet = "rhs_zsh7a";
 	_uniform = "rhs_uniform_df15_tan";
-	_vest = "rhsgref_6b23_khaki_medic";
 	_backpack = "B_Parachute";
 };
 

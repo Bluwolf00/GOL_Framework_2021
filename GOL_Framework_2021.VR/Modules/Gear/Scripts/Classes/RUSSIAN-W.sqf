@@ -15,26 +15,21 @@ _goggles = "";
 _helmet = ["rhs_6b27m_digi"] call BIS_fnc_selectRandom;
 _OfficerHelmet = "rhs_ushanka";
 _uniform = "rhs_uniform_emr_patchless";
-_vest = selectRandom ["rhs_6b23_digi_rifleman","rhs_6b23_digi_sniper","rhs_6b23_digi_engineer"];
+_vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
 _backpack = "rhs_rd54_emr1";
 _backpackRadio = _backpack;
+
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "unv_olive_big_rt1523g";
 };
-if (_role in ["lr","ab"]) then {
-	_vest = "rhs_6b23_digi_vydra_3m";
-};
+
 if(_role in ["ag","ammg"]) then {
-	_vest = "rhs_6b23_digi_medic";
 	_backpack = "rhs_tortila_olive";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "rhs_altyn_novisor_ess_bala";
-	_vest = "rhs_6b23_digi_crew";
 };
-if(_role isEqualTo "crew") then {
-	_vest = "rhs_6b23_digi_crew";
-};
+
 if (_role isEqualTo "uav") then {
 	_backpack = "O_UAV_01_backpack_F";
 	_gps = "O_UAVTerminal";

@@ -4,7 +4,7 @@ _goggles = "";
 _helmet = selectRandom ["rhsgref_helmet_pasgt_un"];
 _OfficerHelmet = "cap_CCE";
 _uniform = selectRandom ["Uniform_Rolled_CCE","Uniform_Full_CCE"];
-_vest = selectRandom ["LOP_V_6B23_UN"];
+_vest = selectRandom ["vest_spc_radio_CCE","vest_spc_rifleman_CCE"];
 _backpack = "CCE_Kitbag";
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "CCE_B_RadioBag_01";
