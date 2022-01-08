@@ -110,8 +110,8 @@ Switch (_Faction) do {
 	{
 		// Takistani Army - OPFOR
 		_Wheeled = ["LOP_TKA_UAZ_SPG","LOP_TKA_UAZ_DshKM","rhsgref_tla_offroad_at"];
-		_APC = ["LOP_TKA_BTR70","LOP_TKA_BTR60"];
-		_Tank = ["LOP_TKA_BTR60"];
+		_APC = ["LOP_TKA_BTR70","LOP_TKA_BTR60","LOP_SYR_BMP1","rhsgref_BRDM2_b"];
+		_Tank = ["LOP_TKA_T55","LOP_TKA_T34","LOP_SYR_BMP1"];
 		_Artillery = ["LOP_TKA_BM21", "LOP_TKA_Static_D30"];
 		_AntiAir = ["LOP_TKA_ZU23"];
 		_Helicopter = ["LOP_TKA_Mi8MTV3_UPK23"];

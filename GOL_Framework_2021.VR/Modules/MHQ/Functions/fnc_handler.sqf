@@ -29,8 +29,6 @@ if (!isServer) exitWith {false};
 	_mhq setPlateNumber (vehicleVarName _mhq);
 	if (GVARMAIN(mod_ACE3)) then {
 		[_mhq, 40] call ace_cargo_fnc_setSpace;
-		[_mhq, 6, "ACE_Wheel", true] call ace_repair_fnc_addSpareParts;
-		[_mhq, 4, "ACE_Track", true] call ace_repair_fnc_addSpareParts;
 		_mhq setVariable ["ACE_isrepairVehicle", true];
 		_mhq setVariable ["GOL_isMHQ",true];
 	};

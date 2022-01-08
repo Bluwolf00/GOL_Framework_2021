@@ -212,15 +212,21 @@ switch (toLower(_role)) do {
 	case "lr": {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		[_rifleL, _rifleL_mag, ""] call _addPrimary;
+		[_LAT, _LAT_mag, ""] call _addLaunchers;
 		[[_cables,4],[_rifleL_mag,4],[_pistol_mag,2],[_smokegrenadeY,3],[_flashBang,3]] call _addToUniform;
-		[[_grenade,2],[_grenade,2],[_rifleL_mag_tr,4],[_clacker,1]] call _addToVest;
+		[[_grenade,2],[_grenade,2],[_rifleL_mag_tr,4]] call _addToVest;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_demoCharge,3]] call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
 			[[_mapFlashLight,1],[_handFlareG,1]] call _addToUniform;
+		};
+		if (_LAT_ReUsable) then {
+			[[_LAT_mag,1]] call _addToBackpack;
+		} else {
+			///((_loadout select 5) select 1) append [[_LAT,1]];
+			((_loadout select 5) select 1) append [[[(_LAT select 0),"","","",[],[],""],1]];
 		};
 	};
 

@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=1.5707964;
 	scaleGridStep=10;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=521;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5983;
+		nextID=6002;
 	};
 	class Camera
 	{
-		pos[]={64.468071,35.533665,1.5142157};
-		dir[]={0.00052529457,-0.3147549,0.94919592};
-		up[]={0.00017458067,0.94916391,0.31477416};
-		aside[]={1.0000197,-1.9375011e-007,-0.00055479887};
+		pos[]={58.740643,55.421764,7.0274534};
+		dir[]={0.04646308,-0.53257924,0.84510386};
+		up[]={0.029236592,0.84638011,0.53177613};
+		aside[]={0.998492,0,-0.054896228};
 	};
 };
 binarizationWanted=0;

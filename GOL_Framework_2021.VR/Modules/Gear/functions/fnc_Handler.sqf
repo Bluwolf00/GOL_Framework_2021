@@ -344,17 +344,17 @@ if (_isMan) then {
 				};
 
 				[_unit, _pistol_mag, 2] call _fnc_AddObjectsCargo;
-				[_unit, _rifle_mag_tr, 7] call _fnc_AddObjectsCargo;
+				[_unit, _rifle_mag_tr, 8] call _fnc_AddObjectsCargo;
 				[_unit, _rifleC_mag_tr, 4] call _fnc_AddObjectsCargo;
-				[_unit, _rifleGL_mag_tr, 7] call _fnc_AddObjectsCargo;
-				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 0.5)] call _fnc_AddObjectsCargo;
+				[_unit, _rifleGL_mag_tr, 8] call _fnc_AddObjectsCargo;
+				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 0.75)] call _fnc_AddObjectsCargo;
 				if (_LAT_ReUsable) then {
 					[_unit, _LAT_mag, 2] call _fnc_AddObjectsCargo;
 				} else {
 					[_unit, (_LAT select 0), 2] call _fnc_AddObjectsCargo;
 				};
 
-				[_unit, _demoCharge, 1] call _fnc_AddObjectsCargo;
+				[_unit, _demoCharge, 2] call _fnc_AddObjectsCargo;
 			};
 
 			case "tiny_box_special": {
@@ -367,7 +367,7 @@ if (_isMan) then {
 				[_unit, _pistol_mag, 2] call _fnc_AddObjectsCargo;
 				[_unit, _rifleL_mag_tr, 8] call _fnc_AddObjectsCargo;
 				[_unit, _rifleMarksman_mag_tr, 8] call _fnc_AddObjectsCargo;
-				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 0.5)] call _fnc_AddObjectsCargo;
+				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 0.75)] call _fnc_AddObjectsCargo;
 				[_unit, _MAT_mag, 2] call _fnc_AddObjectsCargo;
 				[_unit, _AA_mag, 2] call _fnc_AddObjectsCargo;
 				[_unit, _demoCharge, 2] call _fnc_AddObjectsCargo;
