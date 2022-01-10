@@ -215,10 +215,7 @@ Switch (_Side) do
 		// Unit classes are compatible with multiple class names, will select randomly. Example: ["B_Pilot_F","B_Crewman_F"];
 		_Leaders = ["B_Soldier_SL_F","B_Soldier_TL_F"];	// Squad/Team leader classes.
 		_Units = [
-			"B_Soldier_A_F",
 			"B_Soldier_AR_F",
-			"B_Soldier_AR_F",
-			"B_medic_F",
 			"B_medic_F",
 			"B_Soldier_GL_F",
 			"B_HeavyGunner_F",
@@ -237,10 +234,7 @@ Switch (_Side) do
 	{
 		_Leaders = ["O_Soldier_SL_F","O_Soldier_TL_F"];
 		_Units = [
-			"O_Soldier_A_F",
 			"O_Soldier_AR_F",
-			"O_Soldier_AR_F",
-			"O_medic_F",
 			"O_medic_F",
 			"O_Soldier_GL_F",
 			"O_HeavyGunner_F",
@@ -259,10 +253,7 @@ Switch (_Side) do
 	{
 		_Leaders = ["I_Soldier_SL_F","I_Soldier_TL_F"];
 		_Units = [
-			"I_Soldier_A_F",
 			"I_Soldier_AR_F",
-			"I_Soldier_AR_F",
-			"I_medic_F",
 			"I_medic_F",
 			"I_Soldier_GL_F",
 			"I_soldier_M_F",

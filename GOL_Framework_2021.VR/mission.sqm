@@ -20,11 +20,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6002;
+		nextID=6021;
 	};
 	class Camera
 	{
-		pos[]={58.740643,55.421764,7.0274534};
+		pos[]={57.26432,55.421764,-19.825024};
 		dir[]={0.04646308,-0.53257924,0.84510386};
 		up[]={0.029236592,0.84638011,0.53177613};
 		aside[]={0.998492,0,-0.054896228};
@@ -613,7 +613,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=371;
+									items=372;
 									class Item0
 									{
 										class data
@@ -5808,6 +5808,20 @@ class CustomAttributes
 											value="gw_common_autolock";
 										};
 									};
+									class Item371
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_vehicle_damage_enabled";
+										};
+									};
 								};
 							};
 						};
@@ -5824,7 +5838,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=371;
+									items=372;
 									class Item0
 									{
 										class data
@@ -23004,6 +23018,51 @@ class CustomAttributes
 										};
 									};
 									class Item370
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item371
 									{
 										class data
 										{
