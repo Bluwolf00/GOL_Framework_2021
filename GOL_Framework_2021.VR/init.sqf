@@ -18,10 +18,10 @@ Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 
 Sleep 5;
 
-	if(GOL_NEKY_PARADROP isEqualTo 1 || GOL_NEKY_RESUPPLY isEqualTo 1 || GOL_NEKY_PICKUP isEqualTo 1) then {
+	if(GOL_NEKY_PARADROP isEqualTo 1 || GOL_NEKY_RESUPPLY isEqualTo 1 || GOL_NEKY_PICKUP isEqualTo 1 || GOL_OKS_SUPPORT isEqualTo 1) then {
 		if (hasInterface) then {
-			_condition = {player in [w1a,w1a1,w1b1,w1c1,e1a,e1a1,e1b1,e1c1,i1a,i1a1,i1b1,i1c1]};
-     	 	_action = ["Request Support", "Request Support","\A3\ui_f\data\map\VehicleIcons\iconCrateVeh_ca.paa", {}, _condition] call ace_interact_menu_fnc_createAction;
+			_condition = {player in [wpl,wfac,w1m,w2m,epl,efac,e1m,e2m,ipl,ifac,i1m,i2m,w1a,w1a1,w1b1,wcrew1,wcrew4,e1a,e1a1,e1b1,ecrew1,ecrew4,i1a,i1a1,i1b1,icrew1,icrew4]};
+     	 	_action = ["Request_Support", "Request Support","\A3\ui_f\data\map\VehicleIcons\iconCrateVeh_ca.paa", {}, _condition] call ace_interact_menu_fnc_createAction;
      		[typeOf player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToClass;
 		};
 	};
@@ -32,6 +32,9 @@ Sleep 5;
 	if(GOL_NEKY_RESUPPLY isEqualTo 1) then {
 		execVM "Scripts\NEKY_Supply\Ace_Resupply.sqf";
 		execVM "Scripts\NEKY_Supply\Ace_Med.sqf";
+	};
+	if(GOL_OKS_SUPPORT isEqualTo 1) then {
+		[] execVM "Scripts\OKS_Support\Init.sqf";
 	};
 	if(GOL_NEKY_PARADROP isEqualTo 1) then {
 		execVM "Scripts\NEKY_Paradrop\Init.sqf";
@@ -53,10 +56,10 @@ Sleep 5;
 	};
 	if(GOL_OKS_AMBIENCE isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Ambience\Init.sqf";
-		/* TFAR Jammer - Object, Range & Strength Parameters
-		waitUntil {!isNil "TFAR_Scrambler"};
 
-		[[JAMMER],500,50] spawn TFAR_Scrambler;
+		/* TFAR Jammer - Object, Range & Strength Parameters
+			waitUntil {!isNil "TFAR_Scrambler"};
+			[[JAMMER],500,50] spawn TFAR_Scrambler;
 		*/
 	};
 	if(GOL_OKS_TANKER isEqualTo 1) then {
@@ -102,6 +105,7 @@ Sleep 5;
 			[flag_independent_1, _AMHQ, _Steerable, _Height] execVM "Scripts\NEKY_Paradrop\OKS_MHQ_Paradrop.sqf";
 		};
 	};
+
 Sleep 10;
 
 /* !! IGNORE AND DO NOT EDIT ALL OF THE ABOVE !! */

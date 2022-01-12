@@ -97,18 +97,15 @@ while {true} do
 {
 
 	{
-		if((side _X == _Faction || side _X == civilian) && !(isPlayer _X)) then
+		if((side _X == _Faction || side _X == civilian) && !(isPlayer _X) && !(_X getVariable["OKS_FaceSwap",false])) then
 		{
-			//SystemChat format ["%1",side _X];
-			if !(_X getVariable["OKS_FaceSwap",false]) then
-			{
-				_X setVariable ["OKS_FaceSwap",true];
-				_Face = (selectRandom _OKS_faces);
-				_Voice = (selectRandom _OKS_speakers);
-				_X setSpeaker _Voice;
-				_X setFace _Face;
-				[_X,_Face,_Voice] call BIS_fnc_setIdentity;
-			};
+
+			_X setVariable ["OKS_FaceSwap",true];
+			_Face = (selectRandom _OKS_faces);
+			_Voice = (selectRandom _OKS_speakers);
+			_X setSpeaker _Voice;
+			_X setFace _Face;
+			[_X,_Face,_Voice] call BIS_fnc_setIdentity;
 			sleep 0.05;
 		};
 	} foreach AllUnits;

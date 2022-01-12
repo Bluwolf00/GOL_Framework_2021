@@ -1,6 +1,5 @@
 if (hasInterface) then {
-    _condition = {player in [wpl,epl,ipl,w1a,w1a1,w1b1,wcrew1,wcrew4,e1a,e1a1,e1b1,ecrew1,ecrew2,i1a,i1a1,i1b1,icrew1,icrew4]}; //<only works MP
-
+    _condition = {player in [wpl,wfac,w1m,w2m,epl,efac,e1m,e2m,ipl,ifac,i1m,i2m,w1a,w1a1,w1b1,wcrew1,wcrew4,e1a,e1a1,e1b1,ecrew1,ecrew4,i1a,i1a1,i1b1,icrew1,icrew4] && isNull laserTarget player}; //<only works MP
 	// NEKY EDIT START
 	_code =
 	{
@@ -39,8 +38,8 @@ if (hasInterface) then {
     _drop = ["Airdrop", "Airdrop","Scripts\NEKY_supply\ui\Chute.paa", _code, _condition] call ace_interact_menu_fnc_createAction;
     _unload = ["Unload", "Unload","Scripts\NEKY_supply\ui\Helli.paa", _landcode, _condition] call ace_interact_menu_fnc_createAction;
 
-    [typeOf player, 1, ["ACE_SelfActions","Request Support"], _action] call ace_interact_menu_fnc_addActionToClass;
-    [typeOf player, 1, ["ACE_SelfActions","Request Support","Medical Resupply"], _drop] call ace_interact_menu_fnc_addActionToClass;
-    [typeOf player, 1, ["ACE_SelfActions","Request Support","Medical Resupply"], _unload] call ace_interact_menu_fnc_addActionToClass;
+    [typeOf player, 1, ["ACE_SelfActions","Request_Support"], _action] call ace_interact_menu_fnc_addActionToClass;
+    [typeOf player, 1, ["ACE_SelfActions","Request_Support","Medical Resupply"], _drop] call ace_interact_menu_fnc_addActionToClass;
+    [typeOf player, 1, ["ACE_SelfActions","Request_Support","Medical Resupply"], _unload] call ace_interact_menu_fnc_addActionToClass;
 };
 //_condition = {leader (group player) isEqualTo (leader player)}; for sp testing
