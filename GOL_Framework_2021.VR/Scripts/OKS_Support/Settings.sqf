@@ -5,13 +5,14 @@
 //	Returns: [Settings]
 
 Params["_Side"];
-Private ["_AircraftClassname"];
+Private ["_AircraftClassname","_Timer"];
 
+/* Select Aircraft Class based on Player Side */
 switch (_Side) do
 {
 	case west:
 	{
-		_AircraftClassname = "RHSGREF_A29B_HIDF";
+		_AircraftClassname = "B_Plane_CAS_01_F";
 	};
 	case east:
 	{
@@ -27,5 +28,8 @@ switch (_Side) do
 	};
 };
 
+/* CAS 'Respawn' Time in seconds */
+_Timer = 10;
+
 // DO NOT EDIT ANYTHING BELOW \\
-_AircraftClassname
+[_AircraftClassname,_Timer]
