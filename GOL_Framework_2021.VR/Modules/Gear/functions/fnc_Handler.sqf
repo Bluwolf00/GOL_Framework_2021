@@ -337,7 +337,8 @@ if (_isMan) then {
 				[_unit, _smokegrenadeY, 4] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 2] call _fnc_AddObjectsCargo;
 
-				[_unit, _bandage, 12] call _fnc_AddObjectsCargo;
+				[_unit, _bandage, 15] call _fnc_AddObjectsCargo;
+				[_unit, _morph, 10] call _fnc_AddObjectsCargo;
 				if (GVARMAIN(mod_ACE3)) then {
 					[_unit, "ACE_salineIV", 5] call _fnc_AddObjectsCargo;
 					[_unit, _flashBang, 2] call _fnc_AddObjectsCargo;
@@ -360,11 +361,14 @@ if (_isMan) then {
 			case "tiny_box_special": {
 				[_unit, _smokegrenadeY, 2] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 2] call _fnc_AddObjectsCargo;
-				[_unit, _bandage, 10] call _fnc_AddObjectsCargo;
+				[_unit, _bandage, 15] call _fnc_AddObjectsCargo;
+				[_unit, _morph, 8] call _fnc_AddObjectsCargo;
 				if (GVARMAIN(mod_ACE3)) then {
 					[_unit, "ACE_salineIV", 4] call _fnc_AddObjectsCargo;
 				};
 				[_unit, _pistol_mag, 2] call _fnc_AddObjectsCargo;
+				[_unit, _rifleGL_mag_tr, 6] call _fnc_AddObjectsCargo;
+				[_unit, _rifle_mag_tr, 6] call _fnc_AddObjectsCargo;
 				[_unit, _rifleL_mag_tr, 8] call _fnc_AddObjectsCargo;
 				[_unit, _rifleMarksman_mag_tr, 8] call _fnc_AddObjectsCargo;
 				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 0.75)] call _fnc_AddObjectsCargo;

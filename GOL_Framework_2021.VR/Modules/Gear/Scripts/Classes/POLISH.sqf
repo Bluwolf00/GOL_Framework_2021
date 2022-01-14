@@ -60,8 +60,8 @@ _rifle_mag_tr = "hlc_30Rnd_556x45_T_sg550";
 _rifleGL_mag = "hlc_30Rnd_556x45_SOST_sg550";
 _rifleGL_mag_tr = "hlc_30Rnd_556x45_T_sg550";
 
-_LMG = ["hlc_rifle_rpk", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "rhs_75Rnd_762x39mm_tracer";
+_LMG = ["rhs_weap_rpk74m_npz", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "rhs_60Rnd_545X39_AK_Green";
 
 _MMG = ["hlc_lmg_MG3KWS_b", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "hlc_100Rnd_762x51_T_MG3";

@@ -80,15 +80,16 @@ if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
 	_saline = "ACE_salineIV";
 	_salineSm = "ACE_SalineIV_500";
 
-	_IFAK = [[_bandage,6],["ACE_tourniquet",1]];
+	_IFAK = [[_bandage,9],["ACE_tourniquet",1],[_morph,2]];
 
 		_FAKSmall = [
-			[_bandage,15],
+			[_bandage,5],
 			[_saline,6],
+			[_morph,2],
 			[_pak,1]
 		];
 		_FAKBig = [
-			[_bandage,20],
+			[_bandage,11],
 			[_tourn,1],
 			[_epi,5],
 			[_saline,10],

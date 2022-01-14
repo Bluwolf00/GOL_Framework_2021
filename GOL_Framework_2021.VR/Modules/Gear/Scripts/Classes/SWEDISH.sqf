@@ -47,8 +47,8 @@ if (_role isEqualTo "jetp") then {
 // Attachments
 _silencer = "rhsusf_acc_sfmb556";
 _pointer = "";
-_sight = "optic_mrco";
-_bipod = "rhsusf_acc_tdstubby_blk";
+_sight = "optic_erco_blk_f";
+_bipod = "rhsusf_acc_grip3";
 
 // Primary Weapon
 _rifle = ["hlc_rifle_SG551SB_TAC", _silencer, _pointer, _sight, _bipod];
@@ -66,11 +66,11 @@ _rifleL_mag_tr = "hlc_20rnd_762x51_T_G3";
 _rifleMarksman_mag = "hlc_20Rnd_762x51_b_G3";
 _rifleMarksman_mag_tr = "hlc_20rnd_762x51_T_G3";
 
-_LMG = ["hlc_lmg_mk48mod1", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "hlc_200Rnd_762x51_T_M60E4";
+_LMG = ["hlc_lmg_mk46", _silencer, _pointer, _sight, ""];
+_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 
-_MMG = ["rhs_weap_m240B", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "rhsusf_100Rnd_762x51_m62_tracer";
+_MMG = ["rhs_weap_fnmag", _silencer, _pointer, _sight, ""];
+_MMG_mag = "hlc_100Rnd_762x51_T_M60E4";
 
 _AA = ["rhs_weap_fim92", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "Titan_AA";

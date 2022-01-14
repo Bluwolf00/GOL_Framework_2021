@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6021;
+		nextID=6040;
 	};
 	class Camera
 	{
-		pos[]={62.927658,49.601269,-10.9899};
-		dir[]={-0.028101543,-0.39636165,0.91766852};
-		up[]={-0.012132035,0.91809303,0.39617881};
-		aside[]={0.99953461,-5.318725e-009,0.030608505};
+		pos[]={67.88063,40.402264,32.104076};
+		dir[]={-0.0282166,-0.58104295,0.81338364};
+		up[]={-0.020144494,0.81387293,0.58069366};
+		aside[]={0.99939889,0,0.034669545};
 	};
 };
 binarizationWanted=0;
@@ -5864,7 +5864,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=1.2;
+														value=1;
 													};
 												};
 												class Item1
@@ -25312,7 +25312,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={110.1124,5.149631,39.736221};
-										angles[]={-0,6.2464318,0};
+										angles[]={0,6.2464318,0};
 									};
 									side="Empty";
 									flags=4;
@@ -25454,7 +25454,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={137.86835,5.149631,40.465508};
-										angles[]={-0,0.016638665,0};
+										angles[]={0,0.016638665,0};
 									};
 									side="Empty";
 									flags=4;
@@ -29567,7 +29567,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={124.84468,5.6349964,39.139656};
-										angles[]={-0,6.2662187,0};
+										angles[]={0,6.2662187,0};
 									};
 									side="Empty";
 									flags=4;
@@ -29607,7 +29607,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={110.04111,5,44.535946};
-										angles[]={-0,6.2464318,0};
+										angles[]={0,6.2464318,0};
 									};
 									side="Empty";
 									flags=4;
@@ -29624,7 +29624,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={124.89581,5,39.000854};
-										angles[]={-0,6.2662187,0};
+										angles[]={0,6.2662187,0};
 									};
 									title="Mobile Service Station";
 									description="This also adds pylon configuration options";
@@ -29636,7 +29636,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={110.02771,5,43.810608};
-										angles[]={-0,6.2464318,0};
+										angles[]={0,6.2464318,0};
 									};
 									title="Service Station";
 									description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
@@ -29661,7 +29661,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={138.05331,5,45.262196};
-										angles[]={-0,0.016638665,0};
+										angles[]={0,0.016638665,0};
 									};
 									side="Empty";
 									flags=4;
@@ -29678,7 +29678,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={138.00125,5,44.538609};
-										angles[]={-0,0.016638665,0};
+										angles[]={0,0.016638665,0};
 									};
 									title="Service Station";
 									description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
@@ -29778,7 +29778,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={91.590096,7.1761513,43.263527};
-										angles[]={-0,0.00062831852,0};
+										angles[]={0,0.00062831852,0};
 									};
 									side="Empty";
 									flags=4;
@@ -30029,7 +30029,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={91.852493,5,43.827579};
-				angles[]={-0,3.9513655,0};
+				angles[]={0,3.9513655,0};
 			};
 			title="Mechanized / Motorized Setup";
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
