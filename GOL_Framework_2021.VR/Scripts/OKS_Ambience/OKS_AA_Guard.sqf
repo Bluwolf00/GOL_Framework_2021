@@ -6,6 +6,8 @@ params ["_Position","_side","_Range","_Cycles"];
 private _Debug_Variable = false;
 private ["_unitClass"];
 
+if(!isServer) exitWith {false};
+
 OKS_AA_Check = {
 
     Params["_Helicopter","_Cycles","_Trigger","_Position"];
