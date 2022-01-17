@@ -1,4 +1,5 @@
-
+_useMineDetector = false;
+_allowedNightStuff = true;
 
 _goggles = "";
 _helmet = selectRandom ["helmet_lwh_CCE"];

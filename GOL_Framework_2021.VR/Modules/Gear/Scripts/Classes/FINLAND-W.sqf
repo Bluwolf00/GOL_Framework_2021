@@ -1,3 +1,5 @@
+_useMineDetector = false;
+_allowedNightStuff = true;
 
 _goggles = selectRandom ["rhsusf_shemagh_gogg_grn","rhsusf_shemagh2_gogg_grn"];
 _helmet = "helmet_ACH_M05";

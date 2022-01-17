@@ -1,3 +1,5 @@
+_useMineDetector = false;
+_allowedNightStuff = true;
 
 _goggles = "";
 _helmet = "rhsusf_lwh_helmet_marpatd";

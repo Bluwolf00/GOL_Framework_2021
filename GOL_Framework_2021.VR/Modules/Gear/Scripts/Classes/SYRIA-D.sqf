@@ -1,3 +1,6 @@
+_useMineDetector = false;
+_allowedNightStuff = false;
+
 _glHE = "rhs_VOG25P";
 _glsmokeW = "rhs_GRD40_White";
 _glsmokeB = "";
@@ -10,8 +13,6 @@ _glsmokeY = "";
 _glflareG = "rhs_VG40OP_green";
 _glflareR = "rhs_VG40OP_red";
 _glflareW = "rhs_VG40OP_white";
-
-_allowedNightStuff = false;
 
 _goggles = "";
 _helmet = selectRandom ["PO_H_M1_OLV_2","PO_H_M1_TAN","LOP_H_SSh68Helmet_TAN","rhs_ssh60","rhs_ssh68_2","LOP_H_Beanie_m81"];

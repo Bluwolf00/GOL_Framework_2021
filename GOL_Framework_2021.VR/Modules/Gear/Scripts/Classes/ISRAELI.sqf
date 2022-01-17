@@ -1,3 +1,6 @@
+_useMineDetector = false;
+_allowedNightStuff = true;
+
 // Cloths
 _goggles = SelectRandom ["dzn_G_IDF_Mitznefet_Cover","dzn_G_IDF_Mitznefet_Cover4","dzn_G_IDF_Mitznefet_Cover3","dzn_G_IDF_Mitznefet_Cover2"];
 _helmet = "helmet_lwh_OLIVE";

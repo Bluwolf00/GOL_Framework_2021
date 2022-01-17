@@ -1,4 +1,4 @@
-
+_useMineDetector = false;
 _allowedNightStuff = false;
 
 _goggles = "";

@@ -1,3 +1,5 @@
+_useMineDetector = false;
+_allowedNightStuff = true;
 
 _goggles = selectRandom ["rhsusf_shemagh_od","rhsusf_shemagh2_od","rhs_googles_clear"];
 _helmet = "helmet_sf_MTP";

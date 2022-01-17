@@ -1,3 +1,5 @@
+_useMineDetector = false;
+_allowedNightStuff = false;
 
 _goggles = selectRandom ["","","CUP_TK_NeckScarf","CUP_FR_NeckScarf","CUP_FR_NeckScarf2"];
 _helmet = "";

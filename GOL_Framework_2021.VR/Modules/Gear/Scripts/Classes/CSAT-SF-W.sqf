@@ -1,3 +1,5 @@
+_useMineDetector = false;
+_allowedNightStuff = true;
 
 _goggles = "rhs_balaclava1_olive";
 _helmet = "H_HelmetAggressor_F";

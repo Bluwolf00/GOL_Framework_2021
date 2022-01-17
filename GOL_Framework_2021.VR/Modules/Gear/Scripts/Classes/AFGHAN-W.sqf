@@ -1,5 +1,5 @@
-_useMineDetector = true;
-
+_useMineDetector = false;
+_allowedNightStuff = false;
 
 _goggles = "";
 _helmet = "rhsusf_opscore_fg";

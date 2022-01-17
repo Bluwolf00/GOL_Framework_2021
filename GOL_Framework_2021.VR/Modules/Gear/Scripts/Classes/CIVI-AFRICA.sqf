@@ -1,3 +1,5 @@
+_useMineDetector = false;
+_allowedNightStuff = false;
 
 _goggles = selectRandom ["","G_Squares_Tinted","CUP_TK_NeckScarf","CUP_FR_NeckScarf","CUP_FR_NeckScarf2"];
 _helmet = selectRandom ["H_Bandanna_khk","H_Booniehat_tan","H_Cap_tan","H_HeadBandage_clean_F","LOP_H_Turban","LOP_H_Worker_cap","rhs_headband",""];

@@ -1,5 +1,5 @@
+_useMineDetector = false;
 _allowedNightStuff = false;
-
 _goggles = "";
 _helmet = selectRandom ["LOP_H_SSh68Helmet_TAN","rhs_ssh60","rhs_ssh68_2"];
 _OfficerHelmet = "H_Beret_blk";

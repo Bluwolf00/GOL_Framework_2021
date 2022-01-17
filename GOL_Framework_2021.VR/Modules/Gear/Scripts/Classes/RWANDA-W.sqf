@@ -1,3 +1,6 @@
+_useMineDetector = false;
+_allowedNightStuff = false;
+
 _glHE = "hlc_VOG25_AK";
 _glsmokeW = "hlc_GRD_White";
 _glsmokeB = "hlc_GRD_blue";

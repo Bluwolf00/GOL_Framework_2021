@@ -1,3 +1,6 @@
+_useMineDetector = false;
+_allowedNightStuff = false;
+
 _glHE = "rhs_VOG25P";
 _glsmokeW = "rhs_GRD40_White";
 _glsmokeB = "";
@@ -10,8 +13,6 @@ _glsmokeY = "";
 _glflareG = "rhs_VG40OP_green";
 _glflareR = "rhs_VG40OP_red";
 _glflareW = "rhs_VG40OP_white";
-
-_allowedNightStuff = false;
 
 _goggles = "";
 _helmet = selectRandom ["LOP_H_Shemag_TAN","","LOP_H_Turban","LOP_H_Turban_Mask","LOP_H_Pakol"];

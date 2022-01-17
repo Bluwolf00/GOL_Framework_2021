@@ -1,3 +1,6 @@
+_useMineDetector = false;
+_allowedNightStuff = false;
+
 //	villager	- normal
 //	worker		- nice cloths
 //	farmer		- dirty cloths

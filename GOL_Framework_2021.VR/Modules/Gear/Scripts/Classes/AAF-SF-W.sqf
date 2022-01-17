@@ -1,3 +1,5 @@
+_useMineDetector = false;
+_allowedNightStuff = true;
 
 _goggles = "rhsusf_shemagh_grn";
 _OfficerHelmet = "H_MilCap_dgtl";

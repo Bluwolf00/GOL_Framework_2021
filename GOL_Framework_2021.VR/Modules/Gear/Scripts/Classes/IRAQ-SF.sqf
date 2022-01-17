@@ -1,4 +1,5 @@
-_useMineDetector = true;
+_useMineDetector = false;
+_allowedNightStuff = true;
 
 _goggles = "G_Balaclava_TI_blk_F";
 _helmet = "PO_H_mich_bare_isof_3_nortos_alt_blk";

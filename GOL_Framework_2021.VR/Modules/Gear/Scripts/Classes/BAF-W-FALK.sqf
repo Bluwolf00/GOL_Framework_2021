@@ -1,4 +1,5 @@
-
+_useMineDetector = false;
+_allowedNightStuff = false;
 
 _goggles = "";
 _helmet = "beret_Green";

@@ -1,3 +1,6 @@
+_useMineDetector = false;
+_allowedNightStuff = false;
+
 _glHE = "";
 _glsmokeW = "";
 _glsmokeB = "";

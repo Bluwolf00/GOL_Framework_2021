@@ -1,5 +1,5 @@
-_useMineDetector = true;
-
+_useMineDetector = false;
+_allowedNightStuff = true;
 
 _goggles = "";
 _helmet = "H_HelmetB";

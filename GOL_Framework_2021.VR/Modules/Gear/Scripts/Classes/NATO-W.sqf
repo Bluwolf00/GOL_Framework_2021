@@ -1,4 +1,5 @@
-_useMineDetector = true;
+_useMineDetector = false;
+_allowedNightStuff = true;
 
 _goggles = "G_Balaclava_TI_blk_F";
 _helmet = "rhsusf_opscore_fg_pelt";

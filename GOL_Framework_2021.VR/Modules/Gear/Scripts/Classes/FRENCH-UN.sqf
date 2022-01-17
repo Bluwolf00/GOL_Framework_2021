@@ -1,4 +1,5 @@
-
+_allowedNightStuff = true;
+_useMineDetector = false;
 
 _goggles = "";
 _helmet = selectRandom ["rhsgref_helmet_pasgt_un"];

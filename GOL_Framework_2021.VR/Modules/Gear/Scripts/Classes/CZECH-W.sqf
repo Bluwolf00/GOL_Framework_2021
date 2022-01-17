@@ -1,3 +1,5 @@
+_useMineDetector = false;
+_allowedNightStuff = true;
 
 _goggles = selectRandom ["rhsusf_shemagh2_grn","rhsusf_shemagh_grn"];
 _helmet = ["helmet_ACH_VZ95_2","helmet_ACH_VZ95_4","helmet_ACH_VZ95_3","helmet_ACH_VZ95"] call BIS_fnc_selectRandom;

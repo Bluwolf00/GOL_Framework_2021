@@ -1,3 +1,6 @@
+_useMineDetector = false;
+_allowedNightStuff = true;
+
 // Cloths
 _goggles = "";
 _helmet = "helmet_lwh_M98";
