@@ -4,6 +4,6 @@
     _code = {openMap true; [NEKY_PARADROP_TRIGGER] execVM "Scripts\NEKY_Paradrop\NEKY_OnMapClick.sqf"};
 
 	_change = ["ChangeDrop","Reposition Dropzone","\A3\ui_f\data\map\markers\Military\end_CA.paa",_code,_condition] call ace_interact_menu_fnc_createAction;
-	[typeOf player, 1, ["ACE_SelfActions","Request Support"], _change] call ace_interact_menu_fnc_addActionToClass;
+	[typeOf player, 1, ["ACE_SelfActions","Request_Support"], _change] call ace_interact_menu_fnc_addActionToClass;
 
 }
