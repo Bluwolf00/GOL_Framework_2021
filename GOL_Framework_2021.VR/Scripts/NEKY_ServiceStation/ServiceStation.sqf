@@ -1,6 +1,6 @@
 //	null = [This, Radius, (is a Mobile Service Station), ["NearestObjects"]] ExecVM "Scripts\NEKY_ServiceStation\ServiceStation.sqf";
 ///////////////////////////////////////////
-//	
+//
 //	1. Object name, the name of the object.
 //		a. Can be the actual name of the Object. Generally used when activating Service Stations later in to the mission.
 // 		b. This, when entered in the init line of an object, activates the Service Station instantly.
@@ -17,14 +17,14 @@
 //////////////
 //	How To
 //////////////
-//	
+//
 //	1. Place this file accompanied by NEKY_MobileSS.sqf and NEKY_Settings.sqf in: yourmissionfolder\Scripts\NEKY_ServiceStation\
 //	2. Place an object or vehicle that you want to be the Mobile Service Station (Vehicle Ammo Crate for slingloading or any truck for a vehicle).
 //	3. Modify the code to your liking.
 //	4. Place the code in the init line of the object or vehicle you want to be the Mobile Service Station.
-//	
+//
 //	Note: If you want to make a stationary Service Station look in to NEKY_ServiceStation.sqf.
-//	
+//
 ///////////////
 //	Examples:
 ///////////////
@@ -52,25 +52,25 @@ if (isServer) then  // To avoid having all players loop the scanners
 		["_IsMSS", false, [true]],
 		["_Filter", ["LANDVEHICLE","AIR","SHIP"], [[]]]
 	];
-	
+
 	_Variables = ["NEKY_ServiceStationArray","NEKY_ServiceStations"];
 	{ call compile format ["if (isNil '%1') then {%1 = [];}", _x] } forEach _Variables;
 	sleep 1;
-	
+
 	_FullService = False;
 	NEKY_ServiceStations PushBack _SS;
 	[] Spawn {sleep 5; PublicVariable "NEKY_ServiceStations"};
-	
+
 	// MSS Deactivate if moved or destroyed
 	if (_IsMSS) then
 	{
-		_This spawn 
+		_This spawn
 		{
 			Params ["_SS"];
-			
+
 			While {True} do
-			{	
-				if ( !(Speed _SS isEqualTo 0) or !(Alive _SS) or !(_SS in NEKY_ServiceStations) ) exitWith 
+			{
+				if ( !(Speed _SS isEqualTo 0) or !(Alive _SS) or !(_SS in NEKY_ServiceStations) ) exitWith
 				{
 //					SystemChat "MSS Moving, died or deactivated.";
 					[_SS,false] call NEKY_ServiceStation_Available;
@@ -82,18 +82,18 @@ if (isServer) then  // To avoid having all players loop the scanners
 		};
 	};
 
-	[_SS,_Radius,_Filter] Spawn 
+	[_SS,_Radius,_Filter] Spawn
 	// Scanner
 	{
 		Params ["_SS","_Radius","_Filter"];
 
 		While {_SS in NEKY_ServiceStations} do
 		{
-			_Vehicles = NearestObjects [(getPosATL _SS), _Filter, _Radius];
+			_Vehicles = NearestObjects [_SS, _Filter, _Radius];
 			{
-				if (!(_x in NEKY_ServiceStationArray) && (Alive _x)) then 
+				if (!(_x in NEKY_ServiceStationArray) && (Alive _x)) then
 				{
-					NEKY_ServiceStationArray pushBack _x; 
+					NEKY_ServiceStationArray pushBack _x;
 					PublicVariable "NEKY_ServiceStationArray";
 					if !(_x getVariable ["NEKY_ServiceStation_HasActions",false]) then
 					{
