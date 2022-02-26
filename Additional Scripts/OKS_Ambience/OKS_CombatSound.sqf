@@ -1,4 +1,12 @@
-params ["_AsoundSource"]
+params ["_AsoundSource","_CombatSoundVariable"];
+
+if(!isServer) exitWith {};
+/*
+	[this] execVM "Scripts\OKS_Ambience\OKS_CombatSound.sqf";
+	Requires additional variable to be true - SoundVariable
+*/
+
+Call Compile Format ["%1 = True; PublicVariable '%1'",_CombatSoundVariable];
 
 //Sound Pitch (Number) - 1: Normal, 0.5: Darth Vader, 2: Chipmunks, etc. Default: 1
 _AsoundPitch = 1;
@@ -54,8 +62,7 @@ while {true} do
 
 	_dis = round random [_AMinDistance,_AMedDistance,_AMaxDistance];
 	_AsoundPosition = _ATarget getRelPos [_dis, _dir];
-	_SoundNumber = round random count _soundsArray;
-	_ASound = _soundsArray select _SoundNumber;
+	_ASound = SelectRandom _SoundsArray;
 	playSound3D [_ASound, _AsoundSource, false, _AsoundPosition, _Avolume, _AsoundPitch, _Adistance];
 	_Waitfor = round random [_AMinWait,_AMedWait,_AMaxWait];
 	sleep _Waitfor;

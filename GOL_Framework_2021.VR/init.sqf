@@ -51,9 +51,13 @@ Sleep 5;
 	if(GOL_NEKY_HUNT isEqualTo 1) then {
 		[] execVM "Scripts\NEKY_Hunt\Init.sqf";
 	};
+	/*
+	Requires script from the folder additional scripts
+
 	if(GOL_AAC_SETUP isEqualTo 1) then {
 		[] execVM "Scripts\OKS_AAC\Init.sqf";
 	};
+	*/
 	if(GOL_OKS_AMBIENCE isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Ambience\Init.sqf";
 
@@ -109,11 +113,15 @@ Sleep 5;
 Sleep 10;
 
 /* !! IGNORE AND DO NOT EDIT ALL OF THE ABOVE !! */
+	/*
+		Requires script from the folder additional scripts
 
-	if(GOL_OKS_HUNT isEqualTo 1) then {
-		[] execVM "Scripts\OKS_HUNT\Init.sqf";
-		/* Run in SpawnList.sqf: [EAST,500,1000,90] spawn OKS_Dynamic_Hunt; */
-	};
+		if(GOL_OKS_HUNT isEqualTo 1) then {
+			[] execVM "Scripts\OKS_HUNT\Init.sqf";
+			// Run in SpawnList.sqf: [EAST,500,1000,90] spawn OKS_Dynamic_Hunt;
+		};
+
+	*/
 	if(GOL_OKS_TASK isEqualTo 1) then {
 		[] execVM "Scripts\OKS_TASK\Init.sqf";
 		waitUntil{sleep 1; !(isNil "OKS_TASKSETUP") && !(isNil "OKS_FRIENDLY_SIDE")};
