@@ -62,6 +62,7 @@ Sleep 5;
 		[] execVM "Scripts\OKS_Ambience\Init.sqf";
 
 		/* TFAR Jammer - Object, Range & Strength Parameters
+			Requires script from the folder additional scripts
 			waitUntil {!isNil "TFAR_Scrambler"};
 			[[JAMMER],500,50] spawn TFAR_Scrambler;
 		*/
