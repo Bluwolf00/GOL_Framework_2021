@@ -30,7 +30,7 @@ fnc_myFunction = {
   _Action = "DEBUG";
   switch (_usedItem) do {
       case ("ACE_tourniquet"): {
-          _Action = "Applying A Tourniquet To";
+          _Action = "Applying a tourniquet to";
       };
       case "ACE_fieldDressing";
       case "ACE_elasticBandage";
@@ -45,53 +45,53 @@ fnc_myFunction = {
       case "ACE_salineIV_500";
       case "ACE_plasmaIV";
       case "ACE_plasmaIV_250";
-      case "ACE_plasmaIV_500": {_Action = "Transfusing Fluids To";};
+      case "ACE_plasmaIV_500": {_Action = "Transfusing fluids to";};
 
       case ("ACE_personalAidKit"): {
-          _Action = "Applying A PAK To";
+          _Action = "Applying a PAK to";
       };
       case ("ACE_splint"): {
-          _Action = "Applying A Splint To";
+          _Action = "Applying a splint to";
       };
       case ("ACE_morphine"): {
-          _Action = "Injecting Morphine To";
+          _Action = "Injecting morphine to";
       };
       case ("ACE_epinephrine"): {
-          _Action = "Injecting Epinephrine To";
+          _Action = "Injecting epinephrine to";
       };
       case ("ACE_adenosine"): {
-          _Action = "Injecting Adenosine To";
+          _Action = "Injecting adenosine to";
       };
       case ("ACE_surgicalKit"): {
-          _Action = "Stitching Your";
+          _Action = "stitching your";
       };
       default {
-          _Action = "Tending To";
+          _Action = "tending to";
       };
   };
 
   if !(_Unconscious) then {
     switch (_selectionName) do {
         case ("head"): {
-            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " Is " + _Action + " Your Head"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
+            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " is " + _Action + " your head"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
         };
         case ("leftarm"): {
-            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " Is " + _Action + " Your Left Arm"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
+            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " is " + _Action + " your left Arm"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
         };
         case ("rightarm"): {
-            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " Is " + _Action + " Your Right Arm"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
+            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " is " + _Action + " your right arm"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
         };
         case ("leftleg"): {
-            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " Is " + _Action + " Your Left Leg"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
+            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " is " + _Action + " your left leg"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
         };
         case ("rightleg"): {
-            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " Is " + _Action + " Your Right Leg"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
+            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " is " + _Action + " your right leg"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
         };
         case ("body"): {
-            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " Is " + _Action + " Your Torso"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
+            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " is " + _Action + " your torso"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
         };
       };
-    } else {[[name _caller,_Action],{Params ["_caller","_Action"]; titleText [("Somebody Is Tending To You"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];};
+    } else {[[name _caller,_Action],{Params ["_caller","_Action"]; titleText [("Someone is tending to you"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];};
 };
 };
 ["ace_treatmentStarted", fnc_myFunction] call CBA_fnc_addEventHandler;
