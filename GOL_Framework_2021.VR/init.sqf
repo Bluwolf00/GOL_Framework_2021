@@ -26,6 +26,10 @@ Sleep 5;
 		};
 	};
 
+	if(GOL_EnableHelicopterScriptToAllVehicles isEqualTo 1) then {
+		[objNull,false,false] execVM "Scripts\OKS_Vehicles\OKS_Helicopter.sqf";
+	};
+
 	if(GOL_NEKY_SERVICESTATION isEqualTo 1) then {
 		[] execVM "Scripts\NEKY_ServiceStation\Init.sqf";
 	};

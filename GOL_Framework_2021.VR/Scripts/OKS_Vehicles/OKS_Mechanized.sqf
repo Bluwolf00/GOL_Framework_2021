@@ -91,7 +91,7 @@ if (["Passenger_HMG",(typeOf _Vehicle)] call BIS_fnc_inString || ["L111A1",(type
 	_Vehicle AddMagazineCargoGlobal ["UK3CB_BAF_127_100Rnd",10];
 };
 
-if(["L134A1",(typeOf _Vehicle)] call BIS_fnc_inString || ["WMIK_GMG",(typeOf _Vehicle)] call BIS_fnc_inString) then {
+if(["L134A1",(typeOf _Vehicle)] call BIS_fnc_inString || ["WMIK_GMG",(typeOf _Vehicle)] call BIS_fnc_inString || ["Passenger_GMG",(typeOf _Vehicle)] call BIS_fnc_inString) then {
 	_Vehicle AddMagazineCargoGlobal ["UK3CB_BAF_32Rnd_40mm_G_Box",10];
 };
 
