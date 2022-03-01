@@ -174,9 +174,39 @@ Sleep 10;
 		/*
 		if(isServer) then {
 			waitUntil{sleep 5; !(isNil "OKS_CreateZone")};
-			[Trigger_1,false,[0,0,false,false],east,0,0,0,[0,true,false,0],[0,false],[0,false],[0,0,0,0,0],false] spawn OKS_CreateZone;
-		};
 
+			//// START OF ZONE /////
+			[	Trigger_1,  // Name of Trigger used as Spawn Area
+				false, 		// DO NOT EDIT
+				[
+					8,      // Number of Static Infantry - Preferred Game Logic Location 'Outpost'"
+					25,		// Number of Patrolling Infantry
+					false,  // Create Sector Objective on Garrison?
+					false   // Should have dedicated patrols near static positions
+				],
+				east, // Side of Enemy
+				0,    // Number of Wheeled on Patrol
+				0,    // Number of APCs on Patrol
+				0,    // Number of Tanks on Patrol
+				[
+					0,     // Number of Roadblocks - Preferred Game Logic Location 'FOB'"
+					true,  // Should be on tarmac.
+					false, // Should have dedicated patrol.
+					0  	   // Chance for Static Vehicle (1 = 100%, 0.5 = 50%)
+				],
+				[
+					0,     // Number of Mortars
+					false  // Should have dedicated patrols around it
+				],[
+					0,    // Number of Random Objectives - Preferred Game Logic Location 'Camp'"
+					false // Should have dedicated patrols around it
+				],
+				[0,0,0,0,0] // Infantry, Wheeled, APCs, Tanks, Air Assault - Hunt Bases - Preferred Game Logic Location 'Respawn Point'"
+				,false      // Should Enable Civilian Presence - Required Game Logic Location 'Village'"
+			] spawn OKS_CreateZone;
+			//// END OF ZONE ////
+
+		};
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 		/*
@@ -243,7 +273,7 @@ Sleep 10;
 			if(isServer && GOL_OKS_AMBIENCE isEqualTo 1) then {
 
 				waitUntil {sleep 1; !(isNil "OKS_FaceSwap")};
-				[east,"russian"] spawn OKS_FaceSwap;
+				[east,"african"] spawn OKS_FaceSwap;
 			};
 		/*
 		*/
