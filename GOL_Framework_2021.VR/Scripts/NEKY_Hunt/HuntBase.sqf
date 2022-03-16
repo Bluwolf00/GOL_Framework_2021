@@ -190,20 +190,20 @@ while {alive _Base && _Waves > 0} do
 
 						{NEKY_Hunt_CurrentCount pushBackUnique _X} foreach crew _Vehicle;
 					};
-
-					if(count units _Group > 1) then {
-						[_Group, nil, _HuntZone, 0, 30, 0, {}] Spawn NEKY_Hunt_Run;
-					} else {
-						deleteVehicle driver _Vehicle;
-						deleteVehicle _vehicle;
-						systemChat "Only Driver Active - Removing Vehicle..";
+					if(!isNil "_Group") then {
+						if(count units _Group > 1) then {
+							[_Group, nil, _HuntZone, 0, 30, 0, {}] Spawn NEKY_Hunt_Run;
+						} else {
+							deleteVehicle driver _Vehicle;
+							deleteVehicle _vehicle;
+							systemChat "Only Driver Active - Removing Vehicle..";
+						};
 					};
-
 				};
 
 				sleep 5;
 				_AliveNumber  = count (NEKY_Hunt_CurrentCount select {alive _X});
-				SystemChat format ["%1 Spawned %2 - Current Count %3 - Max Count: %4",_Base,count units _Group,_AliveNumber,NEKY_Hunt_MaxCount];
+				//SystemChat format ["%1 Spawned %2 - Current Count %3 - Max Count: %4",_Base,count units _Group,_AliveNumber,NEKY_Hunt_MaxCount];
 				sleep _RespawnDelay;
 			};
 		};

@@ -50,14 +50,14 @@ if (_role isEqualTo "jetp") then {
 };
 
 _silencer = "rhsusf_acc_sfmb556";
-_pointer = "rhsusf_acc_anpeq16a";
-_sight = "optic_mrco";
+_pointer = "rhsusf_acc_anpeq15side_bk";
+_sight = "rhsusf_acc_eotech_xps3";
 _bipod = "rhsusf_acc_tdstubby_tan";
 
-_rifle = ["rhs_weap_mk18_KAC_d", _silencer, _pointer, _sight, _bipod];
+_rifle = ["rhs_weap_mk18_KAC_bk", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["rhsusf_weap_MP7A2", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["rhs_weap_m4a1_blockII_M203_d", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["rhs_weap_sr25_d", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["rhs_weap_m4a1_blockII_M203_bk", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["rhs_weap_sr25_ec", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "hlc_30rnd_556x45_SOST_L5";
 _rifle_mag_tr = "hlc_30rnd_556x45_t_L5";
 _rifleGL_mag = "hlc_30rnd_556x45_SOST";

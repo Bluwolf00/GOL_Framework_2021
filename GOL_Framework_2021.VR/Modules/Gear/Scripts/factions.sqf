@@ -15,6 +15,9 @@ switch (_side) do {
 	case "RWANDA-W": {
 		#include "Classes\RWANDA-W.sqf"
 	};
+	case "UKRAINE-W": {
+		#include "Classes\UKRAINE-W.sqf"
+	};
 	case "CIVI-AFRICA": {
 		#include "Classes\CIVI-AFRICA.sqf"
 	};
