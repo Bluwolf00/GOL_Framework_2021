@@ -125,16 +125,18 @@ _FlyingMHQObject addAction ["<t color='#ECE808'>Deploy Paratroopers</t>", {
 ];
 
 // Move unit to position and start falling
+// TODO: Place further behind plane, if dead remove actions, reset. Even if survive, actions still there, no reset.	
 OKS_EjectFromPlane = {
 
 	if(hasInterface) then {
 
 	Params ["_Unit","_FlyingMHQObject","_Steerable","_Height"];
 	_Unit allowDamage false;
-	_EjectPos = _FlyingMHQObject modelToWorld [0,-15,-5];
+	sleep 1;
+	_EjectPos = _FlyingMHQObject modelToWorld [0,-35,-15];
 	_Unit setPos _EjectPos;
 	_Unit setDir (getDir _FlyingMHQObject);
-	_Unit setVelocity [(random 5), -20, -15];
+	_Unit setVelocity [(random 5), -10, -10];
 
 	sleep 2;
 	_Unit allowDamage true;

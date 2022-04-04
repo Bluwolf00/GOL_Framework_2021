@@ -1,4 +1,4 @@
-if (hasInterface) then {
+/*if (hasInterface) then {
     _condition = {player in [wpl,wfac,w1m,w2m,epl,efac,e1m,e2m,ipl,ifac,i1m,i2m,w1a,w1a1,w1b1,wcrew1,wcrew4,e1a,e1a1,e1b1,ecrew1,ecrew4,i1a,i1a1,i1b1,icrew1,icrew4] && isNull laserTarget player}; //<only works MP
 	// NEKY EDIT START
 	_code =

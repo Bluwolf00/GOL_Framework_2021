@@ -9,11 +9,11 @@ if (hasInterface) then {
 			Private ["_BoxCode"];
 			Switch (_This select 0) do
 			{
-				Case WEST: {_BoxCode = {[_Box, ["big_box","west"]] call GW_Gear_Fnc_Init}};
-				Case EAST: {_BoxCode = {[_Box, ["big_box","east"]] call GW_Gear_Fnc_Init}};
-				Case INDEPENDENT: {_BoxCode = {[_Box, ["big_box","indep"]] call GW_Gear_Fnc_Init}};
+				Case WEST: {_BoxCode = {[_Box, ["small_box","west"]] call GW_Gear_Fnc_Init}};
+				Case EAST: {_BoxCode = {[_Box, ["small_box","east"]] call GW_Gear_Fnc_Init}};
+				Case INDEPENDENT: {_BoxCode = {[_Box, ["small_box","indep"]] call GW_Gear_Fnc_Init}};
 			};
-			[(_This select 0),"","drop", ["helicopter_spawn",_pos,"helicopter_despawn"],_BoxCode,true] execVM "Scripts\NEKY_supply\NEKY_SupplyMapClick.sqf";
+			[(_This select 0),GOL_NEKY_SUPPLY_HELICOPTER,"drop", ["helicopter_spawn",_pos,"helicopter_despawn"],_BoxCode,false] execVM "Scripts\NEKY_supply\NEKY_SupplyMapClick.sqf";
 		};
 	};
 
@@ -25,11 +25,11 @@ if (hasInterface) then {
 			Private ["_BoxCode"];
 			Switch (_This select 0) do
 			{
-				Case WEST: {_BoxCode = {[_Box, ["big_box","west"]] call GW_Gear_Fnc_Init}};
-				Case EAST: {_BoxCode = {[_Box, ["big_box","east"]] call GW_Gear_Fnc_Init}};
-				Case INDEPENDENT: {_BoxCode = {[_Box, ["big_box","indep"]] call GW_Gear_Fnc_Init}};
+				Case WEST: {_BoxCode = {[_Box, ["small_box","west"]] call GW_Gear_Fnc_Init}};
+				Case EAST: {_BoxCode = {[_Box, ["small_box","east"]] call GW_Gear_Fnc_Init}};
+				Case INDEPENDENT: {_BoxCode = {[_Box, ["small_box","indep"]] call GW_Gear_Fnc_Init}};
 			};
-			[(_This select 0),"","unload", ["helicopter_spawn",_pos,"helicopter_despawn"],_BoxCode,true] execVM "Scripts\NEKY_supply\NEKY_SupplyMapClick.sqf";
+			[(_This select 0),GOL_NEKY_SUPPLY_HELICOPTER,"unload", ["helicopter_spawn",_pos,"helicopter_despawn"],_BoxCode,false] execVM "Scripts\NEKY_supply\NEKY_SupplyMapClick.sqf";
 		};
 	};
 	// NEKY EDIT END

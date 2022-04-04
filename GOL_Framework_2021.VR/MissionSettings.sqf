@@ -1,13 +1,13 @@
 /* Gear Settings */
-GOL_MAGNIFIED_OPTICS = 0;
+GOL_MAGNIFIED_OPTICS = 1;
 GOL_ARSENAL_ALLOWED = 1;
 
 /* Logistics & Support Settings */
 GOL_NEKY_SERVICESTATION = 1;
 GOL_NEKY_RESUPPLY = 1;
-GOL_NEKY_PARADROP = 0;
+GOL_NEKY_PARADROP = 1;
 GOL_NEKY_PICKUP = 0;
-GOL_OKS_SUPPORT = 1;
+GOL_OKS_SUPPORT = 0;
 
 /* AI Settings*/
 GOL_NEKY_SHARE = 1;
@@ -35,6 +35,9 @@ GOL_EnableHelicopterScriptToAllVehicles = 0;
 
 /* GOL Dynamic Scripts */
 GOL_OKS_DYNAMIC = 1;
+
+/* Classname Settings */
+GOL_NEKY_SUPPLY_HELICOPTER = "";
 
 /* DO NOT EDIT BELOW */
 OKS_MISSION_SETTINGS = true;

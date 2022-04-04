@@ -10,12 +10,25 @@ Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tan
 /* Faction Selection for Vehicles spawned by OKS_Dynamic
 
 BLUFOR FACTIONS:       CDF LDF TANOA
-OPFOR FACTIONS:        CHEDAKI TKA DESERT_INSURGENTS RUSSIA_MODERN SOVIET TURKEY
+OPFOR FACTIONS:        CHEDAKI TKA DESERT_INSURGENTS RUSSIA_MODERN SOVIET TURKEY DESERT_MILITIA
 INDEPENDENT FACTIONS:  NAPA SYRIA
 
 */
 Private _Faction = "DESERT_INSURGENTS";
 Switch (_Faction) do {
+
+	case "DESERT_MILITIA":{
+		// African Desert Militia 3CB - OPFOR
+		_Wheeled = ["UK3CB_ADM_O_BTR40_MG", "UK3CB_ADM_O_BTR40", "UK3CB_ADM_O_Hilux_Dshkm", "UK3CB_ADM_O_Hilux_Open", "UK3CB_ADM_O_LR_Open", "UK3CB_ADM_O_LR_Closed", "UK3CB_ADM_O_Offroad_M2", "UK3CB_ADM_O_Pickup_DSHKM", "UK3CB_ADM_O_Pickup", "UK3CB_ADM_O_Datsun_Pkm"];
+		_APC = ["UK3CB_ADM_O_BTR40_MG", "UK3CB_ADM_O_MTLB_PKT", "UK3CB_ADM_O_BRDM2", "UK3CB_ADM_O_BRDM2_HQ"];
+		_Tank = ["UK3CB_ADE_O_T34"];
+		_Artillery = ["UK3CB_ADM_O_D30","UK3CB_ADM_O_2b14_82mm"];
+		_AntiAir = ["UK3CB_ADM_O_V3S_Zu23", "UK3CB_ADM_O_MTLB_ZU23","UK3CB_ADM_O_ZU23"];
+		_Helicopter = ["UK3CB_ADA_O_UH1H_M240", "UK3CB_ADA_O_UH1H_GUNSHIP"];
+		_Transport = ["UK3CB_ADM_O_V3S_Closed", "UK3CB_ADM_O_V3S_Open", "UK3CB_ADM_O_Van_Transport"];
+		_Supply = ["UK3CB_ADM_O_V3S_Refuel", "UK3CB_ADM_O_V3S_Reammo", "UK3CB_ADM_O_V3S_Repair", "UK3CB_ADM_O_Van_Fuel"];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
+	};
 
 	case "SYRIA":{
 		// Modern Russian Armed Forces (RUSSIA) - OPFOR

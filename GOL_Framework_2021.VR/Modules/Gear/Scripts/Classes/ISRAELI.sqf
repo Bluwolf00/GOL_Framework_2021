@@ -58,10 +58,10 @@ _rifleC = ["CTAR21_Black", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["GTAR21_EGLM_Black", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_m14_fiberglass", _silencer, _pointer, _sight, _bipod];
 _rifleMarksman = ["rhs_weap_sr25", _silencer, _pointer, "optic_dms", "bipod_01_f_blk"];
-_rifle_mag = "hlc_30rnd_556x45_M_EMAG";
-_rifle_mag_tr = "hlc_30rnd_556x45_t_EMAG";
-_rifleGL_mag = "hlc_30rnd_556x45_M_EMAG";
-_rifleGL_mag_tr = "hlc_30rnd_556x45_t_EMAG";
+_rifle_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
+_rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
+_rifleGL_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
+_rifleGL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 _rifleL_mag = "rhsusf_20Rnd_762x51_m118_special_Mag";
 _rifleL_mag_tr = "rhsusf_20Rnd_762x51_m62_Mag";
 

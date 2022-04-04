@@ -80,8 +80,8 @@ switch (toLower(_role)) do {
 		[_rifleGL, _rifleGL_mag, _glHE] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_cables,2],[_gps,1],[_grenade,2],[_flashBang,2],[_pistol_mag,2],[_smokegrenadeY,4],[_smokegrenadeB,3]] call _addToUniform;
-		[[_grenade,2],[_rifleGL_mag_tr,5],[_glHE,7],[_glsmokeR,5]] call _addToVest;
+		[[_cables,2],[_gps,1],[_grenade,2],[_flashBang,2],[_pistol_mag,2]] call _addToUniform;
+		[[_grenade,2],[_rifleGL_mag_tr,5],[_glHE,7],[_glsmokeR,5],[_smokegrenadeY,4],[_smokegrenadeB,3]] call _addToVest;
 		[[_rifleGL_mag,4]] call _addToBackpack;
 		_rangefinder call _addBino;
 		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
@@ -114,8 +114,8 @@ switch (toLower(_role)) do {
 		[_rifleGL, _rifleGL_mag, _glHE] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_cables,2],[_gps,1],[_flashBang,3],[_smokegrenadeB,3],[_pistol_mag,2],[_smokegrenadeY,4]] call _addToUniform;
-		[[_grenade,4],[_rifleGL_mag_tr,4]] call _addToVest;
+		[[_cables,2],[_gps,1],[_flashBang,3],[_smokegrenadeB,3]] call _addToUniform;
+		[[_grenade,4],[_rifleGL_mag_tr,4],[_pistol_mag,2],[_smokegrenadeY,4]] call _addToVest;
 		[[_rifleGL_mag,4],[_glHE,7],[_glSmokeR,5]] call _addToBackpack;
 		_rangefinder call _addBino;
 		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;

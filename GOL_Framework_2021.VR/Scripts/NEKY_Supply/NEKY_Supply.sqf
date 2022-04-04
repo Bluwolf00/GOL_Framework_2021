@@ -59,7 +59,7 @@ switch (_Side) do
 
 	case BLUFOR:
 	{
-		if (_HeliClass == "") then {_HeliClass = "rhsusf_CH53e_USMC_D_cargo";};
+		if (_HeliClass == "") then {_HeliClass = "B_Heli_Transport_03_F";};
 		_BoxClass = "B_CargoNet_01_ammo_F";
 		_ChuteClass = "B_Parachute_02_F";
 		_PilotClass = "B_Pilot_F";
@@ -75,7 +75,7 @@ switch (_Side) do
 
 	case INDEPENDENT:
 	{
-		if (_HeliClass == "") then {_HeliClass = "I_Heli_light_03_unarmed_F";};
+		if (_HeliClass == "") then {_HeliClass = "I_Heli_Transport_02_F";};
 		_BoxClass = "I_CargoNet_01_ammo_F";
 		_ChuteClass = "I_Parachute_02_F";
 		_PilotClass = "I_Pilot_F";

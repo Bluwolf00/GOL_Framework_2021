@@ -57,9 +57,9 @@ _rifle = ["hlc_rifle_SG551SB_TAC", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["hlc_rifle_SG553SB_TAC", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["hlc_rifle_SG551SB_TAC_GL", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["hlc_rifle_SG550Sniper_RIS", _silencer, _pointer, _sight, _bipod];
-_rifle_mag = "hlc_30Rnd_556x45_SOST_sg550";
+_rifle_mag = "hlc_30Rnd_556x45_EPR_sg550";
 _rifle_mag_tr = "hlc_30Rnd_556x45_T_sg550";
-_rifleGL_mag = "hlc_30Rnd_556x45_SOST_sg550";
+_rifleGL_mag = "hlc_30Rnd_556x45_EPR_sg550";
 _rifleGL_mag_tr = "hlc_30Rnd_556x45_T_sg550";
 
 _LMG = ["rhs_weap_rpk74m_npz", _silencer, _pointer, _sight, _bipod];
