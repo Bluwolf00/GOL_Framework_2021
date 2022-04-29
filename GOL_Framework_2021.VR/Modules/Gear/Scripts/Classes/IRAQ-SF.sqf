@@ -68,6 +68,13 @@ _LAT = ["rhs_weap_m72a7", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "";
 _LAT_ReUsable = false;
 
+_MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
+_MAT_mag = "RPG7_F";
+
+_HAT = ["launch_O_Vorona_brown_F", _silencer, _pointer, _sight, _bipod];
+_HAT_mag = "Vorona_HEAT";
+
+
 _MAT = ["rhs_weap_rpg7", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "rhs_rpg7_PG7VL_mag";
 _MAT_mag_HE = "rhs_rpg7_PG7VL_mag";

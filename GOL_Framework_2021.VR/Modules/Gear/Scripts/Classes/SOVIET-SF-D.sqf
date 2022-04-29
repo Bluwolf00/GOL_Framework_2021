@@ -70,8 +70,14 @@ _MMG = ["rhs_weap_pkp", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhs_100Rnd_762x54mmR_green";
 
 _LAT = ["rhs_weap_rpg18", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "rhs_rpg18_mag";
+_LAT_mag = "";
 _LAT_ReUsable = false;
+
+_MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
+_MAT_mag = "RPG7_F";
+
+_HAT = ["launch_O_Vorona_brown_F", _silencer, _pointer, _sight, _bipod];
+_HAT_mag = "Vorona_HEAT";
 
 _MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "rhs_rpg7_PG7VM_mag";

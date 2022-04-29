@@ -68,6 +68,9 @@ _LAT_ReUsable = false;
 _MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "MRAWS_HEAT_F";
 
+_HAT = ["launch_B_Titan_short_F", _silencer, _pointer, _sight, _bipod];
+_HAT_mag = "Titan_AT";
+
 _AA = ["launch_B_Titan_F", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "Titan_AA";
 

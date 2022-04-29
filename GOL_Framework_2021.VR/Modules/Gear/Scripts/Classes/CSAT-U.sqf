@@ -66,6 +66,9 @@ _MAT = ["launch_RPG32_ghex_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "RPG32_F";
 _MAT_mag_HE = "RPG32_HE_F";
 
+_HAT = ["launch_O_Vorona_green_F", _silencer, _pointer, _sight, _bipod];
+_HAT_mag = "Vorona_HEAT";
+
 _AA = ["launch_B_Titan_olive_F", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "Titan_AA";
 

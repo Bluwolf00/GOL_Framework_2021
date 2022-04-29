@@ -74,9 +74,6 @@ _LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 _MMG = ["rhs_weap_fnmag", _silencer, _pointer, _sight, ""];
 _MMG_mag = "hlc_100Rnd_762x51_T_M60E4";
 
-_AA = ["rhs_weap_fim92", _silencer, _pointer, _sight, _bipod];
-_AA_mag = "Titan_AA";
-
 // Launchers
 _silencer = "";
 _pointer = "";
@@ -91,7 +88,10 @@ _MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "MRAWS_HEAT55_F";
 _MAT_mag_HE = "MRAWS_HE_F";
 
-_AA = "rhs_weap_fim92";
+_HAT = ["launch_I_Titan_short_F", _silencer, _pointer, _sight, _bipod];
+_HAT_mag = "Titan_AT";
+
+_AA = ["rhs_weap_fim92", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "Titan_AA";
 
 // Pistol

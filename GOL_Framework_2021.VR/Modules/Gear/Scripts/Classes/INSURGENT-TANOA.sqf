@@ -70,19 +70,16 @@ _LMG_mag = "hlc_60Rnd_545x39_t_rpk";
 _MMG = ["rhs_weap_mg42", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhsgref_50Rnd_792x57_SmK_alltracers_drum";
 
-/*
-if (GVARMAIN(mod_CUP_WEAPONS)) then {
-	_LMG = ["CUP_arifle_RPK74_45", _silencer, _pointer, _sight, _bipod];
-	_LMG_mag = "CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M";
-
-	_MMG = ["CUP_lmg_Pecheneg", _silencer, _pointer, _sight, _bipod];
-	_MMG_mag = "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M";
-};
-*/
-
 _LAT = ["rhs_weap_panzerfaust60", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "rhs_panzerfaust60_mag";
 _LAT_ReUsable = false;
+
+_MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
+_MAT_mag = "RPG7_F";
+
+_HAT = ["launch_O_Vorona_green_F", _silencer, _pointer, _sight, _bipod];
+_HAT_mag = "Vorona_HEAT";
+
 
 _MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "RPG7_F";

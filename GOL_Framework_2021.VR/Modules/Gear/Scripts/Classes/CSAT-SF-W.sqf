@@ -69,13 +69,16 @@ _MMG_mag = "150Rnd_762x51_Box_Tracer";
 
 _sight = "";
 
-_LAT = ["rhs_weap_rpg26", _silencer, _pointer, _sight, _bipod];
+_LAT = ["rhs_weap_M136_hp", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "";
 _LAT_ReUsable = false;
 
 _MAT = ["launch_RPG32_green_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "RPG32_F";
 _MAT_mag_HE = "RPG32_HE_F";
+
+_HAT = ["launch_O_Vorona_green_F", _silencer, _pointer, _sight, _bipod];
+_HAT_mag = "Vorona_HEAT";
 
 _AA = ["launch_O_Titan_ghex_F", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "Titan_AA";
