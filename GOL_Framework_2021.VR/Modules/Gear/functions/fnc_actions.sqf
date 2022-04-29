@@ -56,15 +56,17 @@ _unit addAction ["<t color='#ff3737'>Squad > Rifleman</t>","[player,'r'] call GW
 _unit addAction ["<t color='#ff3737'>Squad > Grenadier</t>","[player,'g'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#6a9fff'>Squad > Asst. Gunner</t>","[player,'ag'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#6a9fff'>Squad > Automatic Rifleman</t>","[player,'ar'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#6a9fff'>Special > Asst. Medium Machine Gunner</t>","[player,'ammg'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#6a9fff'>Special > Medium Machine Gunner</t>","[player,'mmg'] call GW_Gear_Fnc_Handler;",bullShit,4];
+
 _unit addAction ["<t color='#FDF916'>Squad > Vehicle Crew</t>","[player,'crew'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#FDF916'>Special > Light Rifleman</t>","[player,'lr'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#FDF916'>Special > Ammo Bearer</t>","[player,'ab'] call GW_Gear_Fnc_Handler;",bullShit,4];
-
-_unit addAction ["<t color='#ff3737'>Special > Asst. Medium AT</t>","[player,'amat'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["<t color='#ff3737'>Special > Medium AT</t>","[player,'mat'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["<t color='#6a9fff'>Special > Asst. Medium Machine Gunner</t>","[player,'ammg'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["<t color='#6a9fff'>Special > Medium Machine Gunner</t>","[player,'mmg'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#FDF916'>Special > Anti-Air</t>","[player,'aa'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#FDF916'>Special > Asst. Heavy AT</t>","[player,'amat'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#FDF916'>Special > Heavy AT</t>","[player,'mat'] call GW_Gear_Fnc_Handler;",bullShit,4];
+
+
 
 //_unit addAction ["Special > Diver","[player,'diver'] call GW_Gear_Fnc_Handler;",bullShit,4];
 //_unit addAction ["Special > UAV Operator","[player,'uav'] call GW_Gear_Fnc_Handler;",bullShit,4];

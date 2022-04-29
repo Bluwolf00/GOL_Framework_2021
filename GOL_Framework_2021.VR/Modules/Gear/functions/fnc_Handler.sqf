@@ -58,6 +58,7 @@ private [
 	"_MMG","_MMG_mag","_MMG_mag_tr",
 	"_LAT","_LAT_mag","_LAT_mag_HE","_LAT_ReUsable",
 	"_MAT","_MAT_mag","_MAT_mag_HE",
+	"_HAT","_HAT_mag","_HAT_mag_HE",
 	"_AA","_AA_Mag",
 	"_pistol","_pistol_mag","_pistol_mag_tr",
 	"_useFactionRadio","_roleUseRadio","_useMineDetector","_mortarRangeCard","_ATrag","_Kestrel"
@@ -228,49 +229,46 @@ if (_isMan) then {
 				[_unit, "B_UavTerminal", 10] call _fnc_AddObjectsCargo;
 				[_unit, "O_UavTerminal", 10] call _fnc_AddObjectsCargo;
 				[_unit, "I_UavTerminal", 10] call _fnc_AddObjectsCargo;
-				if(!(_LAT_ReUsable)) then {
-					[_unit, (_LAT select 0), 20] call _fnc_AddObjectsCargo;
-				};
+				[_unit, (_LAT select 0), 30] call _fnc_AddObjectsCargo;
 				if (GVARMAIN(mod_ACE3)) then {
 					[_unit, "ACE_EarPlugs", 50] call _fnc_AddObjectsCargo;
-					if (isClass (configFile >> "CfgPatches" >> "GW_StaticWeapons")) then {
-						private _staticWeaponList = ["ACE_B_SpottingScope"];
-						if (toLower(_realSide) isEqualTo "west") then {
-							_staticWeaponList = _staticWeaponList + ["B_static_AA_F","B_Mortar_01_F","B_GMG_01_F","B_HMG_01_F","B_HMG_01_high_F","B_static_AT_F"];
-							if (GVARMAIN(mod_CUP_WEAPONS)) then {
-								_staticWeaponList = _staticWeaponList + ["CUP_B_TOW_TriPod_USMC","CUP_B_M2StaticMG_USMC","CUP_B_M2StaticMG_MiniTripod_USMC"];
-							};
-						};
-						if (toLower(_realSide) isEqualTo "east") then {
-							_staticWeaponList = ["O_static_AA_F","O_Mortar_01_F","O_GMG_01_F","O_HMG_01_F","O_HMG_01_high_F","O_static_AT_F"];
-							if (GVARMAIN(mod_CUP_WEAPONS)) then {
-								_staticWeaponList = _staticWeaponList + ["CUP_O_KORD_RU","CUP_O_KORD_high_RU","CUP_O_SPG9_ChDKZ","CUP_O_Metis_RU"];
-							};
-						};
-						if ((toLower(_realSide) isEqualTo "independent") || (toLower(_realSide) isEqualTo "indep")) then {
-							_staticWeaponList = ["I_static_AA_F","I_Mortar_01_F","I_GMG_01_F","I_HMG_01_F","I_HMG_01_high_F","I_static_AT_F"];
-						};
-						private _action = ["GW_GetStatics","Static Weapons","",{},{true}] call ace_interact_menu_fnc_createAction;
-						[_unit, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
-
-						{
-							private _action = format ["GW_GetStatics_%1", _x];
-							private _name = format ["%1", getText(configFile >> "CfgVehicles" >> _x >> "DisplayName")];
-							private _statement = {
-							    params ["_target", "_player", "_params"];
-								_player setVariable [QEGVAR(StaticWeapons,type), _params];
-								_player addItem "GW_Item_StaticDummy";
-							};
-							private _condition = {
-							    params ["", "_player"];
-								!("GW_Item_StaticDummy" in (items player)) || ((_player getVariable [QEGVAR(StaticWeapons,type), ""]) isEqualTo "")
-							};
-							private _action = [_action, _name, "", _statement, _condition, {}, _x] call ace_interact_menu_fnc_createAction;
-							[_unit, 0, ["ACE_MainActions","GW_GetStatics"], _action] call ace_interact_menu_fnc_addActionToObject;
-						} forEach _staticWeaponList;
-
-					};
 					[_unit, _mortarRangeCard, 10] call _fnc_AddObjectsCargo;
+					// if (isClass (configFile >> "CfgPatches" >> "GW_StaticWeapons")) then {
+					// 	private _staticWeaponList = ["ACE_B_SpottingScope"];
+					// 	if (toLower(_realSide) isEqualTo "west") then {
+					// 		_staticWeaponList = _staticWeaponList + ["B_static_AA_F","B_Mortar_01_F","B_GMG_01_F","B_HMG_01_F","B_HMG_01_high_F","B_static_AT_F"];
+					// 		if (GVARMAIN(mod_CUP_WEAPONS)) then {
+					// 			_staticWeaponList = _staticWeaponList + ["CUP_B_TOW_TriPod_USMC","CUP_B_M2StaticMG_USMC","CUP_B_M2StaticMG_MiniTripod_USMC"];
+					// 		};
+					// 	};
+					// 	if (toLower(_realSide) isEqualTo "east") then {
+					// 		_staticWeaponList = ["O_static_AA_F","O_Mortar_01_F","O_GMG_01_F","O_HMG_01_F","O_HMG_01_high_F","O_static_AT_F"];
+					// 		if (GVARMAIN(mod_CUP_WEAPONS)) then {
+					// 			_staticWeaponList = _staticWeaponList + ["CUP_O_KORD_RU","CUP_O_KORD_high_RU","CUP_O_SPG9_ChDKZ","CUP_O_Metis_RU"];
+					// 		};
+					// 	};
+					// 	if ((toLower(_realSide) isEqualTo "independent") || (toLower(_realSide) isEqualTo "indep")) then {
+					// 		_staticWeaponList = ["I_static_AA_F","I_Mortar_01_F","I_GMG_01_F","I_HMG_01_F","I_HMG_01_high_F","I_static_AT_F"];
+					// 	};
+					// 	private _action = ["GW_GetStatics","Static Weapons","",{},{true}] call ace_interact_menu_fnc_createAction;
+					// 	[_unit, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+					// 	{
+					// 		private _action = format ["GW_GetStatics_%1", _x];
+					// 		private _name = format ["%1", getText(configFile >> "CfgVehicles" >> _x >> "DisplayName")];
+					// 		private _statement = {
+					// 		    params ["_target", "_player", "_params"];
+					// 			_player setVariable [QEGVAR(StaticWeapons,type), _params];
+					// 			_player addItem "GW_Item_StaticDummy";
+					// 		};
+					// 		private _condition = {
+					// 		    params ["", "_player"];
+					// 			!("GW_Item_StaticDummy" in (items player)) || ((_player getVariable [QEGVAR(StaticWeapons,type), ""]) isEqualTo "")
+					// 		};
+					// 		private _action = [_action, _name, "", _statement, _condition, {}, _x] call ace_interact_menu_fnc_createAction;
+					// 		[_unit, 0, ["ACE_MainActions","GW_GetStatics"], _action] call ace_interact_menu_fnc_addActionToObject;
+					// 	} forEach _staticWeaponList;
+					// };				
 				};
 
 				if(GVARMAIN(mod_ACE3) && (isNil "GOL_ARSENAL_ALLOWED" || GOL_ARSENAL_ALLOWED isEqualTo 1)) then {
@@ -328,68 +326,67 @@ if (_isMan) then {
 				};
 			};
 
-			case "tiny_box": {
-				[_unit, _glHE, 8] call _fnc_AddObjectsCargo;
+			case "tiny_box": {		
+				[_unit, _glHE, 12] call _fnc_AddObjectsCargo;
 				[_unit, _glsmokeR, 3] call _fnc_AddObjectsCargo;
 				[_unit, _glflareW, 2] call _fnc_AddObjectsCargo;
 				[_unit, _glflareR, 2] call _fnc_AddObjectsCargo;
-				[_unit, _grenade, 4] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeY, 4] call _fnc_AddObjectsCargo;
+				[_unit, _grenade, 6] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeY, 8] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 2] call _fnc_AddObjectsCargo;
-
 				[_unit, _bandage, 15] call _fnc_AddObjectsCargo;
 				[_unit, _morph, 10] call _fnc_AddObjectsCargo;
 				if (GVARMAIN(mod_ACE3)) then {
 					[_unit, "ACE_salineIV", 5] call _fnc_AddObjectsCargo;
 					[_unit, _flashBang, 2] call _fnc_AddObjectsCargo;
+					[_unit, true, [0, 1.5, 0], 0, true] call ace_dragging_fnc_setDraggable;
+					[_unit, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
 				};
 
 				[_unit, _pistol_mag, 2] call _fnc_AddObjectsCargo;
-				[_unit, _rifle_mag_tr, 8] call _fnc_AddObjectsCargo;
-				[_unit, _rifleC_mag_tr, 4] call _fnc_AddObjectsCargo;
-				[_unit, _rifleGL_mag_tr, 8] call _fnc_AddObjectsCargo;
-				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 0.75)] call _fnc_AddObjectsCargo;
-				if (_LAT_ReUsable) then {
-					[_unit, _LAT_mag, 2] call _fnc_AddObjectsCargo;
-				} else {
-					[_unit, (_LAT select 0), 2] call _fnc_AddObjectsCargo;
-				};
-
+				[_unit, _rifle_mag_tr, 10] call _fnc_AddObjectsCargo;
+				[_unit, _rifleC_mag_tr, 6] call _fnc_AddObjectsCargo;
+				[_unit, _rifleGL_mag_tr, 10] call _fnc_AddObjectsCargo;
+				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 1.5)] call _fnc_AddObjectsCargo;
+				[_unit, _MAT_mag, 3] call _fnc_AddObjectsCargo;
+				[_unit, (_LAT select 0), 2] call _fnc_AddObjectsCargo;
 				[_unit, _demoCharge, 2] call _fnc_AddObjectsCargo;
 			};
 
 			case "tiny_box_special": {
-				[_unit, _smokegrenadeY, 2] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeB, 2] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeY, 4] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeB, 4] call _fnc_AddObjectsCargo;
 				[_unit, _bandage, 15] call _fnc_AddObjectsCargo;
 				[_unit, _morph, 8] call _fnc_AddObjectsCargo;
 				if (GVARMAIN(mod_ACE3)) then {
 					[_unit, "ACE_salineIV", 4] call _fnc_AddObjectsCargo;
+					[_unit, true, [0, 1.5, 0], 0, true] call ace_dragging_fnc_setDraggable;
+					[_unit, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
 				};
 				[_unit, _pistol_mag, 2] call _fnc_AddObjectsCargo;
-				[_unit, _rifleGL_mag_tr, 6] call _fnc_AddObjectsCargo;
-				[_unit, _rifle_mag_tr, 6] call _fnc_AddObjectsCargo;
-				[_unit, _rifleL_mag_tr, 8] call _fnc_AddObjectsCargo;
+				[_unit, _rifleGL_mag_tr, 8] call _fnc_AddObjectsCargo;
+				[_unit, _rifle_mag_tr, 4] call _fnc_AddObjectsCargo;
+				[_unit, _rifleL_mag_tr, 6] call _fnc_AddObjectsCargo;
 				[_unit, _rifleMarksman_mag_tr, 8] call _fnc_AddObjectsCargo;
-				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 0.75)] call _fnc_AddObjectsCargo;
-				[_unit, _MAT_mag, 2] call _fnc_AddObjectsCargo;
+				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 1.5)] call _fnc_AddObjectsCargo;
+				[_unit, _HAT_mag, 2] call _fnc_AddObjectsCargo;
 				[_unit, _AA_mag, 2] call _fnc_AddObjectsCargo;
 				[_unit, _demoCharge, 2] call _fnc_AddObjectsCargo;
 			};
 
 			case "small_box": {
-				[_unit, _glHE, 20] call _fnc_AddObjectsCargo;
+				[_unit, _glHE, 24] call _fnc_AddObjectsCargo;
 				[_unit, _glsmokeR, 20] call _fnc_AddObjectsCargo;
 				[_unit, _glflareW, 20] call _fnc_AddObjectsCargo;
 				[_unit, _glflareR, 10] call _fnc_AddObjectsCargo;
 				[_unit, _glflareG, 10] call _fnc_AddObjectsCargo;
-				[_unit, _grenade, 20] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeY, 20] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeG, 5] call _fnc_AddObjectsCargo;
-				[_unit, _bandage, 40] call _fnc_AddObjectsCargo;
+				[_unit, _grenade, 16] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeY, 15] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeB, 5] call _fnc_AddObjectsCargo;
+				[_unit, _bandage, 30] call _fnc_AddObjectsCargo;
 				if (GVARMAIN(mod_ACE3)) then {
 					[_unit, "ACE_salineIV", 15] call _fnc_AddObjectsCargo;
-					[_unit, _flashBang, 15] call _fnc_AddObjectsCargo;
+					[_unit, _flashBang, 10	] call _fnc_AddObjectsCargo;
 					if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {
 						[_unit, "ACE_elasticBandage", 100] call _fnc_AddObjectsCargo;
 						[_unit, "ACE_tourniquet", 50] call _fnc_AddObjectsCargo;
@@ -408,18 +405,17 @@ if (_isMan) then {
 				[_unit, _rifleC_mag_tr, 3] call _fnc_AddObjectsCargo;
 				[_unit, _rifleGL_mag, 7] call _fnc_AddObjectsCargo;
 				[_unit, _rifleGL_mag_tr, 7] call _fnc_AddObjectsCargo;
-				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 4)] call _fnc_AddObjectsCargo;
-				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 2)] call _fnc_AddObjectsCargo;
+				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 3)] call _fnc_AddObjectsCargo;
+				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 1)] call _fnc_AddObjectsCargo;
 
 				if (_LAT_ReUsable) then {
-					[_unit, _LAT_mag, 3] call _fnc_AddObjectsCargo;
+					[_unit, _LAT_mag, 2] call _fnc_AddObjectsCargo;
 				} else {
-					[_unit, (_LAT select 0), 3] call _fnc_AddObjectsCargo;
+					[_unit, (_LAT select 0), 4] call _fnc_AddObjectsCargo;
 				};
-				[_unit, _MAT_mag, 3] call _fnc_AddObjectsCargo;
-
+				[_unit, _MAT_mag, 4] call _fnc_AddObjectsCargo;
+				[_unit, _HAT_mag, 2] call _fnc_AddObjectsCargo;
 				[_unit, _demoCharge, 4] call _fnc_AddObjectsCargo;
-				[_unit, _satchelCharge, 2] call _fnc_AddObjectsCargo;
 			};
 
 			case "big_box": {
@@ -432,10 +428,10 @@ if (_isMan) then {
 				[_unit, _smokegrenadeY, 60] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeG, 15] call _fnc_AddObjectsCargo;
 
-				[_unit, _bandage, 50] call _fnc_AddObjectsCargo;
+				[_unit, _bandage, 40] call _fnc_AddObjectsCargo;
 				if (GVARMAIN(mod_ACE3)) then {
 					[_unit, "ACE_salineIV", 25] call _fnc_AddObjectsCargo;
-					[_unit, _flashBang, 25] call _fnc_AddObjectsCargo;
+					[_unit, _flashBang, 15] call _fnc_AddObjectsCargo;
 					if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {
 						[_unit, "ACE_elasticBandage", 100] call _fnc_AddObjectsCargo;
 						[_unit, "ACE_tourniquet", 50] call _fnc_AddObjectsCargo;
@@ -447,28 +443,25 @@ if (_isMan) then {
 					};
 				};
 
-				[_unit, _pistol_mag, 20] call _fnc_AddObjectsCargo;
-				[_unit, _rifle_mag, 15] call _fnc_AddObjectsCargo;
-				[_unit, _rifle_mag_tr, 15] call _fnc_AddObjectsCargo;
-				[_unit, _rifleC_mag, 10] call _fnc_AddObjectsCargo;
-				[_unit, _rifleC_mag_tr, 10] call _fnc_AddObjectsCargo;
-				[_unit, _rifleGL_mag, 15] call _fnc_AddObjectsCargo;
-				[_unit, _rifleGL_mag_tr, 15] call _fnc_AddObjectsCargo;
-				[_unit, _LMG_mag, ((COUNT_AR_MAGS(_LMG_mag)) * 8)] call _fnc_AddObjectsCargo;
-				[_unit, _MMG_mag, ((COUNT_AR_MAGS(_MMG_mag)) * 4)] call _fnc_AddObjectsCargo;
+				[_unit, _pistol_mag, 10] call _fnc_AddObjectsCargo;
+				[_unit, _rifle_mag_tr, 20] call _fnc_AddObjectsCargo;
+				[_unit, _rifleC_mag_tr, 6] call _fnc_AddObjectsCargo;
+				[_unit, _rifleGL_mag_tr, 20] call _fnc_AddObjectsCargo;
+				[_unit, _LMG_mag, ((COUNT_AR_MAGS(_LMG_mag)) * 3)] call _fnc_AddObjectsCargo;
+				[_unit, _MMG_mag, ((COUNT_AR_MAGS(_MMG_mag)) * 2)] call _fnc_AddObjectsCargo;
 
 				if (_LAT_ReUsable) then {
-					[_unit, _LAT_mag, 8] call _fnc_AddObjectsCargo;
-					[_unit, _LAT_mag_HE, 3] call _fnc_AddObjectsCargo;
+					[_unit, _LAT_mag, 4] call _fnc_AddObjectsCargo;
+					[_unit, _LAT_mag_HE, 2] call _fnc_AddObjectsCargo;
 				} else {
-					[_unit, (_LAT select 0), 6] call _fnc_AddObjectsCargo;
+					[_unit, (_LAT select 0), 4] call _fnc_AddObjectsCargo;
 				};
 
 				[_unit, _MAT_mag, 4] call _fnc_AddObjectsCargo;
-				[_unit, _MAT_mag_HE, 4] call _fnc_AddObjectsCargo;
+				[_unit, _MAT_mag_HE, 2] call _fnc_AddObjectsCargo;
 
-				[_unit, _demoCharge, 8] call _fnc_AddObjectsCargo;
-				[_unit, _satchelCharge, 4] call _fnc_AddObjectsCargo;
+				[_unit, _demoCharge, 6] call _fnc_AddObjectsCargo;
+				[_unit, _satchelCharge, 2] call _fnc_AddObjectsCargo;
 			};
 
 			case "med_box": {

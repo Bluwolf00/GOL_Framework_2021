@@ -28,3 +28,5 @@ ISNILS(_AA_mag,_MAT_mag);
 ISNILS(_LAT_mag_HE,_LAT_mag);
 ISNILS(_MAT_mag,_LAT_mag);
 ISNILS(_MAT_mag_HE,_MAT_mag);
+ISNILS(_HAT_mag,_MAT_mag);
+ISNILS(_HAT_mag_HE,_HAT_mag);
