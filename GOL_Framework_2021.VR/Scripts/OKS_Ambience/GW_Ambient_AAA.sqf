@@ -69,8 +69,15 @@ if (isNull gunner _arty) then {
     (gunner _arty) disableAI _x;
 } forEach ["TARGET","AUTOTARGET","FSM","AIMINGERROR","SUPPRESSION","CHECKVISIBLE","COVER","AUTOCOMBAT","MINEDETECTION","PATH","TEAMSWITCH"];
 
-
 _weapon = (_arty weaponsTurret [0]) select 0;
+if(isNil "_weapon") then {
+    _weapon = (_arty weaponsTurret [1]) select 0;
+};
+if(isNil "_weapon") then {
+    _weapon = (_arty weaponsTurret [2]) select 0;
+};
+if(isNil "_weapon") exitWith { SystemChat "Unable to find TurretWeapon for AAA. Exiting.."};
+
 _target = (_arty getRelPos [(random [0, 40, 100]), (10 + (random [-25, 0, 25]))]);
 _target set [2, 500];
 _arty doWatch _target;
@@ -91,25 +98,27 @@ _fnc_Fire = {
     params ["_arty", "_weapon","_targetPlayer"];
 
     _arty setVariable ["canFire", false];
-    _weaponState = (weaponState [_arty, [0], _weapon]);
-    for "_i" from 1 to selectRandom[15,20,25] step 1 do {
-        _arty action ["UseWeapon", _arty, (gunner _arty), 0];
-        sleep (getNumber(configfile >> "CfgWeapons" >> (_weaponState select 1) >> (_weaponState select 2) >> "reloadTime"));
-    };
-
-     if(typeName _targetPlayer isEqualTo "OBJECT") then {
-        if(_targetPlayer isKindOf "AIR") then {
-            sleep (random [1,2.5,4]);
-        } else {
-            sleep (random [6, 8, 10]);
+    if(!isNil "_weapon") then {
+        _weaponState = (weaponState [_arty, [0], _weapon]);
+        for "_i" from 1 to selectRandom[15,20,25] step 1 do {
+            _arty action ["UseWeapon", _arty, (gunner _arty), 0];
+            sleep (getNumber(configfile >> "CfgWeapons" >> (_weaponState select 1) >> (_weaponState select 2) >> "reloadTime"));
         };
-    } else {
-        sleep (random [5, 8, 11]);
-    };
 
-    if ((_weaponState select 4) < 1) then { // If out of ammo, reload
-        sleep 15;
-        _arty setVehicleAmmo 1;
+        if(typeName _targetPlayer isEqualTo "OBJECT") then {
+            if(_targetPlayer isKindOf "AIR") then {
+                sleep (random [1,2.5,4]);
+            } else {
+                sleep (random [6, 8, 10]);
+            };
+        } else {
+            sleep (random [5, 8, 11]);
+        };
+
+        if ((_weaponState select 4) < 1) then { // If out of ammo, reload
+            sleep 15;
+            _arty setVehicleAmmo 1;
+        };
     };
     _arty setVariable ["canFire", true];
 };

@@ -53,7 +53,7 @@ if (_role isEqualTo "jetp") then {
 
 _silencer = "rhsusf_acc_sfmb556";
 _pointer = "uk3cb_baf_llm_flashlight_black";
-_sight = "rhsusf_acc_eotech_xps3";
+_sight = "optic_arco_blk_f";
 _bipod = "rhs_acc_grip_ffg2";
 
 _rifle = ["hlc_rifle_416N", _silencer, _pointer, _sight, _bipod];
@@ -66,11 +66,11 @@ _rifleL_mag_tr = "hlc_30rnd_556x45_t_EMAG";
 _rifleGL_mag_tr = "hlc_30rnd_556x45_t_EMAG";
 _rifle_mag_tr = "hlc_30rnd_556x45_t_EMAG";
 
-_LMG = ["hlc_lmg_M60E4", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "hlc_100Rnd_762x51_T_M60E4";
+_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 
-_MMG = ["hlc_lmg_MG3KWS_b", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "hlc_250Rnd_762x51_T_MG3";
+_MMG = ["hlc_lmg_M60E4", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "hlc_100Rnd_762x51_T_M60E4";
 
 _sight = "";
 
@@ -83,7 +83,6 @@ _MAT_mag = "RPG7_F";
 
 _HAT = ["launch_O_Vorona_brown_F", _silencer, _pointer, _sight, _bipod];
 _HAT_mag = "Vorona_HEAT";
-
 
 _AA = ["rhs_weap_fim92", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "Titan_AA";

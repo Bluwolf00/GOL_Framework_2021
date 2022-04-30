@@ -32,16 +32,17 @@ Switch (_Faction) do {
 
 	case "SYRIA":{
 		// Modern Russian Armed Forces (RUSSIA) - OPFOR
-		_Wheeled = ["LOP_SYR_UAZ_DshKM","LOP_SYR_UAZ","LOP_SYR_UAZ_Open","LOP_SYR_KAMAZ_Transport","LOP_SYR_KAMAZ_Covered"];
-		_APC = ["LOP_SYR_BTR60","LOP_SYR_BTR70"];
+		_Wheeled = ["LOP_SYR_UAZ_DshKM","LOP_SYR_UAZ","LOP_SYR_UAZ_Open","UK3CB_ADA_O_Datsun_Pickup_PKM", "UK3CB_ADA_O_Datsun_Pickup", "UK3CB_ADA_O_V3S_Closed", "UK3CB_ADA_O_Pickup", "UK3CB_ADA_O_Pickup_DSHKM", "UK3CB_ADA_O_Van_Transport", "UK3CB_ADA_O_LR_SF_M2", "UK3CB_ADA_O_LR_SPG9","UK3CB_ADA_O_BTR40"];
+		_APC = ["LOP_SYR_BTR60","LOP_SYR_BTR70", "UK3CB_ADA_O_BTR40_MG", "UK3CB_ADA_O_MTLB_PKT"];
 		_Tank = ["LOP_SYR_T55"];
-		_Artillery = ["LOP_SYR_2S1","rhs_D30_vmf"];
-		_AntiAir = ["LOP_SYR_ZSU234","LOP_SYR_Static_ZU23"];
+		_Artillery = ["LOP_SYR_2S1","rhs_D30_vmf","UK3CB_ADA_O_Hilux_Rocket_Arty", "UK3CB_ADA_O_BM21"];
+		_AntiAir = ["UK3CB_ADA_O_V3S_Zu23","UK3CB_ADA_O_ZsuTank","UK3CB_ADA_O_Hilux_Zu23"];
 		_Helicopter = ["RHS_Mi24P_vdv","RHS_Mi8MTV3_vdv"];
-		_Transport = ["LOP_SYR_UAZ_Open"];
-		_Supply = ["LOP_SYR_KAMAZ_Medical","LOP_SYR_KAMAZ_Fuel","LOP_SYR_KAMAZ_Ammo","LOP_SYR_KAMAZ_Repair"];
+		_Transport = ["LOP_SYR_UAZ_Open","UK3CB_ADA_O_Datsun_Pickup", "UK3CB_ADA_O_V3S_Closed", "UK3CB_ADA_O_BTR40"];
+		_Supply = ["UK3CB_ADA_O_V3S_Reammo", "UK3CB_ADA_O_V3S_Refuel", "UK3CB_ADA_O_V3S_Recovery", "UK3CB_ADA_O_V3S_Repair", "UK3CB_ADA_O_Van_Fuel", "UK3CB_ADA_O_Ural_Recovery"];
 		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
 	};
+
 
 	case "TURKEY":{
 		// Modern Russian Armed Forces (RUSSIA) - OPFOR
