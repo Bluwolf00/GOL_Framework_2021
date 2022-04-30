@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=1.5707964;
 	scaleGridStep=10;
 	autoGroupingDist=10;
-	toggles=521;
+	toggles=513;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=2042;
+		nextID=2351;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6116;
+		nextID=6196;
 	};
 	class Camera
 	{
-		pos[]={67.069191,50.964581,15.262994};
-		dir[]={-0.0053370493,-0.62990737,0.77665842};
-		up[]={-0.004328568,0.77666754,0.62989676};
-		aside[]={0.99998081,1.1295924e-009,0.0068715885};
+		pos[]={75.112579,101.44273,-91.481155};
+		dir[]={0.0078724856,-0.54515111,0.83830547};
+		up[]={0.0051193167,0.83833802,0.54512799};
+		aside[]={0.99995822,-8.6038199e-009,-0.0093904166};
 	};
 };
 binarizationWanted=0;
@@ -23246,7 +23246,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=38;
+		items=39;
 		class Item0
 		{
 			dataType="Layer";
@@ -31028,7 +31028,7 @@ class Mission
 				class Item5
 				{
 					dataType="Trigger";
-					position[]={249.6613,5.2930908,529.65234};
+					position[]={249.6613,5,529.65234};
 					angle=3.1804442;
 					class Attributes
 					{
@@ -31041,11 +31041,10 @@ class Mission
 					};
 					id=842;
 					type="EmptyDetectorAreaR50";
-					atlOffset=0.29309082;
 				};
 			};
 			id=434;
-			atlOffset=0.74768448;
+			atlOffset=0.60113907;
 		};
 		class Item2
 		{
@@ -31700,6 +31699,19 @@ class Mission
 			title="Small Resupply";
 			description="Small resupply crates meant only for a fire-teams resupply. The Ammo Boxes have the standard ammunition for the Squad, the Basic Weapons Crate has the secondary ammunitions such as for the roles of MAT, AMAT, AMMG, MMG, Light Rifleman, Marksman. Medical box is for medical resupply.";
 			id=1963;
+		};
+		class Item38
+		{
+			dataType="Trigger";
+			position[]={193.243,5,143.922};
+			class Attributes
+			{
+				name="Trigger_51";
+				sizeA=0;
+				sizeB=0;
+			};
+			id=2350;
+			type="EmptyDetector";
 		};
 	};
 };

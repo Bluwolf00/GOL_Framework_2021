@@ -2,11 +2,11 @@
 	OKS_Createobjectives
 	Params: Position, Type, Range, Side, Patrols?
 
-	[GetPos player,"sector",300,EAST,false] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
-	[GetPos player,"sector",300,EAST,false] spawn OKS_CreateObjectives;
+	[Object_1,"sector",300,EAST,false] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
+	[Object_1,"sector",300,EAST,false] spawn OKS_CreateObjectives;
 
-	[Position,TypeOfObjective,Range,EAST,Patrols?] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
-	[Position,TypeOfObjective,Range,EAST,Patrols?] spawn OKS_CreateObjectives;
+	[Position/Object,TypeOfObjective,Range,EAST,Patrols?] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
+	[Position/Object,TypeOfObjective,Range,EAST,Patrols?] spawn OKS_CreateObjectives;
 */
 
 if(!isServer) exitWith {};
@@ -26,21 +26,28 @@ if(!isServer) exitWith {};
 
 	switch(typeName _Position) do {
 		case "OBJECT":{
-			_Area = _Position;
-			_Position = getPos _Position;
-			Private _LocationsInArea = OKS_Objectives select {_X inArea _Area};
 
-			if(!(_TypeOfObjective in ["sector","hostage","ammotruck","hvttruck"]) && count _LocationsInArea > 0) then {
-				_Location = SelectRandom _LocationsInArea;
-				OKS_Objectives deleteAt (OKS_Objectives find _Location);
-				_Position = getPos _Location;
+			if(["EmptyDetector", typeOf _Position] call BIS_fnc_inString || typeOf _Position == "LocationCamp_F") then {
+				_Area = _Position;
+				_Position = getPos _Position;
+				Private _LocationsInArea = OKS_Objectives select {_X inArea _Area};
+
+				if(!(_TypeOfObjective in ["sector","hostage","ammotruck","hvttruck"]) && count _LocationsInArea > 0) then {
+					_Location = SelectRandom _LocationsInArea;
+					OKS_Objectives deleteAt (OKS_Objectives find _Location);
+					_Position = getPos _Location;
+					_Area = nil;
+					_Dir = getdir _Location;
+					if(_Debug_Variable) then { SystemChat format ["Objective Logic found."]};
+				};
+			} else {
 				_Area = nil;
-				_Dir = getdir _Location;
-				if(_Debug_Variable) then { SystemChat format ["Objective Logic found."]};
+				_Dir = getDir _Position;
+				_Position = getPos _Position;
 			};
 		};
 		default {
-
+			_Area = nil;
 		}
 	};
 
@@ -153,12 +160,13 @@ switch (_TypeOfObjective) do {
 		if(isNil "_Dir") then {
 			_Dir = (random 360);
 		};
+
 		_Crate setDir _Dir;
 		_Crate setVehicleVarName format["OKS_Crate_%1",round(random 9999)];
 		_Crate allowDamage true;
 		_Crate enableSimulation true;
 
-		_AmmoCamp = selectRandom ["AmmoCampSite_1","AmmoCampSite_2","AmmoCampSite_3","AmmoCampSite_4","Bunker_2","Bunker_3","Bunker_4"];
+		_AmmoCamp = selectRandom ["AmmoCampSite_1","AmmoCampSite_2","AmmoCampSite_3","AmmoCampSite_4","Bunker_2","Bunker_3","Bunker_4","ArtilleryNest","ArtilleryNest_3","ArtilleryNest_4","ArtilleryNest_5","ArtilleryNest_6"];
 		[_AmmoCamp,getPos _Crate, [0,0,0], getDir _Crate] call LARs_fnc_spawnComp;
 		[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
 
@@ -212,7 +220,7 @@ switch (_TypeOfObjective) do {
 		_Crate allowDamage true;
 		_Crate enableSimulation true;
 
-		_AmmoCamp = selectRandom ["AmmoCampSite_3"];
+		_AmmoCamp = selectRandom ["AmmoCampSite_3","ArtilleryNest","ArtilleryNest_3","ArtilleryNest_4","ArtilleryNest_5","ArtilleryNest_6"];
 		[_AmmoCamp,getPos _Crate, [0,0,0], _Dir] call LARs_fnc_spawnComp;
 		//SystemChat str _SpawnPos;
 		[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
@@ -317,7 +325,7 @@ switch (_TypeOfObjective) do {
 
 		if(_Repetitions > 50) exitWith { systemChat "Unable to find position: Radio Tower Objective" };
 
-		_towerclass = selectRandom ["radiotower_1"];
+		_towerclass = selectRandom ["radiotower_1","radiotower_2","ArtilleryNest_2"];
 
 		if(isNil "_Dir") then {
 			_Dir = (random 360);
@@ -509,8 +517,8 @@ switch (_TypeOfObjective) do {
 		} else {
 			_Group = [_Arty,_Side] call OKS_AddVehicleCrew;
 		};
-
-		["ArtilleryNest",getPos _Arty, [0,0,0], getDir _Arty] call LARs_fnc_spawnComp;
+		_ArtilleryNest = selectRandom ["ArtilleryNest","ArtilleryNest_3","ArtilleryNest_4","ArtilleryNest_5","ArtilleryNest_6"];
+		[_ArtilleryNest,getPos _Arty, [0,0,0], getDir _Arty] call LARs_fnc_spawnComp;
 		sleep 5;
 		[getPos _Arty,_Side,(round random 4),15] spawn OKS_Populate_Sandbag;
 		[getPos _Arty,40,_Side] spawn OKS_Populate_StaticWeapons;
@@ -573,7 +581,8 @@ switch (_TypeOfObjective) do {
 			_Group = [_AA,_Side] call OKS_AddVehicleCrew;
 		};
 		sleep 2;
-		["AntiAir_1",getPos _AA, [0,0,0], getDir _AA] call LARs_fnc_spawnComp;
+		_AntiAirComp = selectRandom ["AntiAir_1","ArtilleryNest","ArtilleryNest_3","ArtilleryNest_4","ArtilleryNest_5","ArtilleryNest_6"];
+		[_AntiAirComp,getPos _AA, [0,0,0], getDir _AA] call LARs_fnc_spawnComp;
 		sleep 3;
 		[getPos _AA,_Side,(round random 4),15] spawn OKS_Populate_Sandbag;
 		[getPos _AA,40,_Side] spawn OKS_Populate_StaticWeapons;
