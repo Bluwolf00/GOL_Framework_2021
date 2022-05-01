@@ -132,6 +132,7 @@ OKS_EjectFromPlane = {
 
 	Params ["_Unit","_FlyingMHQObject","_Steerable","_Height"];
 	_Unit allowDamage false;
+	_Unit disableCollisionWith _FlyingMHQObject;
 	sleep 1;
 	_EjectPos = _FlyingMHQObject modelToWorld [0,-35,-15];
 	_Unit setPos _EjectPos;
@@ -144,7 +145,6 @@ OKS_EjectFromPlane = {
 	if !(_Steerable) then
 	{
 		WaitUntil {((getPosATL _Unit) Select 2) < _Height};
-
 		_Chute = CreateVehicle ["NonSteerable_Parachute_F", [0,0,1100], [], 0, "NONE"];
 		_Chute allowDamage False;
 		_Chute setDir (GetDir _Unit);

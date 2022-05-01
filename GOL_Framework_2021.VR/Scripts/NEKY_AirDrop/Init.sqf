@@ -9,3 +9,4 @@ if (hasInterface && !isServer) exitWith {false};	// Ensures only server or HC ru
 // Functions
 NEKY_Airbase = compile preprocessFileLineNumbers "Scripts\NEKY_AirDrop\NEKY_Airbase.sqf";
 NEKY_AirDrop = compile preprocessFileLineNumbers "Scripts\NEKY_AirDrop\NEKY_AirDrop.sqf";
+OKS_Helicopter_Patrol = compile preprocessFileLineNumbers "Scripts\NEKY_AirDrop\OKS_Helicopter_Patrol.sqf";
