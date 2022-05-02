@@ -26,7 +26,7 @@ if(!isNil "OKS_MHQ_Paradrop_Actions") then {
 };
 
 if(isServer) then {
-	missionNamespace setVariable ["MHQ_Paradrop_Info",[_ActionObject,_Steerable,_Height]];
+	missionNamespace setVariable ["MHQ_Paradrop_Info",[_ActionObject,_Steerable,_Height],true];
 	[
 		_FlyingMHQObject, /* 0 Vehicle Object */
 		10, /* 1 Delay */
@@ -34,7 +34,7 @@ if(isServer) then {
 		nil, /* 3 respawnCount */
 		{
 			/* 4 Code upon Respawn */
-			 Params ["_NewVehicle","_OldVehicle"];
+			Params ["_NewVehicle","_OldVehicle"];
 			_Settings = missionNamespace getVariable ["MHQ_Paradrop_Info",false];
 			_Settings params ["_ActionObject","_Steerable","_Height"];
 			[_ActionObject,_NewVehicle,_Steerable,_Height] remoteExec ["OKS_MHQ_Paradrop",0];
@@ -73,14 +73,13 @@ _id1 = _ActionObject addAction ["<t color='#31EC08'>Request MHQ Paradrop</t>", {
 ];
 
 _id2 = _ActionObject addAction ["<t color='#EC1508'>Cancel MHQ Paradrop</t>", {
-
 		Params ["_ActionObject", "_Unit", "_id", "_ExtraParams"];
 		_ExtraParams Params ["_FlyingMHQObject"];
 		OKS_MHQ_Paradrop_Array deleteAt (OKS_MHQ_Paradrop_Array find _Unit);
 		publicVariable "OKS_MHQ_Paradrop_Array";
 		_Any = (crew _FlyingMHQObject select 0);
 		if(isNil "_Any") exitWith {SystemChat "MHQ Paradrop - Failed to find crew in MHQ."};
-		[_Any,format ["%1 has cancelled his reinsert request..",_Unit]] remoteExec ["vehicleChat",0];
+		[_Any,format ["%1 has cancelled his reinsert request..",name _Unit]] remoteExec ["groupChat",0];
 	},
 	[_FlyingMHQObject],
 	0,
@@ -94,16 +93,16 @@ OKS_MHQ_Paradrop_Actions = [_id1,_id2];
 publicVariable "OKS_MHQ_Paradrop_Actions";
 
 OKS_MHQ_ChatMessage = {
-	if(player in OKS_MHQ_Paradrop_Array) then {
-		systemChat "Paradrop in 3 seconds..."
+	Params ["_Player"];
+	if(player == _Player) then {
+		systemChat format["Paradrop Initiated in 3 seconds..",name _Player];
 	};
 };
-
+ 
 _FlyingMHQObject addAction ["<t color='#ECE808'>Deploy Paratroopers</t>", {
-
 		Params ["_ActionObject", "_Unit", "_id", "_ExtraParams"];
-		_ActionObject setVariable ["isParadropping",true];
-		{[] remoteExec ["OKS_MHQ_ChatMessage",0]} foreach OKS_MHQ_Paradrop_Array;
+		_ActionObject setVariable ["isParadropping",true,true];
+		{[_X] remoteExec ["OKS_MHQ_ChatMessage",0]} foreach OKS_MHQ_Paradrop_Array;
 		sleep 3;
 		_ExtraParams Params ["_FlyingMHQObject","_Steerable","_Height"];
 		{
@@ -111,10 +110,12 @@ _FlyingMHQObject addAction ["<t color='#ECE808'>Deploy Paratroopers</t>", {
 			if(isNil "_Any") exitWith {SystemChat "Error: Pilot could not be found."};
 			[_Any,format ["%1 has been dropped..",name _X]] remoteExec ["groupChat",0];
 			[_X,_FlyingMHQObject,_Steerable,_Height] remoteExec ["OKS_EjectFromPlane",0];
-			OKS_MHQ_Paradrop_Array deleteAt (OKS_MHQ_Paradrop_Array find _X);
 			sleep 2.5;
 		} foreach OKS_MHQ_Paradrop_Array;
-		_ActionObject setVariable ["isParadropping",false];
+		sleep 1;
+		OKS_MHQ_Paradrop_Array = [];
+		publicVariable "OKS_MHQ_Paradrop_Array";
+		_ActionObject setVariable ["isParadropping",false,true];
 	},
 	[_FlyingMHQObject,_Steerable,_Height],
 	0,
@@ -134,7 +135,7 @@ OKS_EjectFromPlane = {
 	_Unit allowDamage false;
 	_Unit disableCollisionWith _FlyingMHQObject;
 	sleep 1;
-	_EjectPos = _FlyingMHQObject modelToWorld [0,-35,-15];
+	_EjectPos = _FlyingMHQObject modelToWorld [0,-15,-10];
 	_Unit setPos _EjectPos;
 	_Unit setDir (getDir _FlyingMHQObject);
 	_Unit setVelocity [(random 5), -10, -10];
@@ -145,15 +146,18 @@ OKS_EjectFromPlane = {
 	if !(_Steerable) then
 	{
 		WaitUntil {((getPosATL _Unit) Select 2) < _Height};
-		_Chute = CreateVehicle ["NonSteerable_Parachute_F", [0,0,1100], [], 0, "NONE"];
-		_Chute allowDamage False;
-		_Chute setDir (GetDir _Unit);
-		_Chute disableCollisionWith _Unit;
-		sleep 0.5;
-		_Chute setPosATL (GetPosATL _Unit);
-		_Velocity = (Velocity _Unit);
-		_Chute setVelocity [_Velocity select 0, _Velocity select 1, -25];
-		_Unit MoveInDriver _Chute;
+		Private ["_Chute"];
+		if(isServer) then {
+			_Chute = CreateVehicle ["NonSteerable_Parachute_F", [0,0,1100], [], 0, "NONE"];
+			_Chute allowDamage False;
+			_Chute setDir (GetDir _Unit);
+			_Chute disableCollisionWith _Unit;
+			sleep 0.5;
+			_Chute setPosATL (GetPosATL _Unit);
+			_Velocity = (Velocity _Unit);
+			_Chute setVelocity [_Velocity select 0, _Velocity select 1, -25];
+			_Unit MoveInDriver _Chute;
+		};
 	} else {
 		// Save backpack and content
 
