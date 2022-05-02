@@ -1,11 +1,11 @@
 // [spawn_1,waypoint_1,end_1,west,[4,["rhs_btr60_msv"]],[true,6]]] spawn OKS_Convoy_Spawn;
-// [spawnpos_1,waypoint_1,end_1,east,[4,["rhs_btr60_msv"]],[true,6]]] execVM "Scripts\OKS_Ambience\OKS_Convoy_Spawn.sqf";
+// [spawnpos_1,waypoint_1,end_1,east,[4,["rhs_btr60_msv"],6,30],[true,6]]] execVM "Scripts\OKS_Ambience\OKS_Convoy_Spawn.sqf";
 
 if(!isServer) exitWith {};
 
 Params ["_Spawn","_Waypoint","_End","_Side","_VehicleArray","_CargoArray"];
 _CargoArray Params ["_ShouldHaveCargo","_Soldiers"];
-_VehicleArray Params ["_Count","_Vehicles"];
+_VehicleArray Params ["_Count","_Vehicles","_SpeedMeterPerSecond","_DispersionInMeters"];
 
 Private ["_crewClass","_Units","_Leader","_Vehicles","_DismountCode","_Classname"];
 Private _ConvoyArray = [];
@@ -16,11 +16,15 @@ private _WaitUntilCombat = {
 		Params ["_Group","_Vehicle"];
 		_Group leaveVehicle _Vehicle;
 		{unassignVehicle _X; doGetOut _X;} foreach units _Group;
-		[_Group,500,15,[],[],false] spawn lambs_wp_fnc_taskRush;
+		[_Group,1000,30,[],[],false] spawn lambs_wp_fnc_taskRush;
 	};
 
 	Params ["_Vehicle","_Crew","_CargoGroup","_Debug_Variable"];
-    waitUntil {combatBehaviour _Crew isEqualTo "COMBAT"};
+    waitUntil {sleep 0.5; {behaviour _X isEqualTo "COMBAT"} count units _Crew > 0};
+	_CargoGroup setBehaviour "COMBAT";
+	_Crew setBehaviour "COMBAT";
+	_CargoGroup setCombatMode "RED"; 
+	_Crew setCombatMode "RED"; 
     if(_Debug_Variable) then {systemChat format [systemChat "Ambush Detected. Halting Convoy.."]};
     _Vehicle forceSpeed 0;
     _Vehicle setFuel 0;
@@ -34,7 +38,7 @@ private _WaitUntilCombat = {
     	_Vehicle setFuel 1;
 
 		if(_Debug_Variable) then {systemChat format ["Hunt Applied to %1 in %2 - %3",_Crew,_Vehicle,[configFile >> "CfgVehicles" >> typeOf _Vehicle] call BIS_fnc_displayName]};
-    	[_Crew, 500, 60, [], [], false] spawn lambs_wp_fnc_taskHunt;
+    	[_Crew, 1000, 60, [], [], false] spawn lambs_wp_fnc_taskHunt;
     } else {
     	if(_Debug_Variable) then {systemChat format ["Vehicle is unarmed, dismount and rush."]};
     	[_Crew,_Vehicle] spawn _DismountCode;
@@ -110,14 +114,15 @@ For "_i" from 1 to _Count do {
 	};
 
 
-	waitUntil {sleep 1; systemChat "Waiting for clearance near _Spawn"; (getPos _Spawn nearEntities ["LandVehicle", 20]) isEqualTo []};
+	waitUntil {sleep 1; if(_Debug_Variable) then {systemChat "Waiting for clearance near _Spawn"}; (getPos _Spawn nearEntities ["LandVehicle", _DispersionInMeters]) isEqualTo []};
 	if(_Debug_Variable) then {systemChat format ["Spawning Vehicle.."]};
 
 	if(_Vehicles isNotEqualTo []) then {
-		systemChat str _Vehicles;
 		_Classname = _Vehicles select 0;
 		_Vehicles deleteAt 0;
-		systemChat str [_Classname,_Vehicles];
+		if(_Debug_Variable) then{
+			systemChat str [_Classname,_Vehicles];
+		}		
 	};
 	_Vehicle = CreateVehicle [_Classname,getPos _Spawn];
 	_Vehicle setDir (getDir _Spawn);
@@ -146,13 +151,15 @@ For "_i" from 1 to _Count do {
         _Driver setRank "PRIVATE";
         _Driver moveinDriver _Vehicle;
     };
-    _Vehicle forceSpeed 6;
-    _Group setBehaviour "SAFE";
+    _Vehicle forceSpeed _SpeedMeterPerSecond;
+    _Group setBehaviour "CARELESS";
+	_Group setCombatMode "BLUE";
     _WP = _Group addWaypoint [getPos _Waypoint,0];
     _WP setWaypointType "MOVE";
 
 	_CargoGroup = createGroup [_Side,true];
 	_CargoGroup setVariable ["hc_blacklist",true];
+	
 
     Private _Position = _End getPos [25+(random 15),round(random 360)];
     _EndWP = _Group addWaypoint [_Position,1];
@@ -174,9 +181,22 @@ For "_i" from 1 to _Count do {
 			_Unit MoveInCargo _Vehicle;
 		};
     };
+	_CargoGroup setBehaviour "CARELESS";
+	_CargoGroup setCombatMode "BLUE";
     _ConvoyArray pushBackUnique _Group;
+	_ConvoyArray pushBackUnique _CargoGroup;
     [_Vehicle,_Group,_CargoGroup,_Debug_Variable] spawn _WaitUntilCombat;
 };
 
-waitUntil{ {combatBehaviour _X isEqualTo "COMBAT"} count _ConvoyArray > 0};
-{_X setCombatBehaviour "COMBAT"} foreach _ConvoyArray;
+waitUntil{
+	sleep 2;
+	{
+		{getPos _X select 2 <= 125 && isPlayer _X} count ((leader _X) targets [true, 0, [], 120]) > 0;
+	} count _ConvoyArray > 0
+	||
+	{
+		{!Alive _X} count units _X > 0
+	} count _ConvoyArray > 0;
+};
+if(_Debug_Variable) then {SystemChat "Detected Enemy. Enabling Combat."};
+{_X setBehaviour "COMBAT"; _X setCombatMode "RED"; } foreach _ConvoyArray;
