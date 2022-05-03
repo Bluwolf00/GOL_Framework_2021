@@ -9,7 +9,7 @@ _VehicleArray Params ["_Count","_Vehicles","_SpeedMeterPerSecond","_DispersionIn
 
 Private ["_crewClass","_Units","_Leader","_Vehicles","_DismountCode","_Classname"];
 Private _ConvoyArray = [];
-private _Debug_Variable = true;
+private _Debug_Variable = false;
 private _WaitUntilCombat = {
 
 	private _DismountCode = {
@@ -191,7 +191,11 @@ For "_i" from 1 to _Count do {
 waitUntil{
 	sleep 2;
 	{
-		{getPos _X select 2 <= 125 && isPlayer _X} count ((leader _X) targets [true, 0, [], 120]) > 0;
+		{isTouchingGround (vehicle _X) && isPlayer _X} count ((leader _X) targets [true, 0, [], 20]) > 0;
+	} count _ConvoyArray > 0
+	||
+	{
+		{!isTouchingGround (vehicle _X) && isPlayer _X} count ((leader _X) targets [true, 1000, [], 20]) > 0;
 	} count _ConvoyArray > 0
 	||
 	{
