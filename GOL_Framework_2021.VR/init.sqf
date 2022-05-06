@@ -11,10 +11,8 @@ if(HasInterface && isNil "OKS_FRIENDLY_SIDE") then {
 	publicVariable "OKS_FRIENDLY_SIDE";
 };
 
-/* ServiceStation & Callsign ACE Actions */
-ExecVM "Modules\Callsigns\ACE_Action.sqf";
+/* Set GOL Mission Settings */
 Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
-
 Sleep 5;
 
 	if(GOL_NEKY_PARADROP isEqualTo 1 || GOL_NEKY_RESUPPLY isEqualTo 1 || GOL_NEKY_PICKUP isEqualTo 1 || GOL_OKS_SUPPORT isEqualTo 1) then {
