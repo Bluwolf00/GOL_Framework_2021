@@ -9,7 +9,7 @@ private ["_Temp","_AllHitPoints","_AllHitPointsName","_AllHitPointsValue","_HitP
 Private _Debug_Variable = true;
 //if(_Debug_Variable) then {systemChat format [" "]};
 
-_Friendlies setVariable ["hc_blacklist", true];
+_Friendlies setVariable ["acex_headless_blacklist", true];
 {_X disableAI "PATH"; if(_ShouldBeCaptive) then {_X setCaptive true} } foreach units _Friendlies;
 
 waitUntil {sleep 5; if(_Debug_Variable) then {[format ["Checking for Task_Settings"]] remoteExec ["systemChat",0]}; !(isNil "OKS_Task_Setting")};

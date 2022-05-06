@@ -16,7 +16,7 @@ private _WaitUntilCombat = {
 		Params ["_Group","_Vehicle"];
 		_Group leaveVehicle _Vehicle;
 		{unassignVehicle _X; doGetOut _X;} foreach units _Group;
-		[_Group,1000,30,[],[],false] spawn lambs_wp_fnc_taskRush;
+		[_Group,1500,30,[],[],false] spawn lambs_wp_fnc_taskRush;
 	};
 
 	Params ["_Vehicle","_Crew","_CargoGroup","_Debug_Variable"];
@@ -38,7 +38,7 @@ private _WaitUntilCombat = {
     	_Vehicle setFuel 1;
 
 		if(_Debug_Variable) then {systemChat format ["Hunt Applied to %1 in %2 - %3",_Crew,_Vehicle,[configFile >> "CfgVehicles" >> typeOf _Vehicle] call BIS_fnc_displayName]};
-    	[_Crew, 1000, 60, [], [], false] spawn lambs_wp_fnc_taskHunt;
+    	[_Crew, 1500, 60, [], [], false] spawn lambs_wp_fnc_taskHunt;
     } else {
     	if(_Debug_Variable) then {systemChat format ["Vehicle is unarmed, dismount and rush."]};
     	[_Crew,_Vehicle] spawn _DismountCode;
@@ -129,7 +129,7 @@ For "_i" from 1 to _Count do {
 	_Vehicle setVehicleLock "LOCKED";
 
     _Group = createGroup _Side;
-    _Group setVariable ["hc_blacklist",true];
+    _Group setVariable ["acex_headless_blacklist",true];
 	_Group setVariable ["lambs_danger_disableAI", true];
 
     if(_Debug_Variable) then {systemChat format ["Group: %3 Side: %2 - %1 Class Selected",_crewClass,_Side,_Group]};
@@ -158,7 +158,7 @@ For "_i" from 1 to _Count do {
     _WP setWaypointType "MOVE";
 
 	_CargoGroup = createGroup [_Side,true];
-	_CargoGroup setVariable ["hc_blacklist",true];
+	_CargoGroup setVariable ["acex_headless_blacklist",true];
 	
 
     Private _Position = _End getPos [25+(random 15),round(random 360)];
@@ -195,7 +195,7 @@ waitUntil{
 	} count _ConvoyArray > 0
 	||
 	{
-		{!isTouchingGround (vehicle _X) && isPlayer _X} count ((leader _X) targets [true, 1000, [], 20]) > 0;
+		{(vehicle _X) isKindOf "AIR" && isPlayer _X} count ((leader _X) targets [true, 1000, [], 20]) > 0;
 	} count _ConvoyArray > 0
 	||
 	{

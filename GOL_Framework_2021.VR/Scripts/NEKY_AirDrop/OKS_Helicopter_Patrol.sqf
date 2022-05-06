@@ -60,7 +60,7 @@ OKS_SpawnPilotAndCrew = {
 
 	Params ["_Side","_PilotClasses","_Heli"];
 	_HeliGroup = CreateGroup _Side;
-	_HeliGroup setVariable ["hc_blacklist",true];
+	_HeliGroup setVariable ["acex_headless_blacklist",true];
 	_HeliGroup setVariable ["lambs_danger_disableAI", true];
 	_Pilot = _HeliGroup CreateUnit [(_PilotClasses call BIS_FNC_selectRandom), [0,0,100], [], 0, "NONE"];
 	_Pilot assignAsDriver _Heli;
@@ -113,7 +113,7 @@ OKS_SpawnCargo = {
 		for "_y" from 1 to (_Units select 0) do
 		{
 			_Group = CreateGroup _Side;
-			_Group setVariable ["hc_blacklist",true];
+			_Group setVariable ["acex_headless_blacklist",true];
 			_Group setVariable ["lambs_danger_disableAI", true];
 			for "_i" from 1 to (_UnitsPerGroup + _SpareIndex) do
 			{

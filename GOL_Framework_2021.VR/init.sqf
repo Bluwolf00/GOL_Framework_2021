@@ -11,8 +11,7 @@ if(HasInterface && isNil "OKS_FRIENDLY_SIDE") then {
 	publicVariable "OKS_FRIENDLY_SIDE";
 };
 
-/* Headless & ServiceStation */
-[] execVM "Scripts\HeadlessClient\HeadlessClient.sqf";
+/* ServiceStation & Callsign ACE Actions */
 ExecVM "Modules\Callsigns\ACE_Action.sqf";
 Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 

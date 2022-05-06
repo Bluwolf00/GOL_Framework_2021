@@ -51,6 +51,7 @@ private [
 	"_rifle","_rifle_mag","_rifle_mag_tr",
 	"_rifleL","_rifleL_mag","_rifleL_mag_tr",
 	"_rifleC","_rifleC_mag","_rifleC_mag_tr",
+	"_pdw","_pdw_mag","_pdw_mag_tr",
 	"_rifleGL","_rifleGL_mag","_rifleGL_mag_tr",
 	"_rifleMarksman","_rifleMarksman_mag","_rifleMarksman_mag_tr",
 	"_rifle_Diver","_rifle_Diver_mag","_rifle_Diver_mag_tr",
@@ -345,7 +346,7 @@ if (_isMan) then {
 
 				[_unit, _pistol_mag, 2] call _fnc_AddObjectsCargo;
 				[_unit, _rifle_mag_tr, 10] call _fnc_AddObjectsCargo;
-				[_unit, _rifleC_mag_tr, 6] call _fnc_AddObjectsCargo;
+				[_unit, _rifleC_mag_tr, 8] call _fnc_AddObjectsCargo;
 				[_unit, _rifleGL_mag_tr, 10] call _fnc_AddObjectsCargo;
 				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 1.5)] call _fnc_AddObjectsCargo;
 				[_unit, _MAT_mag, 3] call _fnc_AddObjectsCargo;
@@ -401,8 +402,8 @@ if (_isMan) then {
 				[_unit, _pistol_mag, 10] call _fnc_AddObjectsCargo;
 				[_unit, _rifle_mag, 9] call _fnc_AddObjectsCargo;
 				[_unit, _rifle_mag_tr, 9] call _fnc_AddObjectsCargo;
-				[_unit, _rifleC_mag, 3] call _fnc_AddObjectsCargo;
-				[_unit, _rifleC_mag_tr, 3] call _fnc_AddObjectsCargo;
+				[_unit, _rifleC_mag, 5] call _fnc_AddObjectsCargo;
+				[_unit, _rifleC_mag_tr, 5] call _fnc_AddObjectsCargo;
 				[_unit, _rifleGL_mag, 7] call _fnc_AddObjectsCargo;
 				[_unit, _rifleGL_mag_tr, 7] call _fnc_AddObjectsCargo;
 				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 3)] call _fnc_AddObjectsCargo;

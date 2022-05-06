@@ -27,7 +27,7 @@ systemchat str ["FASTROPE",_Side,_Classname,_Start,_Drop,_Exit,_HuntZone];
 		_heli = createVehicle [_Classname, _Start, [], 0, "NONE"];
 		[_heli] call ace_fastroping_fnc_equipFRIES;
 		_crew = createGroup _Side;
-		_crew setVariable ["hc_blacklist",true];
+		_crew setVariable ["acex_headless_blacklist",true];
 		_crew setVariable ["lambs_danger_disableGroupAI",true];
 
 		_pilot = _crew CreateUnit [(_PilotClasses call BIS_fnc_selectRandom), [0,0,0], [], 0, "NONE"];
@@ -45,7 +45,7 @@ systemchat str ["FASTROPE",_Side,_Classname,_Start,_Drop,_Exit,_HuntZone];
 		};
 
 		_Group = CreateGroup _Side;
-		_Group setVariable ["hc_blacklist",true];
+		_Group setVariable ["acex_headless_blacklist",true];
 		_Group setVariable ["lambs_danger_disableGroupAI",true];
 		_Groups pushBack _Group;
 		for "_i" from 1 to _EmptyCargoSeats do

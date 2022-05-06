@@ -48,7 +48,7 @@
 
 		// Create the Garrison Group
 		_Group = CreateGroup _Side;
-		_Group setVariable ["hc_blacklist",true];
+		_Group setVariable ["acex_headless_blacklist",true];
 		for "_i" from 1 to _NumberInfantry do
 		{
 			Private "_Unit";

@@ -95,13 +95,13 @@ if ((dayTime > 04.30) and (dayTime < 19.30)) then {_SignalClass = "SmokeShellGre
 
 // Spawning Heli & Crew
 _Heli = CreateVehicle [_HeliClass, (_STD select 0), [], 0, "FLY"];
-_Heli setVariable ["hc_blacklist", true];
+_Heli setVariable ["acex_headless_blacklist", true];
 _Heli setDir ([(_STD select 0), (_STD select 1)] call BIS_fnc_DirTo);
 _Heli AllowDamage _Vulnerable;
 
 // Create object and attach to heli
 _Vehicle = CreateVehicle [_VehicleClass, [0,0,1000], [], 0, "NONE"];
-_Vehicle setVariable ["hc_blacklist", true];
+_Vehicle setVariable ["acex_headless_blacklist", true];
 _Vehicle DisableCollisionWith _Heli;
 ClearItemCargoGlobal _Vehicle;
 ClearWeaponCargoGlobal _Vehicle;
@@ -121,7 +121,7 @@ if (_VehicleSide != SideUnknown) then {[_VehicleSide,_FillCargo,_Waypoints,_Vehi
 
 _Crew = CreateGroup _Side;
 _Pilot = _Crew CreateUnit [(_PilotClasses call BIS_FNC_SelectRandom), [0,0,0], [], 0, "NONE"];
-_Crew setVariable ["hc_blacklist", true];
+_Crew setVariable ["acex_headless_blacklist", true];
 _Pilot moveInDriver _Heli;
 _Pilot SetBehaviour "CARELESS";
 _Pilot setCombatMode "BLUE";

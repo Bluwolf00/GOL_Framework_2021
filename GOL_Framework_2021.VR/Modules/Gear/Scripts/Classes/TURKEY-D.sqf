@@ -87,6 +87,10 @@ _HAT_mag = "Vorona_HEAT";
 _AA = ["rhs_weap_fim92", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "Titan_AA";
 
+_pdw = ["UK3CB_MP5K_PDW", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "30Rnd_9x21_Mag_SMG_02_Tracer_Red";
+_pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
+
 _pistol = ["hgun_P07_F", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "16Rnd_9x21_Mag";
 

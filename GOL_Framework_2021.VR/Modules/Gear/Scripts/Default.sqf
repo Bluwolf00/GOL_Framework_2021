@@ -246,11 +246,11 @@ switch (toLower(_role)) do {
 
 	case "p": {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
-		[_rifleC, _rifleC_mag_tr, ""] call _addPrimary;
+		[_pdw, _pdw_mag_tr, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
 		[[_gps,1],[_smokegrenadeY,2],[_smokegrenadeP,3],[_grenade,1]] call _addToUniform;
-		[[_toolkit,1],[_rifleC_mag_tr,2]] call _addToVest;
+		[[_toolkit,1],[_pdw_mag_tr,4]] call _addToVest;
 		_FAKBig call _addToBackpack;
 		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {

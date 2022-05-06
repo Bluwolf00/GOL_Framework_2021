@@ -17,7 +17,7 @@ _Settings Params ["_Leaders","_Units"];
 
 if(_InfantryNumber > _MaxCargo) exitWith { systemChat "Vehicle is unable to hold the escort. Find another vehicle."};
 _Group = createGroup _Side;
-_Group setVariable ["hc_blacklist", true];
+_Group setVariable ["acex_headless_blacklist", true];
 
 For "_i" from 1 to _InfantryNumber do {
 	if ( (count (units _Group)) == 0 ) then

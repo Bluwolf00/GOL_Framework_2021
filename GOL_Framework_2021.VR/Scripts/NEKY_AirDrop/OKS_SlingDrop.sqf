@@ -24,7 +24,7 @@ switch (_Side) do {
 	_heli = createVehicle [_Classname, _Start, [], 0, "NONE"];
 	_crew = createGroup _Side;
 	_cargo = createGroup _Side;
-	_crew setVariable ["hc_blacklist",true];
+	_crew setVariable ["acex_headless_blacklist",true];
 	_crew setVariable ["lambs_danger_disableGroupAI",true];
 
 	_pilot = _crew CreateUnit [(_PilotClasses call BIS_fnc_selectRandom), [0,0,0], [], 0, "NONE"];
@@ -46,7 +46,7 @@ switch (_Side) do {
 	_vehicle enableRopeAttach true;
 
 	_Cargo = [_vehicle,_Side] call OKS_AddVehicleCrew;
-	_Cargo setVariable ["hc_blacklist",true];
+	_Cargo setVariable ["acex_headless_blacklist",true];
 	_Cargo setVariable ["lambs_danger_disableGroupAI",true];
 	//_driver = _Cargo CreateUnit [(_UnitTypes call BIS_fnc_selectRandom), [0,0,0], [], 0, "NONE"];
 	//_gunner = _Cargo CreateUnit [(_UnitTypes call BIS_fnc_selectRandom), [0,0,0], [], 0, "NONE"];
