@@ -84,6 +84,9 @@ _AA_mag = "Titan_AA";
 _pistol = ["rhsusf_weap_m1911a1", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhsusf_mag_7x45acp_MHP";
 
+_pdw = ["rhs_weap_pp2000", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "rhs_mag_9x19mm_7n31_44";
+
 _silencer = "";
 _pointer = "";
 _sight = "";

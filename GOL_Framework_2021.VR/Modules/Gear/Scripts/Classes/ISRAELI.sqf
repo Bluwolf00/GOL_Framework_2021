@@ -97,3 +97,7 @@ _AA_mag = "Titan_AA";
 // Pistol
 _pistol = ["rhsusf_weap_m9", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhsusf_mag_15Rnd_9x19_FMJ";
+
+_pdw = ["UK3CB_MP5A4", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";
+_pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";

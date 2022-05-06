@@ -102,3 +102,8 @@ _MAT_mag_HE = "";
 // Pistol
 _pistol = ["", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "";
+
+// PDW
+_pdw = ["", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "";
+_pdw_mag_tr = "";

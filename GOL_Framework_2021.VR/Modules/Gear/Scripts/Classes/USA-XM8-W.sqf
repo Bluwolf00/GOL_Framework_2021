@@ -49,7 +49,8 @@ _rifleGL_mag = "hlc_30rnd_556x45_EPR_G36";
 _rifleGL_mag_tr = "hlc_30rnd_556x45_Tracers_G36";
 _rifleL_mag = "hlc_20Rnd_762x51_barrier_M14";
 _rifleL_mag_tr = "hlc_20Rnd_762x51_T_M14";
-_rifleC_mag = "30Rnd_9x21_Mag_SMG_02_Tracer_Red";
+_rifleC_mag = "hlc_30rnd_556x45_EPR_G36";
+_rifleC_mag_tr = "hlc_30rnd_556x45_Tracers_G36";
 
 _LMG = ["rhs_weap_m249", _silencer, _pointer, _sight, ""];
 _LMG_mag = "rhsusf_200rnd_556x45_mixed_box";
@@ -73,6 +74,10 @@ _AA_mag = "Titan_AA";
 
 _pistol = ["rhsusf_weap_m1911a1", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhsusf_mag_7x45acp_MHP";
+
+_pdw = ["UK3CB_MP5A4", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";
+_pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
 
 _silencer = "";
 _pointer = "hlc_acc_flashlight_pcap";

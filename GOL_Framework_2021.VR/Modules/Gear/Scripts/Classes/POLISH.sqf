@@ -92,6 +92,10 @@ _AA_mag = "rhs_mag_9k38_rocket";
 _pistol = ["hlc_Pistol_M11A1", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "hlc_13Rnd_9x19_B_P228";
 
+_pdw = ["UK3CB_MP5A4", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";
+_pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
+
 _rifleMarksman = ["arifle_MSBS65_Mark_black_F", _silencer, _pointer, _sight, _bipod];
 _rifleMarksman_mag = "30Rnd_65x39_caseless_msbs_mag";
 _rifleMarksman_mag_tr = "30Rnd_65x39_caseless_msbs_mag_Tracer";

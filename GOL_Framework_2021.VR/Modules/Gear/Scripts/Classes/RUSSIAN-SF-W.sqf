@@ -81,6 +81,9 @@ _AA_mag = "rhs_mag_9k38_rocket";
 _pistol = ["rhs_weap_tt33", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhs_mag_762x25_8";
 
+_pdw = ["rhs_weap_pp2000", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "rhs_mag_9x19mm_7n31_44";
+
 _silencer = "";
 _pointer = "";
 _sight = "rhs_acc_pso1m21";

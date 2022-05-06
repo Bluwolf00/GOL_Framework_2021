@@ -58,14 +58,15 @@ _sight = "rhs_acc_2dpzenit";
 _bipod = "";
 
 _rifle = ["hlc_rifle_aks74", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["rhs_weap_m3a1", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["arifle_AKS_F", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["hlc_rifle_aks74_GL", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_m76", _silencer, _pointer, "rhs_acc_1p29", _bipod];
-_rifleC_mag = "rhsgref_30rnd_1143x23_M1T_SMG";
 _rifle_mag = "hlc_30Rnd_545x39_EP_ak_Black";
 _rifle_mag_tr = "hlc_30Rnd_545x39_t_ak_Black";
 _rifleGL_mag = "hlc_30Rnd_545x39_EP_ak_Black";
 _rifleGL_mag_tr = "hlc_30Rnd_545x39_t_ak_Black";
+_rifleC_mag = "rhs_30Rnd_545x39_7N22_plum_AK";
+_rifleC_mag_tr = "rhs_30Rnd_545x39_AK_plum_green";
 _rifleL_mag = "rhsgref_10Rnd_792x57_m76";
 
 _MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
@@ -92,6 +93,10 @@ _AA_mag = "rhs_mag_9k38_rocket";
 
 _pistol = ["hlc_pistol_P226R_357Combat", _silencer, "acc_flashlight_pistol", "hlc_optic_hp", _bipod];
 _pistol_mag = "hlc_12Rnd_357SIG_JHP_P226";
+
+_pdw = ["UK3CB_MP5A4", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";
+_pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
 
 _sight = "rhs_acc_pso1m21";
 

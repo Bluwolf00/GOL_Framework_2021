@@ -88,6 +88,10 @@ _AA_mag = "Titan_AA";
 _pistol = ["rhsusf_weap_glock17g4", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhsusf_mag_17Rnd_9x19_JHP";
 
+_pdw = ["UK3CB_MP5A4", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";
+_pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
+
 // Marksman
 _rifleMarksman = ["hlc_rifle_psg1A1", _silencer, _pointer, "hlc_optic_STANAGZF_G3", "bipod_01_f_blk"];
 _rifleMarksman_mag = "hlc_20rnd_762x51_b_G3";

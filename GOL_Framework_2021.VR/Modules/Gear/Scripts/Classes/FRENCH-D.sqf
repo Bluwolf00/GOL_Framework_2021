@@ -75,6 +75,10 @@ _AA_mag = "Titan_AA";
 _pistol = ["hlc_pistol_Mk25", _silencer, "hlc_acc_tlr1", "hlc_optic_vtac", _bipod];
 _pistol_mag = "hlc_15Rnd_9x19_B_P226";
 
+_pdw = ["UK3CB_MP5A4", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";
+_pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
+
 _silencer = "";
 _pointer = "";
 _sight = "hlc_optic_leupoldm3a";

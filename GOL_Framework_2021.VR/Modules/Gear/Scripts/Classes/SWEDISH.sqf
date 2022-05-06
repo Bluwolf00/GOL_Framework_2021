@@ -54,7 +54,7 @@ _bipod = "rhsusf_acc_grip3";
 
 // Primary Weapon
 _rifle = ["hlc_rifle_SG551SB_TAC", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["SMG_05_F", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["hlc_rifle_SG553SB_TAC", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["hlc_rifle_SG551SB_TAC_GL", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["hlc_rifle_g3a3ris", _silencer, _pointer, _sight, _bipod];
 _rifleMarksman = ["hlc_rifle_g3a3", _silencer, _pointer, "hlc_optic_zf95_g3", _bipod];
@@ -62,7 +62,8 @@ _rifle_mag = "hlc_30Rnd_556x45_EPR_sg550";
 _rifle_mag_tr = "hlc_30Rnd_556x45_T_sg550";
 _rifleGL_mag = "hlc_30Rnd_556x45_EPR_sg550";
 _rifleGL_mag_tr = "hlc_30Rnd_556x45_T_sg550";
-_rifleC_mag = "hlc_30Rnd_9x19_B_MP5";
+_rifleC_mag = "hlc_30Rnd_556x45_EPR_sg550";
+_rifleC_mag_tr = "hlc_30Rnd_556x45_T_sg550";
 _rifleL_mag = "hlc_20rnd_762x51_barrier_G3";
 _rifleL_mag_tr = "hlc_20rnd_762x51_T_G3";
 _rifleMarksman_mag = "hlc_20Rnd_762x51_b_G3";
@@ -97,3 +98,7 @@ _AA_mag = "Titan_AA";
 // Pistol
 _pistol = ["rhsusf_weap_glock17g4", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhsusf_mag_17Rnd_9x19_FMJ";
+
+_pdw = ["UK3CB_MP5A4", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";
+_pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";

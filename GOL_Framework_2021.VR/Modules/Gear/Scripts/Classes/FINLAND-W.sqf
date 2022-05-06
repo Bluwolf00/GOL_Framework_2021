@@ -50,7 +50,7 @@ _bipod = "";
 
 // Primary Weapon
 _rifle = ["arifle_AK12_F", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_smg_mp5a3", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["arifle_AKS_F", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["arifle_AK12_GL_F", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_svdp", _silencer, _pointer, "rhs_acc_pso1m21", _bipod];
 _rifleMarksman = ["rhs_weap_svdp", _silencer, _pointer, "rhs_acc_pso1m21", _bipod];
@@ -58,7 +58,8 @@ _rifle_mag = "hlc_30Rnd_762x39_AP_ak_Valmet";
 _rifle_mag_tr = "hlc_30Rnd_762x39_t_ak_Valmet";
 _rifleGL_mag = "hlc_30Rnd_762x39_AP_ak_Valmet";
 _rifleGL_mag_tr = "hlc_30Rnd_762x39_t_ak_Valmet";
-_rifleC_mag = "hlc_30Rnd_9x19_B_MP5";
+_rifleC_mag = "rhs_30Rnd_545x39_7N22_AK";
+_rifleC_mag_tr = "hlc_30Rnd_545x39_t_ak";
 _rifleMarksman_mag = "rhs_10Rnd_762x54mmR_7N14";
 _rifleMarksman_mag_tr = "ACE_10Rnd_762x54_Tracer_mag";
 
@@ -91,4 +92,8 @@ _AA_mag = "Titan_AA";
 // Pistol
 _pistol = ["rhsusf_weap_glock17g4", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhsusf_mag_17Rnd_9x19_FMJ";
+
+_pdw = ["UK3CB_MP5A4", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";
+_pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
 

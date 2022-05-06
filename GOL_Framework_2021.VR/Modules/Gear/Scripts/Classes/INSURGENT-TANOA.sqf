@@ -90,6 +90,9 @@ _AA_mag = "rhs_mag_9k38_rocket";
 _pistol = ["hgun_Pistol_01_F", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "10Rnd_9x21_Mag";
 
+_pdw = ["rhs_weap_pp2000", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "rhs_mag_9x19mm_7n31_44";
+
 _rifleMarksman = ["rhs_weap_m1garand_sa43", _silencer, _pointer, _sight, _bipod];
 _rifleMarksman_mag = "rhsgref_8Rnd_762x63_M2B_M1rifle";
 _rifleMarksman_mag_tr = "rhsgref_8Rnd_762x63_Tracer_M1T_M1rifle";

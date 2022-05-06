@@ -39,14 +39,17 @@ _bipod = "";
 
 // Primary Weapon
 _rifle = ["hlc_rifle_ACR_carb_black", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_smg_mp5a3", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["hlc_rifle_ACR_SBR_black", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["hlc_rifle_ACR_GL_carb_black", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_ACR_carb_black", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["hlc_rifle_ACR_Full_black", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "hlc_30rnd_556x45_EPR";
 _rifle_mag_tr = "hlc_30rnd_556x45_t_PMAG";
 _rifleGL_mag = "hlc_30rnd_556x45_EPR";
 _rifleGL_mag_tr = "hlc_30rnd_556x45_t_PMAG";
-_rifleC_mag = "hlc_30Rnd_9x19_B_MP5";
+_rifleC_mag = "hlc_30rnd_556x45_EPR";
+_rifleC_mag_tr = "hlc_30rnd_556x45_t_PMAG";
+_rifleL_mag = "hlc_30rnd_556x45_EPR";
+_rifleL_mag_tr = "hlc_30rnd_556x45_t_PMAG";
 
 _LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
@@ -69,6 +72,10 @@ _AA_mag = "Titan_AA";
 
 _pistol = ["rhs_weap_pya", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "rhs_mag_9x19_17";
+
+_pdw = ["UK3CB_MP5A4", _silencer, _pointer, _sight, _bipod];
+_pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";
+_pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
 
 _silencer = "";
 _pointer = "";
