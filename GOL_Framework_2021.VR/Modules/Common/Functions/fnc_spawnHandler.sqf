@@ -72,7 +72,9 @@ if !((count _unitArray) isEqualTo 0) then {
 			} else {
 				_unit setUnitPos _unitPos;
 			};
-			doStop _unit;
+			[[_unit],{ Params ["_unit"]; _unit disableAI "PATH"; doStop _unit; }] remoteExec ["BIS_FNC_CALL",0]; 
+			//[_unit] remoteExec ["doStop",0];
+			//[_unit,"PATH"] remoteExec ["disableAI",0];
 		};
 
 		_unit setPosATL _pos;
@@ -145,10 +147,8 @@ if ((count _vehicleArray) > 0) then {
 						_unit moveInDriver _vehicle;
 					} else {
 						_unit moveInDriver _vehicle;
+						[[_unit],{ Params ["_unit"]; _unit disableAI "PATH"; doStop _unit; }] remoteExec ["BIS_FNC_CALL",0]; 
 						_Driver = _unit;
-						_vehicle setFuel 1;
-						_vehicle forceSpeed 0;
-						_Driver forceSpeed 0;
 						_vehicle enableSimulationGlobal false;
 						_vehicle engineOn true;
 					};
@@ -173,10 +173,7 @@ if ((count _vehicleArray) > 0) then {
 			};
 		} forEach _crewList;
 
-		if(!isNil "_Driver") then {
-			deleteVehicle _Driver;
-			_vehicle enableSimulationGlobal true;
-		};
+		_vehicle enableSimulationGlobal true;
 		TRACE_1("Units added to vehicle", _groupNew);
 		if (((count _vehicleArray) > 1) && !_skipDelays) then {
 			sleep 5;
@@ -226,6 +223,7 @@ if !(_waypointArray isEqualTo []) then {
 	TRACE_2("Waypoints added to ", _group, (waypoints _group));
 } else {
 	_group setVariable ["lambs_danger_disableGroupAI", true];
+	//_group setVariable ["acex_headless_blacklist",true];
 };
 
 if (GVAR(autoQueue) && !_skipQueue) then {

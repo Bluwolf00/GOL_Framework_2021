@@ -190,7 +190,9 @@ For "_i" from 1 to _RoadblockCount do {
 			_Vehicle = createVehicle [_VehicleClass, getMarkerPos _Marker, [], 0, "NONE"];
 			_Vehicle setDir _BaseDir;
 			_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
-			_Vehicle setFuel 0;
+			_Vehicle engineOn true;
+			sleep 1;
+			[[driver _Vehicle],{ Params ["_unit"]; _unit disableAI "PATH"; doStop _unit; }] remoteExec ["BIS_FNC_CALL",0]; 
 		};
 	};
 }

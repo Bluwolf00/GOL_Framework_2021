@@ -162,7 +162,7 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-7.4399414,2.2389107,2.1461182};
+					position[]={-7.4399414,2.2389107,0};
 					angles[]={0,4.7994318,0};
 				};
 				side="Empty";

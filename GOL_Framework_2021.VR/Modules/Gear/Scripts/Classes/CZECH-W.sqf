@@ -2,7 +2,7 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _goggles = selectRandom ["rhsusf_shemagh2_grn","rhsusf_shemagh_grn"];
-_helmet = ["helmet_ACH_VZ95_2","helmet_ACH_VZ95_4","helmet_ACH_VZ95_3","helmet_ACH_VZ95"] call BIS_fnc_selectRandom;
+_helmet = ["rhsusf_opscore_mar_fg_pelt","rhsusf_opscore_mar_fg"] call BIS_fnc_selectRandom;
 _OfficerHelmet = "cap_VZ95";
 _uniform = selectRandom ["Uniform_Rolled_VZ95","Uniform_Full_VZ95"];
 _vest = selectRandom ["vest_spc_radio_VZ95","vest_spc_rifleman_VZ95"];
@@ -12,12 +12,20 @@ if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "unv_VZ95_big_rt1523g";
 };
 
+if(_role in ["crew"]) then {
+	_helmet = "H_HelmetCrew_I";
+	_goggles = "";
+	_vest = "vest_spc_crewman_VZ95"
+};
+
 if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "VZ95_PB_Bergen";
 };
 
 if (_role isEqualTo "p") then {
-	_helmet = "helmet_lwh_VZ95";
+	_helmet = "UK3CB_H_Pilot_Helmet";
+	_vest = "vest_spc_VZ95";
+	_goggles = "";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
@@ -32,10 +40,10 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "";
+_silencer = "rhsusf_acc_sfmb556";
 _pointer = "rhsusf_acc_anpeq15side_bk";
-_sight = "optic_ERCO_blk_F";
-_bipod = "";
+_sight = "optic_hamr";
+_bipod = "rhsusf_acc_grip1";
 
 // Primary Weapon
 _rifle = ["hlc_rifle_ACR_carb_black", _silencer, _pointer, _sight, _bipod];

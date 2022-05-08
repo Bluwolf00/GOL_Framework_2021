@@ -1,5 +1,5 @@
-// [spawn_1,waypoint_1,end_1,west,[4,["rhs_btr60_msv"]],[true,6]]] spawn OKS_Convoy_Spawn;
-// [spawnpos_1,waypoint_1,end_1,east,[4,["rhs_btr60_msv"],6,30],[true,6]]] execVM "Scripts\OKS_Ambience\OKS_Convoy_Spawn.sqf";
+// [spawn_1,waypoint_1,end_1,west,[4,["rhs_btr60_msv"], 6, 25],[true,6]]] spawn OKS_Convoy_Spawn;
+// [spawnpos_1,waypoint_1,end_1,east,[4,["rhs_btr60_msv"], 6, 30],[true,6]]] execVM "Scripts\OKS_Ambience\OKS_Convoy_Spawn.sqf";
 
 if(!isServer) exitWith {};
 

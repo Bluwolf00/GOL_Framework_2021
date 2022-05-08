@@ -94,7 +94,7 @@ OKS_CreateLoiterPattern = {
 	_wp = _HeliGroup addWaypoint [getPos _Heli,0];
 	_wp setWaypointType "LOITER";
 	_wp setWaypointBehaviour "SAFE";
-	_wp setWaypointLoiterAltitude 200;
+	_wp setWaypointLoiterAltitude 50;
 	_wp setWaypointLoiterRadius _Range;
 	_wp setWaypointLoiterType "CIRCLE";
 	_wp;
