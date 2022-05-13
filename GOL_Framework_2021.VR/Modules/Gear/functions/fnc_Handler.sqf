@@ -160,6 +160,10 @@ if (_isMan) then {
 		};
 		LOG(FORMAT_2("Unit: %1, Role: %2", _unit, _role));
 	};
+	
+	if (_unit getVariable ["acex_headless_blacklist", true] == true) then {
+	_unit setVariable ["acex_headless_blacklist", false, true]; // Gear applied therefore transfer unit to HC
+	};
 } else {
 	_role params [
 		["_class", "", [""]],
