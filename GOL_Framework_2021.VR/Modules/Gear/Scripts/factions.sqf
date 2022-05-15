@@ -111,6 +111,9 @@ switch (_side) do {
 	case "NATO-W": {
 		#include "Classes\NATO-W.sqf"
 	};
+	case "MALDEN-W": {
+		#include "Classes\MALDEN-W.sqf"
+	};	
 	case "FRENCH-D": {
 		#include "Classes\FRENCH-D.sqf"
 	};

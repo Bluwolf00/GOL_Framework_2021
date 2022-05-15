@@ -27,5 +27,5 @@
 		sleep 0.5;
 	};
 	waitUntil {sleep 1; !isNil "lambs_wp_fnc_moduleRush"};
-	[_Group,_Range,30,[],[],true] spawn lambs_wp_fnc_taskRush;
+	[_Group,_Range,30,[],[],true] remoteExec ["lambs_wp_fnc_taskRush",0];
 

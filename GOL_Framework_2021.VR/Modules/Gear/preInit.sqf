@@ -27,6 +27,7 @@ GVAR(StaminaCoef) = 0.5;
 		[
 			"NATO-D",
 			"NATO-W",
+			"MALDEN-W",
 			"BAF-W",
 			"BAF-W-FALK",
 			"GER-FLK",
@@ -63,6 +64,7 @@ GVAR(StaminaCoef) = 0.5;
 		[
 			"NATO Desert",
 			"NATO Woodland",
+			"Malden Defence Force Woodland",
 			"British Armed Forces",
 			"Falklands Royal Marines",
 			"Bundeswehr Flecktarn",
@@ -162,6 +164,7 @@ GVAR(StaminaCoef) = 0.5;
 		[
 			"AAF-W",
 			"AAF-SF-W",
+			"MALDEN-W",
 			"FRENCH-UN",
 			"PMC",
 			"CSAT-H",
@@ -188,6 +191,7 @@ GVAR(StaminaCoef) = 0.5;
 		[
 			"AAF-Woodland",
 			"AAF SF Woodland",
+			"Malden Defence Force Woodland",
 			"French Army United Nations",
 			"PMC",
 			"CSAT Hex",

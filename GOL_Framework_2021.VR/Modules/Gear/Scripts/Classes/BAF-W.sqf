@@ -42,18 +42,18 @@ if (_role isEqualTo "jetp") then {
 
 _silencer = "uk3cb_baf_sffh";
 _pointer = "";
-_sight = "optic_erco_blk_f";
+_sight = "optic_hamr";
 _bipod = "";
 
 _rifle = ["UK3CB_BAF_L85A3", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["UK3CB_BAF_L22A2", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["UK3CB_BAF_L85A3_UGL", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["UK3CB_BAF_L86A2", _silencer, _pointer, _sight, _bipod];
-_rifle_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
-_rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
-_rifleGL_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
-_rifleGL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
-_rifleC_mag = "UK3CB_BAF_556_30Rnd";
+_rifle_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
+_rifle_mag_tr = "UK3CB_BAF_556_30Rnd_T";
+_rifleGL_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
+_rifleGL_mag_tr = "UK3CB_BAF_556_30Rnd_T";
+_rifleC_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
 
 _LMG = ["UK3CB_BAF_L110A2RIS", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "UK3CB_BAF_556_200Rnd_T";
