@@ -42,7 +42,7 @@
 		};
 
 		class Military {
-			aimingAccuracy[] = {0.25, 0.30, 0.35};
+			aimingAccuracy[] = {0.26, 0.28, 0.30};
 			aimingShake[]	 = {0.50, 0.70, 0.90};
 			aimingSpeed[]	 = {0.50, 0.70, 0.90};
 			commanding[]	 = {0.60, 0.70, 0.80};
@@ -57,7 +57,7 @@
 		};
 
 		class Insurgents {
-			aimingAccuracy[] = {0.20, 0.25, 0.30};
+			aimingAccuracy[] = {0.24, 0.25, 0.26};
 			aimingShake[]	 = {0.50, 0.70, 0.90};
 			aimingSpeed[]	 = {0.50, 0.70, 0.90};
 			commanding[]	 = {0.60, 0.70, 0.80};
