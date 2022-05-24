@@ -3,27 +3,27 @@ _allowedNightStuff = true;
 
 // Cloths
 _goggles = "";
-_helmet = SelectRandom ["helmet_ACH_NBS_2","helmet_ACH_NBS_4"];
+_helmet = "rhsusf_ach_bare_tan";
 _OfficerHelmet = "rhs_beret_vdv3";
-_uniform = SelectRandom ["Uniform_Full_NBS","Uniform_Rolled_NBS"];
-_vest = SelectRandom ["vest_spc_radio_NBS","vest_spc_rifleman_NBS"];
-_backpack = "NBS_Assaultpack";
+_uniform = "UK3CB_ADM_B_U_CombatUniform_01_TCC";
+_vest = "UK3CB_ANP_B_V_GA_LITE_TAN";
+_backpack = "UK3CB_TKA_O_B_RIF_Tan";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "NBS_B_RadioBag_01";
+	_backpackRadio = "TFAR_anprc155_coyote";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "NBS_Kitbag";
+	_backpack = "B_Kitbag_tan";
 };
 
 if (_role isEqualTo "crew") then {
-	_vest = "vest_spc_crewman_NBS";
-	_backpack = "NBS_Assaultpack";
+	_vest = "rhsusf_spc_crewman";
+	_backpack = "B_AssaultPack_cbr";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "rhsusf_hgu56p_visor";
-	_vest = "vest_spc_crewman_NBS";
+	_vest = "rhsusf_spc_crewman";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "I_UAV_01_backpack_F";
