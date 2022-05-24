@@ -14,7 +14,8 @@ case "76561198086056020": {_rank = _sgt};
 case "76561198110128838": {_rank = _sgt};
 case "76561198005972885": {_rank = _cpl};
 case "76561198014971848": {_rank = _cpl};
-case "76561198024730389": {_rank = _cpl};
+case "76561198091519166": {_rank = _cpl};
+case "76561198058521961": {_rank = _cpl};
 
 default {_rank ="PRIVATE";};
 };
@@ -25,7 +26,7 @@ default {_rank ="PRIVATE";};
 // Will be transferred to the GW Addon at a later date... hopefully
 fnc_myFunction = {
   params ["_caller", "_target", "_selectionName", "_className", "_itemUser", "_usedItem"];
-  if !(_caller isEqualTo _target) then {
+  if !((_caller isEqualTo _target) && (alive _target)) then {
   _Unconscious = _target getVariable ["ACE_isUnconscious",false];
   _Action = "DEBUG";
   switch (_usedItem) do {
