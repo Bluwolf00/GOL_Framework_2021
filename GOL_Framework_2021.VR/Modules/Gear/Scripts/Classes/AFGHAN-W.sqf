@@ -3,17 +3,17 @@ _allowedNightStuff = false;
 
 _goggles = "";
 _helmet = "rhsusf_opscore_fg";
-_OfficerHelmet = "PO_H_PASGT_ANA";
-_uniform = "LOP_U_ANA_M93_spec4e_01";
+_OfficerHelmet = "UK3CB_ANA_B_H_OFF_Beret_GRN";
+_uniform = "UK3CB_ANA_B_U_CombatUniform_01_SPEC4CE";
 _vest = "rhsgref_otv_khaki";
-_backpack = "OLIVE_Kitbag";
+_backpack = "UK3CB_ANA_B_B_RIF";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "OLIVE_B_RadioBag_01";
+	_backpackRadio = "UK3CB_ANA_B_B_RIF_Radio";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "OLIVE_PB_Rucksack";
+	_backpack = "B_Carryall_cbr";
 };
 
 if (_role isEqualTo "p") then {
