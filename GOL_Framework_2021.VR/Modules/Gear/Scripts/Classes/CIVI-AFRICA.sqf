@@ -1,8 +1,8 @@
 _useMineDetector = false;
 _allowedNightStuff = false;
 
-_goggles = selectRandom ["","G_Squares_Tinted","CUP_TK_NeckScarf","CUP_FR_NeckScarf","CUP_FR_NeckScarf2"];
-_helmet = selectRandom ["H_Bandanna_khk","H_Booniehat_tan","H_Cap_tan","H_HeadBandage_clean_F","LOP_H_Turban","LOP_H_Worker_cap","rhs_headband",""];
-_uniform = selectRandom ["LOP_U_AFR_Civ_01","LOP_U_AFR_Civ_02","LOP_U_AFR_Civ_03","LOP_U_AFR_Civ_04","LOP_U_AFR_Civ_05","LOP_U_AFR_Civ_06","LOP_U_TAK_Civ_Fatigue_13","LOP_U_TAK_Civ_Fatigue_15","LOP_U_TAK_Civ_Fatigue_09","LOP_U_PMC_shorts_m81_olv","LOP_U_PMC_shorts_tan_digi","LOP_U_PMC_shorts_grn_plaid"];
+_goggles = selectRandom ["","G_Squares_Tinted","G_Bandanna_tan","G_Bandanna_khk",""];
+_helmet = selectRandom ["H_Bandanna_khk","H_Booniehat_tan","H_Cap_tan","H_HeadBandage_clean_F","UK3CB_ADE_I_H_Turban_01_1","UK3CB_ADE_O_H_Turban_01_2","rhs_headband","","H_Cap_blk","UK3CB_TKC_H_Turban_03_1","UK3CB_TKM_B_H_Turban_05_1","UK3CB_TKM_I_H_Turban_05_1","UK3CB_H_Worker_Cap_01"];
+_uniform = selectRandom ["UK3CB_ADC_C_Shorts_U_03","UK3CB_ADE_O_U_02_F","UK3CB_ADE_O_U_02_H","UK3CB_ADE_O_U_02","UK3CB_ADM_B_U_Tshirt_01_WDL_02","U_C_Poloshirt_tricolour","UK3CB_ADC_C_Shorts_U_05","UK3CB_ADC_C_Shorts_U_01","UK3CB_ADC_C_Shorts_U_06","UK3CB_NAP_B_U_Pilot_BLK","UK3CB_MEE_O_U_05_C","UK3CB_MEE_O_U_05","UK3CB_ADM_B_U_Tshirt_01_WDL"];
 _vest = "";
 _backpack = "";

@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2446;
+		nextID=2522;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6329;
+		nextID=6348;
 	};
 	class Camera
 	{
-		pos[]={66.82637,62.172092,25.304131};
-		dir[]={0.0058951587,-0.77455699,0.63248843};
-		up[]={0.0072189518,0.63249731,0.77452868};
-		aside[]={0.99996197,-2.9440162e-007,-0.0093194619};
+		pos[]={65.289558,41.889023,40.628452};
+		dir[]={-0.0068749087,-0.62533754,0.78032589};
+		up[]={-0.0055091786,0.78035545,0.62531394};
+		aside[]={0.99996322,-3.4964614e-008,0.008809994};
 	};
 };
 binarizationWanted=0;
@@ -23323,7 +23323,7 @@ class CustomAttributes
 																"STRING"
 															};
 														};
-														value="CIVI-ALTIS";
+														value="CIVI-AFRICA";
 													};
 												};
 												class Item1
