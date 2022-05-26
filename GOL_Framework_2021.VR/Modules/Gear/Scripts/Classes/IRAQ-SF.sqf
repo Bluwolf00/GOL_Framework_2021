@@ -2,22 +2,19 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _goggles = "G_Balaclava_TI_blk_F";
-_helmet = "PO_H_mich_bare_isof_3_nortos_alt_blk";
-_OfficerHelmet = "rhs_beret_vdv3";
-_uniform = "LOP_U_IA_Fatigue_SF_01";
+_helmet = "rhsusf_opscore_bk_pelt";
+_OfficerHelmet = "UK3CB_TKP_O_H_Patrolcap_Off_Blk";
+_uniform = "UK3CB_LSM_B_U_Crew_CombatSmock_01";
 _vest = "V_PlateCarrier2_blk";
 _backpack = "B_ViperLightHarness_blk_F";
 _backpackRadio = _backpack;
+
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "B_RadioBag_01_black_F";
 };
 
 if (_role in ["ag","ammg","lr"]) then {
 	_backpack = "B_ViperHarness_blk_F";
-};
-
-if(_role in ["ab","lr"]) then {
-	_backpack = "OLIVE_PB_Bergen";
 };
 
 if (_role isEqualTo "p") then {
@@ -43,14 +40,14 @@ _pointer = "";
 _sight = "rhsusf_acc_eotech_xps3";
 _bipod = "rhsusf_acc_rvg_blk";
 
-_rifle = ["hlc_rifle_aek971worn", "rhs_acc_dtk3", _pointer, "rhs_acc_pkas", _bipod];
-_rifleC = ["hlc_wp_mod733", _silencer, _pointer, "", _bipod];
+_rifle = ["rhs_weap_vhsd2", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["rhs_weap_vhsk2", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["rhs_weap_vhsd2_bg", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_M14dmr_Rail", _silencer, _pointer, "optic_hamr", _bipod];
-_rifleC_mag = "hlc_30rnd_556x45_SOST_STANAGHD";
-_rifleC_mag_tr = "hlc_30rnd_556x45_t_STANAGHD";
-_rifle_mag = "hlc_60Rnd_545x39_b_rpk";
-_rifle_mag_tr = "hlc_60Rnd_545x39_t_rpk";
+_rifleL = ["hlc_rifle_M14dmr_Rail", _silencer, _pointer, _sight, _bipod];
+_rifleC_mag = "hlc_30rnd_556x45_SOST_G36";
+_rifleC_mag_tr = "hlc_30rnd_556x45_Tracers_G36";
+_rifle_mag = "hlc_30rnd_556x45_SOST_G36";
+_rifle_mag_tr = "hlc_30rnd_556x45_Tracers_G36";
 _rifleGL_mag = "hlc_30rnd_556x45_SOST_G36";
 _rifleGL_mag_tr = "hlc_30rnd_556x45_Tracers_G36";
 _rifleL_mag = "hlc_20Rnd_762x51_barrier_M14";
@@ -73,7 +70,6 @@ _MAT_mag = "RPG7_F";
 
 _HAT = ["launch_O_Vorona_brown_F", _silencer, _pointer, _sight, _bipod];
 _HAT_mag = "Vorona_HEAT";
-
 
 _MAT = ["rhs_weap_rpg7", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "rhs_rpg7_PG7VL_mag";
