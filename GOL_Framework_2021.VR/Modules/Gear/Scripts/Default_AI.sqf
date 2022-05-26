@@ -147,10 +147,10 @@ switch (toLower(_role)) do {
 
 	case "p": {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
-		[_rifleC, _rifleC_mag_tr, ""] call _addPrimary;
+		[_pdw, _pdw_mag_tr, ""] call _addPrimary;
 		_IFAK call _addToUniform;
 		[[_smokegrenadeW,1],[_smokegrenadeP,1],[_grenademini,2]] call _addToUniform;
-		[[_rifleC_mag_tr,12]] call _addToVest;
+		[[_pdw_mag_tr,12]] call _addToVest;
 		["", "", "", "", "", _nvg] call _addLinkedItems;
 	};
 

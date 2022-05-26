@@ -36,12 +36,12 @@ switch (_side) do {
 	case "LIVONIA-W": {
 		#include "Classes\LIVONIA-W.sqf"
 	};
-	case "LIVONIA-1950-W": {
-		#include "Classes\LIVONIA-1950-W.sqf"
-	};
-	case "CHDKZ-1950-W": {
-		#include "Classes\CHDKZ-1950-W.sqf"
-	};
+	// case "LIVONIA-1950-W": {
+	// 	#include "Classes\LIVONIA-1950-W.sqf"
+	// };
+	// case "CHDKZ-1950-W": {
+	// 	#include "Classes\CHDKZ-1950-W.sqf"
+	// };
 	case "CZECH-W": {
 		#include "Classes\CZECH-W.sqf"
 	};
@@ -114,12 +114,12 @@ switch (_side) do {
 	case "MALDEN-W": {
 		#include "Classes\MALDEN-W.sqf"
 	};	
-	case "FRENCH-D": {
-		#include "Classes\FRENCH-D.sqf"
-	};
-	case "FRENCH-UN": {
-		#include "Classes\FRENCH-UN.sqf"
-	};
+	// case "FRENCH-D": {
+	// 	#include "Classes\FRENCH-D.sqf"
+	// };
+	// case "FRENCH-UN": {
+	// 	#include "Classes\FRENCH-UN.sqf"
+	// };
 	case "GER-FLK": {
 		#include "Classes\GER-FLK.sqf"
 	};
@@ -159,18 +159,18 @@ switch (_side) do {
 	case "USMC-W": {
 		#include "Classes\USMC-W.sqf"
 	};
-	case "NORWEGIAN": {
-		#include "Classes\NORWEGIAN.sqf"
-	};
+	// case "NORWEGIAN": {
+	// 	#include "Classes\NORWEGIAN.sqf"
+	// };
 	case "SWEDISH": {
 		#include "Classes\SWEDISH.sqf"
 	};
-	case "POLISH": {
-		#include "Classes\POLISH.sqf"
-	};
-	case "LATVIAN": {
-		#include "Classes\LATVIAN.sqf"
-	};
+	// case "POLISH": {
+	// 	#include "Classes\POLISH.sqf"
+	// };
+	// case "LATVIAN": {
+	// 	#include "Classes\LATVIAN.sqf"
+	// };
 	case "ISRAELI": {
 		#include "Classes\ISRAELI.sqf"
 	};

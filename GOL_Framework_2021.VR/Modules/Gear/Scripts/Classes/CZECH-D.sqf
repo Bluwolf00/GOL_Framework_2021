@@ -1,23 +1,31 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
-_goggles = selectRandom ["rhsusf_shemagh2_tan","rhsusf_shemagh_tan"];
-_helmet = ["helmet_ACH_VZ85_2","helmet_ACH_VZ85_4","helmet_ACH_VZ85_3","helmet_ACH_VZ85"] call BIS_fnc_selectRandom;
-_OfficerHelmet = "cap_VZ85";
-_uniform = selectRandom ["Uniform_Rolled_VZ85","Uniform_Full_VZ85"];
-_vest = selectRandom ["vest_spc_radio_VZ85","vest_spc_rifleman_VZ85"];
-_backpack = "VZ85_PB_Rucksack";
+_goggles = selectRandom ["rhsusf_shemagh2_tan","rhsusf_shemagh_tan","rhsusf_shemagh_gogg_tan","rhsusf_shemagh2_gogg_tan"];
+_helmet = ["H_HelmetB_light_desert"] call BIS_fnc_selectRandom;
+_OfficerHelmet = "rhs_fieldcap_m88";
+_uniform = selectRandom ["UK3CB_ADM_B_U_CombatUniform_01_DDPM","UK3CB_ADM_B_U_CombatUniform_Shortsleeve_01_DDPM"];
+_vest = selectRandom["rhsusf_spc_patchless_radio","rhsusf_spc_patchless"];
+_backpack = "UK3CB_B_Alice_K";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "unv_VZ85_big_rt1523g";
+	_backpackRadio = "UK3CB_B_B_Alice_Radio_Backpack";
 };
 
-if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "VZ85_PB_Bergen";
+if (_role in ["ag","ammg","sm","lr","ab"]) then {
+	_backpack = "B_Carryall_cbr";
+};
+
+if(_role in ["crew"]) then {
+	_helmet = "H_HelmetCrew_I";
+	_goggles = "";
+	_vest = "rhsusf_spc"
 };
 
 if (_role isEqualTo "p") then {
-	_helmet = "helmet_lwh_VZ85";
+	_helmet = "rhsusf_hgu56p_tan";
+	_vest = "rhsusf_spc";
+	_goggles = "";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";

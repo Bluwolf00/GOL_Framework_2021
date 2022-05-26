@@ -62,11 +62,11 @@ _LAT = ["rhs_weap_M136_hp", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "";
 _LAT_ReUsable = true;
 
-_MAT = ["launch_RPG32_ghex_F", _silencer, _pointer, _sight, _bipod];
+_MAT = ["launch_RPG32_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "RPG32_F";
 _MAT_mag_HE = "RPG32_HE_F";
 
-_HAT = ["launch_O_Vorona_green_F", _silencer, _pointer, _sight, _bipod];
+_HAT = ["launch_O_Vorona_brown_F", _silencer, _pointer, _sight, _bipod];
 _HAT_mag = "Vorona_HEAT";
 
 _AA = ["launch_O_Titan_F", _silencer, _pointer, _sight, _bipod];

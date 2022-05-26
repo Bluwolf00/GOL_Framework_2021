@@ -1,37 +1,37 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
-_goggles = "";
-_helmet = "helmet_lwh_M90";
-_OfficerHelmet = "beret_Green";
-_uniform = SelectRandom ["Uniform_Full_M90","Uniform_Rolled_M90"];
-_vest = "vest_spc_radio_M90";
-_backpack = "M90_Assaultpack";
+_goggles = "G_Balaclava_TI_blk_F";
+_helmet = selectRandom ["rhsusf_opscore_fg_pelt","rhsusf_opscore_fg","rhsusf_opscore_fg_pelt_cam"];
+_OfficerHelmet = "UK3CB_ANA_B_H_Beret_GRN";
+_uniform = SelectRandom ["UK3CB_LNM_B_U_CombatSmock_21"];
+_vest = selectRandom["UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI","UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_OLI","UK3CB_LDF_B_V_LMG_Vest_KKZ10_OLI","UK3CB_LDF_B_V_SL_Vest_KKZ10_OLI","UK3CB_LDF_B_V_TL_Vest_KKZ10_OLI","UK3CB_LDF_B_V_GREN_Vest_KKZ10_OLI"];
+_backpack = "B_Kitbag_rgr";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "unv_M90_big_rt1523g";
+	_backpackRadio = "UK3CB_LDF_I_B_RadioBag_GEO";
 };
 
 if (_role in ["ag","ammg","sm","lr","ab"]) then {
-	_backpack = "SWEDISH_assaultpack_Medic";
+	_backpack = "UK3CB_B_Hiker";
 };
 
 if (_role in ["ar","mmg"]) then {
-	_backpack = "M90_Kitbag_MachineGunner";
+	_backpack = "UK3CB_B_Hiker";
 };
 
 if (_role in ["pl","sl","ftl","fac"]) then {
-	_helmet = "helmet_lwh_M90_3";
+	_helmet = "rhsusf_opscore_fg_pelt_nsw";
 };
 if (_role isEqualTo "crew") then {
-	_helmet = "helmet_lwh_M90_3";
-	_vest = "vest_spc_crewman_M90";
-	_uniform = "Uniform_Coveralls_M90";
+	_helmet = "H_HelmetCrew_I";
+	_vest = "UK3CB_LDF_B_V_Vest_KKZ10_OLI";
+	_uniform = "UK3CB_LNM_B_U_CombatSmock_21";
 };
 if (_role isEqualTo "p") then {
 	_uniform = "Uniform_Coveralls_M90";
 	_helmet = "rhsusf_hgu56p_visor_black";
-	_vest = "vest_spc_crewman_M90";
+	_vest = "UK3CB_LDF_B_V_CREW_Vest_KKZ10_OLI";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
@@ -69,7 +69,7 @@ _rifleL_mag_tr = "hlc_20rnd_762x51_T_G3";
 _rifleMarksman_mag = "hlc_20Rnd_762x51_b_G3";
 _rifleMarksman_mag_tr = "hlc_20rnd_762x51_T_G3";
 
-_LMG = ["hlc_lmg_mk46", _silencer, _pointer, _sight, ""];
+_LMG = ["LMG_03_F", _silencer, _pointer, _sight, ""];
 _LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 
 _MMG = ["rhs_weap_fnmag", _silencer, _pointer, _sight, ""];

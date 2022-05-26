@@ -6,9 +6,9 @@ _helmet = selectRandom ["rhsusf_ach_helmet_headset_ess_ucp","rhsusf_ach_helmet_h
 _OfficerHelmet = "rhsusf_patrolcap_ucp";
 _uniform = "rhs_uniform_cu_ucp_10th";
 _vest = "rhsusf_spcs_ucp_rifleman_alt";
-_backpack = "rhsusf_assault_eagleaiii_ucp";
+_backpack = "UK3CB_B_Alice_K";
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "unv_UCP_big_rt1523g";
+	_backpackRadio = "UK3CB_B_B_Alice_Radio_Backpack";
 };
 
 if (_role isEqualTo "sl") then {
@@ -21,11 +21,9 @@ if(_role isEqualTo "ftl") then {
 
 if (_role in ["ag","ammg","lr","ab"]) then {
 	_vest = "rhsusf_spcs_ucp_medic";
-	_backpack = "B_Carryall_cbr";
 };
 if (_role in ["ar","mmg"]) then {
 	_vest = "rhsusf_spcs_ucp_saw";
-	_backpack = "rhsusf_assault_eagleaiii_ucp";
 };
 
 if (_role isEqualTo "crew") then {

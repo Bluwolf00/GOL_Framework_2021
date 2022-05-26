@@ -6,13 +6,13 @@ _helmet = selectRandom ["rhsgref_helmet_pasgt_woodland"];
 _OfficerHelmet = "rhs_8point_marpatwd";
 _uniform = "rhsgref_uniform_woodland";
 _vest = "V_PlateCarrier1_wdl";
-_backpack = "B_FieldPack_green_F";
+_backpack = "UK3CB_CW_US_B_LATE_B_RIF_02";
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "OLIVE_B_RadioBag_01";
+	_backpackRadio = "UK3CB_LDF_B_B_RadioBag_GEO";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "rhsgref_wdl_alicepack";
+	_backpack = "rhsgref_hidf_alicepack";
 };
 
 if (_role isEqualTo "crew") then {

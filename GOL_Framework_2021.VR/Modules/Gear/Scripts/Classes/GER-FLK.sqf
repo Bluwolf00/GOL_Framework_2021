@@ -3,27 +3,27 @@ _allowedNightStuff = true;
 
 // Cloths
 _goggles = "G_Balaclava_TI_blk_F";
-_helmet = "helmet_lwh_FLECKTARN";
-_OfficerHelmet = "cap_CADPAT";
-_uniform = SelectRandom ["Uniform_Full_FLECKTARN","Uniform_Rolled_FLECKTARN"];
-_vest = "vest_spc_rifleman_FLECKTARN";
-_backpack = "FLECKTARN_Kitbag";
+_helmet = "rhsgref_helmet_pasgt_flecktarn";
+_OfficerHelmet = "UK3CB_LNM_B_H_BoonieHat_FLK_03";
+_uniform = SelectRandom ["UK3CB_LNM_B_U_CombatSmock_01","UK3CB_LNM_B_U_CombatSmock_03"];
+_vest = "UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI";
+_backpack = "UK3CB_TKA_O_B_RIF_Khk";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "FLK_B_RadioBag_01";
+	_backpackRadio = "TFAR_rt1523g_big_bwmod";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "FLECKTARN_Kitbag";
+	_backpack = "UK3CB_LSM_B_B_CARRYALL_KHK";
 };
 
 if (_role isEqualTo "crew") then {
-	_vest = "vest_spc_crewman_FLECKTARN";
-	_backpack = "FLECKTARN_Assaultpack";
+	_vest = "UK3CB_LDF_B_V_Vest_KKZ10_OLI";
+	_backpack = "UK3CB_TKA_O_B_RIF_Khk";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "rhsusf_hgu56p_visor";
-	_vest = "vest_spc_crewman_FLECKTARN";
+	_vest = "UK3CB_LDF_B_V_Vest_KKZ10_OLI";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "I_UAV_01_backpack_F";

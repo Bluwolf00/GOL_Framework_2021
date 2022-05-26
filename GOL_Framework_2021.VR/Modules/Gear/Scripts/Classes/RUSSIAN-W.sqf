@@ -23,7 +23,7 @@ _backpack = "rhs_rd54_emr1";
 _backpackRadio = _backpack;
 
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "unv_olive_big_rt1523g";
+	_backpackRadio = "UK3CB_B_O_Tactical_Backpack_Radio";
 };
 
 if(_role in ["ag","ammg"]) then {

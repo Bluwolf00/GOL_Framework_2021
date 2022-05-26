@@ -2,36 +2,32 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 // Cloths
-_goggles = SelectRandom ["dzn_G_IDF_Mitznefet_Cover","dzn_G_IDF_Mitznefet_Cover4","dzn_G_IDF_Mitznefet_Cover3","dzn_G_IDF_Mitznefet_Cover2"];
-_helmet = "helmet_lwh_OLIVE";
-_OfficerHelmet = "cap_OLIVE";
-_uniform = SelectRandom ["Uniform_Full_OLIVE","Uniform_Rolled_OLIVE"];
-_vest = selectRandom ["vest_spc_radio_OLIVE","vest_spc_rifleman_OLIVE"];
-_backpack = "OLIVE_Kitbag";
+_goggles = SelectRandom ["G_Balaclava_TI_blk_F"];
+_helmet = "rhsusf_opscore_bk_pelt";
+_OfficerHelmet = "UK3CB_LSM_B_H_M88_Field_Cap_OLI";
+_uniform = SelectRandom ["UK3CB_LSM_B_U_CombatSmock_07"];
+_vest = selectRandom["UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI","UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_OLI","UK3CB_LDF_B_V_LMG_Vest_KKZ10_OLI","UK3CB_LDF_B_V_SL_Vest_KKZ10_OLI","UK3CB_LDF_B_V_TL_Vest_KKZ10_OLI","UK3CB_LDF_B_V_GREN_Vest_KKZ10_OLI"];
+_backpack = "UK3CB_CHC_C_B_HIKER";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "OLIVE_B_RadioBag_01";
+	_backpackRadio = "UK3CB_CW_SOV_O_LATE_B_ASS_BERGEN_Radio";
 };
 
-if (_role in ["sm","ab","lr"]) then {
-	_backpack = "OLIVE_PB_Bergen";
+if (_role in ["ag","ammg","sm","lr","ab"]) then {
+	_backpack = "rhssaf_alice_smb";
 };
 
-if (_role in ["ag","ammg","ar","mmg"]) then {
-	_backpack = "OLIVE_Kitbag_MachineGunner";
+if (_role in ["ar","mmg"]) then {
+	_backpack = "B_Kitbag_rgr";
 };
 
-if (_role in ["pl","sl","ftl","fac"]) then {
-	_helmet = "helmet_lwh_OLIVE_3";
-};
 if (_role isEqualTo "crew") then {
-	_helmet = "helmet_lwh_OLIVE_3";
-	_vest = "vest_spc_crewman_OLIVE";
+	_vest = "UK3CB_LDF_B_V_CREW_Vest_KKZ10_OLI";
 };
 if (_role isEqualTo "p") then {
-	_uniform = "Uniform_Coveralls_OLIVE";
+	_uniform = "UK3CB_LSM_B_U_CombatSmock_07";
 	_helmet = "rhsusf_hgu56p_visor_black";
-	_vest = "vest_spc_crewman_OLIVE";
+	_vest = "UK3CB_LDF_B_V_CREW_Vest_KKZ10_OLI";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
@@ -53,9 +49,9 @@ _sight = "rhsusf_acc_t1_high";
 _bipod = "";
 
 // Primary Weapon
-_rifle = ["TAR21_Black", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["CTAR21_Black", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["GTAR21_EGLM_Black", _silencer, _pointer, _sight, _bipod];
+_rifle = ["arifle_TRG21_F", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["arifle_TRG20_F", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["arifle_TRG21_GL_F", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_m14_fiberglass", _silencer, _pointer, _sight, _bipod];
 _rifleMarksman = ["rhs_weap_sr25", _silencer, _pointer, "optic_dms", "bipod_01_f_blk"];
 _rifle_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";

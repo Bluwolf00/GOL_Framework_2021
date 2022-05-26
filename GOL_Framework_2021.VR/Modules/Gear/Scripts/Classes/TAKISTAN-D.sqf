@@ -1,14 +1,14 @@
 _useMineDetector = false;
 _allowedNightStuff = false;
 _goggles = "";
-_helmet = selectRandom ["LOP_H_SSh68Helmet_TAN","rhs_ssh60","rhs_ssh68_2"];
+_helmet = selectRandom ["UK3CB_ARD_B_H_Ssh68_Des"];
 _OfficerHelmet = "H_Beret_blk";
-_uniform = selectRandom ["LOP_U_TKA_Fatigue_01","LOP_U_TKA_Fatigue_02"];
+_uniform = selectRandom ["UK3CB_TKA_O_U_CombatUniform_01_ADPM","UK3CB_TKA_O_U_CombatUniform_02_ADPM"];
 _vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
-_backpack = "rhs_rd54";
+_backpack = "UK3CB_B_Alice_K";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "unv_tan_big_rt1523g";
+	_backpackRadio = "UK3CB_B_O_Alice_Radio_Backpack";
 };
 
 if(_role in ["r","lr"]) then {
@@ -16,11 +16,11 @@ if(_role in ["r","lr"]) then {
 };
 
 if (_role in ["ag","ammg","ab"]) then {
-	_backpack = "rhs_medic_bag";
+	_backpack = "UK3CB_B_Alice_Med_K";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "H_Booniehat_khk_hs";
-	_uniform = "LOP_U_TKA_Fatigue_01";
+	_uniform = "UK3CB_TKA_B_U_H_Pilot_DES";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
@@ -34,13 +34,19 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
+_silencer = "rhs_acc_pgs64_74u";
+_pointer = "";
+_sight = "";
+_bipod = "";
+
+_rifleC = ["hlc_rifle_aks74u", _silencer, _pointer, _sight, _bipod];
+
 _silencer = "rhs_acc_dtk1983";
 _pointer = "";
 _sight = "";
 _bipod = "";
 
 _rifle = ["hlc_rifle_aks74", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_rifle_aks74u", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["hlc_rifle_aks74_GL", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["hlc_rifle_aks74", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_545x39_Mag_F";
@@ -75,7 +81,7 @@ _pdw_mag = "rhs_mag_9x19mm_7n31_44";
 
 _silencer = "";
 _pointer = "";
-_sight = "rhs_acc_pso1m21";
+_sight = "rhs_acc_pso1m2";
 _bipod = "";
 
 _rifleMarksman = ["rhs_weap_svdp_wd", _silencer, _pointer, _sight, _bipod];
