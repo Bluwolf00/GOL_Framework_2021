@@ -1,38 +1,30 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
-_goggles = selectRandom ["rhsusf_shemagh_gogg_grn","rhsusf_shemagh2_gogg_grn"];
-_helmet = "helmet_ACH_M05";
-_OfficerHelmet = "beret_Green";
-_uniform = SelectRandom ["Uniform_Rolled_M05","Uniform_Full_M05"];
-_vest = "V_EOD_olive_F";
-_backpack = "M05_PB_Rucksack";
+_goggles = selectRandom ["Armband_Green_XL"];
+_helmet = "rhsgref_helmet_pasgt_flecktarn";
+_OfficerHelmet = "rhssaf_beret_green";
+_uniform = SelectRandom ["UK3CB_LNM_B_U_CombatSmock_13"];
+_vest = "UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI";
+_backpack = "UK3CB_CHC_C_B_HIKER";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "M05_B_RadioBag_01";
-};
-
-if (_role in ["ag","ammg","sm","lr","ab"]) then {
-	_backpack = "M05_PB_Bergen";
-};
-
-if (_role in ["ar","mmg"]) then {
-	_backpack = "M05_Kitbag";
+	_backpackRadio = "UK3CB_CW_SOV_O_LATE_B_ASS_BERGEN_Radio";
 };
 
 if (_role isEqualTo "crew") then {
 	_helmet = "rhsusf_cvc_green_helmet";
-	_vest = "vest_spc_crewman_M05";
+	_vest = "UK3CB_LDF_B_V_CREW_Vest_KKZ10_OLI";
 };
 if (_role isEqualTo "p") then {
-	_uniform = "Uniform_Coveralls_M05";
+	_goggles = "";
+	_uniform = "UK3CB_CW_US_B_Early_U_CombatUniform_02_OLI";
 	_helmet = "rhsusf_hgu56p_visor_black";
-	_vest = "vest_spc_crewman_M05";
+	_vest = "UK3CB_LDF_B_V_CREW_Vest_KKZ10_OLI";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
 	_gps = "B_UAVTerminal";
-
 };
 if (_role isEqualTo "jetp") then {
 	_goggles = "G_Aviator";

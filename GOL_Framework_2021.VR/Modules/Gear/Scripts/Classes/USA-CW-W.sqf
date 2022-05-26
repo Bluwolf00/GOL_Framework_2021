@@ -8,7 +8,7 @@ _uniform = selectRandom["UK3CB_CW_US_B_LATE_U_CombatUniform_01_WDL","UK3CB_CW_US
 _vest = "UK3CB_ADA_B_V_MBAV_WDL";
 _backpack = "UK3CB_CW_US_B_LATE_B_RIF_02";
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "OLIVE_B_RadioBag_01";
+	_backpackRadio = "UK3CB_LDF_B_B_RadioBag_GEO";
 };
 
 if(_role in ["sl","pl"]) then {

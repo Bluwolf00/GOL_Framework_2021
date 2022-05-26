@@ -3,40 +3,32 @@ _allowedNightStuff = true;
 
 _goggles = selectRandom ["rhsusf_shemagh_od","rhsusf_shemagh2_od"];
 _helmet = "rhsusf_opscore_mar_ut";
-_OfficerHelmet = "PO_H_cap_tub";
-_uniform = "LOP_U_Fatigue_BDU_TURK_TUBITAK_01";
-_vest = "PO_V_SPCS_TUB_RIF2";
-_backpack = "LOP_B_KB_Med_tub";
+_OfficerHelmet = "UK3CB_TKP_B_H_Beret";
+_uniform = "UK3CB_TKA_I_U_CrewUniform_02_KHK";
+_vest = "UK3CB_TKA_O_V_6b23_ml_Oli_02";
+_backpack = "UK3CB_B_Alice_Bedroll_2_K";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "OLIVE_B_RadioBag_01";
+	_backpackRadio = "UK3CB_B_I_Alice_Radio_Backpack";
 };
 
 if (_role in ["sl","tl","pl"]) then {
 	_helmet = "rhsusf_opscore_mar_ut_pelt";
-	_vest = "PO_V_SPCS_TUB_SL";
+	_vest = "UK3CB_TKA_O_V_6b23_ML_6sh92_radio_Oli";
 };
 
 if (_role in ["ag","ammg"]) then {
-	_vest = "PO_V_SPCS_TUB_MED";
-};
-
-if (_role in ["lr","ab"]) then {
-	_backpack = "LOP_B_CA_EOD_tub";
-	_vest = "PO_V_SPCS_TUB_MG";
-};
-
-if (_role in ["ar","mmg"]) then {
-	_vest = "PO_V_SPCS_TUB_MG";
+	_backpack = "UK3CB_B_Alice_Medic_Bedroll_K";
+	_vest = "UK3CB_TKA_O_V_6b23_medic_Oli"
 };
 
 if (_role isEqualTo "crew") then {
 	_helmet = "H_HelmetCrew_B";
-	_vest = "PO_V_SPCS_TUB_CREW";
+	_vest = "UK3CB_TKA_O_V_6b23_ml_crew_Oli";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "rhs_zsh7a_mike_green";
-	_vest = "PO_V_SPCS_TUB_CREW";
+	_vest = "UK3CB_TKA_O_V_6b23_ml_crew_Oli";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "O_UAV_01_backpack_F";

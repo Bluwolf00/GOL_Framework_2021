@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2351;
+		nextID=2445;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6253;
+		nextID=6291;
 	};
 	class Camera
 	{
-		pos[]={62.011017,38.787258,9.9693346};
-		dir[]={0.03741945,-0.49936053,0.86559999};
-		up[]={0.021567237,0.8663938,0.49890476};
-		aside[]={0.99907857,-6.9245289e-008,-0.04318944};
+		pos[]={53.369568,82.735718,-31.456923};
+		dir[]={0.03161303,-0.56400162,0.82517475};
+		up[]={0.02159168,0.82577199,0.56359255};
+		aside[]={0.99927253,1.0639633e-007,-0.038282976};
 	};
 };
 binarizationWanted=0;
@@ -35,7 +35,7 @@ sourceName="GOL_Framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
-	"FIR_PilotCrewPack_US",
+	"tsp_faction",
 	"ace_gforces",
 	"ace_parachute",
 	"A3_Supplies_F_Exp_Ammoboxes",
@@ -74,15 +74,15 @@ class AddonsMetaData
 		};
 		class Item1
 		{
-			className="FIR_PilotCrewPack_US";
-			name="FIR_PilotCrewPack_US";
+			className="tsp_faction";
+			name="tsp_faction";
 		};
 		class Item2
 		{
 			className="ace_parachute";
 			name="ACE3 - Parachute";
 			author="ACE-Team";
-			url="http://ace3mod.com/";
+			url="https://ace3.acemod.org/";
 		};
 		class Item3
 		{
@@ -96,7 +96,7 @@ class AddonsMetaData
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
-			url="http://ace3mod.com/";
+			url="https://ace3.acemod.org/";
 		};
 		class Item5
 		{
@@ -110,7 +110,7 @@ class AddonsMetaData
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
-			url="http://ace3mod.com/";
+			url="https://ace3.acemod.org/";
 		};
 		class Item7
 		{
@@ -131,7 +131,7 @@ class AddonsMetaData
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
-			url="http://ace3mod.com/";
+			url="https://ace3.acemod.org/";
 		};
 		class Item10
 		{
@@ -185,7 +185,7 @@ class AddonsMetaData
 			className="ace_vehicle_damage";
 			name="ACE3 - Vehicle Damage";
 			author="ACE-Team";
-			url="http://ace3mod.com/";
+			url="https://ace3.acemod.org/";
 		};
 		class Item18
 		{
@@ -282,7 +282,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category2
+	class Category1
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -565,7 +565,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category3
+	class Category2
 	{
 		name="Scenario";
 		class Attribute0
@@ -613,7 +613,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=375;
+									items=376;
 									class Item0
 									{
 										class data
@@ -5864,6 +5864,20 @@ class CustomAttributes
 											value="acex_headless_transferloadout";
 										};
 									};
+									class Item375
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="gw_gear_civilian";
+										};
+									};
 								};
 							};
 						};
@@ -5880,7 +5894,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=375;
+									items=376;
 									class Item0
 									{
 										class data
@@ -20114,7 +20128,7 @@ class CustomAttributes
 																"STRING"
 															};
 														};
-														value="NATO-W";
+														value="NATO-D";
 													};
 												};
 												class Item1
@@ -20159,7 +20173,7 @@ class CustomAttributes
 																"STRING"
 															};
 														};
-														value="RUSSIAN-W";
+														value="CSAT-H";
 													};
 												};
 												class Item1
@@ -23265,6 +23279,51 @@ class CustomAttributes
 															};
 														};
 														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item375
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"STRING"
+															};
+														};
+														value="CIVI-ALTIS";
 													};
 												};
 												class Item1

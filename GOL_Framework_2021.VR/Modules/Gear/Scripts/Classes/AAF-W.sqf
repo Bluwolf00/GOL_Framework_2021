@@ -6,13 +6,13 @@ _OfficerHelmet = "H_MilCap_dgtl";
 _helmet = selectRandom ["H_HelmetIA_net","H_HelmetIA_camo","H_HelmetIA"];
 _uniform = selectRandom ["U_I_CombatUniform","U_I_CombatUniform_shortsleeve","U_I_CombatUniform_tshirt"];
 _vest = selectRandom ["V_PlateCarrierIA2_dgtl","V_PlateCarrierIA1_dgtl"];
-_backpack = "B_FieldPack_oli";
+_backpack = "UK3CB_AAF_B_B_FIELDPACK_DIGI_GRN";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "TFAR_anprc155";
 };
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "B_Carryall_oli";
+	_backpack = "UK3CB_AAF_B_B_CARRYALL_DIGI_GRN";
 };
 if (_role isEqualTo "crew") then {
 	_helmet = "H_HelmetCrew_I";

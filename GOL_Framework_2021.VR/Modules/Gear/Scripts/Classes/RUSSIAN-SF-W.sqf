@@ -19,20 +19,20 @@ _helmet = ["rhs_beanie_green"] call BIS_fnc_selectRandom;
 _OfficerHelmet = "rhs_beret_vdv3";
 _uniform = "rhsgref_uniform_olive";
 _vest = "rhs_6b3_holster";
-_backpack = "OLIVE_Assaultpack";
+_backpack = "UK3CB_CHC_C_B_HIKER";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "OLIVE_B_RadioBag_01";
-};
-
-if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "OLIVE_PB_Bergen";
+	_backpackRadio = "UK3CB_CW_SOV_O_LATE_B_ASS_BERGEN_Radio";
 };
 
 if (_role isEqualTo "uav") then {
 	_backpack = "O_UAV_01_backpack_F";
 	_gps = "O_UAVTerminal";
+};
 
+if(_role isEqualTo "p") then {
+	_helmet = "UK3CB_ARD_B_H_zsh7a_mike";
+	_backpackRadio = _backpack;
 };
 if (_role isEqualTo "jetp") then {
 	_goggles = "G_Aviator";

@@ -14,30 +14,31 @@ _glflareG = "rhs_VG40OP_green";
 _glflareR = "rhs_VG40OP_red";
 _glflareW = "rhs_VG40OP_white";
 
-_goggles = "rhsusf_shemagh_od";
-_helmet = ["LOP_H_6B27M_Digit","LOP_H_6B27M_ess_Digit"] call BIS_fnc_selectRandom;
+_goggles = "Armband_Yellow_XL";
+_helmet = ["UK3CB_ADA_B_H_6b27m_OLI","UK3CB_ADA_B_H_6b27m_ESS_OLI","UK3CB_ADA_B_H_6b27m_ml_ESS_OLI","UK3CB_ADA_B_H_6b27m_ESS_OLI"] call BIS_fnc_selectRandom;
 _OfficerHelmet = "rhs_ushanka";
-_uniform = "LOP_U_UKR_Fatigue_Multicam";
-_vest = selectRandom ["vest_spc_radio_M11","vest_spc_rifleman_M11"];
-_backpack = "M11_Kitbag";
+_uniform = selectRandom ["UK3CB_LNM_B_U_Crew_CombatSmock_05","UK3CB_LNM_B_U_Crew_CombatSmock_04","UK3CB_LNM_B_U_Crew_CombatSmock_13","UK3CB_LNM_B_U_CombatSmock_27","UK3CB_LNM_B_U_CombatSmock_36","UK3CB_LSM_B_U_CombatSmock_08","UK3CB_LSM_B_U_CombatSmock_02"];
+_vest = selectRandom ["UK3CB_TKA_O_V_6b23_ml_Oli_02","UK3CB_TKA_O_V_6b23_ml_sniper_Oli"];
+_backpack = "UK3CB_CHC_C_B_HIKER";
 _backpackRadio = _backpack;
 
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "M11_B_RadioBag_01";
+	_backpackRadio = "UK3CB_CW_SOV_O_LATE_B_ASS_BERGEN_Radio";
 };
 
 if(_role in ["ag","ammg"]) then {
-	_backpack = "M11_Kitbag";
+	_backpack = "B_Carryall_green_F";
 };
 if (_role isEqualTo "p") then {
+	_goggles = "";
 	_helmet = "H_PilotHelmetHeli_O";
-	_uniform = "LOP_U_UKR_Fatigue_DF15";
-	_vest = "vest_spc_crewman_M11";
+	_uniform = "UK3CB_LNM_B_U_CombatUniform_12";
+	_vest = "UK3CB_TKA_O_V_6b23_ml_crew_Oli";
 };
 
 if(_role isEqualTo "crew") then {
-	_uniform = "LOP_U_UKR_Fatigue_TanMTP";
-	_vest = "vest_spc_crewman_M11";
+	_goggles = "";
+	_vest = "UK3CB_TKA_O_V_6b23_ml_crew_Oli";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "O_UAV_01_backpack_F";

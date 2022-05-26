@@ -17,12 +17,12 @@ _glflareW = "rhs_VG40OP_white";
 _goggles = "";
 _helmet = ["rhs_ssh60"] call BIS_fnc_selectRandom;
 _OfficerHelmet = "rhs_pilotka";
-_uniform = "Uniform_Full_VZ95";
+_uniform = "rhsgref_uniform_para_ttsko_urban";
 _vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
 _backpack = "rhs_sidor";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "OLIVE_B_RadioBag_01";
+	_backpackRadio = "UK3CB_B_O_Tactical_Backpack_Radio";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
@@ -31,7 +31,7 @@ if (_role in ["ag","ammg","lr","ab"]) then {
 
 if (_role isEqualTo "p") then {
 	_helmet = "rhs_zsh7a_mike_green";
-	_uniform = "LOP_U_US_Fatigue_03";
+	_uniform = "rhsgref_uniform_para_ttsko_urban";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "O_UAV_01_backpack_F";

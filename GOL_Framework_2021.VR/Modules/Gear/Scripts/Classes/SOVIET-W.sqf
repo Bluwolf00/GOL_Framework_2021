@@ -22,7 +22,7 @@ _vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
 _backpack = "rhs_sidor";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "OLIVE_B_RadioBag_01";
+	_backpackRadio = "UK3CB_B_O_Tactical_Backpack_Radio";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {

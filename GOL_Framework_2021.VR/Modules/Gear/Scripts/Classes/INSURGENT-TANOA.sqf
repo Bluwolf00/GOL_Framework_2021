@@ -17,14 +17,14 @@ _glflareW = "rhs_VG40OP_white";
 _allowedNightStuff = false;
 
 _goggles = "";
-_helmet = selectRandom ["H_Bandanna_khk","H_Booniehat_oli","PO_H_M1_OLV_2","rhs_ssh60","rhs_tsh4","",""];
+_helmet = selectRandom ["H_Bandanna_khk","H_Booniehat_oli","UK3CB_ADA_I_H_M1_DPP","rhs_ssh60","rhs_tsh4","",""];
 _OfficerHelmet = "rhs_beret_vdv3";
-_uniform = selectRandom ["U_I_C_Soldier_Para_2_F","U_I_C_Soldier_Para_3_F","U_I_C_Soldier_Para_5_F","U_I_C_Soldier_Para_4_F","U_I_C_Soldier_Para_1_F","U_I_C_Soldier_Camo_F"];
+_uniform = selectRandom ["U_I_C_Soldier_Para_2_F","U_I_C_Soldier_Para_3_F","U_I_C_Soldier_Para_5_F","U_I_C_Soldier_Para_4_F","U_I_C_Soldier_Para_1_F","U_I_C_Soldier_Camo_F","rhsgref_uniform_TLA_1","rhsgref_uniform_TLA_2"];
 _vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_holster","rhs_6b2_lifchik","rhs_6b2_RPK","rhs_6b2_SVD","rhs_6b2"];
 _backpack = "rhs_sidor";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "clf_Green_prc117g_co";
+	_backpackRadio = "UK3CB_CW_SOV_O_LATE_B_ASS_BERGEN_Radio";
 };
 
 if (_role in ["lr","ab"]) then {
@@ -36,7 +36,7 @@ if (_role in ["ag","ammg"]) then {
 };
 if (_role isEqualTo "p") then {
 	_helmet = "H_Booniehat_khk_hs";
-	_uniform = "Uniform_Coveralls_VZ85";
+	_uniform = "UK3CB_MDF_B_U_CombatUniform_01_LIZ";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";

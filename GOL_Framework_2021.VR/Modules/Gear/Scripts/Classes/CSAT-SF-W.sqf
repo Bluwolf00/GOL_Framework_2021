@@ -9,7 +9,7 @@ _vest = selectRandom ["rhs_6b3_AK","rhs_6b3","rhs_6b3_holster","rhs_6b3_AK_2","r
 _backpack = selectRandom ["rhs_rk_sht_30_olive","rhs_rk_sht_30_olive_engineer_empty"];
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "OLIVE_B_RadioBag_01";
+	_backpackRadio = "UK3CB_LDF_B_B_RadioBag_OLI";
 };
 
 if (_role in ["sl","tl","fac"]) then {

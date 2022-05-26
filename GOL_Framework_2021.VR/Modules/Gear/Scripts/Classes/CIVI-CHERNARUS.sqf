@@ -7,23 +7,10 @@ _allowedNightStuff = false;
 //	officials	- police, paramedics etc
 
 _goggles = "";
-_helmet = selectRandom ["","LOP_H_Villager_cap","LOP_H_Worker_cap"];
-_uniform = selectRandom ["LOP_U_CHR_Villager_03","LOP_U_CHR_Woodlander_01","LOP_U_CHR_Worker_03"];
+_helmet = selectRandom ["","UK3CB_H_Beanie_02_BLK","UK3CB_H_Bandanna_Brown_Check","UK3CB_H_Worker_Cap_01","UK3CB_H_Villager_Cap_01","UK3CB_H_Ushanka_Cap_01","","UK3CB_TKP_B_H_Patrolcap_TAN","H_Cap_blk","H_Cap_oli"];
+_uniform = selectRandom [
+	"UK3CB_CHC_C_U_PROF_01","UK3CB_CHC_C_U_WORK_02","UK3CB_CHC_C_U_WORK_01","UK3CB_CHC_C_U_COACH_01","UK3CB_CHC_C_U_COACH_03","UK3CB_CHC_C_U_COACH_05","UK3CB_CHC_C_U_COACH_04",
+	"UK3CB_CHC_C_U_ACTIVIST_04","UK3CB_CHC_C_U_ACTIVIST_03","UK3CB_CHC_C_U_CIT_04","UK3CB_CHC_C_U_CIT_05","UK3CB_CHC_C_U_HIKER_03","UK3CB_CHC_C_U_HIKER_01"
+];
 _vest = "";
 _backpack = "";
-
-if ((random 1) > 0.7) then {
-	_goggles = "";
-	_helmet = "";
-	_uniform = selectRandom ["LOP_U_CHR_Policeman_01","LOP_U_CHR_Doctor_01"];
-	_vest = "";
-	_backpack = "";
-
-	if ((toLower(_role)) isEqualTo "worker") then {
-		_uniform = selectRandom ["LOP_U_CHR_Profiteer_01","LOP_U_CHR_Profiteer_02","LOP_U_CHR_Profiteer_04","LOP_U_CHR_Priest_01"];
-	};
-
-	if (_uniform isEqualTo "LOP_U_CHR_Policeman_01") then {
-		_helmet = "LOP_H_Policeman_cap";
-	};
-};

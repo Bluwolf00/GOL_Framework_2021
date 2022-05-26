@@ -17,9 +17,9 @@ _glflareW = "rhs_VG40OP_white";
 _allowedNightStuff = false;
 
 _goggles = selectRandom ["G_Bandanna_oli","G_Balaclava_oli",""];
-_helmet = selectRandom ["","rhs_ssh68","rhsgref_M56"];
-_OfficerHelmet = "H_Beret_blk";
-_uniform = selectRandom ["LOP_U_ChDKZ_Fatigue_02","LOP_U_ChDKZ_Fatigue_03","LOP_U_ChDKZ_Fatigue_04"];
+_helmet = selectRandom ["","rhs_ssh68_2","rhsgref_M56"];
+_OfficerHelmet = "UK3CB_H_Beret_Officer_Red_Star";
+_uniform = selectRandom ["UK3CB_CHD_B_U_H_Pilot_Uniform_03","UK3CB_CHD_B_U_CombatUniform_07","UK3CB_CHD_B_U_CombatUniform_01","UK3CB_CHD_B_U_CombatUniform_02","UK3CB_CHD_B_U_H_Pilot_Uniform_01","UK3CB_CHD_B_U_CombatSmock_04","UK3CB_CHD_B_U_CombatUniform_03"];
 _vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
 _backpack = "rhs_sidor";
 _backpackRadio = _backpack;
@@ -32,7 +32,7 @@ if (_role in ["ag","ammg","lr","ab"]) then {
 };
 
 if (_role isEqualTo "p") then {
-	_helmet = "booniehat_M05";
+	_helmet = "UK3CB_H_Beanie_02_Camo";
 };
 
 if (_role isEqualTo "uav") then {
@@ -48,20 +48,34 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
+
 _silencer = "rhs_acc_dtk1983";
 _pointer = "";
 _sight = "";
 _bipod = "";
 
 _rifle = ["rhs_weap_aks74", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["rhs_weap_aks74u", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["rhs_weap_aks74_gp25", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["rhs_weap_akms", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_545x39_Mag_F";
 _rifle_mag_tr = "30Rnd_545x39_Mag_Tracer_F";
 _rifleGL_mag = "30Rnd_545x39_Mag_F";
 _rifleGL_mag_tr = "30Rnd_545x39_Mag_Tracer_F";
+
+_silencer = "rhs_acc_dtkakm";
+_pointer = "";
+_sight = "";
+_bipod = "";
+
+_rifleL = ["rhs_weap_akms", _silencer, _pointer, _sight, _bipod];
 _rifleL_mag = "rhs_30Rnd_762x39mm_bakelite_tracer";
+
+_silencer = "rhs_acc_pgs64_74u";
+_pointer = "";
+_sight = "";
+_bipod = "";
+
+_rifleC = ["rhs_weap_aks74u", _silencer, _pointer, _sight, _bipod];
+
 
 _LMG = ["hlc_rifle_rpk", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "rhs_75Rnd_762x39mm_tracer";
@@ -90,7 +104,7 @@ _pdw_mag = "rhs_mag_9x19mm_7n31_44";
 
 _silencer = "";
 _pointer = "";
-_sight = "rhs_acc_pso1m21";
+_sight = "rhs_acc_pso1m2";
 _bipod = "";
 
 _rifleMarksman = ["rhs_weap_svdp_wd", _silencer, _pointer, _sight, _bipod];
