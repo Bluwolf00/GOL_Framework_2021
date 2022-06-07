@@ -79,7 +79,7 @@ _pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
 
 _silencer = "";
 _pointer = "";
-_sight = "rhs_acc_pso1m21_svd";
+_sight = "";
 _bipod = "";
 
 _rifleMarksman = ["hlc_rifle_awmagnum_BL", _silencer, _pointer, _sight, _bipod];
