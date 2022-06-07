@@ -70,8 +70,8 @@ _HAT_mag = "rhs_fgm148_magazine_AT";
 _AA = ["rhs_weap_fgm148", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "Titan_AA";
 
-_pistol = ["hgun_Rook40_F", _silencer, _pointer, _sight, _bipod];
-_pistol_mag = "30Rnd_9x21_Red_Mag";
+_pistol = ["hlc_pistol_P226R_Combat", _silencer, _pointer, _sight, _bipod];
+_pistol_mag = "hlc_15Rnd_9x19_B_P226";
 
 _pdw = ["UK3CB_MP5A4", _silencer, _pointer, _sight, _bipod];
 _pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";
@@ -82,5 +82,5 @@ _pointer = "";
 _sight = "rhs_acc_pso1m21_svd";
 _bipod = "";
 
-_rifleMarksman = ["rhs_weap_svdp", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "ACE_10Rnd_762x54_Tracer_mag";
+_rifleMarksman = ["hlc_rifle_awmagnum_BL", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman_mag = "hlc_5rnd_300WM_FMJ_AWM";
