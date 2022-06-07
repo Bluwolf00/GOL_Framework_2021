@@ -42,11 +42,16 @@ _bipod = "";
 _rifle = ["hlc_rifle_auga1_t", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["hlc_rifle_auga1_t", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["uk3cb_auga3_gl", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_auga1_t", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["hlc_rifle_FAL5061", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "hlc_40Rnd_556x45_M_AUG";
 _rifle_mag_tr = "hlc_40Rnd_556x45_M_AUG";
-_rifleGL_mag = "UK3CB_AUG_42Rnd_556x45_Magazine_GT";
-_rifleGL_mag_tr = "UK3CB_AUG_42Rnd_556x45_Magazine_GT";
+_rifleC_mag = "hlc_40Rnd_556x45_M_AUG";
+_rifleC_mag_tr = "hlc_40Rnd_556x45_M_AUG";
+_rifleGL_mag = "UK3CB_AUG_42Rnd_556x45_Magazine_R";
+_rifleGL_mag_tr = "UK3CB_AUG_42Rnd_556x45_Magazine_R";
+_rifleL_mag = "UK3CB_FNFAL_30rnd_762x51_RT";
+_rifleL_mag_tr = "UK3CB_FNFAL_30rnd_762x51_RT";
+
 
 _LMG = ["hlc_lmg_minimipara_long_railed", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "hlc_200rnd_556x45_M_SAW";
