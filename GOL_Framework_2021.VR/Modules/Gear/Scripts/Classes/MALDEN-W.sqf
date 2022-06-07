@@ -19,13 +19,13 @@ _helmet = selectRandom ["rhssaf_helmet_m97_olive_nocamo_black_ess_bare","rhssaf_
 _OfficerHelmet = "UK3CB_MDF_B_H_Off_Beret";
 _uniform = "UK3CB_B_U_CombatUniform_03_WDL";
 _vest = "rhssaf_vest_md98_rifleman";
-_backpack = "OLIVE_Kitbag";
+_backpack = "UK3CB_B_Backpack_Pocket_OLI";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "OLIVE_B_RadioBag_01";
+	_backpackRadio = "UK3CB_LDF_O_B_RadioBag_GEO";
 };
 if (_role in ["ag","ammg","sm"]) then {
-	_backpack = "OLIVE_Medicpack";
+	_backpack = "UK3CB_B_Backpack_Med_OLI";
 };
 
 if (_role in ["lr","ab"]) then {

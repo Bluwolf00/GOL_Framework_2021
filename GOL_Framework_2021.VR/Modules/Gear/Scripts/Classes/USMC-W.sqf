@@ -8,7 +8,7 @@ _uniform = "rhs_uniform_FROG01_wd";
 _vest = "rhsusf_spc_light";
 _backpack = "rhsusf_falconii_coy_gr";
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "unv_MARPAT_WD_big_rt1523g";
+	_backpackRadio = "UK3CB_B_B_Backpack_Radio_Chem";
 };
 
 if (_role in ["ftl","sl"]) then {
@@ -63,7 +63,7 @@ _rifleC_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 _rifleL_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
 _rifleL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 
-_LMG = ["rhs_weap_m249_light_S", _silencer, _pointer, _sight, _bipod];
+_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 
 _MMG = ["rhs_weap_m240B", _silencer, _pointer, _sight, _bipod];

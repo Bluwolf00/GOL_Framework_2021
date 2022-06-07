@@ -8,7 +8,7 @@ _uniform = "rhs_uniform_FROG01_d";
 _vest = "rhsusf_spc_rifleman";
 _backpack = "rhsusf_assault_eagleaiii_coy_mg";
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "unv_MARPAT_D_big_rt1523g";
+	_backpackRadio = "UK3CB_B_B_Backpack_Radio_Chem";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
@@ -34,7 +34,7 @@ if (_role isEqualTo "uav") then {
 if (_role isEqualTo "jetp") then {
 	_goggles = "";
 	_helmet = "H_PilotHelmetFighter_B";
-	_uniform = "FIR_Fighter_Pilot_USMC_Nomex5";
+	_uniform = "UK3CB_CW_US_B_LATE_U_J_Pilot_Uniform_01_NATO";
 	_vest = "V_Rangemaster_belt";
 	_backpack = "B_Parachute";
 };
@@ -55,7 +55,7 @@ _rifleGL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 _rifleC_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
 _rifleC_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 
-_LMG = ["hlc_lmg_M249E1", _silencer, _pointer, _sight, _bipod];
+_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 
 _MMG = ["rhs_weap_m240B", _silencer, _pointer, _sight, _bipod];

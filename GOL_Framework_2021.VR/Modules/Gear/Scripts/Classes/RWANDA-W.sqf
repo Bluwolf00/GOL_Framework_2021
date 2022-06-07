@@ -21,12 +21,12 @@ _allowedNightStuff = true;
 _goggles = "G_Balaclava_TI_blk_F";
 _helmet = selectRandom ["rhsusf_opscore_fg"];
 _OfficerHelmet = "H_Beret_EAF_01_F";
-_uniform = selectRandom ["LOP_U_ISTS_Fatigue_18","LOP_U_BH_Fatigue_M81","LOP_U_BH_Fatigue_M81_FWDL"];
-_vest = "LOP_V_CarrierLite_WDL";
+_uniform = selectRandom ["UK3CB_ADM_B_U_CombatUniform_01_MAR_WDL_ALT","UK3CB_ADM_B_U_CombatUniform_01_WDL_DDPM","UK3CB_ADM_B_U_CombatUniform_01_WDL","UK3CB_B_U_CombatUniform_02_WDL","UK3CB_B_U_CombatUniform_01_WDL"];
+_vest = "rhssaf_vest_md98_rifleman";
 _backpack = "B_Kitbag_rgr";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "OLIVE_B_RadioBag_01";
+	_backpackRadio = "UK3CB_CW_SOV_O_LATE_B_ASS_BERGEN_Radio";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {

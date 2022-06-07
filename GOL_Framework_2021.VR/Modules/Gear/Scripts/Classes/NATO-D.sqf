@@ -2,7 +2,7 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _goggles = "";
-_helmet = "H_HelmetB";
+_helmet = "H_HelmetB_light";
 _OfficerHelmet = "rhs_beret_vdv3";
 _uniform = "U_B_CombatUniform_mcam";
 _vest = "V_PlateCarrier2_rgr";
@@ -42,9 +42,9 @@ _pointer = "acc_pointer_IR";
 _sight = "optic_hamr";
 _bipod = "";
 
-_rifle = ["arifle_MX_Black_F", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["arifle_MXC_Black_F", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["arifle_MX_GL_Black_F", _silencer, _pointer, _sight, _bipod];
+_rifle = ["arifle_MX_F", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["arifle_MXC_F", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["arifle_MX_GL_F", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["arifle_MXM_F", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "30Rnd_65x39_caseless_mag";
 _rifle_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
@@ -53,7 +53,7 @@ _rifleGL_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 _rifleL_mag = "30Rnd_65x39_caseless_mag";
 _rifleL_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 
-_LMG = ["arifle_MX_SW_Black_F", _silencer, _pointer, _sight, _bipod];
+_LMG = ["arifle_MX_SW_F", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "100Rnd_65x39_caseless_mag_Tracer";
 
 _MMG = ["hlc_lmg_M60E4", _silencer, _pointer, _sight, _bipod];
