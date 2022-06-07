@@ -59,8 +59,8 @@ GVAR(StaminaCoef) = 0.5;
 			"ISRAELI",
 			"AAF-W",
 			"AAF-SF-W",
-			"CUSTOM-W",
-			"UN-IRISH"
+			"UN-IRISH",
+			"CUSTOM-W"
 		],
 		[
 			"NATO Desert",
@@ -97,8 +97,8 @@ GVAR(StaminaCoef) = 0.5;
 			"Israeli Defence Force",
 			"AAF-Woodland",
 			"AAF SF Woodland",
-			"CUSTOM-West",
-			"Irish UN"
+			"Irish UN",
+			"CUSTOM-West"
 		],
 		0
 	], CBA_SERVEROVERWRITE
