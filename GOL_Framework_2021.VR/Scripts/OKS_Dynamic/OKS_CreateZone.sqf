@@ -1,8 +1,67 @@
 
 /*
-	[TriggerName,SplitTriggerBool,[StaticContacts,PatrolContacts,CreateSectorObjective,LocalPatrols],_Side,NumberOfWheeled,NumberOfAPC,NumberofTank,[CompositionCount,OnlyTarmac],MortarPitCount,[ObjectiveCount,LocalPatrols],[0,0,0,0,0]]
-	[Trigger_1,true,[50,25,true,true],EAST,1,1,1,[2,true],1,3] execVM "Scripts\OKS_Dynamic\CreateZone.sqf";
+	Dynamic Script Params
+	0 - Trigger Name (Object)
+	1 - Disabled - Keep False
+	2 - Number of Infantry - [Static Integer,Patrol Integer,CreateSectorObjective?,LocalPatrols?] (Array) -
+	3 - Wheeled Patrols (Integer/Number)
+	4 - APC Patrols (Integer/Number)
+	5 - Tank Patrols (Integer/Number)
+	6 - Roadblocks [RoadBlocksCount,OnlyOnTarmac,LocalPatrols?,NumberChanceForVehicle(0-1)] (Array)
+	7 - Mortar Pits [MortarCount,LocalPatrols?] (Array)
+	8 - Random Objectives [ObjectiveCount,LocalPatrols?] (Array)
+	9 - Hunt Array Bases [Infantry,Wheeled,APC,Tank,Helicopter]
+	10 - Dynamic Civilians on? (Boolean)
 
+	Local Patrols - This means that the strongpoints / roadblocks / mortar pits / objectives have their own local patrols near their position.
+	If you use it on Parameter 2, 30% of the static contacts will be turned into patrols.
+
+	Note:
+	The Dynamic Scripts does work on its own however is very limited in selecting positions for strongpoints.
+	You as an editor can assist the dynamic script by placing down locations for pinpointing different positions.
+	In Eden-Editor "Location"s can be found in Systems (F5) and Game Logics > Locations.
+
+	Area, Base, City, Evac Point, Resupply Point & Town -> Spawns Strongpoints & Sector Tasks (Selects Random Buildings in Area. Generally more contacts per building)
+	Outpost -> Spawns Compounds & Sector Tasks (Selects all buildings in range of compoundSize (Settings) and spawns even-spread over all buildings)
+	FOB -> Spawns Roadblocks, use the direction of the logic to define the direction of the roadblock.
+	Respawn Point -> If you use HuntBases these locations will be picked, use the direction of the logic to choose the spawn direction 15-25m away from logic.
+	Camp -> Static Objective positions, once again direction of logic defines direction of Objective compositions.
+	Village -> Defines village area for the Dynamic Civilian presence, radius is found in Settings.sqf
+
+	All Locations are not required, the script will find its own locations, however for the best experience and best result, help the dynamic script by placing these logics.
+
+
+	Example:
+		/// ZONE 1 ///
+		[	Trigger_1,  // Name of Trigger used as Spawn Area
+			false, 		// DO NOT EDIT
+			[
+				8,      // Number of Static Infantry - Preferred Game Logic Location 'Outpost'"
+				25,		// Number of Patrolling Infantry
+				false,  // Create Sector Objective on Garrison?
+				false   // Should have dedicated patrols near static positions
+			],
+			east, // Side of Enemy
+			0,    // Number of Wheeled on Patrol
+			0,    // Number of APCs on Patrol
+			0,    // Number of Tanks on Patrol
+			[
+				0,     // Number of Roadblocks - Preferred Game Logic Location 'FOB'"
+				true,  // Should be on tarmac.
+				false, // Should have dedicated patrol.
+				0  	   // Chance for Static Vehicle (1 = 100%, 0.5 = 50%)
+			],
+			[
+				0,     // Number of Mortars
+				false  // Should have dedicated patrols around it
+			],[
+				0,    // Number of Random Objectives - Preferred Game Logic Location 'Camp'"
+				false // Should have dedicated patrols around it
+			],
+			[0,0,0,0,0] // Infantry, Wheeled, APCs, Tanks, Air Assault - Hunt Bases - Preferred Game Logic Location 'Respawn Point'"
+			,false      // Should Enable Civilian Presence - Required Game Logic Location 'Village'"
+		] spawn OKS_CreateZone;
+		/// END ZONE 1 ///
 */
 
 if(!isServer) exitWith {};
