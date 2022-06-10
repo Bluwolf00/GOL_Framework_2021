@@ -50,6 +50,7 @@
 						_Unit assignAsGunner _X;
 						[_Unit] orderGetIn true;
 						_Unit moveInAny _X;
+						[_Unit] remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 					} foreach _Statics;
 				};
 			};
@@ -67,6 +68,7 @@
 						_Unit assignAsGunner _X;
 						[_Unit] orderGetIn true;
 						_Unit moveInAny _X;
+						[_Unit] remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 					} foreach _Statics;
 				};
 			};

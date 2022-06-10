@@ -95,6 +95,7 @@
 				_Group setSpeedMode "Limited";
 				_Group setVariable ["GW_Performance_autoDelete", false, true];
 				_Group AllowFleeing 0;
+				{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
 			};
 		}
 		else

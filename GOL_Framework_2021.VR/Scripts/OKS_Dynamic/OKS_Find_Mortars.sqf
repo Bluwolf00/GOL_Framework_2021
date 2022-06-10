@@ -88,9 +88,11 @@ _Debug_Variable = false;
 			{
 				_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [_SelectedPos select 0,_SelectedPos select 1,0], [], 10, "NONE"];
 				_Unit setRank "SERGEANT";
+				_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 			} else {
 				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_SelectedPos select 0,_SelectedPos select 1,0], [], 10, "NONE"];
 				_Unit setRank "PRIVATE";
+				_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 			};
 		};
 		sleep 0.5;

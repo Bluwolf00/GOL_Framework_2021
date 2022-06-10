@@ -83,6 +83,7 @@ if !((count _unitArray) isEqualTo 0) then {
 		if !(_skipDelays) then {
 			sleep 0.9;
 		};
+		[_unit] remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 		_unit enableSimulationGlobal true;
 	} forEach _unitArray;
 };
@@ -140,6 +141,7 @@ if ((count _vehicleArray) > 0) then {
 			_unit enableSimulationGlobal false;
 			_unit setRank "PRIVATE";
 			_unit setVariable [QGVAR(isSpawned), true];
+			[_unit] remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 			TRACE_1("Created", _unit);
 			switch (toLower(_x select 0)) do {
 				case "driver": {

@@ -37,7 +37,8 @@
 			};
 			sleep 1;
 		};
-		waitUntil {sleep 5; !isNil "lambs_wp_fnc_moduleRush"};
+		{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
+		waitUntil {sleep 5; !isNil "lambs_wp_fnc_moduleRush"};	
 		[_Group,_Range,_Interval,[],_Center,true] remoteExec ["lambs_wp_fnc_taskRush",0];
 	} foreach _Spawns;
 

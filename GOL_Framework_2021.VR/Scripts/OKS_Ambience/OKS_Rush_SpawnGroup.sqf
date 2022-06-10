@@ -26,6 +26,7 @@
 		};
 		sleep 0.5;
 	};
+	{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
 	waitUntil {sleep 1; !isNil "lambs_wp_fnc_moduleRush"};
 	[_Group,_Range,30,[],[],true] remoteExec ["lambs_wp_fnc_taskRush",0];
 

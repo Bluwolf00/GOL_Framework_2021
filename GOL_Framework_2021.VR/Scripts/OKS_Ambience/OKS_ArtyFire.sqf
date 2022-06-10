@@ -116,6 +116,7 @@ if (!HasInterface || isServer) then
 		_X disableAI "TARGET";
 		_X disableAI "AUTOTARGET";
 		_X setVariable ["oks_disable_hunt",true];
+		_X remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 	} foreach units _gunner_group;
 
 	_gunner moveInGunner _arty;
@@ -221,6 +222,7 @@ if (!HasInterface || isServer) then
     		_gunner enableAI "TARGET";
 			_gunner enableAI "AUTOTARGET";
 			_gunner setCombatMode "YELLOW";
+			_gunner remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 			sleep 1;
 	        if(_Debug == 1) then {
         		systemChat "Firing Artillery..";

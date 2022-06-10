@@ -39,6 +39,7 @@
 		};
 		_Group setBehaviour "SAFE";
 		[_Group, _Spawnpos, _Range] call CBA_fnc_taskPatrol;
+		{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
 		if(_Side isEqualTo civilian) then {
 			_Group setSpeedMode "LIMITED";
 		};

@@ -34,7 +34,7 @@ OKS_AA_Check = {
                 _AA disableAI "COVER";
                 _AA doTarget _Helicopter;
                 _AA reveal [_Helicopter,4];
-                _AA selectWeapon (SecondaryWeapon _AA);
+                _AA selectWeapon (SecondaryWeapon _AA);              
 
                 [_AA,_Helicopter,_Trigger] spawn {
                     Params ["_AA","_Helicopter","_Trigger"];
@@ -100,6 +100,7 @@ OKS_AA_Check = {
     _AA setBehaviour "AWARE";
     _AA setCombatMode "BLUE";
     _AA disableAI "PATH";
+    [_AA] remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
     if(_Debug_Variable) then { systemChat format["AA Spawned - %1",_AA]};
 
     _trigger = createTrigger ["EmptyDetector", _Position,true];

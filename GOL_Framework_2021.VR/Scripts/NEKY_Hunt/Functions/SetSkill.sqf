@@ -9,9 +9,5 @@
 Params ["_Grp","_SkillVariables","_Skill"];
 
 {
-	for "_i" from 0 to ((count _SkillVariables) -1) do
-	{
-		_x setSkill [(_SkillVariables select _i), (_Skill select _i)];
-		Sleep 0.1;
-	};
+	_x remoteExec ["GW_SetDifficulty_fnc_setSkill",0]
 } forEach (Units _Grp);

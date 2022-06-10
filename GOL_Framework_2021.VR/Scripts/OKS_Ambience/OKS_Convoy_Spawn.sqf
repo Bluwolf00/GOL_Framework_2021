@@ -185,6 +185,8 @@ For "_i" from 1 to _Count do {
 	_CargoGroup setCombatMode "BLUE";
     _ConvoyArray pushBackUnique _Group;
 	_ConvoyArray pushBackUnique _CargoGroup;
+	{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _CargoGroup;
+	{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
     [_Vehicle,_Group,_CargoGroup,_Debug_Variable] spawn _WaitUntilCombat;
 };
 

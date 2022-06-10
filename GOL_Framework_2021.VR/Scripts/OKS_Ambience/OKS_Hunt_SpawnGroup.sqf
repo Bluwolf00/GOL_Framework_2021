@@ -45,6 +45,7 @@
 		_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 	};
 	sleep 1;
+	{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
 	if(isNil "_Group") exitWith {false};
 	waitUntil {sleep 5; !(isNil "lambs_wp_fnc_taskHunt")};
 	[_Group, _Range, 30, [], [], false] spawn lambs_wp_fnc_taskHunt;

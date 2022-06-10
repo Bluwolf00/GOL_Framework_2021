@@ -42,7 +42,11 @@ if(!isNil "OKS_Populate_StaticWeapons") then {
 */
 if(count _Locations > 0) then {
 	{
-		_Location = nearestBuilding (getPos _X);
+		if(typeName _X == "OBJECT") then {
+			_Location = nearestBuilding (getPos _X);
+		} else {
+			_Location = nearestBuilding _X;
+		};
 		_AllBuildings = (_Location) nearObjects ["House",125];
 		_SortedBuildings = [_AllBuildings,[],{(_Location) distance _x},"ASCEND"] call BIS_fnc_sortBy;
 		_SortedBuildings = _SortedBuildings select { 6 < count([_X] call BIS_fnc_buildingPositions) && !(isObjectHidden _X) };
@@ -105,13 +109,16 @@ if(_CountStrongpoints > 0) then {
 						{
 							_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
 							_Unit setRank "SERGEANT";
+							_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 						} else {
 							_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
 							_Unit setRank "PRIVATE";
+							_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 						};
 						sleep 1;
 					};
 					[_Group, _DirectionPos, (_CompoundSize * 2)] call CBA_fnc_taskPatrol;
+					{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
 					_Group setBehaviour "SAFE";
 				};
 			};
@@ -155,9 +162,11 @@ if(_CountStrongpoints > 0) then {
 					{
 						_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
 						_Unit setRank "SERGEANT";
+						_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 					} else {
 						_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
 						_Unit setRank "PRIVATE";
+						_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 					};
 					sleep 1;
 				};

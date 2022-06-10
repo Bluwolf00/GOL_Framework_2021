@@ -56,6 +56,7 @@ private ["_gunner","_OKS_CHECK_TRAVEL"];
 	_gunner setBehaviour "CARELESS";
 	_gunner setCombatMode "BLUE";
 	_gunner setVariable ["oks_disable_hunt",true];
+	_gunner remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 	_arty addEventHandler ["Fired",{ [(_this select 6),(_this select 0)] Spawn OKS_CHECK_TRAVEL;}];
 
 	sleep (10 + (random 10));

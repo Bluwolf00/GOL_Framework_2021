@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2522;
+		nextID=2536;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6348;
+		nextID=6386;
 	};
 	class Camera
 	{
-		pos[]={65.289558,41.889023,40.628452};
-		dir[]={-0.0068749087,-0.62533754,0.78032589};
-		up[]={-0.0055091786,0.78035545,0.62531394};
-		aside[]={0.99996322,-3.4964614e-008,0.008809994};
+		pos[]={74.611137,158.09062,-34.769997};
+		dir[]={-0.0036142096,-0.77010894,0.63791674};
+		up[]={-0.0043635378,0.63791203,0.77009606};
+		aside[]={0.9999907,9.6446456e-008,0.0056656389};
 	};
 };
 binarizationWanted=0;
@@ -613,7 +613,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=376;
+									items=378;
 									class Item0
 									{
 										class data
@@ -5878,6 +5878,34 @@ class CustomAttributes
 											value="gw_gear_civilian";
 										};
 									};
+									class Item376
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="gw_setdifficulty_unittraining";
+										};
+									};
+									class Item377
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="gw_setdifficulty_randomskill";
+										};
+									};
 								};
 							};
 						};
@@ -5894,7 +5922,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=376;
+									items=378;
 									class Item0
 									{
 										class data
@@ -23324,6 +23352,96 @@ class CustomAttributes
 															};
 														};
 														value="CIVI-AFRICA";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item376
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=2;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item377
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=0;
 													};
 												};
 												class Item1

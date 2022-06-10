@@ -149,6 +149,7 @@ NEKY_MortarAIReset =
 		[_Unit] OrderGetIn False;
 		_Unit setBehaviour "Combat";
 		_Unit setCombatMode "RED";
+		_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 		WaitUntil {sleep 30; !Alive _Unit};
 		sleep 600;
 		DeleteVehicle _Unit;
@@ -188,6 +189,7 @@ if ( (isNil "_Mortar") or (TypeName _Mortar == "STRING") ) then
 			_Unit DisableAI "TARGET";
 			_Unit DisableAI "AUTOTARGET";
 			_Unit DisableAI "FSM";
+			_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 	
 			// Remove eventHandler when AI gunner dies.
 			[_Mortar,_Unit] spawn 

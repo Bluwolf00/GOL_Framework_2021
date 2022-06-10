@@ -69,6 +69,7 @@
 		waitUntil {sleep 5; !(isNil "ace_ai_fnc_garrison") && !(isNil "OKS_EnablePath")};
 		[getPos (leader _Group), [typeOf _House], units _Group, 5, 2, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
 		sleep 2;
+		{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
 		[_Group] remoteExec ["OKS_SetStatic",0];
 		[_Group,0.3,15] spawn OKS_EnablePath;
 	};

@@ -275,6 +275,7 @@ switch (_TypeOfObjective) do {
 		_Group = CreateGroup _Side;
 		_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,0], [], 0, "NONE"];
 		_Unit setRank "SERGEANT";
+		_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 		_Unit MoveInDriver _Truck;
 
 		[_Truck] spawn {
@@ -384,11 +385,13 @@ switch (_TypeOfObjective) do {
 		_Group = CreateGroup _Side;
 		_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [0,0,0], [], 0, "NONE"];
 		_Unit setRank "SERGEANT";
+		_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 		_Unit MoveInDriver _Truck;
 
 		for "_i" to (_CargoSeats - 1) do {
 			_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,0], [], 0, "NONE"];
 			_Unit setRank "PRIVATE";
+			_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 			_Unit moveInAny _Truck;
 		};
 
@@ -638,12 +641,14 @@ switch (_TypeOfObjective) do {
 			{
 				_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
 				_Unit setRank "SERGEANT";
+				_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 			} else {
 				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
 				_Unit setRank "PRIVATE";
+				_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 			};
 		};
-
+		
 		[getPos _House, nil, units _Group, 1, 1, false, true] remoteExec ["ace_ai_fnc_garrison",0];
 		sleep 0.5;
 

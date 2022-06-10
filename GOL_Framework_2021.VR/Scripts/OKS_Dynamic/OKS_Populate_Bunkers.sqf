@@ -21,12 +21,15 @@ _UnitArray Params ["_Leaders","_Units","_Officer"];
 			_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
 			_Unit setRank "SERGEANT";
 			_Unit setUnitPos "UP";
+			_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 		} else {
 			_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
 			_Unit setRank "PRIVATE";
 			_Unit setUnitPos "UP";
+			_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 		};
 	};
 	[[_Position select 0,_Position select 1,0], nil, units _Group, _Range, 0, true, true] remoteExec ["ace_ai_fnc_garrison",0];
 	sleep 2;
+	
 	[_Group] remoteExec ["OKS_SetStatic",0];

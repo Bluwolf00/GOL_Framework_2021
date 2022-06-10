@@ -46,7 +46,7 @@ Params
 	["_Units", [1,1], [[]]],
 	["_UnitsWPs", [""], [[""],[]]],
 	["_Override", false, [true]],			// AS LONG AS BI HAVEN'T FIXED THEIR SHIT
-	["_Airbase", true,[true]],
+	["_Airbase", false,[true]],
 	["_OKS_Zone", ObjNull,[ObjNull]]
 
 ];
@@ -86,7 +86,7 @@ for "_i" from 0 to ((count _UnitsWPs) -1) do
 {
 	if (typeName (_UnitsWPs select _Index) == "STRING") then {_Temp = getMarkerPos (_UnitsWPs select _Index); _UnitsWPs set [_Index, _Temp]; _Index = _Index +1;};
 };
-if (typeName _Ingress == "STRING") then {_Ingress = getMarkerPos _Ingress; _OKS_Dir = MarkerDir _Ingress};
+if (typeName _Ingress == "STRING") then {_Ingress = getMarkerPos _Ingress; if(!isNil "_OKS_Dir") then { _OKS_Dir = random 360}; _OKS_Dir = MarkerDir _Ingress};
 if (typeName _UnloadOrDropMarker == "STRING") then {_UnloadOrDropMarker = getMarkerPos _UnloadOrDropMarker};
 if (typeName _Egress == "STRING") then {_Egress = getMarkerPos _Egress};
 if (typeName _Egress == "OBJECT") then { _Egress = getPos _Egress; };
@@ -371,6 +371,7 @@ if ((_Units Select 0) > 0) then
 			if (_SpareIndex < 0) then {_SpareIndex = _SpareIndex +1};
 			sleep 0.5;
 		};
+		{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
 		_Groups PushBack _Group;
 		{_x disableCollisionWith _Heli} forEach (units _Group);
 

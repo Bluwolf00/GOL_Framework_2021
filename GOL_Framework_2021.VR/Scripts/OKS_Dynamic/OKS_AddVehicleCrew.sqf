@@ -62,7 +62,7 @@
         //[_Driver] orderGetIn true;
         _Driver moveinDriver _Vehicle;
     };
-
+    {[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
     _Group
 
 
