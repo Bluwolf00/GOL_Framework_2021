@@ -16,8 +16,7 @@ if (!HasInterface || isServer) then
 		_Debug = 0;
 		Params["_Projectile","_Launcher"];
 
-		_TargetPos = _Launcher getVariable ["OKS_Arty_Target",false];
-		systemChat str _TargetPos;
+		_TargetPos = _Launcher getVariable ["OKS_Arty_Target",false];		
 		WaitUntil {sleep 1; (_Projectile distance2D _Launcher > 1000 || _Projectile distance2D _TargetPos < 500)};
 		if(_Debug == 1) then {
 			systemChat format["Deleted Projectile - Away from Tube: %2 - Near Target: %3",_Projectile distance2D _Launcher,_Projectile distance2D _Launcher > 1000,_Projectile distance2D _TargetPos < 500];
@@ -209,7 +208,7 @@ if (!HasInterface || isServer) then
 	*/
 
 	if (_Debug == 1) then {SystemChat "Disable AI"};
-	_arty addEventHandler ["Fired",{ [(_this select 6),(_this select 0)] Spawn OKS_CHECK_TRAVEL;}];
+	_arty addEventHandler ["Fired",{ [(_this select 6),(_this select 0)] remoteExec ["OKS_CHECK_TRAVEL",0]}];
 	
 	/// While Arty is not destroyed - Continue the loop
 	while {Alive _arty && (side (gunner _arty) isEqualTo _side)} do
