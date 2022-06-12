@@ -5,7 +5,7 @@ _goggles = selectRandom ["rhsusf_shemagh_od","rhsusf_shemagh2_od","rhs_googles_c
 _helmet = "UK3CB_AAF_I_H_MKVI_Helmet_B_BRN";
 _OfficerHelmet = "UK3CB_ANA_B_H_Beret_MAR";
 _uniform = "UK3CB_ADM_B_U_CombatUniform_01_WDL";
-_vest = "V_PlateCarrierH_CTRG";
+_vest = "V_PlateCarrierL_CTRG";
 _backpack = "B_AssaultPack_rgr";
 _backpackRadio = _backpack;
 
@@ -40,7 +40,7 @@ if (_role isEqualTo "jetp") then {
 
 _silencer = "uk3cb_baf_sffh";
 _pointer = "";
-_sight = "optic_hamr";
+_sight = "optic_mrco";
 _bipod = "";
 
 _rifle = ["UK3CB_BAF_L85A3", _silencer, _pointer, _sight, _bipod];
