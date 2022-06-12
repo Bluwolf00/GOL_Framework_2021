@@ -2,14 +2,14 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _goggles = "";
-_helmet = "rhs_stsh81";
+_helmet = "H_HelmetO_ghex_F";
 _OfficerHelmet = "H_Beret_CSAT_01_F";
-_uniform = "U_O_T_Soldier_F";
-_vest = "V_HarnessOGL_ghex_F";
+_uniform = "U_O_T_Officer_F";
+_vest = "rhsgref_6b23_ttsko_digi_sniper";
 _backpack = "B_FieldPack_ghex_F";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "tfar_mr3000_bwmod";
+	_backpackRadio = "UK3CB_AAF_B_B_FIELDPACK_DIGI_BLK_Radio";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {

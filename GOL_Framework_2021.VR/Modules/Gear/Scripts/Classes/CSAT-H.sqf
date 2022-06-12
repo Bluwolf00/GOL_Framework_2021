@@ -2,10 +2,10 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _goggles = "";
-_helmet = "rhs_stsh81_butan";
+_helmet = "H_HelmetO_ocamo";
 _OfficerHelmet = "H_Beret_CSAT_01_F";
-_uniform = "U_O_CombatUniform_ocamo";
-_vest = "V_HarnessOSpec_brn";
+_uniform = "U_O_officer_noInsignia_hex_F";
+_vest = "UK3CB_TKA_O_V_6b23_ml_engineer_Oli";
 _backpack = "B_FieldPack_ocamo";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
