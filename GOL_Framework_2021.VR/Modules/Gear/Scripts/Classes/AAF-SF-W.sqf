@@ -48,8 +48,12 @@ _rifleGL = ["HLC_Rifle_g3ka4_GL", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["hlc_rifle_g3sg1ris", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "hlc_20rnd_762x51_barrier_G3";
 _rifle_mag_tr = "hlc_20rnd_762x51_T_G3";
+_rifleC_mag = "ACE_20Rnd_762x51_Mk316_Mod_0_Mag";
+_rifleC_mag_tr = "ACE_20Rnd_762x51_Mag_Tracer";
 _rifleGL_mag = "hlc_20rnd_762x51_barrier_G3";
 _rifleGL_mag_tr = "hlc_20rnd_762x51_T_G3";
+_rifleL_mag = "ACE_20Rnd_762x51_Mk316_Mod_0_Mag";
+_rifleL_mag_tr = "hlc_20rnd_762x51_T_G3";
 
 
 _LMG = ["hlc_lmg_mk46mod1_grip", _silencer, _pointer, _sight, _bipod];

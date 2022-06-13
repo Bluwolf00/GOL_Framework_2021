@@ -6,7 +6,7 @@ _helmet = "rhssaf_beret_blue_un";
 _OfficerHelmet = "rhssaf_beret_blue_un";
 _uniform = "UK3CB_ADM_B_U_CombatUniform_01_WDL";
 _vest = "UK3CB_UN_B_V_6b23_ML_6sh92_radio";
-_backpack = "";
+_backpack = "rhssaf_kitbag_md2camo";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "UK3CB_B_B_Backpack_Radio_Chem_OLI";
