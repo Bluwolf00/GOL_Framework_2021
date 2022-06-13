@@ -60,6 +60,8 @@ GVAR(StaminaCoef) = 0.5;
 			"AAF-W",
 			"AAF-SF-W",
 			"UN-IRISH",
+			"TAKISTAN-D",
+			"TAKISTAN-SF-D",
 			"CUSTOM-W"
 		],
 		[
@@ -98,6 +100,8 @@ GVAR(StaminaCoef) = 0.5;
 			"AAF-Woodland",
 			"AAF SF Woodland",
 			"Irish UN",
+			"Takistani Desert",
+			"Takistani SF Desert",
 			"CUSTOM-West"
 		],
 		0
@@ -124,6 +128,7 @@ GVAR(StaminaCoef) = 0.5;
 			"TURKEY-D",
 			"SYRIA-D",
 			"TAKISTAN-D",
+			"TAKISTAN-SF-D",
 			"ISLAMICSTATE",
 			"INSURGENT-ME",
 			"INSURGENT-CHDKZ",
@@ -146,6 +151,7 @@ GVAR(StaminaCoef) = 0.5;
 			"Turkish Army Desert",
 			"Syrian Army Desert",
 			"Takistani Desert",
+			"Takistani SF Desert",
 			"Islamic State",
 			"INSURGENT Middle Eastern",
 			"INSURGENT ChDkz",
@@ -183,6 +189,7 @@ GVAR(StaminaCoef) = 0.5;
 			"TURKEY-D",
 			"SYRIA-D",
 			"TAKISTAN-D",
+			"TAKISTAN-SF-D",
 			"ISLAMICSTATE",
 			"INSURGENT-ME",
 			"INSURGENT-CHDKZ",
@@ -210,6 +217,7 @@ GVAR(StaminaCoef) = 0.5;
 			"Turkish Army Desert",
 			"Syrian Army Desert",
 			"Takistani Desert",
+			"Takistani SF Desert",
 			"Islamic State",
 			"INSURGENT Middle Eastern",
 			"INSURGENT ChDkz",

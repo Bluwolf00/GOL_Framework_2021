@@ -87,6 +87,9 @@ switch (_side) do {
 	case "TAKISTAN-D": {
 		#include "Classes\TAKISTAN-D.sqf"
 	};
+	case "TAKISTAN-SF-D": {
+		#include "Classes\TAKISTAN-SF-D.sqf"
+	};	
 	case "INSURGENT-ME": {
 		#include "Classes\INSURGENT-ME.sqf"
 	};
