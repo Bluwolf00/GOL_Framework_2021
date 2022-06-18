@@ -371,7 +371,7 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		{
 			_trg = createTrigger ["EmptyDetector", _X, true];
 			_trg setTriggerArea [(_CivilianTriggerSize),(_CivilianTriggerSize), 0, false];
-			[_trg,_CivilianCount,_HouseWaypoints,_RandomWaypoints,_ShouldBeAgent,_ShouldPanic,_Ethnicity] spawn OKS_Civilians;
+			[_trg,_CivilianCount,_HouseWaypoints,_RandomWaypoints,_ShouldBeAgent,_ShouldPanic,_Ethnicity,_MainTrigger] spawn OKS_Civilians;
 			sleep 10;
 		} foreach _VillagesInTrigger;
 	};

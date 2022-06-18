@@ -190,6 +190,7 @@ while {alive _Base && _Waves > 0} do
 
 						{NEKY_Hunt_CurrentCount pushBackUnique _X} foreach crew _Vehicle;
 					};
+					sleep 5;
 					if(!isNil "_Group") then {
 						if(count units _Group > 1) then {
 							[_Group, nil, _HuntZone, 0, 30, 0, {}] Spawn NEKY_Hunt_Run;

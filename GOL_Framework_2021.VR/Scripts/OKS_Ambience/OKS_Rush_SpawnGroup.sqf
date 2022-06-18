@@ -18,10 +18,10 @@
 		Private "_Unit";
 		if ( (count (units _Group)) == 0 ) then
 		{
-			_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), _SpawnPos getPos [5,(random 360)], [], 0, "NONE"];
+			_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), _SpawnPos getPos [(5+(random 5)),(random 360)], [], 0, "NONE"];
 			_Unit setRank "SERGEANT";
 		} else {
-			_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _SpawnPos getPos [5,(random 360)], [], 0, "NONE"];
+			_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _SpawnPos getPos [(5+(random 5)),(random 360)], [], 0, "NONE"];
 			_Unit setRank "PRIVATE";
 		};
 		sleep 0.5;

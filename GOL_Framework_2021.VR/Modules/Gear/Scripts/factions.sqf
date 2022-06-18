@@ -89,7 +89,10 @@ switch (_side) do {
 	};
 	case "TAKISTAN-SF-D": {
 		#include "Classes\TAKISTAN-SF-D.sqf"
-	};	
+	};
+	case "AFRICAN-ARMY":{
+		#include "Classes\AFRICAN-ARMY.sqf"
+	};
 	case "INSURGENT-ME": {
 		#include "Classes\INSURGENT-ME.sqf"
 	};
