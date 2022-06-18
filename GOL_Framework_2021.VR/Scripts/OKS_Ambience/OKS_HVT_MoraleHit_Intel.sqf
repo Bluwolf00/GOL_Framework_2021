@@ -115,7 +115,6 @@ OKS_ReceiveIntel = {
                 _TaskName = [true,[format["OKS_HVT_Intel_Task_%1",round((random 99999) - (random 99999))]],[_TaskDescription,_TaskTitle,"Intel"],_Position,"CREATED",-1, true,_TaskIcon, false] call BIS_fnc_taskCreate;
             };
         };
-
         if(_ShouldCreateTask && toLower (_TaskName call BIS_fnc_taskState) isEqualTo "succeeded") exitWith { _ExitScript = true; if(_Debug_Variable) then { systemChat "Task already succeeded. Exiting before WaitUntil."}};  
 
         _WaitUntilDestroyedOrNearby = [_TaskName,_Position] spawn {
@@ -129,7 +128,7 @@ OKS_ReceiveIntel = {
             };
         };
     };
-    if(_ExitScript) exitWith {};  
+    if(!isNil "_ExitScript") exitWith {};  
     if(_ShouldSendChatMessage && !isNil "_ChatMessage") then {
         [_HQ,"side",_ChatMessage] remoteExec ["OKS_Chat",0];
     };        
