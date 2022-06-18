@@ -23,186 +23,18 @@ Private ["_Chance","_Range","_ThreatByShot","_SurrenderByFlash"];
     _SurrenderByFlash = true; // Should be able to force surrender of HVT by throwing a flash within 10m of him.
 
 OKS_Global_IntelArray = [
-    // [
-    //     /* Intel ID - Must be unique! */ 0,
-    //     /* Marker/Object/Position */ hunt_1,
-    //     /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
-    //     /* Should Reveal Marker */ true,
-    //     /* Should Create Task */ true,
-    //     /* Task Title */ "Intel: Hunt Base",
-    //     /* Task Description */ "You received intel of a hunt-base in the area of operations. Destroy it to avoid reinforcements, or beware of the possible reinforcements.",
-    //     /* Task Icon */ "destroy",
-    //     /* Should Send HQ Chat Message */ true,
-    //     /* Chat Message */ "HQ to all units, we have procured intel from the HVT. A hunt base has been marked, out!"
-    // ],
-    // [
-    //     /* Intel ID - Must be unique! */ 1,
-    //     /* Marker/Object/Position */ hunt_2,
-    //     /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
-    //     /* Should Reveal Marker */ true,
-    //     /* Should Create Task */ true,
-    //     /* Task Title */ "Intel: Hunt Base",
-    //     /* Task Description */ "You received intel of a hunt-base in the area of operations. Destroy it to avoid reinforcements, or beware of the possible reinforcements.",
-    //     /* Task Icon */ "destroy",
-    //     /* Should Send HQ Chat Message */ true,
-    //     /* Chat Message */ "HQ to all units, we have procured intel from the HVT. A hunt base has been marked, out!"
-    // ],
-    // [
-    //     /* Intel ID - Must be unique! */ 2,
-    //     /* Marker/Object/Position */ hunt_3,
-    //     /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
-    //     /* Should Reveal Marker */ true,
-    //     /* Should Create Task */ true,
-    //     /* Task Title */ "Intel: Hunt Base",
-    //     /* Task Description */ "You received intel of a hunt-base in the area of operations. Destroy it to avoid reinforcements, or beware of the possible reinforcements.",
-    //     /* Task Icon */ "destroy",
-    //     /* Should Send HQ Chat Message */ true,
-    //     /* Chat Message */ "HQ to all units, we have procured intel from the HVT. A hunt base has been marked, out!"
-    // ],
-    // [
-    //     /* Intel ID - Must be unique! */ 3,
-    //     /* Marker/Object/Position */ hunt_4,
-    //     /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
-    //     /* Should Reveal Marker */ true,
-    //     /* Should Create Task */ true,
-    //     /* Task Title */ "Intel: Hunt Base",
-    //     /* Task Description */ "You received intel of a hunt-base in the area of operations. Destroy it to avoid reinforcements, or beware of the possible reinforcements.",
-    //     /* Task Icon */ "destroy",
-    //     /* Should Send HQ Chat Message */ true,
-    //     /* Chat Message */ "HQ to all units, we have procured intel from the HVT. A hunt base has been marked, out!"
-    // ],
-    //  [
-    //     /* Intel ID - Must be unique! */ 4,
-    //     /* Marker/Object/Position */ hunt_5,
-    //     /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
-    //     /* Should Reveal Marker */ true,
-    //     /* Should Create Task */ true,
-    //     /* Task Title */ "Intel: Hunt Base",
-    //     /* Task Description */ "You received intel of a hunt-base in the area of operations. Destroy it to avoid reinforcements, or beware of the possible reinforcements.",
-    //     /* Task Icon */ "destroy",
-    //     /* Should Send HQ Chat Message */ true,
-    //     /* Chat Message */ "HQ to all units, we have procured intel from the HVT. A hunt base has been marked, out!"
-    // ],
-    // [
-    //     /* Intel ID - Must be unique! */ 6,
-    //     /* Marker/Object/Position */ hunt_6,
-    //     /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
-    //     /* Should Reveal Marker */ true,
-    //     /* Should Create Task */ true,
-    //     /* Task Title */ "Intel: Hunt Base",
-    //     /* Task Description */ "You received intel of a hunt-base in the area of operations. Destroy it to avoid reinforcements, or beware of the possible reinforcements.",
-    //     /* Task Icon */ "destroy",
-    //     /* Should Send HQ Chat Message */ true,
-    //     /* Chat Message */ "HQ to all units, we have procured intel from the HVT. A hunt base has been marked, out!"
-    // ],     
-    // [
-    //     /* Intel ID - Must be unique! */ 7,
-    //     /* Marker/Object/Position */ hunt_7,
-    //     /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
-    //     /* Should Reveal Marker */ true,
-    //     /* Should Create Task */ true,
-    //     /* Task Title */ "Intel: Hunt Base",
-    //     /* Task Description */ "You received intel of a hunt-base in the area of operations. Destroy it to avoid reinforcements, or beware of the possible reinforcements.",
-    //     /* Task Icon */ "destroy",
-    //     /* Should Send HQ Chat Message */ true,
-    //     /* Chat Message */ "HQ to all units, we have procured intel from the HVT. A hunt base has been marked, out!"
-    // ],  
      [
-        /* Intel ID - Must be unique! */ 6,
-        /* Marker/Object/Position */ aaa_1,
-        /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
-        /* Should Reveal Marker */ true,
-        /* Should Create Task */ true,
-        /* Task Title */ "Intel: AAA",
-        /* Task Description */ "You have received intel of a static emplaced AAA coverig the area of operations.",
-        /* Task Icon */ "destroy",
-        /* Should Send HQ Chat Message */ true,
-        /* Chat Message */ "1-1 this is HQ, new intel on a static AAA extracted from the HVT. Check your map, HQ out."
-    ],
-     [
-        /* Intel ID - Must be unique! */ 7,
-        /* Marker/Object/Position */ aaa_2,
-        /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
-        /* Should Reveal Marker */ true,
-        /* Should Create Task */ true,
-        /* Task Title */ "Intel: AAA",
-        /* Task Description */ "You have received intel of a static emplaced AAA coverig the area of operations.",
-        /* Task Icon */ "destroy",
-        /* Should Send HQ Chat Message */ true,
-        /* Chat Message */ "1-1 this is HQ, new intel on a static AAA extracted from the HVT. Check your map, HQ out."
-    ],
-     [
-        /* Intel ID - Must be unique! */ 8,
-        /* Marker/Object/Position */ aaa_3,
-        /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
-        /* Should Reveal Marker */ true,
-        /* Should Create Task */ true,
-        /* Task Title */ "Intel: AAA",
-        /* Task Description */ "You have received intel of a static emplaced AAA coverig the area of operations.",
-        /* Task Icon */ "destroy",
-        /* Should Send HQ Chat Message */ true,
-        /* Chat Message */ "1-1 this is HQ, new intel on a static AAA extracted from the HVT. Check your map, HQ out."
-    ],                                               
-    [
         /* Intel ID - Must be unique! */ 1,
-        /* Marker/Object/Position */ "bmp_1",
+        /* Marker/Object/Position */ "ied_1",
         /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
         /* Should Reveal Marker */ true,
-        /* Should Create Task */ true,
-        /* Task Title */ "Intel: BMP-1",
-        /* Task Description */ "You have received intel of a static emplaced BMP-1 covering a road inside the city.",
-        /* Task Icon */ "destroy",
-        /* Should Send HQ Chat Message */ true,
-        /* Chat Message */ "1-1 this is HQ, new intel on a static BMP-1 extracted from the HVT. Check your map, HQ out."
-    ],    
-    [
-        /* Intel ID - Must be unique! */ 2,
-        /* Marker/Object/Position */ "bmp_2",
-        /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
-        /* Should Reveal Marker */ true,
-        /* Should Create Task */ true,
-        /* Task Title */ "Intel: BTR-80",
-        /* Task Description */ "You have received intel of a static emplaced BTR-80 covering a road inside the city.",
-        /* Task Icon */ "destroy",
-        /* Should Send HQ Chat Message */ true,
-        /* Chat Message */ "1-1 this is HQ, new intel on a static BTR-80 extracted from the HVT. Check your map, HQ out."
-    ],  
-    [
-        /* Intel ID - Must be unique! */ 3,
-        /* Marker/Object/Position */ "btr80",
-        /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
-        /* Should Reveal Marker */ true,
-        /* Should Create Task */ true,
-        /* Task Title */ "Intel: BTR-80A",
-        /* Task Description */ "You have received intel of a static emplaced BTR-80A covering a road inside the city.",
-        /* Task Icon */ "destroy",
-        /* Should Send HQ Chat Message */ true,
-        /* Chat Message */ "1-1 this is HQ, new intel on a static BTR-80A extracted from the HVT. Check your map, HQ out."
-    ], 
-    [
-        /* Intel ID - Must be unique! */ 4,
-        /* Marker/Object/Position */ "T34",
-        /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ nil,
-        /* Should Reveal Marker */ true,
-        /* Should Create Task */ true,
-        /* Task Title */ "Intel: BMP-1",
-        /* Task Description */ "You have received intel of a static emplaced BMP-1 covering a road inside the city.",
-        /* Task Icon */ "destroy",
-        /* Should Send HQ Chat Message */ true,
-        /* Chat Message */ "1-1 this is HQ, new intel on a static BMP-1 extracted from the HVT. Check your map, HQ out."
-    ], 
-    [
-        /* Intel ID - Must be unique! */ 5,
-        /* Marker/Object/Position */ "Mines_1",
-        /* Array of Markers to be revealed (If you have additional markers to reveal upon intel received) */ ["Mines_2","Mines_3"],
-        /* Should Reveal Marker */ true,
-        /* Should Create Task */ true,
-        /* Task Title */ "Intel: Unmarked Mines",
-        /* Task Description */ "You have received intel of unmarked anti-tank mines located in the village of Landcaster. Approach with caution!",
+        /* Should Create Task */ false,
+        /* Task Title */ "Intel: IEDs",
+        /* Task Description */ "You have received intel of a minefield of IEDs in the area of operations.",
         /* Task Icon */ "mine",
         /* Should Send HQ Chat Message */ true,
-        /* Chat Message */ "1-1 this is HQ, new intel on a minefield in Landcaster. Check your map, HQ out."
-    ]                         
+        /* Chat Message */ "1-1 this is HQ, new intel on IEDs in your area of operations. Check your map, HQ out."
+    ]                        
 ];
 publicVariable "OKS_Global_IntelArray";
 
@@ -240,7 +72,7 @@ OKS_ReceiveIntel = {
         ["_ParentTaskId",nil,[""]],
         ["_HQ","HQ",[""]]
     ];
-    Private ["_Position","_Marker","_TaskName"];
+    Private ["_Position","_Marker","_TaskName","_ExitScript"];
     if(typeName _Location == "STRING") then {
         _Position = getMarkerPos _Location;
         _Marker = _Location;
@@ -284,10 +116,7 @@ OKS_ReceiveIntel = {
             };
         };
 
-        if(toLower (_TaskName call BIS_fnc_taskState) isEqualTo "succeeded") exitWith { systemChat "Task already succeeded. Exiting before WaitUntil."};
-        if(_ShouldSendChatMessage && !isNil "_ChatMessage") then {
-            [_HQ,"side",_ChatMessage] remoteExec ["OKS_Chat",0];
-        };          
+        if(_ShouldCreateTask && toLower (_TaskName call BIS_fnc_taskState) isEqualTo "succeeded") exitWith { _ExitScript = true; if(_Debug_Variable) then { systemChat "Task already succeeded. Exiting before WaitUntil."}};  
 
         _WaitUntilDestroyedOrNearby = [_TaskName,_Position] spawn {
             Params["_TaskName","_Location"];
@@ -298,8 +127,12 @@ OKS_ReceiveIntel = {
                 waitUntil{sleep 10; count ((_Location nearEntities ["Man",100]) select {isPlayer _X}) > 0};
                 [_TaskName,"SUCCEEDED"] call BIS_fnc_taskSetState;
             };
-        }
+        };
     };
+    if(_ExitScript) exitWith {};  
+    if(_ShouldSendChatMessage && !isNil "_ChatMessage") then {
+        [_HQ,"side",_ChatMessage] remoteExec ["OKS_Chat",0];
+    };        
 };
 
 /* Setup of HVTs with Surrender Module */
@@ -311,7 +144,7 @@ OKS_ReceiveIntel = {
         // _IntelArray deleteAt (_IntelArray findIf {(_x select 0) == _DeleteId});
         _WaitForDeathOrCapture = [_X,_MoraleImpactRange,_PrisonerArea,_HQ,_Debug_Variable] spawn {
             Params ["_Unit","_ImpactRange","_PrisonerArea","_HQ","_Debug_Variable"];
-            waitUntil{sleep 5; !alive _Unit || _Unit in (list _PrisonerArea)};
+            waitUntil{sleep 5; !alive _Unit || _Unit in (list _PrisonerArea) || (objectParent _Unit) in (list _PrisonerArea)};
 
             if(!alive _Unit) then {
                 [_Unit,_ImpactRange] spawn OKS_ImpactMorale;
