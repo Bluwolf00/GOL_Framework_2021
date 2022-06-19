@@ -45,7 +45,7 @@ switch (_Side) do
 {
 	Private ["_HeliClass"];	
 	case BLUFOR: {if (_HeliClass == "") then {_HeliClass = "RHS_UH60M_d"} };
-	case OPFOR: {if (_HeliClass == "") then {_HeliClass = "UK3CB_CW_SOV_O_LATE_Mi8"} };	
+	case OPFOR: {if (_HeliClass == "") then {_HeliClass = "O_Heli_Light_02_unarmed_F"} };	
 	case INDEPENDENT: {if (_HeliClass == "") then {_HeliClass = "I_Heli_Transport_02_F"} };
 };
 

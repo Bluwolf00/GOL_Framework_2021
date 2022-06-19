@@ -43,9 +43,6 @@ GOL_CheckThreatened = {
 
     if ( isNull _actor ) exitWith {false};
     if ( isNull _target ) exitWith {false};
-    if ( weaponLowered _actor ) exitWith { if(_Debug == 1) then {SystemChat "Player has lowered weapon.."}};
-    if ( _target knowsAbout _actor < 3 ) exitWith { if(_Debug == 1) then {SystemChat "Player unbeknownst to Enemy"}};
-
     if(_Debug == 1) then {SystemChat "Threat: Initial Checks complete.."};
     _pos0 = getPosASL _actor;
     _pos1 = getPosASL _target;
@@ -63,7 +60,9 @@ GOL_CheckThreatened = {
         };
     };
     if(_Debug == 1) then {systemChat ("CheckThreat: " +str [_Dice,_Chance])};
-    if(( ( ( _pos0 vectorAdd ( (_actor weaponDirection (currentWeapon _actor)) vectorMultiply (_pos0 distance _pos1) ) ) distanceSqr _pos1 ) < ((_this select 2)^2) ) && _Dice < _Chance && _Unit getVariable ["OKS_SurrenderCheck",true]) then { 
+    if(( ( ( _pos0 vectorAdd ( (_actor weaponDirection (currentWeapon _actor)) vectorMultiply (_pos0 distance _pos1) ) ) distanceSqr _pos1 ) < ((_this select 2)^2) ) && _Dice < _Chance && _Unit getVariable ["OKS_SurrenderCheck",true]) then {
+        if ( weaponLowered _actor ) exitWith { if(_Debug == 1) then {SystemChat "Player has lowered weapon.."}};
+        if ( _target knowsAbout _actor < 3 ) exitWith { if(_Debug == 1) then {SystemChat "Player unbeknownst to Enemy"}};
         if(_Debug == 1) then {SystemChat "WeaponThreat successful. Surrendering."};
         _target removeAllEventHandlers "Hit";
         [_target,true] call ACE_captives_fnc_setSurrendered;
@@ -89,7 +88,7 @@ if(_SurrenderByShot) then {
     SystemChat "EventHandler Hit given to HVT.";
     _Unit addEventHandler ["Hit", {
         params ["_unit", "_source", "_damage", "_instigator"];
-        if(isPlayer _instigator && _instigator distance _unit < 25 && _unit knowsAbout _instigator > 3) then {
+        if(isPlayer _instigator && _instigator distance _unit < 25) then {
             _Dice = Random 1;
             _Chance = _unit getVariable ["OKS_ChanceSurrender",0];
             _Chance = _Chance * 2;
@@ -107,5 +106,5 @@ if(_Debug_Variable) then {SystemChat "Surrender - While Loop Init..."};
 
 While {(count (_Unit nearEntities [["Man"], _Distance] select {isPlayer _X && Alive _X}) > 0) && Alive _Unit && !captive _Unit} do {
     { [_X,_Unit, 1, _Chance,_SurrenderByFlashbang] call GOL_CheckThreatened; } foreach (_Unit nearEntities [["Man"], _Distance] select {isPlayer _X && Alive _X});
-    sleep 0.1;
+    sleep 0.05;
 };

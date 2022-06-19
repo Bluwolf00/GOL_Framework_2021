@@ -22,12 +22,12 @@ if(TypeName (_DropZone getVariable ["NEKY_Paradrop_AttachedMarker",false]) != "S
 	_Mrk SetMarkerAlphaLocal 1;
 };
 
-if (!isServer) exitWith {false};		// Ensures only server or HC runs this script
 _flag setVariable ["OKS_Reinsert_Stopped",false,true];
 
 OKS_SpawnReinsertBird = {
+	if (!isServer) exitWith {false};		// Ensures only server or HC runs this script
 	Params [
-		["_flag",flag_west_1,[objNull]],
+		["_flag",objNull,[objNull]],
 		["_caller",objNull,[objNull]],
 		["_actionId",0,[0]],
 	 	["_RespawnTimer",30,[0]]
@@ -37,7 +37,7 @@ OKS_SpawnReinsertBird = {
 	switch (_Side) do
 	{	
 		case BLUFOR: {_HeliClass = "RHS_UH60M_d" };
-		case OPFOR: {_HeliClass = "UK3CB_CW_SOV_O_LATE_Mi8" };	
+		case OPFOR: {_HeliClass = "O_Heli_Light_02_unarmed_F" };	
 		case INDEPENDENT: {_HeliClass = "I_Heli_Transport_02_F" };
 		default {_HeliClass = "RHS_UH60M_d"};
 	};

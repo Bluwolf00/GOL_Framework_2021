@@ -115,6 +115,7 @@ OKS_ReceiveIntel = {
                 _TaskName = [true,[format["OKS_HVT_Intel_Task_%1",round((random 99999) - (random 99999))]],[_TaskDescription,_TaskTitle,"Intel"],_Position,"CREATED",-1, true,_TaskIcon, false] call BIS_fnc_taskCreate;
             };
         };
+
         if(_ShouldCreateTask && toLower (_TaskName call BIS_fnc_taskState) isEqualTo "succeeded") exitWith { _ExitScript = true; if(_Debug_Variable) then { systemChat "Task already succeeded. Exiting before WaitUntil."}};  
 
         _WaitUntilDestroyedOrNearby = [_TaskName,_Position] spawn {
@@ -143,7 +144,7 @@ OKS_ReceiveIntel = {
         // _IntelArray deleteAt (_IntelArray findIf {(_x select 0) == _DeleteId});
         _WaitForDeathOrCapture = [_X,_MoraleImpactRange,_PrisonerArea,_HQ,_Debug_Variable] spawn {
             Params ["_Unit","_ImpactRange","_PrisonerArea","_HQ","_Debug_Variable"];
-            waitUntil{sleep 5; !alive _Unit || _Unit in (list _PrisonerArea) || (objectParent _Unit) in (list _PrisonerArea)};
+            waitUntil{sleep 5; !alive _Unit || _Unit in (list _PrisonerArea) || ((!isNull objectParent _Unit) && (objectParent _Unit) in (list _PrisonerArea))};
 
             if(!alive _Unit) then {
                 [_Unit,_ImpactRange] spawn OKS_ImpactMorale;
