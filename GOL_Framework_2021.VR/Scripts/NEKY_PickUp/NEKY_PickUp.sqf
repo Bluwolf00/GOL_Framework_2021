@@ -33,7 +33,8 @@ Params
 	["_Side", WEST, [SideUnknown]],
 	["_HeliClass", "", [""]],
 	["_STTDs", [""], [[""]]],
-	["_Vulnerable", True, [True]]
+	["_Vulnerable", True, [True]],
+	["_ShouldMarkOnExtract",True,[True]]
 ];
 
 //	Turning markers in to XYZ
@@ -42,11 +43,10 @@ _STTD = []; {if (typeName _x == "STRING") then {_Temp = GetMarkerPos _x; _STTD P
 // Define classes based on side
 switch (_Side) do
 {
-	Private ["_HeliClass"];
-	
-	case BLUFOR: {if (_HeliClass == "") then {_HeliClass = "B_Heli_Transport_01_F"} };
-	case OPFOR: {if (_HeliClass == "") then {_HeliClass = "O_Heli_Light_02_unarmed_F"}	};	
-	case INDEPENDENT: {if (_HeliClass == "") then {_HeliClass = "I_Heli_light_03_unarmed_F"} };
+	Private ["_HeliClass"];	
+	case BLUFOR: {if (_HeliClass == "") then {_HeliClass = "RHS_UH60M_d"} };
+	case OPFOR: {if (_HeliClass == "") then {_HeliClass = "UK3CB_CW_SOV_O_LATE_Mi8"} };	
+	case INDEPENDENT: {if (_HeliClass == "") then {_HeliClass = "I_Heli_Transport_02_F"} };
 };
 
 // Whether it'll have a smoke grenade or a chemlight for signal
@@ -67,6 +67,7 @@ CreateVehicleCrew _Heli;
 } forEach crew _Heli;
 
 _Crew = group (driver _Heli);
+_Crew setVariable ["acex_headless_blacklist",true];
 _Pilot = (Driver _Heli);
 _Pilot SetBehaviour "CARELESS";
 _Pilot setCombatMode "BLUE";
@@ -93,7 +94,9 @@ if ((Alive _Heli) && (Alive (driver _Heli))) then
 {
 	_Heli land 'land';
 	doStop _Heli;
-	createVehicle [_SignalClass, (getPos _HeliPad), [], 5, "CAN_COLLIDE"];
+	if(_ShouldMarkOnExtract) then {
+		createVehicle [_SignalClass, (getPos _HeliPad), [], 5, "CAN_COLLIDE"];
+	};
 	WaitUntil {sleep 2; ( (!(Alive _Heli) or !(CanMove _Heli)) or (({Alive _x} count units _Crew) < 1) or (((GetPosATL _Heli) Select 2) < 5))};
 	
 	sleep 2;

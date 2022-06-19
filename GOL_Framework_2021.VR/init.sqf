@@ -15,12 +15,15 @@ if(HasInterface && isNil "OKS_FRIENDLY_SIDE") then {
 Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 Sleep 5;
 
-	if(GOL_NEKY_PARADROP isEqualTo 1 || GOL_NEKY_RESUPPLY isEqualTo 1 || GOL_NEKY_PICKUP isEqualTo 1 || GOL_OKS_SUPPORT isEqualTo 1) then {
+	if(GOL_NEKY_PARADROP isEqualTo 1 || GOL_NEKY_RESUPPLY isEqualTo 1 || GOL_NEKY_PICKUP isEqualTo 1 || GOL_OKS_SUPPORT isEqualTo 1 || GOL_NEKY_FASTROPE isEqualTo 1 || GOL_NEKY_REINSERT isEqualTo 1) then {
 		if (hasInterface) then {
 			_condition = {player in [wpl,wfac,w1m,w2m,epl,efac,e1m,e2m,ipl,ifac,i1m,i2m,w1a,w1a1,w1b1,wcrew1,wcrew4,e1a,e1a1,e1b1,ecrew1,ecrew4,i1a,i1a1,i1b1,icrew1,icrew4]};
      	 	_action = ["Request_Support", "Request Support","\A3\ui_f\data\map\VehicleIcons\iconCrateVeh_ca.paa", {}, _condition] call ace_interact_menu_fnc_createAction;
      		[typeOf player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToClass;
 		};
+		execVM "Scripts\NEKY_Paradrop\Init.sqf";
+		sleep 2;
+		[] spawn NEKY_ACE_AddAction;
 	};
 
 	if(GOL_EnableHelicopterScriptToAllVehicles isEqualTo 1) then {
@@ -37,11 +40,30 @@ Sleep 5;
 	if(GOL_OKS_SUPPORT isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Support\Init.sqf";
 	};
-	if(GOL_NEKY_PARADROP isEqualTo 1) then {
-		execVM "Scripts\NEKY_Paradrop\Init.sqf";
-	};
 	if(GOL_NEKY_PICKUP isEqualTo 1) then {
 		execVM "Scripts\NEKY_Pickup\ACE_PickUp.sqf";
+	};
+	if(GOL_NEKY_FASTROPE isEqualTo 1) then {
+		if(!isNil "flag_west_1" && OKS_FRIENDLY_SIDE isEqualTo west) then {
+			[flag_west_1,30,NEKY_PARADROP_TRIGGER] execVM "Scripts\NEKY_PickUp\OKS_Fastrope_Insert.sqf";
+		};
+		if(!isNil "flag_east_1" && OKS_FRIENDLY_SIDE isEqualTo east) then {
+			[flag_east_1,30,NEKY_PARADROP_TRIGGER] execVM "Scripts\NEKY_PickUp\OKS_Fastrope_Insert.sqf";
+		};
+		if(!isNil "flag_independent_1" && OKS_FRIENDLY_SIDE isEqualTo independent) then {
+			[flag_independent_1,30,NEKY_PARADROP_TRIGGER] execVM "Scripts\NEKY_PickUp\OKS_Fastrope_Insert.sqf";
+		};
+	};
+	if(GOL_NEKY_REINSERT isEqualTo 1) then {
+		if(!isNil "flag_west_1" && OKS_FRIENDLY_SIDE isEqualTo west) then {
+			[flag_west_1,30,NEKY_PARADROP_TRIGGER] execVM "Scripts\NEKY_PickUp\OKS_Reinsert.sqf";
+		};
+		if(!isNil "flag_east_1" && OKS_FRIENDLY_SIDE isEqualTo east) then {
+			[flag_east_1,30,NEKY_PARADROP_TRIGGER] execVM "Scripts\NEKY_PickUp\OKS_Reinsert.sqf";
+		};
+		if(!isNil "flag_independent_1" && OKS_FRIENDLY_SIDE isEqualTo independent) then {
+			[flag_independent_1,NEKY_PARADROP_TRIGGER,30] execVM "Scripts\NEKY_PickUp\OKS_Reinsert.sqf";
+		};
 	};
 	if(GOL_NEKY_SHARE isEqualTo 1) then {
 		Call Compile PreProcessFileLineNumbers "Scripts\NEKY_CombatExperience\Init.sqf";
@@ -81,17 +103,16 @@ Sleep 5;
 		[True,True] call NEKY_AI_ShareInfo;
 	};
 	if(GOL_NEKY_PARADROP isEqualTo 1) then {
-		waitUntil {sleep 1; !(isNil "NEKY_ACE_AddAction") && !(isNil "OKS_FRIENDLY_SIDE")};
-		[] spawn NEKY_ACE_AddAction;
+		waitUntil {sleep 1; !(isNil "NEKY_ACE_AddAction") && !(isNil "OKS_FRIENDLY_SIDE")};		
 
 		if(!isNil "flag_west_1" && OKS_FRIENDLY_SIDE isEqualTo west) then {
-			[flag_west_1, "Paradrop Reinsert", "DZ Alpha", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+			[flag_west_1, "Paradrop Reinsert", " Dropsite", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
 		};
 		if(!isNil "flag_east_1" && OKS_FRIENDLY_SIDE isEqualTo east) then {
-			[flag_east_1, "Paradrop Reinsert", "DZ Bravo", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+			[flag_east_1, "Paradrop Reinsert", " Dropsite", NEKY_PARADROP_TRIGGER, true,1400,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
 		};
 		if(!isNil "flag_independent_1" && OKS_FRIENDLY_SIDE isEqualTo independent) then {
-			[flag_independent_1, "Paradrop Reinsert", "DZ Charlie", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
+			[flag_independent_1, "Paradrop Reinsert", " Dropsite", NEKY_PARADROP_TRIGGER, true,1000,100,false] execVM "Scripts\NEKY_Paradrop\NEKY_AddAction.sqf";
 		};
 	};
 	if(GOL_OKS_MHQ_PARADROP isEqualTo 1) then {
