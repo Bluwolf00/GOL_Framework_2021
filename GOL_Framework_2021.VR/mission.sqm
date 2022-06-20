@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2536;
+		nextID=2540;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6386;
+		nextID=6405;
 	};
 	class Camera
 	{
-		pos[]={74.611137,158.09062,-34.769997};
-		dir[]={-0.0036142096,-0.77010894,0.63791674};
-		up[]={-0.0043635378,0.63791203,0.77009606};
-		aside[]={0.9999907,9.6446456e-008,0.0056656389};
+		pos[]={67.227142,134.75444,-45.592571};
+		dir[]={-0.0036179046,-0.74849617,0.66312921};
+		up[]={-0.0040835897,0.6631391,0.74848503};
+		aside[]={0.9999851,0,0.0054557254};
 	};
 };
 binarizationWanted=0;
@@ -36,6 +36,7 @@ addons[]=
 {
 	"A3_Characters_F",
 	"tsp_faction",
+	"FIR_PilotCrewPack_US",
 	"ace_gforces",
 	"ace_parachute",
 	"A3_Supplies_F_Exp_Ammoboxes",
@@ -64,7 +65,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=21;
+		items=22;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -79,129 +80,134 @@ class AddonsMetaData
 		};
 		class Item2
 		{
+			className="FIR_PilotCrewPack_US";
+			name="FIR_PilotCrewPack_US";
+		};
+		class Item3
+		{
 			className="ace_parachute";
 			name="ACE3 - Parachute";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item3
+		class Item4
 		{
 			className="A3_Supplies_F_Exp";
 			name="Arma 3 Apex - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item4
+		class Item5
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item5
+		class Item6
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item6
+		class Item7
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item7
+		class Item8
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item9
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item10
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item10
+		class Item11
 		{
 			className="Desert";
 			name="Desert";
 		};
-		class Item11
+		class Item12
 		{
 			className="A3_Soft_F";
 			name="Arma 3 Alpha - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item13
 		{
 			className="A3_Soft_F_Exp";
 			name="Arma 3 Apex - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item14
 		{
 			className="A3_Boat_F";
 			name="Arma 3 Alpha - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
+		class Item15
 		{
 			className="A3_Air_F_Exp";
 			name="Arma 3 Apex - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item16
 		{
 			className="A3_Supplies_F_Heli";
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item17
 		{
 			className="A3_Armor_F_Beta";
 			name="Arma 3 Beta - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item17
+		class Item18
 		{
 			className="ace_vehicle_damage";
 			name="ACE3 - Vehicle Damage";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item18
+		class Item19
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item20
 		{
 			className="A3_Structures_F_Enoch_Military";
 			name="Arma 3 Contact Platform - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item21
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
@@ -17684,7 +17690,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0.8953163;
+														value=1;
 													};
 												};
 												class Item1
@@ -17774,7 +17780,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0;
+														value=3;
 													};
 												};
 												class Item1
@@ -23600,7 +23606,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=39;
+		items=38;
 		class Item0
 		{
 			dataType="Layer";
@@ -30927,7 +30933,7 @@ class Mission
 							name="Rearm";
 							class Entities
 							{
-								items=11;
+								items=13;
 								class Item0
 								{
 									dataType="Object";
@@ -31108,6 +31114,35 @@ class Mission
 									title="Service Station";
 									description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
 									id=2041;
+								};
+								class Item11
+								{
+									dataType="Comment";
+									class PositionInfo
+									{
+										position[]={65.302002,5,19.9};
+										angles[]={-0,6.2464318,0};
+									};
+									title="Reinsert Helipad";
+									description="This helipad is used by the AI to land helicopters to bring reinserts into the field. Do not place these near AACs helipads as it may confuse the AI and make them try to land on AACs helipads.";
+									id=2538;
+								};
+								class Item12
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={65.315002,5,20.625999};
+										angles[]={0,0.0096167643,0};
+									};
+									side="Empty";
+									flags=4;
+									class Attributes
+									{
+										name="reinsert_helipad";
+									};
+									id=2539;
+									type="Land_HelipadSquare_F";
 								};
 							};
 							id=412;
@@ -32053,19 +32088,6 @@ class Mission
 			title="Small Resupply";
 			description="Small resupply crates meant only for a fire-teams resupply. The Ammo Boxes have the standard ammunition for the Squad, the Basic Weapons Crate has the secondary ammunitions such as for the roles of MAT, AMAT, AMMG, MMG, Light Rifleman, Marksman. Medical box is for medical resupply.";
 			id=1963;
-		};
-		class Item38
-		{
-			dataType="Trigger";
-			position[]={193.243,5,143.922};
-			class Attributes
-			{
-				name="Trigger_51";
-				sizeA=0;
-				sizeB=0;
-			};
-			id=2350;
-			type="EmptyDetector";
 		};
 	};
 };

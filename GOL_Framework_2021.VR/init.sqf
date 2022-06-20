@@ -29,7 +29,6 @@ Sleep 5;
 	if(GOL_EnableHelicopterScriptToAllVehicles isEqualTo 1) then {
 		[objNull,false,false] execVM "Scripts\OKS_Vehicles\OKS_Helicopter.sqf";
 	};
-
 	if(GOL_NEKY_SERVICESTATION isEqualTo 1) then {
 		[] execVM "Scripts\NEKY_ServiceStation\Init.sqf";
 	};
@@ -42,6 +41,9 @@ Sleep 5;
 	};
 	if(GOL_NEKY_PICKUP isEqualTo 1) then {
 		execVM "Scripts\NEKY_Pickup\ACE_PickUp.sqf";
+	};
+	if(GOL_OKS_REINFORCEMENT isEqualTo 1) then {
+		execVM "Scripts\OKS_Reinforcement\ACE_Reinforcement.sqf";
 	};
 	if(GOL_NEKY_FASTROPE isEqualTo 1) then {
 		if(!isNil "flag_west_1" && OKS_FRIENDLY_SIDE isEqualTo west) then {

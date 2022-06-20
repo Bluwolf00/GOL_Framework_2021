@@ -162,9 +162,11 @@ if (_isMan) then {
 	};
 	
 	if (_unit getVariable ["acex_headless_blacklist", true] == true) then {
-		sleep 3;
-		_unit setVariable ["acex_headless_blacklist", false, true]; // Gear applied therefore transfer unit to HC
-	};
+        _unit spawn {
+            sleep 5;
+            _this setVariable ["acex_headless_blacklist", false, true]; // Gear applied therefore transfer unit to HC
+        };
+    };
 } else {
 	_role params [
 		["_class", "", [""]],
