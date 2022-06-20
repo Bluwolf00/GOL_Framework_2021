@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6405;
+		nextID=6424;
 	};
 	class Camera
 	{
@@ -23357,7 +23357,7 @@ class CustomAttributes
 																"STRING"
 															};
 														};
-														value="CIVI-AFRICA";
+														value="CIVI-ALTIS";
 													};
 												};
 												class Item1
@@ -31121,7 +31121,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={65.302002,5,19.9};
-										angles[]={-0,6.2464318,0};
+										angles[]={0,6.2464318,0};
 									};
 									title="Reinsert Helipad";
 									description="This helipad is used by the AI to land helicopters to bring reinserts into the field. Do not place these near AACs helipads as it may confuse the AI and make them try to land on AACs helipads.";
