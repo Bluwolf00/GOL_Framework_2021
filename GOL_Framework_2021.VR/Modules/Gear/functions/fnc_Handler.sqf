@@ -35,7 +35,7 @@
 #include "functions.sqf"
 
 private [
-	"_isMan","_isCar","_isTank","_type","_allowedNightStuff","_isCivilian","_isPlayer","_side","_errorCode","_loadout","_loadoutFile",
+	"_isMan","_isCar","_isTank","_type","_allowedNightStuff","_isCivilian","_isPlayer","_side","_errorCode","_loadout","_loadoutFile","_insignia",
 	"_addEquipment","_addLinkedItems","_addPrimary","_addLaunchers","_addHandGun","_addToUniform","_addToVest","_addToBackPack","_addBino",
 	"_grenade","_grenademini",
 	"_smokegrenadeW","_smokegrenadeB","_smokegrenadeG","_smokegrenadeO","_smokegrenadeP","_smokegrenadeR","_smokegrenadeY",
@@ -152,6 +152,9 @@ if (_isMan) then {
 		_unit setUnitLoadout _loadout;
 
 		if (_isPlayer && _useFactionRadio && _roleUseRadio) then {
+			if(!isNil "_insignia") then {
+				[_unit,_insignia] call BIS_fnc_setUnitInsignia;
+			};
 			if (isClass ((missionConfigFile >> "GW_Modules" >> "Radios"))) then {
 				[{
 					_this call EFUNC(Radios,add);

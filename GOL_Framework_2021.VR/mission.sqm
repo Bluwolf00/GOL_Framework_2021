@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2540;
+		nextID=2544;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6424;
+		nextID=6443;
 	};
 	class Camera
 	{
-		pos[]={67.227142,134.75444,-45.592571};
-		dir[]={-0.0036179046,-0.74849617,0.66312921};
-		up[]={-0.0040835897,0.6631391,0.74848503};
-		aside[]={0.9999851,0,0.0054557254};
+		pos[]={66.368614,75.945938,3.263237};
+		dir[]={0.015949596,-0.71283358,0.70122439};
+		up[]={0.016210925,0.7012611,0.71272397};
+		aside[]={0.9997859,-4.2493048e-007,-0.022739209};
 	};
 };
 binarizationWanted=0;
@@ -59,13 +59,14 @@ addons[]=
 	"A3_Structures_F_System",
 	"A3_Structures_F_Mil_Cargo",
 	"A3_Structures_F_Enoch_Military_Camps",
-	"A3_Modules_F"
+	"A3_Modules_F",
+	"drongosaps"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=22;
+		items=23;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -213,6 +214,12 @@ class AddonsMetaData
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item22
+		{
+			className="DrongosAPS";
+			name="Drongo's APS";
+			author="Drongo";
 		};
 	};
 };
@@ -23606,7 +23613,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=38;
+		items=42;
 		class Item0
 		{
 			dataType="Layer";
@@ -30538,8 +30545,8 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={136.61081,5,164.21649};
-								angles[]={0,1.6311014,0};
+								position[]={140.48857,5,164.54623};
+								angles[]={-0,1.6311014,0};
 							};
 							title="Headless Clients";
 							id=272;
@@ -32088,6 +32095,132 @@ class Mission
 			title="Small Resupply";
 			description="Small resupply crates meant only for a fire-teams resupply. The Ammo Boxes have the standard ammunition for the Squad, the Basic Weapons Crate has the secondary ammunitions such as for the roles of MAT, AMAT, AMMG, MMG, Light Rifleman, Marksman. Medical box is for medical resupply.";
 			id=1963;
+		};
+		class Item38
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={140.91489,5,147.66841};
+			};
+			id=2540;
+			type="DAPS_Options";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="DAPS_Options_dapsBlastSize";
+					expression="_this setVariable ['dapsBlastSize',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Small";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="DAPS_Options_dapsDebug";
+					expression="_this setVariable ['dapsDebug',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="FALSE";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="DAPS_Options_dapsClearAll";
+					expression="_this setVariable ['dapsClearAll',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="TRUE";
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item39
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={141.26454,5,135.66656};
+			};
+			id=2541;
+			type="DAPS_AssignAPS";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="DAPS_AssignAPS_dapsAPSType";
+					expression="_this setVariable ['dapsAPSType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="TrophyMV";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item40
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={140.85875,5,147.66714};
+			};
+			title="DAPS Options";
+			description="This is the module for Active protection system. It sets the mission to clear all assigned Active protection systems on default vehicles. If you want to enable DAPS remove this module.";
+			id=2542;
+		};
+		class Item41
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={141.26556,5,135.42781};
+			};
+			title="DAPS Assign";
+			description="Certain vehicles may not have Active protection system enabled, if you want a specific vehicle to have it, create a dummy of the vehicle you want it to apply to and then synchronize this module with the dummy vehicle. That vehicle class will now have the type of APS assigned to it." \n "" \n "Do note this dummy vehicle should be hidden from view on some corner of the map.";
+			id=2543;
 		};
 	};
 };

@@ -12,7 +12,7 @@ Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tan
 	* = Not updated with 3CB thus broken <<< Important!
 
 BLUFOR FACTIONS:       CDF* LDF* TANOA*
-OPFOR FACTIONS:        CHEDAKI* TKA* TURKEY* DESERT_INSURGENTS RUSSIA_MODERN SOVIET DESERT_MILITIA COMMUNIST_REBELS
+OPFOR FACTIONS:        CHEDAKI* TKA TURKEY* DESERT_INSURGENTS RUSSIA_MODERN SOVIET DESERT_MILITIA COMMUNIST_REBELS
 INDEPENDENT FACTIONS:  NAPA* SYRIA*
 
 */
@@ -152,14 +152,14 @@ Switch (_Faction) do {
 	case "TKA":
 	{
 		// Takistani Army - OPFOR
-		_Wheeled = ["LOP_TKA_UAZ_SPG","LOP_TKA_UAZ_DshKM","rhsgref_tla_offroad_at"];
-		_APC = ["LOP_TKA_BTR70","LOP_TKA_BTR60","LOP_SYR_BMP1","rhsgref_BRDM2_b"];
-		_Tank = ["LOP_TKA_T55","LOP_TKA_T34","LOP_SYR_BMP1"];
-		_Artillery = ["LOP_TKA_BM21", "LOP_TKA_Static_D30"];
-		_AntiAir = ["LOP_TKA_ZU23"];
-		_Helicopter = ["LOP_TKA_Mi8MTV3_UPK23"];
-		_Transport = ["LOP_TKA_Ural_open"];
-		_Supply = ["rhs_gaz66_ammo_msv","rhs_gaz66_r142_vdv","rhs_gaz66_ap2_vdv"];
+		_Wheeled = ["UK3CB_TKA_O_BTR40_MG", "UK3CB_TKA_O_BTR40", "UK3CB_TKA_O_M113_M2", "UK3CB_TKA_O_BRDM2", "UK3CB_TKA_O_GAZ_Vodnik_Cannon", "UK3CB_TKA_O_GAZ_Vodnik_KVPT", "UK3CB_TKA_O_GAZ_Vodnik_PKT", "UK3CB_TKA_O_GAZ_Vodnik", "UK3CB_TKA_O_Hilux_Closed", "UK3CB_TKA_O_Hilux_M2", "UK3CB_TKA_O_Hilux_Dshkm", "UK3CB_TKA_O_Hilux_Open", "UK3CB_TKA_O_Hilux_Pkm", "UK3CB_TKA_O_Hilux_Spg9", "UK3CB_TKA_O_Hilux_Zu23_Front", "UK3CB_TKA_O_Ural_Open", "UK3CB_TKA_O_Ural", "UK3CB_TKA_O_UAZ_SPG9", "UK3CB_TKA_O_UAZ_MG"];
+		_APC = ["UK3CB_TKA_O_BMP1", "UK3CB_TKA_O_BMP2", "UK3CB_TKA_O_BTR70", "UK3CB_TKA_O_BTR80a"];
+		_Tank = ["UK3CB_TKA_O_T34", "UK3CB_TKA_O_T55"];
+		_Artillery = ["UK3CB_TKA_O_BM21", "UK3CB_TKA_O_D30", "UK3CB_TKA_O_2b14_82mm"];
+		_AntiAir = ["UK3CB_TKA_O_Ural_Zu23", "UK3CB_TKA_O_ZsuTank", "UK3CB_TKA_O_ZU23"];
+		_Helicopter = ["UK3CB_TKA_O_Bell412_Armed", "UK3CB_TKA_O_UH1H_M240", "UK3CB_TKA_O_UH1H_GUNSHIP"];
+		_Transport = ["UK3CB_TKA_O_BTR40"];
+		_Supply = ["UK3CB_TKA_O_Ural_Fuel", "UK3CB_TKA_O_Ural_Ammo", "UK3CB_TKA_O_Ural_Repair"];
 		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
 	};
 	case "LDF": {

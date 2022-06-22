@@ -108,7 +108,7 @@ switch (_TypeOfObjective) do {
 		_trg setVariable ["isSectorTrigger",true];
 
 		if(_EnableObjectiveTasks) then {
-			_Task = [true,format["OKS_Sector_Objective_%1",(round(random 9000))], ["The Enemy is in control of this area. To secure the objective, you must seize the area and destroy the majority of enemy forces.", "Seize Sector", "Seize Sector"], getPos _trg,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+			_Task = [true,format["OKS_Sector_Objective_%1",(round(random 9000))], ["The enemy is in control of this area, to complete the objective, you must seize the area and destroy the majority of enemy forces.", "Secure Area", "Secure Area"], getPos _trg,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 			[_Task,"attack"] call BIS_fnc_taskSetType;
 			_trg setTriggerStatements ["this", format ["'%1' setMarkerColor '%2'; ['%3','SUCCEEDED'] call BIS_fnc_taskSetState;",_marker,_playerColor,_Task], ""];
 		} else {

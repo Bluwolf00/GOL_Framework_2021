@@ -1,6 +1,7 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
+_insignia = "111thID";
 _goggles = "G_Balaclava_TI_blk_F";
 _helmet = "rhsusf_opscore_fg_pelt";
 _OfficerHelmet = "rhs_beret_vdv3";

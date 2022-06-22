@@ -19,7 +19,7 @@
 	
 	if(typeName _ClassnameOrNumber == "SCALAR") then {
 		_Group = CreateGroup _Side;
-		for "_i" from 1 to (_NumberInfantry) do
+		for "_i" from 1 to (_ClassnameOrNumber) do
 		{
 			Private "_Unit";
 			if ( (count (units _Group)) == 0 ) then
@@ -48,5 +48,16 @@
 	{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
 	if(isNil "_Group") exitWith {false};
 	waitUntil {sleep 5; !(isNil "lambs_wp_fnc_taskHunt")};
-	[_Group, _Range, 30, [], [], false] spawn lambs_wp_fnc_taskHunt;
+	/* 
+		* Arguments:
+		* 0: Group performing action, either unit <OBJECT> or group <GROUP>
+		* 1: Range of tracking, default is 500 meters <NUMBER>
+		* 2: Delay of cycle, default 15 seconds <NUMBER>
+		* 3: Area the AI Camps in, default [] <ARRAY>
+		* 4: Center Position, if no position or Empty Array is given it uses the Group as Center and updates the position every Cycle, default [] <ARRAY>
+		* 5: Only Players, default true <BOOL>
+		* 6: enable dynamic reinforcement <BOOL>
+		* 7: Enable Flare <BOOL> or <NUMBER> where 0 disabled, 1 enabled (if Units cant fire it them self a flare is created via createVehicle), 2 Only if Units can Fire UGL them self
+	*/	
+	[_Group, _Range, 30, [], [], true,true,true] spawn lambs_wp_fnc_taskHunt;
 
