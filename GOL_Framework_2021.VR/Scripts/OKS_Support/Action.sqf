@@ -23,7 +23,7 @@ if (hasInterface) then {
 		{
 			[Side Player, systemChat "CAS: Awaiting direction",_pos] onMapSingleClick {
 				_Direction = (_This select 2) getDir _pos;
-				[(_This select 2),(_This select 0),0,_Direction,true] spawn OKS_Support_SpawnModule;
+				[(_This select 2),(_This select 0),0,_Direction,true] remoteExec ["OKS_Support_SpawnModule",2];
 				onMapSingleClick "";
 				[player,_Timer] spawn {
 					(_this select 0) setVariable ["OKS_CAS_TIMER",true,true];
@@ -40,7 +40,7 @@ if (hasInterface) then {
 		{
 			[Side Player, systemChat "CAS: Awaiting direction",_pos] onMapSingleClick {
 				_Direction = (_This select 2) getDir _pos;
-				[(_This select 2),(_This select 0),1,_Direction,true] spawn OKS_Support_SpawnModule;
+				[(_This select 2),(_This select 0),1,_Direction,true] remoteExec ["OKS_Support_SpawnModule",2];
 				onMapSingleClick "";
 				[player,_Timer] spawn {
 					(_this select 0) setVariable ["OKS_CAS_TIMER",true,true];
@@ -57,7 +57,7 @@ if (hasInterface) then {
 		{
 			[Side Player, systemChat "CAS: Awaiting direction",_pos] onMapSingleClick {
 				_Direction = (_This select 2) getDir _pos;
-				[(_This select 2),(_This select 0),2,_Direction,true] spawn OKS_Support_SpawnModule;
+				[(_This select 2),(_This select 0),2,_Direction,true] remoteExec ["OKS_Support_SpawnModule",2];
 				onMapSingleClick "";
 				[player,_Timer] spawn {
 					(_this select 0) setVariable ["OKS_CAS_TIMER",true,true];
@@ -74,7 +74,7 @@ if (hasInterface) then {
 		{
 			[Side Player, systemChat "CAS: Awaiting direction",_pos] onMapSingleClick {
 				_Direction = (_This select 2) getDir _pos;
-				[(_This select 2),(_This select 0),3,_Direction,true] spawn OKS_Support_SpawnModule;
+				[(_This select 2),(_This select 0),3,_Direction,true] remoteExec ["OKS_Support_SpawnModule",2];
 				onMapSingleClick "";
 				[player,_Timer] spawn {
 					(_this select 0) setVariable ["OKS_CAS_TIMER",true,true];
@@ -86,7 +86,7 @@ if (hasInterface) then {
 	};
 	_GunsLaser =
 	{
-		[player,side player,0,-1,true] spawn OKS_Support_SpawnModule;
+		[player,side player,0,-1,true] remoteExec ["OKS_Support_SpawnModule",2];
 		[player,_Timer] spawn {
 			(_this select 0) setVariable ["OKS_CAS_TIMER",true,true];
 			sleep (_this select 1);
@@ -95,7 +95,7 @@ if (hasInterface) then {
 	};
 	_RocketsLaser =
 	{
-		[player,side player,1,-1,true] spawn OKS_Support_SpawnModule;
+		[player,side player,1,-1,true] remoteExec ["OKS_Support_SpawnModule",2];
 		[player,_Timer] spawn {
 			(_this select 0) setVariable ["OKS_CAS_TIMER",true,true];
 			sleep (_this select 1);
@@ -104,7 +104,7 @@ if (hasInterface) then {
 	};
 	_GunsRocketsLaser =
 	{
-		[player,side player,2,-1,true] spawn OKS_Support_SpawnModule;
+		[player,side player,2,-1,true] remoteExec ["OKS_Support_SpawnModule",2];
 		[player,_Timer] spawn {
 			(_this select 0) setVariable ["OKS_CAS_TIMER",true,true];
 			sleep (_this select 1);
@@ -113,7 +113,7 @@ if (hasInterface) then {
 	};
 	_BombRunLaser =
 	{
-		[player,side player,3,-1,true] spawn OKS_Support_SpawnModule;
+		[player,side player,3,-1,true] remoteExec ["OKS_Support_SpawnModule",2];
 		[player,_Timer] spawn {
 			(_this select 0) setVariable ["OKS_CAS_TIMER",true,true];
 			sleep (_this select 1);
