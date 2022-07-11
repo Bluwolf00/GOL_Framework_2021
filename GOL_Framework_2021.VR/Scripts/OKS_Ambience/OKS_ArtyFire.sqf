@@ -156,13 +156,16 @@ if (!HasInterface || isServer) then
 	    if(_Debug == 1) then {
 			systemChat str [_CfgMagazine,_SelectionMax,_target];
 	    };
-
+		Private _Dir = _arty getDir _target;
+		if(typeName _target == "OBJECT") then {
+			_target = getPos _target;
+		};
 		if (!(_CfgMagazine isEqualTo "") && !(_target inRangeOfArtillery [[_arty], _CfgMagazine])) then {
 			if (_Debug == 1) then {SystemChat "Artillery not in range.."};
 			_Range = 750;
 			while {_Range <= 15000} do {
 				_Range = _Range + 250;
-				_target = _arty getPos [_Range,(_arty getDir _target)];
+				_target = _arty getPos [_Range,_Dir];
 				if (_Debug == 1) then {
 					//SystemChat format["Arty Pos: %1 with %2",_target,_CfgMagazine];
 					_marker = createMarker [format ["oks_ArtyDebugMarker_%1",str round(random 80000 + random 9999)],_target];

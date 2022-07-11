@@ -60,6 +60,12 @@ switch (_side) do {
 	case "SYRIA-D": {
 		#include "Classes\SYRIA-D.sqf"
 	};
+	case "CDF-W": {
+		#include "Classes\CDF-W.sqf"
+	};
+	case "CHDKZ-SF-W": {
+		#include "Classes\CHDKZ-SF-W.sqf"
+	};
 	case "CSAT-H": {
 		#include "Classes\CSAT-H.sqf"
 	};

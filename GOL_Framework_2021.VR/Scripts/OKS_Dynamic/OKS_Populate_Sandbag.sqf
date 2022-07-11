@@ -61,6 +61,7 @@ if(HasInterface && !isServer) exitWith {};
 		sleep 2;
 		{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
 		[_Group] remoteExec ["OKS_SetStatic",0];
+		_Group setVariable ["GOL_IsStatic",true,true];
 		_Group;
 	};
 	false;

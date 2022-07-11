@@ -145,7 +145,7 @@ _Pilot = driver _Heli;
 _CargoGroups = [_Heli,_Units,_UnitTypes,_Pilot] call OKS_SpawnCargo;
 _LoiterWaypoint = [_Heli,_HeliGroup,_PatrolRange] call OKS_CreateLoiterPattern;
 
-waitUntil { sleep 10; {_Side knowsAbout _X > 3.9 && _X distance _Heli < _ReinforcementRange && isTouchingGround _X} count AllPlayers > 0};
+waitUntil { sleep 60; {_Side knowsAbout _X > 3.985 && _X distance _Heli < _ReinforcementRange && isTouchingGround _X} count AllPlayers > 0};
 _DetectedPlayers = AllPlayers select {_Side knowsAbout _X > 3.9 && _X distance _Heli < _ReinforcementRange && isTouchingGround _X};
 _ClosestPlayers = [_DetectedPlayers, [], { _Heli distance _x }, "ASCEND"] call BIS_fnc_sortBy;
 _Target = _ClosestPlayers select 0;
@@ -195,8 +195,8 @@ if(!isNil "_Position") then {
 			WaitUntil {sleep 1; ( !((Alive _Pilot) or (Alive _Heli)) or ((3 <= (CurrentWaypoint _HeliGroup)) && ((GetPosATL _Heli select 2) > 5)) )};
 			sleep 5;
 			_Group LockWP false;
-			[_Group, 1500, 30, [], [], false] spawn lambs_wp_fnc_taskRush;
-			[_HeliGroup, 1500, 60, [], [], false] spawn lambs_wp_fnc_taskHunt;
+			[_Group, 1500, 30, [], [], false] remoteExec ["lambs_wp_fnc_taskHunt",0];
+			[_HeliGroup, 1500, 60, [], [], false] remoteExec ["lambs_wp_fnc_taskHunt",0];
 		} foreach _Groups;
 	};
 };

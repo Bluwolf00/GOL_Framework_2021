@@ -346,14 +346,17 @@ _ObjectiveTypes = ["cache","artillery","hostage","hvttruck","ammotruck","radioto
 /* CompoundSize defines in meters how large a compound is conisdered in this mission. Garrisons will spread out at this distance*/
 _CompoundSize = 25;
 
+/* Standard Patrol size */
+_PatrolSize = 6;
+
 /* EnableEnemyMarkers will place markers at enemy strongpoints, compounds, roadblocks & mortar pits populated by Static Targets */
-_EnableEnemyMarkers = true;
+_EnableEnemyMarkers = false;
 
 /* Mark Trigger Area with Zone Marker*/
 _EnableZoneMarker = false;
 
 /* Mark Trigger Area with Zone Type Marker */
-_EnableZoneTypeMarker = true;
+_EnableZoneTypeMarker = false;
 
 /* Enemy Marker Color - Default SideColor set to _MarkerColor = false*/
 _MarkerColor = false;
@@ -393,5 +396,5 @@ _Ethnicity = "middleeast";
 // DO NOT EDIT ANYTHING BELOW \\
 _DynamicCivilianArray = [_CivilianTriggerSize,_CivilianCount,_HouseWaypoints,_RandomWaypoints,_ShouldBeAgent,_ShouldPanic,_Ethnicity];
 _Civilian = [_CivilianUnits,_Officer,_DynamicCivilianArray];
-_Configuration = [_CompoundSize,_EnableEnemyMarkers,_EnableZoneMarker,_EnableZoneTypeMarker,_RoadblockVehicleType,_EnableObjectiveTasks,_MarkerColor];
+_Configuration = [_CompoundSize,_EnableEnemyMarkers,_EnableZoneMarker,_EnableZoneTypeMarker,_RoadblockVehicleType,_EnableObjectiveTasks,_MarkerColor,_PatrolSize];
 [_UnitArray,_SideMarker,_SideColor,_Vehicles,_Civilian,_ObjectiveTypes,_Configuration]

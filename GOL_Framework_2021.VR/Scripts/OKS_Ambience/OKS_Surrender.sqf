@@ -6,7 +6,7 @@
 params [
     ["_Unit",objNull,[objNull]],            // #0 OBJECT - Person who is going to surrender
     ["_Chance",0.5,[1]],                    // #1 Chance - Numerical chance 0 being 100%, 0.5 = 50% and 1 = 0%   
-    ["_Distance",20,[1]],                   // #2 Distance - Numerial distance where player must be within to activate the codes (Prefer low around 20 meters)
+    ["_Distance",30,[1]],                   // #2 Distance - Numerial distance where player must be within to activate the codes (Prefer low around 20 meters)
     ["_SurrenderByShot",true,[true]],       // #3 SurrenderByShot - True/False should allow player to shoot to make unit surrender with higher chance.
     ["_SurrenderByFlashbang",true,[true]]   // #4 SurrenderByFlash - True/False should allow player to throw flashbang to force unit surrender.
 ];

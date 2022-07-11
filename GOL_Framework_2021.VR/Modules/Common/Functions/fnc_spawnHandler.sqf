@@ -185,7 +185,11 @@ if ((count _vehicleArray) > 0) then {
 };
 
 if !(_waypointArray isEqualTo []) then {
-
+	if((count _vehicleArray) == 0) then {
+		if(!isNil "OKS_Enemy_Talk") then {
+			[_group] execVM "Scripts\OKS_Ambience\OKS_Enemy_Talk.sqf";
+		};
+	};
 	{
 		_x params [["_position",[0,0,0]], ["_attributes",[]]];
 		private _waypoint = _group addWaypoint [_position, 0];
@@ -225,6 +229,7 @@ if !(_waypointArray isEqualTo []) then {
 	TRACE_2("Waypoints added to ", _group, (waypoints _group));
 } else {
 	_group setVariable ["lambs_danger_disableGroupAI", true];
+	_group setVariable ["GOL_IsStatic",true,true];
 	//_group setVariable ["acex_headless_blacklist",true];
 };
 

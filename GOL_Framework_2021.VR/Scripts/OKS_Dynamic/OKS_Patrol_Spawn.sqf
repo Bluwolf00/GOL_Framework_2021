@@ -43,6 +43,9 @@
 		if(_Side isEqualTo civilian) then {
 			_Group setSpeedMode "LIMITED";
 		};
+		if(!isNil "OKS_Enemy_Talk") then {
+			[_Group] execVM "Scripts\OKS_Ambience\OKS_Enemy_Talk.sqf";
+		};
 
 		waitUntil {sleep 10; count waypoints _Group > 0};
 		[_Area,_Group,_Range] spawn OKS_Check_Waypoints;

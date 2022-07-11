@@ -52,6 +52,7 @@
 		[_Position, nil, units _Group, (_Range - 10), 0, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
 		sleep 2;
 		[_Group] remoteExec ["OKS_SetStatic",0];
+		_Group setVariable ["GOL_IsStatic",true,true];
 		{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
 		if(_Side isNotEqualTo civilian) then {
 			[_Group,0.3,15] spawn OKS_EnablePath;

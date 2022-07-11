@@ -95,7 +95,7 @@ _DynamicCivilianArray Params ["_CivilianTriggerSize","_CivilianCount","_HouseWay
 _ObjectiveArray Params ["_Objectives","_ObjectivePatrols"];
 _RoadblockArray Params ["_RoadblockCount","_RoadblockTarmac","_RoadblockPatrols","_RoadblockChance"];
 _MortarArray Params ["_MortarCount","_MortarPatrol"];
-_Configurations Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker"];
+_Configurations Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker","_RoadblockVehicleType","_EnableObjectiveTasks","_MarkerColor","_PatrolSize"];
 
 /* Create Sub-Triggers based on the Main trigger */
 _MainTriggerArea = triggerArea _MainTrigger;
@@ -290,7 +290,6 @@ _MainTriggerIsRectangle = _MainTriggerArea select 3;
 		};
 		/* Create Infantry Patrols for each sub-trigger */
 		Private ["_PatrolInfantry","_GroupPerTrigger"];
-		Private _PatrolSize = 4;
 		if(_Side isEqualTo civilian) then {
 			_PatrolSize = 1;
 		};

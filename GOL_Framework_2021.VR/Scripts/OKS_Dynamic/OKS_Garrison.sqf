@@ -67,6 +67,7 @@
 		_House setVariable ["OKS_isGarrisoned",true];
 
 		waitUntil {sleep 5; !(isNil "ace_ai_fnc_garrison") && !(isNil "OKS_EnablePath")};
+		_Group setVariable ["GOL_IsStatic",true,true];
 		[getPos (leader _Group), [typeOf _House], units _Group, 5, 2, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
 		sleep 2;
 		{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;

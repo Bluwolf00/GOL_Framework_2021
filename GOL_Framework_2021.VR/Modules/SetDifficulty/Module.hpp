@@ -53,7 +53,7 @@
 			spotDistance[]	 = {1.00, 1.00, 1.00};
 			spotTime[]		 = {1.00, 1.00, 1.00};
 			Fleeing[]		 = {0.10, 0.20, 0.30};
-			playerCamoCoef[] = {1.00, 1.00, 1.00};
+			playerCamoCoef[] = {0.70, 0.70, 0.70};
 		};
 
 		class Insurgents {
@@ -68,7 +68,7 @@
 			spotDistance[]	 = {1.00, 1.00, 1.00};
 			spotTime[]		 = {1.00, 1.00, 1.00};
 			Fleeing[]		 = {0.30, 0.40, 0.50};
-			playerCamoCoef[] = {1.20, 1.30, 1.50};
+			playerCamoCoef[] = {0.60, 0.60, 0.60};
 		};
 
 		class Dummy {

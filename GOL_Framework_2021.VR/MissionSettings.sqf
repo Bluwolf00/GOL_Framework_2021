@@ -16,6 +16,7 @@ GOL_OKS_SUPPORT = 0;
 GOL_NEKY_SHARE = 1;
 GOL_OKS_AMBIENCE = 1;
 GOL_OKS_HUNT = 0;
+GOL_OKS_Enemy_Talk = 1;
 
 /* HuntBases */
 GOL_NEKY_HUNT = 0;

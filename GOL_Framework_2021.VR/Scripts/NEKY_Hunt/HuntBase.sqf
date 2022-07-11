@@ -18,9 +18,9 @@
 		Refresh Rate - Time in seconds you want the script to refresh their knowledge of Players inside the hunt zone, quickens the response with shorter refresh, but increases slightly in the performance cost.
 
 		Examples on code:
-		[Object_1, Spawn_1, Trigger_1, 10,300,EAST,6,30] spawn NEKY_Hunt_HuntBase;
-		[Object_1, Spawn_1, Trigger_1, 10,450,EAST,"CUP_O_BTR40_MG_TKM",30] spawn NEKY_Hunt_HuntBase;
-		[Object_1, Spawn_1, Trigger_1, 10,450,EAST,["CUP_O_MTLB_pk_TK_MILITIA","CUP_O_BTR40_MG_TKM","CUP_O_Ural_ZU23_TKM","CUP_O_BTR90_RU"],30] spawn NEKY_Hunt_HuntBase;
+		[Object_1, Spawn_1, HuntTrigger_1, 10,300,EAST,6,60] spawn NEKY_Hunt_HuntBase;
+		[Object_1, Spawn_1, HuntTrigger_1, 10,450,EAST,"CUP_O_BTR40_MG_TKM",30] spawn NEKY_Hunt_HuntBase;
+		[Object_1, Spawn_1, HuntTrigger_1, 10,450,EAST,["CUP_O_MTLB_pk_TK_MILITIA","CUP_O_BTR40_MG_TKM","CUP_O_Ural_ZU23_TKM","CUP_O_BTR90_RU"],30] spawn NEKY_Hunt_HuntBase;
 
 		Step-by-Step Guide:
 		You need two objects, you need a base object and a spawn object. Place down a destructible object and name it 'Object_1'
@@ -29,11 +29,11 @@
 		Next create a spawn object and name it 'Spawn_1', this could be any object but I suggest using a tiny object such as 'Grass Cutter (Small)'. This is the object the units/vehicle will use to spawn on top of.
 		(You can also use a invisible helipad but this will make AI helicopters land on these spawns in some occasions, so not recommended.)
 
-		You now need a Trigger, create a trigger and name it Trigger_1. Set the activation to "Any Players" and set it to "Repeatable". All this is chosen in the trigger properties (Double-click the trigger).
+		You now need a Trigger, create a trigger and name it HuntTrigger_1. Set the activation to "Any Players" and set it to "Repeatable". All this is chosen in the trigger properties (Double-click the trigger).
 		(This is now the trigger area the enemy spawned units will hunt inside, this means if players are detected within this trigger, they will start spawning units and start hunting. When they leave the AI will cease hunting and cease spawning.)
 
 		You now have all the necessary editor placed objects to use the code. You have a base object, spawn object and a trigger. Now open your spawnList.sqf and paste the following:
-		[Object_1, Spawn_1, Trigger_1, 10,300,EAST,6,30] spawn NEKY_Hunt_HuntBase;
+		[Object_1, Spawn_1, HuntTrigger_1, 10,300,EAST,6,30] spawn NEKY_Hunt_HuntBase;
 
 		The final properties in the bracket above is:
 		Number of Waves, Respawn Delay, Side, Soldiers and Refresh Rate.
@@ -57,13 +57,14 @@ Params
 	["_RespawnDelay", 0, [0]],
 	["_Side", East, [sideUnknown]],
 	["_Soldiers", 0, ["",0,[]]],
-	["_RefreshRate", 0, [0]]
+	["_RefreshRate", 0, [0]],
+	["_ShouldDeployFlare",true,[true]]
 ];
 
-Private ["_Group","_Leaders","_Units","_Vehicle","_VehicleClass","_MaxCargoSeats","_Trigger","_MaxUnits","_KnowsAboutValue","_DetectDelay"];
+Private ["_Group","_Leaders","_Units","_Vehicle","_VehicleClass","_MaxCargoSeats","_Trigger","_MaxUnits","_KnowsAboutValue","_DetectDelay","_ShouldDeployFlare"];
 
 sleep 5;
-
+_IsNight = false;
 _Settings = [] Call NEKY_Hunt_Settings;
 _Settings Params ["_MinDistance","_UpdateFreqSettings","_SkillVariables","_Skill","_Leaders","_Units","_MaxCargoSeats"];
 
@@ -81,8 +82,8 @@ while {alive _Base && _Waves > 0} do
 	//SystemChat "Inside Base & Waves";
 	//SystemChat Str [_Side,({isTouchingGround (vehicle _X) && (isPlayer _X)} count list _HuntZone > 0)];
 
-	if ((dayTime > 04.30) and (dayTime < 19.30)) then {_KnowsAboutValue = 3.9} else {_KnowsAboutValue = 3.1};
-
+	if ((dayTime > 04.30) and (dayTime < 19.30)) then {_KnowsAboutValue = 3.975} else {_KnowsAboutValue = 3.975; _IsNight = true;};
+	SystemChat format["Looking for Players in %1..",_HuntZone];
 	if( {(_Side knowsAbout _X > _KnowsAboutValue || _Side knowsAbout vehicle _X > _KnowsAboutValue) && isTouchingGround (vehicle _X) && (isPlayer _X)} count list _HuntZone > 0) then {
 		_DetectDelay = round(_RefreshRate + (Random _RefreshRate));
 		SystemChat format["Players detected in %1 - Delay %2 seconds",_HuntZone,_DetectDelay];
@@ -97,6 +98,10 @@ while {alive _Base && _Waves > 0} do
 		{
 			if( {(_Side knowsAbout _X > _KnowsAboutValue || _Side knowsAbout vehicle _X > _KnowsAboutValue) && isTouchingGround (vehicle _X) && (isPlayer _X)} count list _HuntZone > 0) then {
 				SystemChat format["Players confirmed in %1",_HuntZone];
+				if(_ShouldDeployFlare && _IsNight) then {
+					_flare = "F_20mm_Red" createvehicle ((_Base) ModelToWorld [0,0,500]); 
+					_flare setVelocity [0,0,-10];
+				};
 				if(typeName _Soldiers == "SCALAR") then
 				{
 					_Waves = _Waves - 1;
@@ -185,6 +190,9 @@ while {alive _Base && _Waves > 0} do
 						}
 						else
 						{
+							if(!isNil "OKS_Enemy_Talk") then {
+								[_Group] execVM "Scripts\OKS_Ambience\OKS_Enemy_Talk.sqf";
+							};
 							_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 						};
 

@@ -31,5 +31,5 @@ _UnitArray Params ["_Leaders","_Units","_Officer"];
 	};
 	[[_Position select 0,_Position select 1,0], nil, units _Group, _Range, 0, true, true] remoteExec ["ace_ai_fnc_garrison",0];
 	sleep 2;
-	
+	_Group setVariable ["GOL_IsStatic",true,true];
 	[_Group] remoteExec ["OKS_SetStatic",0];
