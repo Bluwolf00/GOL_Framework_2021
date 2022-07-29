@@ -6,14 +6,14 @@ Params [
 	["_Distance",125,[0]],
 	["_Chance",1,[0]],
 	["_MinMaxDelayBetweenTalks",[15,30],[[]]],
-	["_LoopDelayToCheckNearby",10,[0]]
+	["_LoopDelayToCheckNearby",5,[0]]
 ];
 
 if (!isServer) exitWith {false};	// Ensures only server or HC runs this script - Tack Neky
 
 OKS_Enemy_Speak = {
 
-	Params["_Group","_Distance","_Chance","_MinMaxDelayBetweenTalks"];
+	Params["_Group","_Distance","_Chance","_MinMaxDelayBetweenTalks","_Delay","_SoundFileName"];
 
 	if({Alive _X} count units _Group == 0) exitWith {SystemChat "No units alive, exiting.."};
 	if({behaviour _X isEqualTo "COMBAT"} count units _Group > 0) exitWith {SystemChat "Unit in combat, exiting..."};
@@ -52,10 +52,10 @@ OKS_Enemy_Speak = {
 	if(_Dice < _Chance) then {
 		SystemChat format ["Dice %1 lower than chance %2. Successful trigger...",_Dice,_Chance];
 		(_NearestViableArray select 0) Params ["_Player","_Enemy","_Distance"];
-		_SoundFileName = selectRandom ["Radio1","Radio2","Radio3","Radio4","Radio5"];
+		_SoundFileName = selectRandom ["Radio1","Radio2","Radio3","Radio4","Radio5","Radio6","Radio7","Radio8","Radio9","Radio10","Radio11","Radio12","Radio13","Radio14","Radio15","Radio16","Radio17","Radio18","Radio19","Radio20"];
 		SystemChat format["Selected SoundFile: %1.ogg",_SoundFileName];
 		_Group setVariable ["OKS_Talking_Currently",true,true];
-		if(_Distance > 40) then {
+		if(_Distance > 50 || _SoundFileName in ["Radio6","Radio7","Radio8","Radio9","Radio10"]) then {
 			playSound3D [MISSION_ROOT + format["Scripts\OKS_Ambience\Radio\%1.ogg",_SoundFileName], _Enemy, false, getPosASL _Enemy, 5, 1, 150];		
 		} else {
 			playSound3D [MISSION_ROOT + format["Scripts\OKS_Ambience\Radio\%1.ogg",_SoundFileName], _Enemy, false, getPosASL _Enemy, 2.5, 1, 100];		
@@ -64,9 +64,13 @@ OKS_Enemy_Speak = {
 		SystemChat format ["Dice %1 higher than chance %2. Failed trigger...",_Dice,_Chance];
 	};
 
-	_MinMaxDelayBetweenTalks Params ["_Min","_Max"];
-	_Mid = _Max - _Min;
-	_Delay = (_Min + (random _Mid));
+	if(_SoundFileName in ["Radio6","Radio7","Radio8","Radio9","Radio10"]) then {
+		_Delay = round(6 + (random 5));
+	} else {
+		_MinMaxDelayBetweenTalks Params ["_Min","_Max"];
+		_Mid = _Max - _Min;
+		_Delay = (_Min + (random _Mid));
+	};
 	SystemChat format ["Random Delay: %1",_Delay];
 	sleep _Delay;
 	_Group setVariable ["OKS_Talking_Currently",false,true];
