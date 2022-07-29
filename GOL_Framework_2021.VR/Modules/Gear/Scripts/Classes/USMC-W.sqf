@@ -1,6 +1,7 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
+_insignia = "";
 _goggles = "rhs_googles_clear";
 _helmet = selectRandom ["rhsusf_lwh_helmet_marpatwd_ess","rhsusf_lwh_helmet_marpatwd"];
 _OfficerHelmet = "rhs_8point_marpatwd";

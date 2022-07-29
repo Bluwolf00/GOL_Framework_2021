@@ -2,6 +2,7 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 // Cloths
+_insignia = "";
 _goggles = "UK3CB_G_KLR_TAN";
 _helmet = selectRandom ["rhsusf_mich_bare_norotos_arc_alt_tan_headset","rhsusf_mich_bare_norotos_arc_alt_tan","rhsusf_mich_bare_norotos_arc_tan"];
 _OfficerHelmet = "rhs_beret_vdv3";

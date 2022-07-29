@@ -14,22 +14,23 @@ _glflareG = "rhs_VG40OP_green";
 _glflareR = "rhs_VG40OP_red";
 _glflareW = "rhs_VG40OP_white";
 
-_goggles = "";
-_helmet = selectRandom ["UK3CB_MDF_B_H_M1","UK3CB_ADA_I_H_M1_Liner_DPP","UK3CB_ARD_B_H_SSh68_Des","rhs_ssh60","rhs_ssh68_2","UK3CB_TKA_I_H_SSh68_Oli","rhs_ssh60","UK3CB_TKA_I_H_SSh68_Khk"];
+_insignia = "";
+_goggles = "UK3CB_G_Neck_Shemag_Oli";
+_helmet = "acp_SY_WDL_H_HelmetIA_SY_WDL";
 _OfficerHelmet = "H_Beret_blk";
-_uniform = selectRandom ["UK3CB_ADA_B_U_CombatUniform_DPP_OLI","UK3CB_ADA_B_U_CombatUniform_01_DPP","UK3CB_ADA_B_U_SF_CombatUniform_03_TTC","rhs_uniform_afghanka_boots","UK3CB_TKA_I_U_CombatUniform_02_OLI","UK3CB_TKA_I_U_CombatUniform_03_OLI","UK3CB_ADE_O_U_02_J","UK3CB_ADE_O_U_02_B","UK3CB_ADM_B_U_Tshirt_01_TCC"];
-_vest = selectRandom ["rhs_chicom_khk","rhs_lifchik","V_TacVest_oli","rhs_6b2"];
-_backpack = "rhs_sidor";
+_uniform = selectRandom ["acp_SY_WDL_U_I_CombatUniform_SY_WDL_insignia","acp_SY_WDL_U_I_CombatUniform_shortsleeve_SY_WDL_insignia"];
+_vest = selectRandom ["acp_SY_WDL_V_PlateCarrierIA1_SY_WDL","acp_SY_WDL_V_CarrierRigKBT_01_light_SY_WDL_F","V_TacVest_oli","rhs_6b2"];
+_backpack = "acp_SY_WDL_B_FieldPack_SY_WDL";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "UK3CB_B_I_Alice_Radio_Backpack";
+	_backpackRadio = "acp_SY_WDL_B_RadioBag_01_SY_WDL_F";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "rhs_rd54_vest";
+	_backpack = "acp_SY_WDL_B_Kitbag_rgr_SY_WDL";
 };
 if (_role isEqualTo "p") then {
-	_helmet = "rhs_zsh7a_mike_green";
+	_helmet = "acp_SY_WDL_H_HelmetSpecter_cover_SY_WDL_F";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
@@ -78,11 +79,11 @@ _HAT_mag = "Vorona_HEAT";
 _AA = ["rhs_weap_igla", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "rhs_mag_9k38_rocket";
 
-_pistol = ["hgun_Pistol_01_F", _silencer, _pointer, _sight, _bipod];
+_pistol = ["rhs_weap_makarov_pm", _silencer, _pointer, _sight, _bipod];
 _pistol_mag = "10Rnd_9x21_Mag";
 
 _pdw = ["rhs_weap_pp2000", _silencer, _pointer, _sight, _bipod];
-_pdw_mag = "rhs_mag_9x19mm_7n31_44";
+_pdw_mag = "rhs_mag_9x18_8_57N181S";
 
 _silencer = "";
 _pointer = "";

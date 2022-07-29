@@ -1,6 +1,7 @@
 _useMineDetector = false;
 _allowedNightStuff = false;
 
+_insignia = "";
 _goggles = "";
 _helmet = selectRandom ["H_ShemagOpen_tan","","","UK3CB_H_Shemag_blk","UK3CB_H_Shemag_grey","UK3CB_H_Shemag_tan","UK3CB_H_Shemag_white","UK3CB_ADE_O_H_Turban_01_1","UK3CB_ADE_I_H_Turban_01_2","UK3CB_H_Turban_Facewrap_03_Blk","UK3CB_H_Turban_Facewrap_01_Tan"];
 _uniform = selectRandom ["UK3CB_ADE_O_U_02_F","UK3CB_ADE_O_U_02_H","UK3CB_ADE_O_U_02_I","UK3CB_ADE_O_U_02_J","UK3CB_ADE_O_U_02_K","UK3CB_ADE_O_U_02_B","UK3CB_ADE_O_U_02","UK3CB_ADE_O_U_02_G","UK3CB_ADE_O_U_02_C"];

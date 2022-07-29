@@ -13,6 +13,7 @@ _allowedNightStuff = true;
 	If you want more than 1 type of uniform/vest/goggles/helmets you can add more into the arrays below that looks like this:
 	selectRandom["Type1","Type2","Type3"];
 */
+_insignia = "";
 _goggles = selectRandom [""];
 _helmet = selectRandom [""];
 _OfficerHelmet = "";

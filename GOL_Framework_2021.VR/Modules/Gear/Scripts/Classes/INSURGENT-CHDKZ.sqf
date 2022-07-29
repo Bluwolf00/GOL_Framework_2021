@@ -16,6 +16,7 @@ _glflareW = "rhs_VG40OP_white";
 
 _allowedNightStuff = false;
 
+_insignia = "";
 _goggles = selectRandom ["G_Bandanna_oli","G_Balaclava_oli",""];
 _helmet = selectRandom ["","rhs_ssh68_2","rhsgref_M56"];
 _OfficerHelmet = "UK3CB_H_Beret_Officer_Red_Star";

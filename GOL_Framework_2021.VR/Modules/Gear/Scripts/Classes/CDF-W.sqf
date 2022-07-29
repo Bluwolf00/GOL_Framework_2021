@@ -14,6 +14,7 @@ _glflareG = "rhs_VG40OP_green";
 _glflareR = "rhs_VG40OP_red";
 _glflareW = "rhs_VG40OP_white";
 
+_insignia = "";
 _goggles = "Armband_Green_medium";
 _helmet = ["rhsgref_ssh68_ttsko_mountain","UK3CB_LSM_B_H_BoonieHat_OLI","UK3CB_H_Woolhat_GRN","UK3CB_TKA_I_H_SSh68_Oli","rhs_headband","rhsgref_ssh68_ttsko_mountain"] call BIS_fnc_selectRandom;
 _OfficerHelmet = "UK3CB_ANA_B_H_OFF_Beret_GRN";

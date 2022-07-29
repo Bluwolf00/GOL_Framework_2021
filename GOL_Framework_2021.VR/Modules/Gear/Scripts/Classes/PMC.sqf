@@ -1,6 +1,7 @@
 _allowedNightStuff = false;
 _useMineDetector = false;
 
+_insignia = "";
 _goggles = selectRandom ["G_Bandanna_blk","G_Bandanna_khk","G_Bandanna_oli"];
 _helmet = selectRandom ["H_Shemag_olive","H_ShemagOpen_tan","H_Bandanna_khk","H_Booniehat_khk","H_Cap_oli","H_Watchcap_blk"];
 _OfficerHelmet = "rhsgref_hat_M1951";

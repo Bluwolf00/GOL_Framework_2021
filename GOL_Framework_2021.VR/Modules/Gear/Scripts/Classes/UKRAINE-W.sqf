@@ -14,6 +14,7 @@ _glflareG = "rhs_VG40OP_green";
 _glflareR = "rhs_VG40OP_red";
 _glflareW = "rhs_VG40OP_white";
 
+_insignia = "";
 _goggles = "Armband_Yellow_XL";
 _helmet = ["UK3CB_ADA_B_H_6b27m_OLI","UK3CB_ADA_B_H_6b27m_ESS_OLI","UK3CB_ADA_B_H_6b27m_ml_ESS_OLI","UK3CB_ADA_B_H_6b27m_ESS_OLI"] call BIS_fnc_selectRandom;
 _OfficerHelmet = "rhs_ushanka";

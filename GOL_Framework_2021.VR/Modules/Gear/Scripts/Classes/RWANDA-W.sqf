@@ -18,6 +18,7 @@ _glflareW = "";
 _useMineDetector = true;
 _allowedNightStuff = true;
 
+_insignia = "";
 _goggles = "G_Balaclava_TI_blk_F";
 _helmet = selectRandom ["rhsusf_opscore_fg"];
 _OfficerHelmet = "H_Beret_EAF_01_F";

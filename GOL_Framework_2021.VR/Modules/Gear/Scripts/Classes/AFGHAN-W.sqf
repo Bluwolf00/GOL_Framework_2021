@@ -1,6 +1,7 @@
 _useMineDetector = false;
 _allowedNightStuff = false;
 
+_insignia = "";
 _goggles = "";
 _helmet = "rhsusf_opscore_fg";
 _OfficerHelmet = "UK3CB_ANA_B_H_OFF_Beret_GRN";

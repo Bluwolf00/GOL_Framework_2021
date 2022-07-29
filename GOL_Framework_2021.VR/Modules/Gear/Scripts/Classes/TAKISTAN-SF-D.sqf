@@ -14,6 +14,7 @@ _glflareW = "rhs_VG40OP_white";
 _useMineDetector = true;
 _allowedNightStuff = true;
 
+_insignia = "";
 _goggles = "rhsusf_oakley_goggles_clr";
 _helmet = selectRandom ["UK3CB_TKA_O_H_6b7_1m_bala2_DES"];
 _OfficerHelmet = "H_Beret_blk";

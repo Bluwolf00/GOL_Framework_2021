@@ -1,6 +1,7 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
+_insignia = "";
 _goggles = "";
 _helmet = "rhsusf_lwh_helmet_marpatd";
 _OfficerHelmet = "rhs_8point_marpatd";

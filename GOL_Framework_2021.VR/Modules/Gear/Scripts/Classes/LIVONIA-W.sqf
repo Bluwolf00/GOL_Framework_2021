@@ -1,6 +1,7 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
+_insignia = "";
 _goggles = "rhsusf_shemagh_grn";
 _helmet = selectRandom ["UK3CB_LDF_B_H_HB97_GEO","UK3CB_LDF_B_H_HB97_ESS_GEO","UK3CB_LDF_B_H_HB97_ESS_Cover_GEO"];
 _OfficerHelmet = "UK3CB_AAF_B_H_Beret_Army_Off";

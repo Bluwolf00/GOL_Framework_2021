@@ -14,6 +14,7 @@ _glflareG = "rhs_VG40OP_green";
 _glflareR = "rhs_VG40OP_red";
 _glflareW = "rhs_VG40OP_white";
 
+_insignia = "";
 _goggles = "rhs_balaclava1_olive";
 _helmet = selectRandom ["rhssaf_helmet_m97_olive_nocamo_black_ess_bare","rhssaf_helmet_m97_olive_nocamo_black_ess","rhssaf_helmet_m97_olive_nocamo"];
 _OfficerHelmet = "UK3CB_MDF_B_H_Off_Beret";

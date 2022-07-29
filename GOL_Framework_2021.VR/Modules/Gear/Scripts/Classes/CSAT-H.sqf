@@ -1,6 +1,7 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
+_insignia = "";
 _goggles = "";
 _helmet = "H_HelmetO_ocamo";
 _OfficerHelmet = "H_Beret_CSAT_01_F";

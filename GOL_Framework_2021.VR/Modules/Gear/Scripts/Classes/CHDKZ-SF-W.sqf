@@ -14,6 +14,7 @@ _allowedNightStuff = true;
 // _glflareR = "rhs_VG40OP_red";
 // _glflareW = "rhs_VG40OP_white";
 
+_insignia = "";
 _goggles = ["rhs_balaclava","rhs_balaclava1_olive"] call BIS_fnc_selectRandom;
 _helmet = ["H_HelmetB_light_black"] call BIS_fnc_selectRandom;
 _OfficerHelmet = "UK3CB_H_Beret_Officer_Red_Star";
