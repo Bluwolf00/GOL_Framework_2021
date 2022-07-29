@@ -12,12 +12,18 @@ switch (_side) do {
 	case "BAF-W": {
 		#include "Classes\BAF-W.sqf"
 	};
+	case "BAF-D": {
+		#include "Classes\BAF-D.sqf"
+	};	
 	case "BAF-W-FALK": {
 		#include "Classes\BAF-W-FALK.sqf"
 	};
 	case "FRANCE-D": {
 		#include "Classes\FRANCE-D.sqf"
 	};	
+	case "FRANCE-W": {
+		#include "Classes\FRANCE-W.sqf"
+	};		
 	case "RWANDA-W": {
 		#include "Classes\RWANDA-W.sqf"
 	};
@@ -138,9 +144,12 @@ switch (_side) do {
 	// case "FRENCH-UN": {
 	// 	#include "Classes\FRENCH-UN.sqf"
 	// };
-	case "GER-FLK": {
-		#include "Classes\GER-FLK.sqf"
+	case "GERMAN-W": {
+		#include "Classes\GERMAN-W.sqf"
 	};
+	case "GERMAN-D": {
+		#include "Classes\GERMAN-D.sqf"
+	};	
 	case "PMC": {
 		#include "Classes\PMC.sqf"
 	};

@@ -1,29 +1,32 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
-// Cloths
-_goggles = "G_Balaclava_TI_blk_F";
-_helmet = "rhsgref_helmet_pasgt_flecktarn";
+_insignia = "";
+_goggles = "";
+_helmet = "acp_DE_Tropentarn_H_HelmetSpecB_DE_Tropentarn_insignia";
 _OfficerHelmet = "UK3CB_LNM_B_H_BoonieHat_FLK_03";
-_uniform = SelectRandom ["UK3CB_LNM_B_U_CombatSmock_01","UK3CB_LNM_B_U_CombatSmock_03"];
-_vest = "UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI";
-_backpack = "UK3CB_TKA_O_B_RIF_Khk";
+_uniform = SelectRandom ["acp_DE_Tropentarn_U_I_E_Uniform_shortsleeve_DE_Tropentarn_01_F_flag","acp_DE_Tropentarn_U_I_E_Uniform_DE_Tropentarn_01_F_insignia"];
+_vest = "acp_DE_Tropentarn_V_CarrierRigKBT_01_light_DE_Tropentarn_F";
+_backpack = "acp_DE_Tropentarn_B_AssaultPackEnhanced_DE_Tropentarn_insignia";
 _backpackRadio = _backpack;
+
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "TFAR_rt1523g_big_bwmod";
+	_backpackRadio = "acp_DE_Tropentarn_B_RadioBag_01_DE_Tropentarn_F";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "UK3CB_LSM_B_B_CARRYALL_KHK";
+	_backpack = "acp_DE_Tropentarn_B_Kitbag_rgr_DE_Tropentarn";
 };
 
 if (_role isEqualTo "crew") then {
-	_vest = "UK3CB_LDF_B_V_Vest_KKZ10_OLI";
-	_backpack = "UK3CB_TKA_O_B_RIF_Khk";
+	_vest = "acp_DE_Tropentarn_V_CarrierRigKBT_01_light_DE_Tropentarn_F";
+	_backpack = "acp_DE_Tropentarn_B_AssaultPackEnhanced_DE_Tropentarn_insignia";
+	_uniform = "acp_DE_Tropentarn_U_O_officer_noInsignia_DE_Tropentarn_F_insignia";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "rhsusf_hgu56p_visor";
-	_vest = "UK3CB_LDF_B_V_Vest_KKZ10_OLI";
+	_vest = "acp_DE_Tropentarn_V_CarrierRigKBT_01_light_DE_Tropentarn_F";
+	_uniform = "acp_DE_Tropentarn_U_O_PilotCoveralls_DE_Tropentarn";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "I_UAV_01_backpack_F";
@@ -33,7 +36,7 @@ if (_role isEqualTo "uav") then {
 if (_role isEqualTo "jetp") then {
 	_goggles = "G_Aviator";
 	_helmet = "H_PilotHelmetFighter_B";
-	_uniform = "U_B_PilotCoveralls";
+	_uniform = "acp_DE_Tropentarn_U_O_PilotCoveralls_DE_Tropentarn";
 	_vest = "V_Rangemaster_belt";
 	_backpack = "B_Parachute";
 };
@@ -58,11 +61,11 @@ _rifleL_mag_tr = "hlc_20rnd_762x51_T_G3";
 _rifleC_mag = "hlc_30rnd_556x45_M_G36";
 _rifleC_mag_tr = "hlc_30rnd_556x45_Tracers_G36";
 
-_LMG = ["hlc_lmg_minimipara_railed", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "hlc_200rnd_556x45_T_SAW";
+_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 
 _MMG = ["hlc_lmg_MG3KWS_b", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "hlc_100Rnd_762x51_T_MG3";
+_MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
 
 // Launchers
 _silencer = "";

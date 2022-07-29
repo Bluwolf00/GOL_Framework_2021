@@ -1,25 +1,31 @@
 _useMineDetector = true;
 _allowedNightStuff = false;
 
-_goggles = "G_Shades_Blue";
-_helmet = "rhssaf_beret_blue_un";
-_OfficerHelmet = "rhssaf_beret_blue_un";
-_uniform = "UK3CB_ADM_B_U_CombatUniform_01_WDL";
-_vest = "UK3CB_UN_B_V_6b23_ML_6sh92_radio";
-_backpack = "";
+_insignia = "UK3CB_UN_Insignia_Peacekeepers";
+_goggles = "";
+_helmet = "rhsgref_helmet_pasgt_un";
+_OfficerHelmet = "UK3CB_UN_B_H_Beret_Off";
+_uniform = "acp_IE_DPM_U_I_CombatUniform_IE_DPM_insignia";
+_vest = "acp_IE_DPM_V_PlateCarrier2_IE_DPM_insignia";
+_backpack = "acp_IE_DPM_B_AssaultPackEnhanced_IE_DPM_insignia";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "UK3CB_B_B_Backpack_Radio_Chem_OLI";
+	_backpackRadio = "acp_IE_DPM_B_RadioBag_01_IE_DPM_F";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "rhssaf_kitbag_md2camo";
+	_backpack = "acp_IE_DPM_B_Kitbag_rgr_IE_DPM";
+};
+
+if(_role isEqualTo "crew") then {
+	_uniform = "acp_IE_DPM_U_O_officer_noInsignia_IE_DPM_F_insignia";
+	_vest = "acp_IE_DPM_V_CarrierRigKBT_01_IE_DPM_F";
 };
 
 if (_role isEqualTo "p") then {
 	_helmet = "H_PilotHelmetHeli_B";
-	_uniform = "UK3CB_ADM_B_U_CombatUniform_01_WDL";
-	_vest = "UK3CB_UN_B_V_6b23_ML_6sh92_radio";
+	_uniform = "acp_IE_DPM_U_B_HeliPilotCoveralls_IE_DPM";
+	_vest = "acp_IE_DPM_V_CarrierRigKBT_01_IE_DPM_F";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
@@ -29,7 +35,7 @@ if (_role isEqualTo "uav") then {
 if (_role isEqualTo "jetp") then {
 	_goggles = "G_Aviator";
 	_helmet = "H_PilotHelmetFighter_B";
-	_uniform = "U_B_PilotCoveralls";
+	_uniform = "acp_IE_DPM_U_O_PilotCoveralls_IE_DPM";
 	_vest = "V_Rangemaster_belt";
 	_backpack = "B_Parachute";
 };

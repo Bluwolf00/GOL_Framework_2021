@@ -1,31 +1,34 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
-_goggles = selectRandom ["rhsusf_shemagh2_tan","rhsusf_shemagh_tan","rhsusf_shemagh_gogg_tan","rhsusf_shemagh2_gogg_tan"];
-_helmet = ["H_HelmetB_light_desert"] call BIS_fnc_selectRandom;
-_OfficerHelmet = "rhs_fieldcap_m88";
-_uniform = selectRandom ["UK3CB_ADM_B_U_CombatUniform_01_DDPM","UK3CB_ADM_B_U_CombatUniform_Shortsleeve_01_DDPM"];
-_vest = selectRandom["rhsusf_spc_patchless_radio","rhsusf_spc_patchless"];
-_backpack = "UK3CB_B_Alice_K";
+_insignia = "";
+_goggles = selectRandom [""];
+_helmet = ["acp_CZ_VZ95_Desert_H_HelmetB_light_CZ_VZ95_Desert_insignia"] call BIS_fnc_selectRandom;
+_OfficerHelmet = "rhsgref_fieldcap_ttsko_digi";
+_uniform = selectRandom ["acp_CZ_VZ95_Desert_U_I_E_Uniform_shortsleeve_CZ_VZ95_Desert_01_F_flag","acp_CZ_VZ95_Desert_U_I_E_Uniform_CZ_VZ95_Desert_01_F_insignia"];
+_vest = selectRandom["acp_CZ_VZ95_Desert_V_PlateCarrierIA2_CZ_VZ95_Desert"];
+_backpack = "acp_CZ_VZ95_Desert_B_AssaultPackEnhanced_CZ_VZ95_Desert_insignia";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "UK3CB_B_B_Alice_Radio_Backpack";
+	_backpackRadio = "acp_CZ_VZ95_Desert_B_RadioBag_01_CZ_VZ95_Desert_F";
 };
 
 if (_role in ["ag","ammg","sm","lr","ab"]) then {
-	_backpack = "B_Carryall_cbr";
+	_backpack = "acp_CZ_VZ95_Desert_B_Carryall_CZ_VZ95_Desert";
 };
 
 if(_role in ["crew"]) then {
 	_helmet = "H_HelmetCrew_I";
 	_goggles = "";
-	_vest = "rhsusf_spc"
+	_vest = "acp_CZ_VZ95_Desert_V_PlateCarrier1_CZ_VZ95_Desert_insignia";
+	_uniform = "acp_CZ_VZ95_Desert_U_O_officer_noInsignia_CZ_VZ95_Desert_F_insignia";
 };
 
 if (_role isEqualTo "p") then {
-	_helmet = "rhsusf_hgu56p_tan";
-	_vest = "rhsusf_spc";
+	_helmet = "UK3CB_H_Pilot_Helmet";
+	_vest = "acp_CZ_VZ95_Desert_V_PlateCarrierIA1_CZ_VZ95_Desert";
 	_goggles = "";
+	_uniform = "acp_CZ_VZ95_Desert_U_O_PilotCoveralls_CZ_VZ95_Desert";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
@@ -40,40 +43,40 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "";
+_silencer = "rhsusf_acc_sfmb556";
 _pointer = "rhsusf_acc_anpeq15side_bk";
-_sight = "optic_ERCO_blk_F";
-_bipod = "";
+_sight = "optic_hamr";
+_bipod = "rhsusf_acc_grip1";
 
 // Primary Weapon
 _rifle = ["hlc_rifle_ACR_carb_tan", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["hlc_rifle_ACR_SBR_tan", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["hlc_rifle_ACR_GL_carb_tan", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_ACR_carb_tan", _silencer, _pointer, _sight, _bipod];
-_rifle_mag = "hlc_30rnd_556x45_EPR";
-_rifle_mag_tr = "hlc_30rnd_556x45_t_PMAG";
-_rifleGL_mag = "hlc_30rnd_556x45_EPR";
-_rifleGL_mag_tr = "hlc_30rnd_556x45_t_PMAG";
-_rifleC_mag = "hlc_30rnd_556x45_EPR";
-_rifleC_mag_tr = "hlc_30rnd_556x45_t_PMAG";
-_rifleL_mag = "hlc_30rnd_556x45_EPR";
-_rifleL_mag_tr = "hlc_30rnd_556x45_t_PMAG";
+_rifleL = ["hlc_rifle_ACR_Full_tan", _silencer, _pointer, _sight, _bipod];
+_rifle_mag = "rhs_mag_30Rnd_556x45_M855A1_EPM";
+_rifle_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_EPM_Tracer_Red";
+_rifleGL_mag = "rhs_mag_30Rnd_556x45_M855A1_EPM";
+_rifleGL_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_EPM_Tracer_Red";
+_rifleC_mag = "rhs_mag_30Rnd_556x45_M855A1_EPM";
+_rifleC_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_EPM_Tracer_Red";
+_rifleL_mag = "rhs_mag_30Rnd_556x45_M855A1_EPM";
+_rifleL_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_EPM_Tracer_Red";
 
 _LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 
-_MMG = ["hlc_lmg_M60E4", _silencer, _pointer, "optic_hamr", _bipod];
+_MMG = ["hlc_lmg_M60E4", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "hlc_100Rnd_762x51_T_M60E4";
 
 _LAT = ["rhs_weap_M136_hp", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "";
 _LAT_ReUsable = false;
 
-_MAT = ["launch_MRAWS_sand_rail_F", _silencer, _pointer, _sight, _bipod];
+_MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "MRAWS_HEAT_F";
 
-_HAT = ["launch_B_Titan_short_F", _silencer, _pointer, _sight, _bipod];
-_HAT_mag = "Titan_AT";
+_HAT = ["launch_O_Vorona_green_F", _silencer, _pointer, _sight, _bipod];
+_HAT_mag = "Vorona_HEAT";
 
 _AA = ["rhs_weap_fim92", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "Titan_AA";

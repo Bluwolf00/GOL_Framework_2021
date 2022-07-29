@@ -1,37 +1,38 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
+_insignia = "";
 _goggles = "G_Balaclava_TI_blk_F";
-_helmet = selectRandom ["rhsusf_opscore_fg_pelt","rhsusf_opscore_fg","rhsusf_opscore_fg_pelt_cam"];
-_OfficerHelmet = "UK3CB_ANA_B_H_Beret_GRN";
-_uniform = SelectRandom ["UK3CB_LNM_B_U_CombatSmock_21"];
-_vest = selectRandom["UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI","UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_OLI","UK3CB_LDF_B_V_LMG_Vest_KKZ10_OLI","UK3CB_LDF_B_V_SL_Vest_KKZ10_OLI","UK3CB_LDF_B_V_TL_Vest_KKZ10_OLI","UK3CB_LDF_B_V_GREN_Vest_KKZ10_OLI"];
-_backpack = "B_Kitbag_rgr";
+_helmet = selectRandom ["acp_SE_M90_H_HelmetSpecter_cover_SE_M90_F","acp_SE_M90_H_HelmetSpecter_headset_SE_M90_F","acp_SE_M90_H_HelmetSpecter_SE_M90_F"];
+_OfficerHelmet = "acp_SE_M90_H_MilCap_SE_M90";
+_uniform = SelectRandom ["acp_SE_M90_U_I_E_Uniform_shortsleeve_SE_M90_01_F_flag","acp_SE_M90_U_I_E_Uniform_SE_M90_01_F_insignia"];
+_vest = selectRandom["acp_SE_M90_V_PlateCarrier2_SE_M90_insignia"];
+_backpack = "acp_SE_M90_B_AssaultPackEnhanced_SE_M90_insignia";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "UK3CB_LDF_I_B_RadioBag_GEO";
+	_backpackRadio = "acp_SE_M90_B_RadioBag_01_SE_M90_F";
 };
 
 if (_role in ["ag","ammg","sm","lr","ab"]) then {
-	_backpack = "UK3CB_B_Hiker";
+	_backpack = "acp_SE_M90_B_Kitbag_rgr_SE_M90";
 };
 
 if (_role in ["ar","mmg"]) then {
-	_backpack = "UK3CB_B_Hiker";
+	_backpack = "acp_SE_M90_B_Kitbag_rgr_SE_M90";
 };
 
 if (_role in ["pl","sl","ftl","fac"]) then {
-	_helmet = "rhsusf_opscore_fg_pelt_nsw";
+	_helmet = "acp_SE_M90_H_HelmetSpecter_headset_SE_M90_F";
 };
 if (_role isEqualTo "crew") then {
 	_helmet = "H_HelmetCrew_I";
-	_vest = "UK3CB_LDF_B_V_Vest_KKZ10_OLI";
+	_vest = "acp_SE_M90_V_PlateCarrier1_SE_M90_insignia";
 	_uniform = "UK3CB_LNM_B_U_CombatSmock_21";
 };
 if (_role isEqualTo "p") then {
 	_uniform = "Uniform_Coveralls_M90";
 	_helmet = "rhsusf_hgu56p_visor_black";
-	_vest = "UK3CB_LDF_B_V_CREW_Vest_KKZ10_OLI";
+	_vest = "acp_SE_M90_V_PlateCarrier1_SE_M90_insignia";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
