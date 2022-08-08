@@ -1,7 +1,7 @@
 /*
     Examples:
-    _null = [this,0.5,25,true,false] spawn OKS_Surrender;
-    _null = [this,0.5,25,true,true] execVM "Scripts\OKS_Ambience\OKS_Surrender.sqf";
+    _null = [this,0.5,50,true,false] spawn OKS_Surrender;
+    _null = [this,0.5,50,true,true] execVM "Scripts\OKS_Ambience\OKS_Surrender.sqf";
 */
 params [
     ["_Unit",objNull,[objNull]],            // #0 OBJECT - Person who is going to surrender
@@ -85,7 +85,7 @@ waitUntil {
 if(_Debug_Variable) then {SystemChat "Surrender - Nearby Player Found"};
 _Unit setVariable ["OKS_ChanceSurrender",_Chance,true];
 if(_SurrenderByShot) then {
-    SystemChat "EventHandler Hit given to HVT.";
+    //SystemChat "EventHandler Hit given to HVT.";
     _Unit addEventHandler ["Hit", {
         params ["_unit", "_source", "_damage", "_instigator"];
         if(isPlayer _instigator && _instigator distance _unit < 25) then {
