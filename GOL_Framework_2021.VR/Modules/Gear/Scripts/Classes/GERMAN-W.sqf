@@ -3,29 +3,29 @@ _allowedNightStuff = true;
 
 _insignia = "";
 _goggles = "";
-_helmet = "acp_DE_Flecktarn_H_HelmetSpecB_DE_Flecktarn_insignia";
+_helmet = "acp_gol_DE_Flecktarn_H_HelmetSpecB_DE_Flecktarn_insignia";
 _OfficerHelmet = "UK3CB_LNM_B_H_BoonieHat_FLK_03";
-_uniform = SelectRandom ["acp_DE_Flecktarn_U_I_E_Uniform_shortsleeve_DE_Flecktarn_01_F_flag","acp_DE_Flecktarn_U_I_E_Uniform_DE_Flecktarn_01_F_insignia"];
-_vest = "acp_DE_Flecktarn_V_CarrierRigKBT_01_light_DE_Flecktarn_F";
-_backpack = "acp_DE_Flecktarn_B_AssaultPackEnhanced_DE_Flecktarn_insignia";
+_uniform = SelectRandom ["acp_gol_DE_Flecktarn_U_I_E_Uniform_shortsleeve_DE_Flecktarn_01_F_flag","acp_gol_DE_Flecktarn_U_I_E_Uniform_DE_Flecktarn_01_F_insignia"];
+_vest = "acp_gol_DE_Flecktarn_V_CarrierRigKBT_01_light_DE_Flecktarn_F";
+_backpack = "acp_gol_DE_Flecktarn_B_AssaultPackEnhanced_DE_Flecktarn_insignia";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "acp_DE_Flecktarn_B_RadioBag_01_DE_Flecktarn_F";
+	_backpackRadio = "acp_gol_DE_Flecktarn_B_RadioBag_01_DE_Flecktarn_F";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "acp_DE_Tropentarn_B_Kitbag_rgr_DE_Flecktarn";
+	_backpack = "acp_gol_DE_Tropentarn_B_Kitbag_rgr_DE_Flecktarn";
 };
 
 if (_role isEqualTo "crew") then {
-	_vest = "acp_DE_Flecktarn_V_CarrierRigKBT_01_light_DE_Flecktarn_F";
-	_backpack = "acp_DE_Flecktarn_B_AssaultPackEnhanced_DE_Flecktarn_insignia";
-	_uniform = "acp_DE_Flecktarn_U_O_officer_noInsignia_DE_Flecktarn_F_insignia";
+	_vest = "acp_gol_DE_Flecktarn_V_CarrierRigKBT_01_light_DE_Flecktarn_F";
+	_backpack = "acp_gol_DE_Flecktarn_B_AssaultPackEnhanced_DE_Flecktarn_insignia";
+	_uniform = "acp_gol_DE_Flecktarn_U_O_officer_noInsignia_DE_Flecktarn_F_insignia";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "rhsusf_hgu56p_visor";
-	_vest = "acp_DE_Flecktarn_V_CarrierRigKBT_01_light_DE_Flecktarn_F";
-	_uniform = "acp_DE_Flecktarn_U_O_PilotCoveralls_DE_Flecktarn";
+	_vest = "acp_gol_DE_Flecktarn_V_CarrierRigKBT_01_light_DE_Flecktarn_F";
+	_uniform = "acp_gol_DE_Flecktarn_U_O_PilotCoveralls_DE_Flecktarn";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "I_UAV_01_backpack_F";
@@ -35,7 +35,7 @@ if (_role isEqualTo "uav") then {
 if (_role isEqualTo "jetp") then {
 	_goggles = "G_Aviator";
 	_helmet = "H_PilotHelmetFighter_B";
-	_uniform = "acp_DE_Flecktarn_U_O_PilotCoveralls_DE_Flecktarn";
+	_uniform = "acp_gol_DE_Flecktarn_U_O_PilotCoveralls_DE_Flecktarn";
 	_vest = "V_Rangemaster_belt";
 	_backpack = "B_Parachute";
 };

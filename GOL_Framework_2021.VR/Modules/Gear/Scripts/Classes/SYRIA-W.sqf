@@ -16,21 +16,21 @@ _glflareW = "rhs_VG40OP_white";
 
 _insignia = "";
 _goggles = "UK3CB_G_Neck_Shemag_Oli";
-_helmet = "acp_SY_WDL_H_HelmetIA_SY_WDL";
+_helmet = "acp_gol_SY_WDL_H_HelmetIA_SY_WDL";
 _OfficerHelmet = "H_Beret_blk";
-_uniform = selectRandom ["acp_SY_WDL_U_I_CombatUniform_SY_WDL_insignia","acp_SY_WDL_U_I_CombatUniform_shortsleeve_SY_WDL_insignia"];
-_vest = selectRandom ["acp_SY_WDL_V_PlateCarrierIA1_SY_WDL","acp_SY_WDL_V_CarrierRigKBT_01_light_SY_WDL_F","V_TacVest_oli","rhs_6b2"];
-_backpack = "acp_SY_WDL_B_FieldPack_SY_WDL";
+_uniform = selectRandom ["acp_gol_SY_WDL_U_I_CombatUniform_SY_WDL_insignia","acp_gol_SY_WDL_U_I_CombatUniform_shortsleeve_SY_WDL_insignia"];
+_vest = selectRandom ["acp_gol_SY_WDL_V_PlateCarrierIA1_SY_WDL","acp_gol_SY_WDL_V_CarrierRigKBT_01_light_SY_WDL_F","V_TacVest_oli","rhs_6b2"];
+_backpack = "acp_gol_SY_WDL_B_FieldPack_SY_WDL";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "acp_SY_WDL_B_RadioBag_01_SY_WDL_F";
+	_backpackRadio = "acp_gol_SY_WDL_B_RadioBag_01_SY_WDL_F";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "acp_SY_WDL_B_Kitbag_rgr_SY_WDL";
+	_backpack = "acp_gol_SY_WDL_B_Kitbag_rgr_SY_WDL";
 };
 if (_role isEqualTo "p") then {
-	_helmet = "acp_SY_WDL_H_HelmetSpecter_cover_SY_WDL_F";
+	_helmet = "acp_gol_SY_WDL_H_HelmetSpecter_cover_SY_WDL_F";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";

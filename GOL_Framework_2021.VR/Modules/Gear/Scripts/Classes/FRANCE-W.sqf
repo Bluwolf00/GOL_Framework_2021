@@ -3,34 +3,34 @@ _allowedNightStuff = true;
 
 _insignia = "";
 _goggles = selectRandom [""];
-_helmet = "acp_FR_CE_H_HelmetB_light_FR_CE_insignia";
+_helmet = "acp_gol_FR_CE_H_HelmetB_light_FR_CE_insignia";
 _OfficerHelmet = "UK3CB_AAF_B_H_Beret_SF_Off";
-_uniform = selectRandom ["acp_FR_CE_U_B_CombatUniform_FR_CE_insignia","acp_FR_CE_U_B_CombatUniform_vest_FR_CE_insignia"];
-_vest = "acp_FR_CE_V_PlateCarrier2_FR_CE";
-_backpack = "acp_FR_CE_B_Kitbag_rgr_FR_CE";
+_uniform = selectRandom ["acp_gol_FR_CE_U_B_CombatUniform_FR_CE_insignia","acp_gol_FR_CE_U_B_CombatUniform_vest_FR_CE_insignia"];
+_vest = "acp_gol_FR_CE_V_PlateCarrier2_FR_CE";
+_backpack = "acp_gol_FR_CE_B_Kitbag_rgr_FR_CE";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "acp_FR_CE_B_RadioBag_01_FR_CE_F";
+	_backpackRadio = "acp_gol_FR_CE_B_RadioBag_01_FR_CE_F";
 };
 
 if (_role in ["sl","tl","pl"]) then {
-	_helmet = "acp_FR_CE_H_HelmetB_light_FR_CE_insignia";
-	_vest = "acp_FR_CE_V_PlateCarrier2_FR_CE_insignia";
+	_helmet = "acp_gol_FR_CE_H_HelmetB_light_FR_CE_insignia";
+	_vest = "acp_gol_FR_CE_V_PlateCarrier2_FR_CE_insignia";
 };
 
 if (_role in ["ag","ammg"]) then {
-	_backpack = "acp_FR_CE_B_Kitbag_rgr_FR_CE";
-	_vest = "acp_FR_CE_V_PlateCarrier2_FR_CE_insignia"
+	_backpack = "acp_gol_FR_CE_B_Kitbag_rgr_FR_CE";
+	_vest = "acp_gol_FR_CE_V_PlateCarrier2_FR_CE_insignia"
 };
 
 if (_role isEqualTo "crew") then {
 	_helmet = "H_HelmetCrew_B";
-	_vest = "acp_FR_CE_V_PlateCarrier1_FR_CE_insignia";
-	_uniform = "acp_FR_CE_U_B_CombatUniform_tshirt_FR_CE";
+	_vest = "acp_gol_FR_CE_V_PlateCarrier1_FR_CE_insignia";
+	_uniform = "acp_gol_FR_CE_U_B_CombatUniform_tshirt_FR_CE";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "H_PilotHelmetHeli_B";
-	_vest = "acp_FR_CE_V_PlateCarrier1_FR_CE_insignia";
+	_vest = "acp_gol_FR_CE_V_PlateCarrier1_FR_CE_insignia";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "O_UAV_01_backpack_F";

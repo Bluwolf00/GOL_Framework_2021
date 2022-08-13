@@ -3,32 +3,32 @@ _allowedNightStuff = true;
 
 _insignia = "";
 _goggles = SelectRandom ["G_Balaclava_TI_blk_F"];
-_helmet = selectRandom ["acp_IL_IDF_H_HelmetB_light_IL_IDF_insignia","acp_IL_IDF_H_HelmetB_light_IL_IDF","acp_IL_IDF_H_HelmetB_light_basic_IL_IDF"];
-_OfficerHelmet = "acp_IL_IDF_H_Cap_IL_IDF_hs";
-_uniform = SelectRandom ["acp_IL_IDF_U_I_CombatUniform_IL_IDF_insignia","acp_IL_IDF_U_I_CombatUniform_shortsleeve_IL_IDF_insignia"];
-_vest = selectRandom["acp_IL_IDF_V_PlateCarrier2_IL_IDF_insignia"];
-_backpack = "acp_IL_IDF_B_AssaultPackEnhanced_IL_IDF_insignia";
+_helmet = selectRandom ["acp_gol_IL_IDF_H_HelmetB_light_IL_IDF_insignia","acp_gol_IL_IDF_H_HelmetB_light_IL_IDF","acp_gol_IL_IDF_H_HelmetB_light_basic_IL_IDF"];
+_OfficerHelmet = "acp_gol_IL_IDF_H_Cap_IL_IDF_hs";
+_uniform = SelectRandom ["acp_gol_IL_IDF_U_I_CombatUniform_IL_IDF_insignia","acp_gol_IL_IDF_U_I_CombatUniform_shortsleeve_IL_IDF_insignia"];
+_vest = selectRandom["acp_gol_IL_IDF_V_PlateCarrier2_IL_IDF_insignia"];
+_backpack = "acp_gol_IL_IDF_B_AssaultPackEnhanced_IL_IDF_insignia";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "acp_IL_IDF_B_RadioBag_01_IL_IDF_F";
+	_backpackRadio = "acp_gol_IL_IDF_B_RadioBag_01_IL_IDF_F";
 };
 
 if (_role in ["ag","ammg","sm","lr","ab"]) then {
-	_backpack = "acp_IL_IDF_B_Kitbag_rgr_IL_IDF";
+	_backpack = "acp_gol_IL_IDF_B_Kitbag_rgr_IL_IDF";
 };
 
 if (_role in ["ar","mmg"]) then {
-	_backpack = "acp_IL_IDF_B_Kitbag_rgr_IL_IDF";
+	_backpack = "acp_gol_IL_IDF_B_Kitbag_rgr_IL_IDF";
 };
 
 if (_role isEqualTo "crew") then {
-	_vest = "acp_IL_IDF_V_PlateCarrier1_IL_IDF_insignia";
-	_uniform = "acp_IL_IDF_U_O_officer_noInsignia_IL_IDF_F_insignia";
+	_vest = "acp_gol_IL_IDF_V_PlateCarrier1_IL_IDF_insignia";
+	_uniform = "acp_gol_IL_IDF_U_O_officer_noInsignia_IL_IDF_F_insignia";
 };
 if (_role isEqualTo "p") then {
-	_uniform = "acp_IL_IDF_U_B_HeliPilotCoveralls_IL_IDF";
+	_uniform = "acp_gol_IL_IDF_U_B_HeliPilotCoveralls_IL_IDF";
 	_helmet = "rhsusf_hgu56p_visor_black";
-	_vest = "acp_IL_IDF_V_PlateCarrier1_IL_IDF_insignia";
+	_vest = "acp_gol_IL_IDF_V_PlateCarrier1_IL_IDF_insignia";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
@@ -38,7 +38,7 @@ if (_role isEqualTo "uav") then {
 if (_role isEqualTo "jetp") then {
 	_goggles = "G_Aviator";
 	_helmet = "H_PilotHelmetFighter_B";
-	_uniform = "acp_IL_IDF_U_O_PilotCoveralls_IL_IDF";
+	_uniform = "acp_gol_IL_IDF_U_O_PilotCoveralls_IL_IDF";
 	_vest = "V_Rangemaster_belt";
 	_backpack = "B_Parachute";
 };

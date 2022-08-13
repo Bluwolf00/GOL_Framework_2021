@@ -3,32 +3,32 @@ _allowedNightStuff = true;
 
 _insignia = "";
 _goggles = selectRandom ["rhsusf_shemagh_od","rhsusf_shemagh2_od"];
-_helmet = "acp_TUR_TLF_H_HelmetB_TUR_TLF";
+_helmet = "acp_gol_TUR_TLF_H_HelmetB_TUR_TLF";
 _OfficerHelmet = "UK3CB_TKP_B_H_Beret";
-_uniform = selectRandom ["acp_TUR_TLF_U_I_E_Uniform_shortsleeve_TUR_TLF_01_F_flag","acp_TUR_TLF_U_I_E_Uniform_TUR_TLF_01_F_insignia"];
-_vest = "acp_TUR_TLF_V_PlateCarrier1_TUR_TLF_insignia";
-_backpack = "acp_TUR_TLF_B_FieldPack_TUR_TLF";
+_uniform = selectRandom ["acp_gol_TUR_TLF_U_I_E_Uniform_shortsleeve_TUR_TLF_01_F_flag","acp_gol_TUR_TLF_U_I_E_Uniform_TUR_TLF_01_F_insignia"];
+_vest = "acp_gol_TUR_TLF_V_PlateCarrier1_TUR_TLF_insignia";
+_backpack = "acp_gol_TUR_TLF_B_FieldPack_TUR_TLF";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "acp_TUR_TLF_B_RadioBag_01_TUR_TLF_F";
+	_backpackRadio = "acp_gol_TUR_TLF_B_RadioBag_01_TUR_TLF_F";
 };
 
 if (_role in ["sl","tl","pl"]) then {
-	_helmet = "acp_TUR_TLF_H_HelmetSpecB_TUR_TLF_insignia";
+	_helmet = "acp_gol_TUR_TLF_H_HelmetSpecB_TUR_TLF_insignia";
 };
 
 if (_role in ["ag","ammg"]) then {
-	_backpack = "acp_TUR_TLF_B_Kitbag_rgr_TUR_TLF";
+	_backpack = "acp_gol_TUR_TLF_B_Kitbag_rgr_TUR_TLF";
 };
 
 if (_role isEqualTo "crew") then {
 	_helmet = "H_HelmetCrew_B";
-	_vest = "acp_TUR_TLF_V_CarrierRigKBT_01_TUR_TLF_F";
+	_vest = "acp_gol_TUR_TLF_V_CarrierRigKBT_01_TUR_TLF_F";
 };
 if (_role isEqualTo "p") then {
-	_helmet = "acp_TUR_TLF_H_HelmetSpecter_headset_TUR_TLF_F";
-	_uniform = "acp_TUR_TLF_U_B_HeliPilotCoveralls_TUR_TLF";
-	_vest = "acp_TUR_TLF_V_TacVestIR_TUR_TLF";
+	_helmet = "acp_gol_TUR_TLF_H_HelmetSpecter_headset_TUR_TLF_F";
+	_uniform = "acp_gol_TUR_TLF_U_B_HeliPilotCoveralls_TUR_TLF";
+	_vest = "acp_gol_TUR_TLF_V_TacVestIR_TUR_TLF";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "O_UAV_01_backpack_F";
@@ -38,9 +38,9 @@ if (_role isEqualTo "uav") then {
 if (_role isEqualTo "jetp") then {
 	_goggles = "G_Aviator";
 	_helmet = "H_PilotHelmetFighter_B";
-	_uniform = "acp_TUR_TLF_U_O_PilotCoveralls_TUR_TLF";
-	_vest = "acp_TUR_TLF_V_TacVestIR_TUR_TLF";
-	_backpack = "acp_TUR_TLF_B_RadioBag_01_TUR_TLF_F";
+	_uniform = "acp_gol_TUR_TLF_U_O_PilotCoveralls_TUR_TLF";
+	_vest = "acp_gol_TUR_TLF_V_TacVestIR_TUR_TLF";
+	_backpack = "acp_gol_TUR_TLF_B_RadioBag_01_TUR_TLF_F";
 };
 
 _silencer = "rhsusf_acc_sfmb556";
