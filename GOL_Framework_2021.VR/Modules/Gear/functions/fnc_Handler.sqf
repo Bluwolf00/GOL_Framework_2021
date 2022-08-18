@@ -232,14 +232,16 @@ if (_isMan) then {
 				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_Flare_White", 20] call _fnc_AddObjectsCargo;
 				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_WPSmoke_White", 20] call _fnc_AddObjectsCargo;
 				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White", 20] call _fnc_AddObjectsCargo;
-				[_unit, "42cdo_vs17_item", 5] call _fnc_AddObjectsCargo;
+				[_unit, "42cdo_vs17_item", 15] call _fnc_AddObjectsCargo;
 				[_unit, _glsmokeY, 20] call _fnc_AddObjectsCargo;
 				[_unit, _glflareW, 20] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 20] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeG, 5] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeB, 10] call _fnc_AddObjectsCargo;
+
 				[_unit, "B_UavTerminal", 10] call _fnc_AddObjectsCargo;
 				[_unit, "O_UavTerminal", 10] call _fnc_AddObjectsCargo;
 				[_unit, "I_UavTerminal", 10] call _fnc_AddObjectsCargo;
+				[_unit, _MAT_mag_HE, 10] call _fnc_AddObjectsCargo;
 				[_unit, (_LAT select 0), 30] call _fnc_AddObjectsCargo;
 				if (GVARMAIN(mod_ACE3)) then {
 					[_unit, "ACE_EarPlugs", 50] call _fnc_AddObjectsCargo;

@@ -42,14 +42,14 @@
 		};
 
 		class Military {
-			aimingAccuracy[] = {0.26, 0.28, 0.30};
-			aimingShake[]	 = {0.50, 0.70, 0.90};
-			aimingSpeed[]	 = {0.50, 0.70, 0.90};
+			aimingAccuracy[] = {0.32, 0.34, 0.36};
+			aimingShake[]	 = {0.80, 0.80, 0.80};
+			aimingSpeed[]	 = {0.80, 0.80, 0.80};
 			commanding[]	 = {0.60, 0.70, 0.80};
 			courage[]		 = {0.40, 0.50, 0.60};
-			endurance[]		 = {0.50, 0.60, 0.40};
-			general[]		 = {0.60, 0.70, 0.80};
-			reloadSpeed[]	 = {0.60, 0.70, 0.80};
+			endurance[]		 = {0.80, 0.80, 0.80};
+			general[]		 = {0.70, 0.70, 0.70};
+			reloadSpeed[]	 = {1.00, 1.00, 1.00};
 			spotDistance[]	 = {1.00, 1.00, 1.00};
 			spotTime[]		 = {1.00, 1.00, 1.00};
 			Fleeing[]		 = {0.10, 0.20, 0.30};
