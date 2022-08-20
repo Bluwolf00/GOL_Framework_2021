@@ -27,18 +27,18 @@
 		};
 
 		class Specialforces {
-			aimingAccuracy[] = {0.30, 0.35, 0.40};
-			aimingShake[]	 = {0.50, 0.70, 0.90};
-			aimingSpeed[]	 = {0.50, 0.70, 0.90};
+			aimingAccuracy[] = {0.40, 0.42, 0.44};
+			aimingShake[]	 = {1.00, 1.00, 1.00};
+			aimingSpeed[]	 = {1.00, 1.00, 1.00};
 			commanding[]	 = {0.70, 0.80, 0.90};
-			courage[]		 = {0.60, 0.70, 0.90};
-			endurance[]		 = {0.80, 0.90, 1.00};
-			general[]		 = {0.70, 0.80, 1.00};
+			courage[]		 = {0.60, 0.70, 0.80};
+			endurance[]		 = {0.80, 0.80, 0.80};
+			general[]		 = {0.90, 0.90, 0.90};
 			reloadSpeed[]	 = {1.00, 1.00, 1.00};
-			spotDistance[]	 = {0.70, 0.80, 0.90};
-			spotTime[]		 = {0.70, 0.80, 0.90};
-			Fleeing[]		 = {0.10, 0.10, 0.20};
-			playerCamoCoef[] = {1.00, 1.00, 1.20};
+			spotDistance[]	 = {1.00, 1.00, 1.00};
+			spotTime[]		 = {1.00, 1.00, 1.00};
+			Fleeing[]		 = {0.30, 0.40, 0.50};
+			playerCamoCoef[] = {0.90, 0.90, 0.90};
 		};
 
 		class Military {
