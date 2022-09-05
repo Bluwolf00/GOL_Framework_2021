@@ -16,7 +16,7 @@ if(!isServer) exitWith {};
 
 	_Settings = [_Side] call OKS_Dynamic_Setting;
 	_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configuration"];
-	_Configuration Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker","_RoadblockVehicleType","_EnableObjectiveTasks"];
+	_Configuration Params ["_CompoundSize","_EnableEnemyMarkers","_EnableZoneMarker","_EnableZoneTypeMarker","_RoadblockVehicleType","_EnableObjectiveTasks","_MarkerColor","_PatrolSize","_TaskNotification"];
 	_UnitArray Params ["_Leaders","_Units","_Officer"];
 	_Civilian Params ["_CivilianUnits","_HVT"];
 	_Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Helicopter","_Transport","_Supply","_AntiAir"];
@@ -110,7 +110,7 @@ switch (_TypeOfObjective) do {
 		if(_EnableObjectiveTasks) then {
 			_Task = [true,format["OKS_Sector_Objective_%1",(round(random 9000))], ["The enemy is in control of this area, to complete the objective, you must seize the area and destroy the majority of enemy forces.", "Secure Area", "Secure Area"], getPos _trg,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 			[_Task,"attack"] call BIS_fnc_taskSetType;
-			_trg setTriggerStatements ["this", format ["'%1' setMarkerColor '%2'; ['%3','SUCCEEDED'] call BIS_fnc_taskSetState;",_marker,_playerColor,_Task], ""];
+			_trg setTriggerStatements ["this", format ["'%1' setMarkerColor '%2'; ['%3','SUCCEEDED',%4] call BIS_fnc_taskSetState;",_marker,_playerColor,_Task,_TaskNotification], ""];
 		} else {
 			_trg setTriggerStatements ["this", format ["'%1' setMarkerColor '%2';",_marker,_playerColor], ""];
 		};
@@ -180,7 +180,7 @@ switch (_TypeOfObjective) do {
 			_trg triggerAttachVehicle [_Crate];
 			_Task = [true,format["OKS_Cache_Objective_%1",(round(random 9000))], ["The Enemy forces have access to weapons and ammunitions caches in the area of operations. Find them and destroy them.", "Destroy Ammo Cache", "Destroy Ammo Cache"], getPos _Crate,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 			[_Task,"destroy"] call BIS_fnc_taskSetType;
-			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
 		};
 		if(_ObjectivePatrols) then {
 			[_Crate getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
@@ -235,7 +235,7 @@ switch (_TypeOfObjective) do {
 
 			_Task = [true,format["OKS_MotorPool_Objective_%1",(round(random 9000))], ["The Enemy forces use a motor pool located in the area of operations to resupply and repair their combat vehicles. Move in on the position and destroy the motorpool.", "Destroy Motorpool", "Destroy Motorpool"], getPos _Crate,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 			[_Task,"refuel"] call BIS_fnc_taskSetType;
-			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
 		};
 		if(_ObjectivePatrols) then {
 			[_Crate getPos [25,(random 360)],4,150,_Side] spawn OKS_Patrol_Spawn;
@@ -298,7 +298,7 @@ switch (_TypeOfObjective) do {
 
 				[_Task,"truck"] call BIS_fnc_taskSetType;
 				[_Task,[_Truck,true]] call BIS_fnc_taskSetDestination;
-			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
 		};
 
 	};
@@ -348,7 +348,7 @@ switch (_TypeOfObjective) do {
 		if(_EnableObjectiveTasks) then {
 			_Task = [true,format["OKS_RadioTower_Objective_%1",(round(random 9000))], ["The Enemy forces have installed a radio tower in the area to boost their signal to relay information and request support. Destroy the radio tower.", "Sabotage Radio Tower", "Sabotage Radio Tower"], getPos _Tower,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 			[_Task,"radio"] call BIS_fnc_taskSetType;
-			[_Tower,_Task] spawn { waitUntil{sleep 10; !Alive (_this select 0) || getDammage (_this select 0) > 0.8}; [_this select 1,'SUCCEEDED'] call BIS_fnc_taskSetState };
+			[_Tower,_Task,_TaskNotification] spawn { waitUntil{sleep 10; !Alive (_this select 0) || getDammage (_this select 0) > 0.8}; [_this select 1,'SUCCEEDED',_this select 2] call BIS_fnc_taskSetState };
 		};
 	};
 
@@ -425,7 +425,7 @@ switch (_TypeOfObjective) do {
 			_trg triggerAttachVehicle [_Civilian];
 			_trg setTriggerArea [15000,15000,0,false,1000];
 
-			_trg setTriggerStatements ["this", format ["['%1','FAILED'] call BIS_fnc_taskSetState;",_Task], ""];
+			_trg setTriggerStatements ["this", format ["['%1','FAILED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
 
 			private "_base";
 			switch(OKS_FRIENDLY_SIDE) do {
@@ -445,7 +445,7 @@ switch (_TypeOfObjective) do {
 			_exfil setTriggerTimeout [5, 7, 10, true];
 			_exfil triggerAttachVehicle [_Civilian];
 			_exfil setTriggerArea [200,200,0,false,5];
-			_exfil setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+			_exfil setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
 		};
 	};
 
@@ -495,7 +495,7 @@ switch (_TypeOfObjective) do {
 					[_Arty getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
 				};
 
-			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
 		};
 
 		if(!isNil "OKS_ArtyFire") then {
@@ -572,7 +572,7 @@ switch (_TypeOfObjective) do {
 				if(_ObjectivePatrols) then {
 					[_AA getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
 				};
-			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED'] call BIS_fnc_taskSetState;",_Task], ""];
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
 		};
 
 		if(!isNil "GW_Ambient_AAA") then {
@@ -681,9 +681,9 @@ switch (_TypeOfObjective) do {
 
 			waitUntil {sleep 10; {!alive _X || _X distance _Target < 300} count (units _HostageGroup) isEqualTo count (units _HostageGroup)};
 			if( {Alive _X} count (units _HostageGroup) < 1 ) then {
-				[_Task,'FAILED'] call BIS_fnc_taskSetState;
+				[_Task,'FAILED',_TaskNotification] call BIS_fnc_taskSetState;
 			} else {
-				[_Task,'SUCCEEDED'] call BIS_fnc_taskSetState;
+				[_Task,'SUCCEEDED',_TaskNotification] call BIS_fnc_taskSetState;
 			};
 		};
 	};

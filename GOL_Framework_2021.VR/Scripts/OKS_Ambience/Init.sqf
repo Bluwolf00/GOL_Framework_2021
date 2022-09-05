@@ -17,6 +17,7 @@ if(GOL_OKS_Enemy_Talk isEqualTo 1) then {
 	OKS_Enemy_Talk = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Enemy_Talk.sqf";
 };
 OKS_Enemy_Radio = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Enemy_Radio.sqf";
+OKS_Enemy_Sentry = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Enemy_Sentry.sqf";
 OKS_Faceswap = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_FaceSwap.sqf";
 OKS_Convoy_Spawn = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Convoy_Spawn.sqf";
 OKS_AA_Guard = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_AA_Guard.sqf";

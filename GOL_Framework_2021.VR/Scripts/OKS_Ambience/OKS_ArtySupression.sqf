@@ -4,6 +4,13 @@
 	[arty_4,[getPos target_5,getPos target_6,getPos target_7,getPos target_8],1,1,true] execVM "Scripts\OKS_Ambience\OKS_ArtySupression.sqf";
 	[arty_2,[getPos target_9,getPos target_10,getPos target_11,getPos target_12],1,1,true] execVM "Scripts\OKS_Ambience\OKS_ArtySupression.sqf";
 	[arty_1,[getPos target_13,getPos target_14,getPos target_15,getPos target_16],1,1,true] execVM "Scripts\OKS_Ambience\OKS_ArtySupression.sqf";
+
+	Parameters
+	1 - Object - Artillery Unit
+	2 - Array - Array of Positions for targeting
+	3 - Integer - Rounds Per Position
+	4 - Integer - Time between rounds (Some arty has reload time, be aware)
+	5 - Bool - Unlimited Ammo for Artillery?
 */
 
 	Params["_Artillery","_TargetArrayPositions","_RoundsPerTarget","_TimeBetweenRounds","_UnlimitedAmmo"];

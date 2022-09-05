@@ -1,5 +1,21 @@
-// [spawn_1,waypoint_1,end_1,west,[4,["rhs_btr60_msv"], 6, 25],[true,6]]] spawn OKS_Convoy_Spawn;
-// [spawnpos_1,waypoint_1,end_1,east,[4,["rhs_btr60_msv"], 6, 30],[true,6]]] execVM "Scripts\OKS_Ambience\OKS_Convoy_Spawn.sqf";
+// [spawn_1,waypoint_1,end_1,west,[4,["rhs_btr60_msv"], 6, 25],[true,6]] spawn OKS_Convoy_Spawn;
+// [spawnpos_1,waypoint_1,end_1,east,[4,["rhs_btr60_msv"], 6, 30],[true,6]] execVM "Scripts\OKS_Ambience\OKS_Convoy_Spawn.sqf";
+/*
+	Params:
+	1 - Object - Spawn Position
+	2 - Object - First Waypoint
+	3 - Object - Final Waypoint (Where they spread out in the area)
+	4 - Side
+	5 - Vehicle Array
+		1 - Integer - Count of Vehicles
+		2 - Array of Classnames or String
+		3 - Integer M/S Speed
+		4 - Dispersion
+	6 - Troop Array
+		1 - Bool - Should spawn troop in cargo
+		2 - Integer - Max Number of Soldiers per vehicle
+
+*/
 
 if(!isServer) exitWith {};
 
