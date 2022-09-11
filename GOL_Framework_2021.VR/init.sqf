@@ -291,9 +291,8 @@ Sleep 10;
 		*/
 
 			if(isServer && GOL_OKS_AMBIENCE isEqualTo 1) then {
-
 				waitUntil {sleep 1; !(isNil "OKS_FaceSwap")};
-				[east,"african"] spawn OKS_FaceSwap;
+				[east,"russian"] spawn OKS_FaceSwap;
 			};
 		/*
 		*/

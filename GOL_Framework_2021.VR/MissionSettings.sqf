@@ -5,9 +5,9 @@ GOL_ARSENAL_ALLOWED = 1;
 /* Logistics & Support Settings */
 GOL_NEKY_SERVICESTATION = 1;
 GOL_NEKY_RESUPPLY = 1;
-GOL_NEKY_PARADROP = 0;
-GOL_NEKY_PICKUP = 1;
-GOL_NEKY_REINSERT = 1;
+GOL_NEKY_PARADROP = 1;
+GOL_NEKY_PICKUP = 0;
+GOL_NEKY_REINSERT = 0;
 GOL_OKS_REINFORCEMENT = 0;
 GOL_NEKY_FASTROPE = 0; // Not particularly good - engine limitations stop helicopters from hovering under 50-ish meters.
 GOL_OKS_SUPPORT = 0;

@@ -24,6 +24,6 @@ NEKY_Tasks_AvoidDeaths_Killed = Compile PreprocessFileLineNumbers "Scripts\NEKY_
 
 	// YOU CAN EDIT THINGS BELOW THIS LINE \\
 	// Tasks
-	[1,["NEKY_Task1",["Hearts and Minds: Avoid causing civilian casualties as that will turn the enemy against us.","Avoid Civilian Casualties"],civilian,{}]] spawn NEKY_Tasks_Run;
-	[2,["NEKY_Task2",["War Support: Dont die, we will lose war support back home.","Avoid Deaths"],sideEmpty,{}]] spawn NEKY_Tasks_Run;
+	[1,["NEKY_Task1",["Hearts and Minds: Avoid causing civilian casualties as that will turn the enemy against us.","Avoid Civilian Casualties"],civilian,{}],true] spawn NEKY_Tasks_Run;
+	[2,["NEKY_Task2",["War Support: Dont die, we will lose war support back home.","Avoid Deaths"],sideEmpty,{}],true] spawn NEKY_Tasks_Run;
 };

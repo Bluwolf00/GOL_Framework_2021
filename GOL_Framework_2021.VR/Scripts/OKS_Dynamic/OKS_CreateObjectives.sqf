@@ -425,7 +425,7 @@ switch (_TypeOfObjective) do {
 			_trg triggerAttachVehicle [_Civilian];
 			_trg setTriggerArea [15000,15000,0,false,1000];
 
-			_trg setTriggerStatements ["this", format ["['%1','FAILED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
+			_trg setTriggerStatements ["this", format ["['%1','FAILED',true] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
 
 			private "_base";
 			switch(OKS_FRIENDLY_SIDE) do {
@@ -445,7 +445,7 @@ switch (_TypeOfObjective) do {
 			_exfil setTriggerTimeout [5, 7, 10, true];
 			_exfil triggerAttachVehicle [_Civilian];
 			_exfil setTriggerArea [200,200,0,false,5];
-			_exfil setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
+			_exfil setTriggerStatements ["this", format ["['%1','SUCCEEDED',true] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
 		};
 	};
 
@@ -681,7 +681,7 @@ switch (_TypeOfObjective) do {
 
 			waitUntil {sleep 10; {!alive _X || _X distance _Target < 300} count (units _HostageGroup) isEqualTo count (units _HostageGroup)};
 			if( {Alive _X} count (units _HostageGroup) < 1 ) then {
-				[_Task,'FAILED',_TaskNotification] call BIS_fnc_taskSetState;
+				[_Task,'FAILED',true] call BIS_fnc_taskSetState;
 			} else {
 				[_Task,'SUCCEEDED',_TaskNotification] call BIS_fnc_taskSetState;
 			};
