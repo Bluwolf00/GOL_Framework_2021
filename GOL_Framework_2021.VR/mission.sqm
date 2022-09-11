@@ -12073,7 +12073,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="STRING";
-														value="USMC-W";
+														value="NATO-D";
 													};
 												};
 												class Item1
@@ -14337,7 +14337,6 @@ class Mission
 								};
 							};
 							id=406;
-							atlOffset=-5;
 						};
 						class Item1
 						{
@@ -14870,7 +14869,6 @@ class Mission
 								};
 							};
 							id=407;
-							atlOffset=-5;
 						};
 						class Item2
 						{
@@ -15541,7 +15539,6 @@ class Mission
 								};
 							};
 							id=408;
-							atlOffset=-5;
 						};
 						class Item3
 						{
@@ -15860,7 +15857,6 @@ class Mission
 								};
 							};
 							id=409;
-							atlOffset=-5;
 						};
 						class Item4
 						{
@@ -17452,7 +17448,7 @@ class Mission
 						};
 					};
 					id=403;
-					atlOffset=-2.4833255;
+					atlOffset=0.016674519;
 				};
 				class Item1
 				{
@@ -18242,7 +18238,6 @@ class Mission
 								};
 							};
 							id=420;
-							atlOffset=-5;
 						};
 						class Item1
 						{
@@ -19025,7 +19020,6 @@ class Mission
 								};
 							};
 							id=421;
-							atlOffset=-5;
 						};
 						class Item2
 						{
@@ -19402,7 +19396,6 @@ class Mission
 								};
 							};
 							id=422;
-							atlOffset=-5;
 						};
 						class Item3
 						{
@@ -19719,11 +19712,10 @@ class Mission
 								};
 							};
 							id=419;
-							atlOffset=-5;
 						};
 					};
 					id=404;
-					atlOffset=25588.789;
+					atlOffset=25592.539;
 				};
 				class Item2
 				{
@@ -20431,7 +20423,7 @@ class Mission
 				};
 			};
 			id=402;
-			atlOffset=6396.5767;
+			atlOffset=6398.1392;
 		};
 		class Item1
 		{
