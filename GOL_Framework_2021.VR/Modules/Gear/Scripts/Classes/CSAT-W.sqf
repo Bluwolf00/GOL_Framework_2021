@@ -10,7 +10,7 @@ _vest = "rhsgref_6b23_ttsko_digi_sniper";
 _backpack = "B_FieldPack_ghex_F";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "UK3CB_AAF_B_B_FIELDPACK_DIGI_BLK_Radio";
+	_backpackRadio = "acp_gol_DE_Flecktarn_B_RadioBag_01_DE_Flecktarn_F";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {

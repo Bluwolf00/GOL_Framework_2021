@@ -38,7 +38,7 @@ switch (toLower(_role)) do {
 		[[_rifle_mag,7]] call _addToBackpack;
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight))) then {
-			[[_glFlareW,1]] call _addToBackpack;
+			//[[_glFlareW,1]] call _addToBackpack;
 		};
 	};
 
@@ -63,7 +63,7 @@ switch (toLower(_role)) do {
 		[[_rifle_mag_tr,13],[_glHE,1]] call _addToVest;
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight))) then {
-			[[_glFlareW,1]] call _addToBackpack;
+			//[[_glFlareW,1]] call _addToBackpack;
 		};
 	};
 
@@ -99,7 +99,7 @@ switch (toLower(_role)) do {
 			};
 		};
 		if ((call EFUNC(Common,isNight))) then {
-			[[_glFlareW,4]] call _addToBackpack;
+			//[[_glFlareW,4]] call _addToBackpack;
 		};
 	};
 
