@@ -65,6 +65,7 @@ GVAR(StaminaCoef) = 0.5;
 			"AAF-W",
 			"AAF-SF-W",
 			"UN-IRISH",
+			"CBRN-WINTER",
 			"TAKISTAN-D",
 			"TAKISTAN-SF-D",
 			"CUSTOM-W"
@@ -110,6 +111,7 @@ GVAR(StaminaCoef) = 0.5;
 			"AAF-Woodland",
 			"AAF SF Woodland",
 			"Irish UN",
+			"CBRN Winter",
 			"Takistani Desert",
 			"Takistani SF Desert",
 			"CUSTOM-West"
