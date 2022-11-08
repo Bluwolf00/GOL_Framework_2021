@@ -5,8 +5,9 @@ Params [
 	["_Group",grpNull,[grpNull]],
 	["_Distance",125,[0]],
 	["_Chance",1,[0]],
-	["_MinMaxDelayBetweenTalks",[15,30],[[]]],
-	["_LoopDelayToCheckNearby",5,[0]]
+	["_MinMaxDelayBetweenTalks",[9,14],[[]]],
+	["_LoopDelayToCheckNearby",5,[0]],
+	["_ShouldTalkAsStaticUnits",true,[true]]
 ];
 
 if (!isServer) exitWith {false};	// Ensures only server or HC runs this script - Tack Neky
@@ -14,7 +15,7 @@ if (!isServer) exitWith {false};	// Ensures only server or HC runs this script -
 OKS_Enemy_Speak = {
 
 	Params["_Group","_Distance","_Chance","_MinMaxDelayBetweenTalks","_Delay","_SoundFileName"];
-
+	if(_Group getVariable ["GOL_IsStatic",false] && !(_ShouldTalkAsStaticUnits)) then {SystemChat "Is Static, exiting.."};
 	if({Alive _X} count units _Group == 0) exitWith {SystemChat "No units alive, exiting.."};
 	if({behaviour _X isEqualTo "COMBAT"} count units _Group > 0) exitWith {SystemChat "Unit in combat, exiting..."};
 	if(_Group getVariable ["OKS_Talking_Currently",false]) exitWith {SystemChat "Group already talking, exiting..."};

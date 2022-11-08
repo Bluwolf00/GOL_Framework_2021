@@ -7,9 +7,9 @@ _helmet = selectRandom ["rhsusf_ach_helmet_headset_ess_ucp","rhsusf_ach_helmet_h
 _OfficerHelmet = "rhsusf_patrolcap_ucp";
 _uniform = "rhs_uniform_cu_ucp_10th";
 _vest = "rhsusf_spcs_ucp_rifleman_alt";
-_backpack = "UK3CB_B_Alice_K";
+_backpack = "B_Kitbag_cbr";
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "UK3CB_B_B_Alice_Radio_Backpack";
+	_backpackRadio = "tfw_ilbe_blade_coy";
 };
 
 if (_role isEqualTo "sl") then {
@@ -22,6 +22,7 @@ if(_role isEqualTo "ftl") then {
 
 if (_role in ["ag","ammg","lr","ab"]) then {
 	_vest = "rhsusf_spcs_ucp_medic";
+	_backpack = "UK3CB_KRG_B_B_FieldPack_SF_MED";
 };
 if (_role in ["ar","mmg"]) then {
 	_vest = "rhsusf_spcs_ucp_saw";
@@ -53,18 +54,18 @@ _pointer = "rhsusf_acc_anpeq15side_bk";
 _sight = "rhsusf_acc_eotech_xps3";
 _bipod = "rhsusf_acc_tdstubby_tan";
 
-_rifle = ["rhs_weap_mk18_KAC_bk", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["rhs_weap_m4a1_carryhandle", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["rhs_weap_m4a1_blockII_M203_bk", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["rhs_weap_sr25_ec", _silencer, _pointer, _sight, _bipod];
+_rifle = ["hlc_WP_SCARL_CQC", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["hlc_wp_SCAR_PDW", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["hlc_wp_SCARL_CQC_EGLM", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["hlc_wp_SCARL_STD_SRX", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
 _rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 _rifleGL_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
 _rifleGL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 _rifleC_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
 _rifleC_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
-_rifleL_mag = "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag";
-_rifleL_mag_tr = "rhsusf_20Rnd_762x51_SR25_m62_Mag";
+_rifleL_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
+_rifleL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 
 
 _LMG = ["LMG_03_F", _silencer, _pointer, _sight, ""];

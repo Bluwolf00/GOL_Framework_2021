@@ -7,9 +7,9 @@ _helmet = "rhsusf_lwh_helmet_marpatd";
 _OfficerHelmet = "rhs_8point_marpatd";
 _uniform = "rhs_uniform_FROG01_d";
 _vest = "rhsusf_spc_rifleman";
-_backpack = "rhsusf_assault_eagleaiii_coy_mg";
+_backpack = "B_Kitbag_tan";
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "UK3CB_B_B_Backpack_Radio_Chem";
+	_backpackRadio = "tfw_ilbe_blade_d";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {

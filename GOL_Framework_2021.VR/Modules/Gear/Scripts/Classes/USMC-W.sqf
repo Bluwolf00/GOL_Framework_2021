@@ -9,7 +9,7 @@ _uniform = "rhs_uniform_FROG01_wd";
 _vest = "rhsusf_spc_light";
 _backpack = "rhsusf_falconii_coy_gr";
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "UK3CB_B_B_Backpack_Radio_Chem";
+	_backpackRadio = "tfw_ilbe_blade_wd";
 };
 
 if (_role in ["ftl","sl"]) then {

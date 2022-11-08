@@ -27,8 +27,9 @@
 		sleep 0.5;
 	};
 	{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
-	waitUntil {sleep 1; !isNil "lambs_wp_fnc_moduleRush"};
-	/*
+
+	/* 
+		Arguments:
 		0: Group performing action, either unit <OBJECT> or group <GROUP>
 		1: Range of tracking, default is 500 meters <NUMBER>
 		2: Delay of cycle, default 15 seconds <NUMBER>
@@ -36,5 +37,6 @@
 		4: Center Position, if no position or Empty Array is given it uses the Group as Center and updates the position every Cycle, default [] <ARRAY>
 		5: Only Players, default true <BOOL>
  	*/
+	waitUntil {sleep 1; !isNil "lambs_wp_fnc_moduleRush"};
 	[_Group,_Range,30,[],[],true] remoteExec ["lambs_wp_fnc_taskRush",0];
 

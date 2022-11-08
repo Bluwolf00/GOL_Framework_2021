@@ -30,7 +30,7 @@ if (_role isEqualTo "crew") then {
 	_uniform = "UK3CB_LNM_B_U_CombatSmock_21";
 };
 if (_role isEqualTo "p") then {
-	_uniform = "Uniform_Coveralls_M90";
+	_uniform = "acp_gol_SE_M90_U_B_HeliPilotCoveralls_SE_M90";
 	_helmet = "rhsusf_hgu56p_visor_black";
 	_vest = "acp_gol_SE_M90_V_PlateCarrier1_SE_M90_insignia";
 };
@@ -42,7 +42,7 @@ if (_role isEqualTo "uav") then {
 if (_role isEqualTo "jetp") then {
 	_goggles = "G_Aviator";
 	_helmet = "H_PilotHelmetFighter_B";
-	_uniform = "U_B_PilotCoveralls";
+	_uniform = "acp_gol_SE_M90_U_O_PilotCoveralls_SE_M90";
 	_vest = "V_Rangemaster_belt";
 	_backpack = "B_Parachute";
 };
@@ -50,21 +50,21 @@ if (_role isEqualTo "jetp") then {
 // Attachments
 _silencer = "rhsusf_acc_sfmb556";
 _pointer = "";
-_sight = "optic_erco_blk_f";
+_sight = "rhsusf_acc_compm4";
 _bipod = "rhsusf_acc_grip3";
 
 // Primary Weapon
-_rifle = ["hlc_rifle_SG551SB_TAC", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_rifle_SG553SB_TAC", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_SG551SB_TAC_GL", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_g3a3ris", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman = ["hlc_rifle_g3a3", _silencer, _pointer, "hlc_optic_zf95_g3", _bipod];
-_rifle_mag = "hlc_30Rnd_556x45_EPR_sg550";
-_rifle_mag_tr = "hlc_30Rnd_556x45_T_sg550";
-_rifleGL_mag = "hlc_30Rnd_556x45_EPR_sg550";
-_rifleGL_mag_tr = "hlc_30Rnd_556x45_T_sg550";
-_rifleC_mag = "hlc_30Rnd_556x45_EPR_sg550";
-_rifleC_mag_tr = "hlc_30Rnd_556x45_T_sg550";
+_rifle = ["hlc_rifle_416D145", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["hlc_rifle_416D10", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["hlc_rifle_416D145_gl", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["hlc_rifle_g3a3vris", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman = ["hlc_rifle_awcovert", _silencer, _pointer, "hlc_optic_zf95base", _bipod];
+_rifle_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifle_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
+_rifleGL_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifleGL_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
+_rifleC_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifleC_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
 _rifleL_mag = "hlc_20rnd_762x51_barrier_G3";
 _rifleL_mag_tr = "hlc_20rnd_762x51_T_G3";
 _rifleMarksman_mag = "hlc_20Rnd_762x51_b_G3";

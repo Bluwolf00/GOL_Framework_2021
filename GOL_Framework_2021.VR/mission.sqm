@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2569;
+		nextID=2570;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6557;
+		nextID=6577;
 	};
 	class Camera
 	{
-		pos[]={71.18811,108.53355,-62.981155};
-		dir[]={-0.010455885,-0.67975426,0.73336548};
-		up[]={-0.0096905446,0.73343998,0.67968524};
-		aside[]={0.99989855,0,0.014255953};
+		pos[]={45.474949,31.741484,33.42947};
+		dir[]={0.34816521,-0.46341658,0.81487888};
+		up[]={0.18207672,0.88614005,0.42614952};
+		aside[]={0.91958219,3.7252903e-009,-0.39290041};
 	};
 };
 binarizationWanted=0;
@@ -49,18 +49,18 @@ addons[]=
 	"Desert",
 	"A3_Soft_F_MRAP_01",
 	"ace_realisticnames",
-	"A3_Soft_F_Exp_LSV_01",
-	"A3_Boat_F_Boat_Armed_01",
-	"A3_Air_F_Exp_VTOL_01",
 	"A3_Supplies_F_Heli_CargoNets",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Armor_F_Beta_APC_Wheeled_01",
 	"ace_vehicle_damage",
+	"A3_Soft_F_Exp_LSV_01",
 	"A3_Structures_F_System",
 	"A3_Structures_F_Mil_Cargo",
 	"A3_Structures_F_Enoch_Military_Camps",
 	"A3_Modules_F",
-	"drongosaps"
+	"drongosaps",
+	"A3_Boat_F_Boat_Armed_01",
+	"A3_Air_F_Exp_VTOL_01"
 };
 class AddonsMetaData
 {
@@ -154,72 +154,72 @@ class AddonsMetaData
 		};
 		class Item13
 		{
-			className="A3_Soft_F_Exp";
-			name="Arma 3 Apex - Unarmored Land Vehicles";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item14
-		{
-			className="A3_Boat_F";
-			name="Arma 3 Alpha - Boats and Submersibles";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item15
-		{
-			className="A3_Air_F_Exp";
-			name="Arma 3 Apex - Aircraft";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item16
-		{
 			className="A3_Supplies_F_Heli";
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item17
+		class Item14
 		{
 			className="A3_Armor_F_Beta";
 			name="Arma 3 Beta - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item18
+		class Item15
 		{
 			className="ace_vehicle_damage";
 			name="ACE3 - Vehicle Damage";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item19
+		class Item16
+		{
+			className="A3_Soft_F_Exp";
+			name="Arma 3 Apex - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item17
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item18
 		{
 			className="A3_Structures_F_Enoch_Military";
 			name="Arma 3 Contact Platform - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item19
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item22
+		class Item20
 		{
 			className="DrongosAPS";
 			name="Drongo's APS";
 			author="Drongo";
+		};
+		class Item21
+		{
+			className="A3_Boat_F";
+			name="Arma 3 Alpha - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item22
+		{
+			className="A3_Air_F_Exp";
+			name="Arma 3 Apex - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -283,7 +283,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category1
+	class Category2
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -458,7 +458,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category2
+	class Category3
 	{
 		name="Scenario";
 		class Attribute0
@@ -19783,20 +19783,8 @@ class Mission
 							name="MHQ";
 							class Entities
 							{
-								items=7;
+								items=2;
 								class Item0
-								{
-									dataType="Comment";
-									class PositionInfo
-									{
-										position[]={55.86108,5,42.310791};
-										angles[]={0,0.11193988,0};
-									};
-									title="MHQ 2";
-									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Small";
-									id=271;
-								};
-								class Item1
 								{
 									dataType="Comment";
 									class PositionInfo
@@ -19808,7 +19796,7 @@ class Mission
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
 									id=848;
 								};
-								class Item2
+								class Item1
 								{
 									dataType="Object";
 									class PositionInfo
@@ -19871,206 +19859,6 @@ class Mission
 										nAttributes=3;
 									};
 								};
-								class Item3
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={55.854,7.1761513,43.213917};
-										angles[]={0,0.0073827426,0};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										health=0.89999998;
-										lock="UNLOCKED";
-										init="[this, ""small""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf"";  [this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
-										name="mhq_2";
-									};
-									id=944;
-									type="B_LSV_01_unarmed_F";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="ace_isMedicalVehicle";
-											expression="_this setVariable [""ace_medical_isMedicalVehicle"", _value, true]";
-											class Value
-											{
-												class data
-												{
-													singleType="BOOL";
-													value=1;
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="ammoBox";
-											expression="[_this,_value] call bis_fnc_initAmmoBox;";
-											class Value
-											{
-												class data
-												{
-													singleType="STRING";
-													value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-												};
-											};
-										};
-										class Attribute2
-										{
-											property="ace_cargo_space";
-											expression="[_this, _value] call ace_cargo_fnc_setSpace;";
-											class Value
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=40;
-												};
-											};
-										};
-										nAttributes=3;
-									};
-								};
-								class Item4
-								{
-									dataType="Comment";
-									class PositionInfo
-									{
-										position[]={42.64455,5,43.068512};
-										angles[]={0,0.11193988,0};
-									};
-									title="MHQ 3";
-									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Boat";
-									id=1785;
-								};
-								class Item5
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={42.433998,8.3238735,42.771};
-										angles[]={0,0.0073827426,0};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										health=0.89999998;
-										lock="UNLOCKED";
-										init="[this, ""boat""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf"";  [this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
-										name="mhq_3";
-									};
-									id=1788;
-									type="B_Boat_Armed_01_minigun_F";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="ace_isMedicalVehicle";
-											expression="_this setVariable [""ace_medical_isMedicalVehicle"", _value, true]";
-											class Value
-											{
-												class data
-												{
-													singleType="BOOL";
-													value=1;
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="ammoBox";
-											expression="[_this,_value] call bis_fnc_initAmmoBox;";
-											class Value
-											{
-												class data
-												{
-													singleType="STRING";
-													value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-												};
-											};
-										};
-										class Attribute2
-										{
-											property="ace_cargo_space";
-											expression="[_this, _value] call ace_cargo_fnc_setSpace;";
-											class Value
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=40;
-												};
-											};
-										};
-										nAttributes=3;
-									};
-								};
-								class Item6
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={7.0016551,11.68958,41.346897};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										name="AMHQ_1";
-										reportRemoteTargets=1;
-										receiveRemoteTargets=1;
-										reportOwnPosition=1;
-									};
-									id=1945;
-									type="B_T_VTOL_01_armed_F";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="ace_isMedicalVehicle";
-											expression="_this setVariable [""ace_medical_isMedicalVehicle"", _value, true]";
-											class Value
-											{
-												class data
-												{
-													singleType="BOOL";
-													value=1;
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="ammoBox";
-											expression="[_this,_value] call bis_fnc_initAmmoBox;";
-											class Value
-											{
-												class data
-												{
-													singleType="STRING";
-													value="[[[[""FirstAidKit"",""Medikit""],[10,1]],[[],[]],[[""ToolKit""],[1]],[[""B_Parachute""],[4]]],false]";
-												};
-											};
-										};
-										class Attribute2
-										{
-											property="ace_cargo_space";
-											expression="[_this, _value] call ace_cargo_fnc_setSpace;";
-											class Value
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=50;
-												};
-											};
-										};
-										nAttributes=3;
-									};
-								};
 							};
 							id=411;
 						};
@@ -20080,7 +19868,7 @@ class Mission
 							name="Rearm";
 							class Entities
 							{
-								items=13;
+								items=11;
 								class Item0
 								{
 									dataType="Object";
@@ -20255,35 +20043,6 @@ class Mission
 									title="Service Station";
 									description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
 									id=2041;
-								};
-								class Item11
-								{
-									dataType="Comment";
-									class PositionInfo
-									{
-										position[]={65.302002,5,19.9};
-										angles[]={0,6.2464318,0};
-									};
-									title="Reinsert Helipad";
-									description="This helipad is used by the AI to land helicopters to bring reinserts into the field. Do not place these near AACs helipads as it may confuse the AI and make them try to land on AACs helipads.";
-									id=2538;
-								};
-								class Item12
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={65.315002,5,20.625999};
-										angles[]={0,0.0096167643,0};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										name="reinsert_helipad";
-									};
-									id=2539;
-									type="Land_HelipadSquare_F";
 								};
 							};
 							id=412;
@@ -21106,17 +20865,6 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={6.8566546,5,42.645901};
-			};
-			title="MHQ Paradrop";
-			description="This vehicle is used for scripted paradrops that AAC can conduct while flying non-cargo airframes.  The player who requests reinsert can do so at the flag and the pilots can start the drop once they are below 250km/h and above 200m altitude. MHQ paradrop must be enabled in MissionSettings.sqf to work.";
-			id=1946;
-		};
-		class Item34
-		{
-			dataType="Comment";
-			class PositionInfo
-			{
 				position[]={52.94146,5,91.943993};
 				angles[]={0,6.2517023,0};
 			};
@@ -21124,7 +20872,7 @@ class Mission
 			description="We're trying to shift away from large resupplies to increase the flow of supplies having to be brought to the front. So we prefer that you use the small crates next to the flag. This exists still if the terrain does not allow for continueous  resupply from AAC.";
 			id=1960;
 		};
-		class Item35
+		class Item34
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21136,7 +20884,7 @@ class Mission
 			description="Small resupply crates meant only for a fire-teams resupply. The Ammo Boxes have the standard ammunition for the Squad, the Special Weapons Crate has the secondary ammunitions such as for the roles of MAT, AMAT, AMMG, MMG, Light Rifleman, Marksman.";
 			id=1961;
 		};
-		class Item36
+		class Item35
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21147,7 +20895,7 @@ class Mission
 			description="We're trying to shift away from large resupplies to increase the flow of supplies having to be brought to the front. So we prefer that you use the small crates next to the flag. This exists still if the terrain does not allow for continueous  resupply from AAC.";
 			id=1962;
 		};
-		class Item37
+		class Item36
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21159,7 +20907,7 @@ class Mission
 			id=1963;
 			atlOffset=0.30464077;
 		};
-		class Item38
+		class Item37
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -21212,7 +20960,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item39
+		class Item38
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -21239,7 +20987,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item40
+		class Item39
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21250,7 +20998,7 @@ class Mission
 			description="This is the module for Active protection system. It sets the mission to clear all assigned Active protection systems on default vehicles. If you want to enable DAPS remove this module.";
 			id=2542;
 		};
-		class Item41
+		class Item40
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21260,6 +21008,268 @@ class Mission
 			title="DAPS Assign";
 			description="Certain vehicles may not have Active protection system enabled, if you want a specific vehicle to have it, create a dummy of the vehicle you want it to apply to and then synchronize this module with the dummy vehicle. That vehicle class will now have the type of APS assigned to it." \n "" \n "Do note this dummy vehicle should be hidden from view on some corner of the map.";
 			id=2543;
+		};
+		class Item41
+		{
+			dataType="Layer";
+			name="Optional Template Items";
+			class Entities
+			{
+				items=8;
+				class Item0
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={55.86108,5,42.310791};
+						angles[]={0,0.11193988,0};
+					};
+					title="MHQ 2";
+					description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Small";
+					id=271;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={55.854,7.1761513,43.213917};
+						angles[]={0,0.0073827426,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						health=0.89999998;
+						lock="UNLOCKED";
+						init="[this, ""small""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf"";  [this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
+						name="mhq_2";
+					};
+					id=944;
+					type="B_LSV_01_unarmed_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedicalVehicle";
+							expression="_this setVariable [""ace_medical_isMedicalVehicle"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_cargo_space";
+							expression="[_this, _value] call ace_cargo_fnc_setSpace;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=40;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item2
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={42.64455,5,43.068512};
+						angles[]={0,0.11193988,0};
+					};
+					title="MHQ 3";
+					description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Boat";
+					id=1785;
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={42.433998,8.3238735,42.771};
+						angles[]={0,0.0073827426,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						health=0.89999998;
+						lock="UNLOCKED";
+						init="[this, ""boat""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf"";  [this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
+						name="mhq_3";
+					};
+					id=1788;
+					type="B_Boat_Armed_01_minigun_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedicalVehicle";
+							expression="_this setVariable [""ace_medical_isMedicalVehicle"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_cargo_space";
+							expression="[_this, _value] call ace_cargo_fnc_setSpace;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=40;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7.0016551,11.68958,41.346897};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="AMHQ_1";
+						reportRemoteTargets=1;
+						receiveRemoteTargets=1;
+						reportOwnPosition=1;
+					};
+					id=1945;
+					type="B_T_VTOL_01_armed_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedicalVehicle";
+							expression="_this setVariable [""ace_medical_isMedicalVehicle"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""FirstAidKit"",""Medikit""],[10,1]],[[],[]],[[""ToolKit""],[1]],[[""B_Parachute""],[4]]],false]";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_cargo_space";
+							expression="[_this, _value] call ace_cargo_fnc_setSpace;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=50;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item5
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={6.8566546,5,42.645901};
+					};
+					title="MHQ Paradrop";
+					description="This vehicle is used for scripted paradrops that AAC can conduct while flying non-cargo airframes.  The player who requests reinsert can do so at the flag and the pilots can start the drop once they are below 250km/h and above 200m altitude. MHQ paradrop must be enabled in MissionSettings.sqf to work.";
+					id=1946;
+				};
+				class Item6
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={65.302002,5,19.9};
+						angles[]={0,6.2464318,0};
+					};
+					title="Reinsert Helipad";
+					description="This helipad is used by the AI to land helicopters to bring reinserts into the field. Do not place these near AACs helipads as it may confuse the AI and make them try to land on AACs helipads.";
+					id=2538;
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={65.315002,5,20.625999};
+						angles[]={0,0.0096167643,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="reinsert_helipad";
+					};
+					id=2539;
+					type="Land_HelipadSquare_F";
+				};
+			};
+			id=2569;
 		};
 	};
 };
