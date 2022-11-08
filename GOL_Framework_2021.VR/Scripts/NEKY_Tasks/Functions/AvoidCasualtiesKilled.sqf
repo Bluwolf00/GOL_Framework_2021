@@ -36,12 +36,12 @@ if (isNil "_SelectTask") exitWith {}; // Exit if no subtask selected
 _Count = Count _SubTasks;
 Sleep 10;
 
-[_SelectTask, "Failed", false] call NEKY_Tasks_SetTaskState;
+[_SelectTask, "Failed", true] call NEKY_Tasks_SetTaskState;
 [5 - _Count] Call _Code;
 
 // Fail main task if all subtasks have failed
 if (Count _SubTasks == 0) then
 {
 	Sleep 1;
-	[_TaskName, "Failed", False] call NEKY_Tasks_SetTaskState;
+	[_TaskName, "Failed", true] call NEKY_Tasks_SetTaskState;
 };

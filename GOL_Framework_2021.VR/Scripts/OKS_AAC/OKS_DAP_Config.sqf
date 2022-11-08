@@ -16,8 +16,6 @@ OKS_AIR_CONFIG = {
 
 	Params["_Vehicle","_ShouldChangeDoorGuns"];
 
-	if !(["vtx",TypeOf _Vehicle] call BIS_fnc_inString) then {
-
 		if !(_Vehicle in OKS_Global_Air_Array && _vehicle isKindOf "Helicopter") then {
 			if(_ShouldChangeDoorGuns) then {		
 				if (["UH1",TypeOf _Vehicle] call BIS_fnc_inString || ["MH47",TypeOf _Vehicle] call BIS_fnc_inString || ["CH47", TypeOf _Vehicle] call BIS_fnc_inString) then
@@ -64,9 +62,7 @@ OKS_AIR_CONFIG = {
 
 			_null = [_vehicle] spawn OKS_Interact_Apply;
 			OKS_Global_Air_Array pushBackUnique _Vehicle;
-		};
-	};
-
+		};	
 };
 
 if(isNull _Vehicle) then {
