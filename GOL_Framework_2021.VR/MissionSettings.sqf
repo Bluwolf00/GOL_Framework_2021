@@ -29,7 +29,8 @@ publicVariable "NEKY_Hunt_MaxCount";
 publicVariable "NEKY_Hunt_CurrentCount";
 
 /* Optional Settings */
-GOL_AAC_SETUP = 0;
+GOL_AAC_SETUP = 0; // Adds ability for pilots to switch seats more freely
+GOL_AAC_DoorGunReplacement = false; // Changes miniguns to Yak-9s for better accuracy of tracers
 GOL_OKS_TASK = 0;
 GOL_OKS_TANKER = 0;
 GOL_NEKY_TASK = 0;

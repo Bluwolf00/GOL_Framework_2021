@@ -80,13 +80,9 @@ Sleep 5;
 	if(GOL_NEKY_HUNT isEqualTo 1) then {
 		[] execVM "Scripts\NEKY_Hunt\Init.sqf";
 	};
-	/*
-	Requires script from the folder additional scripts
-
 	if(GOL_AAC_SETUP isEqualTo 1) then {
 		[] execVM "Scripts\OKS_AAC\Init.sqf";
 	};
-	*/
 	if(GOL_OKS_AMBIENCE isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Ambience\Init.sqf";
 
