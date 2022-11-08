@@ -26,7 +26,7 @@ default {_rank ="PRIVATE";};
 // Will be transferred to the GW Addon at a later date... hopefully
 fnc_myFunction = {
   params ["_caller", "_target", "_selectionName", "_className", "_itemUser", "_usedItem"];
-  if !((_caller isEqualTo _target) && (alive _target)) then {
+  if (!(_caller isEqualTo _target) && (_target == player)) then {
   _Unconscious = _target getVariable ["ACE_isUnconscious",false];
   _Action = "DEBUG";
   switch (_usedItem) do {

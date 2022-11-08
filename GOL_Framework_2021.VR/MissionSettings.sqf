@@ -36,6 +36,7 @@ GOL_NEKY_TASK = 0;
 GOL_OKS_SCRAMBLER = 0;
 GOL_OKS_MHQ_PARADROP = 0;
 GOL_EnableHelicopterScriptToAllVehicles = 0;
+GOL_BLU_AUTO_TS_CHANNEL = 1;
 
 /* GOL Dynamic Scripts */
 GOL_OKS_DYNAMIC = 1;

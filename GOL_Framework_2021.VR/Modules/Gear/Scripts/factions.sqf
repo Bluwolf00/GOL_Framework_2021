@@ -9,6 +9,9 @@ switch (_side) do {
 		case "UN-IRISH": {
 		#include "Classes\UN-IRISH.sqf"
 	};
+		case "CBRN-WINTER": {
+		#include "Classes\CBRN-WINTER.sqf"
+	};
 	case "BAF-W": {
 		#include "Classes\BAF-W.sqf"
 	};
