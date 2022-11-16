@@ -14,7 +14,7 @@ if (!isServer) exitWith {false};	// Ensures only server or HC runs this script -
 
 OKS_Enemy_Speak = {
 
-	Params["_Group","_Distance","_Chance","_MinMaxDelayBetweenTalks","_Delay","_SoundFileName"];
+	Params["_Group","_Distance","_Chance","_MinMaxDelayBetweenTalks","_ShouldTalkAsStaticUnits"];
 	if(_Group getVariable ["GOL_IsStatic",false] && !(_ShouldTalkAsStaticUnits)) then {SystemChat "Is Static, exiting.."};
 	if({Alive _X} count units _Group == 0) exitWith {SystemChat "No units alive, exiting.."};
 	if({behaviour _X isEqualTo "COMBAT"} count units _Group > 0) exitWith {SystemChat "Unit in combat, exiting..."};
@@ -79,6 +79,6 @@ OKS_Enemy_Speak = {
 };
 
 while { {Alive _X} count units _Group > 0} do {
-	[_Group,_Distance,_Chance,_MinMaxDelayBetweenTalks] spawn OKS_Enemy_Speak;
+	[_Group,_Distance,_Chance,_MinMaxDelayBetweenTalks,_ShouldTalkAsStaticUnits] spawn OKS_Enemy_Speak;
 	sleep _LoopDelayToCheckNearby;
 };

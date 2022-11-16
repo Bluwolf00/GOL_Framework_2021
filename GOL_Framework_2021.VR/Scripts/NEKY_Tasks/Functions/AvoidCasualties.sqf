@@ -41,7 +41,7 @@ MissionNameSpace setVariable [_Var,0];
 _SubTasks = [];
 UISleep 0.1;
 
-For "_i" from 0 to 7 step 1 do
+For "_i" from 0 to 12 step 1 do
 {
 	_Index = _i;
 	_TempName = Format ["%1_%2",_TaskName,_i];
