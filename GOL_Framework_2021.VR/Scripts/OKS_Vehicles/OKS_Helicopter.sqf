@@ -12,24 +12,22 @@ Params
 	["_shouldDisableNVG", false, [true]]
 ];
 
+OKS_isWhiteList = {
+	Params ["_Vehicle"];
+	Private "_return";
+	_WhiteListWords = ["mi24","mi8"];
+	{
+		if (((ToLower typeOf _Vehicle) find _X) == -1) then {
+			_return = true;
+		} else {
+			_return = false;
+		}
+	} foreach _WhiteListWords;
+	if(_return) exitWith {_return}
+};
+
 Private _Debug_Variable = true;
 OKS_Helicopter_Code = {
-
-	Private "_isWhiteList";
-	_isWhiteList = {
-		Params ["_Vehicle"];
-		Private "_return";
-		_WhiteListWords = ["mi24","mi8"];
-		{
-			if (((ToLower typeOf _Vehicle) find _X) == -1) then {
-				_return = true;
-			} else {
-				_return = false;
-			}
-		} foreach _WhiteListWords;
-		if(_return) exitWith {_return}
-	};
-
 
 	Private _Debug_Variable = false;
 	Params ["_Vehicle","_ShouldDisableThermal","_shouldDisableNVG"];
@@ -60,7 +58,7 @@ OKS_Helicopter_Code = {
 	_Vehicle addMagazineCargoGlobal ["SatchelCharge_Remote_Mag",5];
 
 	// Created by Neko-Arrow - Thanks very much
-	if([_Vehicle] call _isWhiteList) then {
+	if([_Vehicle] call OKS_isWhiteList) then {
 		_Vehicle addEventHandler ["HandleDamage",
 		{
 		    Params ["_Unit","_Selection","_NewDamage"];
@@ -96,7 +94,7 @@ Private "_Array";
 if(isNull _Vehicle) then {
 	{ if(_X isKindOf "Helicopter") then {[_X,_ShouldDisableThermal,_shouldDisableNVG] spawn OKS_Helicopter_Code; if(_Debug_Variable) then { /*systemChat format["Helicopter Script added to %1",_X] */}}} foreach vehicles;
 } else {
-	if ([_Vehicle] call _isWhiteList) exitWith {false};
+	if ([_Vehicle] call OKS_isWhiteList) exitWith {false};
 	[_Vehicle,_ShouldDisableThermal,_shouldDisableNVG] spawn OKS_Helicopter_Code;
 };
 
