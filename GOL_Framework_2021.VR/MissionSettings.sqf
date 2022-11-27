@@ -2,6 +2,10 @@
 GOL_MAGNIFIED_OPTICS = 1;
 GOL_ARSENAL_ALLOWED = 1;
 
+// ACE Carry/Drag Container Settings
+ACE_maxWeightCarry = 1200; 
+ACE_maxWeightDrag = 2000;
+
 /* Logistics & Support Settings */
 GOL_NEKY_SERVICESTATION = 1;
 GOL_NEKY_RESUPPLY = 1;
