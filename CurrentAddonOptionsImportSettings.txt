@@ -47,6 +47,9 @@ force ace_arsenal_enableIdentityTabs = false;
 ace_arsenal_enableModIcons = true;
 ace_arsenal_EnableRPTLog = false;
 ace_arsenal_fontHeight = 4.5;
+ace_arsenal_loadoutsSaveFace = false;
+ace_arsenal_loadoutsSaveInsignia = true;
+ace_arsenal_loadoutsSaveVoice = false;
 
 // ACE Artillery
 force ace_artillerytables_advancedCorrections = false;
@@ -80,6 +83,7 @@ ace_common_settingProgressBarLocation = 0;
 
 // ACE Cook off
 force ace_cookoff_ammoCookoffDuration = 2.3;
+ace_cookoff_destroyVehicleAfterCookoff = false;
 force ace_cookoff_enable = 1;
 force ace_cookoff_enableAmmobox = true;
 force ace_cookoff_enableAmmoCookoff = false;
@@ -195,15 +199,17 @@ ace_interact_menu_useListMenu = false;
 ace_interact_menu_useListMenuSelf = false;
 
 // ACE Logistics
+ace_cargo_carryAfterUnload = true;
 force ace_cargo_enable = true;
 ace_cargo_enableRename = true;
 force ace_cargo_loadTimeCoefficient = 1.99438;
-ace_cargo_openAfterUnload = 0;
-force ace_cargo_paradropTimeCoefficent = 0.487837;
+force ace_cargo_openAfterUnload = 2;
+force ace_cargo_paradropTimeCoefficent = 0;
 force ace_rearm_distance = 20;
 force ace_rearm_level = 0;
 force ace_rearm_supply = 0;
 force ace_refuel_hoseLength = 12;
+ace_refuel_progressDuration = 2;
 force ace_refuel_rate = 1;
 force ace_repair_addSpareParts = true;
 force ace_repair_autoShutOffEngineWhenStartingRepair = true;
@@ -219,6 +225,7 @@ force ace_repair_miscRepairRequiredItems = [];
 force ace_repair_repairDamageThreshold = 0.895316;
 force ace_repair_repairDamageThreshold_engineer = 1;
 force ace_repair_wheelRepairRequiredItems = [];
+ace_towing_addRopeToVehicleInventory = true;
 
 // ACE Magazine Repack
 ace_magazinerepack_repackAnimation = true;
@@ -262,12 +269,12 @@ force ace_maptools_rotateModifierKey = 3;
 
 // ACE Medical
 force ace_medical_ai_enabledFor = 1;
-force ace_medical_AIDamageThreshold = 0.9;
-force ace_medical_bleedingCoefficient = 1;
+force ace_medical_AIDamageThreshold = 0.6;
+force ace_medical_bleedingCoefficient = 1.2;
 force ace_medical_blood_bloodLifetime = 900;
 force ace_medical_blood_enabledFor = 2;
 force ace_medical_blood_maxBloodObjects = 100;
-force ace_medical_deathChance = 0.6;
+force ace_medical_deathChance = 0.701618;
 force ace_medical_enableVehicleCrashes = true;
 force ace_medical_fatalDamageSource = 1;
 ace_medical_feedback_bloodVolumeEffectType = 0;
@@ -305,7 +312,7 @@ ace_medical_gui_showBloodlossEntry = true;
 force ace_medical_ivFlowRate = 25;
 force ace_medical_limping = 0;
 force ace_medical_painCoefficient = 0.7;
-force ace_medical_painUnconsciousChance = 0.802054;
+force ace_medical_painUnconsciousChance = 0.500746;
 force ace_medical_playerDamageThreshold = 1.25;
 force ace_medical_spontaneousWakeUpChance = 1;
 force ace_medical_spontaneousWakeUpEpinephrineBoost = 10;
@@ -343,7 +350,7 @@ force ace_medical_treatment_medicPAK = 0;
 force ace_medical_treatment_medicSurgicalKit = 1;
 force ace_medical_treatment_timeCoefficientPAK = 0;
 force ace_medical_treatment_treatmentTimeAutoinjector = 2;
-ace_medical_treatment_treatmentTimeBodyBag = 15;
+force ace_medical_treatment_treatmentTimeBodyBag = 3.02214;
 force ace_medical_treatment_treatmentTimeCPR = 6;
 force ace_medical_treatment_treatmentTimeIV = 4;
 ace_medical_treatment_treatmentTimeSplint = 7;
@@ -521,6 +528,7 @@ force ace_vehiclelock_lockVehicleInventory = false;
 force ace_vehiclelock_vehicleStartingLockState = -1;
 
 // ACE Vehicles
+ace_novehicleclanlogo_enabled = false;
 ace_vehicles_hideEjectAction = true;
 force ace_vehicles_keepEngineRunning = true;
 force ace_vehicles_speedLimiterStep = 1;
@@ -590,6 +598,15 @@ cba_network_loadoutValidation = 0;
 cba_optics_usePipOptics = true;
 cba_ui_notifyLifetime = 4;
 cba_ui_StorePasswords = 1;
+
+// Diwako Stalker Like Anomalies
+ANOMALY_DEBUG = false;
+ANOMALY_DETECTION_RANGE = 20;
+ANOMALY_DETECTOR_ITEM = "AnomalyDetector";
+ANOMALY_GAS_MASKS = "GP5_RaspiratorPS,GP5Filter_RaspiratorPS,GP7_RaspiratorPS,GP21_GasmaskPS,SE_S10,G_Respirator_white_F,MASK_M40_OD,MASK_M40,MASK_M50";
+ANOMALY_IDLE_DISTANCE = 350;
+ANOMALY_TRIGGER_DISTANCE = 300;
+diwako_anomalies_enable = false;
 
 // DUI - Squad Radar - Indicators
 diwako_dui_indicators_crew_range_enabled = false;
@@ -695,9 +712,12 @@ diwako_dui_radar_vehicleCompassEnabled = false;
 diwako_dui_use_layout_editor = false;
 
 // Enhanced Movement Rework
+emr_main_allowClimbOnStandingUnits = false;
 force emr_main_allowMidairClimbing = false;
 force emr_main_animSpeedCoef = 1.00492;
 emr_main_animSpeedStaminaCoef = 0.4;
+emr_main_assistDuty = 1.5;
+emr_main_assistHeight = 1;
 emr_main_blacklistStr = "";
 emr_main_climbingEnabled = true;
 emr_main_climbOnDuty = 3.4;
@@ -707,19 +727,28 @@ emr_main_dropViewElevation = -0.7;
 emr_main_enableWalkableSurface = true;
 force emr_main_enableWeightCheck = true;
 force emr_main_hintType = 4;
+emr_main_interactBehaviorInVehicle = "DISMOUNT";
 emr_main_jumpDuty = 1;
+emr_main_jumpForwardVelocity = 1.2;
 force emr_main_jumpingEnabled = false;
 emr_main_jumpingLoadCoefficient = 1;
-emr_main_jumpVelocity = 3.4;
+emr_main_jumpVelocity = 3.5;
 force emr_main_maxClimbHeight = 2.6;
 force emr_main_maxDropHeight = 3.00723;
 force emr_main_maxWeightClimb1 = 120;
 force emr_main_maxWeightClimb2 = 115;
 force emr_main_maxWeightClimb3 = 100;
 emr_main_maxWeightJump = 100;
+emr_main_minClimbTerrain = 0.3;
 force emr_main_preventHighVaulting = false;
 force emr_main_staminaCoefficient = 2.99874;
 emr_main_whitelistStr = "";
+emr_main_yeetCoefficient = 1.4;
+
+// Fawks' Enhanced NVGs
+PDT_ENVG_ACE = false;
+PDT_ENVG_Blacklist = "";
+PDT_ENVG_Effect = "";
 
 // GRAD Trenches
 grad_trenches_functions_allowBigEnvelope = true;
