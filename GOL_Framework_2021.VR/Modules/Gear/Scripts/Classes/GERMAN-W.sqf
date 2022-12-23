@@ -14,7 +14,7 @@ if (GVARMAIN(mod_TFAR)) then {
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "acp_gol_DE_Tropentarn_B_Kitbag_rgr_DE_Flecktarn";
+	_backpack = "acp_gol_DE_Flecktarn_B_Kitbag_rgr_DE_Flecktarn";
 };
 
 if (_role isEqualTo "crew") then {
