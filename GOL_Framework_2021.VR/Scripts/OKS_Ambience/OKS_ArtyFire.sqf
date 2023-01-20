@@ -17,14 +17,22 @@ if (!HasInterface || isServer) then
 		Params["_Projectile","_Launcher"];
 
 		_TargetPos = _Launcher getVariable ["OKS_Arty_Target",false];		
-		WaitUntil {sleep 1; (_Projectile distance2D _Launcher > 1000 || _Projectile distance2D _TargetPos < 500)};
+		WaitUntil {sleep 1; (_Projectile distance2D _Launcher > 2000 || _Projectile distance2D _TargetPos < 500)};
 		if(_Debug == 1) then {
 			systemChat format["Deleted Projectile - Away from Tube: %2 - Near Target: %3",_Projectile distance2D _Launcher,_Projectile distance2D _Launcher > 1000,_Projectile distance2D _TargetPos < 500];
 		};
 		deleteVehicle _Projectile;
 	};
 
-		params["_side","_arty","_target","_rof","_time","_reload"];
+		params[
+			["_side",east,[sideUnknown]],
+			["_arty",objNull,[objNull]],
+			["_target",[0,0,0],[[]]],
+			["_rof",5,[0]],
+			["_time",60,[0]],
+			["_reload",300,[0]],
+			["_FullCrew",false,[false]]
+		];
 		private ["_gunner","_cargo","_commander","_CfgMagazine","_Debug","_Range","_displayName","_gunner_group"];
 		_displayName = getText (configfile >> "CfgVehicles" >> (typeOf _arty) >> "displayName");
 
@@ -47,33 +55,39 @@ if (!HasInterface || isServer) then
 				{
 					if (_Debug == 1) then {SystemChat "Selected West"};
 					_gunner_group = createGroup west;
+					_gunner_group setVariable ["acex_headless_blacklist",true, true];
 					_gunner = _gunner_group createUnit ["B_Soldier_F",[0,0,10], [], 0, "FORM"];
 
 					/// Add Commander if seat has Weapon
-					if(_arty emptyPositions "commander" > 0) then {
-						if(weaponState [_arty,[0,0]] select 0 != "") then {
-							_commander = _gunner_group createUnit ["B_Soldier_F",[0,0,10], [], 0, "FORM"];
+					if(_FullCrew) then {
+						if(_arty emptyPositions "commander" > 0) then {
+							if(weaponState [_arty,[0,0]] select 0 != "") then {
+								_commander = _gunner_group createUnit ["B_Soldier_F",[0,0,10], [], 0, "FORM"];
+							};
 						};
-					};
-					if(_arty emptyPositions "cargo" > 0) then {
-						_cargo = _gunner_group createUnit ["B_Soldier_F",[0,0,10], [], 0, "FORM"];	
-					};					
+						if(_arty emptyPositions "cargo" > 0) then {
+							_cargo = _gunner_group createUnit ["B_Soldier_F",[0,0,10], [], 0, "FORM"];	
+						};		
+					};			
 				};
 
 				case opfor:
 				{
 					if (_Debug == 1) then {SystemChat "Selected East"};
 					_gunner_group = createGroup east;
+					_gunner_group setVariable ["acex_headless_blacklist",true, true];
 					_gunner = _gunner_group createUnit ["O_Soldier_F",[0,0,10], [], 0, "FORM"];
 
 					/// Add Commander if seat has Weapon
-					if(_arty emptyPositions "commander" > 0) then {
-						if(weaponState [_arty,[0,0]] select 0 != "") then {
-							_commander = _gunner_group createUnit ["O_Soldier_F",[0,0,10], [], 0, "FORM"];
+					if(_FullCrew) then {
+						if(_arty emptyPositions "commander" > 0) then {
+							if(weaponState [_arty,[0,0]] select 0 != "") then {
+								_commander = _gunner_group createUnit ["O_Soldier_F",[0,0,10], [], 0, "FORM"];
+							};
+						};	
+						if(_arty emptyPositions "cargo" > 0) then {
+							_cargo = _gunner_group createUnit ["O_Soldier_F",[0,0,10], [], 0, "FORM"];	
 						};
-					};	
-					if(_arty emptyPositions "cargo" > 0) then {
-						_cargo = _gunner_group createUnit ["O_Soldier_F",[0,0,10], [], 0, "FORM"];	
 					};
 				};
 
@@ -81,17 +95,20 @@ if (!HasInterface || isServer) then
 				{
 					if (_Debug == 1) then {SystemChat "Selected Independent"};
 					_gunner_group = createGroup independent;
+					_gunner_group setVariable ["acex_headless_blacklist",true, true];
 					_gunner = _gunner_group createUnit ["I_Soldier_F",[0,0,10], [], 0, "FORM"];
 
 					/// Add Commander if seat has Weapon
-					if(_arty emptyPositions "commander" > 0) then {
-						if(weaponState [_arty,[0,0]] select 0 != "") then {
-							_commander = _gunner_group createUnit ["I_Soldier_F",[0,0,10], [], 0, "FORM"];
-						};
-					};		
-					if(_arty emptyPositions "cargo" > 0) then {
-						_cargo = _gunner_group createUnit ["I_Soldier_F",[0,0,10], [], 0, "FORM"];	
-					};								
+					if(_FullCrew) then {	
+						if(_arty emptyPositions "commander" > 0) then {
+							if(weaponState [_arty,[0,0]] select 0 != "") then {
+								_commander = _gunner_group createUnit ["I_Soldier_F",[0,0,10], [], 0, "FORM"];
+							};
+						};		
+						if(_arty emptyPositions "cargo" > 0) then {
+							_cargo = _gunner_group createUnit ["I_Soldier_F",[0,0,10], [], 0, "FORM"];	
+						};	
+					};							
 				};
 
 				default
@@ -101,19 +118,21 @@ if (!HasInterface || isServer) then
 					_gunner = _gunner_group createUnit ["O_Soldier_F",[0,0,10], [], 0, "FORM"];
 
 					/// Add Commander if seat has Weapon
-					if(_arty emptyPositions "commander" > 0) then {
-						if(weaponState [_arty,[0,0]] select 0 != "") then {
-							_commander = _gunner_group createUnit ["O_Soldier_F",[0,0,10], [], 0, "FORM"];
-						};
-					};	
-					if(_arty emptyPositions "cargo" > 0) then {
-						_cargo = _gunner_group createUnit ["O_Soldier_F",[0,0,10], [], 0, "FORM"];	
-					};				
+					if(_FullCrew) then {
 
+						if(_arty emptyPositions "commander" > 0) then {
+							if(weaponState [_arty,[0,0]] select 0 != "") then {
+								_commander = _gunner_group createUnit ["O_Soldier_F",[0,0,10], [], 0, "FORM"];
+							};
+						};	
+						if(_arty emptyPositions "cargo" > 0) then {
+							_cargo = _gunner_group createUnit ["O_Soldier_F",[0,0,10], [], 0, "FORM"];	
+						};				
+					};
 				};
 			};
 		};
-
+	
 	{
 		_X setBehaviour "AWARE";
 		_X setCombatMode "BLUE";
@@ -133,7 +152,6 @@ if (!HasInterface || isServer) then
 	if(!isNil "_cargo") then {
 		_cargo moveInCargo _arty;
 	};
-
 
 	waitUntil {sleep 1; !(isNull _gunner)};
 
@@ -212,22 +230,26 @@ if (!HasInterface || isServer) then
 
 	if (_Debug == 1) then {SystemChat "Disable AI"};
 	_arty addEventHandler ["Fired",{ [(_this select 6),(_this select 0)] remoteExec ["OKS_CHECK_TRAVEL",0]}];
-	
+	_arty spawn {
+		waitUntil{sleep 5; { _X distance2d _this < 30} count AllPlayers > 0};
+		systemChat "Players nearby, exiting artillery..";
+		{ _X enableAI "TARGET"; _X enableAI "AUTOTARGET"; unassignVehicle _X; (group _X) leaveVehicle (vehicle _X)} foreach crew _this;
+	};
 	/// While Arty is not destroyed - Continue the loop
-	while {Alive _arty && (side (gunner _arty) isEqualTo _side)} do
+	while {Alive _arty && !isNull gunner _arty} do
 	{
 		/*
 		if(_this select 4 > 0) then { sleep _rof; } else { sleep 5; };
 		*/
-		
 
-		if(Alive gunner _arty) then {
+
+		if(Alive gunner _arty && (side (gunner _arty) isEqualTo _side)) then {
 			/*
 			_arty fireAtTarget [_target];
 	        _arty action ["UseWeapon", _arty, (gunner _arty), 0];
 	        */
-    		_gunner enableAI "TARGET";
-			_gunner enableAI "AUTOTARGET";
+    		_gunner disableAI "TARGET";
+			_gunner disableAI "AUTOTARGET";
 			_gunner setCombatMode "YELLOW";
 			_gunner remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 			sleep 1;

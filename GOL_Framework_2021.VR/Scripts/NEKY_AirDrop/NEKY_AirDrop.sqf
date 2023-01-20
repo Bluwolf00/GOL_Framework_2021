@@ -41,7 +41,7 @@ Params
 	["_SAD", false, [true]],
 	["_UnloadOrDrop", "unload", [""]],
 	["_Ingress", "", ["",[],objNull]],
-	["_UnloadOrDropMarker", "", ["",[]]],
+	["_UnloadOrDropMarker", "", ["",[],objNull]],
 	["_Egress", "", ["",[],objNull]],
 	["_Units", [1,1], [[]]],
 	["_UnitsWPs", [""], [[""],[]]],
@@ -86,7 +86,18 @@ for "_i" from 0 to ((count _UnitsWPs) -1) do
 {
 	if (typeName (_UnitsWPs select _Index) == "STRING") then {_Temp = getMarkerPos (_UnitsWPs select _Index); _UnitsWPs set [_Index, _Temp]; _Index = _Index +1;};
 };
-if (typeName _Ingress == "STRING") then {_Ingress = getMarkerPos _Ingress; if(!isNil "_OKS_Dir") then { _OKS_Dir = random 360}; _OKS_Dir = MarkerDir _Ingress};
+if (typeName _Ingress == "STRING") then {
+	_Ingress = getMarkerPos _Ingress;
+	if(!isNil "_OKS_Dir") then {
+		_OKS_Dir = random 360
+	};
+	if(typeName _UnloadOrDropMarker == "STRING") then {
+		_OKS_Dir = (_Ingress getDir (getMarkerPos _UnloadOrDropMarker))
+	};
+	if(typeName _UnloadOrDropMarker == "OBJECT") then {
+		_OKS_Dir = (_Ingress getDir (getPos _UnloadOrDropMarker))
+	};
+};
 if (typeName _UnloadOrDropMarker == "STRING") then {_UnloadOrDropMarker = getMarkerPos _UnloadOrDropMarker};
 if (typeName _Egress == "STRING") then {_Egress = getMarkerPos _Egress};
 if (typeName _Egress == "OBJECT") then { _Egress = getPos _Egress; };
@@ -118,6 +129,7 @@ if (_UnloadOrDrop isEqualTo "paradrop") then
 	if (_Override) then
 	{
 		_HeliGroup = CreateGroup _Side;
+		_HeliGroup setVariable ["acex_headless_blacklist",true,true];
 		_Pilot = _HeliGroup CreateUnit [(_PilotClasses call BIS_FNC_selectRandom), [0,0,200], [], 0, "NONE"];
 		_Pilot assignAsDriver _Heli;
 		_Pilot MoveInDriver _Heli;
@@ -301,6 +313,7 @@ if ((_Units Select 0) > 0) then
 	for "_y" from 1 to (_Units select 0) do
 	{
 		_Group = CreateGroup _Side;
+		_Group setVariable ["acex_headless_blacklist",true,true];
 		_Group setVariable ["GW_Performance_autoDelete", false, true];
 		for "_i" from 1 to (_UnitsPerGroup + _SpareIndex) do
 		{
@@ -411,15 +424,15 @@ if ((_Units Select 0) > 0) then
 		sleep 1;
 
 		// 	Add waypoints around the target area
-		for "_i" from 1 to 5 do
-		{
-			_WPIndex = _WPIndex +1;
-			_Temp = [(_UnitsWPs select _Index), ((_WPDistance * 0.3) + (random (_WPDistance * 0.7))), (random 360)] call BIS_fnc_relPos;
-			_Group addWaypoint [_Temp, 0, _WPIndex];
-			[_Group,_WPIndex] SetWaypointType "SAD";
-			[_Group,_WPIndex] setWaypointBehaviour "AWARE";
-			[_Group,_WPIndex] setWaypointCombatMode "RED";
-		};
+		// for "_i" from 0 to 1 do
+		// {
+		// 	_WPIndex = _WPIndex +1;
+		// 	_Temp = [(_UnitsWPs select _Index), ((_WPDistance * 0.3) + (random (_WPDistance * 0.7))), (random 360)] call BIS_fnc_relPos;
+		// 	_Group addWaypoint [_Temp, 0, _WPIndex];
+		// 	[_Group,_WPIndex] SetWaypointType "SAD";
+		// 	[_Group,_WPIndex] setWaypointBehaviour "AWARE";
+		// 	[_Group,_WPIndex] setWaypointCombatMode "RED";
+		// };
 		sleep 1;
 	};
 
@@ -464,10 +477,11 @@ if ((_Units Select 0) > 0) then
 	};
 
 	// Make landed troops hunt
-	if !(isNil "NEKY_Hunt_Run") then
-	{
+	if !(isNil "lambs_wp_fnc_moduleRush") then
+	{	
+		{[_X,1000,15,[],[],true] remoteExec ["lambs_wp_fnc_taskRush",0]} foreach _Groups;
 		/// Change to massive zone to have unlimited hunt?
-		{ if ( {Alive _x} count (Units _x) != 0) then { [_x, nil, _OKS_Zone, 0, 30, 0, {}] Spawn NEKY_Hunt_Run} } forEach _Groups;
+		//{ if ( {Alive _x} count (Units _x) != 0) then { [_x, nil, _OKS_Zone, 0, 30, 0, {}] Spawn NEKY_Hunt_Run} } forEach _Groups;
 	};
 
 };

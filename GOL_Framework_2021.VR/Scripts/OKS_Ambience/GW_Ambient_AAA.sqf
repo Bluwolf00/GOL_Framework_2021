@@ -21,7 +21,9 @@ params [
     ["_side",east,[sideUnknown]],
     ["_isHMG",false,[true]],
     ["_Range",1500,[0]],
-    ["_Radar",true,[true]]
+    ["_Radar",true,[true]],
+    ["_Rof",[10,15,20],[]],
+    ["_TimeBetweenShots",0,[0]]
 ];
 
 if ((count(fullCrew [_arty, "gunner", true]) isEqualTo 0)) exitWith {systemChat "Vehicle does not have a gunner seat"; false};
@@ -59,6 +61,7 @@ if (isNull gunner _arty) then {
         };
     };
     _group = createGroup _side;
+    _group setVariable ["acex_headless_blacklist",true,true];
     _gunner = _group createUnit [_unitClass,[0,0,10], [], 0, "FORM"];
     _gunner moveInGunner _arty;
     _gunner setBehaviour "AWARE";
@@ -95,14 +98,18 @@ gunner _arty setSkill ["spotDistance", 0.9];
 gunner _arty setSkill ["spotTime", 0.9];
 
 _fnc_Fire = {
-    params ["_arty", "_weapon","_targetPlayer"];
+    params ["_arty", "_weapon","_targetPlayer","_Rof","_TimeBetweenShots"];
 
     _arty setVariable ["canFire", false];
     if(!isNil "_weapon") then {
         _weaponState = (weaponState [_arty, [0], _weapon]);
-        for "_i" from 1 to selectRandom[15,20,25] step 1 do {
+        for "_i" from 1 to (selectRandom _Rof) step 1 do {
             _arty action ["UseWeapon", _arty, (gunner _arty), 0];
-            sleep (getNumber(configfile >> "CfgWeapons" >> (_weaponState select 1) >> (_weaponState select 2) >> "reloadTime"));
+            if(_timeBetweenShots == 0) then {
+                sleep (getNumber(configfile >> "CfgWeapons" >> (_weaponState select 1) >> (_weaponState select 2) >> "reloadTime"));
+            } else {
+                sleep _timeBetweenShots;
+            };       
         };
 
         if(typeName _targetPlayer isEqualTo "OBJECT") then {
@@ -261,7 +268,7 @@ while {Alive _arty && Alive (gunner _arty) && (side (gunner _arty) isEqualTo _si
     };
 
     if (_arty getVariable ["canFire", false]) then {
-        [_arty, _weapon,_targetPlayer] spawn _fnc_Fire;
+        [_arty, _weapon,_targetPlayer,_Rof,_TimeBetweenShots] spawn _fnc_Fire;
     };
     _updateTarget = _updateTarget - 1;
     sleep _delay;

@@ -20,6 +20,7 @@ OKS_Enemy_Radio = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_En
 OKS_Enemy_Sentry = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Enemy_Sentry.sqf";
 OKS_Faceswap = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_FaceSwap.sqf";
 OKS_Convoy_Spawn = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Convoy_Spawn.sqf";
+OKS_Convoy_Patrol = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Convoy_Patrol.sqf";
 OKS_AA_Guard = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_AA_Guard.sqf";
 OKS_Dynamic_Setting = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\Settings.sqf";
 OKS_Rush_SpawnGroup = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Rush_SpawnGroup.sqf";

@@ -225,7 +225,8 @@ if (_isMan) then {
 		switch (_class) do {
 			case "gearbox": {
 				[_unit] remoteExecCall [QFUNC(actions), 0, true];	// Enables gear actions for all players
-				[_unit, "Toolkit", 10] call _fnc_AddObjectsCargo;
+				[_unit, _Earplugs, 20] call _fnc_AddObjectsCargo;
+				[_unit, "Toolkit", 10] call _fnc_AddObjectsCargo;		
 				[_unit, "UK3CB_BAF_M6", 5] call _fnc_AddObjectsCargo;
 				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_Shells", 30] call _fnc_AddObjectsCargo;
 				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_AB_Shells", 30] call _fnc_AddObjectsCargo;

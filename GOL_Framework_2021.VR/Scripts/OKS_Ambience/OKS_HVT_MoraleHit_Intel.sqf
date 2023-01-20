@@ -152,6 +152,7 @@ OKS_ReceiveIntel = {
                 if(_Debug_Variable) then { systemChat format ["Morale impacted around HVT: %1 - Range %2",_Unit,_ImpactRange]};
             } else {
                 if(_Debug_Variable) then { systemChat format ["Intel HVT: %1",_Unit]};
+                [_Unit,_ImpactRange] spawn OKS_ImpactMorale;
                 Private _Parent = [true,[format["OKS_HVT_Captured_Task_%1",round((random 99999) - (random 99999))]],["You have captured a high-value target in the area of operations. Let the team at base interrogate the HVT for intel, expect an updated momentarily.","HVT Captured","Intel"],_Unit,"SUCCEEDED",-1, true,"exit", false] call BIS_fnc_taskCreate;
                 sleep 10;
                 _SelectedIntel = selectRandom OKS_Global_IntelArray;
