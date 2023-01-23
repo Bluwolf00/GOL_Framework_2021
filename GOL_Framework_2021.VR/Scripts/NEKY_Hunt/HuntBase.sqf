@@ -45,8 +45,6 @@
 
 if (!isServer) exitWith {false};	// Ensures only server
 
-Params["_Base","_SpawnPos","_HuntZone","_Waves","_RespawnDelay","_Side","_Soldiers","_RefreshRate"];
-
 
 Params
 [
@@ -190,10 +188,10 @@ while {alive _Base && _Waves > 0} do
 						}
 						else
 						{
+							_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 							if(!isNil "OKS_Enemy_Talk") then {
 								[_Group] execVM "Scripts\OKS_Ambience\OKS_Enemy_Talk.sqf";
 							};
-							_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 						};
 
 						{NEKY_Hunt_CurrentCount pushBackUnique _X} foreach crew _Vehicle;

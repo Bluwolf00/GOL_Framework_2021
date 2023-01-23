@@ -96,6 +96,9 @@ Sleep 5;
 			[[JAMMER],500,50] spawn TFAR_Scrambler;
 		*/
 	};
+	if(GOL_OKS_SPAWN isEqualTo 1) then {
+		execVM "Scripts\OKS_Spawn\Init.sqf";
+	};
 	if(GOL_OKS_TANKER isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Vehicles\OKS_Tanker.sqf";
 	};

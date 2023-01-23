@@ -16,8 +16,9 @@ GOL_OKS_REINFORCEMENT = 0;
 GOL_NEKY_FASTROPE = 0; // Not particularly good - engine limitations stop helicopters from hovering under 50-ish meters.
 GOL_OKS_SUPPORT = 0;
 
-/* AI Settings*/
+/* AI Settings & Scripts*/
 GOL_NEKY_SHARE = 1;
+GOL_OKS_SPAWN = 1;
 GOL_OKS_AMBIENCE = 1;
 GOL_OKS_HUNT = 0;
 GOL_OKS_Enemy_Talk = 0;

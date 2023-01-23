@@ -68,6 +68,7 @@ GVAR(StaminaCoef) = 0.5;
 			"CBRN-WINTER",
 			"TAKISTAN-D",
 			"TAKISTAN-SF-D",
+			"TANOA-SF",
 			"CUSTOM-W"
 		],
 		[
@@ -114,6 +115,7 @@ GVAR(StaminaCoef) = 0.5;
 			"CBRN Winter",
 			"Takistani Desert",
 			"Takistani SF Desert",
+			"Tanoan Special Forces",
 			"CUSTOM-West"
 		],
 		0

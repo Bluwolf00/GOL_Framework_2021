@@ -9,7 +9,7 @@ switch (_side) do {
 		case "UN-IRISH": {
 		#include "Classes\UN-IRISH.sqf"
 	};
-		case "CBRN-WINTER": {
+	case "CBRN-WINTER": {
 		#include "Classes\CBRN-WINTER.sqf"
 	};
 	case "BAF-W": {
@@ -69,6 +69,9 @@ switch (_side) do {
 	case "TURKEY-D": {
 		#include "Classes\TURKEY-D.sqf"
 	};
+	case "TANOA-SF": {
+		#include "Classes\TANOA-SF.sqf"
+	};	
 	case "SYRIA-W": {
 		#include "Classes\SYRIA-W.sqf"
 	};

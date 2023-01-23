@@ -56,34 +56,30 @@ _pointer = "";
 _sight = "";
 _bipod = "";
 
-_rifle = ["rhs_weap_m21a", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["rhs_weap_m3a1", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["rhs_weap_aks74_gp25", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["rhs_weap_kar98k", _silencer, _pointer, _sight, _bipod];
-_rifle_mag = "rhsgref_30rnd_556x45_m21";
-_rifleGL_mag = "30Rnd_545x39_Mag_F";
-_rifleC_mag = "rhsgref_30rnd_1143x23_M1911B_SMG";
-_rifleL_mag = "rhsgref_5Rnd_792x57_kar98k";
+_rifle = ["rhs_weap_l1a1_wood", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["hlc_rifle_aks74u", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["rhs_weap_m70ab2", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["uk3cb_sks_01_sling", _silencer, _pointer, _sight, _bipod];
+_rifle_mag = "UK3CB_FNFAL_30rnd_762x51_GT";
+_rifleGL_mag = "rhs_30Rnd_762x39mm";
+_rifleC_mag = "30Rnd_545x39_Mag_Tracer_Green_F";
+_rifleL_mag = "uk3cb_10rnd_magazine_sks_GT";
 
 _LMG = ["hlc_rifle_rpk74n", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "hlc_60Rnd_545x39_t_rpk";
 
-_MMG = ["rhs_weap_mg42", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "rhsgref_50Rnd_792x57_SmK_alltracers_drum";
+_MMG = ["uk3cb_ppsh41", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "uk3cb_PPSH_71rnd_magazine_GT";
 
-_LAT = ["rhs_weap_panzerfaust60", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "rhs_panzerfaust60_mag";
+_LAT = ["rhs_weap_rpg18", _silencer, _pointer, _sight, _bipod];
+_LAT_mag = "";
 _LAT_ReUsable = false;
 
-_MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
-_MAT_mag = "RPG7_F";
+_MAT = ["rhs_weap_rpg26", _silencer, _pointer, _sight, _bipod];
+_MAT_mag = "";
 
-_HAT = ["launch_O_Vorona_green_F", _silencer, _pointer, _sight, _bipod];
-_HAT_mag = "Vorona_HEAT";
-
-
-_MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
-_MAT_mag = "RPG7_F";
+_HAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
+_HAT_mag = "RPG7_F";
 
 _AA = ["rhs_weap_igla", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "rhs_mag_9k38_rocket";

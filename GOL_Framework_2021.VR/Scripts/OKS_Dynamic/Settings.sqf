@@ -16,9 +16,21 @@ OPFOR FACTIONS:        CHEDAKI* TKA TURKEY* DESERT_INSURGENTS RUSSIA_MODERN SOVI
 INDEPENDENT FACTIONS:  NAPA* SYRIA*
 
 */
-Private _Faction = "DESERT_INSURGENTS";
+Private _Faction = "SYNDIKAT";
 Switch (_Faction) do {
+	case "SYNDIKAT": {
 
+		// Syndikat/Livonian Seperatist Militia 3CB - OPFOR
+		_Wheeled = ["I_C_Offroad_02_unarmed_F", "I_C_Offroad_02_LMG_F", "I_C_Offroad_02_AT_F",  "UK3CB_LSM_I_BTR40_MG", "UK3CB_LSM_I_BTR40", "UK3CB_LSM_I_Datsun_Pkm", "UK3CB_LSM_I_Hilux_M2", "UK3CB_LSM_I_Hilux_Open", "UK3CB_LSM_I_Pickup"];
+		_APC = ["UK3CB_LSM_I_BRDM2", "UK3CB_LSM_I_BTR60", "UK3CB_LSM_I_MTLB_PKT", "UK3CB_LSM_I_BRM1K"];
+		_Tank = ["UK3CB_LSM_I_T72A", "UK3CB_LSM_I_T55"];
+		_Artillery = ["UK3CB_LSM_I_BM21","UK3CB_LSM_I_2b14_82mm","UK3CB_LSM_I_D30"];
+		_AntiAir = ["UK3CB_LSM_I_Gaz66_ZU23", "UK3CB_LSM_I_Ural_Zu23","UK3CB_LSM_I_ZU23"];
+		_Helicopter = ["UK3CB_I_G_UH1H_FIA", "UK3CB_I_G_UH1H_M240_FIA"];
+		_Transport = ["UK3CB_LSM_I_BTR40", "UK3CB_LSM_I_Kraz255_Open", "UK3CB_LSM_I_Ural_Open","I_C_Van_02_transport_F", "I_C_Van_01_transport_F"];
+		_Supply = ["UK3CB_LSM_I_Gaz66_Med", "UK3CB_LSM_I_Gaz66_Ammo", "UK3CB_LSM_I_Gaz66_Radio", "UK3CB_LSM_I_Gaz66_Repair"];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];	
+	};
 	case "COMMUNIST_REBELS":{
 		// Rebel Communist 3CB - OPFOR
 		_Wheeled = ["UK3CB_CCM_O_Datsun_Civ_Open", "UK3CB_CCM_O_Datsun_Pkm", "UK3CB_CCM_O_Hilux_Dshkm", "UK3CB_CCM_O_Hilux_Pkm", "UK3CB_CCM_O_LR_M2", "UK3CB_CCM_O_LR_Closed", "UK3CB_CCM_O_LR_Open", "UK3CB_CCM_O_UAZ_Closed", "UK3CB_CCM_O_UAZ_Dshkm", "UK3CB_CCM_O_Ural_Open", "UK3CB_CCM_O_Kamaz_Covered", "UK3CB_CCM_O_Hilux_Civ_Open"];
@@ -350,7 +362,7 @@ _TaskNotification = false;
 _CompoundSize = 25;
 
 /* Standard Patrol size */
-_PatrolSize = 6;
+_PatrolSize = 4;
 
 /* EnableEnemyMarkers will place markers at enemy strongpoints, compounds, roadblocks & mortar pits populated by Static Targets */
 _EnableEnemyMarkers = false;
