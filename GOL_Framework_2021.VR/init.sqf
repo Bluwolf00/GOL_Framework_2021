@@ -15,6 +15,9 @@ if(HasInterface && isNil "OKS_FRIENDLY_SIDE") then {
 Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 Sleep 5;
 
+/* Set Earplugs Settings */
+[player, true] call ace_hearing_fnc_putInEarplugs;
+
 	if (GOL_BLU_AUTO_TS_CHANNEL isEqualTo 1) then {
 		execVM "Scripts\BLU_SetChannel.sqf";
 	};
