@@ -24,7 +24,7 @@ force ace_advanced_fatigue_fadeStaminaBar = true;
 force ace_advanced_fatigue_loadFactor = 0.530877;
 force ace_advanced_fatigue_performanceFactor = 2.00155;
 force ace_advanced_fatigue_recoveryFactor = 3.47222;
-force ace_advanced_fatigue_swayFactor = 0.997189;
+force ace_advanced_fatigue_swayFactor = 0.459135;
 force ace_advanced_fatigue_terrainGradientFactor = 0.5;
 
 // ACE Advanced Throwing
@@ -161,10 +161,10 @@ acex_headless_log = false;
 force acex_headless_transferLoadout = 1;
 
 // ACE Hearing
-force ace_hearing_autoAddEarplugsToUnits = false;
-force ace_hearing_disableEarRinging = false;
-force ace_hearing_earplugsVolume = 0.5;
-force ace_hearing_enableCombatDeafness = false;
+force ace_hearing_autoAddEarplugsToUnits = true;
+force ace_hearing_disableEarRinging = true;
+ace_hearing_earplugsVolume = 0.5;
+force ace_hearing_enableCombatDeafness = true;
 force ace_hearing_enabledForZeusUnits = false;
 force ace_hearing_unconsciousnessVolume = 0.4;
 
