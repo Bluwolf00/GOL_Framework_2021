@@ -20,11 +20,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6597;
+		nextID=6617;
 	};
 	class Camera
 	{
-		pos[]={79.415268,73.018486,-52.686687};
+		pos[]={57.35619,82.306488,2.1568069};
 		dir[]={-0.022933295,-0.52309477,0.851969};
 		up[]={-0.014075601,0.85227525,0.52290672};
 		aside[]={0.99964178,7.4942363e-010,0.026908355};
@@ -14217,8 +14217,8 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={43.810429,5.0014391,85.335892};
-												angles[]={0,0.001553343,0};
+												position[]={43.440048,5.0014391,83.94136};
+												angles[]={-0,0.001553343,0};
 											};
 											side="West";
 											flags=6;
@@ -14270,7 +14270,7 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={45.958519,5.0014391,85.398491};
+												position[]={45.588139,5.0014391,84.00396};
 												angles[]={0,0.0015422935,0};
 											};
 											side="West";
@@ -15881,7 +15881,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={122.59341,5.8924227,55.013908};
-										angles[]={-0,0.0051803077,0};
+										angles[]={0,0.0051803077,0};
 									};
 									side="Empty";
 									flags=4;
@@ -15896,10 +15896,9 @@ class Mission
 								class Item2
 								{
 									dataType="Marker";
-									position[]={50.226002,5943464,89.010002};
+									position[]={44.738644,5943464,85.4506};
 									name="respawn_west";
-									text=" respawn_west";
-									type="Empty";
+									type="b_hq";
 									colorName="ColorWEST";
 									id=436;
 									atlOffset=5943459;
@@ -16146,7 +16145,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={126.84291,5.069725,55.278938};
-										angles[]={-0,1.5717263,0};
+										angles[]={0,1.5717263,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16181,7 +16180,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={126.90076,5.069725,57.884483};
-										angles[]={-0,1.5717263,0};
+										angles[]={0,1.5717263,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16216,7 +16215,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={126.8922,5.069725,59.167671};
-										angles[]={-0,1.5717263,0};
+										angles[]={0,1.5717263,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16251,7 +16250,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={126.89944,5.069725,61.763008};
-										angles[]={-0,1.5717263,0};
+										angles[]={0,1.5717263,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16391,7 +16390,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={126.84141,5.069725,54.169052};
-										angles[]={-0,1.5717263,0};
+										angles[]={0,1.5717263,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16426,7 +16425,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={126.83055,5.069725,56.567589};
-										angles[]={-0,1.5717263,0};
+										angles[]={0,1.5717263,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16461,7 +16460,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={126.90508,5.069725,60.469627};
-										angles[]={-0,1.5717263,0};
+										angles[]={0,1.5717263,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16496,7 +16495,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={122.5628,5.8924227,56.959152};
-										angles[]={-0,0.0051803077,0};
+										angles[]={0,0.0051803077,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16514,7 +16513,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={122.59267,5.8924227,58.945938};
-										angles[]={-0,0.0051803077,0};
+										angles[]={0,0.0051803077,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16532,7 +16531,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={122.564,5.8924227,61.038109};
-										angles[]={-0,0.0051803077,0};
+										angles[]={0,0.0051803077,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16716,7 +16715,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={125.95377,5.2100425,57.824554};
-										angles[]={-0,1.5718659,0};
+										angles[]={0,1.5718659,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16751,7 +16750,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={125.96093,5.2100425,59.673264};
-										angles[]={-0,1.5718659,0};
+										angles[]={0,1.5718659,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16786,7 +16785,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={125.96012,5.2100425,56.061691};
-										angles[]={-0,1.5718659,0};
+										angles[]={0,1.5718659,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16821,7 +16820,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={125.97031,5.2100425,54.392975};
-										angles[]={-0,1.5718659,0};
+										angles[]={0,1.5718659,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16856,7 +16855,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={125.9492,5.2100425,61.542496};
-										angles[]={-0,1.5718659,0};
+										angles[]={0,1.5718659,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16891,7 +16890,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={125.10513,5.2100425,57.81572};
-										angles[]={-0,1.5718659,0};
+										angles[]={0,1.5718659,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16926,7 +16925,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={125.11229,5.2100425,59.664429};
-										angles[]={-0,1.5718659,0};
+										angles[]={0,1.5718659,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16961,7 +16960,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={125.11148,5.2100425,56.052856};
-										angles[]={-0,1.5718659,0};
+										angles[]={0,1.5718659,0};
 									};
 									side="Empty";
 									flags=4;
@@ -16996,7 +16995,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={125.12167,5.2100425,54.384132};
-										angles[]={-0,1.5718659,0};
+										angles[]={0,1.5718659,0};
 									};
 									side="Empty";
 									flags=4;
@@ -17031,7 +17030,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={125.10056,5.2100425,61.533653};
-										angles[]={-0,1.5718659,0};
+										angles[]={0,1.5718659,0};
 									};
 									side="Empty";
 									flags=4;
@@ -19463,10 +19462,9 @@ class Mission
 								class Item3
 								{
 									dataType="Marker";
-									position[]={83.434006,3275850,88.745544};
+									position[]={79.116287,3275850,86.820221};
 									name="respawn_east";
-									text=" respawn_east";
-									type="Empty";
+									type="o_hq";
 									colorName="ColorEAST";
 									id=437;
 									atlOffset=3275845;
@@ -19566,7 +19564,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={125.09784,8.9768047,64.722847};
-										angles[]={-0,0.028832838,0};
+										angles[]={0,0.028832838,0};
 									};
 									side="Empty";
 									flags=4;
@@ -19618,7 +19616,7 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={77.369095,5.0014391,85.621651};
+												position[]={77.308784,5.0014391,84.469795};
 											};
 											side="East";
 											flags=7;
@@ -19666,7 +19664,7 @@ class Mission
 											dataType="Object";
 											class PositionInfo
 											{
-												position[]={80.086098,5.0014391,85.668655};
+												position[]={80.025787,5.0014391,84.5168};
 											};
 											side="East";
 											flags=5;
@@ -19794,8 +19792,8 @@ class Mission
 									dataType="Comment";
 									class PositionInfo
 									{
-										position[]={68.461746,5,42.568836};
-										angles[]={0,0.06816864,0};
+										position[]={65.565552,5,48.500854};
+										angles[]={-0,0.06816864,0};
 									};
 									title="MHQ 1";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
@@ -19806,8 +19804,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={68.217003,7.2059455,44.481438};
-										angles[]={0,6.2772336,0};
+										position[]={65.320816,7.2059455,50.413456};
+										angles[]={-0,6.2772336,0};
 									};
 									side="Empty";
 									flags=4;
@@ -20064,8 +20062,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={81.094002,7.5393777,43.638};
-										angles[]={0,0.00064577186,0};
+										position[]={78.197815,7.5393777,49.570019};
+										angles[]={-0,0.00064577186,0};
 									};
 									side="Empty";
 									flags=4;
@@ -20124,8 +20122,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={91.590096,7.1761513,43.263527};
-										angles[]={0,0.00062831852,0};
+										position[]={88.693909,7.1761513,49.195545};
+										angles[]={-0,0.00062831852,0};
 									};
 									side="Empty";
 									flags=4;
@@ -20344,8 +20342,8 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={81.099159,5,42.511349};
-				angles[]={0,3.9513838,0};
+				position[]={78.202972,5,48.443367};
+				angles[]={-0,3.9513838,0};
 			};
 			title="Mechanized / Motorized Setup";
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -20356,8 +20354,8 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={91.852493,5,43.827579};
-				angles[]={0,3.9513655,0};
+				position[]={88.956299,5,49.759598};
+				angles[]={-0,3.9513655,0};
 			};
 			title="Mechanized / Motorized Setup";
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -20870,10 +20868,10 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={122.59943,5,59.036819};
-				angles[]={-0,6.2517023,0};
+				position[]={122.599,5,59.036999};
+				angles[]={0,6.2517023,0};
 			};
-			title="Large Resupply";
+			title="BLUFOR Large Resupply";
 			description="We're trying to shift away from large resupplies to increase the flow of supplies having to be brought to the front. So we prefer that you use the small crates next to the flag. This exists still if the terrain does not allow for continueous  resupply from AAC.";
 			id=1960;
 		};
@@ -20882,10 +20880,10 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={125.66213,5,57.819344};
+				position[]={125.662,5,57.819};
 				angles[]={0.00119604,6.2506371,0.8298986};
 			};
-			title="Small Resupply";
+			title="BLUFOR Small Resupply";
 			description="Small resupply crates meant only for a fire-teams resupply. The Ammo Boxes have the standard ammunition for the Squad, the Special Weapons Crate has the secondary ammunitions such as for the roles of MAT, AMAT, AMMG, MMG, Light Rifleman, Marksman.";
 			id=1961;
 		};
@@ -20894,9 +20892,9 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={85.44413,5,90.264473};
+				position[]={85.444,5,90.264};
 			};
-			title="Large Resupply";
+			title="OPFOR Large Resupply";
 			description="We're trying to shift away from large resupplies to increase the flow of supplies having to be brought to the front. So we prefer that you use the small crates next to the flag. This exists still if the terrain does not allow for continueous  resupply from AAC.";
 			id=1962;
 		};
@@ -20905,12 +20903,12 @@ class Mission
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={89.556595,5.3046408,93.307335};
+				position[]={89.556999,5.3049998,93.306999};
 			};
-			title="Small Resupply";
+			title="OPFOR Small Resupply";
 			description="Small resupply crates meant only for a fire-teams resupply. The Ammo Boxes have the standard ammunition for the Squad, the Basic Weapons Crate has the secondary ammunitions such as for the roles of MAT, AMAT, AMMG, MMG, Light Rifleman, Marksman. Medical box is for medical resupply.";
 			id=1963;
-			atlOffset=0.30464077;
+			atlOffset=0.30499983;
 		};
 		class Item37
 		{
@@ -21026,8 +21024,8 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={55.86108,5,42.310791};
-						angles[]={0,0.11193988,0};
+						position[]={52.96489,5,48.242809};
+						angles[]={-0,0.11193988,0};
 					};
 					title="MHQ 2";
 					description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Small";
@@ -21038,8 +21036,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={55.854,7.1761513,43.213917};
-						angles[]={0,0.0073827426,0};
+						position[]={52.957809,7.1761513,49.145935};
+						angles[]={-0,0.0073827426,0};
 					};
 					side="Empty";
 					flags=4;
@@ -21101,8 +21099,8 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={42.64455,5,43.068512};
-						angles[]={0,0.11193988,0};
+						position[]={39.74836,5,49.00053};
+						angles[]={-0,0.11193988,0};
 					};
 					title="MHQ 3";
 					description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Boat";
@@ -21113,8 +21111,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={42.433998,8.3238735,42.771};
-						angles[]={0,0.0073827426,0};
+						position[]={39.537807,8.3238735,48.703018};
+						angles[]={-0,0.0073827426,0};
 					};
 					side="Empty";
 					flags=4;
@@ -21176,7 +21174,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={0.14833689,11.68958,56.280884};
+						position[]={11.600694,11.68958,47.928711};
 					};
 					side="Empty";
 					flags=4;
@@ -21238,7 +21236,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={0.0033364296,5,57.579887};
+						position[]={11.455693,5,49.227715};
 					};
 					title="MHQ Paradrop";
 					description="This vehicle is used for scripted paradrops that AAC can conduct while flying non-cargo airframes.  The player who requests reinsert can do so at the flag and the pilots can start the drop once they are below 250km/h and above 200m altitude. MHQ paradrop must be enabled in MissionSettings.sqf to work.";

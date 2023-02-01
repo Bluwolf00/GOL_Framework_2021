@@ -39,7 +39,8 @@ if (!HasInterface || isServer) then
 		_Debug = 0;
 
 		if (_Debug == 1) then {SystemChat "Start"};
-
+		_arty enableSimulation true;
+		_arty allowDamage true;
 		_gunner = gunner _arty;
 
 		//// Reset Ammo
