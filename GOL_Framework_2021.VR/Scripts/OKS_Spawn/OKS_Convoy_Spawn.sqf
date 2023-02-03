@@ -1,5 +1,5 @@
-// [spawn_1,waypoint_1,end_1,west,[4,["rhs_btr60_msv"], 6, 25],[true,6],[], true, true] spawn OKS_Convoy_Spawn;
-// [spawnpos_1,waypoint_1,end_1,east,[4,["rhs_btr60_msv"], 6, 30],[true,6],[], false, true] execVM "Scripts\OKS_Ambience\OKS_Convoy_Spawn.sqf";
+// [spawn_1,waypoint_1,end_1,west,[4,["rhs_btr60_msv"], 6, 25],[true,6],[], false, false] spawn OKS_Convoy_Spawn;
+// [spawnpos_1,waypoint_1,end_1,east,[4,["rhs_btr60_msv"], 6, 30],[true,6],[], false, false] execVM "Scripts\OKS_Ambience\OKS_Convoy_Spawn.sqf";
 /*
 	Params:
 	1 - Object - Spawn Position
@@ -193,7 +193,7 @@ For "_i" from 1 to _Count do {
     _EndWP setWaypointType "MOVE";
 	if(_DeleteAtFinalWP) then {
 		_EndWP setWaypointCompletionRadius 200;
-		_EndWP setWaypointStatements ["true","deleteVehicle (vehicle this); {deleteVehicle _X}foreach thisList;"];
+		_EndWP setWaypointStatements ["true","{ _unit = this; if(_unit != _X) then {deleteVehicle _X}}foreach crew (vehicle this); deleteVehicle (objectParent this); deleteVehicle (this); "];
 	};
 
     if(_ShouldHaveCargo && ([TypeOf _Vehicle,true] call BIS_fnc_crewCount) - ([TypeOf _Vehicle,false] call BIS_fnc_crewCount) >= 4) then {

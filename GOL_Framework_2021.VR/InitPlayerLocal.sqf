@@ -7,6 +7,10 @@ _cpl = "CORPORAL";
 
 _uid = getPlayerUID (_this select 0);
 
+/* Set Earplugs Settings */
+waitUntil {!isNil "ace_hearing_fnc_putInEarplugs"};
+[player, true] call ace_hearing_fnc_putInEarplugs;
+
 switch _uid do {
 
 case "76561198013929549": {_rank = _ltd};
