@@ -1,40 +1,41 @@
-_useMineDetector = false;
-_allowedNightStuff = false;
-
-_glHE = "hlc_VOG25_AK";
-_glsmokeW = "hlc_GRD_White";
-_glsmokeB = "hlc_GRD_blue";
-_glsmokeG = "hlc_GRD_green";
-_glsmokeO = "hlc_GRD_orange";
-_glsmokeP = "hlc_GRD_purple";
-_glsmokeR = "hlc_GRD_Red";
-_glsmokeY = "hlc_GRD_yellow";
-
-_glflareG = "";
-_glflareR = "";
-_glflareW = "";
-
 
 _useMineDetector = true;
 _allowedNightStuff = true;
 
+_glHE = "rhs_VOG25P";
+_glsmokeW = "rhs_GRD40_White";
+_glsmokeB = "";
+_glsmokeG = "rhs_GRD40_Green";
+_glsmokeO = "";
+_glsmokeP = "";
+_glsmokeR = "rhs_GRD40_Red";
+_glsmokeY = "";
+
+_glflareG = "rhs_VG40OP_green";
+_glflareR = "rhs_VG40OP_red";
+_glflareW = "rhs_VG40OP_white";
+
 _insignia = "";
-_goggles = "G_Balaclava_TI_blk_F";
-_helmet = selectRandom ["rhsusf_opscore_fg"];
+_goggles = selectRandom ["rhsusf_shemagh_grn","rhsusf_shemagh2_grn","rhsusf_shemagh_gogg_grn","rhsusf_shemagh2_gogg_grn"];
+_helmet = selectRandom ["rhsusf_opscore_mar_fg","rhsusf_opscore_mar_fg_pelt"];
 _OfficerHelmet = "H_Beret_EAF_01_F";
-_uniform = selectRandom ["UK3CB_ADM_B_U_CombatUniform_01_MAR_WDL_ALT","UK3CB_ADM_B_U_CombatUniform_01_WDL_DDPM","UK3CB_ADM_B_U_CombatUniform_01_WDL","UK3CB_B_U_CombatUniform_02_WDL","UK3CB_B_U_CombatUniform_01_WDL"];
-_vest = "rhssaf_vest_md98_rifleman";
-_backpack = "B_Kitbag_rgr";
+_uniform = selectRandom ["rhssaf_uniform_m10_digital_summer"];
+_vest = selectRandom ["UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI","UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_OLI","UK3CB_LDF_B_V_Vest_KKZ10_OLI"];
+_backpack = "UK3CB_UN_B_B_ASS";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "UK3CB_CW_SOV_O_LATE_B_ASS_BERGEN_Radio";
+	_backpackRadio = "tfw_ilbe_dd_gr";
 };
-
+if(_role in ["ar","mmg"]) then {
+	_vest = "UK3CB_LDF_B_V_LMG_Vest_KKZ10_OLI";
+};
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "B_Carryall_green_F";
+	_backpack = "B_Kitbag_rgr";
+	_vest = "UK3CB_LDF_B_V_MD_Vest_KKZ10_OLI";
 };
 if (_role isEqualTo "crew") then {
 	_helmet = "H_Tank_black_F";
+	_vest = "UK3CB_LDF_B_V_CREW_Vest_KKZ10_OLI"
 };
 if (_role isEqualTo "p") then {
 	_helmet = "H_Tank_black_F";
@@ -53,28 +54,29 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "rhs_acc_dtk1983";
-_pointer = "";
+_silencer = "rhs_acc_dtkakm";
+_pointer = "rhs_acc_2dpzenit";
 _sight = "rhs_acc_2dpzenit";
 _bipod = "";
 
-_rifle = ["hlc_rifle_aks74", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["arifle_AKS_F", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_aks74_GL", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["rhs_weap_m76", _silencer, _pointer, "rhs_acc_1p29", _bipod];
-_rifle_mag = "hlc_30Rnd_545x39_EP_ak_Black";
-_rifle_mag_tr = "hlc_30Rnd_545x39_t_ak_Black";
-_rifleGL_mag = "hlc_30Rnd_545x39_EP_ak_Black";
-_rifleGL_mag_tr = "hlc_30Rnd_545x39_t_ak_Black";
-_rifleC_mag = "rhs_30Rnd_545x39_7N22_plum_AK";
-_rifleC_mag_tr = "rhs_30Rnd_545x39_AK_plum_green";
-_rifleL_mag = "rhsgref_10Rnd_792x57_m76";
+_rifle = [selectRandom["rhs_weap_pm63","rhs_weap_akm","rhs_weap_akms"], _silencer, _pointer, _sight, _bipod];
+_rifleC = ["rhs_weap_akms", _silencer, _pointer, _sight, _bipod];
+_rifleGL = [selectRandom["rhs_weap_akm_gp25","rhs_weap_akms_gp25"], _silencer, _pointer, _sight, _bipod];
+_rifleL = ["rhs_weap_svdp", _silencer, _pointer, "rhs_acc_pso1m21", _bipod];
+_rifle_mag = "hlc_30Rnd_762x39_AP_ak";
+_rifle_mag_tr = "hlc_30Rnd_762x39_t_ak";
+_rifleGL_mag = "hlc_30Rnd_762x39_AP_ak";
+_rifleGL_mag_tr = "hlc_30Rnd_762x39_t_ak";
+_rifleC_mag = "hlc_30Rnd_762x39_AP_ak";
+_rifleC_mag_tr = "hlc_30Rnd_762x39_t_ak";
+_rifleL_mag = "rhs_10Rnd_762x54mmR_7N14";
+_rifleL_mag_tr = "ACE_10Rnd_762x54_Tracer_mag";
 
-_MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "rhs_100Rnd_762x54mmR_green";
+_LMG = ["hlc_rifle_rpk", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "UK3CB_RPK_75rnd_762x39_RM";
 
-_LMG = ["hlc_rifle_RPK12", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "hlc_60Rnd_545x39_t_rpk";
+_MMG = ["rhs_weap_fnmag", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
 
 _sight = "";
 
