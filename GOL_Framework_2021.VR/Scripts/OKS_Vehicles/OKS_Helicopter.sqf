@@ -18,18 +18,19 @@ OKS_isWhiteList = {
 	_WhiteListWords = ["mi24","mi8"];
 	{
 		if (((ToLower typeOf _Vehicle) find _X) == -1) then {
-			_return = true;
-		} else {
 			_return = false;
-		}
+		} else {
+			_return = true;
+			break;
+		};
 	} foreach _WhiteListWords;
-	if(_return) exitWith {_return}
+	if(true) exitWith {_return}
 };
 
 Private _Debug_Variable = true;
 OKS_Helicopter_Code = {
 
-	Private _Debug_Variable = false;
+	Private _Debug_Variable = true;
 	Params ["_Vehicle","_ShouldDisableThermal","_shouldDisableNVG"];
 	_Vehicle RemoveAllEventHandlers "HandleDamage";
 	_Vehicle setVariable ["NEKY_OldDamage",0];
@@ -92,10 +93,13 @@ OKS_Helicopter_Code = {
 sleep 5;
 Private "_Array";
 if(isNull _Vehicle) then {
-	{ if(_X isKindOf "Helicopter") then {[_X,_ShouldDisableThermal,_shouldDisableNVG] spawn OKS_Helicopter_Code; if(_Debug_Variable) then { /*systemChat format["Helicopter Script added to %1",_X] */}}} foreach vehicles;
+
+	{ if(_X isKindOf "Helicopter") then {[_X,_ShouldDisableThermal,_shouldDisableNVG] spawn OKS_Helicopter_Code; if(_Debug_Variable) then { systemChat format["Helicopter Script added to %1",_X] }}} foreach vehicles;
 } else {
-	if ([_Vehicle] call OKS_isWhiteList) exitWith {false};
+
+	//if ([_Vehicle] call OKS_isWhiteList) exitWith {systemChat "isWhitelisted. Exiting.."; false};
 	[_Vehicle,_ShouldDisableThermal,_shouldDisableNVG] spawn OKS_Helicopter_Code;
+	
 };
 
 
