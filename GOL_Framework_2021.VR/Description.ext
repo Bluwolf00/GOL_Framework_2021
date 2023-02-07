@@ -16,7 +16,7 @@ class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 
 	class Naming {		//	NOTE: Changing any of these settings will require mission reload for it to be affected
 		#define GAME_MODE "COOP"									// GameMode
-		#define PLAYER_COUNT "38"								// Player Count
+		#define PLAYER_COUNT "30"								// Player Count
 		#define BRIEFING_NAME "Mission Name"						// Mission Name
 		#define LOBBY_DESCRIPTION ""							// Description in mission select
 		#define ON_LOAD_TEXT ""									// Description on loading
