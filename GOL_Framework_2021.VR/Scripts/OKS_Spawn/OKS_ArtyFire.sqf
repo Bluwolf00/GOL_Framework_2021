@@ -132,8 +132,10 @@ if (!HasInterface || isServer) then
 					};
 				};
 			};
+		} else {
+			_gunner_group = (group gunner _arty);
 		};
-	
+	sleep 1;
 	{
 		_X setBehaviour "AWARE";
 		_X setCombatMode "BLUE";
