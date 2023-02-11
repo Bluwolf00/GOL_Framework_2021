@@ -47,7 +47,7 @@ if (_role isEqualTo "jetp") then {
 // Attachments
 _silencer = "";
 _pointer = "";
-_sight = "optic_ERCO_blk_F";
+_sight = "";
 _bipod = "rhsusf_acc_grip2";
 
 // Primary Weapon

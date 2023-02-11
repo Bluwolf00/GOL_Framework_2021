@@ -69,6 +69,8 @@ GVAR(StaminaCoef) = 0.5;
 			"TAKISTAN-D",
 			"TAKISTAN-SF-D",
 			"TANOA-SF",
+			"CTRG-W",
+			"CTRG-D",			
 			"CUSTOM-W"
 		],
 		[
@@ -116,6 +118,8 @@ GVAR(StaminaCoef) = 0.5;
 			"Takistani Desert",
 			"Takistani SF Desert",
 			"Tanoan Special Forces",
+			"CTRG Woodland",
+			"CTRG Desert",
 			"CUSTOM-West"
 		],
 		0

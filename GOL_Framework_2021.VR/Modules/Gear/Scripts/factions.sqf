@@ -18,6 +18,13 @@ switch (_side) do {
 	case "BAF-D": {
 		#include "Classes\BAF-D.sqf"
 	};	
+	case "CTRG-W": {
+		#include "Classes\CTRG-W.sqf"
+	};
+	case "CTRG-D": {
+		#include "Classes\CTRG-D.sqf"
+	};	
+
 	case "BAF-W-FALK": {
 		#include "Classes\BAF-W-FALK.sqf"
 	};

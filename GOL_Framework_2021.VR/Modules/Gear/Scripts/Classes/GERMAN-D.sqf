@@ -44,7 +44,7 @@ if (_role isEqualTo "jetp") then {
 // Attachments
 _silencer = "";
 _pointer = "";
-_sight = "optic_Hamr";
+_sight = "";
 _bipod = "";
 
 // Primary Weapon

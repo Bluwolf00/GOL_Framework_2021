@@ -45,7 +45,7 @@ if (_role isEqualTo "jetp") then {
 
 _silencer = "rhsusf_acc_sfmb556";
 _pointer = "uk3cb_baf_llm_flashlight_black";
-_sight = "optic_arco_blk_f";
+_sight = "";
 _bipod = "rhs_acc_grip_ffg2";
 
 _rifle = ["hlc_rifle_416N", _silencer, _pointer, _sight, _bipod];

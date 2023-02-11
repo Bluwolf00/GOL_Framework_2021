@@ -56,7 +56,7 @@ if (_role isEqualTo "jetp") then {
 
 _silencer = "rhs_acc_dtkakm";
 _pointer = "rhs_acc_2dpzenit";
-_sight = "rhs_acc_2dpzenit";
+_sight = "";
 _bipod = "";
 
 _rifle = [selectRandom["rhs_weap_pm63","rhs_weap_akm","rhs_weap_akms"], _silencer, _pointer, _sight, _bipod];

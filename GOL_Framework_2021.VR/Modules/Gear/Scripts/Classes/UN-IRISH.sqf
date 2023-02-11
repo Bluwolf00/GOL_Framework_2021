@@ -42,7 +42,7 @@ if (_role isEqualTo "jetp") then {
 
 _silencer = "";
 _pointer = "gvl_x2000_wide";
-_sight = "optic_erco_blk_f";
+_sight = "";
 _bipod = "";
 
 _rifle = ["hlc_rifle_auga2_t", _silencer, _pointer, _sight, _bipod];

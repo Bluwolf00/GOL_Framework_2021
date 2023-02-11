@@ -45,7 +45,7 @@ if (_role isEqualTo "jetp") then {
 
 _silencer = "rhsusf_acc_sfmb556";
 _pointer = "rhsusf_acc_anpeq15side_bk";
-_sight = "optic_hamr";
+_sight = "";
 _bipod = "rhsusf_acc_grip1";
 
 // Primary Weapon
