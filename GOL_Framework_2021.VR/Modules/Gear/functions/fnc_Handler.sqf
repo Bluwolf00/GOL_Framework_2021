@@ -252,37 +252,54 @@ if (_isMan) then {
 				if(GVARMAIN(mod_ACE3) && (isNil "GOL_ARSENAL_ALLOWED" || GOL_ARSENAL_ALLOWED isEqualTo 1)) then {
 
 					_compatibleItems = ((_rifle select 0) call BIS_fnc_compatibleItems);
-					{ if !(_X in _compatibleItems) then {_compatibleItems pushBack _X}} foreach ((_rifleC select 0) call BIS_fnc_compatibleItems);
-					{ if !(_X in _compatibleItems) then {_compatibleItems pushBack _X}} foreach ((_pistol select 0) call BIS_fnc_compatibleItems);
-					{ if !(_X in _compatibleItems) then {_compatibleItems pushBack _X}} foreach ((_LMG select 0) call BIS_fnc_compatibleItems);
-					{ if !(_X in _compatibleItems) then {_compatibleItems pushBack _X}} foreach ((_MMG select 0) call BIS_fnc_compatibleItems);
+					{ if !(_X in _compatibleItems) then {_compatibleItems pushBackUnique _X}} foreach ((_rifleGL select 0) call BIS_fnc_compatibleItems);
+					{ if !(_X in _compatibleItems) then {_compatibleItems pushBackUnique _X}} foreach ((_rifleC select 0) call BIS_fnc_compatibleItems);
+					{ if !(_X in _compatibleItems) then {_compatibleItems pushBackUnique _X}} foreach ((_rifleL select 0) call BIS_fnc_compatibleItems);
+					{ if !(_X in _compatibleItems) then {_compatibleItems pushBackUnique _X}} foreach ((_pistol select 0) call BIS_fnc_compatibleItems);
+					{ if !(_X in _compatibleItems) then {_compatibleItems pushBackUnique _X}} foreach ((_LMG select 0) call BIS_fnc_compatibleItems);
+					{ if !(_X in _compatibleItems) then {_compatibleItems pushBackUnique _X}} foreach ((_MMG select 0) call BIS_fnc_compatibleItems);
+					{ if !(_X in _compatibleItems) then {_compatibleItems pushBackUnique _X}} foreach ((_Pdw select 0) call BIS_fnc_compatibleItems);
 
-					_blackList = ["rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","ACE_acc_pointer_green","ACE_acc_pointer_green_ir","ACE_acc_pointer_red","acc_pointer_ir","acc_pointer_ir_broken","rhsusf_acc_anpeq15_top_h","rhsusf_acc_anpeq15_top_sc","rhsusf_acc_anpeq15_wmx_sc","rhsusf_acc_anpeq15_wmx_h","rhsusf_acc_anpeq15_wmx_light_sc","rhsusf_acc_anpeq15_wmx_light_h","rhsusf_acc_anpeq15_bk_top_h","rhsusf_acc_anpeq15_bk_top_sc","rhsusf_acc_anpeq15_h","rhsusf_acc_anpeq15_sc","rhsusf_acc_anpeq15_light_sc","rhsusf_acc_anpeq15_light_h","rhsusf_acc_anpeq15_bk_h","rhsusf_acc_anpeq15_bk_sc","rhsusf_acc_anpeq15_bk_light_sc","rhsusf_acc_anpeq15_bk_light_h","rhsusf_acc_anpeq16a_top_sc","rhsusf_acc_anpeq16a_top_h","rhsusf_acc_anpeq16a_light_top_sc","rhsusf_acc_anpeq16a_light_top_h","rhsusf_acc_anpas13gv1","hlc_charm_herstal","hlc_charm_izhmash","hlc_charm_teethgang","rhsusf_acc_anpvs27","hlc_isopod"];
+
+					copyToClipboard str _compatibleItems;
+					_blackList = [
+						"HLC_Panel_Side_Ladder_S_Pride2","HLC_Panel_Side_Ladder_M_Pride2","HLC_Panel_Side_Ladder_L_Pride2","HLC_Panel_Side_MagpulXT_Pride2",
+						"hlc_charm_herstal","hlc_charm_izhmash","hlc_charm_teethgang","hlc_panel_side_ladder_l_pride2","hlc_panel_side_ladder_m_pride2",
+						"hlc_panel_side_ladder_s_pride2","hlc_panel_side_magpulxt_pride2","rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3",
+						"rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","ACE_acc_pointer_green","ACE_acc_pointer_green_ir",
+						"ACE_acc_pointer_red","acc_pointer_ir","acc_pointer_ir_broken","rhsusf_acc_anpeq15_top_h","rhsusf_acc_anpeq15_top_sc",
+						"rhsusf_acc_anpeq15_wmx_sc","rhsusf_acc_anpeq15_wmx_h","rhsusf_acc_anpeq15_wmx_light_sc","rhsusf_acc_anpeq15_wmx_light_h",
+						"rhsusf_acc_anpeq15_bk_top_h","rhsusf_acc_anpeq15_bk_top_sc","rhsusf_acc_anpeq15_h","rhsusf_acc_anpeq15_sc","rhsusf_acc_anpeq15_light_sc",
+						"rhsusf_acc_anpeq15_light_h","rhsusf_acc_anpeq15_bk_h","rhsusf_acc_anpeq15_bk_sc","rhsusf_acc_anpeq15_bk_light_sc","rhsusf_acc_anpeq15_bk_light_h",
+						"rhsusf_acc_anpeq16a_top_sc","rhsusf_acc_anpeq16a_top_h","rhsusf_acc_anpeq16a_light_top_sc","rhsusf_acc_anpeq16a_light_top_h","rhsusf_acc_anpas13gv1",
+						"hlc_charm_herstal","hlc_charm_izhmash","hlc_charm_teethgang","rhsusf_acc_anpvs27","hlc_isopod"
+					];
+						
 					_whiteList = ["rhs_weap_optic_smaw"];
 
 						_CV = 0;
-						For [{_CV = 1}, {_CV < (count _compatibleItems)}, {_CV = _CV + 1}] do {
-							If ((_compatibleItems select (_CV - 1)) in _blackList) then {
-							  _compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV - 1)));
+						For [{_CV = 0}, {_CV < (count _compatibleItems)}, {_CV = _CV + 1}] do {
+							If ((_compatibleItems select (_CV)) in _blackList) then {
+							  _compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV)));
 								_CV = _CV - 1;
 							};
 
-							_opticMag = (["",(configfile >> "CfgWeapons" >> (_compatibleItems select (_CV - 1)))] call ace_arsenal_fnc_statTextStatement_scopeMag);
+							_opticMag = (["",(configfile >> "CfgWeapons" >> (_compatibleItems select (_CV)))] call ace_arsenal_fnc_statTextStatement_scopeMag);
 							_opticMag = parseNumber _opticMag;
 
 								if(GOL_MAGNIFIED_OPTICS isEqualTo 0 || isNil "GOL_MAGNIFIED_OPTICS") then {
 									If (_opticMag > 1 || _opticMag == 0.9) then {
-										_compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV - 1)));
+										_compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV)));
 										_CV = _CV - 1;
 									};
 								} else {
 									if (_opticMag > 2 || _opticMag == 0.9) then {
-										_compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV - 1)));
+										_compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV)));
 										_CV = _CV - 1;
 									};
 								};
 							};
-
+							copyToClipboard str _compatibleItems;
 							_compatibleItems append _whiteList;
 					[_unit, _compatibleItems] call ace_arsenal_fnc_initBox;
 				};
