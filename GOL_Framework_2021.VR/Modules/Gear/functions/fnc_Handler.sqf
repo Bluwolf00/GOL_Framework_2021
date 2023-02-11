@@ -261,7 +261,6 @@ if (_isMan) then {
 					{ if !(_X in _compatibleItems) then {_compatibleItems pushBackUnique _X}} foreach ((_Pdw select 0) call BIS_fnc_compatibleItems);
 
 
-					copyToClipboard str _compatibleItems;
 					_blackList = [
 						"HLC_Panel_Side_Ladder_S_Pride2","HLC_Panel_Side_Ladder_M_Pride2","HLC_Panel_Side_Ladder_L_Pride2","HLC_Panel_Side_MagpulXT_Pride2",
 						"hlc_charm_herstal","hlc_charm_izhmash","hlc_charm_teethgang","hlc_panel_side_ladder_l_pride2","hlc_panel_side_ladder_m_pride2",
@@ -299,7 +298,6 @@ if (_isMan) then {
 									};
 								};
 							};
-							copyToClipboard str _compatibleItems;
 							_compatibleItems append _whiteList;
 					[_unit, _compatibleItems] call ace_arsenal_fnc_initBox;
 				};
