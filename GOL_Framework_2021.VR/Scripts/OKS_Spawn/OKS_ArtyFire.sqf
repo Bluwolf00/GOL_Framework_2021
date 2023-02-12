@@ -39,8 +39,8 @@ if (!HasInterface || isServer) then
 		_Debug = 0;
 
 		if (_Debug == 1) then {SystemChat "Start"};
-		_arty enableSimulation true;
-		_arty allowDamage true;
+		[_arty,true] remoteExec ["enableSimulation",0];
+		[_arty,true] remoteExec ["allowDamage",0];
 		_gunner = gunner _arty;
 
 		//// Reset Ammo
