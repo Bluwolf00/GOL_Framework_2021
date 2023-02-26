@@ -16,11 +16,11 @@ _glflareR = "rhs_VG40OP_red";
 _glflareW = "rhs_VG40OP_white";
 
 _insignia = "";
-_goggles = selectRandom ["rhsusf_shemagh_grn","rhsusf_shemagh2_grn","rhsusf_shemagh_gogg_grn","rhsusf_shemagh2_gogg_grn"];
-_helmet = selectRandom ["rhsusf_opscore_mar_fg","rhsusf_opscore_mar_fg_pelt"];
+_goggles = ["rhsusf_shemagh_grn","rhsusf_shemagh2_grn","rhsusf_shemagh_gogg_grn","rhsusf_shemagh2_gogg_grn"];
+_helmet = ["rhsusf_opscore_mar_fg","rhsusf_opscore_mar_fg_pelt"];
 _OfficerHelmet = "H_Beret_EAF_01_F";
-_uniform = selectRandom ["rhssaf_uniform_m10_digital_summer"];
-_vest = selectRandom ["UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI","UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_OLI","UK3CB_LDF_B_V_Vest_KKZ10_OLI"];
+_uniform = ["rhssaf_uniform_m10_digital_summer"];
+_vest = ["UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI","UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_OLI","UK3CB_LDF_B_V_Vest_KKZ10_OLI"];
 _backpack = "UK3CB_UN_B_B_ASS";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {

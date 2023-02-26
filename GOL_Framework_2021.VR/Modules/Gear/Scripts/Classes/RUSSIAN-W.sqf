@@ -16,10 +16,10 @@ _glflareW = "rhs_VG40OP_white";
 
 _insignia = "";
 _goggles = "";
-_helmet = ["rhs_6b27m_digi"] call BIS_fnc_selectRandom;
+_helmet = ["rhs_6b27m_digi"];
 _OfficerHelmet = "rhs_ushanka";
 _uniform = "rhs_uniform_emr_patchless";
-_vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
+_vest = ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
 _backpack = "rhs_rd54_emr1";
 _backpackRadio = _backpack;
 

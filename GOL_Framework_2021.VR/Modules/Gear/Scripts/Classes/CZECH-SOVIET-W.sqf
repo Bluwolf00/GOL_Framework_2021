@@ -15,10 +15,10 @@ _glflareR = "rhs_VG40OP_red";
 _glflareW = "rhs_VG40OP_white";
 
 _goggles = "";
-_helmet = ["rhs_ssh60"] call BIS_fnc_selectRandom;
+_helmet = ["rhs_ssh60"];
 _OfficerHelmet = "rhs_pilotka";
 _uniform = "rhsgref_uniform_para_ttsko_urban";
-_vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
+_vest = ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
 _backpack = "rhs_sidor";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {

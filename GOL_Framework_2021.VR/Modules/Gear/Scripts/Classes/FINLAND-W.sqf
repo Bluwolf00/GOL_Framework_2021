@@ -2,10 +2,10 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "";
-_goggles = selectRandom [""];
+_goggles = [""];
 _helmet = "acp_gol_FI_M05_Woodland_H_HelmetB_light_FI_M05_Woodland_insignia";
 _OfficerHelmet = "rhssaf_beret_green";
-_uniform = SelectRandom ["acp_gol_FI_M05_Woodland_U_I_E_Uniform_shortsleeve_FI_M05_Woodland_01_F_flag","acp_gol_FI_M05_Woodland_U_I_E_Uniform_FI_M05_Woodland_01_F_insignia"];
+_uniform = ["acp_gol_FI_M05_Woodland_U_I_E_Uniform_shortsleeve_FI_M05_Woodland_01_F_flag","acp_gol_FI_M05_Woodland_U_I_E_Uniform_FI_M05_Woodland_01_F_insignia"];
 _vest = "acp_gol_FI_M05_Woodland_V_PlateCarrier1_FI_M05_Woodland_insignia";
 _backpack = "acp_gol_FI_M05_Woodland_B_AssaultPackEnhanced_FI_M05_Woodland_insignia";
 _backpackRadio = _backpack;

@@ -3,9 +3,9 @@ _allowedNightStuff = false;
 
 _insignia = "";
 _goggles = "";
-_helmet = selectRandom ["H_ShemagOpen_tan","","","UK3CB_H_Shemag_blk","UK3CB_H_Shemag_grey","UK3CB_H_Shemag_tan","UK3CB_H_Shemag_white","UK3CB_ADE_O_H_Turban_01_1","UK3CB_ADE_I_H_Turban_01_2","UK3CB_H_Turban_Facewrap_03_Blk","UK3CB_H_Turban_Facewrap_01_Tan"];
-_uniform = selectRandom ["UK3CB_ADE_O_U_02_F","UK3CB_ADE_O_U_02_H","UK3CB_ADE_O_U_02_I","UK3CB_ADE_O_U_02_J","UK3CB_ADE_O_U_02_K","UK3CB_ADE_O_U_02_B","UK3CB_ADE_O_U_02","UK3CB_ADE_O_U_02_G","UK3CB_ADE_O_U_02_C"];
-_vest = selectRandom ["V_BandollierB_khk","rhs_6b2","UK3CB_TKP_I_V_6Sh92_Khk","UK3CB_TKP_I_V_6Sh92_Radio_Khk","rhs_belt_RPK","UK3CB_V_Belt_Rig_KHK","UK3CB_V_Chicom_Desert","UK3CB_V_Chestrig_OLI"];
+_helmet = ["H_ShemagOpen_tan","","","UK3CB_H_Shemag_blk","UK3CB_H_Shemag_grey","UK3CB_H_Shemag_tan","UK3CB_H_Shemag_white","UK3CB_ADE_O_H_Turban_01_1","UK3CB_ADE_I_H_Turban_01_2","UK3CB_H_Turban_Facewrap_03_Blk","UK3CB_H_Turban_Facewrap_01_Tan"];
+_uniform = ["UK3CB_ADE_O_U_02_F","UK3CB_ADE_O_U_02_H","UK3CB_ADE_O_U_02_I","UK3CB_ADE_O_U_02_J","UK3CB_ADE_O_U_02_K","UK3CB_ADE_O_U_02_B","UK3CB_ADE_O_U_02","UK3CB_ADE_O_U_02_G","UK3CB_ADE_O_U_02_C"];
+_vest = ["V_BandollierB_khk","rhs_6b2","UK3CB_TKP_I_V_6Sh92_Khk","UK3CB_TKP_I_V_6Sh92_Radio_Khk","rhs_belt_RPK","UK3CB_V_Belt_Rig_KHK","UK3CB_V_Chicom_Desert","UK3CB_V_Chestrig_OLI"];
 _backpack = "UK3CB_CW_SOV_O_EARLY_B_Sidor_RIF";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {

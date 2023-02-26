@@ -3,7 +3,7 @@ _allowedNightStuff = true;
 
 _insignia = "";
 _goggles = "rhsusf_oakley_goggles_clr";
-_helmet = selectRandom ["rhsusf_ach_helmet_headset_ocp_alt","rhsusf_ach_helmet_ocp_norotos","rhsusf_ach_helmet_ocp","rhsusf_ach_helmet_ocp_alt"];
+_helmet = ["rhsusf_ach_helmet_headset_ocp_alt","rhsusf_ach_helmet_ocp_norotos","rhsusf_ach_helmet_ocp","rhsusf_ach_helmet_ocp_alt"];
 _OfficerHelmet = "rhs_8point_marpatwd";
 _uniform = "rhs_uniform_cu_ocp_1stcav";
 _vest = "rhsusf_spcs_ocp";

@@ -16,10 +16,10 @@ _allowedNightStuff = true;
 
 _insignia = "";
 _goggles = "rhsusf_oakley_goggles_clr";
-_helmet = selectRandom ["UK3CB_TKA_O_H_6b7_1m_bala2_DES"];
+_helmet = ["UK3CB_TKA_O_H_6b7_1m_bala2_DES"];
 _OfficerHelmet = "H_Beret_blk";
-_uniform = selectRandom ["UK3CB_TKA_O_U_CombatUniform_01_ADPM","UK3CB_TKA_O_U_CombatUniform_02_ADPM","UK3CB_TKA_O_U_CombatUniform_03_ADPM"];
-_vest = selectRandom ["UK3CB_ARD_B_V_6b5_Rifleman_Desert","UK3CB_ARD_B_V_6b5_Sniper_Desert","UK3CB_ARD_B_V_6b5_Desert"];
+_uniform = ["UK3CB_TKA_O_U_CombatUniform_01_ADPM","UK3CB_TKA_O_U_CombatUniform_02_ADPM","UK3CB_TKA_O_U_CombatUniform_03_ADPM"];
+_vest = ["UK3CB_ARD_B_V_6b5_Rifleman_Desert","UK3CB_ARD_B_V_6b5_Sniper_Desert","UK3CB_ARD_B_V_6b5_Desert"];
 _backpack = "UK3CB_B_Alice_K";
 _backpackRadio = _backpack;
 

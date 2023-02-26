@@ -17,11 +17,11 @@ _glflareW = "rhs_VG40OP_white";
 _allowedNightStuff = false;
 
 _insignia = "";
-_goggles = selectRandom ["G_Bandanna_oli","G_Balaclava_oli",""];
-_helmet = selectRandom ["","rhs_ssh68","UK3CB_ARD_B_H_SSh68","UK3CB_TKA_I_H_SSh68_Oli"];
+_goggles = ["G_Bandanna_oli","G_Balaclava_oli",""];
+_helmet = ["","rhs_ssh68","UK3CB_ARD_B_H_SSh68","UK3CB_TKA_I_H_SSh68_Oli"];
 _OfficerHelmet = "H_Beret_blk";
-_uniform = selectRandom ["UK3CB_MDF_B_U_CombatUniform_01_LIZ","UK3CB_CW_SOV_O_Late_U_VDV_CombatUniform_01_TTSKO","UK3CB_CHD_B_U_CombatSmock_10","UK3CB_CHD_B_U_CombatSmock_08","UK3CB_MDF_B_U_Crew_Uniform_01"];
-_vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK","UK3CB_V_Belt_Rig_KHK","rhsgref_chicom","V_SmershVest_01_F","UK3CB_V_Chestrig_TKA_OLI","UK3CB_TKA_I_V_6Sh92_Oli","UK3CB_TKA_I_V_6Sh92_vog_Oli"];
+_uniform = ["UK3CB_MDF_B_U_CombatUniform_01_LIZ","UK3CB_CW_SOV_O_Late_U_VDV_CombatUniform_01_TTSKO","UK3CB_CHD_B_U_CombatSmock_10","UK3CB_CHD_B_U_CombatSmock_08","UK3CB_MDF_B_U_Crew_Uniform_01"];
+_vest = ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK","UK3CB_V_Belt_Rig_KHK","rhsgref_chicom","V_SmershVest_01_F","UK3CB_V_Chestrig_TKA_OLI","UK3CB_TKA_I_V_6Sh92_Oli","UK3CB_TKA_I_V_6Sh92_vog_Oli"];
 _backpack = "rhs_sidor";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {

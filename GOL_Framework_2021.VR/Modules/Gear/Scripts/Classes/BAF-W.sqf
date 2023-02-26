@@ -2,10 +2,10 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "";
-_goggles = selectRandom ["rhsusf_shemagh_grn","rhsusf_shemagh2_grn","rhsusf_oakley_goggles_clr"];
+_goggles = ["rhsusf_shemagh_grn","rhsusf_shemagh2_grn","rhsusf_oakley_goggles_clr"];
 _helmet = "acp_gol_GB_DPM95_H_MK7_GB_DPM95_F";
 _OfficerHelmet = "UK3CB_ANA_B_H_Beret_GRN";
-_uniform = selectRandom ["acp_gol_GB_DPM95_U_I_CombatUniform_shortsleeve_GB_DPM95_insignia","acp_gol_GB_DPM95_U_I_CombatUniform_GB_DPM95_insignia"];
+_uniform = ["acp_gol_GB_DPM95_U_I_CombatUniform_shortsleeve_GB_DPM95_insignia","acp_gol_GB_DPM95_U_I_CombatUniform_GB_DPM95_insignia"];
 _vest = "acp_gol_GB_DPM95_V_CarrierRigKBT_01_light_GB_DPM95_F";
 _backpack = "acp_gol_GB_DPM95_B_TacticalPack_GB_DPM95";
 _backpackRadio = _backpack;

@@ -2,11 +2,11 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "";
-_goggles = selectRandom [""];
-_helmet = ["acp_gol_CZ_VZ95_Desert_H_HelmetB_light_CZ_VZ95_Desert_insignia"] call BIS_fnc_selectRandom;
+_goggles = [""];
+_helmet = ["acp_gol_CZ_VZ95_Desert_H_HelmetB_light_CZ_VZ95_Desert_insignia"];
 _OfficerHelmet = "rhsgref_fieldcap_ttsko_digi";
-_uniform = selectRandom ["acp_gol_CZ_VZ95_Desert_U_I_E_Uniform_shortsleeve_CZ_VZ95_Desert_01_F_flag","acp_gol_CZ_VZ95_Desert_U_I_E_Uniform_CZ_VZ95_Desert_01_F_insignia"];
-_vest = selectRandom["acp_gol_CZ_VZ95_Desert_V_PlateCarrierIA2_CZ_VZ95_Desert"];
+_uniform = ["acp_gol_CZ_VZ95_Desert_U_I_E_Uniform_shortsleeve_CZ_VZ95_Desert_01_F_flag","acp_gol_CZ_VZ95_Desert_U_I_E_Uniform_CZ_VZ95_Desert_01_F_insignia"];
+_vest = ["acp_gol_CZ_VZ95_Desert_V_PlateCarrierIA2_CZ_VZ95_Desert"];
 _backpack = "acp_gol_CZ_VZ95_Desert_B_AssaultPackEnhanced_CZ_VZ95_Desert_insignia";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {

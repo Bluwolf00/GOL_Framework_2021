@@ -11,7 +11,7 @@
 		_Dir = getDir _Spawn;
 		_Spawn = getPos _Spawn;
 	};
-	Private ["_Group"];
+	Private ["_Group","_Vehicle"];
 	waitUntil {sleep 1; !isNil "OKS_Dynamic_Setting"};
 	_Settings = [_Side] call OKS_Dynamic_Setting;
 	_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian","_Trigger"];
@@ -59,7 +59,12 @@
 		* 6: enable dynamic reinforcement <BOOL>
 		* 7: Enable Flare <BOOL> or <NUMBER> where 0 disabled, 1 enabled (if Units cant fire it them self a flare is created via createVehicle), 2 Only if Units can Fire UGL them self
 	*/	
+
+	[_Group, _Range, 30, [], [], true,false,false] remoteExec ["lambs_wp_fnc_taskHunt",0];
+	sleep 5;
 	[_Group,"AWARE"] remoteExec ["setBehaviour",0];
 	[_Group,"FULL"] remoteExec ["setSpeedMode",0];
-	[_Group, _Range, 30, [], [], true,false,false] remoteExec ["lambs_wp_fnc_taskHunt",0];
+	if(typeName _ClassnameOrNumber == "ARRAY" || typeName _ClassnameOrNumber == "STRING") then {
+		[_Vehicle,20] remoteExec ["limitSpeed",0];
+	};
 

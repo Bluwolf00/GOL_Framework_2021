@@ -3,9 +3,9 @@ _allowedNightStuff = true;
 
 _insignia = "";
 _goggles = "rhsusf_shemagh_grn";
-_helmet = selectRandom ["UK3CB_LDF_B_H_HB97_GEO","UK3CB_LDF_B_H_HB97_ESS_GEO","UK3CB_LDF_B_H_HB97_ESS_Cover_GEO"];
+_helmet = ["UK3CB_LDF_B_H_HB97_GEO","UK3CB_LDF_B_H_HB97_ESS_GEO","UK3CB_LDF_B_H_HB97_ESS_Cover_GEO"];
 _OfficerHelmet = "UK3CB_AAF_B_H_Beret_Army_Off";
-_uniform = selectRandom ["UK3CB_LDF_B_U_CombatUniform_WDL_01","UK3CB_LDF_B_U_CombatUniform_Shortsleeve_WDL_01"];
+_uniform = ["UK3CB_LDF_B_U_CombatUniform_WDL_01","UK3CB_LDF_B_U_CombatUniform_Shortsleeve_WDL_01"];
 _vest = "UK3CB_LDF_B_V_TacVest_GEO";
 _backpack = "UK3CB_B_TacticalPack_Oli";
 _backpackRadio = _backpack;

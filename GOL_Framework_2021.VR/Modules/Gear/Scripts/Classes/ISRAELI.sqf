@@ -2,11 +2,11 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "";
-_goggles = SelectRandom ["G_Balaclava_TI_blk_F"];
-_helmet = selectRandom ["acp_gol_IL_IDF_H_HelmetB_light_IL_IDF_insignia","acp_gol_IL_IDF_H_HelmetB_light_IL_IDF","acp_gol_IL_IDF_H_HelmetB_light_basic_IL_IDF"];
+_goggles = ["G_Balaclava_TI_blk_F"];
+_helmet = ["acp_gol_IL_IDF_H_HelmetB_light_IL_IDF_insignia","acp_gol_IL_IDF_H_HelmetB_light_IL_IDF","acp_gol_IL_IDF_H_HelmetB_light_basic_IL_IDF"];
 _OfficerHelmet = "acp_gol_IL_IDF_H_Cap_IL_IDF_hs";
-_uniform = SelectRandom ["acp_gol_IL_IDF_U_I_CombatUniform_IL_IDF_insignia","acp_gol_IL_IDF_U_I_CombatUniform_shortsleeve_IL_IDF_insignia"];
-_vest = selectRandom["acp_gol_IL_IDF_V_PlateCarrier2_IL_IDF_insignia"];
+_uniform = ["acp_gol_IL_IDF_U_I_CombatUniform_IL_IDF_insignia","acp_gol_IL_IDF_U_I_CombatUniform_shortsleeve_IL_IDF_insignia"];
+_vest = ["acp_gol_IL_IDF_V_PlateCarrier2_IL_IDF_insignia"];
 _backpack = "acp_gol_IL_IDF_B_AssaultPackEnhanced_IL_IDF_insignia";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {

@@ -16,10 +16,10 @@ _glflareW = "rhs_VG40OP_white";
 
 _insignia = "";
 _goggles = "";
-_helmet = selectRandom ["UK3CB_TKM_I_H_Turban_03_1","","UK3CB_TKM_I_H_Turban_04_1","UK3CB_TKM_I_H_Turban_05_1","UK3CB_TKM_I_H_Turban_01_1","UK3CB_TKM_I_H_Turban_02_1","UK3CB_H_Shemag_red_02","H_ShemagOpen_khk"];
+_helmet = ["UK3CB_TKM_I_H_Turban_03_1","","UK3CB_TKM_I_H_Turban_04_1","UK3CB_TKM_I_H_Turban_05_1","UK3CB_TKM_I_H_Turban_01_1","UK3CB_TKM_I_H_Turban_02_1","UK3CB_H_Shemag_red_02","H_ShemagOpen_khk"];
 _OfficerHelmet = "UK3CB_TKP_B_H_Patrolcap_TAN";
-_uniform = selectRandom ["UK3CB_TKM_B_U_04","UK3CB_TKM_B_U_01","UK3CB_TKM_B_U_03","UK3CB_TKM_I_U_01","UK3CB_TKM_I_U_01_B","UK3CB_TKM_I_U_01_C","UK3CB_TKM_I_U_03","UK3CB_TKM_I_U_03_B","UK3CB_TKM_I_U_03_C","UK3CB_TKM_I_U_04","UK3CB_TKM_I_U_04_C","UK3CB_TKM_I_U_05_B","UK3CB_TKM_I_U_06","UK3CB_TKM_I_U_06_C"];
-_vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_holster","rhs_6b2_lifchik","rhs_6b2_RPK","rhs_6b2_SVD","rhs_6b2","UK3CB_TKA_I_V_6Sh92_Des","UK3CB_V_CW_Chestrig_2_Small","rhs_belt_RPK","UK3CB_V_Belt_Rig_KHK"];
+_uniform = ["UK3CB_TKM_B_U_04","UK3CB_TKM_B_U_01","UK3CB_TKM_B_U_03","UK3CB_TKM_I_U_01","UK3CB_TKM_I_U_01_B","UK3CB_TKM_I_U_01_C","UK3CB_TKM_I_U_03","UK3CB_TKM_I_U_03_B","UK3CB_TKM_I_U_03_C","UK3CB_TKM_I_U_04","UK3CB_TKM_I_U_04_C","UK3CB_TKM_I_U_05_B","UK3CB_TKM_I_U_06","UK3CB_TKM_I_U_06_C"];
+_vest = ["rhs_6b2_chicom","rhs_6b2_holster","rhs_6b2_lifchik","rhs_6b2_RPK","rhs_6b2_SVD","rhs_6b2","UK3CB_TKA_I_V_6Sh92_Des","UK3CB_V_CW_Chestrig_2_Small","rhs_belt_RPK","UK3CB_V_Belt_Rig_KHK"];
 _backpack = "UK3CB_CW_SOV_O_EARLY_B_Sidor_RIF";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {

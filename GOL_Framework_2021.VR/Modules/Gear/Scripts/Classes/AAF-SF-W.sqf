@@ -2,15 +2,15 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "";
-_goggles = "rhssaf_veil_Green";
+_goggles = ["rhssaf_veil_Green"];
 _OfficerHelmet = "UK3CB_AAF_B_H_Beret_SF_Off";
-_helmet = selectRandom ["UK3CB_AAF_I_H_MKVI_Helmet_B_GRN","H_HelmetHBK_chops_F","H_HelmetHBK_ear_F","H_HelmetHBK_F"];
-_uniform = selectRandom ["UK3CB_AAF_B_U_CombatUniform_DIGI_GRN","UK3CB_AAF_B_U_CombatUniform_Shortsleeve_DIGI_GRN","U_I_CombatUniform_tshirt"];
-_vest = selectRandom ["UK3CB_AAF_I_V_Falcon_3_DIGI_GRN","UK3CB_AAF_I_V_Falcon_4_DIGI_GRN","UK3CB_AAF_I_V_Falcon_5_DIGI_GRN","UK3CB_AAF_I_V_Falcon_6_DIGI_GRN","UK3CB_AAF_I_V_Falcon_7_DIGI_GRN","UK3CB_AAF_I_V_Falcon_8_DIGI_GRN","UK3CB_AAF_I_V_Falcon_9_DIGI_GRN"];
-_backpack = "UK3CB_AAF_B_B_FIELDPACK_DIGI_GRN";
+_helmet = ["UK3CB_AAF_I_H_MKVI_Helmet_B_GRN","H_HelmetHBK_chops_F","H_HelmetHBK_ear_F","H_HelmetHBK_F"];
+_uniform = ["UK3CB_AAF_B_U_CombatUniform_DIGI_GRN","UK3CB_AAF_B_U_CombatUniform_Shortsleeve_DIGI_GRN","U_I_CombatUniform_tshirt"];
+_vest = ["UK3CB_AAF_I_V_Falcon_3_DIGI_GRN","UK3CB_AAF_I_V_Falcon_4_DIGI_GRN","UK3CB_AAF_I_V_Falcon_5_DIGI_GRN","UK3CB_AAF_I_V_Falcon_6_DIGI_GRN","UK3CB_AAF_I_V_Falcon_7_DIGI_GRN","UK3CB_AAF_I_V_Falcon_8_DIGI_GRN","UK3CB_AAF_I_V_Falcon_9_DIGI_GRN"];
+_backpack = ["UK3CB_AAF_B_B_FIELDPACK_DIGI_GRN"];
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "UK3CB_AAF_B_B_FIELDPACK_DIGI_GRN_Radio";
+	_backpackRadio = ["UK3CB_AAF_B_B_FIELDPACK_DIGI_GRN_Radio"];
 };
 if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "UK3CB_AAF_B_B_CARRYALL_DIGI_GRN";

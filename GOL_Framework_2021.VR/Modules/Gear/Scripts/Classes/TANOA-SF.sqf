@@ -2,21 +2,21 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "";
-_goggles = selectRandom ["rhs_balaclava1_olive"];
-_helmet = selectRandom ["rhs_altyn","rhs_altyn_visordown","rhs_altyn_novisor","rhs_altyn_novisor_ess"];
+_goggles = ["rhs_balaclava1_olive"];
+_helmet = ["rhs_altyn","rhs_altyn_visordown","rhs_altyn_novisor","rhs_altyn_novisor_ess"];
 _OfficerHelmet = "rhssaf_beret_green";
 _uniform = "rhssaf_uniform_m10_digital_summer";
-_vest = selectRandom ["UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI","UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_OLI"];
+_vest = ["UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI","UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_OLI"];
 _backpack = "UK3CB_B_Backpack_Pocket_OLI";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "UK3CB_B_B_Backpack_Radio_Chem_OLI";
 };
 if(_role in ["tl","sl","pl"]) then {
-	_vest = selectRandom ["UK3CB_LDF_B_V_TL_Vest_KKZ10_OLI","UK3CB_LDF_B_V_SL_Vest_KKZ10_OLI"];
+	_vest = ["UK3CB_LDF_B_V_TL_Vest_KKZ10_OLI","UK3CB_LDF_B_V_SL_Vest_KKZ10_OLI"];
 };
 if(_role in ["mmg","ar"]) then {
-	_vest = selectRandom ["UK3CB_LDF_B_V_LMG_Vest_KKZ10_OLI","UK3CB_LDF_B_V_MG_Vest_KKZ10_OLI"];
+	_vest = ["UK3CB_LDF_B_V_LMG_Vest_KKZ10_OLI","UK3CB_LDF_B_V_MG_Vest_KKZ10_OLI"];
 };
 if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "UK3CB_B_Backpack_Med_OLI";

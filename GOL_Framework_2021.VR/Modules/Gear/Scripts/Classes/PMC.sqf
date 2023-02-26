@@ -2,10 +2,10 @@ _allowedNightStuff = false;
 _useMineDetector = false;
 
 _insignia = "";
-_goggles = selectRandom ["G_Bandanna_blk","G_Bandanna_khk","G_Bandanna_oli"];
-_helmet = selectRandom ["H_Shemag_olive","H_ShemagOpen_tan","H_Bandanna_khk","H_Booniehat_khk","H_Cap_oli","H_Watchcap_blk"];
+_goggles = ["G_Bandanna_blk","G_Bandanna_khk","G_Bandanna_oli"];
+_helmet = ["H_Shemag_olive","H_ShemagOpen_tan","H_Bandanna_khk","H_Booniehat_khk","H_Cap_oli","H_Watchcap_blk"];
 _OfficerHelmet = "rhsgref_hat_M1951";
-_uniform = selectRandom ["U_I_C_Soldier_Para_2_F","U_I_C_Soldier_Para_3_F","U_I_C_Soldier_Para_4_F","U_I_C_Soldier_Para_5_F"];
+_uniform = ["U_I_C_Soldier_Para_2_F","U_I_C_Soldier_Para_3_F","U_I_C_Soldier_Para_4_F","U_I_C_Soldier_Para_5_F"];
 _vest = "V_TacVest_oli";
 _backpack = "B_FieldPack_khk";
 _backpackRadio = _backpack;
@@ -17,7 +17,7 @@ if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "B_Carryall_oli";
 };
 if (_role isEqualTo "crew") then {
-	_vest = selectRandom ["V_TacVest_blk","V_TacVest_brn","V_TacVest_camo","V_TacVest_oli"];
+	_vest = ["V_TacVest_blk","V_TacVest_brn","V_TacVest_camo","V_TacVest_oli"];
 };
 if (_role isEqualTo "p") then {
 	_helmet = "H_PilotHelmetHeli_I";

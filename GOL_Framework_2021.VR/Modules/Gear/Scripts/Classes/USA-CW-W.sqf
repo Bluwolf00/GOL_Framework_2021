@@ -3,9 +3,9 @@ _allowedNightStuff = false;
 
 _insignia = "";
 _goggles = "rhsusf_oakley_goggles_clr";
-_helmet = selectRandom ["UK3CB_CW_US_B_LATE_H_PASGT_01_WDL","UK3CB_CW_US_B_LATE_H_PASGT_02_WDL"];
+_helmet = ["UK3CB_CW_US_B_LATE_H_PASGT_01_WDL","UK3CB_CW_US_B_LATE_H_PASGT_02_WDL"];
 _OfficerHelmet = "UK3CB_AAF_B_H_Beret_Army_Off";
-_uniform = selectRandom["UK3CB_CW_US_B_LATE_U_CombatUniform_01_WDL","UK3CB_CW_US_B_LATE_U_CombatUniform_02_WDL","UK3CB_CW_US_B_LATE_U_CombatUniform_03_WDL","UK3CB_CW_US_B_LATE_U_CombatUniform_04_WDL"];
+_uniform = ["UK3CB_CW_US_B_LATE_U_CombatUniform_01_WDL","UK3CB_CW_US_B_LATE_U_CombatUniform_02_WDL","UK3CB_CW_US_B_LATE_U_CombatUniform_03_WDL","UK3CB_CW_US_B_LATE_U_CombatUniform_04_WDL"];
 _vest = "UK3CB_ADA_B_V_MBAV_WDL";
 _backpack = "UK3CB_CW_US_B_LATE_B_RIF_02";
 if (GVARMAIN(mod_TFAR)) then {

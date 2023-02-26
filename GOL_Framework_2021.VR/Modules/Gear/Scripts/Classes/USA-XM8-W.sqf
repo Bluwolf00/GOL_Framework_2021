@@ -3,7 +3,7 @@ _allowedNightStuff = true;
 
 _insignia = "";
 _goggles = "rhsusf_oakley_goggles_clr";
-_helmet = selectRandom ["rhsgref_helmet_pasgt_woodland"];
+_helmet = ["rhsgref_helmet_pasgt_woodland"];
 _OfficerHelmet = "rhs_8point_marpatwd";
 _uniform = "rhsgref_uniform_woodland";
 _vest = "V_PlateCarrier1_wdl";

@@ -18,8 +18,8 @@ _insignia = "";
 _goggles = "UK3CB_G_Neck_Shemag_Oli";
 _helmet = "acp_gol_SY_WDL_H_HelmetIA_SY_WDL";
 _OfficerHelmet = "H_Beret_blk";
-_uniform = selectRandom ["acp_gol_SY_WDL_U_I_CombatUniform_SY_WDL_insignia","acp_gol_SY_WDL_U_I_CombatUniform_shortsleeve_SY_WDL_insignia"];
-_vest = selectRandom ["acp_gol_SY_WDL_V_PlateCarrierIA1_SY_WDL","acp_gol_SY_WDL_V_CarrierRigKBT_01_light_SY_WDL_F","V_TacVest_oli","rhs_6b2"];
+_uniform = ["acp_gol_SY_WDL_U_I_CombatUniform_SY_WDL_insignia","acp_gol_SY_WDL_U_I_CombatUniform_shortsleeve_SY_WDL_insignia"];
+_vest = ["acp_gol_SY_WDL_V_PlateCarrierIA1_SY_WDL","acp_gol_SY_WDL_V_CarrierRigKBT_01_light_SY_WDL_F","V_TacVest_oli","rhs_6b2"];
 _backpack = "acp_gol_SY_WDL_B_FieldPack_SY_WDL";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {

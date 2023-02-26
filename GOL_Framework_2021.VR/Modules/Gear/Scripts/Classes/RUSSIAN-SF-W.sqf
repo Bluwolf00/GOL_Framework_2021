@@ -15,8 +15,8 @@ _glflareR = "rhs_VG40OP_red";
 _glflareW = "rhs_VG40OP_white";
 
 _insignia = "";
-_goggles = ["rhsusf_shemagh2_grn","rhsusf_shemagh_grn"] call BIS_fnc_selectRandom;
-_helmet = ["rhs_beanie_green"] call BIS_fnc_selectRandom;
+_goggles = ["rhsusf_shemagh2_grn","rhsusf_shemagh_grn"];
+_helmet = ["rhs_beanie_green"];
 _OfficerHelmet = "rhs_beret_vdv3";
 _uniform = "rhsgref_uniform_olive";
 _vest = "rhs_6b3_holster";

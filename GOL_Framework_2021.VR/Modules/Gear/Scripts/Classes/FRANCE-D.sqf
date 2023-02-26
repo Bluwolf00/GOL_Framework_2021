@@ -2,10 +2,10 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "";
-_goggles = selectRandom ["UK3CB_G_Balaclava_DES"];
+_goggles = ["UK3CB_G_Balaclava_DES"];
 _helmet = "acp_gol_FR_Daguet_H_HelmetB_light_FR_Daguet_insignia";
 _OfficerHelmet = "UK3CB_AAF_B_H_Beret_SF_Off";
-_uniform = selectRandom ["acp_gol_FR_Daguet_U_B_CombatUniform_FR_Daguet_insignia","acp_gol_FR_Daguet_U_B_CombatUniform_vest_FR_Daguet_insignia"];
+_uniform = ["acp_gol_FR_Daguet_U_B_CombatUniform_FR_Daguet_insignia","acp_gol_FR_Daguet_U_B_CombatUniform_vest_FR_Daguet_insignia"];
 _vest = "acp_gol_FR_Daguet_V_PlateCarrier2_FR_Daguet";
 _backpack = "acp_gol_FR_Daguet_B_Kitbag_rgr_FR_Daguet";
 _backpackRadio = _backpack;

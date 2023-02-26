@@ -3,10 +3,10 @@ _allowedNightStuff = true;
 
 _insignia = "";
 _goggles = "G_Balaclava_TI_blk_F";
-_helmet = selectRandom ["acp_gol_SE_M90_H_HelmetSpecter_cover_SE_M90_F","acp_gol_SE_M90_H_HelmetSpecter_headset_SE_M90_F","acp_gol_SE_M90_H_HelmetSpecter_SE_M90_F"];
+_helmet = ["acp_gol_SE_M90_H_HelmetSpecter_cover_SE_M90_F","acp_gol_SE_M90_H_HelmetSpecter_headset_SE_M90_F","acp_gol_SE_M90_H_HelmetSpecter_SE_M90_F"];
 _OfficerHelmet = "acp_gol_SE_M90_H_MilCap_SE_M90";
-_uniform = SelectRandom ["acp_gol_SE_M90_U_I_E_Uniform_shortsleeve_SE_M90_01_F_flag","acp_gol_SE_M90_U_I_E_Uniform_SE_M90_01_F_insignia"];
-_vest = selectRandom["acp_gol_SE_M90_V_PlateCarrier2_SE_M90_insignia"];
+_uniform = ["acp_gol_SE_M90_U_I_E_Uniform_shortsleeve_SE_M90_01_F_flag","acp_gol_SE_M90_U_I_E_Uniform_SE_M90_01_F_insignia"];
+_vest = ["acp_gol_SE_M90_V_PlateCarrier2_SE_M90_insignia"];
 _backpack = "acp_gol_SE_M90_B_AssaultPackEnhanced_SE_M90_insignia";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {

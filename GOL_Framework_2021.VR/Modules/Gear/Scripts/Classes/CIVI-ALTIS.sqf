@@ -1,11 +1,11 @@
 _useMineDetector = false;
 _allowedNightStuff = false;
 
-_goggles = selectRandom ["","","G_Shades_Black","G_Sport_BlackWhite","G_Sport_Greenblack","G_Aviator"];
-_helmet = selectRandom ["","","H_Cap_blu","H_Cap_oli","H_Hat_brown","H_Hat_tan"];
-_uniform = selectRandom ["U_C_Poloshirt_blue","U_C_Poloshirt_burgundy","U_C_Poloshirt_redwhite","U_C_Poloshirt_salmon","U_C_Poloshirt_stripped","U_C_Poloshirt_tricolour","U_C_Man_casual_6_F","U_C_Man_casual_4_F","U_C_Man_casual_5_F"];
-_vest = selectRandom [""];
-_backpack = selectRandom [""];
+_goggles = ["","","G_Shades_Black","G_Sport_BlackWhite","G_Sport_Greenblack","G_Aviator"];
+_helmet = ["","","H_Cap_blu","H_Cap_oli","H_Hat_brown","H_Hat_tan"];
+_uniform = ["U_C_Poloshirt_blue","U_C_Poloshirt_burgundy","U_C_Poloshirt_redwhite","U_C_Poloshirt_salmon","U_C_Poloshirt_stripped","U_C_Poloshirt_tricolour","U_C_Man_casual_6_F","U_C_Man_casual_4_F","U_C_Man_casual_5_F"];
+_vest = [""];
+_backpack = [""];
 
 if ((random 1) > 0.7) then {
 	_goggles = "";

@@ -3,9 +3,9 @@ _allowedNightStuff = true;
 
 _insignia = "";
 _goggles = "G_Balaclava_TI_G_blk_F";
-_helmet = selectRandom ["H_HelmetB_TI_arid_F"];
+_helmet = ["H_HelmetB_TI_arid_F"];
 _OfficerHelmet = "UK3CB_ANA_B_H_Beret_MAR";
-_uniform = selectRandom ["U_B_CTRG_Soldier_3_Arid_F","U_B_CTRG_Soldier_Arid_F","U_B_CTRG_Soldier_2_Arid_F"];
+_uniform = ["U_B_CTRG_Soldier_3_Arid_F","U_B_CTRG_Soldier_Arid_F","U_B_CTRG_Soldier_2_Arid_F"];
 _vest = "V_PlateCarrierH_CTRG";
 _backpack = "B_Kitbag_cbr";
 if (GVARMAIN(mod_TFAR)) then {

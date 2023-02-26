@@ -16,10 +16,10 @@ _glflareW = "rhs_VG40OP_white";
 
 _insignia = "";
 _goggles = "";
-_helmet = ["rhs_stsh81"] call BIS_fnc_selectRandom;
+_helmet = ["rhs_stsh81"];
 _OfficerHelmet = "rhs_pilotka";
 _uniform = "rhs_uniform_afghanka_spetsodezhda";
-_vest = selectRandom ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
+_vest = ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
 _backpack = "rhs_sidor";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {

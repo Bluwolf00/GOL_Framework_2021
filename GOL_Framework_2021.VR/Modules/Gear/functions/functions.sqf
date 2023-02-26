@@ -1,19 +1,46 @@
 
 _addEquipment = {
+
+	private ["_equipment"];
 	if !((_this select 0) isEqualTo "") then {
-		_loadout set [7, (_this select 0)];		// Goggles
+		if((typeName (_this select 0)) isEqualTo "ARRAY") then {
+			_equipment = selectRandom (_this select 0);
+		} else {
+			_equipment = (_this select 0);
+		};
+		_loadout set [7, _equipment];		// Goggles
 	};
 	if !((_this select 1) isEqualTo "") then {
-		_loadout set [6, (_this select 1)];		// Helmet
+		if((typeName (_this select 1)) isEqualTo "ARRAY") then {
+			_equipment = selectRandom (_this select 1);
+		} else {
+			_equipment = (_this select 1);
+		};		
+		_loadout set [6, _equipment];		// Helmet
 	};
 	if !((_this select 2) isEqualTo "") then {
-		_loadout set [3, [(_this select 2),[]]];	// Uniform
+		if((typeName (_this select 2)) isEqualTo "ARRAY") then {
+			_equipment = selectRandom (_this select 2);
+		} else {
+			_equipment = (_this select 2);
+		};
+		_loadout set [3, [_equipment,[]]];	// Uniform
 	};
 	if !((_this select 3) isEqualTo "") then {
-		_loadout set [4, [(_this select 3),[]]];	// Vest
+		if((typeName (_this select 3)) isEqualTo "ARRAY") then {
+			_equipment = selectRandom (_this select 3);
+		} else {
+			_equipment = (_this select 3);
+		};
+		_loadout set [4, [_equipment,[]]];	// Vest
 	};
 	if !((_this select 4) isEqualTo "") then {
-		_loadout set [5, [(_this select 4),[]]];	// Backpack
+		if((typeName (_this select 4)) isEqualTo "ARRAY") then {
+			_equipment = selectRandom (_this select 4);
+		} else {
+			_equipment = (_this select 4);
+		};
+		_loadout set [5, [_equipment,[]]];	// Backpack
 	};
 };
 

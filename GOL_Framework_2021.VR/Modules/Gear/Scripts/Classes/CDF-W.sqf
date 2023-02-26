@@ -18,8 +18,8 @@ _insignia = "";
 _goggles = "Armband_Green_medium";
 _helmet = ["rhsgref_ssh68_ttsko_mountain","UK3CB_LSM_B_H_BoonieHat_OLI","UK3CB_H_Woolhat_GRN","UK3CB_TKA_I_H_SSh68_Oli","rhs_headband","rhsgref_ssh68_ttsko_mountain"] call BIS_fnc_selectRandom;
 _OfficerHelmet = "UK3CB_ANA_B_H_OFF_Beret_GRN";
-_uniform = selectRandom ["rhsgref_uniform_ttsko_mountain"];
-_vest = selectRandom ["rhs_6b2","rhs_6b2_AK","rhs_6b2_chicom","rhs_6b2_holster","rhs_6b2_lifchik","rhs_6b2_RPK","rhs_6b2_SVD"];
+_uniform = ["rhsgref_uniform_ttsko_mountain"];
+_vest = ["rhs_6b2","rhs_6b2_AK","rhs_6b2_chicom","rhs_6b2_holster","rhs_6b2_lifchik","rhs_6b2_RPK","rhs_6b2_SVD"];
 _backpack = "UK3CB_B_Alice_K";
 _backpackRadio = _backpack;
 

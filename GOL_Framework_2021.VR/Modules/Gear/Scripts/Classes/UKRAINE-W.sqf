@@ -18,8 +18,8 @@ _insignia = "";
 _goggles = "Armband_Yellow_XL";
 _helmet = ["UK3CB_ADA_B_H_6b27m_OLI","UK3CB_ADA_B_H_6b27m_ESS_OLI","UK3CB_ADA_B_H_6b27m_ml_ESS_OLI","UK3CB_ADA_B_H_6b27m_ESS_OLI"] call BIS_fnc_selectRandom;
 _OfficerHelmet = "rhs_ushanka";
-_uniform = selectRandom ["UK3CB_LNM_B_U_Crew_CombatSmock_05","UK3CB_LNM_B_U_Crew_CombatSmock_04","UK3CB_LNM_B_U_Crew_CombatSmock_13","UK3CB_LNM_B_U_CombatSmock_27","UK3CB_LNM_B_U_CombatSmock_36","UK3CB_LSM_B_U_CombatSmock_08","UK3CB_LSM_B_U_CombatSmock_02"];
-_vest = selectRandom ["UK3CB_TKA_O_V_6b23_ml_Oli_02","UK3CB_TKA_O_V_6b23_ml_sniper_Oli"];
+_uniform = ["UK3CB_LNM_B_U_Crew_CombatSmock_05","UK3CB_LNM_B_U_Crew_CombatSmock_04","UK3CB_LNM_B_U_Crew_CombatSmock_13","UK3CB_LNM_B_U_CombatSmock_27","UK3CB_LNM_B_U_CombatSmock_36","UK3CB_LSM_B_U_CombatSmock_08","UK3CB_LSM_B_U_CombatSmock_02"];
+_vest = ["UK3CB_TKA_O_V_6b23_ml_Oli_02","UK3CB_TKA_O_V_6b23_ml_sniper_Oli"];
 _backpack = "UK3CB_CHC_C_B_HIKER";
 _backpackRadio = _backpack;
 

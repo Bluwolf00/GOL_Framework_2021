@@ -3,15 +3,15 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "insignia_block35";
-_goggles = "rhs_balaclava1_olive";
+_goggles = ["rhs_balaclava1_olive"];
 _OfficerHelmet = "UK3CB_AAF_B_H_Beret_Army_Off";
-_helmet = selectRandom ["UK3CB_AAF_I_H_MKVI_Helmet_B_GRN","UK3CB_AAF_I_H_MKVI_Helmet_A_GRN"];
-_uniform = selectRandom ["UK3CB_AAF_B_U_CombatUniform_DIGI_GRN","UK3CB_AAF_B_U_CombatUniform_Shortsleeve_DIGI_GRN","UK3CB_AAF_B_U_JumperUniform_DIGI_GRN"];
-_vest = selectRandom ["UK3CB_V_Falcon_6","UK3CB_AAF_I_V_Falcon_7_DIGI_GRN","UK3CB_V_Falcon_5"];
-_backpack = "UK3CB_AAF_B_B_FIELDPACK_DIGI_GRN";
+_helmet =  ["UK3CB_AAF_I_H_MKVI_Helmet_B_GRN","UK3CB_AAF_I_H_MKVI_Helmet_A_GRN"];
+_uniform =  ["UK3CB_AAF_B_U_CombatUniform_DIGI_GRN","UK3CB_AAF_B_U_CombatUniform_Shortsleeve_DIGI_GRN","UK3CB_AAF_B_U_JumperUniform_DIGI_GRN"];
+_vest =  ["UK3CB_V_Falcon_6","UK3CB_AAF_I_V_Falcon_7_DIGI_GRN","UK3CB_V_Falcon_5"];
+_backpack = ["UK3CB_AAF_B_B_FIELDPACK_DIGI_GRN"];
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "TFAR_anprc155";
+	_backpackRadio = ["TFAR_anprc155"];
 };
 if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "UK3CB_AAF_B_B_CARRYALL_DIGI_GRN";
