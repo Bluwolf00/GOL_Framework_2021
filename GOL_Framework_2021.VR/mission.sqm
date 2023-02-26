@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6617;
+		nextID=6637;
 	};
 	class Camera
 	{
-		pos[]={57.35619,82.306488,2.1568069};
-		dir[]={-0.022933295,-0.52309477,0.851969};
-		up[]={-0.014075601,0.85227525,0.52290672};
-		aside[]={0.99964178,7.4942363e-010,0.026908355};
+		pos[]={45.782715,43.364567,38.285091};
+		dir[]={0.10520208,-0.65935761,0.74443281};
+		up[]={0.09226267,0.75182945,0.65287071};
+		aside[]={0.99016178,0,-0.13992812};
 	};
 };
 binarizationWanted=0;
@@ -14218,7 +14218,7 @@ class Mission
 											class PositionInfo
 											{
 												position[]={43.440048,5.0014391,83.94136};
-												angles[]={-0,0.001553343,0};
+												angles[]={0,0.001553343,0};
 											};
 											side="West";
 											flags=6;
@@ -19793,7 +19793,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={65.565552,5,48.500854};
-										angles[]={-0,0.06816864,0};
+										angles[]={0,0.06816864,0};
 									};
 									title="MHQ 1";
 									description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
@@ -19805,7 +19805,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={65.320816,7.2059455,50.413456};
-										angles[]={-0,6.2772336,0};
+										angles[]={0,6.2772336,0};
 									};
 									side="Empty";
 									flags=4;
@@ -20063,7 +20063,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={78.197815,7.5393777,49.570019};
-										angles[]={-0,0.00064577186,0};
+										angles[]={0,0.00064577186,0};
 									};
 									side="Empty";
 									flags=4;
@@ -20123,7 +20123,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={88.693909,7.1761513,49.195545};
-										angles[]={-0,0.00062831852,0};
+										angles[]={0,0.00062831852,0};
 									};
 									side="Empty";
 									flags=4;
@@ -20343,7 +20343,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={78.202972,5,48.443367};
-				angles[]={-0,3.9513838,0};
+				angles[]={0,3.9513838,0};
 			};
 			title="Mechanized / Motorized Setup";
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -20355,7 +20355,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={88.956299,5,49.759598};
-				angles[]={-0,3.9513655,0};
+				angles[]={0,3.9513655,0};
 			};
 			title="Mechanized / Motorized Setup";
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -21025,7 +21025,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={52.96489,5,48.242809};
-						angles[]={-0,0.11193988,0};
+						angles[]={0,0.11193988,0};
 					};
 					title="MHQ 2";
 					description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Small";
@@ -21037,7 +21037,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={52.957809,7.1761513,49.145935};
-						angles[]={-0,0.0073827426,0};
+						angles[]={0,0.0073827426,0};
 					};
 					side="Empty";
 					flags=4;
@@ -21100,7 +21100,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={39.74836,5,49.00053};
-						angles[]={-0,0.11193988,0};
+						angles[]={0,0.11193988,0};
 					};
 					title="MHQ 3";
 					description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Boat";
@@ -21112,7 +21112,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={39.537807,8.3238735,48.703018};
-						angles[]={-0,0.0073827426,0};
+						angles[]={0,0.0073827426,0};
 					};
 					side="Empty";
 					flags=4;
