@@ -1,15 +1,15 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
-_insignia = "";
-_goggles = "rhs_googles_clear";
-_helmet = ["rhsusf_lwh_helmet_marpatwd_ess","rhsusf_lwh_helmet_marpatwd"];
+_insignia = "insignia_block82";
+_goggles = ["rhs_googles_clear","rhs_googles_black","rhs_ess_black","UK3CB_G_KLR_TAN","UK3CB_G_Neck_Shemag_KLR_tan","rhsusf_shemagh_od","rhsusf_shemagh2_od","rhsusf_shemagh_gogg_od","rhsusf_shemagh2_gogg_od","rhsusf_oakley_goggles_clr","G_Shades_Black","G_Bandanna_tan"];
+_helmet = ["rhsusf_lwh_helmet_marpatwd_ess","rhsusf_lwh_helmet_marpatwd","rhsusf_lwh_helmet_marpatwd_headset","rhsusf_lwh_helmet_marpatwd_headset_blk","rhsusf_lwh_helmet_marpatwd_headset_blk2","rhsusf_lwh_helmet_marpatwd_ess","rhsusf_mich_helmet_marpatwd","rhsusf_mich_helmet_marpatwd_alt","rhsusf_mich_helmet_marpatwd_alt_headset","rhsusf_mich_helmet_marpatwd_headset","rhsusf_mich_helmet_marpatwd_norotos","rhsusf_mich_helmet_marpatwd_norotos_arc","rhsusf_mich_helmet_marpatwd_norotos_arc_headset","rhsusf_mich_helmet_marpatwd_norotos_headset"];
 _OfficerHelmet = "rhs_8point_marpatwd";
-_uniform = "rhs_uniform_FROG01_wd";
-_vest = "rhsusf_spc_light";
-_backpack = "rhsusf_falconii_coy_gr";
+_uniform = ["UK3CB_ADM_B_U_CombatUniform_01_MAR","UK3CB_ADM_B_U_CombatUniform_Shortsleeve_01_MAR"];
+_vest = ["rhsusf_spc_light","rhsusf_spc_corpsman","rhsusf_spc_iar","rhsusf_spc_mg","rhsusf_spc_marksman","rhsusf_spc_patchless_radio","rhsusf_spc_rifleman","rhsusf_spc_sniper","rhsusf_spc_squadleader","rhsusf_spc"];
+_backpack = ["rhsusf_falconii_coy_gr","rhsusf_assault_eagleaiii_coy"];
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "tfw_ilbe_blade_wd";
+	_backpackRadio = "FRXA_tf_rt1523g_big_MARPAT_Woodlaand";
 };
 
 if (_role in ["ftl","sl"]) then {

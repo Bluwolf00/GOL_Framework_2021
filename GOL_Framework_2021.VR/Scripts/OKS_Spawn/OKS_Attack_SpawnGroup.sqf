@@ -1,17 +1,20 @@
 /*
 	OKS_Attack_SpawnGroup
-	[SpawnPosOrObject,TargetPosOrObject,UnitOrClassname,Side,ShouldAddStepWaypoint] spawn OKS_Attack_SpawnGroup;
-	[SpawnPosOrObject,TargetPosOrObject,UnitOrClassname,Side,ShouldAddStepWaypoint] execVM "Scripts\OKS_Dynamic\OKS_Attack_SpawnGroup.sqf";
+	[SpawnPosOrObject,ArrayOrObject,UnitOrClassname,Side,ShouldAddStepWaypoint] spawn OKS_Attack_SpawnGroup;
+	[SpawnPosOrObject,ArrayOrObject,UnitOrClassname,Side,ShouldAddStepWaypoint] execVM "Scripts\OKS_Dynamic\OKS_Attack_SpawnGroup.sqf";
 */
 
  	if(!isServer) exitWith {};
 
-	Params ["_Spawn","_TargetWaypoint","_ClassnameOrNumber","_Side","_StepWaypoint"];
+	Params [
+		["_Spawn",objNull,[objNull,[]]],
+		["_TargetWaypoints",objNull,[[],objNull]],
+		["_ClassnameOrNumber",5,[0]],
+		["_Side",east,[sideUnknown]],
+		["_StepWaypoint",false,[false]]
+	];
 	Private ["_Dir"];
 	
-	if(isNil "_StepWaypoint") then {
-		_StepWaypoint = false;
-	};
 	if(typeName _Spawn == "OBJECT") then {
 		_Dir = getDir _Spawn;
 		_Spawn = getPos _Spawn;
@@ -60,12 +63,26 @@
 	if(isNil "_Group") exitWith {false};
 	
 	/// Give Attack SAD Waypoint
-	if(_StepWaypoint) then {
+	if(_StepWaypoint && typeName _TargetWaypoint == "OBJECT") then {
 		_PreWaypointPos = _TargetWaypoint getPos [((_Spawn distance _TargetWaypoint) / 2), _TargetWaypoint getDir _Spawn];
 		_WP1 = _Group addWaypoint [_PreWaypointPos,25];
 		_WP1 setWaypointType "MOVE";
+	} else {
+		if(typeName _TargetWaypoint == "ARRAY") then {
+			{
+				if(_TargetWaypoint find _X == (count _TargetWaypoint - 1)) then {
+					_WP = _Group addWaypoint [_X,-1];
+					_WP setWaypointType "SAD";
+				} else {
+					_WP = _Group addWaypoint [_X,-1];
+					_WP setWaypointType "MOVE";					
+				}
+			} foreach _TargetWaypoint;
+		} else {
+			_WP2 = _Group addWaypoint [_TargetWaypoint,25];
+			_WP2 setWaypointType "SAD";
+		}
 	};
 
-	_WP2 = _Group addWaypoint [_TargetWaypoint,25];
-	_WP2 setWaypointType "SAD";
+
 
