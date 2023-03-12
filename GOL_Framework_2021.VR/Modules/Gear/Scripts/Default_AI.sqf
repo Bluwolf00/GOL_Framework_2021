@@ -57,7 +57,11 @@ switch (toLower(_role)) do {
 
 	case "ftl": {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
-		[_rifleGL, _rifleGL_mag_tr, _glHE] call _addPrimary;
+		if ((random 1) <= GOL_UGL_Chance) then {
+			[_rifleGL, _rifleGL_mag_tr, _glHE] call _addPrimary;
+		} else {
+			[_rifle, _rifle_mag_tr, ""] call _addPrimary;
+		};
 		_IFAK call _addToUniform;
 		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,13],[_glHE,1]] call _addToVest;
@@ -77,7 +81,7 @@ switch (toLower(_role)) do {
 		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,13]] call _addToVest;
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
-		if ((random 1) >= 0.4) then {
+		if ((random 1) <= GOL_LAT_Chance) then {
 			[_MAT, _MAT_mag, ""] call _addLaunchers;
 			["","","","",_backpack] call _addEquipment;
 			[[_MAT_mag,2]] call _addToBackpack;
@@ -86,12 +90,16 @@ switch (toLower(_role)) do {
 
 	case "g": {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
-		[_rifleGL, _rifleGL_mag_tr, _glHE] call _addPrimary;
+		if ((random 1) <= GOL_UGL_Chance) then {
+			[_rifleGL, _rifleGL_mag_tr, _glHE] call _addPrimary;
+		} else {
+			[_rifle, _rifle_mag_tr, ""] call _addPrimary;
+		};
 		_IFAK call _addToUniform;
 		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,13]] call _addToVest;
 		["", "", "", "", "", _nvg] call _addLinkedItems;
-		if ((random 1) >= 0.4) then {
+		if ((random 1) <= GOL_LAT_Chance) then {
 			[_LAT, _LAT_mag, ""] call _addLaunchers;
 			if (_LAT_ReUsable) then {
 				["","","","",_backpack] call _addEquipment;
