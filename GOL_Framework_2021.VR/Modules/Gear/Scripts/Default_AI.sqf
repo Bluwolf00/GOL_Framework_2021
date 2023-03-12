@@ -81,7 +81,7 @@ switch (toLower(_role)) do {
 		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,13]] call _addToVest;
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
-		if ((random 1) <= GOL_LAT_Chance) then {
+		if ((random 1) <= GOL_MAT_Chance) then {
 			[_MAT, _MAT_mag, ""] call _addLaunchers;
 			["","","","",_backpack] call _addEquipment;
 			[[_MAT_mag,2]] call _addToBackpack;

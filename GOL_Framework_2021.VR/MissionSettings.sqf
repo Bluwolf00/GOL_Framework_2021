@@ -4,8 +4,9 @@ GOL_ARSENAL_ALLOWED = 1;
 
 /* AI Gear Settings */
 // 0 = 0%, 1 = 100%
-GOL_LAT_Chance = 0.4;
-GOL_UGL_Chance = 0.6;
+GOL_LAT_Chance = 0.5;
+GOL_MAT_Chance = 0.3;
+GOL_UGL_Chance = 0.5;
 
 // ACE Carry/Drag Container Settings
 ACE_maxWeightCarry = 1200; 
