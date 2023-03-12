@@ -27,7 +27,7 @@
 		};
 
 		class Specialforces {
-			aimingAccuracy[] = {0.40, 0.42, 0.44};
+			aimingAccuracy[] = {0.50, 0.55, 0.6};
 			aimingShake[]	 = {1.00, 1.00, 1.00};
 			aimingSpeed[]	 = {1.00, 1.00, 1.00};
 			commanding[]	 = {0.70, 0.80, 0.90};
@@ -42,9 +42,9 @@
 		};
 
 		class Military {
-			aimingAccuracy[] = {0.32, 0.34, 0.36};
-			aimingShake[]	 = {0.80, 0.80, 0.80};
-			aimingSpeed[]	 = {0.80, 0.80, 0.80};
+			aimingAccuracy[] = {0.40, 0.42, 0.44};
+			aimingShake[]	 = {0.90, 0.90, 0.90};
+			aimingSpeed[]	 = {0.90, 0.90, 0.90};
 			commanding[]	 = {0.60, 0.70, 0.80};
 			courage[]		 = {0.40, 0.50, 0.60};
 			endurance[]		 = {0.80, 0.80, 0.80};
@@ -57,9 +57,9 @@
 		};
 
 		class Insurgents {
-			aimingAccuracy[] = {0.24, 0.25, 0.26};
-			aimingShake[]	 = {0.50, 0.70, 0.90};
-			aimingSpeed[]	 = {0.50, 0.70, 0.90};
+			aimingAccuracy[] = {0.32, 0.34, 0.36};
+			aimingShake[]	 = {0.70, 0.80, 0.90};
+			aimingSpeed[]	 = {0.70, 0.73, 0.75};
 			commanding[]	 = {0.60, 0.70, 0.80};
 			courage[]		 = {0.20, 0.30, 0.40};
 			endurance[]		 = {0.60, 0.70, 0.80};
