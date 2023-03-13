@@ -8,6 +8,10 @@ GOL_LAT_Chance = 0.5;
 GOL_MAT_Chance = 0.3;
 GOL_UGL_Chance = 0.5;
 
+/* AI Vehicle Settings */
+// Removes HE/FRAG rounds from SPG-9, T-** Tanks and BMP1s.
+GOL_Remove_HE_From_StaticAndVehicle = true;
+
 // ACE Carry/Drag Container Settings
 ACE_maxWeightCarry = 1200; 
 ACE_maxWeightDrag = 2000;

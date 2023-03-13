@@ -49,12 +49,18 @@
 	};
 	if(typeName _ClassnameOrNumber == "STRING") then {
 		_Vehicle = CreateVehicle [_ClassnameOrNumber,_Spawn];
+		if(GOL_Remove_HE_From_StaticAndVehicle) then {
+			[_Vehicle] spawn OKS_RemoveVehicleHE;	
+		};	
 		_Vehicle setDir _Dir;
 		_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 	};
 	if(typeName _ClassnameOrNumber == "ARRAY") then {
 		_ClassnameOrNumber = selectRandom _ClassnameOrNumber;
 		_Vehicle = CreateVehicle [_Classname,_Spawn];
+		if(GOL_Remove_HE_From_StaticAndVehicle) then {
+			[_Vehicle] spawn OKS_RemoveVehicleHE;	
+		};	
 		_Vehicle setDir _Dir;
 		_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 	};

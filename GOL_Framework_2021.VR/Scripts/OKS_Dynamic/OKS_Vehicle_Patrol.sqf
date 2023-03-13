@@ -58,6 +58,9 @@
 
 		waitUntil{sleep 5; count (nearestObjects [_SafePos,["LandVehicle"],30]) <= 0 };
 		_Vehicle = CreateVehicle [_VehicleClass, _SafePos, [], 0, "NONE"];
+		if(GOL_Remove_HE_From_StaticAndVehicle) then {
+			[_Vehicle] spawn OKS_RemoveVehicleHE;	
+		};	
 		_Vehicle setDir _Dir;
 
 		// Count (TypeOf _Vehicle call BIS_fnc_AllTurrets) == 0

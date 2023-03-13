@@ -98,6 +98,9 @@ if ((count _vehicleArray) > 0) then {
 			_collision = "FLY";
 		};
 		_vehicle = createVehicle [_class, _pos, [], 0, _collision];
+		if(GOL_Remove_HE_From_StaticAndVehicle) then {
+			[_vehicle] spawn OKS_RemoveVehicleHE;	
+		};	
 		_vehicle setDir _dir;
 		_vehicle setPosATL _pos;
 		_vehicle setVectorUp surfaceNormal (position _vehicle);

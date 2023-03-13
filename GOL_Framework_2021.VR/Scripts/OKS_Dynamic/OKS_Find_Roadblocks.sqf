@@ -188,6 +188,9 @@ For "_i" from 1 to _RoadblockCount do {
 		if((random 1) <= _VehicleChance) then {
 			if(_Debug_Variable) then {SystemChat str _VehicleClass};
 			_Vehicle = createVehicle [_VehicleClass, getMarkerPos _Marker, [], 0, "NONE"];
+			if(GOL_Remove_HE_From_StaticAndVehicle) then {
+				[_Vehicle] spawn OKS_RemoveVehicleHE;	
+			};	
 			_Vehicle setDir _BaseDir;
 			_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 			_Vehicle engineOn true;

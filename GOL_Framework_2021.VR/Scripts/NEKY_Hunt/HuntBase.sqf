@@ -144,10 +144,16 @@ while {alive _Base && _Waves > 0} do
 						if(typeName _Soldiers == "ARRAY") then {
 							_VehicleClass = _Soldiers call BIS_fnc_selectRandom;
 							_Vehicle = CreateVehicle [_VehicleClass, _SpawnPos, [], 0, "CAN_COLLIDE"];
+							if(GOL_Remove_HE_From_StaticAndVehicle) then {
+								[_Vehicle] spawn OKS_RemoveVehicleHE;	
+							};	
 						}
 						else
 						{
 							_Vehicle = CreateVehicle [_Soldiers, _SpawnPos, [], 0, "CAN_COLLIDE"];
+							if(GOL_Remove_HE_From_StaticAndVehicle) then {
+								[_Vehicle] spawn OKS_RemoveVehicleHE;	
+							};	
 						};
 
 						_Vehicle setDir getDir _SpawnPos;

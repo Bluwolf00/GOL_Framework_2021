@@ -57,6 +57,9 @@ if ( random 1 <= _presence && { call compile _preCondition } ) then {
 				_veh = createSimpleObject [ _type, [0,0,500] ];
 			}else{
 				_veh = createVehicle [ _type, [0,0,500], [], 0, "CAN_COLLIDE" ];
+				if(GOL_Remove_HE_From_StaticAndVehicle) then {
+					[_veh] spawn OKS_RemoveVehicleHE;	
+				};		
 				_veh enableSimulationGlobal false;
 			};
 
@@ -110,6 +113,9 @@ if ( random 1 <= _presence && { call compile _preCondition } ) then {
 				_veh = createSimpleObject [ _type, [0,0,500] ];
 			}else{
 				_veh = createVehicle [ _type, [0,0,500], [], 0, "CAN_COLLIDE" ];
+				if(GOL_Remove_HE_From_StaticAndVehicle) then {
+					[_veh] spawn OKS_RemoveVehicleHE;	
+				};		
 				_veh enableSimulationGlobal false;
 			};
 		};
