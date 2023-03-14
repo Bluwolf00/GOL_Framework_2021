@@ -2,7 +2,6 @@ Params ["_Vehicle"];
 if({_Vehicle isKindOf _X} count ["TrackedAPC","Tank","WheeledAPC","Car","StaticWeapon"] > 0) then {
 	if(["BMP", typeOf _Vehicle, false] call BIS_fnc_inString) then {
 		if(GOL_Remove_ATGM_FromVehicles) then {
-			systemChat "wtf";
 			_Vehicle removeMagazinesTurret ["rhs_mag_9m14m",[0]];
 			_Vehicle removeMagazinesTurret ["rhs_mag_9m113M",[0]];	
 			[_Vehicle,nil,["maljutka_hide_source",1]] call BIS_fnc_initVehicle;
