@@ -16,6 +16,7 @@ GOL_Static_Enable_Refresh = 15;
 /* AI Vehicle Settings */
 // Removes HE/FRAG rounds from SPG-9, T-** Tanks and BMP1s.
 GOL_Remove_HE_From_StaticAndVehicle = true;
+GOL_Remove_ATGM_FromVehicles = true;
 
 // ACE Carry/Drag Container Settings
 ACE_maxWeightCarry = 1200; 
