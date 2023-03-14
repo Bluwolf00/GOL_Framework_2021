@@ -1,7 +1,7 @@
 /*
 	OKS_Rush_SpawnGroup
-	[SpawnPos,UnitsPerBase,Side,Range] spawn OKS_Rush_SpawnGroup;
-	[SpawnPos,UnitsPerBase,Side,Range] execVM "Scripts\OKS_Dynamic\OKS_Rush_SpawnGroup.sqf";
+	[SpawnPos,UnitsPerBase,Side,Range,[]] spawn OKS_Rush_SpawnGroup;
+	[SpawnPos,UnitsPerBase,Side,Range,[]] execVM "Scripts\OKS_Dynamic\OKS_Rush_SpawnGroup.sqf";
 */
 
  	if(!isServer) exitWith {};
@@ -27,7 +27,7 @@
 		};
 		sleep 0.5;
 	};
-	{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",2]; _Array pushBackUnique _X } foreach units _Group;
+	{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill"]; _Array pushBackUnique _X } foreach units _Group;
 	Call Compile Format ["PublicVariable '%1'",_Array];
 
 	/* 

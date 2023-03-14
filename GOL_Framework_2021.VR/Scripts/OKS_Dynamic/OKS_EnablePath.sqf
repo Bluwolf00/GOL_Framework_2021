@@ -15,8 +15,13 @@
 			if(_Debug_Variable) then { systemChat format ["Players Near Garrison - %1",_closePlayers]};
 			if(Random 1 <= _Chance) then {
 				_Unit = selectRandom _Units;
-				_Unit enableAI "PATH";
-				if(_Debug_Variable) then { systemChat format ["Garrison Unit Detached: %1",_Unit]};
+
+				If(isNull (ObjectParent _Unit)) then {
+					_Unit enableAI "PATH";
+					if(_Debug_Variable) then { systemChat format ["Garrison Unit Detached: %1",_Unit]};
+				} else {
+					if(_Debug_Variable) then { systemChat format ["Ignored (Unit in Vehicle): %1",_Unit]};
+				};
 			};
 		};
  		sleep _Sleep;

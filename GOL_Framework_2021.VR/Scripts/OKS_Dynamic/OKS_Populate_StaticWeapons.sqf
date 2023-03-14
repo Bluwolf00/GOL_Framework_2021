@@ -41,10 +41,11 @@
 
 			case "OBJECT":{
 				_Statics = Vehicles select {_X isKindOf "StaticWeapon" && _X inArea _Position && _X emptyPositions "gunner" > 0};
-				_StaticGroup = CreateGroup _Side;
-				_StaticGroup setVariable ["GOL_IsStatic",true,true];
+
 				if(!(_Statics isEqualTo [])) then {
 					{
+						_StaticGroup = CreateGroup _Side;
+						_StaticGroup setVariable ["GOL_IsStatic",true,true];
 						_Unit = _StaticGroup CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,0], [], 5, "NONE"];
 						_Unit setRank "PRIVATE";
 						//systemChat str [_Unit,_X];
@@ -59,11 +60,12 @@
 			case "ARRAY":{
 				_Statics = nearestObjects [_Position,["StaticWeapon"],_Range];
 				_Statics = _Statics select {_X emptyPositions "gunner" > 0};
-				_StaticGroup = CreateGroup _Side;
-				_StaticGroup setVariable ["GOL_IsStatic",true,true];
+
 
 				if(!(_Statics isEqualTo [])) then {
 					{
+						_StaticGroup = CreateGroup _Side;
+						_StaticGroup setVariable ["GOL_IsStatic",true,true];
 						_Unit = _StaticGroup CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,0], [], 5, "NONE"];
 						_Unit setRank "PRIVATE";
 						//systemChat str [_Unit,_X];
