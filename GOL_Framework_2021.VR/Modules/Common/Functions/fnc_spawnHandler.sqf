@@ -233,6 +233,9 @@ if !(_waypointArray isEqualTo []) then {
 } else {
 	_group setVariable ["lambs_danger_disableGroupAI", true];
 	_group setVariable ["GOL_IsStatic",true,true];
+	if(!isNil "OKS_EnablePath") then {
+		[_group,GOL_Static_Enable_Chance,GOL_Static_Enable_Refresh] spawn OKS_EnablePath;
+	};	
 	//_group setVariable ["acex_headless_blacklist",true];
 };
 

@@ -55,5 +55,5 @@
 		_Group setVariable ["GOL_IsStatic",true,true];
 		{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
 		if(_Side isNotEqualTo civilian) then {
-			[_Group,0.3,15] spawn OKS_EnablePath;
+			[_Group,GOL_Static_Enable_Chance,GOL_Static_Enable_Refresh] spawn OKS_EnablePath;
 		};

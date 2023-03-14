@@ -8,6 +8,11 @@ GOL_LAT_Chance = 0.5;
 GOL_MAT_Chance = 0.3;
 GOL_UGL_Chance = 0.5;
 
+/* AI Static Settings */
+// 0 = 0%, 1 = 100%
+GOL_Static_Enable_Chance = 0.3;
+GOL_Static_Enable_Refresh = 15;
+
 /* AI Vehicle Settings */
 // Removes HE/FRAG rounds from SPG-9, T-** Tanks and BMP1s.
 GOL_Remove_HE_From_StaticAndVehicle = true;
