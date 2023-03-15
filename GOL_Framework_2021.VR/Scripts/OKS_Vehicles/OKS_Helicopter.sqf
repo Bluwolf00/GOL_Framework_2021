@@ -58,6 +58,24 @@ OKS_Helicopter_Code = {
 	_Vehicle addItemCargoGlobal ["Toolkit",2];
 	_Vehicle addMagazineCargoGlobal ["SatchelCharge_Remote_Mag",5];
 
+	// Add Extra Flares
+
+	_CMWeapons = (_Vehicle weaponsTurret [-1]) select {["CM", _X,false] call BIS_fnc_inString};
+
+	{
+		_CMWeapon = _X;
+		systemchat str _CMWeapon;
+		_FlareMag = (getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines")
+			select 
+				(count (getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines"))) - 1 );
+		{_Vehicle removeMagazinesTurret [_X,[-1]]} forEach getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines");
+		systemchat str _FlareMag;
+		_Vehicle addMagazineTurret [_FlareMag,[-1]];
+		_Vehicle addMagazineTurret [_FlareMag,[-1]];
+	} foreach _CMWeapons;
+
+	_Vehicle setVehicleAmmo 1;
+	
 	// Created by Neko-Arrow - Thanks very much
 	if([_Vehicle] call OKS_isWhiteList) then {
 		_Vehicle addEventHandler ["HandleDamage",
@@ -93,7 +111,6 @@ OKS_Helicopter_Code = {
 sleep 5;
 Private "_Array";
 if(isNull _Vehicle) then {
-
 	{ if(_X isKindOf "Helicopter") then {[_X,_ShouldDisableThermal,_shouldDisableNVG] spawn OKS_Helicopter_Code; if(_Debug_Variable) then { systemChat format["Helicopter Script added to %1",_X] }}} foreach vehicles;
 } else {
 

@@ -209,6 +209,20 @@ if !(((Count _Turrets) isEqualTo 0) && ((Count _Pylons) isEqualTo 0)) then
 	Sleep 2;
 };
 
+	// Add Extra Flares
+	_CMWeapons = (_Vehicle weaponsTurret [-1]) select {["CM", _X,false] call BIS_fnc_inString};
+	{
+		_CMWeapon = _X;
+		systemchat str _CMWeapon;
+		_FlareMag = (getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines")
+			select 
+				(count (getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines"))) - 1 );
+		{_Vehicle removeMagazinesTurret [_X,[-1]]} forEach getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines");
+		systemchat str _FlareMag;
+		_Vehicle addMagazineTurret [_FlareMag,[-1]];
+		_Vehicle addMagazineTurret [_FlareMag,[-1]];
+	} foreach _CMWeapons;
+
 /// Drongos APS
 _Veh call DAPS_fnc_RearmAPS;
 sleep 2;
