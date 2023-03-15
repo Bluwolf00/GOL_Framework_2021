@@ -35,7 +35,8 @@ if({_Vehicle isKindOf _X} count ["TrackedAPC","Tank","WheeledAPC","Car","StaticW
 		_Vehicle removeMagazinesTurret ["rhs_mag_3of26_7",[0]]; // RHS T90
 	};
 	if(["SPG", typeOf _Vehicle, false] call BIS_fnc_inString) then {
-		_Vehicle removeMagazinesTurret ["rhs_mag_og9v",[0]]; // SPG 1
+		_Vehicle removeMagazinesTurret ["rhs_mag_og9v",[0]]; // SPG
+		_Vehicle removeMagazinesTurret ["rhs_mag_og9v",[1]]; // SPG
 		_Vehicle removeMagazinesTurret ["rhs_mag_og9vm",[0]]; // SPG-9M
 	};
 	if(["BRM", typeOf _Vehicle, false] call BIS_fnc_inString) then {
