@@ -40,8 +40,8 @@ GOL_OKS_HUNT = 0;
 GOL_OKS_Enemy_Talk = 0;
 
 /* HuntBases */
-GOL_NEKY_HUNT = 0;
-GOL_NEKY_AIRDROP = 0;
+GOL_NEKY_HUNT = 1;
+GOL_NEKY_AIRDROP = 1;
 
 /* HuntBases Settings */
 NEKY_Hunt_MaxCount = 40;
@@ -50,8 +50,8 @@ publicVariable "NEKY_Hunt_MaxCount";
 publicVariable "NEKY_Hunt_CurrentCount";
 
 /* Optional Settings */
-GOL_AAC_SETUP = 0; // Adds ability for pilots to switch seats more freely
-GOL_AAC_DoorGunReplacement = false; // Changes miniguns to Yak-9s for better accuracy of tracers
+GOL_AAC_SETUP = 1; // Adds ability for pilots to switch seats more freely
+GOL_AAC_DoorGunReplacement = false; // Changes miniguns to Yak-9s for better accuracy of tracers. Causes hearing damage so needs to be fired at a slower rate.
 GOL_OKS_TASK = 0;
 GOL_OKS_TANKER = 0;
 GOL_NEKY_TASK = 0;

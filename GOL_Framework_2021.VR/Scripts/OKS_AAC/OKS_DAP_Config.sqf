@@ -66,10 +66,7 @@ OKS_AIR_CONFIG = {
 };
 
 if(isNull _Vehicle) then {
-	while {true} do {
-		{ _null = [_X,_ShouldChangeDoorGuns] spawn OKS_AIR_CONFIG; } forEach entities "helicopter";
-		sleep 30;
-	};
+	{[_X,_ShouldChangeDoorGuns] spawn OKS_AIR_CONFIG; } forEach entities "helicopter";
 } else {
 	[_Vehicle,_ShouldChangeDoorGuns] spawn OKS_AIR_CONFIG; 
 };

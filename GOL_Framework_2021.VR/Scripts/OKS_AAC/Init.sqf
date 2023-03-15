@@ -13,4 +13,4 @@ OKS_Interact_Pilot = compile preprocessFileLineNumbers "Scripts\OKS_AAC\OKS_Inte
 
 sleep 5;
 
-[null,GOL_AAC_DoorGunReplacement] spawn OKS_DAP_Config;
+[nil,GOL_AAC_DoorGunReplacement] spawn OKS_DAP_Config;
