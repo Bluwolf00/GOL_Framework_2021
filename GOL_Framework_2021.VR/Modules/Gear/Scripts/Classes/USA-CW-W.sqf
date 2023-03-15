@@ -6,10 +6,10 @@ _goggles = ["rhsusf_shemagh_od","rhsusf_shemagh2_od","rhsusf_shemagh_gogg_od","r
 _helmet = ["UK3CB_CW_US_B_LATE_H_PASGT_02_WDL","UK3CB_CW_US_B_LATE_H_PASGT_01_WDL"];
 _OfficerHelmet = "UK3CB_AAF_B_H_Beret_Army_Off";
 _uniform = ["UK3CB_B_U_CombatUniform_03_WDL","UK3CB_CW_US_B_LATE_U_CombatUniform_01_WDL","UK3CB_CW_US_B_LATE_U_CombatUniform_02_WDL","UK3CB_CW_US_B_LATE_U_CombatUniform_03_WDL","UK3CB_CW_US_B_LATE_U_CombatUniform_04_WDL"];
-_vest = "UK3CB_ADA_B_V_MBAV_WDL";
+_vest = ["UK3CB_CW_US_B_LATE_V_PASGT_Crew_Vest","UK3CB_CW_US_B_LATE_V_PASGT_Medic_Vest","UK3CB_CW_US_B_LATE_V_PASGT_MG_Vest","UK3CB_CW_US_B_LATE_V_PASGT_Rif_Vest"];
 _backpack = "UK3CB_B_Kitbag_WDL_01";
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "UK3CB_LDF_B_B_RadioBag_GEO";
+	_backpackRadio = "UK3CB_ION_B_B_RadioBag_OLI";
 };
 
 if(_role in ["sl","pl"]) then {
@@ -22,11 +22,10 @@ if (_role in ["ag","ammg","lr","ab","hat","ahat"]) then {
 };
 
 if (_role isEqualTo "crew") then {
-	_helmet = "rhsusf_cvc_green_alt_helmet";
 	_vest = "UK3CB_CW_US_B_LATE_V_PASGT_Crew_Vest";
 };
 if (_role isEqualTo "p") then {
-	_helmet = "rhsusf_hgu56p";
+	_helmet = "UK3CB_H_Pilot_Helmet";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
