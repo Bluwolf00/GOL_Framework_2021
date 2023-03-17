@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6681;
+		nextID=6702;
 	};
 	class Camera
 	{
-		pos[]={89.757004,189.71104,-51.549717};
-		dir[]={0.0030211706,-0.79765719,0.60313654};
-		up[]={0.0039950637,0.60311037,0.79764962};
-		aside[]={1.0000128,3.0188289e-007,-0.0050099362};
+		pos[]={86.150795,189.71104,-63.372375};
+		dir[]={-0.003783582,-0.78730124,0.61658949};
+		up[]={-0.0048314729,0.61656505,0.78728932};
+		aside[]={1.0000056,2.8639897e-007,0.0061355676};
 	};
 };
 binarizationWanted=0;
@@ -261,18 +261,17 @@ dlcs[]=
 randomSeed=15706391;
 class ScenarioData
 {
-	author="Editor";
 	saving=0;
 	respawnDialog=0;
 	disabledAI=1;
 	respawn=3;
-	respawnDelay=20;
+	respawnDelay=120;
 	enableTeamSwitch=0;
 	class Header
 	{
-		gameType="Coop";
+		gameType="COOP";
 		minPlayers=1;
-		maxPlayers=38;
+		maxPlayers=79;
 	};
 };
 class CustomAttributes
@@ -302,13 +301,13 @@ class CustomAttributes
 				class data
 				{
 					singleType="BOOL";
-					value=1;
+					value=0;
 				};
 			};
 		};
 		nAttributes=2;
 	};
-	class Category2
+	class Category3
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -468,7 +467,7 @@ class CustomAttributes
 					singleType="ARRAY";
 					class value
 					{
-						items=1;
+						items=2;
 						class Item0
 						{
 							class data
@@ -477,13 +476,21 @@ class CustomAttributes
 								value="Counter";
 							};
 						};
+						class Item1
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Wave";
+							};
+						};
 					};
 				};
 			};
 		};
 		nAttributes=4;
 	};
-	class Category3
+	class Category4
 	{
 		name="Scenario";
 		class Attribute0
@@ -14180,7 +14187,6 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Mission Name";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
