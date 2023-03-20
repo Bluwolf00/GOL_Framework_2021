@@ -20,3 +20,4 @@ OKS_Surrender = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Surr
 OKS_HVT_MoraleHit_Intel = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_HVT_MoraleHit_Intel.sqf";
 OKS_AlarmSound = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_AlarmSound.sqf";
 OKS_PowerGenerator = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_PowerGenerator.sqf";
+OKS_Destroy_Houses = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Destroy_Houses.sqf";

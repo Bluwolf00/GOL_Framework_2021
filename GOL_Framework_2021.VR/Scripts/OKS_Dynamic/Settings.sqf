@@ -12,11 +12,11 @@ Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tan
 	* = Not updated with 3CB thus broken <<< Important!
 
 BLUFOR FACTIONS:       CDF* LDF* TANOA*
-OPFOR FACTIONS:        CHEDAKI* TKA TURKEY* DESERT_INSURGENTS RUSSIA_MODERN SOVIET DESERT_MILITIA COMMUNIST_REBELS
+OPFOR FACTIONS:        CHEDAKI TKA TURKEY* DESERT_INSURGENTS RUSSIA_MODERN SOVIET DESERT_MILITIA COMMUNIST_REBELS
 INDEPENDENT FACTIONS:  NAPA* SYRIA*
 
 */
-Private _Faction = "SYNDIKAT";
+Private _Faction = "CHEDAKI";
 Switch (_Faction) do {
 	case "SYNDIKAT": {
 
@@ -151,14 +151,14 @@ Switch (_Faction) do {
 	};
 	case "CHEDAKI":
 	{
-		_Wheeled = ["rhsgref_ins_uaz_dshkm","rhsgref_ins_uaz_spg9","rhsgref_ins_uaz_open","rhsgref_ins_uaz","rhsgref_ins_gaz66"];
-		_APC = ["rhsgref_ins_btr60","rhsgref_ins_btr70","rhsgref_ins_bmd1","rhsgref_ins_bmd1p","rhsgref_ins_bmd2"];
-		_Tank = ["rhsgref_ins_t72ba"];
+		_Wheeled = ["rhsgref_ins_uaz_dshkm","rhsgref_ins_uaz_spg9","UK3CB_CHD_W_O_MTLB_KPVT", "UK3CB_CHD_W_O_MTLB_PKT", "UK3CB_CHD_W_O_BRDM2", "UK3CB_CHD_W_O_LR_Open", "UK3CB_CHD_W_O_LR_Closed", "UK3CB_CHD_W_O_Zil131_Covered", "UK3CB_CHD_W_O_Gaz66_Covered"];
+		_APC = ["UK3CB_CHD_W_O_MTLB_BMP", "UK3CB_CHD_W_O_MTLB_KPVT", "UK3CB_CHD_W_O_MTLB_Cannon", "UK3CB_CHD_W_O_BRM1K", "UK3CB_CHD_W_O_BMP1", "UK3CB_CHD_W_O_BMD1PK", "UK3CB_CHD_W_O_BMD2"];
+		_Tank = ["rhsgref_ins_t72ba", "UK3CB_CHD_W_O_T34", "UK3CB_CHD_W_O_T55"];
 		_Artillery = ["rhsgref_ins_d30","rhsgref_ins_2b14","rhsgref_ins_2s1","rhsgref_ins_BM21"];
-		_AntiAir = ["rhsgref_ins_zsu234"];
-		_Helicopter = ["rhsgref_ins_Mi8amt"];
-		_Transport = ["rhsgref_ins_ural"];
-		_Supply = ["rhsgref_ins_gaz66_r142","rhsgref_ins_gaz66_ap2","rhsgref_ins_kraz255b1_fuel","rhsgref_ins_ural_repair","rhsgref_ins_gaz66_ammo"];
+		_AntiAir = ["UK3CB_CHD_O_Ural_Zu23", "UK3CB_CHD_O_Gaz66_ZU23", "UK3CB_CHD_O_MTLB_ZU23","rhsgref_ins_ZU23"];
+		_Helicopter = ["UK3CB_CHD_W_O_Mi8", "UK3CB_CHD_W_O_Mi8AMT", "UK3CB_CHD_W_O_Mi8AMTSh"];
+		_Transport = ["UK3CB_CHD_W_O_Kamaz_Covered"];
+		_Supply = ["UK3CB_CHD_W_O_Ural_Ammo", "UK3CB_CHD_W_O_Ural_Repair", "UK3CB_CHD_W_O_Ural_Fuel"];
 		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
 	};
 	case "TKA":
@@ -257,6 +257,7 @@ Switch (_Side) do
 		// Unit classes are compatible with multiple class names, will select randomly. Example: ["B_Pilot_F","B_Crewman_F"];
 		_Leaders = ["B_Soldier_SL_F","B_Soldier_TL_F"];	// Squad/Team leader classes.
 		_Units = [
+			"B_Soldier_LAT_F",
 			"B_Soldier_AR_F",
 			"B_medic_F",
 			"B_Soldier_GL_F",
@@ -264,8 +265,8 @@ Switch (_Side) do
 			"B_soldier_M_F",
 			"B_Soldier_F",
 			"B_Soldier_F",
-			"B_Soldier_F",
-			"B_Soldier_LAT_F"
+			"B_Soldier_F"
+			
 		]; // Class names for infantry units.
 		_Officer = ["B_officer_F"];
 		_SideMarker = "b_inf";
@@ -276,6 +277,7 @@ Switch (_Side) do
 	{
 		_Leaders = ["O_Soldier_SL_F","O_Soldier_TL_F"];
 		_Units = [
+			"O_Soldier_LAT_F",
 			"O_Soldier_AR_F",
 			"O_medic_F",
 			"O_Soldier_GL_F",
@@ -283,8 +285,7 @@ Switch (_Side) do
 			"O_soldier_M_F",
 			"O_Soldier_F",
 			"O_Soldier_F",
-			"O_Soldier_F",
-			"O_Soldier_LAT_F"
+			"O_Soldier_F"
 		];
 		_Officer = ["O_officer_F"];
 		_SideMarker = "o_inf";
@@ -295,14 +296,14 @@ Switch (_Side) do
 	{
 		_Leaders = ["I_Soldier_SL_F","I_Soldier_TL_F"];
 		_Units = [
+			"I_Soldier_LAT_F",
 			"I_Soldier_AR_F",
 			"I_medic_F",
 			"I_Soldier_GL_F",
 			"I_soldier_M_F",
 			"I_Soldier_F",
 			"I_Soldier_F",
-			"I_Soldier_F",
-			"I_Soldier_LAT_F"
+			"I_Soldier_F"		
 		];
 		_Officer = ["I_officer_F"];
 		_SideMarker = "n_inf";

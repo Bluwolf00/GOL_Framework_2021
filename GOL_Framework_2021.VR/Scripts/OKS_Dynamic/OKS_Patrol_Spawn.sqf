@@ -33,7 +33,11 @@
 				_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [_SpawnPos select 0,_SpawnPos select 1,0], [], 30, "NONE"];
 				_Unit setRank "SERGEANT";
 			} else {
-				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_SpawnPos select 0,_SpawnPos select 1,0], [], 30, "NONE"];
+				if(count (units _Group) == 1) then {
+					_Unit = _Group CreateUnit [(_Units select 0), [_SpawnPos select 0,_SpawnPos select 1,0], [], 30, "NONE"];
+				} else {
+					_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_SpawnPos select 0,_SpawnPos select 1,0], [], 30, "NONE"];	
+				}				
 			};
 			sleep 1;
 		};

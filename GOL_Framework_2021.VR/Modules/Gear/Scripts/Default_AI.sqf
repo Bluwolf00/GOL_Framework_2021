@@ -176,11 +176,13 @@ switch (toLower(_role)) do {
 	case "mat": {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		[_rifle, _rifle_mag_tr, ""] call _addPrimary;
-		[_MAT, _MAT_mag, ""] call _addLaunchers;
 		_IFAK call _addToUniform;
 		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,12]] call _addToVest;
-		[[_MAT_mag,1],[_MAT_mag_HE,2]] call _addToBackpack;
+		if ((random 1) <= GOL_MAT_Chance) then {
+			[_MAT, _MAT_mag, ""] call _addLaunchers;
+			[[_MAT_mag,1],[_MAT_mag_HE,2]] call _addToBackpack;
+		};	
 		["", "", "", "", "", _nvg] call _addLinkedItems;
 	};
 
