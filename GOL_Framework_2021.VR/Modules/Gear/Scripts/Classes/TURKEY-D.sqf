@@ -2,11 +2,11 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "";
-_goggles = ["rhsusf_shemagh_od","rhsusf_shemagh2_od"];
-_helmet = "acp_gol_TUR_TLF_H_HelmetB_TUR_TLF";
+_goggles = ["rhsusf_shemagh2_tan","rhsusf_shemagh_tan","G_Bandanna_khk","UK3CB_G_KLR_TAN","rhsusf_shemagh_gogg_tan","rhsusf_shemagh2_gogg_tan","acp_gol_TUR_TLF_G_Balaclava_TI_G_TUR_TLF_F","acp_gol_TUR_TLF_G_Balaclava_TI_TUR_TLF_F"];
+_helmet = ["acp_gol_TUR_TLF_H_HelmetB_TUR_TLF","acp_gol_TUR_TLF_H_HelmetB_camo_TUR_TLF","acp_gol_TUR_TLF_H_HelmetSpecB_TUR_TLF_insignia","acp_gol_TUR_TLF_H_HelmetB_light_TUR_TLF_insignia"];
 _OfficerHelmet = "UK3CB_TKP_B_H_Beret";
-_uniform = ["acp_gol_TUR_TLF_U_I_E_Uniform_shortsleeve_TUR_TLF_01_F_flag","acp_gol_TUR_TLF_U_I_E_Uniform_TUR_TLF_01_F_insignia"];
-_vest = "acp_gol_TUR_TLF_V_PlateCarrier1_TUR_TLF_insignia";
+_uniform = ["acp_gol_TUR_TLF_U_I_E_Uniform_shortsleeve_TUR_TLF_01_F_flag","acp_gol_TUR_TLF_U_I_E_Uniform_TUR_TLF_01_F_insignia","acp_gol_TUR_TLF_U_BG_Guerrilla_6_TUR_TLF_insignia","acp_gol_TUR_TLF_U_B_CTRG_Soldier_TUR_TLF_F_insignia","UK3CB_FIA_B_U_M10_CombatUniform_TRK01_01","UK3CB_FIA_B_U_M10_CombatUniform_TRK01_02","acp_gol_TUR_TLF_U_I_CombatUniform_TUR_TLF_insignia","acp_gol_TUR_TLF_U_I_CombatUniform_shortsleeve_TUR_TLF_insignia"];
+_vest = ["acp_gol_TUR_TLF_V_PlateCarrier1_TUR_TLF_insignia","acp_gol_TUR_TLF_V_PlateCarrier2_TUR_TLF_insignia","acp_gol_TUR_TLF_V_CarrierRigKBT_01_light_TUR_TLF_F","acp_gol_TUR_TLF_V_PlateCarrierIA1_TUR_TLF"];
 _backpack = "acp_gol_TUR_TLF_B_FieldPack_TUR_TLF";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
@@ -70,8 +70,9 @@ _LAT = ["rhs_weap_m72a7", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "";
 _LAT_ReUsable = false;
 
-_MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
-_MAT_mag = "RPG7_F";
+_MAT = ["launch_RPG7_F", _silencer, _pointer, "rhs_acc_pgo7v3", _bipod];
+_MAT_mag = "rhs_rpg7_PG7VM_mag";
+_MAT_mag_HE = "rhs_rpg7_TBG7V_mag";
 
 _HAT = ["launch_O_Vorona_brown_F", _silencer, _pointer, _sight, _bipod];
 _HAT_mag = "Vorona_HEAT";
