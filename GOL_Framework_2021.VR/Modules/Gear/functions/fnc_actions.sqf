@@ -14,10 +14,15 @@
 */
 #include "script_Component.hpp"
 #define	bullShit nil,1,false,false,"",""
+#define	ALL nil,1,false,false,"","!([configFile >> 'CfgVehicles' >> typeOf _this] call BIS_fnc_displayName in ['Squad Leader','Team Leader','Grenadier','Autorifleman'])"
+#define	GL nil,1,false,false,"","[configFile >> 'CfgVehicles' >> typeOf _this] call BIS_fnc_displayName in ['Squad Leader','Team Leader','Grenadier']"
+#define	LMG nil,1,false,false,"","[configFile >> 'CfgVehicles' >> typeOf _this] call BIS_fnc_displayName in ['Autorifleman']"
 params [["_unit", objNull, [objNull]]];
 
 if(isNil "GOL_ARSENAL_ALLOWED" || GOL_ARSENAL_ALLOWED isEqualTo 1) then {
-	_unit addAction ["<t color='#ffff00'>Attachment Menu</t>", {[_this select 0, player] call ace_arsenal_fnc_openBox},bullShit,5];
+	_unit addAction ["<t color='#ffff00'>Attachment Menu</t>", {[_this select 0, player] call ace_arsenal_fnc_openBox},ALL,5];
+	_unit addAction ["<t color='#ffff00'>Attachment Menu (GL)</t>", {[GOL_Arsenal_GL, player] call ace_arsenal_fnc_openBox},GL,5];
+	_unit addAction ["<t color='#ffff00'>Attachment Menu (LMG)</t>", {[GOL_Arsenal_LMG, player] call ace_arsenal_fnc_openBox},LMG,5];
 };
 // Adds ACE Arsenal for Attachments
 /*
