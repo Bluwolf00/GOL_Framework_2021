@@ -1,6 +1,7 @@
 /* Gear Settings */
 GOL_MAGNIFIED_OPTICS = 0;
 GOL_OPTICS = 1;
+GOL_WEAPONS = 0;
 GOL_ARSENAL_ALLOWED = 1;
 
 /* AI Gear Settings */

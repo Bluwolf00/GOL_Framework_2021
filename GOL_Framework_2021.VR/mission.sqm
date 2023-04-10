@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2663;
+		nextID=2665;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6744;
+		nextID=6765;
 	};
 	class Camera
 	{
-		pos[]={55.977592,88.310181,-25.298679};
-		dir[]={0.012624972,-0.64104402,0.76744199};
-		up[]={0.010544428,0.76748961,0.6409784};
-		aside[]={0.99990225,1.0441727e-007,-0.016450984};
+		pos[]={81.418625,116.3633,-84.292412};
+		dir[]={0.010032646,-0.54882163,0.83592713};
+		up[]={0.0065864963,0.83592099,0.54881448};
+		aside[]={0.99997097,-1.4664874e-007,-0.012003391};
 	};
 };
 binarizationWanted=0;
@@ -17676,7 +17676,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={41.043125,8.9768047,88.440636};
-										angles[]={-0,0.028832838,0};
+										angles[]={0,0.028832838,0};
 									};
 									side="Empty";
 									flags=4;
@@ -19801,7 +19801,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={76.078796,8.9768047,90.709084};
-										angles[]={-0,0.028832838,0};
+										angles[]={0,0.028832838,0};
 									};
 									side="Empty";
 									flags=4;
@@ -21917,7 +21917,7 @@ class Mission
 			name="Template Modules";
 			class Entities
 			{
-				items=8;
+				items=10;
 				class Item0
 				{
 					dataType="Logic";
@@ -22073,6 +22073,28 @@ class Mission
 					description="Certain vehicles may not have Active protection system enabled, if you want a specific vehicle to have it, create a dummy of the vehicle you want it to apply to and then synchronize this module with the dummy vehicle. That vehicle class will now have the type of APS assigned to it." \n "" \n "Do note this dummy vehicle should be hidden from view on some corner of the map.";
 					id=2543;
 				};
+				class Item8
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={141.00301,5,121.61};
+					};
+					name="GOL_Arsenal_GL";
+					id=2664;
+					type="Logic";
+				};
+				class Item9
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={141.35576,5,128.76659};
+					};
+					name="GOL_Arsenal_LMG";
+					id=2663;
+					type="Logic";
+				};
 			};
 			id=2584;
 		};
@@ -22082,7 +22104,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={44.885307,6.743187,89.317772};
-				angles[]={0,0.017582726,-0};
+				angles[]={0,0.017582726,0};
 			};
 			side="Empty";
 			flags=5;
@@ -22099,7 +22121,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={79.324844,6.743187,90.795692};
-				angles[]={0,0.017582726,-0};
+				angles[]={0,0.017582726,0};
 			};
 			side="Empty";
 			flags=5;
