@@ -124,6 +124,9 @@ switch (toLower(_role)) do {
 			[[_mapFlashLight,1],[_IRStrobe,1]] call _addToUniform;
 			[[_handFlareG,1],[_glFlareR,5],[_glFlareW,5]] call _addToBackpack;
 		};
+		if(GOL_ENTRENCH isEqualTo 1) then {
+			[["ACE_EntrenchingTool",1]] call _addToBackpack;
+		};
 	};
 
 	case "r": {
@@ -144,6 +147,9 @@ switch (toLower(_role)) do {
 			[["MineDetector",1]] call _addToUniform;
 		};
 		[[_MAT_mag,2]] call _addToBackpack;
+		if(GOL_ENTRENCH isEqualTo 1) then {
+			[["ACE_EntrenchingTool",1]] call _addToBackpack;
+		};
 		// if (_LAT_ReUsable) then {
 		// 	[[_LAT_mag,1]] call _addToBackpack;
 		// } else {
@@ -168,6 +174,9 @@ switch (toLower(_role)) do {
 		};
 		[[_MAT_mag,2]] call _addToBackpack;
 		[_LAT, _LAT_mag, ""] call _addLaunchers;
+		if(GOL_ENTRENCH isEqualTo 1) then {
+			[["ACE_EntrenchingTool",1]] call _addToBackpack;
+		};
 
 	};
 
@@ -190,6 +199,9 @@ switch (toLower(_role)) do {
 			[[_mapFlashLight,1],[_handFlareG,1]] call _addToUniform;
 		};
 		_rangefinder call _addBino;
+		if(GOL_ENTRENCH isEqualTo 1) then {
+			[["ACE_EntrenchingTool",1]] call _addToBackpack;
+		};
 	};
 
 	case "ar": {
