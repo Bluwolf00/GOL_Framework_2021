@@ -2,19 +2,19 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "111thID";
-_goggles = "";
-_helmet = "H_HelmetB_light";
+_goggles = ["G_Tactical_Clear","G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F","rhsusf_oakley_goggles_clr","rhsusf_shemagh2_gogg_od","rhsusf_shemagh_gogg_od","rhsusf_shemagh2_od","rhsusf_shemagh_od","UK3CB_G_KLR_Oli","G_Combat","UK3CB_G_Tactical_Clear"];
+_helmet = ["H_HelmetB_camo","H_HelmetB","H_HelmetSpecB"];
 _OfficerHelmet = "H_Beret_02";
-_uniform = "U_B_CombatUniform_mcam";
-_vest = "V_PlateCarrier2_rgr";
-_backpack = "B_FieldPack_khk";
+_uniform = ["U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_vest"];
+_vest = ["V_PlateCarrier2_rgr","V_PlateCarrierGL_mtp","V_PlateCarrierSpec_mtp","V_PlateCarrier1_rgr"];
+_backpack = "B_Kitbag_mcamo";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "tfar_rt1523g_big";
+	_backpackRadio = "B_RadioBag_01_mtp_F";
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "B_Kitbag_rgr";
+	_backpack = "B_Carryall_mcamo";
 };
 if (_role isEqualTo "crew") then {
 	_helmet = "H_HelmetCrew_B";
@@ -38,10 +38,10 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "";
-_pointer = "acc_pointer_IR";
-_sight = "";
-_bipod = "";
+_silencer = "ace_muzzle_mzls_h";
+_pointer = "";
+_sight = "optic_hamr";
+_bipod = "bipod_01_f_blk";
 
 _rifle = ["arifle_MX_F", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["arifle_MXC_F", _silencer, _pointer, _sight, _bipod];

@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6765;
+		nextID=6807;
 	};
 	class Camera
 	{
 		pos[]={81.418625,116.3633,-84.292412};
-		dir[]={0.010032646,-0.54882163,0.83592713};
-		up[]={0.0065864963,0.83592099,0.54881448};
-		aside[]={0.99997097,-1.4664874e-007,-0.012003391};
+		dir[]={0.010032327,-0.54879969,0.83589381};
+		up[]={0.0065861735,0.83595389,0.54876024};
+		aside[]={0.99992812,4.6566129e-010,-0.012001052};
 	};
 };
 binarizationWanted=0;
@@ -58,13 +58,13 @@ addons[]=
 	"A3_Armor_F_Beta_APC_Wheeled_01",
 	"ace_vehicle_damage",
 	"A3_Soft_F_Exp_LSV_01",
+	"A3_Structures_F_Civ_InfoBoards",
 	"A3_Structures_F_System",
 	"A3_Structures_F_Mil_Cargo",
 	"A3_Structures_F_Enoch_Military_Camps",
 	"A3_Boat_F_Boat_Armed_01",
 	"A3_Air_F_Exp_VTOL_01",
-	"drongosaps",
-	"A3_Structures_F_Civ_InfoBoards"
+	"drongosaps"
 };
 class AddonsMetaData
 {
@@ -14206,14 +14206,14 @@ class Mission
 	};
 	class Entities
 	{
-		items=20;
+		items=18;
 		class Item0
 		{
 			dataType="Layer";
 			name="Framework Playable";
 			class Entities
 			{
-				items=3;
+				items=5;
 				class Item0
 				{
 					dataType="Layer";
@@ -20967,9 +20967,43 @@ class Mission
 					};
 					id=410;
 				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={44.885307,6.743187,89.317772};
+						angles[]={0,0.017582726,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						init="this setObjectTexture [0,""PlatoonRoster.jpg""];";
+					};
+					id=2661;
+					type="Land_Billboard_F";
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={79.324844,6.743187,90.795692};
+						angles[]={0,0.017582726,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						init="this setObjectTexture [0,""PlatoonRoster.jpg""];";
+					};
+					id=2662;
+					type="Land_Billboard_F";
+				};
 			};
 			id=402;
-			atlOffset=557199.25;
+			atlOffset=139299.81;
 		};
 		class Item1
 		{
@@ -22097,40 +22131,6 @@ class Mission
 				};
 			};
 			id=2584;
-		};
-		class Item18
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={44.885307,6.743187,89.317772};
-				angles[]={0,0.017582726,0};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-				init="this setObjectTexture [0,""PlatoonRoster.jpg""];";
-			};
-			id=2661;
-			type="Land_Billboard_F";
-		};
-		class Item19
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={79.324844,6.743187,90.795692};
-				angles[]={0,0.017582726,0};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-				init="this setObjectTexture [0,""PlatoonRoster.jpg""];";
-			};
-			id=2662;
-			type="Land_Billboard_F";
 		};
 	};
 };

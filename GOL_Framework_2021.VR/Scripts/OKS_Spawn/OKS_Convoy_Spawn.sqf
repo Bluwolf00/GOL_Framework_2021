@@ -22,7 +22,17 @@
 
 if(!isServer) exitWith {};
 
-Params ["_Spawn","_Waypoint","_End","_Side","_VehicleArray","_CargoArray","_ConvoyArray","_ForcedCareless","_DeleteAtFinalWP"];
+Params [
+	["_Spawn",objNull,[objNull]],
+	["_Waypoint",objNull,[objNull]],
+	["_End",objNull,[objNull]],
+	["_Side",east,[sideUnknown]],
+	["_VehicleArray",[3,["UK3CB_ARD_O_BMP1"],6,25],[[]]],
+	["_CargoArray",[true,4],[[]]],
+	["_ConvoyArray",[],[[]]],
+	["_ForcedCareless",false,[false]],
+	["_DeleteAtFinalWP",false,[false]]
+];
 _CargoArray Params ["_ShouldHaveCargo","_Soldiers"];
 _VehicleArray Params ["_Count","_Vehicles","_SpeedMeterPerSecond","_DispersionInMeters"];
 
