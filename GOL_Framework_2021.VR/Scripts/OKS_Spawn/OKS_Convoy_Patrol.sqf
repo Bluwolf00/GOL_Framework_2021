@@ -1,5 +1,7 @@
 // [[convoy_1,convoy_2,convoy_3,convoy_4,convoy_5,convoy_6],east,[4,["rhs_btr60_msv"], 6, 25],[true,6]] spawn OKS_Convoy_Patrol;
 // [[spawn_1,waypoint_1,waypoint_2,waypoint_3,waypoint_4],east,[4,["rhs_btr60_msv"], 6, 25],[true,6]] spawn OKS_Convoy_Patrol;
+// [[spawn_1,waypoint_1,waypoint_2,waypoint_3,waypoint_4],east,[4,["rhs_btr60_msv"], 6, 25],[true,6]] execVM "Scripts\OKS_Spawn\OKS_Convoy_Patrol.sqf";
+
 /*
 	Params:
 	1 - Array - Spawn & Waypoints
