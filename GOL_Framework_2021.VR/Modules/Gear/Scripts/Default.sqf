@@ -150,12 +150,15 @@ switch (toLower(_role)) do {
 		if(GOL_ENTRENCH isEqualTo 1) then {
 			[["ACE_EntrenchingTool",1]] call _addToBackpack;
 		};
-		// if (_LAT_ReUsable) then {
-		// 	[[_LAT_mag,1]] call _addToBackpack;
-		// } else {
-		// 	///((_loadout select 5) select 1) append [[_LAT,1]];
-		// 	((_loadout select 5) select 1) append [[[(_LAT select 0),"","","",[],[],""],1]];
-		// };
+		if(_MAT select 0 == "") then {
+			[_LAT, _LAT_mag, ""] call _addLaunchers;
+			if (_LAT_ReUsable) then {
+				[[_LAT_mag,1]] call _addToBackpack;
+			} else {
+				///((_loadout select 5) select 1) append [[_LAT,1]];
+				((_loadout select 5) select 1) append [[[(_LAT select 0),"","","",[],[],""],1]];
+			};
+		};
 	};
 
 	case "g": {
@@ -174,6 +177,14 @@ switch (toLower(_role)) do {
 		};
 		[[_MAT_mag,2]] call _addToBackpack;
 		[_LAT, _LAT_mag, ""] call _addLaunchers;
+		if(_MAT select 0 == "") then {
+			if (_LAT_ReUsable) then {
+				[[_LAT_mag,1]] call _addToBackpack;
+			} else {
+				///((_loadout select 5) select 1) append [[_LAT,1]];
+				((_loadout select 5) select 1) append [[[(_LAT select 0),"","","",[],[],""],1]];
+			};
+		};		
 		if(GOL_ENTRENCH isEqualTo 1) then {
 			[["ACE_EntrenchingTool",1]] call _addToBackpack;
 		};
