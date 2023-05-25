@@ -23,9 +23,10 @@ Sleep 5;
 		[_x] execVM "Scripts\BLU_HeliActions.sqf";
 	} forEach (entities "Helicopter");
 
-	if(GOL_NEKY_PARADROP isEqualTo 1 || GOL_NEKY_RESUPPLY isEqualTo 1 || GOL_NEKY_PICKUP isEqualTo 1 || GOL_OKS_SUPPORT isEqualTo 1 || GOL_NEKY_FASTROPE isEqualTo 1 || GOL_NEKY_REINSERT isEqualTo 1) then {
+	if(GOL_NEKY_PARADROP isEqualTo 1 || GOL_NEKY_RESUPPLY isEqualTo 1 || GOL_NEKY_PICKUP isEqualTo 1 || GOL_OKS_SUPPORT isEqualTo 1 || GOL_NEKY_FASTROPE isEqualTo 1 || GOL_NEKY_REINSERT isEqualTo 1 || GOL_OKS_TentMHQ isEqualTo 1) then {
 		if (hasInterface) then {
 			_condition = {player in [wpl,wfac,w1m,w2m,epl,efac,e1m,e2m,ipl,ifac,i1m,i2m,w1a,w1a1,w1b1,wcrew1,wcrew4,e1a,e1a1,e1b1,ecrew1,ecrew4,i1a,i1a1,i1b1,icrew1,icrew4]};
+			// _condition = {true}; // If you want everyone to have access to support tab (required for tent mhq to be available to all)
      	 	_action = ["Request_Support", "Request Support","\A3\ui_f\data\map\VehicleIcons\iconCrateVeh_ca.paa", {}, _condition] call ace_interact_menu_fnc_createAction;
      		[typeOf player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToClass;
 		};
@@ -95,6 +96,9 @@ Sleep 5;
 			waitUntil {!isNil "TFAR_Scrambler"};
 			[[JAMMER],500,50] spawn TFAR_Scrambler;
 		*/
+	};
+	if(GOL_OKS_TentMHQ isEqualTo 1) then {
+		execVM "Scripts\OKS_TentMHQ\ACE_MoveMHQ.sqf";
 	};
 	if(GOL_OKS_SPAWN isEqualTo 1) then {
 		execVM "Scripts\OKS_Spawn\Init.sqf";
