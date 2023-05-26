@@ -114,9 +114,8 @@
 		_add pushback [_mhq, _id];
 
 		_id = (([_mhq] call FUNC(getFlag))) addAction[format ["Teleport to %1", _mhq],{
-			_nearUnits = (_this select 3) nearEntities ["Man", 200];
-			_nearUnits = _nearUnits select {(side _X) getFriend (side player) < 0.6};
-			if(count _nearUnits == 0) then {
+			_EnemyNearUnits = ((_this select 3) nearEntities ["Man", 200]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
+			if(count _EnemyNearUnits == 0) then {
 				[player, (_this select 3)] call bis_fnc_moveToRespawnPosition
 			} else {
 				systemChat "Enemies are near the MHQ. You cannot move to the MHQ until the immediate area is secure (200m).";
