@@ -5,12 +5,18 @@ if (hasInterface) then {
 	// NEKY EDIT START
 	_code =
 	{
-		_nearUnits = player nearEntities ["Man", 300];
-		_nearUnits = _nearUnits select {(side _X) getFriend (side player) < 0.6};
-		if(count _nearUnits == 0) then {
+		_allNearUnits = player nearEntities ["Man", 200];
+		_EnemyNearUnits = _allNearUnits select {(side _X) getFriend (side player) < 0.6};
+		if(count _EnemyNearUnits == 0) then {
 			Tent_MHQ setPos (player getPos [3,getDir player]);
 			_Players = allPlayers select {_X distance flag_west_1 < 200 || _X distance flag_east_1 < 200};
-			["The MHQ has been moved to a new safe location. You can now teleport to it."] remoteExec ["systemChat",_Players];
+			_Players spawn {
+				_Players = _this;
+				sleep 10;
+				["The MHQ has been moved to a new safe location."] remoteExec ["systemChat",_Players];
+				waitUntil {(Tent_MHQ getVariable "GW_MHQ_Active")};
+				["The MHQ is activated. You can now teleport."] remoteExec ["systemChat",_Players];
+			};
 		} else {
 			systemChat "Enemies are nearby. You cannot move the MHQ until the immediate area is secure (300m).";
 		};	

@@ -2,6 +2,25 @@
 
 ["CAManBase", "Respawn", {
 	[{
+		(_this select 0) spawn {
+			_this setVariable ["GOL_TeleportDelay",true,true];
+			_Delay = 120;
+			for [{ private _i = _Delay }, { _i > 0 }, { _i = _i - 1}] do {
+				[parseText format[
+					"<t color='#f5791b'>
+					<t size='1.3'>RESPAWN DELAY</t>
+					<br/><t size='1.1'>YOU MAY USE SCRIPTED REINSERT IN:<br/><br/>
+					<t size='2'>%1</t></t></t>"
+				,_i]] remoteExec ["hintSilent",_this];
+				sleep 1;
+			};
+			[parseText
+					"<t color='#f5791b'>
+					<t size='1.3'>RESPAWN DELAY</t>
+					<br/><br/><t size='1.1'>YOU MAY NOW USED SCRIPTED REINSERT.</t></t>"
+			] remoteExec ["hintSilent",_this];
+			_this setVariable ["GOL_TeleportDelay",false,true];
+		};		
 		_this call FUNC(HandlerRespawn);
 	}, _this] call CBA_fnc_execNextFrame;
 }, true, [], true] call CBA_fnc_addClassEventHandler;
@@ -58,7 +77,7 @@
 
 [QGVAR(Actions), {
 	#define	ARGUMENT(VAR) VAR,1,false,false,""
-	#define	CONDITION_1 "(alive _target) && (vehicle player isEqualTo player)"
+	#define	CONDITION_1 "(alive _target) && (vehicle player isEqualTo player) && !(player getVariable ['GOL_TeleportDelay',false])"
 	#define	CONDITION_2 "(_target getVariable 'GW_MHQ_Assembled')"
 
 	params ["_mhq"];
@@ -94,7 +113,15 @@
 		_id = _mhq addAction ["Teleport to Base",{[player, ([(_this select 0)] call FUNC(getFlag))] call bis_fnc_moveToRespawnPosition},ARGUMENT(_mhq),(CONDITION_1),7];
 		_add pushback [_mhq, _id];
 
-		_id = (([_mhq] call FUNC(getFlag))) addAction[format ["Teleport to %1", _mhq],{[player, (_this select 3)] call bis_fnc_moveToRespawnPosition},ARGUMENT(_mhq),(CONDITION_1),7];
+		_id = (([_mhq] call FUNC(getFlag))) addAction[format ["Teleport to %1", _mhq],{
+			_nearUnits = (_this select 3) nearEntities ["Man", 200];
+			_nearUnits = _nearUnits select {(side _X) getFriend (side player) < 0.6};
+			if(count _nearUnits == 0) then {
+				[player, (_this select 3)] call bis_fnc_moveToRespawnPosition
+			} else {
+				systemChat "Enemies are near the MHQ. You cannot move to the MHQ until the immediate area is secure (200m).";
+			}
+		},ARGUMENT(_mhq),(CONDITION_1),7];
 		_add pushback [([_mhq] call FUNC(getFlag)), _id];
 	} else {
 		_id = _mhq addAction ["Activate MHQ",{ player PlayMove "Acts_carFixingWheel";

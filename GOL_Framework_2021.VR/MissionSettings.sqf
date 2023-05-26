@@ -35,7 +35,7 @@ GOL_OKS_REINFORCEMENT = 0;
 GOL_NEKY_FASTROPE = 0; // Not particularly good - engine limitations stop helicopters from hovering under 50-ish meters.
 GOL_OKS_SUPPORT = 0;
 
-GOL_OKS_TentMHQ = 0; 
+GOL_OKS_TentMHQ = 1; 
 /* ^ Change code in "Scripts/OKS_TentMHQ/ACE_MoveMHQ.sqf" to enable all players to move tent.
 Requires init.sqf line 28 to be commented out and replaced with line 29.
 _condition = {true} is the correct one to use for that. */

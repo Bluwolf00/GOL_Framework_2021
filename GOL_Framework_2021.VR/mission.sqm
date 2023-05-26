@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6828;
+		nextID=6870;
 	};
 	class Camera
 	{
-		pos[]={29.191263,104.07719,-57.443584};
-		dir[]={0.17918427,-0.67692256,0.71391207};
-		up[]={0.16478926,0.73605359,0.65655965};
-		aside[]={0.96991807,7.2614057e-008,-0.24343863};
+		pos[]={59.496189,83.301872,-23.787601};
+		dir[]={0.0053237611,-0.66669118,0.74531507};
+		up[]={0.0047620321,0.74533409,0.6666742};
+		aside[]={0.99997455,0,-0.0071427859};
 	};
 };
 binarizationWanted=0;
@@ -263,6 +263,7 @@ dlcs[]=
 randomSeed=15706391;
 class ScenarioData
 {
+	author="Editor";
 	saving=0;
 	respawnDialog=0;
 	disabledAI=1;
@@ -303,7 +304,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="BOOL";
-					value=0;
+					value=1;
 				};
 			};
 		};
@@ -14189,6 +14190,7 @@ class Mission
 {
 	class Intel
 	{
+		briefingName="COOP@30 Mission Name";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
@@ -14207,7 +14209,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=18;
+		items=15;
 		class Item0
 		{
 			dataType="Layer";
@@ -16978,8 +16980,9 @@ class Mission
 								class Item2
 								{
 									dataType="Marker";
-									position[]={44.738644,5943464,85.4506};
+									position[]={44.738998,5943464,85.450996};
 									name="respawn_west";
+									text="Staging Area";
 									type="b_hq";
 									colorName="ColorWEST";
 									a=0.69999999;
@@ -17676,14 +17679,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={41.043125,8.9768047,88.440636};
+										position[]={41.042999,8.9768047,88.441002};
 										angles[]={0,0.028832838,0};
 									};
 									side="Empty";
 									flags=4;
 									class Attributes
 									{
-										init="this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_west_2}];";
+										init="if(!isNil ""flag_west_2"") then {this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_west_2}]; }";
 										name="flag_west_1";
 									};
 									id=2546;
@@ -17792,6 +17795,7 @@ class Mission
 									dataType="Marker";
 									position[]={124.942,5943464,30.313999};
 									name="farp_west_1";
+									text="FARP";
 									type="b_air";
 									colorName="ColorWEST";
 									a=0.69999999;
@@ -19818,14 +19822,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={76.078796,8.9768047,90.709084};
+										position[]={76.079002,8.9768047,90.709};
 										angles[]={0,0.028832838,0};
 									};
 									side="Empty";
 									flags=4;
 									class Attributes
 									{
-										init="this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_east_2}];";
+										init="if(!isNil ""flag_east_2"") then {this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_east_2}];}";
 										name="flag_east_1";
 									};
 									id=337;
@@ -19869,8 +19873,9 @@ class Mission
 								class Item3
 								{
 									dataType="Marker";
-									position[]={79.116287,3275850,86.820221};
+									position[]={79.115997,3275850,86.82};
 									name="respawn_east";
+									text="Staging Area";
 									type="o_hq";
 									colorName="ColorEAST";
 									a=0.69999999;
@@ -20601,8 +20606,9 @@ class Mission
 								class Item28
 								{
 									dataType="Marker";
-									position[]={181.11055,5943464,28.662724};
+									position[]={181.11099,5943464,28.663};
 									name="farp_east_1";
+									text="FARP";
 									type="o_air";
 									colorName="ColorEAST";
 									a=0.69999999;
@@ -21123,16 +21129,6 @@ class Mission
 		};
 		class Item2
 		{
-			dataType="Marker";
-			position[]={140.31805,22.872955,155.42197};
-			name="spectator";
-			type="Empty";
-			angle=227.03697;
-			id=609;
-			atlOffset=17.872955;
-		};
-		class Item3
-		{
 			dataType="Comment";
 			class PositionInfo
 			{
@@ -21143,7 +21139,7 @@ class Mission
 			description="If you check the init.sqf you'll find examples of how these 3 bases are used. One is for infantry, the other for aircraft and the last for ground vehicles.";
 			id=838;
 		};
-		class Item4
+		class Item3
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21156,7 +21152,7 @@ class Mission
 			id=839;
 			atlOffset=1.6210179;
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21168,7 +21164,7 @@ class Mission
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
 			id=1158;
 		};
-		class Item6
+		class Item5
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21180,7 +21176,7 @@ class Mission
 			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
 			id=1643;
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Layer";
 			name="Hunt Base / Dynamic Trigger";
@@ -21600,7 +21596,7 @@ class Mission
 			id=1661;
 			atlOffset=4.7683716e-006;
 		};
-		class Item8
+		class Item7
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21611,23 +21607,7 @@ class Mission
 			description="This is the Paradrop Trigger that is required for NEKY Paradrop to be used. It is the position that reinserts will be dropped at. Delete this if you want to disable Paradrop reinsert in your mission";
 			id=1754;
 		};
-		class Item9
-		{
-			dataType="Marker";
-			position[]={1180.0541,5,50.846863};
-			name="helicopter_spawn";
-			type="Empty";
-			id=1755;
-		};
-		class Item10
-		{
-			dataType="Marker";
-			position[]={80.071304,5,1004.6013};
-			name="helicopter_despawn";
-			type="Empty";
-			id=1756;
-		};
-		class Item11
+		class Item8
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21638,7 +21618,7 @@ class Mission
 			description="Spawn Position for Resupply & Pickup helicopters. IMPORTANT! Make sure the spawn & despawn are set apart! Minimum 300m apart!";
 			id=1757;
 		};
-		class Item12
+		class Item9
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21649,7 +21629,7 @@ class Mission
 			description="Despawn Position for Resupply & Pickup helicopters. IMPORTANT! Make sure the spawn & despawn are set apart! Minimum 300m apart!";
 			id=1758;
 		};
-		class Item13
+		class Item10
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21660,7 +21640,7 @@ class Mission
 			description="These Triggers activate the different cases inside the SpawnList.sqf. When players enter these zones the scripts / zones will spawn. Used to spawn static units & moving groups using the Framework functions Shift + 1 & Shift + 2.";
 			id=1762;
 		};
-		class Item14
+		class Item11
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21672,7 +21652,7 @@ class Mission
 			description="We're trying to shift away from large resupplies to increase the flow of supplies having to be brought to the front. So we prefer that you use the small crates next to the flag. This exists still if the terrain does not allow for continueous  resupply from AAC.";
 			id=1960;
 		};
-		class Item15
+		class Item12
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21684,13 +21664,13 @@ class Mission
 			description="Small resupply crates meant only for a fire-teams resupply. The Ammo Boxes have the standard ammunition for the Squad, the Special Weapons Crate has the secondary ammunitions such as for the roles of MAT, AMAT, AMMG, MMG, Light Rifleman, Marksman.";
 			id=1961;
 		};
-		class Item16
+		class Item13
 		{
 			dataType="Layer";
 			name="Optional Template Items";
 			class Entities
 			{
-				items=10;
+				items=12;
 				class Item0
 				{
 					dataType="Comment";
@@ -21949,7 +21929,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={28.479757,5,50.028713};
-						angles[]={-0,0.11193988,0};
+						angles[]={0,0.11193988,0};
 					};
 					title="Tent MHQ";
 					description="This is a tent MHQ, you can use this MHQ for small scale missions that you don't want to use the other scripted solutions for respawn. This tent can be moved by leaders with self-interaction, the missionSetting ""GOL_OKS_TentMHQ"" must be set to 1 to be used.";
@@ -21990,16 +21970,32 @@ class Mission
 						nAttributes=1;
 					};
 				};
+				class Item10
+				{
+					dataType="Marker";
+					position[]={80.071304,5,1004.6013};
+					name="helicopter_despawn";
+					type="Empty";
+					id=1756;
+				};
+				class Item11
+				{
+					dataType="Marker";
+					position[]={1180.0541,5,50.846863};
+					name="helicopter_spawn";
+					type="Empty";
+					id=1755;
+				};
 			};
 			id=2569;
 		};
-		class Item17
+		class Item14
 		{
 			dataType="Layer";
 			name="Template Modules";
 			class Entities
 			{
-				items=10;
+				items=11;
 				class Item0
 				{
 					dataType="Logic";
@@ -22177,8 +22173,19 @@ class Mission
 					id=2663;
 					type="Logic";
 				};
+				class Item10
+				{
+					dataType="Marker";
+					position[]={140.31805,22.872955,155.42197};
+					name="spectator";
+					type="Empty";
+					angle=227.03697;
+					id=609;
+					atlOffset=17.872955;
+				};
 			};
 			id=2584;
+			atlOffset=8.9364777;
 		};
 	};
 };

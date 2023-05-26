@@ -27,10 +27,10 @@ OKS_isWhiteList = {
 	if(true) exitWith {_return}
 };
 
-Private _Debug_Variable = true;
+Private _Debug_Variable = false;
 OKS_Helicopter_Code = {
 
-	Private _Debug_Variable = true;
+	Private _Debug_Variable = false;
 	Params ["_Vehicle","_ShouldDisableThermal","_shouldDisableNVG"];
 	_Vehicle RemoveAllEventHandlers "HandleDamage";
 	_Vehicle setVariable ["NEKY_OldDamage",0];
@@ -64,12 +64,12 @@ OKS_Helicopter_Code = {
 
 	{
 		_CMWeapon = _X;
-		systemchat str _CMWeapon;
+		//systemchat str _CMWeapon;
 		_FlareMag = (getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines")
 			select 
 				(count (getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines"))) - 1 );
 		{_Vehicle removeMagazinesTurret [_X,[-1]]} forEach getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines");
-		systemchat str _FlareMag;
+		//systemchat str _FlareMag;
 		_Vehicle addMagazineTurret [_FlareMag,[-1]];
 		_Vehicle addMagazineTurret [_FlareMag,[-1]];
 	} foreach _CMWeapons;

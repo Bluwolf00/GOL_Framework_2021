@@ -54,7 +54,7 @@ _Obj addAction [_NewName,
 
 	[_Player, _DropZone, _Steerable, _DropHeight, _Height] execVM "Scripts\NEKY_Paradrop\NEKY_Paradrop.sqf";
 
-},[_DropZone,_Steerable,_DropHeight,_Height],10,false,true,"","((_target distance _this) < 7) && !(vehicle player != player) && NEKY_Paradrop_AllowReinsert"];
+},[_DropZone,_Steerable,_DropHeight,_Height],10,false,true,"","((_target distance _this) < 7) && !(vehicle player != player) && NEKY_Paradrop_AllowReinsert && !(player getVariable ['GOL_TeleportDelay',false])"];
 
 if (_AllowMove) then
 {
