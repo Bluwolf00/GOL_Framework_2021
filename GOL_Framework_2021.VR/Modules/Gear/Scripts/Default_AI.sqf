@@ -85,6 +85,14 @@ switch (toLower(_role)) do {
 			[_MAT, _MAT_mag, ""] call _addLaunchers;
 			["","","","",_backpack] call _addEquipment;
 			[[_MAT_mag,2]] call _addToBackpack;
+		} else {
+			if ((random 1) <= GOL_LAT_Chance) then {
+				[_LAT, _LAT_mag, ""] call _addLaunchers;
+				if (_LAT_ReUsable) then {
+					["","","","",_backpack] call _addEquipment;
+					[[_LAT_mag,1]] call _addToBackpack;
+				};
+			};		
 		};	
 	};
 
