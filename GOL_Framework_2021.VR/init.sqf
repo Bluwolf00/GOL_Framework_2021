@@ -44,6 +44,7 @@ Sleep 5;
 	if(GOL_NEKY_RESUPPLY isEqualTo 1) then {
 		execVM "Scripts\NEKY_Supply\Ace_Resupply.sqf";
 		execVM "Scripts\NEKY_Supply\Ace_Med.sqf";
+		execVM "Scripts\NEKY_Supply\Ace_VehicleDrop.sqf";
 	};
 	if(GOL_OKS_SUPPORT isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Support\Init.sqf";

@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2667;
+		nextID=2669;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6870;
+		nextID=6912;
 	};
 	class Camera
 	{
-		pos[]={59.496189,83.301872,-23.787601};
-		dir[]={0.0053237611,-0.66669118,0.74531507};
-		up[]={0.0047620321,0.74533409,0.6666742};
-		aside[]={0.99997455,0,-0.0071427859};
+		pos[]={80.698776,141.38937,-51.937252};
+		dir[]={0.0083817774,-0.71961612,0.69435972};
+		up[]={0.0086856503,0.69437653,0.7195611};
+		aside[]={0.99994814,2.9461626e-007,-0.012071389};
 	};
 };
 binarizationWanted=0;
@@ -22062,19 +22062,6 @@ class Mission
 					{
 						class Attribute0
 						{
-							property="DAPS_Options_dapsBlastSize";
-							expression="_this setVariable ['dapsBlastSize',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Small";
-								};
-							};
-						};
-						class Attribute1
-						{
 							property="DAPS_Options_dapsDebug";
 							expression="_this setVariable ['dapsDebug',_value,true];";
 							class Value
@@ -22083,6 +22070,19 @@ class Mission
 								{
 									singleType="STRING";
 									value="FALSE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="DAPS_Options_dapsBlastSize";
+							expression="_this setVariable ['dapsBlastSize',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Small";
 								};
 							};
 						};
@@ -22099,7 +22099,59 @@ class Mission
 								};
 							};
 						};
-						nAttributes=3;
+						class Attribute3
+						{
+							property="DAPS_Options_dapsRearmDelay";
+							expression="_this setVariable ['dapsRearmDelay',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=5;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="DAPS_Options_dapsRearmRange";
+							expression="_this setVariable ['dapsRearmRange',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=50;
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="DAPS_Options_dapsMaxAngle";
+							expression="_this setVariable ['dapsMaxAngle',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=45;
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="DAPS_Options_dapsRearmTime";
+							expression="_this setVariable ['dapsRearmTime',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=5;
+								};
+							};
+						};
+						nAttributes=7;
 					};
 				};
 				class Item5

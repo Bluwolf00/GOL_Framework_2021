@@ -11,7 +11,7 @@ Private ["_Units","_SideMarker","_SideColor","_Vehicles","_Wheeled","_APC","_Tan
 
 	* = Not updated with 3CB thus broken <<< Important!
 
-BLUFOR FACTIONS:       CDF* LDF* TANOA*
+BLUFOR FACTIONS:       CDF* LDF TANOA*
 OPFOR FACTIONS:        CHEDAKI TKA TURKEY* DESERT_INSURGENTS RUSSIA_MODERN SOVIET DESERT_MILITIA COMMUNIST_REBELS
 INDEPENDENT FACTIONS:  NAPA* SYRIA*
 
@@ -174,16 +174,17 @@ Switch (_Faction) do {
 		_Supply = ["UK3CB_TKA_O_Ural_Fuel", "UK3CB_TKA_O_Ural_Ammo", "UK3CB_TKA_O_Ural_Repair"];
 		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
 	};
+	
 	case "LDF": {
 		// Livonia Defence Force - 1980s
-		_Wheeled = ["Canadian_FMTV_M2","rhsgref_hidf_m1025_m2","rhsgref_hidf_m1025","rhsusf_m1152_rsv_usmc_wd","rhsusf_m1165_usmc_wd"];
-		_APC = ["rhsgref_BRDM2_b", "M113_Olive_M240","rhsusf_m113_usarmy_M2_90"];
-		_Tank = ["rhsgref_cdf_b_t72ba_tv"];
-		_Artillery = ["I_E_Truck_02_MRL_F","rhsgref_cdf_b_2s1", "rhsgref_cdf_b_reg_d30"];
-		_AntiAir = ["rhsgref_cdf_b_ZU23"];
+		_Wheeled = ["UK3CB_LDF_B_M1025_M2", "UK3CB_LDF_B_M1151_GPK_M2", "UK3CB_LDF_B_M1151_GPK_PKM", "UK3CB_LDF_B_M1151_OGPK_M2", "UK3CB_LDF_B_Offroad_M2", "UK3CB_LDF_B_Offroad_AT", "UK3CB_LDF_B_Pickup_SPG9"];
+		_APC = ["UK3CB_LDF_B_BRDM2", "UK3CB_LDF_B_BMP1", "UK3CB_LDF_B_BMP2", "UK3CB_LDF_B_Marshall", "UK3CB_LDF_B_MTLB_Cannon", "UK3CB_LDF_B_MTLB_BMP"];
+		_Tank = ["UK3CB_LDF_B_T72A", "UK3CB_LDF_B_T72BB"];
+		_Artillery = ["UK3CB_LDF_B_RM70", "UK3CB_LDF_B_T810_MLRS", "UK3CB_LDF_B_2S1"];
+		_AntiAir = ["rhsgref_cdf_b_ZU23","UK3CB_LDF_B_MTLB_ZU23", "UK3CB_LDF_B_T810_ZU23", "UK3CB_LDF_B_ZsuTank"];
 		_Helicopter = ["rhs_uh1h_hidf"];
-		_Transport = ["rhsusf_m998_w_4dr_halftop"];
-		_Supply = ["rhsgref_cdf_b_gaz66_ammo", "rhsgref_cdf_b_gaz66_r142", "rhsgref_cdf_b_gaz66_zu23", "rhsgref_cdf_b_gaz66_ap2", "rhsgref_cdf_b_gaz66_repair", "rhsgref_cdf_b_zil131_flatbed"];
+		_Transport = ["UK3CB_LDF_B_T810_Open", "UK3CB_LDF_B_T810_Closed", "UK3CB_LDF_B_T810_Closed_PKM", "UK3CB_LDF_B_T810_Open_PKM"];
+		_Supply = ["UK3CB_LDF_B_T810_Repair", "UK3CB_LDF_B_T810_Refuel", "UK3CB_LDF_B_T810_Reammo"];
 		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
 	};
 

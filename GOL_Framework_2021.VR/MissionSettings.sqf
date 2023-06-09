@@ -73,6 +73,18 @@ GOL_OKS_DYNAMIC = 1;
 
 /* Classname Settings */
 GOL_NEKY_SUPPLY_HELICOPTER = "";
+GOL_NEKY_VEHICLEDROP_VEHICLECLASS = "";
+GOL_NEKY_VEHICLEDROP_CODE = {
+
+	[_Vehicle] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";	
+
+	// Use the Vehicle Appearance Editor, make your changes then export and paste below and reformat to match the code below.	
+	[
+		_Vehicle,
+		["Sand",1], 
+		["showBags",1,"showCamonetHull",1,"showCamonetTurret",1,"showSLATHull",1,"showSLATTurret",1]
+	] call BIS_fnc_initVehicle;
+};
 
 /* DO NOT EDIT BELOW */
 OKS_MISSION_SETTINGS = true;
