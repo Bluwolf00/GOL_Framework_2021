@@ -74,7 +74,7 @@ GOL_OKS_DYNAMIC = 1;
 
 /* Classname Settings */
 GOL_NEKY_SUPPLY_HELICOPTER = "";
-GOL_NEKY_VEHICLEDROP_VEHICLECLASS = "";
+GOL_NEKY_VEHICLEDROP_VEHICLECLASS = (typeOf Vehicle_1); // Classname
 GOL_NEKY_VEHICLEDROP_CODE = {
 
 	[_Vehicle] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";	
