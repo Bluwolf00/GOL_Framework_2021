@@ -14,14 +14,14 @@ if (hasInterface) then {
 					_pos,
 					"helicopter_despawn"
 				],
-				GOL_NEKY_VEHICLEDROP_CODE,
+				GOL_NEKY_MHQDROP_CODE,
 				true,
-				GOL_NEKY_VEHICLEDROP_VEHICLECLASS
-			] execVM "Scripts\NEKY_supply\NEKY_VehicleDropMapClick.sqf";
+				GOL_NEKY_MHQDROP_VEHICLECLASS
+			] execVM "Scripts\NEKY_supply\NEKY_MHQDropMapClick.sqf";
 		};
 	};
 	// NEKY EDIT END
-	_action = ["Vehicle Drop", "Vehicle Drop","\a3\ui_f\data\Map\VehicleIcons\iconAPC_ca.paa", _code, _condition] call ace_interact_menu_fnc_createAction;
+	_action = ["MHQ Drop", "MHQ Drop","\a3\ui_f\data\Map\VehicleIcons\iconTruck_ca.paa", _code, _condition] call ace_interact_menu_fnc_createAction;
 	[typeOf player, 1, ["ACE_SelfActions","Request_Support"], _action] call ace_interact_menu_fnc_addActionToClass;
 
 

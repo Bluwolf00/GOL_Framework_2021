@@ -86,6 +86,20 @@ GOL_NEKY_VEHICLEDROP_CODE = {
 		["showBags",1,"showCamonetHull",1,"showCamonetTurret",1,"showSLATHull",1,"showSLATTurret",1]
 	] call BIS_fnc_initVehicle;
 };
+GOL_NEKY_MHQDROP_VEHICLECLASS = (typeOf MHQ_1); // Classname
+GOL_NEKY_MHQDROP_CODE = {
+
+	[_Vehicle] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";
+	[_Vehicle, "medium"] call GW_MHQ_Fnc_Handler;
+	[_Vehicle,25,true] ExecVM "Scripts\NEKY_ServiceStation\MobileSS.sqf";
+
+	// Use the Vehicle Appearance Editor, make your changes then export and paste below and reformat to match the code below.	
+	[
+		_Vehicle,
+		["Sand",1], 
+		["showBags",1,"showCamonetHull",1,"showCamonetTurret",1,"showSLATHull",1,"showSLATTurret",1]
+	] call BIS_fnc_initVehicle;
+};
 
 /* DO NOT EDIT BELOW */
 OKS_MISSION_SETTINGS = true;

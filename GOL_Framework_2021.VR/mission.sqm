@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={61.478046,59.380295,13.001949};
-		dir[]={0.0094476538,-0.62086403,0.78386235};
-		up[]={0.0074825562,0.78391802,0.62081975};
-		aside[]={0.9999283,-1.9517756e-009,-0.012051837};
+		pos[]={64.170738,99.361038,-8.924839};
+		dir[]={-0.001674094,-0.80693036,0.59066135};
+		up[]={-0.0022872635,0.5906449,0.80692971};
+		aside[]={1.0000041,-1.4766351e-007,0.0028344642};
 	};
 };
 binarizationWanted=0;
@@ -58,10 +58,10 @@ addons[]=
 	"A3_Armor_F_Beta_APC_Wheeled_01",
 	"tfar_external_intercom",
 	"ace_vehicle_damage",
-	"A3_Soft_F_Exp_LSV_01",
 	"A3_Structures_F_System",
 	"A3_Structures_F_Mil_Cargo",
 	"A3_Structures_F_Enoch_Military_Camps",
+	"A3_Soft_F_Exp_LSV_01",
 	"A3_Boat_F_Boat_Armed_01",
 	"A3_Air_F_Exp_VTOL_01",
 	"A3_Structures_F_Civ_Camping",
@@ -215,15 +215,15 @@ class AddonsMetaData
 		};
 		class Item21
 		{
-			className="A3_Soft_F_Exp";
-			name="Arma 3 Apex - Unarmored Land Vehicles";
+			className="A3_Structures_F_Enoch_Military";
+			name="Arma 3 Contact Platform - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
 		class Item22
 		{
-			className="A3_Structures_F_Enoch_Military";
-			name="Arma 3 Contact Platform - Military Buildings and Structures";
+			className="A3_Soft_F_Exp";
+			name="Arma 3 Apex - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -14210,7 +14210,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=15;
+		items=14;
 		class Item0
 		{
 			dataType="Layer";
@@ -20792,7 +20792,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={65.320816,7.2059455,50.413456};
+										position[]={65.320999,7.2059455,50.413437};
 										angles[]={0,6.2772336,0};
 									};
 									side="Empty";
@@ -20882,13 +20882,13 @@ class Mission
 							name="Platoon Vehicles";
 							class Entities
 							{
-								items=2;
+								items=1;
 								class Item0
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={78.197815,7.5393777,49.570019};
+										position[]={78.197998,7.5393777,49.57};
 										angles[]={0,0.00064577186,0};
 									};
 									side="Empty";
@@ -20896,69 +20896,10 @@ class Mission
 									class Attributes
 									{
 										init="[this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
+										name="Vehicle_1";
 									};
 									id=986;
 									type="B_APC_Wheeled_01_cannon_F";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="ace_isMedicalVehicle";
-											expression="_this setVariable [""ace_medical_isMedicalVehicle"", _value, true]";
-											class Value
-											{
-												class data
-												{
-													singleType="BOOL";
-													value=1;
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="ammoBox";
-											expression="[_this,_value] call bis_fnc_initAmmoBox;";
-											class Value
-											{
-												class data
-												{
-													singleType="STRING";
-													value="[[[[""arifle_MX_F"",""FirstAidKit""],[2,10]],[[""30Rnd_65x39_caseless_mag"",""100Rnd_65x39_caseless_mag"",""HandGrenade"",""MiniGrenade"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""SmokeShell"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellBlue"",""NLAW_F"",""Titan_AT"",""Titan_AP"",""Titan_AA""],[12,6,6,6,6,3,3,3,3,8,8,8,8,5,2,2,2]],[[],[]],[[],[]]],false]";
-												};
-											};
-										};
-										class Attribute2
-										{
-											property="ace_cargo_space";
-											expression="[_this, _value] call ace_cargo_fnc_setSpace;";
-											class Value
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=40;
-												};
-											};
-										};
-										nAttributes=3;
-									};
-								};
-								class Item1
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={88.693909,7.1761513,49.195545};
-										angles[]={0,0.00062831852,0};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										init=" [this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
-									};
-									id=1642;
-									type="B_LSV_01_armed_F";
 									class CustomAttributes
 									{
 										class Attribute0
@@ -21166,18 +21107,6 @@ class Mission
 			id=1158;
 		};
 		class Item5
-		{
-			dataType="Comment";
-			class PositionInfo
-			{
-				position[]={88.956299,5,49.759598};
-				angles[]={0,3.9513655,0};
-			};
-			title="Mechanized / Motorized Setup";
-			description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
-			id=1643;
-		};
-		class Item6
 		{
 			dataType="Layer";
 			name="Hunt Base / Dynamic Trigger";
@@ -21597,7 +21526,7 @@ class Mission
 			id=1661;
 			atlOffset=4.7683716e-006;
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21608,7 +21537,7 @@ class Mission
 			description="This is the Paradrop Trigger that is required for NEKY Paradrop to be used. It is the position that reinserts will be dropped at. Delete this if you want to disable Paradrop reinsert in your mission";
 			id=1754;
 		};
-		class Item8
+		class Item7
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21619,7 +21548,7 @@ class Mission
 			description="Spawn Position for Resupply & Pickup helicopters. IMPORTANT! Make sure the spawn & despawn are set apart! Minimum 300m apart!";
 			id=1757;
 		};
-		class Item9
+		class Item8
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21630,7 +21559,7 @@ class Mission
 			description="Despawn Position for Resupply & Pickup helicopters. IMPORTANT! Make sure the spawn & despawn are set apart! Minimum 300m apart!";
 			id=1758;
 		};
-		class Item10
+		class Item9
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21641,7 +21570,7 @@ class Mission
 			description="These Triggers activate the different cases inside the SpawnList.sqf. When players enter these zones the scripts / zones will spawn. Used to spawn static units & moving groups using the Framework functions Shift + 1 & Shift + 2.";
 			id=1762;
 		};
-		class Item11
+		class Item10
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21653,7 +21582,7 @@ class Mission
 			description="We're trying to shift away from large resupplies to increase the flow of supplies having to be brought to the front. So we prefer that you use the small crates next to the flag. This exists still if the terrain does not allow for continueous  resupply from AAC.";
 			id=1960;
 		};
-		class Item12
+		class Item11
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -21665,7 +21594,7 @@ class Mission
 			description="Small resupply crates meant only for a fire-teams resupply. The Ammo Boxes have the standard ammunition for the Squad, the Special Weapons Crate has the secondary ammunitions such as for the roles of MAT, AMAT, AMMG, MMG, Light Rifleman, Marksman.";
 			id=1961;
 		};
-		class Item13
+		class Item12
 		{
 			dataType="Layer";
 			name="Optional Template Items";
@@ -21990,7 +21919,7 @@ class Mission
 			};
 			id=2569;
 		};
-		class Item14
+		class Item13
 		{
 			dataType="Layer";
 			name="Template Modules";
