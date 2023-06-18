@@ -4,6 +4,7 @@ GOL_OPTICS = 1;
 GOL_WEAPONS = 0;
 GOL_ARSENAL_ALLOWED = 1;
 GOL_ENTRENCH = 0;
+GOL_OKS_SecondPrimaryWeapon = 1;
 
 /* AI Gear Settings */
 // 0 = 0%, 1 = 100%

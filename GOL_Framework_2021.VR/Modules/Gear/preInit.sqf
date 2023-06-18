@@ -69,6 +69,7 @@ GVAR(StaminaCoef) = 0.5;
 			"TAKISTAN-D",
 			"TAKISTAN-SF-D",
 			"TANOA-SF",
+			"CHINA",
 			"CTRG-W",
 			"CTRG-D",			
 			"CUSTOM-W"
@@ -118,6 +119,7 @@ GVAR(StaminaCoef) = 0.5;
 			"Takistani Desert",
 			"Takistani SF Desert",
 			"Tanoan Special Forces",
+			"Chinese Armed Forces",
 			"CTRG Woodland",
 			"CTRG Desert",
 			"CUSTOM-West"
@@ -136,6 +138,7 @@ GVAR(StaminaCoef) = 0.5;
 			"CSAT-W",
 			"CSAT-SF-W",
 			"CSAT-U",
+			"CHINA",
 			"CHDKZ-SF-W",
 			"RUSSIAN-W",
 			"RUSSIAN-SF-W",
@@ -161,6 +164,7 @@ GVAR(StaminaCoef) = 0.5;
 			"CSAT Woodland",
 			"CSAT SF Woodland",
 			"CSAT Urban",
+			"Chinese Armed Forces",
 			"ChDkz SF Woodland",
 			"Russian Woodland",
 			"Russian SF Woodland",

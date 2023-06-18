@@ -214,6 +214,9 @@ switch (_side) do {
 	case "ISRAELI": {
 		#include "Classes\ISRAELI.sqf"
 	};
+	case "CHINA": {
+		#include "Classes\CHINA.sqf"
+	};
 	default {
 		_errorCode = true;
 		ERROR(FORMAT_1("Faction does not exist: %1", _side));

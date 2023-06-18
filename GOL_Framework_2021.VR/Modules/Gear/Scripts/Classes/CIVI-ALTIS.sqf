@@ -2,8 +2,18 @@ _useMineDetector = false;
 _allowedNightStuff = false;
 
 _goggles = ["","","G_Shades_Black","G_Sport_BlackWhite","G_Sport_Greenblack","G_Aviator"];
-_helmet = ["","","H_Cap_blu","H_Cap_oli","H_Hat_brown","H_Hat_tan"];
-_uniform = ["U_C_Poloshirt_blue","U_C_Poloshirt_burgundy","U_C_Poloshirt_redwhite","U_C_Poloshirt_salmon","U_C_Poloshirt_stripped","U_C_Poloshirt_tricolour","U_C_Man_casual_6_F","U_C_Man_casual_4_F","U_C_Man_casual_5_F"];
+_helmet = ["","H_Hat_tan","H_Booniehat_oli","H_Cap_oli","H_Bandanna_gry","H_Bandanna_khk"];
+_uniform = [
+	"U_C_Poloshirt_blue",
+	"U_C_Poloshirt_burgundy",
+	"U_C_Poloshirt_redwhite",
+	"U_C_Poloshirt_salmon",
+	"U_C_Poloshirt_stripped",
+	"U_C_Poloshirt_tricolour",
+	"U_C_Man_casual_6_F",
+	"U_C_Man_casual_4_F",
+	"U_C_Man_casual_5_F"
+];
 _vest = [""];
 _backpack = [""];
 

@@ -151,6 +151,10 @@ if (_isMan) then {
 	if !(_errorCode) then {
 		_unit setUnitLoadout _loadout;
 
+		if(GOL_OKS_SecondPrimaryWeapon isEqualTo 1) then {
+			[_unit,_role] execVM "Scripts\OKS_Second_PrimaryWeapon.sqf";	
+		};
+
 		if (_isPlayer && _useFactionRadio && _roleUseRadio) then {
 			if(!isNil "_insignia") then {
 				[_unit,_insignia] call BIS_fnc_setUnitInsignia;

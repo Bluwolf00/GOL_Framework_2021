@@ -13,19 +13,19 @@ _Danger = True;												// Dismount static weapon if an enemy unit is close.	
 _DangerClose = 50;											// Range from which the unit will react to enemy forces and dismount static weapon.									Number (Meters)
 _Lock = True;												// Lock the mortar if the gunner dies or leaves it (To avoid other AI to take it and operate it as they see fit). 	Boolean
 _ScanVehicles = False;										// When scanning for targets, count manned vehicles as targets. True/False											Boolean
-_Ammo = 100;												// Total ammo the mortar can spend. Once empty, unit will dismount.													Number (Mortars)
+_Ammo = 30;												// Total ammo the mortar can spend. Once empty, unit will dismount.													Number (Mortars)
 
 //	Firing Mode settings
-_PreciseSize = [2,3,5];									// Randomly select number of mortars per "Precise" rotation.														Array of numbers (Mortars)
-_PreciseReloadTime = 110;									// The time it takes for the mortar to prepare for another strike after performing a Precise strike.				Number (Seconds)
+_PreciseSize = [2,3,4];									// Randomly select number of mortars per "Precise" rotation.														Array of numbers (Mortars)
+_PreciseReloadTime = 420;									// The time it takes for the mortar to prepare for another strike after performing a Precise strike.				Number (Seconds)
 _BarrageSize = [8,10,12];									// Randomly selected number of mortars per barrage.																	Array of numbers (Mortars)
-_BarrageReloadTime = 170;									// The time it takes for the mortar to prepare for another strike after performing a Barrage.						Number (Seconds)
+_BarrageReloadTime = 480;									// The time it takes for the mortar to prepare for another strike after performing a Barrage.						Number (Seconds)
 _BarrageInaccuracyMultiplier = 1.75;						// How much more inaccurate the barrage will be compared to a precise strike.										Number (Multiplier)
 _SporadicSize = [10,12,14];									// Randomly selected number of mortars per "Sporadic" rotation.														Array of numbers (Mortars)
-_SporadicReloadTime = 90;									// The time it takes for the mortar to prepare for another strike after performing a Sporadic strike.				Number (Seconds)
+_SporadicReloadTime = 220;									// The time it takes for the mortar to prepare for another strike after performing a Sporadic strike.				Number (Seconds)
 _SporadicInaccuracyMultiplier = 4;							// How much more inaccurate the barrage will be compared to a precise strike.										Number (Multiplier)
 _GuidedSize = [9,11,13];									// Randomly selected number of mortars per "Guided" rotation.														Array of numbers (Mortars)
-_GuidedReloadTime = 150;									// The time it takes for the mortar to prepare for another strike after performing a Guided strike.					Number (Seconds)
+_GuidedReloadTime = 360;									// The time it takes for the mortar to prepare for another strike after performing a Guided strike.					Number (Seconds)
 _GuidedInaccuracyMultiplier = 3;							// How much more inaccurate the Guided strike will be to begin with													Number (Multiplier)
 _ScreenSize = [6,8,10];										// Randomly select number of mortars per "Screen" rotation.															Array of numbers (Mortars)
 _ScreenReloadTime = 150;									// The time it takes for the mortar to prepare for another strike after performing a Screen strike.					Number (Seconds)
