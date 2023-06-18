@@ -23,6 +23,7 @@ clearItemCargoGlobal _Vehicle;
 clearWeaponCargoGlobal _Vehicle;
 clearMagazineCargoGlobal _Vehicle;
 clearBackpackCargoGlobal _Vehicle;
+_Vehicle setFuel 0.4;
 
 if(_ShouldDisableThermal) then {
 	_Vehicle disableTIEquipment true;

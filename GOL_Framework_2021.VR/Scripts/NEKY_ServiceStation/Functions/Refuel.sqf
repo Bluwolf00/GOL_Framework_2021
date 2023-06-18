@@ -4,18 +4,22 @@
 //	
 //	Made by NeKo-ArroW
 
-Private ["_Veh","_SS","_FullService","_Refueling","_Msg"];
+Private ["_Veh","_SS","_FullService","_Refueling","_Msg","_FuelLimit"];
 #include "..\Settings.sqf"
 
 Params ["_Veh","_SS","_FullService"];
 
 if !(_FullService) then {NEKY_ServiceStationActive PushBack _SS; PublicVariable "NEKY_ServiceStationActive"};
 ScopeName "Main";
+_FuelLimit = 0.75;
+if(_Veh isKindOf "LandVehicle") then {
+	_FuelLimit = 0.4;
+};
 
-if (fuel _Veh < 0.98) then
+if (fuel _Veh < _FuelLimit) then
 {
 	_MsgIndex = 0;
-	while {fuel _veh < 0.98} do
+	while {fuel _veh < _FuelLimit} do
 	{
 		["Refueling", _Veh, true, _MsgIndex] spawn NEKY_ServiceStation_Hints;
 		if (!(_Veh in NEKY_ServiceStationArray)) Then {BreakTo "Main"};
