@@ -74,32 +74,38 @@ GOL_OKS_DYNAMIC = 1;
 
 /* Classname Settings */
 GOL_NEKY_SUPPLY_HELICOPTER = "";
-GOL_NEKY_VEHICLEDROP_VEHICLECLASS = (typeOf Vehicle_1); // Classname
-GOL_NEKY_VEHICLEDROP_CODE = {
 
-	[_Vehicle] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";	
+if(!isNil "Vehicle_1") then {
+	GOL_NEKY_VEHICLEDROP_VEHICLECLASS = (typeOf Vehicle_1); // Classname
+	GOL_NEKY_VEHICLEDROP_CODE = {
 
-	// Use the Vehicle Appearance Editor, make your changes then export and paste below and reformat to match the code below.	
-	[
-		_Vehicle,
-		["Sand",1], 
-		["showBags",1,"showCamonetHull",1,"showCamonetTurret",1,"showSLATHull",1,"showSLATTurret",1]
-	] call BIS_fnc_initVehicle;
+		[_Vehicle] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";	
+
+		// Use the Vehicle Appearance Editor, make your changes then export and paste below and reformat to match the code below.	
+		[
+			_Vehicle,
+			["Sand",1], 
+			["showBags",1,"showCamonetHull",1,"showCamonetTurret",1,"showSLATHull",1,"showSLATTurret",1]
+		] call BIS_fnc_initVehicle;
+	};
 };
-GOL_NEKY_MHQDROP_VEHICLECLASS = (typeOf MHQ_1); // Classname
-GOL_NEKY_MHQDROP_CODE = {
+if(!isNil "MHQ_1") then {
+	GOL_NEKY_MHQDROP_VEHICLECLASS = (typeOf MHQ_1); // Classname
+	GOL_NEKY_MHQDROP_CODE = {
 
-	[_Vehicle] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";
-	[_Vehicle, "medium"] call GW_MHQ_Fnc_Handler;
-	[_Vehicle,25,true] ExecVM "Scripts\NEKY_ServiceStation\MobileSS.sqf";
+		[_Vehicle] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";
+		[_Vehicle, "medium"] call GW_MHQ_Fnc_Handler;
+		[_Vehicle,25,true] ExecVM "Scripts\NEKY_ServiceStation\MobileSS.sqf";
 
-	// Use the Vehicle Appearance Editor, make your changes then export and paste below and reformat to match the code below.	
-	[
-		_Vehicle,
-		["Sand",1], 
-		["showBags",1,"showCamonetHull",1,"showCamonetTurret",1,"showSLATHull",1,"showSLATTurret",1]
-	] call BIS_fnc_initVehicle;
+		// Use the Vehicle Appearance Editor, make your changes then export and paste below and reformat to match the code below.	
+		[
+			_Vehicle,
+			["Sand",1], 
+			["showBags",1,"showCamonetHull",1,"showCamonetTurret",1,"showSLATHull",1,"showSLATTurret",1]
+		] call BIS_fnc_initVehicle;
+	};
 };
+
 
 /* DO NOT EDIT BELOW */
 OKS_MISSION_SETTINGS = true;
