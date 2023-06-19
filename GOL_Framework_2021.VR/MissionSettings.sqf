@@ -4,7 +4,7 @@ GOL_OPTICS = 1;
 GOL_WEAPONS = 0;
 GOL_ARSENAL_ALLOWED = 1;
 GOL_ENTRENCH = 0;
-GOL_OKS_SecondPrimaryWeapon = 1;
+GOL_OKS_SecondPrimaryWeapon = 0;
 
 /* AI Gear Settings */
 // 0 = 0%, 1 = 100%
@@ -14,8 +14,8 @@ GOL_UGL_Chance = 0.5;
 
 /* AI Static Settings */
 // 0 = 0%, 1 = 100%
-GOL_Static_Enable_Chance = 0.3;
-GOL_Static_Enable_Refresh = 15;
+GOL_Static_Enable_Chance = 0.25;
+GOL_Static_Enable_Refresh = 45;
 
 /* AI Vehicle Settings */
 // Removes HE/FRAG rounds from SPG-9, T-** Tanks and BMP1s.
@@ -23,20 +23,20 @@ GOL_Remove_HE_From_StaticAndVehicle = true;
 GOL_Remove_ATGM_FromVehicles = true;
 
 // ACE Carry/Drag Container Settings
-ACE_maxWeightCarry = 1200; 
-ACE_maxWeightDrag = 2000;
+ACE_maxWeightCarry = 1400; 
+ACE_maxWeightDrag = 2200;
 
 /* Logistics & Support Settings */
 GOL_NEKY_SERVICESTATION = 1;
 GOL_NEKY_RESUPPLY = 1;
-GOL_NEKY_PARADROP = 1;
+GOL_NEKY_PARADROP = 0;
 GOL_NEKY_PICKUP = 0;
 GOL_NEKY_REINSERT = 0;
 GOL_OKS_REINFORCEMENT = 0;
 GOL_NEKY_FASTROPE = 0; // Not particularly good - engine limitations stop helicopters from hovering under 50-ish meters.
 GOL_OKS_SUPPORT = 0;
 
-GOL_OKS_TentMHQ = 0; 
+GOL_OKS_TentMHQ = 1; 
 /* ^ Change code in "Scripts/OKS_TentMHQ/ACE_MoveMHQ.sqf" to enable all players to move tent.
 Requires init.sqf line 28 to be commented out and replaced with line 29.
 _condition = {true} is the correct one to use for that. */
@@ -105,7 +105,6 @@ if(!isNil "MHQ_1") then {
 		] call BIS_fnc_initVehicle;
 	};
 };
-
 
 /* DO NOT EDIT BELOW */
 OKS_MISSION_SETTINGS = true;
