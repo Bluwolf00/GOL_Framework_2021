@@ -1,15 +1,15 @@
 /*
 	OKS_Attack_SpawnGroup
 	[SpawnPosOrObject,ArrayOrObject,UnitOrClassname,Side,ShouldAddStepWaypoint] spawn OKS_Attack_SpawnGroup;
-	[SpawnPosOrObject,ArrayOrObject,UnitOrClassname,Side,ShouldAddStepWaypoint] execVM "Scripts\OKS_Dynamic\OKS_Attack_SpawnGroup.sqf";
+	[SpawnPosOrObject,ArrayOrObject,UnitOrClassname,Side,ShouldAddStepWaypoint] execVM "Scripts\OKS_Spawn\OKS_Attack_SpawnGroup.sqf";
 */
 
  	if(!isServer) exitWith {};
 
 	Params [
 		["_Spawn",objNull,[objNull,[]]],
-		["_TargetWaypoints",objNull,[[],objNull]],
-		["_ClassnameOrNumber",5,[0]],
+		["_TargetWaypoint",objNull,[[],objNull]],
+		["_ClassnameOrNumber",5,[0,""]],
 		["_Side",east,[sideUnknown]],
 		["_StepWaypoint",false,[false]]
 	];
@@ -73,8 +73,24 @@
 		_PreWaypointPos = _TargetWaypoint getPos [((_Spawn distance _TargetWaypoint) / 2), _TargetWaypoint getDir _Spawn];
 		_WP1 = _Group addWaypoint [_PreWaypointPos,25];
 		_WP1 setWaypointType "MOVE";
+
+		_WP2 = _Group addWaypoint [_TargetWaypoint,25];
+		_WP2 setWaypointType "SAD";		
 	} else {
 		if(typeName _TargetWaypoint == "ARRAY") then {
+
+			if(typeName (_TargetWaypoint select 0) == "SCALAR") exitWith {
+				
+				if(_StepWaypoint) then {
+					_PreWaypointPos = _TargetWaypoint getPos [((_Spawn distance _TargetWaypoint) / 2), _TargetWaypoint getDir _Spawn];
+					_WP = _Group addWaypoint [_PreWaypointPos,-1];
+					_WP setWaypointType "MOVE";
+				};
+
+				_WP2 = _Group addWaypoint [_TargetWaypoint,25];
+				_WP2 setWaypointType "SAD";						
+			};
+
 			{
 				if(_TargetWaypoint find _X == (count _TargetWaypoint - 1)) then {
 					_WP = _Group addWaypoint [_X,-1];

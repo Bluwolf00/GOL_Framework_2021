@@ -151,7 +151,13 @@ if (_isMan) then {
 	if !(_errorCode) then {
 		_unit setUnitLoadout _loadout;
 
-		if(GOL_OKS_SecondPrimaryWeapon isEqualTo 1) then {
+		if(_isPlayer && GOL_OKS_SecondPrimaryWeapon isEqualTo 1) then {
+			_WKB_SecondWeapon = _unit getVariable "WBK_SecondWeapon";
+			if(!isNil "_WKB_SecondWeapon") then {
+				_crate = _WKB_SecondWeapon select 0;
+				deleteVehicle _crate;
+				_unit setVariable ["WBK_SecondWeapon",nil,true];
+			};
 			[_unit,_role] execVM "Scripts\OKS_Second_PrimaryWeapon.sqf";	
 		};
 
