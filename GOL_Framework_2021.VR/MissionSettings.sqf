@@ -1,15 +1,15 @@
 /* Gear Settings */
 GOL_MAGNIFIED_OPTICS = 0;
 GOL_OPTICS = 1;
-GOL_WEAPONS = 0;
+GOL_WEAPONS = 1;
 GOL_ARSENAL_ALLOWED = 1;
 GOL_ENTRENCH = 0;
 GOL_OKS_SecondPrimaryWeapon = 0;
 
 /* AI Gear Settings */
 // 0 = 0%, 1 = 100%
-GOL_LAT_Chance = 0.5;
-GOL_MAT_Chance = 0.3;
+GOL_LAT_Chance = 1;
+GOL_MAT_Chance = 0.25;
 GOL_UGL_Chance = 0.5;
 
 /* AI Static Settings */
@@ -82,11 +82,12 @@ if(!isNil "Vehicle_1") then {
 		[_Vehicle] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";	
 
 		// Use the Vehicle Appearance Editor, make your changes then export and paste below and reformat to match the code below.	
-		[
-			_Vehicle,
-			["Sand",1], 
-			["showBags",1,"showCamonetHull",1,"showCamonetTurret",1,"showSLATHull",1,"showSLATTurret",1]
-		] call BIS_fnc_initVehicle;
+		// [
+		// 	_Vehicle,
+		// 	["Indep_01",1], 
+		// 	["showBags",1,"showBags2",1,"showCamonetHull",0,"showCamonetTurret",0,"showTools",1,"showSLATHull",1,"showSLATTurret",1]
+		// ] call BIS_fnc_initVehicle;
+
 	};
 };
 if(!isNil "MHQ_1") then {
@@ -98,11 +99,12 @@ if(!isNil "MHQ_1") then {
 		[_Vehicle,25,true] ExecVM "Scripts\NEKY_ServiceStation\MobileSS.sqf";
 
 		// Use the Vehicle Appearance Editor, make your changes then export and paste below and reformat to match the code below.	
-		[
-			_Vehicle,
-			["Sand",1], 
-			["showBags",1,"showCamonetHull",1,"showCamonetTurret",1,"showSLATHull",1,"showSLATTurret",1]
-		] call BIS_fnc_initVehicle;
+		// [
+		// 	_Vehicle,
+		// 	["Indep_01",1], 
+		// 	["showBags",1,"showBags2",1,"showCamonetHull",0,"showCamonetTurret",0,"showTools",1,"showSLATHull",1,"showSLATTurret",1]
+		// ] call BIS_fnc_initVehicle;
+
 	};
 };
 

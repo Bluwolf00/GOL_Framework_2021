@@ -44,8 +44,13 @@ Sleep 5;
 	if(GOL_NEKY_RESUPPLY isEqualTo 1) then {
 		execVM "Scripts\NEKY_Supply\Ace_Resupply.sqf";
 		execVM "Scripts\NEKY_Supply\Ace_Med.sqf";
-		execVM "Scripts\NEKY_Supply\Ace_VehicleDrop.sqf";
-		execVM "Scripts\NEKY_Supply\Ace_MHQDrop.sqf";
+
+		if(!isNil "Vehicle_1") then {
+			execVM "Scripts\NEKY_Supply\Ace_VehicleDrop.sqf";
+		};
+		if(!isNil "MHQ_1") then {
+			execVM "Scripts\NEKY_Supply\Ace_MHQDrop.sqf";
+		};				
 	};
 	if(GOL_OKS_SUPPORT isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Support\Init.sqf";
@@ -99,7 +104,7 @@ Sleep 5;
 			[[JAMMER],500,50] spawn TFAR_Scrambler;
 		*/
 	};
-	if(GOL_OKS_TentMHQ isEqualTo 1) then {
+	if(GOL_OKS_TentMHQ isEqualTo 1 && !isNil "Tent_MHQ") then {
 		execVM "Scripts\OKS_TentMHQ\ACE_MoveMHQ.sqf";
 	};
 	if(GOL_OKS_SPAWN isEqualTo 1) then {
@@ -270,7 +275,7 @@ Sleep 10;
 		/*
 		if(isServer && GOL_NEKY_HUNT isEqualTo 1) then {
 			waitUntil{sleep 5; !(isNil "NEKY_Hunt_HuntBase")};
-			[Base_1, Spawn_1, NEKY_Hunt_Trigger_1, 5,30,independent,6,30] spawn NEKY_Hunt_HuntBase;
+			[Base_1, Spawn_1, NEKY_Hunt_Trigger_1, 5,600+(random 300),east,6,120+(120)] spawn NEKY_Hunt_HuntBase;
 		};
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
