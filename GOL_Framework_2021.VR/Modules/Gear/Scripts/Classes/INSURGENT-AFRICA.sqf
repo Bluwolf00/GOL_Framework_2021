@@ -84,9 +84,15 @@ _LMG_mag = "hlc_60Rnd_545x39_t_rpk";
 _MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhs_100Rnd_762x54mmR_green";
 
-_LAT = ["rhs_weap_rpg18", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "";
-_LAT_ReUsable = false;
+if(random 1 > 0.5) then {
+	_LAT = ["rhs_weap_rpg75", _silencer, _pointer, _sight, _bipod];
+	_LAT_mag = "rhs_rpg75_mag";
+	_LAT_ReUsable = false;
+} else {
+	_LAT = ["rhs_weap_rpg18", _silencer, _pointer, _sight, _bipod];
+	_LAT_mag = "rhs_rpg18_mag";
+	_LAT_ReUsable = false;
+};
 
 _MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "RPG7_F";

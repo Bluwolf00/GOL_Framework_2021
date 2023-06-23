@@ -80,8 +80,8 @@ _LMG_mag = "UK3CB_BAF_762_200Rnd_T";
 _MMG = ["hlc_lmg_MG3KWS_b_100rnd", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
 
-_LAT = ["rhs_weap_M136_hedp", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "";
+_LAT = ["rhs_weap_rpg18", _silencer, _pointer, _sight, _bipod];
+_LAT_mag = "rhs_rpg18_mag";
 _LAT_ReUsable = false;
 
 _MAT = ["launch_MRAWS_sand_rail_F", _silencer, _pointer, _sight, _bipod];
