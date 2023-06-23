@@ -79,7 +79,7 @@ _MMG_mag = "rhssaf_250Rnd_762x54R";
 _sight = "";
 
 _LAT = ["UK3CB_BAF_AT4_CS_AT_Launcher", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "";
+_LAT_mag = "UK3CB_BAF_AT4_CS_AT_Mag";
 _LAT_ReUsable = false;
 
 _MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];

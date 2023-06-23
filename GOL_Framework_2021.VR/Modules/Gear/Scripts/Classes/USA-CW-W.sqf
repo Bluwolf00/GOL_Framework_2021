@@ -65,7 +65,7 @@ _MMG = ["hlc_lmg_m60", _silencer, _pointer, _sight, ""];
 _MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
 
 _LAT = ["rhs_weap_m72a7", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "";
+_LAT_mag = "rhs_m72a7_mag";
 _LAT_ReUsable = false;
 
 _MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];

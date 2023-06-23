@@ -61,7 +61,7 @@ _MMG = ["UK3CB_BAF_L7A2", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "UK3CB_BAF_762_100Rnd_T";
 
 _LAT = ["rhs_weap_m72a7", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "";
+_LAT_mag = "rhs_m72a7_mag";
 _LAT_ReUsable = false;
 
 _MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];

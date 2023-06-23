@@ -70,9 +70,9 @@ _LMG_mag = "rhs_75Rnd_762x39mm_tracer";
 _MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhs_100Rnd_762x54mmR_green";
 
-_LAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "RPG7_F";
-_LAT_ReUsable = true;
+_LAT = ["rhs_weap_rpg26", _silencer, _pointer, _sight, _bipod];
+_LAT_mag = "rhs_rpg26_mag";
+_LAT_ReUsable = false;
 
 _MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "RPG7_F";
