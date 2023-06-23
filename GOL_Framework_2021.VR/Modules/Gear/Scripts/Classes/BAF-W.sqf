@@ -1,13 +1,13 @@
-_useMineDetector = false;
-_allowedNightStuff = true;
+_useMineDetector = true;
+_allowedNightStuff = false;
 
 _insignia = "";
 _goggles = ["rhsusf_shemagh_grn","rhsusf_shemagh2_grn","rhsusf_oakley_goggles_clr"];
-_helmet = "acp_gol_GB_DPM95_H_MK7_GB_DPM95_F";
+_helmet = ["acp_gol_GB_DPM95_H_MK7_GB_DPM95_F","acp_gol_GB_DPM95_H_HelmetB_GB_DPM95","acp_gol_GB_DPM95_H_HelmetB_camo_GB_DPM95"];
 _OfficerHelmet = "UK3CB_ANA_B_H_Beret_GRN";
 _uniform = ["acp_gol_GB_DPM95_U_I_CombatUniform_shortsleeve_GB_DPM95_insignia","acp_gol_GB_DPM95_U_I_CombatUniform_GB_DPM95_insignia"];
-_vest = "acp_gol_GB_DPM95_V_CarrierRigKBT_01_light_GB_DPM95_F";
-_backpack = "acp_gol_GB_DPM95_B_TacticalPack_GB_DPM95";
+_vest = ["acp_gol_GB_DPM95_V_CarrierRigKBT_01_light_GB_DPM95_F","acp_gol_GB_DPM95_V_CarrierRigKBT_01_heavy_GB_DPM95_F","acp_gol_GB_DPM95_V_CarrierRigKBT_01_GB_DPM95_F","acp_gol_GB_DPM95_V_PlateCarrier1_GB_DPM95_insignia","acp_gol_GB_DPM95_V_PlateCarrier2_GB_DPM95_insignia","acp_gol_GB_DPM95_V_PlateCarrierIA1_GB_DPM95"];
+_backpack = "acp_gol_GB_DPM95_B_Kitbag_rgr_GB_DPM95";
 _backpackRadio = _backpack;
 
 if (GVARMAIN(mod_TFAR)) then {
@@ -15,7 +15,7 @@ if (GVARMAIN(mod_TFAR)) then {
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = "acp_gol_GB_DPM95_B_TacticalPack_GB_DPM95";
+	_backpack = "acp_gol_GB_DPM95_B_Carryall_GB_DPM95";
 };
 if (_role isEqualTo "crew") then {
 	_helmet = "H_HelmetCrew_B";
@@ -61,7 +61,7 @@ _MMG = ["UK3CB_BAF_L7A2", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "UK3CB_BAF_762_100Rnd_T";
 
 _LAT = ["UK3CB_BAF_AT4_CS_AT_Launcher", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "UK3CB_BAF_AT4_CS_AT_Launcher";
+_LAT_mag = "";
 _LAT_ReUsable = false;
 
 _MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
