@@ -64,12 +64,12 @@ _MMG_mag = "150Rnd_762x51_Box_Tracer";
 _sight = "";
 
 _LAT = ["rhs_weap_rpg26", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "";
+_LAT_mag = "rhs_rpg26_mag";
 _LAT_ReUsable = false;
 
-_MAT = ["rhs_weap_rpg26", _silencer, _pointer, _sight, _bipod];
-_MAT_mag = "";
-_MAT_mag_HE = "";
+_MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
+_MAT_mag = "RPG7_F";
+_MAT_mag_HE = "rhs_rpg7_OG7V_mag";
 
 _HAT = ["launch_O_Vorona_brown_F", _silencer, _pointer, _sight, _bipod];
 _HAT_mag = "Vorona_HEAT";
