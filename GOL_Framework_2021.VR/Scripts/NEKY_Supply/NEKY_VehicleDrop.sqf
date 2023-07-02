@@ -149,7 +149,7 @@ Switch (_Type) do
 					_Vehicle = _This select 0;
 					_VehicleCode = _This select 1;
 					sleep 2;
-					if (TypeName _VehicleCode == "STRING") Then {if (_VehicleCode != "") then {[_Vehicle] execVM _VehicleCode};} else {[_Vehicle] call _VehicleCode};
+					if (TypeName _VehicleCode == "STRING") Then {if (_VehicleCode != "") then {[_Vehicle] execVM _VehicleCode};} else {[_Vehicle] spawn _VehicleCode};
 				};
 				_Vehicle HideObjectGlobal True;
 				_Chute = CreateVehicle [_ChuteClass, [0,0,0], [], 0, "NONE"];
