@@ -123,7 +123,7 @@
 		_add pushback [_mhq, _id];
 		private _mhqName = _mhq;
 		if(["p3d", str _mhq] call BIS_fnc_inString) then {
-			_mhqName = format["%1 MHQ",[configFile >> "CfgVehicles" >> typeOf _mhq] call BIS_fnc_displayName;];
+			_mhqName = format["%1 MHQ",[configFile >> "CfgVehicles" >> typeOf _mhq] call BIS_fnc_displayName];
 		};
 		_id = (([_mhq] call FUNC(getFlag))) addAction[format ["Teleport to %1", _mhqName],{
 			_EnemyNearUnits = ((_this select 3) nearEntities ["Man", 200]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
