@@ -121,11 +121,15 @@
 
 		_id = _mhq addAction ["Teleport to Base",{[player, ([(_this select 0)] call FUNC(getFlag))] call bis_fnc_moveToRespawnPosition},ARGUMENT(_mhq),(CONDITION_1),7];
 		_add pushback [_mhq, _id];
-
-		_id = (([_mhq] call FUNC(getFlag))) addAction[format ["Teleport to %1", _mhq],{
+		private _mhqName = _mhq;
+		if(["p3d", str _mhq] call BIS_fnc_inString) then {
+			_mhqName = format["%1 MHQ",[configFile >> "CfgVehicles" >> typeOf _mhq] call BIS_fnc_displayName;];
+		};
+		_id = (([_mhq] call FUNC(getFlag))) addAction[format ["Teleport to %1", _mhqName],{
 			_EnemyNearUnits = ((_this select 3) nearEntities ["Man", 200]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
 			if(count _EnemyNearUnits == 0) then {	
-				private _height = 5;	
+				private _height = 5;
+				private _sleep = 3.5;	
 				private _camera = "camera" camCreate [getPosATL (_this select 3) select 0,getPosATL (_this select 3) select 1,100];		
 				cutText ["", "BLACK OUT",1]; sleep 1;
 				1 fadeSound 0;
@@ -134,6 +138,7 @@
 					[player, (_this select 3)] call bis_fnc_moveToRespawnPosition;
 					_camera camSetTarget player;
 					_height = 2;
+					_sleep = 5;
 				} else {
 					_camera camSetTarget (_this select 3);
 				};	
@@ -144,7 +149,7 @@
 				1 fadeSound 1;
 				_camera camSetPos [getPosATL (_this select 3) select 0,getPosATL (_this select 3) select 1,_height];
 				_camera camCommit 4.5;
-				sleep 5;
+				sleep _sleep;
 				cutText ["", "BLACK OUT",1];
 				waitUntil { sleep 1; camCommitted _camera; };				
 				_camera cameraEffect ["terminate", "back"];			
