@@ -143,7 +143,13 @@ switch (toLower(_role)) do {
 		[[_grenademini,2],[_rifleL_mag,7],[_rifleL_mag_tr,7]] call _addToVest;
 		_IFAK call _addToUniform;
 		[[_smokegrenadeW,3]] call _addToUniform;
-
+		if ((random 1) <= GOL_LAT_Chance) then {
+			[_LAT, _LAT_mag, ""] call _addLaunchers;
+			if (_LAT_ReUsable) then {
+				["","","","",_backpack] call _addEquipment;
+				[[_LAT_mag,1]] call _addToBackpack;
+			};
+		};	
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
@@ -189,7 +195,16 @@ switch (toLower(_role)) do {
 		[[_rifle_mag_tr,12]] call _addToVest;
 		if ((random 1) <= GOL_MAT_Chance) then {
 			[_MAT, _MAT_mag, ""] call _addLaunchers;
-			[[_MAT_mag,1],[_MAT_mag_HE,2]] call _addToBackpack;
+			["","","","",_backpack] call _addEquipment;
+			[[_MAT_mag,2]] call _addToBackpack;
+		} else {
+			if ((random 1) <= GOL_LAT_Chance) then {
+				[_LAT, _LAT_mag, ""] call _addLaunchers;
+				if (_LAT_ReUsable) then {
+					["","","","",_backpack] call _addEquipment;
+					[[_LAT_mag,1]] call _addToBackpack;
+				};
+			};		
 		};	
 		["", "", "", "", "", _nvg] call _addLinkedItems;
 	};
