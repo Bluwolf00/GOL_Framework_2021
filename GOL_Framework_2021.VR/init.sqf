@@ -30,9 +30,12 @@ Sleep 5;
      	 	_action = ["Request_Support", "Request Support","\A3\ui_f\data\map\VehicleIcons\iconCrateVeh_ca.paa", {}, _condition] call ace_interact_menu_fnc_createAction;
      		[typeOf player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToClass;
 		};
-		execVM "Scripts\NEKY_Paradrop\Init.sqf";
-		sleep 2;
-		[] spawn NEKY_ACE_AddAction;
+
+		if(GOL_NEKY_PARADROP isEqualTo 1) then {
+			execVM "Scripts\NEKY_Paradrop\Init.sqf";
+			sleep 2;
+			[] spawn NEKY_ACE_AddAction;
+		};
 	};
 
 	if(GOL_EnableHelicopterScriptToAllVehicles isEqualTo 1) then {
