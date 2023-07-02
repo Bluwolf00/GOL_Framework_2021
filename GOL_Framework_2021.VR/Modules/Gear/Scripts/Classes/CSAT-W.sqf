@@ -60,8 +60,8 @@ _MMG_mag = "150Rnd_762x51_Box_Tracer";
 _sight = "";
 
 _LAT = ["UK3CB_BAF_AT4_CS_AT_Launcher", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "UK3CB_BAF_AT4_CS_AT_Launcher";
-_LAT_ReUsable = true;
+_LAT_mag = "UK3CB_BAF_AT4_CS_AT_Mag";
+_LAT_ReUsable = false;
 
 _MAT = ["launch_RPG32_ghex_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "RPG32_F";

@@ -7,17 +7,17 @@
 			_Delay = 120;
 			for [{ private _i = _Delay }, { _i > 0 }, { _i = _i - 1}] do {
 				[parseText format[
-					"<t color='#f5791b'>
-					<t size='1.3'>RESPAWN DELAY</t>
-					<br/><t size='1.1'>YOU MAY USE SCRIPTED REINSERT IN:<br/><br/>
-					<t size='2'>%1</t></t></t>"
+					("<t color='#f5791b'>"+
+					"<t size='1.3'>RESPAWN DELAY</t>"+
+					"<br/><t size='1.1'>YOU MAY USE SCRIPTED REINSERT IN:<br/><br/>"+
+					"<t size='2'>%1</t></t></t>")
 				,_i]] remoteExec ["hintSilent",_this];
 				sleep 1;
 			};
 			[parseText
-					"<t color='#f5791b'>
-					<t size='1.3'>RESPAWN DELAY</t>
-					<br/><br/><t size='1.1'>YOU MAY NOW USED SCRIPTED REINSERT.</t></t>"
+					("<t color='#f5791b'>"+
+					"<t size='1.3'>RESPAWN DELAY</t>"+
+					"<br/><br/><t size='1.1'>YOU MAY NOW USED SCRIPTED REINSERT.</t></t>")
 			] remoteExec ["hintSilent",_this];
 			_this setVariable ["GOL_TeleportDelay",false,true];
 		};		
@@ -79,7 +79,7 @@
 	#define	ARGUMENT(VAR) VAR,1,false,false,""
 	#define	CONDITION_1 "(alive _target) && (vehicle player isEqualTo player) && !(player getVariable ['GOL_TeleportDelay',false])"
 	#define	CONDITION_2 "(_target getVariable 'GW_MHQ_Assembled')"
-
+	#define	CONDITION_3 "(alive _target) && (speed _target) < 0.1"
 	params ["_mhq"];
 	private	_add = [];
 	private _mhqActiveActions = (_mhq getVariable [QGVAR(ActiveActions), []]);
@@ -91,9 +91,18 @@
 	if (_mhq getVariable QGVAR(Active)) then {
 		_id = _mhq addAction ["Deactivate MHQ",{ player PlayMove "Acts_carFixingWheel";
 			["Deactivating MHQ", 5, {(((_this select 0) select 0) getVariable "GW_MHQ_Active")}, {
-				([QGVAR(Enabled), [((_this select 0) select 0), false, str([player] call EFUNC(Common,getSide))]] call CBA_fnc_serverEvent); player SwitchMove "";
-			}, {player SwitchMove ""; hint "Aborted";} , [(_this select 0)]] call CBA_fnc_progressBar;
-		},ARGUMENT(_mhq),(CONDITION_1 + "&& !" + CONDITION_2),7];
+				([QGVAR(Enabled), [((_this select 0) select 0), false, str([player] call EFUNC(Common,getSide))]] call CBA_fnc_serverEvent);
+				if(objectParent player != ((_this select 0) select 0)) then {
+					player SwitchMove "";
+				};
+			},
+			{
+				if(objectParent player != ((_this select 0) select 0)) then {
+					player SwitchMove "";
+				};
+				hint "Aborted";
+			} , [(_this select 0)]] call CBA_fnc_progressBar;
+		},ARGUMENT(_mhq),(CONDITION_3 + "&& !" + CONDITION_2),7];
 		_add pushback [_mhq, _id];
 
 		_id = _mhq addAction ["Assemble MHQ",{
@@ -115,19 +124,112 @@
 
 		_id = (([_mhq] call FUNC(getFlag))) addAction[format ["Teleport to %1", _mhq],{
 			_EnemyNearUnits = ((_this select 3) nearEntities ["Man", 200]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
-			if(count _EnemyNearUnits == 0) then {
-				[player, (_this select 3)] call bis_fnc_moveToRespawnPosition
+			if(count _EnemyNearUnits == 0) then {	
+				private _height = 5;	
+				private _camera = "camera" camCreate [getPosATL (_this select 3) select 0,getPosATL (_this select 3) select 1,100];		
+				cutText ["", "BLACK OUT",1]; sleep 1;
+				1 fadeSound 0;
+				cutText ["", "BLACK IN",1];
+				if(vehicleVarName (_this select 3) == "Tent_MHQ") then {
+					[player, (_this select 3)] call bis_fnc_moveToRespawnPosition;
+					_camera camSetTarget player;
+					_height = 2;
+				} else {
+					_camera camSetTarget (_this select 3);
+				};	
+				showCinemaBorder true;
+				_camera cameraEffect ["internal", "back"];
+				
+				waitUntil { camCommitted _camera; };
+				1 fadeSound 1;
+				_camera camSetPos [getPosATL (_this select 3) select 0,getPosATL (_this select 3) select 1,_height];
+				_camera camCommit 4.5;
+				sleep 5;
+				cutText ["", "BLACK OUT",1];
+				waitUntil { sleep 1; camCommitted _camera; };				
+				_camera cameraEffect ["terminate", "back"];			
+				camDestroy _camera;
+				if(vehicleVarName (_this select 3) != "Tent_MHQ") then {
+					[player, (_this select 3)] call bis_fnc_moveToRespawnPosition;
+				};	
+				sleep 1.1;	
+				cutText ["", "BLACK IN",1];
+				
 			} else {
-				systemChat "Enemies are near the MHQ. You cannot move to the MHQ until the immediate area is secure (200m).";
+				if(count crew (_this select 3) > 0) then {
+					systemChat "Enemies are near the MHQ. You cannot move to the MHQ until the immediate area is secure (200m). The crew has been notified.";
+					(format["Reinsert: %1 attempted to move to the MHQ.",name player]) remoteExec ["SystemChat",crew (_this select 3)];
+				} else {
+					private ["_GroupLeaders"];
+					systemChat "Enemies are near the MHQ. You cannot move to the MHQ until the immediate area is secure (200m). Group leaders have been notified";
+					if(!isNil "flag_west_1") then {
+						_GroupLeaders = allPlayers select {leader (group _X) == _X && (_X distance flag_west_1 > 200)};
+					};
+					if(!isNil "flag_east_1") then {
+						_GroupLeaders = allPlayers select {leader (group _X) == _X && (_X distance flag_east_1 > 200)};
+					};				
+					(format["Reinsert: %1 attempted to move to the MHQ.",name player]) remoteExec ["SystemChat",_GroupLeaders];
+				};	
+				(player) spawn {
+						_this setVariable ["GOL_TeleportDelay",true,true];
+						_Delay = 10;
+						for [{ private _i = _Delay }, { _i > 0 }, { _i = _i - 1}] do {
+							[parseText format[
+								("<t color='#f5791b'>"+
+								"<t size='1.3'>RESPAWN DELAY</t>"+
+								"<br/><t size='1.1'>YOU MAY USE SCRIPTED REINSERT IN:<br/><br/>"+
+								"<t size='2'>%1</t></t></t>")
+							,_i]] remoteExec ["hintSilent",_this];
+							sleep 1;
+						};
+						[parseText
+								("<t color='#f5791b'>"+
+								"<t size='1.3'>RESPAWN DELAY</t>"+
+								"<br/><br/><t size='1.1'>YOU MAY NOW USED SCRIPTED REINSERT.</t></t>")
+						] remoteExec ["hintSilent",_this];
+						_this setVariable ["GOL_TeleportDelay",false,true];
+				};						
 			}
 		},ARGUMENT(_mhq),(CONDITION_1),7];
 		_add pushback [([_mhq] call FUNC(getFlag)), _id];
 	} else {
-		_id = _mhq addAction ["Activate MHQ",{ player PlayMove "Acts_carFixingWheel";
-			["Activating MHQ", 5, {!(((_this select 0) select 0) getVariable "GW_MHQ_Active")}, {
-				([QGVAR(Enabled), [((_this select 0) select 0), true, str([player] call EFUNC(Common,getSide))]] call CBA_fnc_serverEvent); player SwitchMove "";
-			}, {hint "Aborted"; player SwitchMove "";}, [(_this select 0)]] call CBA_fnc_progressBar;
-		},ARGUMENT(_mhq),CONDITION_1,7];
+		_id = _mhq addAction ["Activate MHQ",{
+			
+			_EnemyNearUnits = ((_this select 3) nearEntities ["Man", 200]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
+			if(count _EnemyNearUnits == 0) then {			
+				if(objectParent player != (_this select 3)) then {
+					player PlayMove "Acts_carFixingWheel";
+				};		
+				["Activating MHQ", 5, {!(((_this select 0) select 0) getVariable "GW_MHQ_Active")}, {
+					([QGVAR(Enabled), [((_this select 0) select 0), true, str([player] call EFUNC(Common,getSide))]] call CBA_fnc_serverEvent);
+					if(objectParent player != ((_this select 0) select 0)) then {
+						player SwitchMove "";
+					};
+					Private ["_Players"];
+					if(!isNil "flag_west_1") then {
+						_Players = allPlayers select {_X distance flag_west_1 < 200};
+					};
+					if(!isNil "flag_east_1") then {
+						_Players = allPlayers select {_X distance flag_east_1 < 200};
+					};
+					
+					[parseText
+								("<t color='#f5791b'>"+
+								"<t size='1.3'>MOBILE HQ ACTIVE</t>"+
+								"<br/><br/><t size='1.1'>YOU MAY NOW TELEPORT TO MHQ.</t></t>")
+					] remoteExec ["hint",_Players];
+				},
+				{
+					hint "Aborted";
+					if(objectParent player != ((_this select 0) select 0)) then {
+						player SwitchMove "";
+					};
+				}, [(_this select 0)]] call CBA_fnc_progressBar;
+			} else {
+				systemChat "Enemies are near the MHQ. You cannot activate the MHQ until the immediate area is secure (200m).";
+			};
+
+		},ARGUMENT(_mhq),(CONDITION_3),7];
 		_add pushback [_mhq, _id];
 	};
 	_mhq setVariable [QGVAR(ActiveActions), _add];

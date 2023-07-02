@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2669;
+		nextID=2671;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6933;
+		nextID=6954;
 	};
 	class Camera
 	{
-		pos[]={64.170738,99.361038,-8.924839};
-		dir[]={-0.001674094,-0.80693036,0.59066135};
-		up[]={-0.0022872635,0.5906449,0.80692971};
-		aside[]={1.0000041,-1.4766351e-007,0.0028344642};
+		pos[]={61.827686,63.783268,6.1024346};
+		dir[]={-0.020479342,-0.71171069,0.70217413};
+		up[]={-0.02074866,0.70247269,0.7114082};
+		aside[]={0.99957502,9.3132257e-010,0.02915322};
 	};
 };
 binarizationWanted=0;
@@ -16923,7 +16923,7 @@ class Mission
 							name="Misc";
 							class Entities
 							{
-								items=30;
+								items=31;
 								class Item0
 								{
 									dataType="Object";
@@ -17821,13 +17821,48 @@ class Mission
 									id=2661;
 									type="Land_Billboard_F";
 								};
+								class Item30
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={75.317307,8.9768047,90.135948};
+										angles[]={-0,3.1455245,0};
+									};
+									side="Empty";
+									flags=4;
+									class Attributes
+									{
+										init="if(!isNil ""flag_east_2"") then {this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_east_2}]; }";
+										name="flag_east_1";
+									};
+									id=2670;
+									type="Flag_Red_F";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="allowDamage";
+											expression="_this allowdamage _value;";
+											class Value
+											{
+												class data
+												{
+													singleType="BOOL";
+													value=1;
+												};
+											};
+										};
+										nAttributes=1;
+									};
+								};
 							};
 							id=413;
-							atlOffset=1485864.8;
+							atlOffset=742932.38;
 						};
 					};
 					id=403;
-					atlOffset=742932.38;
+					atlOffset=371466.19;
 				};
 				class Item1
 				{
@@ -19782,7 +19817,7 @@ class Mission
 							name="Misc";
 							class Entities
 							{
-								items=30;
+								items=29;
 								class Item0
 								{
 									dataType="Object";
@@ -19823,41 +19858,6 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={76.079002,8.9768047,90.709};
-										angles[]={0,0.028832838,0};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										init="if(!isNil ""flag_east_2"") then {this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_east_2}];}";
-										name="flag_east_1";
-									};
-									id=337;
-									type="Flag_Red_F";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="allowDamage";
-											expression="_this allowdamage _value;";
-											class Value
-											{
-												class data
-												{
-													singleType="BOOL";
-													value=1;
-												};
-											};
-										};
-										nAttributes=1;
-									};
-								};
-								class Item2
-								{
-									dataType="Object";
-									class PositionInfo
-									{
 										position[]={180.86357,5.8924227,20.412325};
 										angles[]={0,3.1556382,0};
 									};
@@ -19871,7 +19871,7 @@ class Mission
 									id=335;
 									type="B_supplyCrate_F";
 								};
-								class Item3
+								class Item2
 								{
 									dataType="Marker";
 									position[]={79.115997,3275850,86.82};
@@ -19884,7 +19884,7 @@ class Mission
 									id=437;
 									atlOffset=3275845;
 								};
-								class Item4
+								class Item3
 								{
 									dataType="Object";
 									class PositionInfo
@@ -19902,7 +19902,7 @@ class Mission
 									id=2033;
 									type="B_supplyCrate_F";
 								};
-								class Item5
+								class Item4
 								{
 									dataType="Object";
 									class PositionInfo
@@ -19920,7 +19920,7 @@ class Mission
 									id=2034;
 									type="B_supplyCrate_F";
 								};
-								class Item6
+								class Item5
 								{
 									dataType="Object";
 									class PositionInfo
@@ -19938,7 +19938,7 @@ class Mission
 									id=2035;
 									type="B_supplyCrate_F";
 								};
-								class Item7
+								class Item6
 								{
 									dataType="Logic";
 									class PositionInfo
@@ -19949,7 +19949,7 @@ class Mission
 									id=1861;
 									type="LocationRespawnPoint_F";
 								};
-								class Item8
+								class Item7
 								{
 									dataType="Comment";
 									class PositionInfo
@@ -19962,7 +19962,7 @@ class Mission
 									id=1963;
 									atlOffset=0.30499983;
 								};
-								class Item9
+								class Item8
 								{
 									dataType="Object";
 									class PositionInfo
@@ -19997,7 +19997,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item10
+								class Item9
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20032,7 +20032,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item11
+								class Item10
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20067,7 +20067,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item12
+								class Item11
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20102,7 +20102,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item13
+								class Item12
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20137,7 +20137,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item14
+								class Item13
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20172,7 +20172,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item15
+								class Item14
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20207,7 +20207,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item16
+								class Item15
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20242,7 +20242,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item17
+								class Item16
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20278,7 +20278,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item18
+								class Item17
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20313,7 +20313,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item19
+								class Item18
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20348,7 +20348,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item20
+								class Item19
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20383,7 +20383,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item21
+								class Item20
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20418,7 +20418,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item22
+								class Item21
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20453,7 +20453,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item23
+								class Item22
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20488,7 +20488,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item24
+								class Item23
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20523,7 +20523,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item25
+								class Item24
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20558,7 +20558,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item26
+								class Item25
 								{
 									dataType="Comment";
 									class PositionInfo
@@ -20569,7 +20569,7 @@ class Mission
 									description="We're trying to shift away from large resupplies to increase the flow of supplies having to be brought to the front. So we prefer that you use the small crates next to the flag. This exists still if the terrain does not allow for continueous  resupply from AAC.";
 									id=1962;
 								};
-								class Item27
+								class Item26
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20604,7 +20604,7 @@ class Mission
 										nAttributes=1;
 									};
 								};
-								class Item28
+								class Item27
 								{
 									dataType="Marker";
 									position[]={181.11099,5943464,28.663};
@@ -20617,7 +20617,7 @@ class Mission
 									id=2660;
 									atlOffset=5943459;
 								};
-								class Item29
+								class Item28
 								{
 									dataType="Object";
 									class PositionInfo
@@ -20952,7 +20952,7 @@ class Mission
 				};
 			};
 			id=402;
-			atlOffset=278599.63;
+			atlOffset=185733.09;
 		};
 		class Item1
 		{

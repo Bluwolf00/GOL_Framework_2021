@@ -63,7 +63,7 @@ _MMG = ["rhs_weap_m240B", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhsusf_100Rnd_762x51_m62_tracer";
 
 _LAT = ["UK3CB_BAF_AT4_CS_AT_Launcher", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "UK3CB_BAF_AT4_CS_AT_Launcher";
+_LAT_mag = "UK3CB_BAF_AT4_CS_AT_Mag";
 _LAT_ReUsable = false;
 
 _MAT = ["launch_MRAWS_sand_rail_F", _silencer, _pointer, _sight, _bipod];
