@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2671;
+		nextID=2675;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6954;
+		nextID=6975;
 	};
 	class Camera
 	{
-		pos[]={61.827686,63.783268,6.1024346};
-		dir[]={-0.020479342,-0.71171069,0.70217413};
-		up[]={-0.02074866,0.70247269,0.7114082};
-		aside[]={0.99957502,9.3132257e-010,0.02915322};
+		pos[]={53.21217,30.154156,8.3165798};
+		dir[]={0.039772235,-0.41668186,0.90819675};
+		up[]={0.018231181,0.90904689,0.41629589};
+		aside[]={0.99905527,-1.7303682e-007,-0.043753088};
 	};
 };
 binarizationWanted=0;
@@ -16923,7 +16923,7 @@ class Mission
 							name="Misc";
 							class Entities
 							{
-								items=31;
+								items=32;
 								class Item0
 								{
 									dataType="Object";
@@ -17809,8 +17809,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={44.885307,6.743187,89.317772};
-										angles[]={0,0.017582726,0};
+										position[]={44.884998,6.743187,89.318001};
+										angles[]={0,0.017575465,0};
 									};
 									side="Empty";
 									flags=5;
@@ -17827,7 +17827,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={75.317307,8.9768047,90.135948};
-										angles[]={-0,3.1455245,0};
+										angles[]={0,3.1455245,0};
 									};
 									side="Empty";
 									flags=4;
@@ -17856,13 +17856,31 @@ class Mission
 										nAttributes=1;
 									};
 								};
+								class Item31
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={50.868999,6.743187,89.233002};
+										angles[]={0,0.017575465,0};
+									};
+									side="Empty";
+									flags=5;
+									class Attributes
+									{
+										init="this setObjectTexture [0,""PlatoonRoster.jpg""];";
+										name="scoreboard_west";
+									};
+									id=2673;
+									type="Land_Billboard_F";
+								};
 							};
 							id=413;
-							atlOffset=742932.38;
+							atlOffset=371466.19;
 						};
 					};
 					id=403;
-					atlOffset=371466.19;
+					atlOffset=185733.09;
 				};
 				class Item1
 				{
@@ -19817,7 +19835,7 @@ class Mission
 							name="Misc";
 							class Entities
 							{
-								items=29;
+								items=30;
 								class Item0
 								{
 									dataType="Object";
@@ -20622,8 +20640,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={79.324844,6.743187,90.795692};
-										angles[]={0,0.017582726,0};
+										position[]={79.324997,6.743187,90.795998};
+										angles[]={0,0.017575465,0};
 									};
 									side="Empty";
 									flags=5;
@@ -20634,9 +20652,27 @@ class Mission
 									id=2662;
 									type="Land_Billboard_F";
 								};
+								class Item29
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={85.306999,6.743187,90.697998};
+										angles[]={0,0.017575465,0};
+									};
+									side="Empty";
+									flags=5;
+									class Attributes
+									{
+										init="this setObjectTexture [0,""PlatoonRoster.jpg""];";
+										name="scoreboard_east";
+									};
+									id=2674;
+									type="Land_Billboard_F";
+								};
 							};
 							id=423;
-							atlOffset=1485864.8;
+							atlOffset=742932.38;
 						};
 						class Item4
 						{
@@ -20759,7 +20795,7 @@ class Mission
 						};
 					};
 					id=404;
-					atlOffset=371466.19;
+					atlOffset=185733.09;
 				};
 				class Item2
 				{
@@ -20952,7 +20988,7 @@ class Mission
 				};
 			};
 			id=402;
-			atlOffset=185733.09;
+			atlOffset=92866.547;
 		};
 		class Item1
 		{

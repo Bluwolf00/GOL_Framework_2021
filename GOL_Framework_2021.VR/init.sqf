@@ -11,6 +11,12 @@ if(HasInterface && isNil "OKS_FRIENDLY_SIDE") then {
 	publicVariable "OKS_FRIENDLY_SIDE";
 };
 
+// Scoreboard Loop
+while {true} do {
+	execVM "Scripts\OKS_Ambience\OKS_DeathScore.sqf";
+	sleep 20;
+};
+
 /* Set GOL Mission Settings */
 Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 Sleep 5;
@@ -325,4 +331,7 @@ Sleep 10;
 			};
 		/*
 		*/
+
+
+
 
