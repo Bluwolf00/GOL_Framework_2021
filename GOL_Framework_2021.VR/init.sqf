@@ -12,9 +12,11 @@ if(HasInterface && isNil "OKS_FRIENDLY_SIDE") then {
 };
 
 // Scoreboard Loop
-while {true} do {
-	execVM "Scripts\OKS_Ambience\OKS_DeathScore.sqf";
-	sleep 20;
+[] spawn {
+	while {true} do {
+		execVM "Scripts\OKS_Ambience\OKS_DeathScore.sqf";
+		sleep 20;
+	};
 };
 
 /* Set GOL Mission Settings */
