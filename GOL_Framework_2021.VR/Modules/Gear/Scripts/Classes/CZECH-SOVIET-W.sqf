@@ -6,13 +6,18 @@ _goggles = selectRandom [""];
 _helmet = selectRandom ["rhs_ssh60"];
 _OfficerHelmet = "rhssaf_beret_red";
 _uniform = selectRandom ["rhs_uniform_afghanka_grey"];
-_vest = selectRandom ["rhs_6b3","rhs_6b3_holster","rhs_6b3_AK"];
+_vest = ["rhs_6b3","rhs_6b3_holster","rhs_6b3_AK"];
 _backpack = "UK3CB_UN_B_B_ASS";
 _backpackRadio = _backpack;
 
 if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "UK3CB_B_O_Assault_camo_Radio";
 };
+
+if (_role in ["lr","ab","mat","amat","aa"]) then {
+	_backpack = "UK3CB_KDF_B_B_Sidor_RIF_VSR";
+};
+
 if (_role in ["ag","ammg","sm"]) then {
 	_backpack = "UK3CB_KDF_B_B_Sidor_MD_OLI";
 	_vest = "rhs_6b3_RPK";
@@ -32,15 +37,15 @@ if (_role isEqualTo "p") then {
 	_vest = "rhs_6b3_holster";
 };
 if (_role isEqualTo "uav") then {
-	_backpack = "B_UAV_01_backpack_F";
-	_gps = "B_UAVTerminal";
+	_backpack = "O_UAV_01_backpack_F";
+	_gps = "O_UavTerminal";
 
 };
 if (_role isEqualTo "jetp") then {
-	_goggles = "G_Aviator";
-	_helmet = "H_PilotHelmetFighter_B";
-	_uniform = "U_B_PilotCoveralls";
-	_vest = "V_Rangemaster_belt";
+	_goggles = "";
+	_helmet = "rhs_zsh7a_alt";
+	_uniform = "UK3CB_CW_SOV_O_Early_U_J_Pilot_Uniform_01_GRY";
+	_vest = "rhs_belt_AK4";
 	_backpack = "B_Parachute";
 };
 
@@ -88,6 +93,12 @@ _LAT_ReUsable = false;
 _MAT = ["launch_RPG7_F", _silencer, _pointer, "rhs_acc_pgo7v3", _bipod];
 _MAT_mag = "rhs_rpg7_PG7VM_mag";
 _MAT_mag_HE = "rhs_rpg7_TBG7V_mag";
+
+_HAT = ["launch_O_Vorona_green_F", _silencer, _pointer, _sight, _bipod];
+_HAT_mag = "Vorona_HEAT";
+
+_AA = ["rhs_weap_igla", _silencer, _pointer, _sight, _bipod];
+_AA_mag = "rhs_mag_9k38_rocket";
 
 // Pistol
 _pistol = ["rhs_weap_tt33", _silencer, _pointer, _sight, _bipod];
