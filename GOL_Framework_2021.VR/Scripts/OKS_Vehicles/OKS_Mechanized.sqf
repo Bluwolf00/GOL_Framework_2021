@@ -46,13 +46,17 @@ if(_ServiceStation && !(_Vehicle getVariable ["GOL_isMSS",false]) && GOL_NEKY_SE
 	ClearWeaponCargoGlobal _Crate;
 	ClearItemCargoGlobal _Crate;
 
+	_fuelCan = "Land_CanisterFuel_F" createVehicle [0,0,0];
+	[_fuelCan,30] call ace_refuel_fnc_makeJerryCan;
+
 	//[_vehicle, ["car","west"]] call GW_Gear_Fnc_Init;
 	waitUntil {!isNil "NEKY_MobileSS"};
-	_MSS = [_Crate,_Vehicle] spawn {
-		Params ["_Crate","_Vehicle"];
+	_MSS = [_Crate,_Vehicle,_fuelCan] spawn {
+		Params ["_Crate","_Vehicle","_fuelCan"];
 		[_Crate,25,true] remoteExec ["NEKY_MobileSS",0];
 		_Crate setVariable ["ace_rearm_isSupplyVehicle", true];
 		[_Crate,_Vehicle,true] call ace_cargo_fnc_loadItem;
+		[_fuelCan,_Vehicle,true] call ace_cargo_fnc_loadItem;
 	};
 };
 
@@ -151,3 +155,14 @@ while{alive _Vehicle} do {
 	};
 	sleep 5;
 };
+*/
+
+_Vehicle spawn {
+	_Vehicle = _this;
+	while {alive _Vehicle} do {
+		if(fuel _Vehicle > 0.4) then {
+			_Vehicle setFuel 0.4;
+		};
+		sleep 30;
+	}
+}
