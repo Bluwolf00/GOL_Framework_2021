@@ -23,3 +23,5 @@ OKS_AirSpawn = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_AirSpawn
 OKS_Flare_Spawn = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Flare_Spawn.sqf";
 OKS_ArtySupression = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_ArtySupression.sqf";
 OKS_RemoveVehicleHE = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_RemoveVehicleHE.sqf";
+OKS_Rush_Wavespawn = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Rush_Wavespawn.sqf";
+OKS_Rush_Spawner = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Rush_Spawner.sqf";
