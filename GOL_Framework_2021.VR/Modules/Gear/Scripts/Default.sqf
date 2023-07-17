@@ -299,12 +299,12 @@ switch (toLower(_role)) do {
 
 	case "mat": {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
-		[_rifle, _rifle_mag, ""] call _addPrimary;
+		[_rifleC, _rifleC_mag_tr, ""] call _addPrimary;
 		[_HAT, _HAT_mag, ""] call _addLaunchers;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
 		[[_cables,2],[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
-		[[_cables,4],[_grenade,2],[_grenade,2],[_rifle_mag_tr,5]] call _addToVest;
+		[[_cables,4],[_grenade,2],[_grenade,2],[_rifleC_mag_tr,5]] call _addToVest;
 		[[_HAT_mag,1],[_defusalKit,1],[_demoCharge,1],[_clacker,1]] call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
