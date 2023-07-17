@@ -56,7 +56,7 @@
 		[_Group,_Range,10,[],[],false] remoteExec ["lambs_wp_fnc_taskRush",0];	
 	};	
 
-	for "_i" from 0 to _AmountOfWaves do {
+	for "_i" from 1 to _AmountOfWaves do {
 		if(typeName _SpawnPos == "ARRAY") then {
 			if(typeName (_SpawnPos select 0) == "SCALAR") then {
 				[_SpawnPos,_Side,_UnitsPerWave,_UnitArray,_AllSpawnedUnits,_Range] spawn OKS_RushWaveSpawn_Code;
