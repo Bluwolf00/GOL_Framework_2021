@@ -28,9 +28,21 @@ if (!isServer) exitWith {false};
 	_mhq setVariable [QGVAR(Side), toLower(_side), true];
 	_mhq setPlateNumber (vehicleVarName _mhq);
 	if (GVARMAIN(mod_ACE3)) then {
-		[_mhq, 40] call ace_cargo_fnc_setSpace;
 		_mhq setVariable ["ACE_isrepairVehicle", true];
 		_mhq setVariable ["GOL_isMHQ",true];
+		["ACE_Track", _mhq,true] call ace_cargo_fnc_loadItem;
+		["ACE_Track", _mhq,true] call ace_cargo_fnc_loadItem;
+		["ACE_Track", _mhq,true] call ace_cargo_fnc_loadItem;
+		["ACE_Wheel", _mhq,true] call ace_cargo_fnc_loadItem;
+		["ACE_Wheel", _mhq,true] call ace_cargo_fnc_loadItem;
+		["ACE_Wheel", _mhq,true] call ace_cargo_fnc_loadItem;
+
+		_fuelCan1 = "Land_CanisterFuel_F" createVehicle [0,0,0];
+		[_fuelCan1,30] call ace_refuel_fnc_makeJerryCan;
+		[_fuelCan1,_mhq,true] call ace_cargo_fnc_loadItem;
+		_fuelCan2 = "Land_CanisterFuel_F" createVehicle [0,0,0];
+		[_fuelCan2,30] call ace_refuel_fnc_makeJerryCan;
+		[_fuelCan2,_mhq,true] call ace_cargo_fnc_loadItem;
 	};
 
 	_mhq addEventHandler ["Killed", {

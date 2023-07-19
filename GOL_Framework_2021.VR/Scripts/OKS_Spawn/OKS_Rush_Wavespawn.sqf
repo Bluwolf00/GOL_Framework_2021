@@ -6,7 +6,15 @@
 
  	if(!isServer) exitWith {};
 
-	Params ["_SpawnPos","_UnitsPerWave","_AmountOfWaves","_DelayPerWave","_Side","_Range","_Variable"];
+	Params [
+		"_SpawnPos",
+		"_UnitsPerWave",
+		"_AmountOfWaves",
+		"_DelayPerWave",
+		["_Side",east,[sideUnknown]],
+		["_Range",1500,[-1]],
+		["_Variable","Rush_WaveSpawn_Variable",[""]]
+	];
 	private ["_RandomPos","_Center","_AllSpawnedUnits"];
 	_AllSpawnedUnits = [];
 

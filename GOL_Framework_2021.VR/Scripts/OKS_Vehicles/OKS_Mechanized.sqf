@@ -37,7 +37,14 @@ _Vehicle setVariable ["gw_gear_blackList",true,true];
 waitUntil{!isNil "OKS_MISSION_SETTINGS"};
 if(_Debug_Variable) then {SystemChat "Setting Cargo Space"};
 waitUntil {sleep 1; !(isNil "ace_cargo_fnc_setSpace")};
-[_Vehicle, 40] call ace_cargo_fnc_setSpace;
+
+_Vehicle spawn {
+	Params ["_Vehicle"];
+	while {alive _Vehicle} do {
+		[_Vehicle, 40] call ace_cargo_fnc_setSpace;
+		sleep 60;
+	}
+}
 
 if(_ServiceStation && !(_Vehicle getVariable ["GOL_isMSS",false]) && GOL_NEKY_SERVICESTATION isEqualTo 1) then {
 	if(_Debug_Variable) then {SystemChat "Adding Service Station Box"};

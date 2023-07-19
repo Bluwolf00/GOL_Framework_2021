@@ -14,6 +14,7 @@ OKS_Escort_Spawn = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Escor
 OKS_Escort_Dropoff = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Escort_Dropoff.sqf";
 OKS_Rescue_Friendly = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Rescue_Friendly.sqf";
 OKS_Evacuate_Friendly = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Evacuate_Friendly.sqf";
+OKS_Evacuate_HVT = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Evacuate_HVT.sqf";
 OKS_MedicalDamage = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_MedicalDamage.sqf";
 OKS_MedicalCheck = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_MedicalCheck.sqf";
 OKS_Escort_Friendly = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Escort_Friendly.sqf";
