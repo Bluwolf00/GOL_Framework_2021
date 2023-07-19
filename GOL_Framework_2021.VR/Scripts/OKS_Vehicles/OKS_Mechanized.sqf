@@ -44,7 +44,7 @@ _Vehicle spawn {
 		[_Vehicle, 40] call ace_cargo_fnc_setSpace;
 		sleep 60;
 	}
-}
+};
 
 if(_ServiceStation && !(_Vehicle getVariable ["GOL_isMSS",false]) && GOL_NEKY_SERVICESTATION isEqualTo 1) then {
 	if(_Debug_Variable) then {SystemChat "Adding Service Station Box"};

@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2675;
+		nextID=2676;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={76.362503,113.28588,-44.605389};
-		dir[]={0.0056710127,-0.72839826,0.68514651};
-		up[]={0.0060291323,0.68515122,0.7283805};
-		aside[]={0.99998003,-1.1098382e-007,-0.0082763918};
+		pos[]={56.003601,55.722775,19.061182};
+		dir[]={0.014032794,-0.73713523,0.67560178};
+		up[]={0.01530762,0.67574304,0.73697799};
+		aside[]={0.99978566,-8.3746272e-009,-0.02076635};
 	};
 };
 binarizationWanted=0;
@@ -53,11 +53,14 @@ addons[]=
 	"A3_Structures_F_Mil_Flags",
 	"A3_Modules_F",
 	"A3_Structures_F_Civ_InfoBoards",
-	"A3_Soft_F_MRAP_01",
-	"ace_realisticnames",
-	"A3_Armor_F_Beta_APC_Wheeled_01",
+	"A3_Armor_F_Beta_APC_Tracked_01",
 	"tfar_external_intercom",
+	"ace_realisticnames",
+	"ace_rearm",
+	"ace_refuel",
+	"ace_repair",
 	"ace_vehicle_damage",
+	"A3_Armor_F_Beta_APC_Wheeled_01",
 	"A3_Structures_F_System",
 	"A3_Structures_F_Mil_Cargo",
 	"A3_Structures_F_Enoch_Military_Camps",
@@ -71,7 +74,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=28;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -188,60 +191,74 @@ class AddonsMetaData
 		};
 		class Item17
 		{
-			className="A3_Soft_F";
-			name="Arma 3 Alpha - Unarmored Land Vehicles";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item18
-		{
 			className="A3_Armor_F_Beta";
 			name="Arma 3 Beta - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item18
 		{
 			className="tfar_external_intercom";
 			name="TFAR - Intercom Phone";
 			author="Task Force Arrowhead Radio Team";
 		};
+		class Item19
+		{
+			className="ace_rearm";
+			name="ACE3 - Rearm";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
 		class Item20
+		{
+			className="ace_refuel";
+			name="ACE3 - Refuel";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item21
+		{
+			className="ace_repair";
+			name="ACE3 - Repair";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item22
 		{
 			className="ace_vehicle_damage";
 			name="ACE3 - Vehicle Damage";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item21
+		class Item23
 		{
 			className="A3_Structures_F_Enoch_Military";
 			name="Arma 3 Contact Platform - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item22
+		class Item24
 		{
 			className="A3_Soft_F_Exp";
 			name="Arma 3 Apex - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item23
+		class Item25
 		{
 			className="A3_Boat_F";
 			name="Arma 3 Alpha - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item24
+		class Item26
 		{
 			className="A3_Air_F_Exp";
 			name="Arma 3 Apex - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item25
+		class Item27
 		{
 			className="DrongosAPS";
 			name="Drongo's APS";
@@ -20828,7 +20845,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={65.320999,7.2059455,50.413437};
+										position[]={65.320999,7.6292419,50.415001};
 										angles[]={0,6.2772336,0};
 									};
 									side="Empty";
@@ -20839,12 +20856,131 @@ class Mission
 										lock="UNLOCKED";
 										init="[this, ""medium""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf""; [this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
 										name="mhq_1";
+										textures="Sand";
 									};
-									id=849;
-									type="B_MRAP_01_F";
+									id=2675;
+									type="B_APC_Tracked_01_CRV_F";
 									class CustomAttributes
 									{
 										class Attribute0
+										{
+											property="VehicleCustomization";
+											expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+											class Value
+											{
+												class data
+												{
+													singleType="ARRAY";
+													class value
+													{
+														items=2;
+														class Item0
+														{
+															class data
+															{
+																singleType="ARRAY";
+																class value
+																{
+																	items=2;
+																	class Item0
+																	{
+																		class data
+																		{
+																			singleType="STRING";
+																			value="Sand";
+																		};
+																	};
+																	class Item1
+																	{
+																		class data
+																		{
+																			singleType="SCALAR";
+																			value=1;
+																		};
+																	};
+																};
+															};
+														};
+														class Item1
+														{
+															class data
+															{
+																singleType="ARRAY";
+																class value
+																{
+																	items=8;
+																	class Item0
+																	{
+																		class data
+																		{
+																			singleType="STRING";
+																			value="showAmmobox";
+																		};
+																	};
+																	class Item1
+																	{
+																		class data
+																		{
+																			singleType="SCALAR";
+																			value=1;
+																		};
+																	};
+																	class Item2
+																	{
+																		class data
+																		{
+																			singleType="STRING";
+																			value="showWheels";
+																		};
+																	};
+																	class Item3
+																	{
+																		class data
+																		{
+																			singleType="SCALAR";
+																			value=1;
+																		};
+																	};
+																	class Item4
+																	{
+																		class data
+																		{
+																			singleType="STRING";
+																			value="showCamonetHull";
+																		};
+																	};
+																	class Item5
+																	{
+																		class data
+																		{
+																			singleType="SCALAR";
+																			value=1;
+																		};
+																	};
+																	class Item6
+																	{
+																		class data
+																		{
+																			singleType="STRING";
+																			value="showBags";
+																		};
+																	};
+																	class Item7
+																	{
+																		class data
+																		{
+																			singleType="SCALAR";
+																			value=1;
+																		};
+																	};
+																};
+															};
+														};
+													};
+												};
+											};
+										};
+										class Attribute1
 										{
 											property="ace_isMedicalVehicle";
 											expression="_this setVariable [""ace_medical_isMedicalVehicle"", _value, true]";
@@ -20857,7 +20993,7 @@ class Mission
 												};
 											};
 										};
-										class Attribute1
+										class Attribute2
 										{
 											property="ammoBox";
 											expression="[_this,_value] call bis_fnc_initAmmoBox;";
@@ -20870,7 +21006,7 @@ class Mission
 												};
 											};
 										};
-										class Attribute2
+										class Attribute3
 										{
 											property="ace_cargo_space";
 											expression="[_this, _value] call ace_cargo_fnc_setSpace;";
@@ -20883,7 +21019,7 @@ class Mission
 												};
 											};
 										};
-										nAttributes=3;
+										nAttributes=4;
 									};
 								};
 							};
@@ -20933,12 +21069,147 @@ class Mission
 									{
 										init="[this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
 										name="Vehicle_1";
+										textures="Sand";
 									};
 									id=986;
 									type="B_APC_Wheeled_01_cannon_F";
 									class CustomAttributes
 									{
 										class Attribute0
+										{
+											property="VehicleCustomization";
+											expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+											class Value
+											{
+												class data
+												{
+													singleType="ARRAY";
+													class value
+													{
+														items=2;
+														class Item0
+														{
+															class data
+															{
+																singleType="ARRAY";
+																class value
+																{
+																	items=2;
+																	class Item0
+																	{
+																		class data
+																		{
+																			singleType="STRING";
+																			value="Sand";
+																		};
+																	};
+																	class Item1
+																	{
+																		class data
+																		{
+																			singleType="SCALAR";
+																			value=1;
+																		};
+																	};
+																};
+															};
+														};
+														class Item1
+														{
+															class data
+															{
+																singleType="ARRAY";
+																class value
+																{
+																	items=10;
+																	class Item0
+																	{
+																		class data
+																		{
+																			singleType="STRING";
+																			value="showBags";
+																		};
+																	};
+																	class Item1
+																	{
+																		class data
+																		{
+																			singleType="SCALAR";
+																			value=1;
+																		};
+																	};
+																	class Item2
+																	{
+																		class data
+																		{
+																			singleType="STRING";
+																			value="showCamonetHull";
+																		};
+																	};
+																	class Item3
+																	{
+																		class data
+																		{
+																			singleType="SCALAR";
+																			value=1;
+																		};
+																	};
+																	class Item4
+																	{
+																		class data
+																		{
+																			singleType="STRING";
+																			value="showCamonetTurret";
+																		};
+																	};
+																	class Item5
+																	{
+																		class data
+																		{
+																			singleType="SCALAR";
+																			value=1;
+																		};
+																	};
+																	class Item6
+																	{
+																		class data
+																		{
+																			singleType="STRING";
+																			value="showSLATHull";
+																		};
+																	};
+																	class Item7
+																	{
+																		class data
+																		{
+																			singleType="SCALAR";
+																			value=1;
+																		};
+																	};
+																	class Item8
+																	{
+																		class data
+																		{
+																			singleType="STRING";
+																			value="showSLATTurret";
+																		};
+																	};
+																	class Item9
+																	{
+																		class data
+																		{
+																			singleType="SCALAR";
+																			value=1;
+																		};
+																	};
+																};
+															};
+														};
+													};
+												};
+											};
+										};
+										class Attribute1
 										{
 											property="ace_isMedicalVehicle";
 											expression="_this setVariable [""ace_medical_isMedicalVehicle"", _value, true]";
@@ -20951,7 +21222,7 @@ class Mission
 												};
 											};
 										};
-										class Attribute1
+										class Attribute2
 										{
 											property="ammoBox";
 											expression="[_this,_value] call bis_fnc_initAmmoBox;";
@@ -20964,7 +21235,7 @@ class Mission
 												};
 											};
 										};
-										class Attribute2
+										class Attribute3
 										{
 											property="ace_cargo_space";
 											expression="[_this, _value] call ace_cargo_fnc_setSpace;";
@@ -20977,7 +21248,7 @@ class Mission
 												};
 											};
 										};
-										nAttributes=3;
+										nAttributes=4;
 									};
 								};
 							};

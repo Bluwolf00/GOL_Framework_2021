@@ -77,16 +77,11 @@ GOL_NEKY_SUPPLY_HELICOPTER = "";
 
 if(!isNil "Vehicle_1") then {
 	GOL_NEKY_VEHICLEDROP_VEHICLECLASS = (typeOf Vehicle_1); // Classname
+	GOL_NEKY_VEHICLEDROP_APPEARANCE = compile ([Vehicle_1,""] call BIS_fnc_exportVehicle);
 	GOL_NEKY_VEHICLEDROP_CODE = {
 
 		Params ["_Vehicle"];
-
-		// Use the Vehicle Appearance Editor, make your changes then export and paste below and reformat to match the code below.	
-		[
-			_Vehicle,
-			["Indep_01",1], 
-			["showBags",1,"showBags2",1,"showCamonetHull",0,"showCamonetTurret",0,"showTools",1,"showSLATHull",1,"showSLATTurret",1]
-		] call BIS_fnc_initVehicle;
+		_Vehicle call GOL_NEKY_VEHICLEDROP_APPEARANCE;
 
 		sleep 5;
 		[_Vehicle] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";	
@@ -96,16 +91,11 @@ if(!isNil "Vehicle_1") then {
 };
 if(!isNil "MHQ_1") then {
 	GOL_NEKY_MHQDROP_VEHICLECLASS = (typeOf MHQ_1); // Classname
+	GOL_NEKY_MHQDROP_APPEARANCE = compile ([MHQ_1,""] call BIS_fnc_exportVehicle);
 	GOL_NEKY_MHQDROP_CODE = {
 
 		Params ["_Vehicle"];
-
-		// Use the Vehicle Appearance Editor, make your changes then export and paste below and reformat to match the code below.	
-		[
-			_Vehicle,
-			["Indep_01",1], 
-			["showBags",1,"showBags2",1,"showCamonetHull",0,"showCamonetTurret",0,"showTools",1,"showSLATHull",1,"showSLATTurret",1]
-		] call BIS_fnc_initVehicle;
+		_Vehicle call GOL_NEKY_MHQDROP_APPEARANCE;
 
 		[_Vehicle, "medium"] call GW_MHQ_Fnc_Handler;
 		[_Vehicle,25,true] ExecVM "Scripts\NEKY_ServiceStation\MobileSS.sqf";
