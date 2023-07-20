@@ -3,7 +3,7 @@
 
 private _stringHint = "";
 private _ArrayOfDeathsAndNames = "";
-private _DeathSortedPlayerArray = [(allPlayers - entities "HeadlessClient_F"), [], {_X getVariable ["GOL_Player_Deaths",0]}, "DESCEND"] call BIS_fnc_sortBy;
+private _DeathSortedPlayerArray = [(allPlayers - entities "HeadlessClient_F"), [], {_X getVariable ["GOL_Player_Deaths",0]}, "ASCEND"] call BIS_fnc_sortBy;
 private _allPlayerDeaths = 0;
 {
 	_i = (_DeathSortedPlayerArray find _X) + 1;
