@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2679;
+		nextID=2680;
 	};
 	class MarkerIDProvider
 	{
@@ -25,9 +25,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={49.688313,78.123955,10.859342};
-		dir[]={-0.0085881418,-0.80507797,0.5931114};
-		up[]={-0.011656162,0.5931676,0.80499429};
-		aside[]={0.99989676,-4.3037289e-009,0.014478348};
+		dir[]={-0.13273934,-0.85191935,0.50657982};
+		up[]={-0.21593899,0.5236699,0.82409894};
+		aside[]={0.96734565,-2.0489097e-008,0.25347385};
 	};
 };
 binarizationWanted=0;
@@ -67,14 +67,14 @@ addons[]=
 	"A3_Soft_F_Exp_LSV_01",
 	"A3_Boat_F_Boat_Armed_01",
 	"A3_Air_F_Exp_VTOL_01",
-	"A3_Structures_F_Civ_Camping",
+	"CUP_Misc3_Config",
 	"drongosaps"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=28;
+		items=29;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -259,6 +259,11 @@ class AddonsMetaData
 			url="https://www.arma3.com";
 		};
 		class Item27
+		{
+			className="CUP_Misc3_Config";
+			name="CUP_Misc3_Config";
+		};
+		class Item28
 		{
 			className="DrongosAPS";
 			name="Drongo's APS";
@@ -22174,10 +22179,26 @@ class Mission
 				};
 				class Item9
 				{
+					dataType="Marker";
+					position[]={80.071304,5,1004.6013};
+					name="helicopter_despawn";
+					type="Empty";
+					id=1756;
+				};
+				class Item10
+				{
+					dataType="Marker";
+					position[]={1180.0541,5,50.846863};
+					name="helicopter_spawn";
+					type="Empty";
+					id=1755;
+				};
+				class Item11
+				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={27.681999,5.6192455,50.123001};
+						position[]={27.681999,5.2668285,50.123001};
 						angles[]={0,6.2083454,0};
 					};
 					side="Empty";
@@ -22187,8 +22208,8 @@ class Mission
 						init="[this, ""small""] call GW_MHQ_Fnc_Handler;";
 						name="Tent_MHQ";
 					};
-					id=2665;
-					type="Land_TentDome_F";
+					id=2679;
+					type="Misc_Backpackheap";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -22206,22 +22227,6 @@ class Mission
 						};
 						nAttributes=1;
 					};
-				};
-				class Item10
-				{
-					dataType="Marker";
-					position[]={80.071304,5,1004.6013};
-					name="helicopter_despawn";
-					type="Empty";
-					id=1756;
-				};
-				class Item11
-				{
-					dataType="Marker";
-					position[]={1180.0541,5,50.846863};
-					name="helicopter_spawn";
-					type="Empty";
-					id=1755;
 				};
 			};
 			id=2569;
