@@ -1,6 +1,5 @@
 // _null = [getpos this,east,1000,3] spawn OKS_AA_Guard;
-// _null = [getpos this,east,1000,3] execVM "Scripts\OKS_Ambience\OKS_AA_Guard.sqf";
-// [SpawnPosition,Side,_Range,Cycles] spawn GW_Ambient_AAA;
+// _null = [getpos this,east,1000,3] execVM "Scripts\OKS_Spawn\OKS_AA_Guard.sqf";
 
 params ["_Position","_side","_Range","_Cycles"];
 private _Debug_Variable = false;

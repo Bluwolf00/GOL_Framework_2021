@@ -3,7 +3,7 @@
 
     Examples:
     _null = [this,east,false,1500,true] spawn GW_Ambient_AAA; - CANNOT be used without enabling OKS_Ambience in MissionSettings.sqf
-    [this,east,false,1500,true] execVM "Scripts\OKS_Ambience\GW_Ambient_AAA.sqf"; - CAN be used without enabling OKS_Ambience in MissionSettings.sqf
+    [this,east,false,1500,true] execVM "Scripts\OKS_Spawn\GW_Ambient_AAA.sqf"; - CAN be used without enabling OKS_Ambience in MissionSettings.sqf
 
     Parameters:
     [AntiAirObject (ObjNull),Side(SideEmpty),isHMG (Bool),Range (Meters),RadarInfo (Bool)] spawn GW_Ambient_AAA;

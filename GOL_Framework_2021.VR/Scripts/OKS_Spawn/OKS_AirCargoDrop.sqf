@@ -1,5 +1,5 @@
 // Example
-// [Plane_1,CargoDrop_1,PlaneExit_1,"UK3CB_AAF_B_C130J_CARGO"],west,true,"MOVE"] execVM "Scripts\OKS_Ambience\OKS_AirCargoDrop.sqf";
+// [Plane_1,CargoDrop_1,PlaneExit_1,"UK3CB_AAF_B_C130J_CARGO"],west,true,"MOVE"] execVM "Scripts\OKS_Spawn\OKS_AirCargoDrop.sqf";
 
 Params ["_SpawnPos","_DropToPos","_MoveToPos","_Classname","_Side","_ShouldBeCareless","_WaypointType"];
 

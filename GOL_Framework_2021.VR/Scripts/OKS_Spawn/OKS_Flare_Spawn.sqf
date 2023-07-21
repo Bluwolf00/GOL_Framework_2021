@@ -1,6 +1,6 @@
 
 /*
-	[this,15,40,true] execVM "Scripts\OKS_Ambience\OKS_Flare_Spawn.sqf";
+	[this,15,40,true] execVM "Scripts\OKS_Spawn\OKS_Flare_Spawn.sqf";
 */
 
 	Params["_Position","_FlareCount","_DelayPerFlare","_RandomPosition"];

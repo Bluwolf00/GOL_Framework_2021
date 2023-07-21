@@ -8,7 +8,7 @@
 	5 - Near Player Distance to Disable - Integer Meters
 	6 - Max units limit - Integer Number
 
-	Example: [spawner_1,east,1,20,40,20] execVM "Scripts\OKS_Ambience\OKS_SentrySpawner.sqf";
+	Example: [spawner_1,east,1,20,40,20] execVM "Scripts\OKS_Spawn\OKS_SentrySpawner.sqf";
  */
 
 Params ["_Location","_EnemySide","_UnitsPerSpawn","_DelayPerSpawn","_PlayerDistanceDisable","_MaxUnits"];

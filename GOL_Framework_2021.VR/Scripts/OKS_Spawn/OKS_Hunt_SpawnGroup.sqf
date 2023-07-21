@@ -1,7 +1,7 @@
 /*
 	OKS_Hunt_SpawnGroup
 	[Spawn,nil,UnitOrClassname,Side,Range] spawn OKS_Hunt_SpawnGroup;
-	[Spawn,nil,UnitOrClassname,Side,Range] execVM "Scripts\OKS_Dynamic\OKS_Hunt_SpawnGroup.sqf";
+	[Spawn,nil,UnitOrClassname,Side,Range] execVM "Scripts\OKS_Spawn\OKS_Hunt_SpawnGroup.sqf";
 */
 
  	if(!isServer) exitWith {};

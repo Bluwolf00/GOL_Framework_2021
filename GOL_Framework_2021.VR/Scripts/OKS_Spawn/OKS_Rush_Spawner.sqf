@@ -1,7 +1,7 @@
 /*
 	OKS_Rush_SpawnGroup
 	[SpawnPos,UnitsPerBase,Side,Range,[],TriggerActivatedToDisableSpawner] spawn OKS_Rush_Spawner;
-	[SpawnPos,UnitsPerBase,Side,Range,[],TriggerActivatedToDisableSpawner] execVM "Scripts\OKS_Dynamic\OKS_Rush_Spawner.sqf";
+	[SpawnPos,UnitsPerBase,Side,Range,[],TriggerActivatedToDisableSpawner] execVM "Scripts\OKS_Spawn\OKS_Rush_Spawner.sqf";
 */
 
  	if(!isServer) exitWith {};

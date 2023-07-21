@@ -1,5 +1,5 @@
 // Example
-// [Plane_1,PlaneExit_1,selectRandom ["UK3CB_AAF_B_L39_AA","UK3CB_AAF_B_C130J_CARGO","UK3CB_AAF_B_Gripen"],west,true,"MOVE"] execVM "Scripts\OKS_Ambience\OKS_AirSpawn.sqf";
+// [Plane_1,PlaneExit_1,selectRandom ["UK3CB_AAF_B_L39_AA","UK3CB_AAF_B_C130J_CARGO","UK3CB_AAF_B_Gripen"],west,true,"MOVE"] execVM "Scripts\OKS_Spawn\OKS_AirSpawn.sqf";
 
 Params ["_SpawnPos","_MoveToPos","_Classname","_Side","_ShouldBeCareless","_WaypointType"];
 

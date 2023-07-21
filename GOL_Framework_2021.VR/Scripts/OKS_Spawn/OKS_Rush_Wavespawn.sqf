@@ -1,7 +1,7 @@
 /*
 	OKS_Rush_Wavespawn
 	[SpawnPosOrPositionsInArray,UnitsPerWave,AmountOfWaves,DelayPerWave,Side,Range,"VariableNameSetTrueUponAllClear"] spawn OKS_Rush_Wavespawn;
-	[SpawnPosOrPositionsInArray,UnitsPerWave,AmountOfWaves,DelayPerWave,Side,Range,"VariableNameSetTrueUponAllClear"] execVM "Scripts\OKS_Dynamic\OKS_Rush_Wavespawn.sqf";
+	[SpawnPosOrPositionsInArray,UnitsPerWave,AmountOfWaves,DelayPerWave,Side,Range,"VariableNameSetTrueUponAllClear"] execVM "Scripts\OKS_Spawn\OKS_Rush_Wavespawn.sqf";
 */
 
  	if(!isServer) exitWith {};

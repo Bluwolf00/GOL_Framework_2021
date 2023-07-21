@@ -2,10 +2,10 @@
 /*
 	Created by Oksman from Guerrillas of Liberation
 
-	[arty_3,[getPos target_1,getPos target_2,getPos target_3,getPos target_4],1,1,true] execVM "Scripts\OKS_Ambience\OKS_ArtySupression.sqf";
-	[arty_4,[getPos target_5,getPos target_6,getPos target_7,getPos target_8],1,1,true] execVM "Scripts\OKS_Ambience\OKS_ArtySupression.sqf";
-	[arty_2,[getPos target_9,getPos target_10,getPos target_11,getPos target_12],1,1,true] execVM "Scripts\OKS_Ambience\OKS_ArtySupression.sqf";
-	[arty_1,[getPos target_13,getPos target_14,getPos target_15,getPos target_16],1,1,true] execVM "Scripts\OKS_Ambience\OKS_ArtySupression.sqf";
+	[arty_3,[getPos target_1,getPos target_2,getPos target_3,getPos target_4],1,1,true] execVM "Scripts\OKS_Spawn\OKS_ArtySupression.sqf";
+	[arty_4,[getPos target_5,getPos target_6,getPos target_7,getPos target_8],1,1,true] execVM "Scripts\OKS_Spawn\OKS_ArtySupression.sqf";
+	[arty_2,[getPos target_9,getPos target_10,getPos target_11,getPos target_12],1,1,true] execVM "Scripts\OKS_Spawn\OKS_ArtySupression.sqf";
+	[arty_1,[getPos target_13,getPos target_14,getPos target_15,getPos target_16],1,1,true] execVM "Scripts\OKS_Spawn\OKS_ArtySupression.sqf";
 
 	Parameters
 	1 - Object - Artillery Unit
