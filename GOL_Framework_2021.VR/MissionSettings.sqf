@@ -42,7 +42,7 @@ Requires init.sqf line 28 to be commented out and replaced with line 29.
 _condition = {true} is the correct one to use for that. */
 
 /* AI Settings & Scripts*/
-GOL_NEKY_SHARE = 1;
+GOL_NEKY_SHARE = 0;
 GOL_OKS_SPAWN = 1;
 GOL_OKS_AMBIENCE = 1;
 GOL_OKS_HUNT = 0;

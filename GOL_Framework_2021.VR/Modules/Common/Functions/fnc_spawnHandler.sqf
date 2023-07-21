@@ -45,7 +45,7 @@ if (_group isEqualTo grpNull) then {
 };
 
 if !((count _unitArray) isEqualTo 0) then {
-	private _unitClass = _leader;
+	private _unitClass = (selectRandom _leader);
 	{
 		_x params ["_pos","_dir",["_unitPos", [], [[],""]],["_specials", []]];
 		if !(_forEachIndex isEqualTo 0) then {

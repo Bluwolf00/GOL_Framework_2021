@@ -31,7 +31,7 @@ params ["_faction"];
 
 private _configs = (missionConfigFile >> "GW_FRAMEWORK" >> "SpawnUnits" >> toUpper(_faction));
 private _side = ([east,west,resistance,civilian] select (getNumber(_configs >> "Side")));
-private _leader = getText(_configs >> "Leader");
+private _leader = getArray(_configs >> "Leader");
 private _unitList = getArray(_configs >> "Units");
 
 [_side, _leader, _unitList]

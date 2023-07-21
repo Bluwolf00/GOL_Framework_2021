@@ -13,7 +13,10 @@
 	class SpawnUnits {
 		class West {
 			Side = 1;
-			Leader = "B_Soldier_TL_F";
+			Leader[] = {
+				"B_Soldier_TL_F",
+				"B_Soldier_SL_F"
+			};
 			Units[] = {
 				"B_Soldier_AR_F",
 				"B_medic_F",
@@ -28,7 +31,10 @@
 		};
 		class East {
 			Side = 0;
-			Leader = "O_Soldier_TL_F";
+			Leader[] = {
+				"O_Soldier_TL_F",
+				"O_Soldier_SL_F"
+			};
 			Units[] = {			
 				"O_Soldier_AR_F",
 				"O_medic_F",
@@ -43,7 +49,10 @@
 		};
 		class Independent {
 			Side = 2;
-			Leader = "I_Soldier_TL_F";
+			Leader[] = {
+				"I_Soldier_TL_F",
+				"I_Soldier_SL_F"
+			};
 			Units[] = {			
 				"I_Soldier_AR_F",
 				"I_medic_F",
@@ -58,7 +67,7 @@
 		};
 		class Civilian {
 			Side = 3;
-			Leader = "C_man_1";
+			Leader[] = {"C_man_1"};
 			Units[] = {"C_Man_casual_4_F","C_Man_casual_5_F","C_Man_casual_6_F"};
 		};
 	};

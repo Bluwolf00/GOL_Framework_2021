@@ -122,11 +122,13 @@ Sleep 5;
 		execVM "Scripts\OKS_Spawn\Init.sqf";
 		[GOL_Remove_HE_From_StaticAndVehicle] spawn {
 			Params ["_Value"];
-			sleep 2;
-			{
-				_vehicle = _X;
-				if({_vehicle distance _X < 200} count AllPlayers == 0) then {[_X] spawn OKS_RemoveVehicleHE}
-			} foreach Vehicles;
+			if(_Value) then {
+				sleep 2;
+				{
+					_vehicle = _X;
+					if({_vehicle distance _X < 200} count AllPlayers == 0) then {[_X] spawn OKS_RemoveVehicleHE}
+				} foreach Vehicles;
+			}
 		};
 	};
 	if(GOL_OKS_TANKER isEqualTo 1) then {
