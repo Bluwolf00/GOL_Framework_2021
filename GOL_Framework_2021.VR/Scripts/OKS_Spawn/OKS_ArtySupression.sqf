@@ -16,42 +16,88 @@
 	6 - Bool - Unlimited Ammo for Artillery?
 */
 
-	Params["_Artillery","_Side","_TargetArrayPositions","_RoundsPerTarget","_TimeBetweenRounds","_UnlimitedAmmo"];
+	Params["_Artillery","_Side","_TargetArrayPositions","_RoundsPerTarget","_TimeBetweenRounds","_UnlimitedAmmo",["_ShouldLoop",false,[false]],["_LoopDelay",300,[0]]];
 	_Artillery setVariable ["acex_headless_blacklist",true,true];
+	Private ["_TargetArray"];
+	{
+		// Current result is saved in variable _x
+		if(typeName _X == "ARRAY") then {
+			_TargetArray pushBack _X;
+		};
+		if(typeName _X == "STRING") then {
+			_TargetArray pushBack (getMarkerPos _X);
+		};
+		if(typeName _X == "OBJECT") then {
+			_TargetArray pushBack (getPos _X);
+		};
+	} forEach _TargetArrayPositions;
+
 	if(count crew _Artillery == 0) then {
 		_crew = [_Artillery,_Side,2] call OKS_AddVehicleCrew;
 		{  
 			_X disableAI "TARGET";
 			_X disableAI "AUTOTARGET";
 		} foreach units _crew;
+		_crew setVariable ["acex_headless_blacklist",true,true];
 	};
 	waitUntil {sleep 5; count (crew _Artillery) > 0};
 	_CfgMagazine = (getArray (configFile >> "CfgWeapons" >> (currentMuzzle (gunner _Artillery)) >> "magazines") select 0);
 	_Artillery setVariable ["OKS_ArtyTimeBetweenRounds",_TimeBetweenRounds,true];
 	_Artillery setVariable ["OKS_RoundsPerTarget",_RoundsPerTarget,true];
-	enableEngineArtillery true;
-	{
-		if(_X inRangeOfArtillery [[_Artillery], _CfgMagazine]) then {
-			_Artillery setVariable ["OKS_ArtyFiring",true,true];
-			
-			_Artillery doArtilleryFire [_X, _CfgMagazine,_RoundsPerTarget];
+	
+	if(_ShouldLoop) then {
+		while {alive _Artillery && !(isNull (gunner _Artillery))} do{
+			{
+				
+				if(_X inRangeOfArtillery [[_Artillery], _CfgMagazine]) then {
+					enableEngineArtillery true;
+					_Artillery setVariable ["OKS_ArtyFiring",true,true];				
+					_Artillery doArtilleryFire [_X, _CfgMagazine,_RoundsPerTarget];
 
-			_Artillery addEventHandler ["Fired",{ 
-				params ["_unit"];
-				_unit spawn {
-					sleep ((_this getVariable ["OKS_ArtyTimeBetweenRounds",2]) * (_this getVariable ["OKS_RoundsPerTarget",1]));
-					_this setVariable ["OKS_ArtyFiring",false,true]
-				}
-			}];
-			if(_UnlimitedAmmo) then {
-				_Artillery setVehicleAmmo 1;
+					_Artillery addEventHandler ["Fired",{ 
+						params ["_unit"];
+						_unit spawn {
+							sleep ((_this getVariable ["OKS_ArtyTimeBetweenRounds",2]) * (_this getVariable ["OKS_RoundsPerTarget",1]));
+							_this setVariable ["OKS_ArtyFiring",false,true]
+						}
+					}];
+					if(_UnlimitedAmmo) then {
+						_Artillery setVehicleAmmo 1;
+					};
+					waitUntil {!(_Artillery getVariable ["OKS_ArtyFiring",false])};
+				} else {
+					systemChat format ["%1 could not fire at target (Min-Max range): %2",_Artillery,_X];
+				};
+			} forEach _TargetArray;	
+			sleep _LoopDelay;
+			enableEngineArtillery false;
+		};	
+	} else {
+		{
+			if(_X inRangeOfArtillery [[_Artillery], _CfgMagazine]) then {
+				_Artillery setVariable ["OKS_ArtyFiring",true,true];
+				
+				_Artillery doArtilleryFire [_X, _CfgMagazine,_RoundsPerTarget];
+
+				_Artillery addEventHandler ["Fired",{ 
+					params ["_unit"];
+					_unit spawn {
+						sleep ((_this getVariable ["OKS_ArtyTimeBetweenRounds",2]) * (_this getVariable ["OKS_RoundsPerTarget",1]));
+						_this setVariable ["OKS_ArtyFiring",false,true]
+					}
+				}];
+				if(_UnlimitedAmmo) then {
+					_Artillery setVehicleAmmo 1;
+				};
+				waitUntil {!(_Artillery getVariable ["OKS_ArtyFiring",false])};
+			} else {
+				systemChat format ["%1 could not fire at target (Min-Max range): %2",_Artillery,_X];
 			};
-			waitUntil {!(_Artillery getVariable ["OKS_ArtyFiring",false])};
-		} else {
-			systemChat format ["%1 could not fire at target (Min-Max range): %2",_Artillery,_X];
-		};
-	} forEach _TargetArrayPositions;
-	enableEngineArtillery false;
+		} forEach _TargetArray;
+		enableEngineArtillery false;
+	};
+
+	
 
 
 	  

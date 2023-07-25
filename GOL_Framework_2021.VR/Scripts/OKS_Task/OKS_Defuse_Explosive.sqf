@@ -6,7 +6,8 @@ if(!isServer) exitWith {};
 	Params [
 		["_ExplosiveOrPositionATL",objNull,[[],objNull]],
 		["_TimeInSeconds",600,[0]],
-		["_VariableTrueOnFail","ExplosiveDefused",[""]]
+		["_VariableTrueOnFail","ExplosiveDetonated",[""]],
+		["_VariableTrueOnSuccess","ExplosiveDefused",[""]]
 	];
 
 	sleep 10;
@@ -63,6 +64,7 @@ if(!isServer) exitWith {};
 	_NearPlayerToExplosive = {_X distance _ExplosivePos < 3 && Alive _X && [_X] call ace_common_fnc_isAwake} count AllPlayers > 0;
 	if(isNull _Explosive && _NearPlayerToExplosive) then {
 		[_defuseTask, "SUCCEEDED", true] call BIS_fnc_taskSetState;	
+		Call Compile Format ["%1 = True; PublicVariable '%1'",_VariableTrueOnSuccess];
 	} else {	
 		[_defuseTask, "FAILED", true] call BIS_fnc_taskSetState;
 		Call Compile Format ["%1 = True; PublicVariable '%1'",_VariableTrueOnFail];

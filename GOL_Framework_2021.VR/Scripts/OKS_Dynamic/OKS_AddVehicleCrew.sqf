@@ -7,13 +7,14 @@
     Params[
         ["_Vehicle",objNull,[objnull]],
         ["_Side",east,[sideUnknown]],
-        ["_CrewSlots",0,[-1]] // 0 = full crew, 1 = driver only, 2 = gunner only, 3 = commander only
+        ["_CrewSlots",0,[-1]], // 0 = full crew, 1 = driver only, 2 = gunner only, 3 = commander only
+        ["_CargoSlots",0,[-1]] // Amount of Infantry in Cargo
     ];
     Private ["_UnitClass","_Group","_Commander","_Gunner","_Driver"];
 
     _Settings = [_Side] call OKS_Dynamic_Setting;
-    _Settings Params ["_Units","_SideMarker","_SideColor","_Vehicles","_Civilian"];
-
+    _Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian"];
+	_UnitArray Params ["_Leaders","_Units","_Officer"];
     _Debug_Variable = false;
 
     switch (_side) do {
@@ -67,6 +68,28 @@
         //[_Driver] orderGetIn true;
         _Driver moveinDriver _Vehicle;
     };
+
+    if(_CargoSlots > 0) then {
+        if(([TypeOf _Vehicle,true] call BIS_fnc_crewCount) - ([TypeOf _Vehicle,false] call BIS_fnc_crewCount) >= 4) then {
+            _CargoSeats = ([TypeOf _Vehicle,true] call BIS_fnc_crewCount) - ([TypeOf _Vehicle,false] call BIS_fnc_crewCount);
+            if(_CargoSeats > _CargoSlots) then { _CargoSeats = _CargoSlots };
+                /// Create Leader
+                _Unit = _Group CreateUnit [_Leader, [0,0,0], [], 0, "NONE"];
+                _Unit setRank "SERGEANT";
+                _Unit MoveInCargo _Vehicle;
+                _Group selectLeader _Unit;
+            for "_i" from 1 to (_CargoSeats - 1) do
+            {
+                Private "_Unit";
+                _Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,0], [], 0, "NONE"];
+                _Unit setRank "PRIVATE";
+                _Unit MoveInCargo _Vehicle;
+            };
+        } else {
+            SystemChat format["Vehicle Type: %1 does not have 4 or more cargo slots",typeOf _Vehicle];
+        };
+    };
+
     {[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
     _Group
 

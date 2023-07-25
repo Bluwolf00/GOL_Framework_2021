@@ -1,12 +1,12 @@
 /*
 	OKS_Hunt_SpawnGroup
-	[Spawn,nil,UnitOrClassname,Side,Range] spawn OKS_Hunt_SpawnGroup;
+	[Spawn,nil,UnitOrClassname,Side,Range,CargoSlotsOptionalForVehicle] spawn OKS_Hunt_SpawnGroup;
 	[Spawn,nil,UnitOrClassname,Side,Range] execVM "Scripts\OKS_Spawn\OKS_Hunt_SpawnGroup.sqf";
 */
 
  	if(!isServer) exitWith {};
 
-	Params ["_Spawn","_Dir","_ClassnameOrNumber","_Side","_Range"];
+	Params ["_Spawn","_Dir","_ClassnameOrNumber","_Side","_Range",["_CargoSlots",0,[0]]];
 	if(typeName _Spawn == "OBJECT") then {
 		_Dir = getDir _Spawn;
 		_Spawn = getPos _Spawn;
@@ -43,6 +43,12 @@
 			[_Vehicle] spawn OKS_RemoveVehicleHE;	
 		};			
 		_Vehicle setDir _Dir;
+
+		if(_CargoSlots > 0) then {
+			_Group = [_Vehicle,_Side,0,_CargoSlots] call OKS_AddVehicleCrew;
+		} else {
+			_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
+		};
 		_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 	};
 	if(typeName _ClassnameOrNumber == "ARRAY") then {
@@ -52,7 +58,11 @@
 			[_Vehicle] spawn OKS_RemoveVehicleHE;	
 		};			
 		_Vehicle setDir _Dir;
-		_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
+		if(_CargoSlots > 0) then {
+			_Group = [_Vehicle,_Side,0,_CargoSlots] call OKS_AddVehicleCrew;
+		} else {
+			_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
+		};
 	};
 	sleep 1;
 	{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
