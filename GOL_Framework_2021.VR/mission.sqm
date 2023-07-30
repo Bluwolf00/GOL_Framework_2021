@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2698;
+		nextID=2710;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7038;
+		nextID=7080;
 	};
 	class Camera
 	{
-		pos[]={56.324497,96.598671,4.8324451};
-		dir[]={-0.013354799,-0.81781936,0.57533544};
-		up[]={-0.018978389,0.57546866,0.81760162};
-		aside[]={0.99973792,1.1747761e-007,0.023206288};
+		pos[]={61.899555,82.684555,12.485628};
+		dir[]={0.025282566,-0.77670467,0.62936532};
+		up[]={0.03117639,0.62985969,0.77608323};
+		aside[]={0.99919724,3.7340214e-008,-0.040139478};
 	};
 };
 binarizationWanted=0;
@@ -12846,7 +12846,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -12900,7 +12900,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=200;
+														value=299.8736;
 													};
 												};
 												class Item1
@@ -13116,7 +13116,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.30000001;
+														value=0.59687799;
 													};
 												};
 												class Item1
@@ -14196,7 +14196,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=200;
+														value=100;
 													};
 												};
 												class Item1
@@ -14331,7 +14331,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=500;
+														value=600;
 													};
 												};
 												class Item1
@@ -14442,7 +14442,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=14;
+		items=15;
 		class Item0
 		{
 			dataType="Layer";
@@ -22690,6 +22690,16 @@ class Mission
 			};
 			id=2584;
 			atlOffset=8.9364777;
+		};
+		class Item14
+		{
+			dataType="Group";
+			side="West";
+			class Attributes
+			{
+			};
+			id=2705;
+			atlOffset=-5;
 		};
 	};
 };

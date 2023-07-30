@@ -18,7 +18,7 @@
 
 	Params["_Artillery","_Side","_TargetArrayPositions","_RoundsPerTarget","_TimeBetweenRounds","_UnlimitedAmmo",["_ShouldLoop",false,[false]],["_LoopDelay",300,[0]]];
 	_Artillery setVariable ["acex_headless_blacklist",true,true];
-	Private ["_TargetArray"];
+	Private _TargetArray = [];
 	{
 		// Current result is saved in variable _x
 		if(typeName _X == "ARRAY") then {

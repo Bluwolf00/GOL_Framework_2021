@@ -133,13 +133,13 @@ if ((count _vehicleArray) > 0) then {
 			} forEach ((fullCrew [_vehicle,"",true]) select {((_x select 1) in ["commander","gunner","turret"])});
 		};
 
-		_unitClass = _leader;
+		_unitClass =  (selectRandom _leader);
 		Private ["_Driver"];
 		{
 			if !(count (units _group) isEqualTo 0) then {
 				_unitClass = (selectRandom _unitList);
 			};
-
+			
 			_unit = _group createUnit [_unitClass, [0,0,0], [], 10, "CAN_COLLIDE"];
 			_unit enableSimulationGlobal false;
 			_unit setRank "PRIVATE";
