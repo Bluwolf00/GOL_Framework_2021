@@ -84,7 +84,7 @@ if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
 
 		_FAKSmall = [
 			[_bandage,5],
-			[_saline,6],
+			[_saline,8],
 			[_morph,2],
 			[_pak,1]
 		];
