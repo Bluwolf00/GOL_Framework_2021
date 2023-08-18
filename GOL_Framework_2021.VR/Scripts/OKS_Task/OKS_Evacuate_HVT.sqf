@@ -1,14 +1,16 @@
-// [Group HVT_1,getPos ExfilSite_1,west] execVM "Scripts\OKS_Task\OKS_Evacuate_HVT.sqf";
+// [Group HVT_1,getPos ExfilSite_1,west,false,nil] execVM "Scripts\OKS_Task\OKS_Evacuate_HVT.sqf";
 
 if(!isServer) exitWith {};
 
 	Params [
 		["_UnitsOrGroupOrArray",[],[[],grpNull,objNull]],
 		["_ExfilSite",[0,0,0],[[],objNull]],
-		["_Side",west,[sideUnknown]]
+		["_Side",west,[sideUnknown]],
+		["_HelicopterEvac",false,[false]],
+		["_ParentTask","",[""]]
 	];
 
-	Private ["_Units","_ExfilPosition"];
+	Private ["_Units","_ExfilPosition","_TaskDescription"];
 	if(typeName _UnitsOrGroupOrArray == "OBJECT") then {
 		_Units = [_UnitsOrGroupOrArray];
 		group _UnitsOrGroupOrArray setVariable ["acex_headless_blacklist",true,true];
@@ -57,33 +59,63 @@ if(!isServer) exitWith {};
 	if({!Alive _X} count _Units == count _Units) then {
 		_TaskState = "FAILED";
 	};
-	[
-		true,
-		_TaskId,
+
+	if(_HelicopterEvac) then {
+		_TaskDescription = format["You have found HVTs to extract, there are %1 in total. Transport them to the exfil site and await the helicopter that will extract them.",count _Units];
+	} else {
+		_TaskDescription = format["You have found HVTs to extract, there are %1 in total. Transport them to the exfil site.",count _Units];
+	};
+
+	if(isNil "_ParentTask") then {
 		[
-			"You have found HVTs to extract. Bring them to the exfil site and await the helicopter that will extract them.",
-			"Extract HVT",
-			"Extract"
-		],
-		_ExfilPosition,
-		_TaskState,
-		-1,
-		true,
-		"exit",
-		false
-	] call BIS_fnc_taskCreate;
+			true,
+			_TaskId,
+			[
+				_TaskDescription,
+				"Extract HVT",
+				"Extract"
+			],
+			_ExfilPosition,
+			_TaskState,
+			-1,
+			true,
+			"exit",
+			false
+		] call BIS_fnc_taskCreate;
+	} else {
+		[
+			true,
+			[_TaskId,_ParentTask],
+			[
+				_TaskDescription,
+				"Extract HVT",
+				"Extract"
+			],
+			_ExfilPosition,
+			_TaskState,
+			-1,
+			true,
+			"exit",
+			false
+		] call BIS_fnc_taskCreate;		
+	};
+
 	if(_TaskState == "FAILED") exitWith {false};
 
 	waitUntil {sleep 10; {!Alive _X || _X distance _ExfilPosition < 50} count _Units == count _Units};
-	if({!Alive _X} count _Units == count _Units) exitWith {
-		// Fail
-		[_TaskId, "FAILED", true] call BIS_fnc_taskSetState;			
+
+	if(_HelicopterEvac) then {
+		if({!Alive _X} count _Units == count _Units) exitWith {
+			// Fail
+			[_TaskId, "FAILED", true] call BIS_fnc_taskSetState;			
+		};
+
+		["hq","side","Be advised, extraction helicopter is inbound for your HVTs. Load them up when it arrives, HQ out"] remoteExec ["OKS_Chat",0];
+		[_Side,"",["helicopter_Spawn",_ExfilPosition,"helicopter_despawn","helicopter_despawn"],false] execVM "Scripts\NEKY_PickUp\NEKY_PickUp.sqf";
+
+		waitUntil{sleep 10; {!Alive _X || (ObjectParent _X) isKindOf "Helicopter"} count _Units == count _Units};
 	};
 
-	["hq","side","Be advised, extraction helicopter is inbound for your HVTs. Load them up when it arrives, HQ out"] remoteExec ["OKS_Chat",0];
-	[_Side,"",["helicopter_Spawn",_ExfilPosition,"helicopter_despawn","helicopter_despawn"],false] execVM "Scripts\NEKY_PickUp\NEKY_PickUp.sqf";
-
-	waitUntil{sleep 10; {!Alive _X || (ObjectParent _X) isKindOf "Helicopter"} count _Units == count _Units};
 	if({!Alive _X} count _Units == count _Units) exitWith {
 		// Fail
 		[_TaskId, "FAILED", true] call BIS_fnc_taskSetState;		

@@ -77,7 +77,9 @@
 			[getPos _SpawnPos,_Side,_UnitsPerWave,_UnitArray,_AllSpawnedUnits,_Range] spawn OKS_RushWaveSpawn_Code;
 		};
 		
-		sleep _DelayPerWave;
+		if(_i != _AmountOfWaves) then {
+			sleep _DelayPerWave;
+		};	
 		SystemChat format ["Wavespawn Current Count: %1",count _AllSpawnedUnits];
 	};
 

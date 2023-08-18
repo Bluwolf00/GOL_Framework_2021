@@ -80,6 +80,7 @@
 	#define	CONDITION_1 "(alive _target) && (vehicle player isEqualTo player) && !(player getVariable ['GOL_TeleportDelay',false])"
 	#define	CONDITION_2 "(_target getVariable 'GW_MHQ_Assembled')"
 	#define	CONDITION_3 "(alive _target) && (speed _target) < 0.1"
+	#define CONDITION_4 "(gunner _target) == player || (driver _target) == player || (commander _target) == player || vehicle player isNotEqualTo _target"
 	params ["_mhq"];
 	private	_add = [];
 	private _mhqActiveActions = (_mhq getVariable [QGVAR(ActiveActions), []]);
@@ -102,7 +103,7 @@
 				};
 				hint "Aborted";
 			} , [(_this select 0)]] call CBA_fnc_progressBar;
-		},ARGUMENT(_mhq),(CONDITION_3 + "&& !" + CONDITION_2),7];
+		},ARGUMENT(_mhq),(CONDITION_4 +" && "+ CONDITION_3 + "&& !" + CONDITION_2),7];
 		_add pushback [_mhq, _id];
 
 		_id = _mhq addAction ["Assemble MHQ",{
@@ -234,7 +235,7 @@
 				systemChat "Enemies are near the MHQ. You cannot activate the MHQ until the immediate area is secure (200m).";
 			};
 
-		},ARGUMENT(_mhq),(CONDITION_3),7];
+		},ARGUMENT(_mhq),(CONDITION_4 + "&&" + CONDITION_3),7];
 		_add pushback [_mhq, _id];
 	};
 	_mhq setVariable [QGVAR(ActiveActions), _add];

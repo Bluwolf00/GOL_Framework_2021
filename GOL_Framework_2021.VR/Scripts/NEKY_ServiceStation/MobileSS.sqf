@@ -59,7 +59,7 @@ _Object addAction ["<t color='#00FF00'>Activate Service Station</t>",
 	Hint "Service Station Activated.";
 	[[_Object,_MRadius,_IsMSS,_Filter],{_This ExecVM "Scripts\NEKY_ServiceStation\ServiceStation.sqf"}] RemoteExec ["BIS_FNC_SPAWN",0];
 	_Object setVariable ["NEKY_ServiceStation_MSS_Active",True,true];
-},[_MRadius,_IsMSS,_Filter],4,false,true,"","((_Target distance _This) < 10) && !(_Target getVariable ['NEKY_ServiceStation_MSS_Active',false]) && Alive _Target"];
+},[_MRadius,_IsMSS,_Filter],4,false,true,"","((_Target distance _This) < 10) && !(_Target getVariable ['NEKY_ServiceStation_MSS_Active',false]) && Alive _Target && vehicle player isNotEqualTo _target"];
 
 _Object addAction ["<t color='#FF0000'>Deactivate Service Station</t>",
 {
@@ -69,4 +69,4 @@ _Object addAction ["<t color='#FF0000'>Deactivate Service Station</t>",
 	_Object setVariable ["NEKY_ServiceStation_MSS_Active",False,true];
 	NEKY_ServiceStations deleteAt (NEKY_ServiceStations find _Object);
 	PublicVariable "NEKY_ServiceStations";
-},[],11,false,true,"","((_Target distance _This) < 10) && (_Target getVariable ['NEKY_ServiceStation_MSS_Active',false]) && Alive _Target"];
+},[],11,false,true,"","((_Target distance _This) < 10) && (_Target getVariable ['NEKY_ServiceStation_MSS_Active',false]) && Alive _Target && vehicle player isNotEqualTo _target"];

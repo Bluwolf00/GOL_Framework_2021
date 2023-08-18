@@ -6,7 +6,7 @@
 
 Params ["_Veh"];
 
-_Veh addAction ["<t color='#FF8000'>NeKy's Service Station</t>", {}, [], 10, false, false, "", "((_Target getVariable ['NEKY_ServiceStation_InStation',[false]]) select 0) && ((isNull (objectParent player)) || (_target isEqualTo (objectParent player)))"];
+_Veh addAction ["<t color='#FF8000'>NeKy's Service Station</t>", {}, [], 10, false, false, "", "((_Target getVariable ['NEKY_ServiceStation_InStation',[false]]) select 0) && ((isNull (objectParent player)) || ((gunner _target) == player || (driver _target) == player || (commander _target) == player))"];
 _Veh addaction ["<t color='#F7FE2E'>Repair</t>", 
 {
 	Params ["_Veh"];
@@ -19,7 +19,7 @@ _Veh addaction ["<t color='#F7FE2E'>Repair</t>",
 		_Params spawn NEKY_ServiceStation_Repair;
 		[_SS] Spawn NEKY_ServiceStation_Lights;
 	};
-}, [], 10, false, true, "", "((_Target getVariable ['NEKY_ServiceStation_InStation',[false]]) select 0) && ((isNull (objectParent player)) || (_target isEqualTo (objectParent player)))"];
+}, [], 10, false, true, "", "((_Target getVariable ['NEKY_ServiceStation_InStation',[false]]) select 0) && ((isNull (objectParent player)) || ((gunner _target) == player || (driver _target) == player || (commander _target) == player))"];
 
 _Veh addaction ["<t color='#F7FE2E'>Refuel</t>", 
 {
@@ -33,7 +33,7 @@ _Veh addaction ["<t color='#F7FE2E'>Refuel</t>",
 		_Params spawn NEKY_ServiceStation_Refuel; 
 		[_SS] Spawn NEKY_ServiceStation_Lights;
 	};
-}, [], 10, false, true, "", "((_Target getVariable ['NEKY_ServiceStation_InStation',[false]]) select 0) && ((isNull (objectParent player)) || (_target isEqualTo (objectParent player)))"];
+}, [], 10, false, true, "", "((_Target getVariable ['NEKY_ServiceStation_InStation',[false]]) select 0) && ((isNull (objectParent player)) || ((gunner _target) == player || (driver _target) == player || (commander _target) == player))"];
 	
 _Veh addaction ["<t color='#F7FE2E'>Rearm</t>",
 {
@@ -47,7 +47,7 @@ _Veh addaction ["<t color='#F7FE2E'>Rearm</t>",
 		_Params spawn NEKY_ServiceStation_Rearm;
 		[_SS] Spawn NEKY_ServiceStation_Lights;
 	};
-}, [], 10, false, true, "", "((_Target getVariable ['NEKY_ServiceStation_InStation',[false]]) select 0) && ((isNull (objectParent player)) || (_target isEqualTo (objectParent player)))"];
+}, [], 10, false, true, "", "((_Target getVariable ['NEKY_ServiceStation_InStation',[false]]) select 0) && ((isNull (objectParent player)) || ((gunner _target) == player || (driver _target) == player || (commander _target) == player))"];
 	
 _Veh addaction ["<t color='#F7FE2E'>Full Service</t>", 
 {
@@ -61,5 +61,5 @@ _Veh addaction ["<t color='#F7FE2E'>Full Service</t>",
 		_Params spawn NEKY_ServiceStation_FullService; 
 		[_SS] Spawn NEKY_ServiceStation_Lights;
 	};
-}, [], 10, false, true, "", "((_Target getVariable ['NEKY_ServiceStation_InStation',[false]]) select 0) && ((isNull (objectParent player)) || (_target isEqualTo (objectParent player)))"];
-_Veh addAction ["<t color='#FF8000'>NeKy's Service Station</t>", {}, [], 10, false, false, "", "((_Target getVariable ['NEKY_ServiceStation_InStation',[false]]) select 0) && ((isNull (objectParent player)) || (_target isEqualTo (objectParent player)))"];
+}, [], 10, false, true, "", "((_Target getVariable ['NEKY_ServiceStation_InStation',[false]]) select 0) && ((isNull (objectParent player)) || ((gunner _target) == player || (driver _target) == player || (commander _target) == player))"];
+_Veh addAction ["<t color='#FF8000'>NeKy's Service Station</t>", {}, [], 10, false, false, "", "((_Target getVariable ['NEKY_ServiceStation_InStation',[false]]) select 0) && ((isNull (objectParent player)) || ((gunner _target) == player || (driver _target) == player || (commander _target) == player))"];

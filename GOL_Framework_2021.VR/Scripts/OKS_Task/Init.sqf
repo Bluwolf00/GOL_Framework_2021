@@ -20,4 +20,5 @@ OKS_MedicalDamage = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Medi
 OKS_MedicalCheck = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_MedicalCheck.sqf";
 OKS_Escort_Friendly = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Escort_Friendly.sqf";
 OKS_Destroy_Barricade = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Destroy_Barricade.sqf";
-
+OKS_Destroy_Task = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Destroy_Task.sqf";
+OKS_Treat_Casualty = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Treat_Casualty.sqf";
