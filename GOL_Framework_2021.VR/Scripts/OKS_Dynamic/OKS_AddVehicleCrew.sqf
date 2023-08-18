@@ -74,7 +74,7 @@
             _CargoSeats = ([TypeOf _Vehicle,true] call BIS_fnc_crewCount) - ([TypeOf _Vehicle,false] call BIS_fnc_crewCount);
             if(_CargoSeats > _CargoSlots) then { _CargoSeats = _CargoSlots };
                 /// Create Leader
-                _Unit = _Group CreateUnit [_Leader, [0,0,0], [], 0, "NONE"];
+                _Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [0,0,0], [], 0, "NONE"];
                 _Unit setRank "SERGEANT";
                 _Unit MoveInCargo _Vehicle;
                 _Group selectLeader _Unit;
