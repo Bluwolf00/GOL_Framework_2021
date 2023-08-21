@@ -2,7 +2,7 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "";
-_goggles = "G_Balaclava_TI_G_tna_F";
+_goggles = ["G_Balaclava_TI_G_tna_F","G_Balaclava_TI_tna_F"];
 _helmet = ["H_HelmetB_TI_tna_F"];
 _OfficerHelmet = "UK3CB_ANA_B_H_Beret_MAR";
 _uniform = ["U_B_CTRG_Soldier_F","U_B_CTRG_Soldier_3_F","U_B_CTRG_Soldier_2_F"];
@@ -46,15 +46,15 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "rhsusf_acc_nt4_black";
+_silencer = "hlc_muzzle_fsc30";
 _pointer = "uk3cb_baf_llm_ir_black";
-_sight = "rksl_optic_eot552x";
+_sight = "optic_erco_blk_f";
 _bipod = "hlc_grip_pmvfg_black";
 
-_rifle = ["hlc_rifle_ACR_SBR_black", _silencer, _pointer, _sight, _bipod];
+_rifle = [["hlc_rifle_ACR_SBR_black","hlc_rifle_ACR_carb_black","hlc_rifle_ACR_GL_mid_black","hlc_rifle_ACR_MID_black"], _silencer, _pointer, _sight, _bipod];
 _rifleC = ["hlc_rifle_ACR_SBR_black", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_ACR_GL_SBR_black", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_ACR_Full_black", _silencer, _pointer, _sight, _bipod];
+_rifleGL = [["hlc_rifle_ACR_GL_SBR_black","hlc_rifle_ACR_GL_Carb_black","hlc_rifle_ACR_GL_mid_black"], _silencer, _pointer, _sight, _bipod];
+_rifleL = ["hlc_rifle_ACR_Full_black", _silencer, _pointer, _sight, "rhsusf_acc_harris_bipod"];
 _rifle_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
 _rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 _rifleGL_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
