@@ -17,7 +17,7 @@ if(!HasInterface) exitWith {false};
 
 _Channel = toLower _Channel;
 Private _Code = {};
-Private ["_Range"];
+Private ["_Range","_Color"];
 
 Switch (_Channel) do {
 
@@ -60,4 +60,11 @@ Switch (_Channel) do {
 				};
 	}
 };
-[_Talker,_Message,_Range] spawn _Code;
+
+switch (side player) do {
+	case west: { _Color = "0D64EC"};
+	case east: { _Color = "AD2707" };
+	case independent: { _Color = "06B42E"};
+	default { _Color = "0D64EC" };
+};
+player createDiaryRecord ["Diary", ["Radio Messages", format["<font color='#%3' size='15'>%1</font><br/>%2",_Talker,_Message,_Color]]];

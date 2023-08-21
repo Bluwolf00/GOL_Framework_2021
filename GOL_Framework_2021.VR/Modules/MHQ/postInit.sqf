@@ -96,6 +96,10 @@
 				if(objectParent player != ((_this select 0) select 0)) then {
 					player SwitchMove "";
 				};
+				_mhqMarkerId = ((_this select 0) select 0) getVariable ["MHQ_MarkerId",""];
+				_mhqMarkerId setMarkerAlpha 0;
+				_mhqMarkerAreaId = format["%1_Area",_mhqMarkerId];
+				_mhqMarkerAreaId setMarkerAlpha 0;
 			},
 			{
 				if(objectParent player != ((_this select 0) select 0)) then {
@@ -211,6 +215,12 @@
 					if(objectParent player != ((_this select 0) select 0)) then {
 						player SwitchMove "";
 					};
+					_mhqMarkerId = ((_this select 0) select 0) getVariable ["MHQ_MarkerId",""];
+					_mhqMarkerId setMarkerAlpha 1;
+					_mhqMarkerId setMarkerPos (getPos ((_this select 0) select 0));
+					_mhqMarkerAreaId = format["%1_Area",_mhqMarkerId];
+					_mhqMarkerAreaId setMarkerAlpha 1;
+					_mhqMarkerAreaId setMarkerPos (getPos ((_this select 0) select 0));
 					Private ["_Players"];
 					if(!isNil "flag_west_1") then {
 						_Players = allPlayers select {_X distance flag_west_1 < 200};
