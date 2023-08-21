@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7164;
+		nextID=7185;
 	};
 	class Camera
 	{
-		pos[]={52.642281,39.336979,31.081839};
-		dir[]={0.0049256762,-0.62163574,0.7832911};
-		up[]={0.0039090398,0.78330642,0.62162352};
-		aside[]={0.99998033,2.3283064e-010,-0.0062883124};
+		pos[]={45.098309,15.94442,62.525097};
+		dir[]={0.0049256762,-0.62163568,0.78329104};
+		up[]={0.0039090393,0.78330648,0.6216234};
+		aside[]={0.99998021,0,-0.0062883124};
 	};
 };
 binarizationWanted=0;
@@ -14570,6 +14570,7 @@ class Mission
 								};
 							};
 							id=406;
+							atlOffset=-5;
 						};
 						class Item1
 						{
@@ -15102,6 +15103,7 @@ class Mission
 								};
 							};
 							id=407;
+							atlOffset=-5;
 						};
 						class Item2
 						{
@@ -15772,6 +15774,7 @@ class Mission
 								};
 							};
 							id=408;
+							atlOffset=-5;
 						};
 						class Item3
 						{
@@ -18111,7 +18114,7 @@ class Mission
 						};
 					};
 					id=403;
-					atlOffset=185733.09;
+					atlOffset=185731.84;
 				};
 				class Item1
 				{
@@ -18901,6 +18904,7 @@ class Mission
 								};
 							};
 							id=420;
+							atlOffset=-5;
 						};
 						class Item1
 						{
@@ -19683,6 +19687,7 @@ class Mission
 								};
 							};
 							id=421;
+							atlOffset=-5;
 						};
 						class Item2
 						{
@@ -20059,6 +20064,7 @@ class Mission
 								};
 							};
 							id=422;
+							atlOffset=-5;
 						};
 						class Item3
 						{
@@ -21022,10 +21028,11 @@ class Mission
 								};
 							};
 							id=419;
+							atlOffset=-5;
 						};
 					};
 					id=404;
-					atlOffset=185733.09;
+					atlOffset=185729.34;
 				};
 				class Item2
 				{
@@ -21472,7 +21479,7 @@ class Mission
 				};
 			};
 			id=402;
-			atlOffset=92866.547;
+			atlOffset=92865.297;
 		};
 		class Item1
 		{

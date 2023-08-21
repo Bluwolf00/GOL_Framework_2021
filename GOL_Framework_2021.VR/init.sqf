@@ -123,7 +123,7 @@ Sleep 5;
 		[GOL_Remove_HE_From_StaticAndVehicle] spawn {
 			Params ["_Value"];
 			if(_Value) then {
-				sleep 2;
+				waitUntil {sleep 1; !isNil "OKS_RemoveVehicleHE"};
 				{
 					_vehicle = _X;
 					if({_vehicle distance _X < 200} count AllPlayers == 0) then {[_X] spawn OKS_RemoveVehicleHE}
