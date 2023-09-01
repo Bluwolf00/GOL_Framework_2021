@@ -108,7 +108,7 @@ Sleep 5;
 	};
 	if(GOL_OKS_AMBIENCE isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Ambience\Init.sqf";
-
+		[] execVM "Scripts\OKS_Vehicles\Init.sqf";
 		/* TFAR Jammer - Object, Range & Strength Parameters
 			Requires script from the folder additional scripts
 			waitUntil {!isNil "TFAR_Scrambler"};
