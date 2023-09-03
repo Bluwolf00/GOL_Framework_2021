@@ -46,6 +46,9 @@ Sleep 5;
 		};
 	};
 
+	execVM "Scripts\OKS_Vehicles\Init.sqf";
+	execVM "Scripts\OKS_Vehicles\OKS_StaticPacking.sqf";	
+
 	if(GOL_EnableHelicopterScriptToAllVehicles isEqualTo 1) then {
 		[objNull,false,false] execVM "Scripts\OKS_Vehicles\OKS_Helicopter.sqf";
 	};
@@ -107,8 +110,7 @@ Sleep 5;
 		[] execVM "Scripts\OKS_AAC\Init.sqf";
 	};
 	if(GOL_OKS_AMBIENCE isEqualTo 1) then {
-		[] execVM "Scripts\OKS_Ambience\Init.sqf";
-		[] execVM "Scripts\OKS_Vehicles\Init.sqf";
+		[] execVM "Scripts\OKS_Ambience\Init.sqf";	
 		/* TFAR Jammer - Object, Range & Strength Parameters
 			Requires script from the folder additional scripts
 			waitUntil {!isNil "TFAR_Scrambler"};
