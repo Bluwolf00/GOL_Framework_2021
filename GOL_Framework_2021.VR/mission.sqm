@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7271;
+		nextID=7292;
 	};
 	class Camera
 	{
@@ -15181,7 +15181,7 @@ class Mission
 					name="OPFOR FARP";
 					class Entities
 					{
-						items=42;
+						items=43;
 						class Item0
 						{
 							dataType="Object";
@@ -16425,9 +16425,22 @@ class Mission
 							description="We're trying to shift away from large resupplies to increase the flow of supplies having to be brought to the front. So we prefer that you use the small crates next to the flag. This exists still if the terrain does not allow for continueous  resupply from AAC.";
 							id=1962;
 						};
+						class Item42
+						{
+							dataType="Marker";
+							position[]={181.11099,5943464,28.663};
+							name="farp_east_1";
+							text="FARP";
+							type="o_air";
+							colorName="ColorEAST";
+							a=0.69999999;
+							b=0.69999999;
+							id=2660;
+							atlOffset=5943459;
+						};
 					};
 					id=2720;
-					atlOffset=0.00013113022;
+					atlOffset=2971729.5;
 				};
 				class Item9
 				{
@@ -16435,7 +16448,7 @@ class Mission
 					name="BLUFOR FARP";
 					class Entities
 					{
-						items=42;
+						items=43;
 						class Item0
 						{
 							dataType="Object";
@@ -17704,8 +17717,22 @@ class Mission
 							description="Small resupply crates meant only for a fire-teams resupply. The Ammo Boxes have the standard ammunition for the Squad, the Special Weapons Crate has the secondary ammunitions such as for the roles of MAT, AMAT, AMMG, MMG, Light Rifleman, Marksman.";
 							id=1961;
 						};
+						class Item42
+						{
+							dataType="Marker";
+							position[]={124.942,5943464,30.313999};
+							name="farp_west_1";
+							text="FARP";
+							type="b_air";
+							colorName="ColorWEST";
+							a=0.69999999;
+							b=0.69999999;
+							id=2659;
+							atlOffset=5943459;
+						};
 					};
 					id=2721;
+					atlOffset=2971728.3;
 				};
 				class Item10
 				{
@@ -18178,7 +18205,7 @@ class Mission
 				};
 			};
 			id=2569;
-			atlOffset=0.40525579;
+			atlOffset=69650.313;
 		};
 		class Item3
 		{
@@ -18599,7 +18626,6 @@ class Mission
 				};
 			};
 			id=410;
-			atlOffset=-1.25;
 		};
 		class Item4
 		{
@@ -20248,7 +20274,7 @@ class Mission
 					name="Misc";
 					class Entities
 					{
-						items=8;
+						items=7;
 						class Item0
 						{
 							dataType="Object";
@@ -20381,19 +20407,6 @@ class Mission
 						};
 						class Item5
 						{
-							dataType="Marker";
-							position[]={124.942,5943464,30.313999};
-							name="farp_west_1";
-							text="FARP";
-							type="b_air";
-							colorName="ColorWEST";
-							a=0.69999999;
-							b=0.69999999;
-							id=2659;
-							atlOffset=5943459;
-						};
-						class Item6
-						{
 							dataType="Object";
 							class PositionInfo
 							{
@@ -20409,7 +20422,7 @@ class Mission
 							id=2661;
 							type="Land_Billboard_F";
 						};
-						class Item7
+						class Item6
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20428,11 +20441,11 @@ class Mission
 						};
 					};
 					id=413;
-					atlOffset=789365.63;
+					atlOffset=92866.547;
 				};
 			};
 			id=403;
-			atlOffset=394682.81;
+			atlOffset=46433.273;
 		};
 		class Item5
 		{
@@ -22387,7 +22400,7 @@ class Mission
 					name="Misc";
 					class Entities
 					{
-						items=8;
+						items=7;
 						class Item0
 						{
 							dataType="Object";
@@ -22484,19 +22497,6 @@ class Mission
 						};
 						class Item4
 						{
-							dataType="Marker";
-							position[]={181.11099,5943464,28.663};
-							name="farp_east_1";
-							text="FARP";
-							type="o_air";
-							colorName="ColorEAST";
-							a=0.69999999;
-							b=0.69999999;
-							id=2660;
-							atlOffset=5943459;
-						};
-						class Item5
-						{
 							dataType="Object";
 							class PositionInfo
 							{
@@ -22512,7 +22512,7 @@ class Mission
 							id=2662;
 							type="Land_Billboard_F";
 						};
-						class Item6
+						class Item5
 						{
 							dataType="Object";
 							class PositionInfo
@@ -22529,7 +22529,7 @@ class Mission
 							id=2674;
 							type="Land_Billboard_F";
 						};
-						class Item7
+						class Item6
 						{
 							dataType="Object";
 							class PositionInfo
@@ -22566,7 +22566,7 @@ class Mission
 						};
 					};
 					id=423;
-					atlOffset=397058.72;
+					atlOffset=51185.078;
 				};
 				class Item4
 				{
@@ -22689,7 +22689,7 @@ class Mission
 				};
 			};
 			id=404;
-			atlOffset=99264.68;
+			atlOffset=12796.27;
 		};
 	};
 };
