@@ -8,6 +8,9 @@ if (hasInterface) then {
 
     _conditionMG = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticMGWeapon" && ("GW_Item_StaticDummy" in (itemsWithMagazines player))}; //<only works MP
 	_conditionMortar = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticMortar" && ("GW_Item_StaticDummy" in (itemsWithMagazines player))}; //<only works MP
+	_conditionGMG = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticGrenadeLauncher" && ("GW_Item_StaticDummy" in (itemsWithMagazines player))}; //<only works MP
+	_conditionAT = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticATWeapon" && ("GW_Item_StaticDummy" in (itemsWithMagazines player))}; //<only works MP
+
 
 	_codeDeploy = {	
 		params ["_target", "_caller", "_actionId"];	
@@ -38,14 +41,16 @@ if (hasInterface) then {
 				} count (itemsWithMagazines _unit);
 
 				if (_objectRemoved && !(_type isEqualTo "")) then {
-					private _object = createVehicle [_type, [0,0,0], [], 0, "NONE"];
-					_object setVehicleAmmo 0;
+					private _object = createVehicle [_type, [0,0,0], [], 0, "NONE"];			
 					_ammoArray = (_unit getVariable ["OKS_PackedMagazines", []]);
 					
-					{
-						_X params ["_Classname","_AmmoCount"];
-						_object addMagazineTurret [_Classname, [0],_AmmoCount];
-					} foreach _ammoArray;
+					if(_ammoArray isNotEqualTo []) then {
+						_object setVehicleAmmo 0;
+						{
+							_X params ["_Classname","_AmmoCount"];
+							_object addMagazineTurret [_Classname, [0],_AmmoCount];
+						} foreach _ammoArray;
+					};
 					
 					_object setPosATL _pos;
 					_object setDir _dir;
@@ -69,7 +74,7 @@ if (hasInterface) then {
 		[_actionName, 3, {true}, {
 			(_this select 0) params ["_target", "_player", "_actionId"];
 			_player setVariable ["OKS_PackedClassname",typeOf _target,true];
-			_player setVariable ["OKS_PackedMagazines",magazinesAmmo _target];
+			_player setVariable ["OKS_PackedMagazines",magazinesAmmo _target,true];
 			
 			systemChat format["%1 packed.",[configFile >> "CfgVehicles" >> typeOf _target] call BIS_fnc_displayName];
 
@@ -88,6 +93,67 @@ if (hasInterface) then {
 		},_this] call CBA_fnc_progressBar;
 	};
 
+	_SelectHMG = {
+		_SelectWeaponPacked = {
+			Params ["_player","_Classname"];
+			private _item = "GW_Item_StaticDummy";
+			if (_player canAdd _item) then {
+				_player additem _item;
+				_player setVariable ["OKS_PackedClassname",_Classname,true];
+				_player setVariable ["OKS_PackedMagazines",[]];
+				systemChat format["%1 packed.",[configFile >> "CfgVehicles" >> _Classname] call BIS_fnc_displayName];
+			} else {
+				systemChat "Your inventory is full. Unable to equip Static Weapon Pack."
+			};
+		};
+		[_player,GOL_PACKED_HMG] call _SelectWeaponPacked;
+	};
+	_SelectMortar = {
+		_SelectWeaponPacked = {
+			Params ["_player","_Classname"];
+			private _item = "GW_Item_StaticDummy";
+			if (_player canAdd _item) then {
+				_player additem _item;
+				_player setVariable ["OKS_PackedClassname",_Classname,true];
+				_player setVariable ["OKS_PackedMagazines",[]];
+				systemChat format["%1 packed.",[configFile >> "CfgVehicles" >> _Classname] call BIS_fnc_displayName];
+			} else {
+				systemChat "Your inventory is full. Unable to equip Static Weapon Pack."
+			};
+		};		
+		[_player,GOL_PACKED_MORTAR] call _SelectWeaponPacked;
+	};	
+	_SelectGMG = {
+		_SelectWeaponPacked = {
+			Params ["_player","_Classname"];
+			private _item = "GW_Item_StaticDummy";
+			if (_player canAdd _item) then {
+				_player additem _item;
+				_player setVariable ["OKS_PackedClassname",_Classname,true];
+				_player setVariable ["OKS_PackedMagazines",[]];
+				systemChat format["%1 packed.",[configFile >> "CfgVehicles" >> _Classname] call BIS_fnc_displayName];
+			} else {
+				systemChat "Your inventory is full. Unable to equip Static Weapon Pack."
+			};
+		};		
+		[_player,GOL_PACKED_GMG] call _SelectWeaponPacked;
+	};	
+	_SelectAT = {
+		_SelectWeaponPacked = {
+			Params ["_player","_Classname"];
+			private _item = "GW_Item_StaticDummy";
+			if (_player canAdd _item) then {
+				_player additem _item;
+				_player setVariable ["OKS_PackedClassname",_Classname,true];
+				_player setVariable ["OKS_PackedMagazines",[]];
+				systemChat format["%1 packed.",[configFile >> "CfgVehicles" >> _Classname] call BIS_fnc_displayName];
+			} else {
+				systemChat "Your inventory is full. Unable to equip Static Weapon Pack."
+			};
+		};
+		[_player,GOL_PACKED_AT] call _SelectWeaponPacked;
+	};	
+		
 	_PackCondition = { alive _target && (_player getVariable ['OKS_PackedClassname',''] isEqualTo '') && count crew _target == 0 && vehicle _player != _target };
  	private _actionMG = ["Pack_Weapon", "Pack Static Weapon","\A3\ui_f\data\map\vehicleicons\iconStaticMG_ca.paa", _PackCode, _PackCondition] call ace_interact_menu_fnc_createAction; 
  	["StaticMGWeapon", 0, ["ACE_MainActions"], _actionMG,true] call ace_interact_menu_fnc_addActionToClass;
@@ -102,6 +168,26 @@ if (hasInterface) then {
     _actionMortarDeploy = ["Deploy Mortar", "Deploy Mortar","\A3\ui_f\data\map\vehicleicons\iconStaticMortar_ca.paa", _codeDeploy, _conditionMortar] call ace_interact_menu_fnc_createAction;
 	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _actionMortarDeploy] call ace_interact_menu_fnc_addActionToClass;
 
+    _actionGMGDeploy = ["Deploy Grenade Launcher", "Deploy Grenade Launcher","\A3\ui_f\data\map\vehicleicons\iconStaticSearchlight_ca.paa", _codeDeploy, _conditionGMG] call ace_interact_menu_fnc_createAction;
+	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _actionGMGDeploy] call ace_interact_menu_fnc_addActionToClass;
+
+    _actionATDeploy = ["Deploy AT Launcher", "Deploy AT Launcher","\A3\ui_f\data\map\vehicleicons\iconStaticAA_ca.paa", _codeDeploy, _conditionAT] call ace_interact_menu_fnc_createAction;
+	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _actionATDeploy] call ace_interact_menu_fnc_addActionToClass;
+
+    _actionSelectStatic = ["Select_Static", "Select Packed Static Weapon","\A3\ui_f\data\map\vehicleicons\iconStaticMortar_ca.paa", {}, {true}] call ace_interact_menu_fnc_createAction;
+	["Box_NATO_Equip_F", 0, ["ACE_MainActions"], _actionSelectStatic] call ace_interact_menu_fnc_addActionToClass;
+
+    _actionSelectHMG = ["Select_HMG", "Packed HMG","\A3\ui_f\data\map\vehicleicons\iconStaticMG_ca.paa", _SelectHMG, {true}] call ace_interact_menu_fnc_createAction;
+	["Box_NATO_Equip_F", 0, ["ACE_MainActions","Select_Static"], _actionSelectHMG] call ace_interact_menu_fnc_addActionToClass;
+
+    _actionSelectGMG = ["Select_GMG", "Packed GMG","\A3\ui_f\data\map\vehicleicons\iconStaticSearchlight_ca.paa", _SelectGMG, {true}] call ace_interact_menu_fnc_createAction;
+	["Box_NATO_Equip_F", 0, ["ACE_MainActions","Select_Static"], _actionSelectGMG] call ace_interact_menu_fnc_addActionToClass;	
+
+    _actionSelectAT = ["Select_AT", "Packed AT","\A3\ui_f\data\map\vehicleicons\iconStaticAA_ca.paa", _SelectAT, {true}] call ace_interact_menu_fnc_createAction;
+	["Box_NATO_Equip_F", 0, ["ACE_MainActions","Select_Static"], _actionSelectAT] call ace_interact_menu_fnc_addActionToClass;	
+
+    _actionSelectMortar = ["Select_Mortar", "Packed Mortar","\A3\ui_f\data\map\vehicleicons\iconStaticMortar_ca.paa", _SelectMortar, {true}] call ace_interact_menu_fnc_createAction;
+	["Box_NATO_Equip_F", 0, ["ACE_MainActions","Select_Static"], _actionSelectMortar] call ace_interact_menu_fnc_addActionToClass;		
 };
 
 

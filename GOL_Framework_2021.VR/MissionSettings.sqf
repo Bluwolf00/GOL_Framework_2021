@@ -5,6 +5,10 @@ GOL_WEAPONS = 1;
 GOL_ARSENAL_ALLOWED = 1;
 GOL_ENTRENCH = 0;
 GOL_OKS_SecondPrimaryWeapon = 0;
+GOL_PACKED_HMG = "RHS_M2StaticMG_USMC_D";
+GOL_PACKED_MORTAR = "B_G_Mortar_01_F";
+GOL_PACKED_AT = "RHS_TOW_TriPod_USMC_D";
+GOL_PACKED_GMG = "RHS_MK19_TriPod_USMC_WD";
 
 /* AI Gear Settings */
 // 0 = 0%, 1 = 100%
