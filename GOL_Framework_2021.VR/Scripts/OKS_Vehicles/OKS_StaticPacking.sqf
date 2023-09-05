@@ -6,8 +6,8 @@ if(isServer) then {
 
 if (hasInterface) then {
 
-    _conditionMG = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticMGWeapon"}; //<only works MP
-	_conditionMortar = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticMortar"}; //<only works MP
+    _conditionMG = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticMGWeapon" && ("GW_Item_StaticDummy" in (itemsWithMagazines player))}; //<only works MP
+	_conditionMortar = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticMortar" && ("GW_Item_StaticDummy" in (itemsWithMagazines player))}; //<only works MP
 
 	_codeDeploy = {	
 		params ["_target", "_caller", "_actionId"];	
@@ -70,8 +70,19 @@ if (hasInterface) then {
 			(_this select 0) params ["_target", "_player", "_actionId"];
 			_player setVariable ["OKS_PackedClassname",typeOf _target,true];
 			_player setVariable ["OKS_PackedMagazines",magazinesAmmo _target];
-			deleteVehicle _target;
+			
 			systemChat format["%1 packed.",[configFile >> "CfgVehicles" >> typeOf _target] call BIS_fnc_displayName];
+
+			private _item = "GW_Item_StaticDummy";
+			if (_player canAdd _item) then {
+				_player additem _item;
+			} else {
+				private _pos = (getPosATL _target);
+				private _weaponHolder = "WeaponHolderSimulated" createVehicle _pos;
+				_weaponHolder setPosATL _pos;
+				_weaponHolder addItemCargoGlobal [_item, 1];
+			};
+			deleteVehicle _target;
 		},
 		{
 		},_this] call CBA_fnc_progressBar;
