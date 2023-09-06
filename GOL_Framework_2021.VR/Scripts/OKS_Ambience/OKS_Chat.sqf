@@ -77,4 +77,42 @@ switch (side player) do {
 	case independent: { _Color = "06B42E"};
 	default { _Color = "0D64EC" };
 };
-player createDiaryRecord ["Diary", ["Radio Messages", format["<br/>From: <font color='#%3' size='14'>%1</font><br/>Message: %2<br/>============",groupId (Group _Talker),_Message,_Color]]];
+
+Private _Id = "";
+switch (typeName _Talker) do {
+	case "STRING": {
+		switch(toLower _Talker) do {
+			case "hq": {
+				_Id = "Crossroad";
+			};
+			case "base": {
+				_Id = "HQ";
+			};	
+			case "papa_bear": {
+				_Id = "HQ";
+			};		
+			case "AirBase": {
+				_Id = "HQ";
+			};				
+			case "BLU": {
+				_Id = "HQ";
+			};	
+			case "OPF": {
+				_Id = "HQ";
+			};		
+			case "IND": {
+				_Id = "HQ";
+			};	
+			case "IND_G": {
+				_Id = "HQ";
+			};	
+			default {
+				_Id = "HQ"
+			}						
+		};		
+	};
+	default{
+		_Id = groupId (Group _Talker)
+	}
+};
+player createDiaryRecord ["Diary", ["Radio Messages", format["<br/>From: <font color='#%3' size='14'>%1</font><br/>Message: %2<br/>============",_Id,_Message,_Color]]];
