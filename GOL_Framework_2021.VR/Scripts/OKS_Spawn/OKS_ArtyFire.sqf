@@ -234,8 +234,8 @@ if (!HasInterface || isServer) then
 	if (_Debug == 1) then {SystemChat "Disable AI"};
 	_arty addEventHandler ["Fired",{ [(_this select 6),(_this select 0)] remoteExec ["OKS_CHECK_TRAVEL",0]}];
 	_arty spawn {
-		waitUntil{sleep 5; { _X distance2d _this < 30} count AllPlayers > 0};
-		systemChat "Players nearby, exiting artillery..";
+		waitUntil{sleep 5; { _X distance2d _this < 30 && (side _this) getFriend (side _X) < 0.5} count AllPlayers > 0};
+		systemChat "Enemy Players nearby, exiting artillery..";
 		{ _X enableAI "TARGET"; _X enableAI "AUTOTARGET"; unassignVehicle _X; (group _X) leaveVehicle (vehicle _X)} foreach crew _this;
 	};
 	/// While Arty is not destroyed - Continue the loop
@@ -244,7 +244,6 @@ if (!HasInterface || isServer) then
 		/*
 		if(_this select 4 > 0) then { sleep _rof; } else { sleep 5; };
 		*/
-
 
 		if(Alive gunner _arty && (side (gunner _arty) isEqualTo _side)) then {
 			/*
