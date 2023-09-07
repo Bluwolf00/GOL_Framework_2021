@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7355;
+		nextID=7376;
 	};
 	class Camera
 	{
-		pos[]={47.400795,34.621128,50.975456};
-		dir[]={-0.0048451889,-0.71434385,0.69978189};
-		up[]={-0.0049459087,0.69979352,0.71432823};
-		aside[]={0.99997777,-1.2250894e-009,0.0069236783};
+		pos[]={45.320187,30.270706,63.721603};
+		dir[]={0.0078928545,-0.77806824,0.62813431};
+		up[]={0.0097761359,0.62817717,0.77800947};
+		aside[]={0.9999249,-1.1317752e-008,-0.012564624};
 	};
 };
 binarizationWanted=0;
@@ -3678,7 +3678,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.69999999;
+														value=0.85000002;
 													};
 												};
 												class Item1
@@ -3948,7 +3948,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.25;
+														value=1.5;
 													};
 												};
 												class Item1
@@ -7998,7 +7998,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
