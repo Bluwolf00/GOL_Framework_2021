@@ -133,6 +133,9 @@ switch (_side) do {
 	case "INSURGENT-TANOA": {
 		#include "Classes\INSURGENT-TANOA.sqf"
 	};
+	case "INSURGENT-FIA": {
+		#include "Classes\INSURGENT-FIA.sqf"
+	};	
 	case "AUS-TAN": {
 		#include "Classes\AUS-TAN.sqf"
 	};

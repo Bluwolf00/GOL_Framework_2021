@@ -5,17 +5,22 @@ if (hasInterface) then {
 	// NEKY EDIT START
 	_code =
 	{
-		_EnemyNearUnits = (player nearEntities ["Man", 200]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
+		_EnemyNearUnits = (player nearEntities ["Man", 100]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
 		if(count _EnemyNearUnits == 0) then {
 			[Tent_MHQ,(player getPos [3,getDir player])] remoteExec ["setPos",2];
-			_Players = allPlayers select {_X distance flag_west_1 < 200 || _X distance flag_east_1 < 200};
+			_mhqMarkerId = _mhq getVariable ["MHQ_MarkerId",""];
+			_mhqMarkerAreaId = format["%1_Area",_mhqMarkerId];
+			_mhqMarkerId setMarkerPos _mhq;
+			_mhqMarkerAreaId setMarkerPos _mhq;
+
+			_Players = allPlayers select {_X distance flag_west_1 < 100 || _X distance flag_east_1 < 100};
 			_Players spawn {
 				_Players = _this;
 				sleep 5;
 				["The MHQ has been moved to a new safe location."] remoteExec ["systemChat",_Players];
 			};
 		} else {
-			systemChat "Enemies are nearby. You cannot move the MHQ until the immediate area is secure (200m).";
+			systemChat "Enemies are nearby. You cannot move the MHQ until the immediate area is secure (100m).";
 		};	
 	};
 

@@ -55,7 +55,7 @@ if (!isServer) exitWith {false};
 
 	_mhqMarkerArea = createMarker [_mhqMarkerAreaId, _mhq];
 	_mhqMarkerArea setMarkerShape "ELLIPSE";
-	_mhqMarkerArea setMarkerSize [200,200];
+	_mhqMarkerArea setMarkerSize [100,100];
 	_mhqMarkerArea setMarkerColor _color;
 	_mhqMarkerArea setMarkerAlpha 0;
 	_mhqMarkerArea setMarkerBrush "Border";

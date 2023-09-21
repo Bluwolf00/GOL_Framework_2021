@@ -27,7 +27,7 @@
 		};
 
 		class Specialforces {
-			aimingAccuracy[] = {0.60, 0.65, 0.70};
+			aimingAccuracy[] = {0.45, 0.5, 0.55};
 			aimingShake[]	 = {1.00, 1.00, 1.00};
 			aimingSpeed[]	 = {1.00, 1.00, 1.00};
 			commanding[]	 = {0.70, 0.80, 0.90};
@@ -38,11 +38,11 @@
 			spotDistance[]	 = {1.00, 1.00, 1.00};
 			spotTime[]		 = {1.00, 1.00, 1.00};
 			Fleeing[]		 = {0.80, 0.80, 0.80};
-			playerCamoCoef[] = {0.90, 0.90, 0.90};
+			playerCamoCoef[] = {0.70, 0.70, 0.70};
 		};
 
 		class Military {
-			aimingAccuracy[] = {0.55, 0.57, 0.60};
+			aimingAccuracy[] = {0.40, 0.45, 0.50};
 			aimingShake[]	 = {1.00, 1.00, 1.00};
 			aimingSpeed[]	 = {1.00, 1.00, 1.00};
 			commanding[]	 = {0.70, 0.80, 0.90};
@@ -53,7 +53,7 @@
 			spotDistance[]	 = {1.00, 1.00, 1.00};
 			spotTime[]		 = {1.00, 1.00, 1.00};
 			Fleeing[]		 = {0.80, 0.80, 0.80};
-			playerCamoCoef[] = {0.90, 0.90, 0.90};
+			playerCamoCoef[] = {0.70, 0.70, 0.70};
 		};
 
 		class Insurgents {
