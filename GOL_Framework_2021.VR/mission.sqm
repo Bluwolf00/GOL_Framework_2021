@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2723;
+		nextID=2724;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7376;
+		nextID=7398;
 	};
 	class Camera
 	{
-		pos[]={45.320187,30.270706,63.721603};
-		dir[]={0.0078928545,-0.77806824,0.62813431};
-		up[]={0.0097761359,0.62817717,0.77800947};
-		aside[]={0.9999249,-1.1317752e-008,-0.012564624};
+		pos[]={66.344658,63.179379,14.90764};
+		dir[]={-0.00041335143,-0.70633495,0.70794147};
+		up[]={-0.00041385772,0.70786041,0.70635355};
+		aside[]={1.0000449,-7.541496e-007,0.00058601418};
 	};
 };
 binarizationWanted=0;
@@ -36,10 +36,7 @@ addons[]=
 {
 	"A3_Characters_F",
 	"Desert",
-	"drongosaps",
-	"A3_Modules_F",
 	"A3_Ui_F",
-	"CUP_Misc3_Config",
 	"A3_Soft_F_Exp_LSV_01",
 	"A3_Boat_F_Boat_Armed_01",
 	"A3_Air_F_Exp_VTOL_01",
@@ -56,6 +53,7 @@ addons[]=
 	"A3_Structures_F_System",
 	"A3_Structures_F_Mil_Cargo",
 	"A3_Structures_F_Enoch_Military_Camps",
+	"A3_Modules_F",
 	"A3_Armor_F_Beta_APC_Tracked_01",
 	"tfar_external_intercom",
 	"ace_realisticnames",
@@ -68,7 +66,9 @@ addons[]=
 	"ace_gforces",
 	"ace_parachute",
 	"ace_medical_treatment",
-	"A3_Structures_F_Civ_InfoBoards"
+	"A3_Structures_F_Civ_InfoBoards",
+	"CUP_Misc3_Config",
+	"drongosaps"
 };
 class AddonsMetaData
 {
@@ -89,185 +89,185 @@ class AddonsMetaData
 		};
 		class Item2
 		{
-			className="DrongosAPS";
-			name="Drongo's APS";
-			author="Drongo";
-		};
-		class Item3
-		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item4
-		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item5
-		{
-			className="CUP_Misc3_Config";
-			name="CUP_Misc3_Config";
-		};
-		class Item6
+		class Item3
 		{
 			className="A3_Soft_F_Exp";
 			name="Arma 3 Apex - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item7
+		class Item4
 		{
 			className="A3_Boat_F";
 			name="Arma 3 Alpha - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item5
 		{
 			className="A3_Air_F_Exp";
 			name="Arma 3 Apex - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item6
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item10
+		class Item7
 		{
 			className="A3_Supplies_F_Heli";
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item8
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item9
 		{
 			className="rhs_c_a2port_air";
 			name="A2 ported air";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item13
+		class Item10
 		{
 			className="safp_mi24vm";
 			name="RHS SAF Plus Project";
 			author="Brigada Team";
 		};
-		class Item14
+		class Item11
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item15
+		class Item12
 		{
 			className="A3_Supplies_F_Exp";
 			name="Arma 3 Apex - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item13
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item17
+		class Item14
 		{
 			className="RHS_US_A2_AirImport";
 			name="RHSUSF A2 Air Ports";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item18
+		class Item15
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item16
 		{
 			className="A3_Structures_F_Enoch_Military";
 			name="Arma 3 Contact Platform - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item17
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item18
 		{
 			className="A3_Armor_F_Beta";
 			name="Arma 3 Beta - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item19
 		{
 			className="tfar_external_intercom";
 			name="TFAR - Intercom Phone";
 			author="Task Force Arrowhead Radio Team";
 		};
-		class Item22
+		class Item20
 		{
 			className="ace_rearm";
 			name="ACE3 - Rearm";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item23
+		class Item21
 		{
 			className="ace_refuel";
 			name="ACE3 - Refuel";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item24
+		class Item22
 		{
 			className="ace_repair";
 			name="ACE3 - Repair";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item25
+		class Item23
 		{
 			className="ace_vehicle_damage";
 			name="ACE3 - Vehicle Damage";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item26
+		class Item24
 		{
 			className="FIR_PilotCrewPack_US";
 			name="FIR_PilotCrewPack_US";
 		};
-		class Item27
+		class Item25
 		{
 			className="ace_parachute";
 			name="ACE3 - Parachute";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item28
+		class Item26
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
+		};
+		class Item27
+		{
+			className="CUP_Misc3_Config";
+			name="CUP_Misc3_Config";
+		};
+		class Item28
+		{
+			className="DrongosAPS";
+			name="Drongo's APS";
+			author="Drongo";
 		};
 	};
 };
@@ -339,7 +339,7 @@ class CustomAttributes
 		class Attribute0
 		{
 			property="ENH_dynamicSkill";
-			expression="if (!is3DEN && _value # 0 && isServer) then      {        _value params        [          '_enable',          '_skillMinBLUFOR',          '_skillAimMinBLUFOR',          '_skillMaxBLUFOR',          '_skillAimMaxBlUFOR',          '_skillMinOPFOR',          '_skillAimMinOPFOR',          '_skillMaxOPFOR',          '_skillAimMaxOPFOR',          '_skillMinINDFOR',          '_skillAimMinINDFOR',          '_skillMaxINDFOR',          '_skillAimMaxINDFOR'        ];        [          true,          [            [WEST, _skillMinBLUFOR, _skillAimMinBLUFOR, _skillMaxBLUFOR, _skillAimMaxBlUFOR],            [EAST, _skillMinOPFOR, _skillAimMinOPFOR, _skillMaxOPFOR, _skillAimMaxOPFOR],            [INDEPENDENT, _skillMinINDFOR, _skillAimMinINDFOR, _skillMaxINDFOR, _skillAimMaxINDFOR]          ]        ] call BIS_fnc_EXP_camp_dynamicAISkill;      }";
+			expression="if (!is3DEN && _value # 0 && isServer) then      {        _value params        [          '_enable',          '_skillMinBLUFOR',          '_skillAimMinBLUFOR',          '_skillMaxBLUFOR',          '_skillAimMaxBlUFOR',          '_skillMinOPFOR',          '_skillAimMinOPFOR',          '_skillMaxOPFOR',          '_skillAimMaxOPFOR',          '_skillMinIndependent',          '_skillAimMinIndependent',          '_skillMaxIndependent',          '_skillAimMaxIndependent'        ];        [          true,          [            [WEST, _skillMinBLUFOR, _skillAimMinBLUFOR, _skillMaxBLUFOR, _skillAimMaxBlUFOR],            [EAST, _skillMinOPFOR, _skillAimMinOPFOR, _skillMaxOPFOR, _skillAimMaxOPFOR],            [INDEPENDENT, _skillMinIndependent, _skillAimMinIndependent, _skillMaxIndependent, _skillAimMaxIndependent]          ]        ] call BIS_fnc_EXP_camp_dynamicAISkill;      }";
 			class Value
 			{
 				class data
@@ -459,7 +459,7 @@ class CustomAttributes
 		class Attribute1
 		{
 			property="ENH_saveLoadout";
-			expression="if (!isMultiplayer || !_value || is3DEN || !hasInterface) exitWith {};    [] spawn    {      waitUntil {sleep 1; !isNull player};      player setVariable ['ENH_savedLoadout', getUnitloadout player];      player addMPEventHandler ['MPRespawn',      {        params ['_unit'];        private _loadout = _unit getVariable ['ENH_savedLoadout', []];        if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};      }];    };";
+			expression="if (!isMultiplayer || !_value || is3DEN || !hasInterface) exitWith {};    0 spawn    {      waitUntil {sleep 1; !isNull player};      player setVariable ['ENH_savedLoadout', getUnitloadout player];      player addMPEventHandler ['MPRespawn',      {        params ['_unit'];        private _loadout = _unit getVariable ['ENH_savedLoadout', []];        if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};      }];    };";
 			class Value
 			{
 				class data
@@ -472,7 +472,7 @@ class CustomAttributes
 		class Attribute2
 		{
 			property="ENH_dynamicGroups";
-			expression="        if (!is3DEN && isMultiplayer && _value) then        {          if (isServer) then {['Initialize'] call BIS_fnc_dynamicGroups};          if (hasInterface) then          {            [] spawn            {              scriptName 'ENH_Attribute_DynamicGroups';              waitUntil {!isNull player};              ['InitializePlayer', [player]] call BIS_fnc_dynamicGroups;            };          };        };      ";
+			expression="        if (!is3DEN && isMultiplayer && _value) then        {          if (isServer) then {['Initialize'] call BIS_fnc_dynamicGroups};          if (hasInterface) then          {            0 spawn            {              scriptName 'ENH_Attribute_DynamicGroups';              waitUntil {!isNull player};              ['InitializePlayer', [player]] call BIS_fnc_dynamicGroups;            };          };        };      ";
 			class Value
 			{
 				class data
@@ -14363,7 +14363,7 @@ class CustomAttributes
 		class Attribute1
 		{
 			property="ENH_SPR";
-			expression="if (!is3DEN && _value # 0 > 0 && !isMultiplayer) then      {        ENH_SPR_Ruleset = _value param [0, 0];        ENH_SPR_Delay = _value param [1, 20];        ENH_SPR_CanDie = _value param [2, false];        ENH_SPR_RestoreLoadout = _value param [3, false];        ENH_SPR_OnRespawnCode = compile (_value param [4, '']);        ENH_SPR_Positions =        [          allMapMarkers select {'respawn_east' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_west' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_guerilla' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_civilian' in toLower _x} apply {getMarkerPos _x}        ];        {          _x setVariable ['ENH_SPR_OriginalSide', side group _x];          _x setVariable ['ENH_SPR_OriginalLoadout', getUnitLoadout _x];          _x addEventHandler ['handleDamage',          {            params ['_unit', '', '_damage', '', '', '_index'];            if (!alive _unit || lifeState _unit isEqualTo 'INCAPACITATED') exitWith {0};            if (_unit getVariable ['ENH_SPR_Tickets', 0] == 0) then            {              _unit removeEventHandler ['handleDamage', _thisEventHandler];              _damage;            };            if (ENH_SPR_CanDie && _index in [1, 2] && _damage >= 1) exitWith            {              _unit removeEventHandler ['handleDamage', _thisEventHandler];              1;            };            if (_index < 8 && (_damage min 0.95) == 0.95) then            {              setAccTime 1;              _unit allowDamage false;              _unit setCaptive true;              _unit setUnconscious true;              _unit setVariable ['ENH_SPR_Tickets', (_unit getVariable ['ENH_SPR_Tickets', 0]) - 1];              if (isPlayer _unit) then {enableTeamSwitch false} else {removeSwitchableUnit _unit};              moveOut _unit;              _unit spawn ENH_fnc_SPR_respawnTimer;            };            _damage min 0.95;          }];        } forEach (allUnits select {_x getVariable ['ENH_SPR_Tickets', 0] > 0});                ENH_fnc_SPR_respawn =        {          scriptName 'ENH_Attribute_SPR_Respawn';          params ['_unit'];          if (isPlayer _unit) then {enableTeamSwitch true} else {addSwitchableUnit _unit};          if (ENH_SPR_RestoreLoadout) then {_unit setUnitLoadout (_unit getVariable 'ENH_SPR_OriginalLoadout')};          private _sideID = (_unit getVariable 'ENH_SPR_OriginalSide') call BIS_fnc_sideID;          private _positions = ENH_SPR_Positions select _sideID;          if (_positions isNotEqualTo []) then          {            switch (ENH_SPR_Ruleset) do            {              case 3:              {                _unit setPos (([_positions, [], {_unit distance _x}, 'ASCEND'] call BIS_fnc_sortBy) select 0);              };              case 2:              {                _unit setPos selectRandom _positions;              };            };          };          _unit setUnconscious false;          _unit allowDamage true;          _unit setDamage 0;          _unit switchMove '';          _unit call ENH_SPR_OnRespawnCode;          _unit spawn          {            sleep 8;            _this setCaptive false;          };        };                ENH_fnc_SPR_respawnTimer =        {          scriptName 'ENH_Attribute_SPR_RespawnTimer';          params ['_unit'];          private _respawnTime = time + ENH_SPR_Delay;          if (isPlayer _unit) then          {            private _ctrlRespawnTimer = (call BIS_fnc_displayMission) ctrlCreate ['RscStructuredText',-1];            _ctrlRespawnTimer ctrlSetPosition [0.25, 0, 0.5, 0.06];            _ctrlRespawnTimer ctrlSetBackgroundColor [0, 0, 0, 0.1];            _ctrlRespawnTimer ctrlCommit 0;            ENH_SPR_OriginalVolume = [soundVolume, musicVolume, radioVolume, speechVolume, environmentVolume];            0 cutText ['', 'BLACK OUT', 0.3];            0.3 fadeSound 0;            0.3 fadeMusic 0;            0.3 fadeRadio 0;            0.3 fadeSpeech 0;            0.3 fadeEnvironment 0;            showChat false;            while {time < _respawnTime} do            {              _ctrlRespawnTimer ctrlSetStructuredText parseText format ['<t size=''1.25'' color=''#218a36'' align=''center''>%1</t>', [(_respawnTime - time), 'HH:MM'] call BIS_fnc_timeToString];              sleep 0.1;            };            ctrlDelete _ctrlRespawnTimer;            0 cutText ['', 'BLACK IN', 8];            8 fadeSound (ENH_SPR_OriginalVolume # 0);            8 fadeMusic (ENH_SPR_OriginalVolume # 1);            8 fadeRadio (ENH_SPR_OriginalVolume # 2);            8 fadeSpeech (ENH_SPR_OriginalVolume # 3);            8 fadeEnvironment (ENH_SPR_OriginalVolume # 4);            showChat true;            [              ['Respawned'],              [format ['GRID: %1', mapGridPosition _unit]],              [format ['Tickets left: %1', _unit getVariable 'ENH_SPR_Tickets']]            ] spawn BIS_fnc_EXP_camp_SITREP;          }          else          {            if ((side player getFriend (_unit getVariable 'ENH_SPR_OriginalSide')) >= 0.6) then            {              [                str _unit, 'onEachFrame',                {                  drawIcon3D ['\a3\Modules_f\data\portraitRespawn_ca.paa', [0.13, 0.54, 0.21, 0.8], ASLToAGL ((_this # 0) modelToWorldVisualWorld [0, 0, 1]), 1, 1, 0, str round ((_this # 1) - time), 2];                },                [_unit, _respawnTime]              ] call BIS_fnc_addStackedEventHandler;            };            sleep ENH_SPR_Delay;          };          [str _unit, 'onEachFrame'] call BIS_fnc_removeStackedEventHandler;          _unit call ENH_fnc_SPR_respawn;        };      }";
+			expression="if (!is3DEN && _value # 0 > 0 && !isMultiplayer) then      {        ENH_SPR_Ruleset = _value param [0, 0];        ENH_SPR_Delay = _value param [1, 20];        ENH_SPR_CanDie = _value param [2, false];        ENH_SPR_RestoreLoadout = _value param [3, false];        ENH_SPR_OnRespawnCode = compile (_value param [4, '']);        ENH_SPR_Positions =        [          allMapMarkers select {'respawn_east' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_west' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_guerilla' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_civilian' in toLower _x} apply {getMarkerPos _x}        ];        {          _x setVariable ['ENH_SPR_OriginalSide', side group _x];          _x setVariable ['ENH_SPR_OriginalLoadout', getUnitLoadout _x];          _x addEventHandler ['handleDamage',          {            params ['_unit', '', '_damage', '', '', '_index'];            if (!alive _unit || lifeState _unit isEqualTo 'INCAPACITATED') exitWith {0};            if (_unit getVariable ['ENH_SPR_Tickets', 0] == 0) then            {              _unit removeEventHandler ['handleDamage', _thisEventHandler];              _damage;            };            if (ENH_SPR_CanDie && _index in [1, 2] && _damage >= 1) exitWith            {              _unit removeEventHandler ['handleDamage', _thisEventHandler];              1;            };            if (_index < 8 && (_damage min 0.95) == 0.95) then            {              setAccTime 1;              _unit allowDamage false;              _unit setCaptive true;              _unit setUnconscious true;              _unit setVariable ['ENH_SPR_Tickets', (_unit getVariable ['ENH_SPR_Tickets', 0]) - 1];              if (isPlayer _unit) then {enableTeamSwitch false} else {removeSwitchableUnit _unit};              moveOut _unit;              _unit spawn ENH_fnc_SPR_respawnTimer;            };            _damage min 0.95;          }];        } forEach (allUnits select {_x getVariable ['ENH_SPR_Tickets', 0] > 0});                ENH_fnc_SPR_respawn =        {          scriptName 'ENH_Attribute_SPR_Respawn';          params ['_unit'];          if (isPlayer _unit) then {enableTeamSwitch true} else {addSwitchableUnit _unit};          if (ENH_SPR_RestoreLoadout) then {_unit setUnitLoadout (_unit getVariable 'ENH_SPR_OriginalLoadout')};          private _sideID = (_unit getVariable 'ENH_SPR_OriginalSide') call BIS_fnc_sideID;          private _positions = ENH_SPR_Positions select _sideID;          if (_positions isNotEqualTo []) then          {            switch (ENH_SPR_Ruleset) do            {              case 3:              {                _unit setPos (([_positions, [], {_unit distance _x}, 'ASCEND'] call BIS_fnc_sortBy) select 0);              };              case 2:              {                _unit setPos selectRandom _positions;              };            };          };          _unit setUnconscious false;          _unit allowDamage true;          _unit setDamage 0;          _unit switchMove '';          _unit call ENH_SPR_OnRespawnCode;          _unit spawn          {            sleep 8;            _this setCaptive false;          };        };                ENH_fnc_SPR_respawnTimer =        {          scriptName 'ENH_Attribute_SPR_RespawnTimer';          params ['_unit'];          private _respawnTime = time + ENH_SPR_Delay;          if (isPlayer _unit) then          {            private _ctrlRespawnTimer = (call BIS_fnc_displayMission) ctrlCreate ['RscStructuredText',-1];            _ctrlRespawnTimer ctrlSetPosition [0.25, 0, 0.5, 0.06];            _ctrlRespawnTimer ctrlSetBackgroundColor [0, 0, 0, 0.1];            _ctrlRespawnTimer ctrlCommit 0;            ENH_SPR_OriginalVolume = [soundVolume, musicVolume, radioVolume, speechVolume, environmentVolume];            0 cutText ['', 'BLACK OUT', 0.3];            0.3 fadeSound 0;            0.3 fadeMusic 0;            0.3 fadeRadio 0;            0.3 fadeSpeech 0;            0.3 fadeEnvironment 0;            showChat false;            while {time < _respawnTime} do            {              _ctrlRespawnTimer ctrlSetStructuredText parseText format ['<t size=''1.25'' color=''#218a36'' align=''center''>%1</t>', [(_respawnTime - time), 'HH:MM'] call BIS_fnc_timeToString];              sleep 0.1;            };            ctrlDelete _ctrlRespawnTimer;            0 cutText ['', 'BLACK IN', 8];            8 fadeSound (ENH_SPR_OriginalVolume # 0);            8 fadeMusic (ENH_SPR_OriginalVolume # 1);            8 fadeRadio (ENH_SPR_OriginalVolume # 2);            8 fadeSpeech (ENH_SPR_OriginalVolume # 3);            8 fadeEnvironment (ENH_SPR_OriginalVolume # 4);            showChat true;            [              ['Respawned'],              [format ['GRID: %1', mapGridPosition _unit]],              [format ['Tickets left: %1', _unit getVariable 'ENH_SPR_Tickets']]            ] spawn BIS_fnc_EXP_camp_SITREP;          }          else          {            private _respawnEH = -1;            if ((side player getFriend (_unit getVariable 'ENH_SPR_OriginalSide')) >= 0.6) then            {              _respawnEH = addMissionEventHandler              [                'draw3D',                {                  drawIcon3D ['\a3\Modules_f\data\portraitRespawn_ca.paa', [0.13, 0.54, 0.21, 0.8], ASLToAGL ((_thisArgs # 0) modelToWorldVisualWorld [0, 0, 1]), 1, 1, 0, str round ((_thisArgs # 1) - time), 2];                },                [_unit, _respawnTime]              ];            };            sleep ENH_SPR_Delay;            removeMissionEventHandler ['draw3D', _respawnEH];            [str _unit, 'onEachFrame'] call BIS_fnc_removeStackedEventHandler;          };          _unit call ENH_fnc_SPR_respawn;        };      }";
 			class Value
 			{
 				class data
@@ -14442,7 +14442,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			dataType="Layer";
@@ -14564,7 +14564,7 @@ class Mission
 			name="Template Modules";
 			class Entities
 			{
-				items=19;
+				items=11;
 				class Item0
 				{
 					dataType="Logic";
@@ -14620,182 +14620,6 @@ class Mission
 				};
 				class Item4
 				{
-					dataType="Logic";
-					class PositionInfo
-					{
-						position[]={140.91489,5,147.66841};
-					};
-					id=2540;
-					type="DAPS_Options";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="DAPS_Options_dapsDebug";
-							expression="_this setVariable ['dapsDebug',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="FALSE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="DAPS_Options_dapsBlastSize";
-							expression="_this setVariable ['dapsBlastSize',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Small";
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="DAPS_Options_dapsClearAll";
-							expression="_this setVariable ['dapsClearAll',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="TRUE";
-								};
-							};
-						};
-						class Attribute3
-						{
-							property="DAPS_Options_dapsRearmDelay";
-							expression="_this setVariable ['dapsRearmDelay',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=5;
-								};
-							};
-						};
-						class Attribute4
-						{
-							property="DAPS_Options_dapsRearmRange";
-							expression="_this setVariable ['dapsRearmRange',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=50;
-								};
-							};
-						};
-						class Attribute5
-						{
-							property="DAPS_Options_dapsMaxAngle";
-							expression="_this setVariable ['dapsMaxAngle',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=45;
-								};
-							};
-						};
-						class Attribute6
-						{
-							property="DAPS_Options_dapsRearmTime";
-							expression="_this setVariable ['dapsRearmTime',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=5;
-								};
-							};
-						};
-						nAttributes=7;
-					};
-				};
-				class Item5
-				{
-					dataType="Logic";
-					class PositionInfo
-					{
-						position[]={141.26454,5,135.66656};
-					};
-					id=2541;
-					type="DAPS_AssignAPS";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="DAPS_AssignAPS_dapsAPSType";
-							expression="_this setVariable ['dapsAPSType',_value,true];";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="TrophyMV";
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item6
-				{
-					dataType="Comment";
-					class PositionInfo
-					{
-						position[]={140.85875,5,147.66714};
-					};
-					title="DAPS Options";
-					description="This is the module for Active protection system. It sets the mission to clear all assigned Active protection systems on default vehicles. If you want to enable DAPS remove this module.";
-					id=2542;
-				};
-				class Item7
-				{
-					dataType="Comment";
-					class PositionInfo
-					{
-						position[]={141.26556,5,135.42781};
-					};
-					title="DAPS Assign";
-					description="Certain vehicles may not have Active protection system enabled, if you want a specific vehicle to have it, create a dummy of the vehicle you want it to apply to and then synchronize this module with the dummy vehicle. That vehicle class will now have the type of APS assigned to it." \n "" \n "Do note this dummy vehicle should be hidden from view on some corner of the map.";
-					id=2543;
-				};
-				class Item8
-				{
-					dataType="Logic";
-					class PositionInfo
-					{
-						position[]={141.00301,5,121.61};
-					};
-					name="GOL_Arsenal_GL";
-					id=2664;
-					type="Logic";
-				};
-				class Item9
-				{
-					dataType="Logic";
-					class PositionInfo
-					{
-						position[]={141.35576,5,128.76659};
-					};
-					name="GOL_Arsenal_LMG";
-					id=2663;
-					type="Logic";
-				};
-				class Item10
-				{
 					dataType="Marker";
 					position[]={140.31805,22.872955,155.42197};
 					name="spectator";
@@ -14804,7 +14628,7 @@ class Mission
 					id=609;
 					atlOffset=17.872955;
 				};
-				class Item11
+				class Item5
 				{
 					dataType="Marker";
 					position[]={80.071304,5,1004.6013};
@@ -14812,7 +14636,7 @@ class Mission
 					type="Empty";
 					id=1756;
 				};
-				class Item12
+				class Item6
 				{
 					dataType="Marker";
 					position[]={1180.0541,5,50.846863};
@@ -14820,54 +14644,7 @@ class Mission
 					type="Empty";
 					id=1755;
 				};
-				class Item13
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={27.681999,5.2668285,50.123001};
-						angles[]={0,6.2083454,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						init="[this, ""small""] call GW_MHQ_Fnc_Handler;";
-						name="Tent_MHQ";
-					};
-					id=2679;
-					type="Misc_Backpackheap";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="allowDamage";
-							expression="_this allowdamage _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=0;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item14
-				{
-					dataType="Comment";
-					class PositionInfo
-					{
-						position[]={28.479757,5,50.028713};
-						angles[]={0,0.11193988,0};
-					};
-					title="Tent MHQ";
-					description="This is a tent MHQ, you can use this MHQ for small scale missions that you don't want to use the other scripted solutions for respawn. This tent can be moved by leaders with self-interaction, the missionSetting ""GOL_OKS_TentMHQ"" must be set to 1 to be used.";
-					id=2666;
-				};
-				class Item15
+				class Item7
 				{
 					dataType="Comment";
 					class PositionInfo
@@ -14878,7 +14655,7 @@ class Mission
 					description="These Triggers activate the different cases inside the SpawnList.sqf. When players enter these zones the scripts / zones will spawn. Used to spawn static units & moving groups using the Framework functions Shift + 1 & Shift + 2.";
 					id=1762;
 				};
-				class Item16
+				class Item8
 				{
 					dataType="Comment";
 					class PositionInfo
@@ -14889,7 +14666,7 @@ class Mission
 					description="Despawn Position for Resupply & Pickup helicopters. IMPORTANT! Make sure the spawn & despawn are set apart! Minimum 300m apart!";
 					id=1758;
 				};
-				class Item17
+				class Item9
 				{
 					dataType="Comment";
 					class PositionInfo
@@ -14900,7 +14677,7 @@ class Mission
 					description="Spawn Position for Resupply & Pickup helicopters. IMPORTANT! Make sure the spawn & despawn are set apart! Minimum 300m apart!";
 					id=1757;
 				};
-				class Item18
+				class Item10
 				{
 					dataType="Comment";
 					class PositionInfo
@@ -14914,7 +14691,7 @@ class Mission
 				};
 			};
 			id=2584;
-			atlOffset=0.034908295;
+			atlOffset=0.13963223;
 		};
 		class Item2
 		{
@@ -20274,7 +20051,7 @@ class Mission
 					name="Misc";
 					class Entities
 					{
-						items=7;
+						items=5;
 						class Item0
 						{
 							dataType="Object";
@@ -20405,47 +20182,13 @@ class Mission
 							id=1860;
 							type="LocationRespawnPoint_F";
 						};
-						class Item5
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={44.884998,6.743187,89.318001};
-								angles[]={0,0.017575465,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								init="this setObjectTexture [0,""PlatoonRoster.jpg""];";
-							};
-							id=2661;
-							type="Land_Billboard_F";
-						};
-						class Item6
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={50.868999,6.743187,89.233002};
-								angles[]={0,0.017575465,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								name="scoreboard_west";
-							};
-							id=2673;
-							type="Land_Billboard_F";
-						};
 					};
 					id=413;
-					atlOffset=92866.547;
+					atlOffset=371466.19;
 				};
 			};
 			id=403;
-			atlOffset=46433.273;
+			atlOffset=185733.09;
 		};
 		class Item5
 		{
@@ -22400,7 +22143,7 @@ class Mission
 					name="Misc";
 					class Entities
 					{
-						items=7;
+						items=6;
 						class Item0
 						{
 							dataType="Object";
@@ -22517,23 +22260,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={85.306999,6.743187,90.697998};
-								angles[]={0,0.017575465,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								name="scoreboard_east";
-							};
-							id=2674;
-							type="Land_Billboard_F";
-						};
-						class Item6
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={75.317307,8.9768047,90.135948};
 								angles[]={0,3.1455245,0};
 							};
@@ -22566,7 +22292,7 @@ class Mission
 						};
 					};
 					id=423;
-					atlOffset=51185.078;
+					atlOffset=102370.16;
 				};
 				class Item4
 				{
@@ -22689,7 +22415,291 @@ class Mission
 				};
 			};
 			id=404;
-			atlOffset=12796.27;
+			atlOffset=25592.539;
+		};
+		class Item6
+		{
+			dataType="Layer";
+			name="Updated Entities (Replay Updating)";
+			class Entities
+			{
+				items=11;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={44.884998,6.743187,89.318001};
+						angles[]={0,0.017575465,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						init="this setObjectTexture [0,""PlatoonRoster.jpg""];";
+					};
+					id=2661;
+					type="Land_Billboard_F";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={50.868999,6.743187,89.233002};
+						angles[]={0,0.017575465,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						name="scoreboard_west";
+					};
+					id=2673;
+					type="Land_Billboard_F";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={27.681999,5.2668285,50.123001};
+						angles[]={0,6.2083454,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						init="[this, ""small""] call GW_MHQ_Fnc_Handler;";
+						name="Tent_MHQ";
+					};
+					id=2679;
+					type="Misc_Backpackheap";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item3
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={28.479757,5,50.028713};
+						angles[]={0,0.11193988,0};
+					};
+					title="Tent MHQ";
+					description="This is a tent MHQ, you can use this MHQ for small scale missions that you don't want to use the other scripted solutions for respawn. This tent can be moved by leaders with self-interaction, the missionSetting ""GOL_OKS_TentMHQ"" must be set to 1 to be used.";
+					id=2666;
+				};
+				class Item4
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={140.91489,5,147.66841};
+					};
+					id=2540;
+					type="DAPS_Options";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="DAPS_Options_dapsDebug";
+							expression="_this setVariable ['dapsDebug',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="FALSE";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="DAPS_Options_dapsBlastSize";
+							expression="_this setVariable ['dapsBlastSize',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Small";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="DAPS_Options_dapsClearAll";
+							expression="_this setVariable ['dapsClearAll',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="TRUE";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="DAPS_Options_dapsRearmDelay";
+							expression="_this setVariable ['dapsRearmDelay',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=5;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="DAPS_Options_dapsRearmRange";
+							expression="_this setVariable ['dapsRearmRange',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=50;
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="DAPS_Options_dapsMaxAngle";
+							expression="_this setVariable ['dapsMaxAngle',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=45;
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="DAPS_Options_dapsRearmTime";
+							expression="_this setVariable ['dapsRearmTime',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=5;
+								};
+							};
+						};
+						nAttributes=7;
+					};
+				};
+				class Item5
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={141.26454,5,135.66656};
+					};
+					id=2541;
+					type="DAPS_AssignAPS";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="DAPS_AssignAPS_dapsAPSType";
+							expression="_this setVariable ['dapsAPSType',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="TrophyMV";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item6
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={140.85875,5,147.66714};
+					};
+					title="DAPS Options";
+					description="This is the module for Active protection system. It sets the mission to clear all assigned Active protection systems on default vehicles. If you want to enable DAPS remove this module.";
+					id=2542;
+				};
+				class Item7
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={141.26556,5,135.42781};
+					};
+					title="DAPS Assign";
+					description="Certain vehicles may not have Active protection system enabled, if you want a specific vehicle to have it, create a dummy of the vehicle you want it to apply to and then synchronize this module with the dummy vehicle. That vehicle class will now have the type of APS assigned to it." \n "" \n "Do note this dummy vehicle should be hidden from view on some corner of the map.";
+					id=2543;
+				};
+				class Item8
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={141.00301,5,121.61};
+					};
+					name="GOL_Arsenal_GL";
+					id=2664;
+					type="Logic";
+				};
+				class Item9
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={141.35576,5,128.76659};
+					};
+					name="GOL_Arsenal_LMG";
+					id=2663;
+					type="Logic";
+				};
+				class Item10
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={85.306999,6.743187,90.697998};
+						angles[]={0,0.017575465,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						name="scoreboard_east";
+					};
+					id=2674;
+					type="Land_Billboard_F";
+				};
+			};
+			id=2723;
 		};
 	};
 };
