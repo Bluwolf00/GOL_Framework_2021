@@ -110,5 +110,25 @@ if(!isNil "MHQ_1") then {
 	};
 };
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*
+	Set AI Faces & Voices for Factions / Units
+
+	Options:
+	african
+	asian
+	english
+	american
+	middleeast
+	russian
+	french
+
+	!! OKS_Ambience must be turned to 1 in MissionSettings.sqf !!
+*/
+if(isServer && GOL_OKS_AMBIENCE isEqualTo 1) then {
+	waitUntil {sleep 1; !(isNil "OKS_FaceSwap")};
+	[east,"russian"] spawn OKS_FaceSwap;
+};
+
 /* DO NOT EDIT BELOW */
 OKS_MISSION_SETTINGS = true;
