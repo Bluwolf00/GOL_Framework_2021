@@ -1,4 +1,7 @@
-_glHE = "rhs_VOG25P";
+_useMineDetector = true;
+_allowedNightStuff = true;
+
+_glHE = "rhs_VOG25";
 _glsmokeW = "rhs_GRD40_White";
 _glsmokeB = "";
 _glsmokeG = "rhs_GRD40_Green";
@@ -10,9 +13,6 @@ _glsmokeY = "";
 _glflareG = "rhs_VG40OP_green";
 _glflareR = "rhs_VG40OP_red";
 _glflareW = "rhs_VG40OP_white";
-
-_useMineDetector = true;
-_allowedNightStuff = true;
 
 _insignia = "";
 _goggles = "rhsusf_oakley_goggles_clr";

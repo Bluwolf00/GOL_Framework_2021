@@ -1,7 +1,7 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
-_glHE = "rhs_VOG25P";
+_glHE = "rhs_VOG25";
 _glsmokeW = "rhs_GRD40_White";
 _glsmokeB = "";
 _glsmokeG = "rhs_GRD40_Green";

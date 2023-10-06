@@ -1,6 +1,19 @@
 _useMineDetector = false;
 _allowedNightStuff = false;
 
+_glHE = "rhs_VOG25";
+_glsmokeW = "rhs_GRD40_White";
+_glsmokeB = "";
+_glsmokeG = "rhs_GRD40_Green";
+_glsmokeO = "";
+_glsmokeP = "";
+_glsmokeR = "rhs_GRD40_Red";
+_glsmokeY = "";
+
+_glflareG = "rhs_VG40OP_green";
+_glflareR = "rhs_VG40OP_red";
+_glflareW = "rhs_VG40OP_white";
+
 _insignia = "";
 _goggles = "";
 _helmet = ["H_ShemagOpen_tan","","","UK3CB_H_Shemag_blk","UK3CB_H_Shemag_grey","UK3CB_H_Shemag_tan","UK3CB_H_Shemag_white","UK3CB_ADE_O_H_Turban_01_1","UK3CB_ADE_I_H_Turban_01_2","UK3CB_H_Turban_Facewrap_03_Blk","UK3CB_H_Turban_Facewrap_01_Tan"];

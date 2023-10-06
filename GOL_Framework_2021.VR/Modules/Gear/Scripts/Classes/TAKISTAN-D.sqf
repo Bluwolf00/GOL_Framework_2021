@@ -1,6 +1,19 @@
 _useMineDetector = false;
 _allowedNightStuff = false;
 
+_glHE = "rhs_VOG25";
+_glsmokeW = "rhs_GRD40_White";
+_glsmokeB = "";
+_glsmokeG = "rhs_GRD40_Green";
+_glsmokeO = "";
+_glsmokeP = "";
+_glsmokeR = "rhs_GRD40_Red";
+_glsmokeY = "";
+
+_glflareG = "rhs_VG40OP_green";
+_glflareR = "rhs_VG40OP_red";
+_glflareW = "rhs_VG40OP_white";
+
 _insignia = "";
 _goggles = "";
 _helmet = ["UK3CB_ARD_B_H_Ssh68_Des"];
