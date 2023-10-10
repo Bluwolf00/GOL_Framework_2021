@@ -25,7 +25,7 @@ ISNILS(_rifleMarksman_mag_tr,_rifleMarksman_mag);
 ISNILS(_LMG_mag_tr,_LMG_mag);
 ISNILS(_MMG_mag,_LMG_mag);
 ISNILS(_MMG_mag_tr,_MMG_mag);
-
+ISNILS(_glHEDP,_glHE);
 ISNILS(_AA,_MAT);
 ISNILS(_AA_mag,_MAT_mag);
 ISNILS(_LAT_mag_HE,_LAT_mag);

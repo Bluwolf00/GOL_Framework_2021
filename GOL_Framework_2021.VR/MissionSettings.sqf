@@ -12,9 +12,9 @@ GOL_PACKED_GMG = "RHS_MK19_TriPod_USMC_WD";
 
 /* AI Gear Settings */
 // 0 = 0%, 1 = 100%
-GOL_LAT_Chance = 1;
+GOL_LAT_Chance = 0.5;
 GOL_MAT_Chance = 0.25;
-GOL_UGL_Chance = 0.5;
+GOL_UGL_Chance = 0.25;
 
 /* AI Static Settings */
 // 0 = 0%, 1 = 100%
