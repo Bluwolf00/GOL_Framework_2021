@@ -1,20 +1,42 @@
 /*
-	OKS_Rush_SpawnGroup
-	[SpawnPos,UnitsPerBase,Side,Range,[],TriggerActivatedToDisableSpawner] spawn OKS_Rush_Spawner;
-	[SpawnPos,UnitsPerBase,Side,Range,[],TriggerActivatedToDisableSpawner] execVM "Scripts\OKS_Spawn\OKS_Rush_Spawner.sqf";
+	OKS_Lambs_Spawner
+	[SpawnPos,"hunt",UnitsPerBase,Side,Range,[],TriggerActivatedToDisableSpawner] spawn OKS_Lambs_Spawner;
+	[SpawnPos,"rush",UnitsPerBase,Side,Range,[],TriggerActivatedToDisableSpawner] execVM "Scripts\OKS_Spawn\OKS_Lambs_Spawner.sqf";
 */
 
  	if(!isServer) exitWith {};
 
-	Params ["_SpawnPos","_NumberInfantry","_Side","_Range","_Array","_TriggerActivatedToDisableSpawner"];
-	private ["_RandomPos","_Center"];
+	Params [
+		"_SpawnPos",
+		["_LambsType","rush",[""]],
+		["_NumberInfantry",5,[0]],
+		["_Side",east,[sideUnknown]],
+		["_Range",1500,[0]],
+		["_Array",[],[[]]],
+		["_ActivatedToDisableSpawner",objNull,[objNull,""]]
+	];
+	private ["_RandomPos","_Center","_Condition1","_Condition2"];
 
 	_Settings = [_Side] call OKS_Dynamic_Setting;
 	_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian","_Trigger"];
 	_UnitArray Params ["_Leaders","_Units","_Officer"];
 
 	while {true} do {
-		if(!triggerActivated _TriggerActivatedToDisableSpawner) then {
+
+		if(typeName _ActivatedToDisableSpawner == "OBJECT") then {
+			_Condition1 = (!triggerActivated _ActivatedToDisableSpawner);
+			_Condition2 = (triggerActivated _ActivatedToDisableSpawner);
+		};
+		if(typeName _ActivatedToDisableSpawner == "STRING") then {
+			Call Compile Format ["%1 = false",_ActivatedToDisableSpawner];
+			_Condition1 = (Call Compile Format ["%1 == false",_ActivatedToDisableSpawner]);
+			_Condition2 = (Call Compile Format ["%1 == true",_ActivatedToDisableSpawner]);
+		};
+		if(!((typeName _ActivatedToDisableSpawner) in ["OBJECT","STRING"])) exitWith {
+			SystemChat "ActivatedToDisableSpawner is not string or object. Check parameters for Lambs Spawner..";
+		};
+
+		if(_Condition1) then {
 			SystemChat "Trigger inactive, spawning new hunter.";
 			_Group = CreateGroup _Side;
 			_Group setVariable ["acex_headless_blacklist",true,true];
@@ -51,7 +73,7 @@
 			systemChat "Group destroyed or unconscious. Passed WaitUntil";
 		};
 		
-		if(triggerActivated _TriggerActivatedToDisableSpawner) exitWith {
+		if(_Condition2) exitWith {
 			systemChat "Spawner Disabled.";
 		};
 		sleep 10;
