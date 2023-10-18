@@ -642,10 +642,12 @@ switch (_TypeOfObjective) do {
 				_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
 				_Unit setRank "SERGEANT";
 				_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
+				_Unit setUnitPos (selectRandom ["MIDDLE","UP"]);
 			} else {
 				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_Position select 0,_Position select 1,0], [], 10, "NONE"];
 				_Unit setRank "PRIVATE";
 				_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
+				_Unit setUnitPos (selectRandom ["MIDDLE","UP"]);
 			};
 		};
 		
