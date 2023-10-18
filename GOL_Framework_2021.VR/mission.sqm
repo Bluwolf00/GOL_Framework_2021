@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2724;
+		nextID=2725;
 	};
 	class MarkerIDProvider
 	{
@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7398;
+		nextID=7420;
 	};
 	class Camera
 	{
@@ -68,13 +68,14 @@ addons[]=
 	"ace_medical_treatment",
 	"A3_Structures_F_Civ_InfoBoards",
 	"CUP_Misc3_Config",
-	"drongosaps"
+	"drongosaps",
+	"san_headlamp"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=29;
+		items=30;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -269,6 +270,12 @@ class AddonsMetaData
 			name="Drongo's APS";
 			author="Drongo";
 		};
+		class Item29
+		{
+			className="SAN_Headlamp";
+			name="san_headlamp";
+			author="MrSanchez";
+		};
 	};
 };
 class DynamicSimulation
@@ -281,7 +288,8 @@ dlcs[]=
 	"Heli",
 	"RHS_AFRF",
 	"RHS_USAF",
-	"Orange"
+	"Orange",
+	"SAN_Headlamp"
 };
 randomSeed=15706391;
 class ScenarioData
@@ -3948,7 +3956,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.5;
+														value=1.8;
 													};
 												};
 												class Item1
@@ -3975,7 +3983,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.60000002;
+														value=0.80000001;
 													};
 												};
 												class Item1
@@ -13575,7 +13583,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.19943775;
+														value=0.1;
 													};
 												};
 												class Item1
@@ -14442,7 +14450,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			dataType="Layer";
@@ -22700,6 +22708,124 @@ class Mission
 				};
 			};
 			id=2723;
+		};
+		class Item7
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={141.25999,5,115.012};
+			};
+			id=2724;
+			type="SAN_HeadlampSettings";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="SAN_HeadlampSettings_HeadlampMode";
+					expression="_this setVariable ['HeadlampMode',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=2;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="SAN_HeadlampSettings_AI_Manual_Headlamp_MinHour";
+					expression="_this setVariable ['AI_Manual_Headlamp_MinHour',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=20;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="SAN_HeadlampSettings_Multiplayer_Headlamp_UpdateRate";
+					expression="_this setVariable ['Multiplayer_Headlamp_UpdateRate',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=30;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="SAN_HeadlampSettings_Headlamp_RenderDistance";
+					expression="_this setVariable ['Headlamp_RenderDistance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=1500;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="SAN_HeadlampSettings_AI_Allowed_Headlamp";
+					expression="_this setVariable ['AI_Allowed_Headlamp',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="SAN_HeadlampSettings_AI_Headlamp_UpdateRate";
+					expression="_this setVariable ['AI_Headlamp_UpdateRate',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=10;
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="SAN_HeadlampSettings_AI_AutoEnable_Headlamp";
+					expression="_this setVariable ['AI_AutoEnable_Headlamp',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="SAN_HeadlampSettings_AI_Manual_Headlamp_MaxHour";
+					expression="_this setVariable ['AI_Manual_Headlamp_MaxHour',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=6;
+						};
+					};
+				};
+				nAttributes=8;
+			};
 		};
 	};
 };
