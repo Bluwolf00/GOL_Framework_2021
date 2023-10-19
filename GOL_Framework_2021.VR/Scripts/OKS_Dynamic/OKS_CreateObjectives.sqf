@@ -626,10 +626,15 @@ switch (_TypeOfObjective) do {
 		_Hostage2 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
 
 		{
-			[_X, true] call ACE_captives_fnc_setHandcuffed;
-			_X setCaptive true;
-			_X setBehaviour "CARELESS";
 			_X disableAI "MOVE";
+			_X setUnitPos "MIDDLE";
+			_X setCaptive true;
+			removeAllWeapons _X;
+			removeGoggles _X;
+			removeBackpack _X;
+			removeHeadgear _X;
+			_X addGoggles "G_Blindfold_01_black_F";
+			_X playMove "acts_aidlpsitmstpssurwnondnon04";
 		} foreach [_Hostage1,_Hostage2];
 
 		if (_GarrisonMaxSize > 10) then { _GarrisonMaxSize = 10 };

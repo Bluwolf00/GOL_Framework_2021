@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7420;
+		nextID=7442;
 	};
 	class Camera
 	{
-		pos[]={66.344658,63.179379,14.90764};
-		dir[]={-0.00041335143,-0.70633495,0.70794147};
-		up[]={-0.00041385772,0.70786041,0.70635355};
-		aside[]={1.0000449,-7.541496e-007,0.00058601418};
+		pos[]={59.987698,35.717468,30.026711};
+		dir[]={0.023664344,-0.54256773,0.83973384};
+		up[]={0.015283493,0.83999074,0.54238886};
+		aside[]={0.99964988,-2.9586954e-007,-0.028168658};
 	};
 };
 binarizationWanted=0;
@@ -59,7 +59,6 @@ addons[]=
 	"ace_realisticnames",
 	"ace_rearm",
 	"ace_refuel",
-	"ace_repair",
 	"ace_vehicle_damage",
 	"A3_Armor_F_Beta_APC_Wheeled_01",
 	"FIR_PilotCrewPack_US",
@@ -75,7 +74,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=30;
+		items=29;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -228,49 +227,42 @@ class AddonsMetaData
 		};
 		class Item22
 		{
-			className="ace_repair";
-			name="ACE3 - Repair";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item23
-		{
 			className="ace_vehicle_damage";
 			name="ACE3 - Vehicle Damage";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item24
+		class Item23
 		{
 			className="FIR_PilotCrewPack_US";
 			name="FIR_PilotCrewPack_US";
 		};
-		class Item25
+		class Item24
 		{
 			className="ace_parachute";
 			name="ACE3 - Parachute";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item26
+		class Item25
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item27
+		class Item26
 		{
 			className="CUP_Misc3_Config";
 			name="CUP_Misc3_Config";
 		};
-		class Item28
+		class Item27
 		{
 			className="DrongosAPS";
 			name="Drongo's APS";
 			author="Drongo";
 		};
-		class Item29
+		class Item28
 		{
 			className="SAN_Headlamp";
 			name="san_headlamp";
@@ -554,7 +546,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=385;
+									items=386;
 									class Item0
 									{
 										class data
@@ -3635,6 +3627,14 @@ class CustomAttributes
 											value="lambs_main_radiobackpack";
 										};
 									};
+									class Item385
+									{
+										class data
+										{
+											singleType="STRING";
+											value="ace_medical_painunconsciousthreshold";
+										};
+									};
 								};
 							};
 						};
@@ -3645,7 +3645,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=385;
+									items=386;
 									class Item0
 									{
 										class data
@@ -3659,7 +3659,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.2;
+														value=0.80000001;
 													};
 												};
 												class Item1
@@ -3686,7 +3686,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.85000002;
+														value=1;
 													};
 												};
 												class Item1
@@ -13340,7 +13340,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.50074589;
+														value=0.30000001;
 													};
 												};
 												class Item1
@@ -14340,6 +14340,33 @@ class CustomAttributes
 													{
 														singleType="SCALAR";
 														value=600;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item385
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=0.6011824;
 													};
 												};
 												class Item1
