@@ -3,10 +3,10 @@ _allowedNightStuff = true;
 
 _insignia = "";
 _goggles =  ["rhsusf_shemagh_tan","rhsusf_shemagh2_tan","rhsusf_oakley_goggles_clr"];
-_helmet = "acp_gol_GB_DDPM_H_MK7_GB_DDPM_F";
+_helmet = ["acp_gol_GB_DDPM_H_MK7_GB_DDPM_F","acp_gol_GB_DDPM_H_MK7_GB_DDPM_F","acp_gol_GB_DDPM_H_MK7_GB_DDPM_F","acp_gol_GB_DDPM_H_MK7_GB_DDPM_F","acp_gol_GB_DDPM_H_MK7_GB_DDPM_F","acp_gol_GB_DDPM_H_MK7_GB_DDPM_F","acp_gol_GB_DDPM_H_MK7_GB_DDPM_F","acp_gol_GB_DDPM_H_MK7_GB_DDPM_F","acp_gol_GB_DDPM_H_MK7_GB_DDPM_F","acp_gol_GB_DDPM_H_MK7_GB_DDPM_F","acp_gol_GB_DDPM_H_MK7_GB_DDPM_F","acp_gol_GB_DDPM_H_HelmetSpecB_GB_DDPM_insignia"];
 _OfficerHelmet = "UK3CB_ANA_B_H_Beret_GRN";
 _uniform =  ["acp_gol_GB_DDPM_U_I_CombatUniform_shortsleeve_GB_DDPM_insignia","acp_gol_GB_DDPM_U_I_CombatUniform_GB_DDPM_insignia"];
-_vest = ["acp_gol_GB_DDPM_V_CarrierRigKBT_01_light_GB_DDPM_F"];
+_vest = ["acp_gol_GB_DDPM_V_CarrierRigKBT_01_light_GB_DDPM_F","acp_gol_GB_DDPM_V_PlateCarrier2_GB_DDPM_insignia","acp_gol_GB_DDPM_V_PlateCarrier1_GB_DDPM"];
 _backpack = ["acp_gol_GB_DDPM_B_TacticalPack_GB_DDPM"];
 _backpackRadio = _backpack;
 
@@ -39,14 +39,14 @@ if (_role isEqualTo "jetp") then {
 	_backpack = _backpackRadio;
 };
 
-_silencer = "uk3cb_baf_sffh";
+_silencer = "UK3CB_BAF_SFFH";
 _pointer = "";
-_sight = "";
+_sight = "optic_ERCO_blk_F";
 _bipod = "";
 
-_rifle = ["UK3CB_BAF_L85A3", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["UK3CB_BAF_L22A2", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["UK3CB_BAF_L85A3_UGL", _silencer, _pointer, _sight, _bipod];
+_rifle = ["UK3CB_BAF_L85A2", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["UK3CB_BAF_L22", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["UK3CB_BAF_L85A2_UGL_HWS", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["UK3CB_BAF_L86A2", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
 _rifle_mag_tr = "UK3CB_BAF_556_30Rnd_T";
@@ -54,7 +54,7 @@ _rifleGL_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
 _rifleGL_mag_tr = "UK3CB_BAF_556_30Rnd_T";
 _rifleC_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
 
-_LMG = ["UK3CB_BAF_L110A2RIS", _silencer, _pointer, _sight, _bipod];
+_LMG = ["UK3CB_BAF_L110A2", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "UK3CB_BAF_556_200Rnd_T";
 
 _MMG = ["UK3CB_BAF_L7A2", _silencer, _pointer, _sight, _bipod];
@@ -64,8 +64,9 @@ _LAT = ["UK3CB_BAF_AT4_CS_AT_Launcher", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "UK3CB_BAF_AT4_CS_AT_Mag";
 _LAT_ReUsable = false;
 
-_MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
+_MAT = ["launch_MRAWS_sand_rail_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "MRAWS_HEAT_F";
+_MAT_mag = "MRAWS_HE_F";
 
 _HAT = ["rhs_weap_fgm148", _silencer, _pointer, _sight, _bipod];
 _HAT_mag = "rhs_fgm148_magazine_AT";

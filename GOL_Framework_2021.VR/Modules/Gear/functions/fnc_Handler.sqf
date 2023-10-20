@@ -379,7 +379,7 @@ if (_isMan) then {
 			};
 
 			case "tiny_box": {		
-				[_unit, _glHE, 16] call _fnc_AddObjectsCargo;
+				[_unit, _glHEDP, 16] call _fnc_AddObjectsCargo;
 				[_unit, _glsmokeR, 8] call _fnc_AddObjectsCargo;
 				[_unit, _grenade, 8] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 10] call _fnc_AddObjectsCargo;
@@ -416,7 +416,7 @@ if (_isMan) then {
 			};
 
 			case "tiny_box_special": {
-				[_unit, _glHE, 16] call _fnc_AddObjectsCargo;
+				[_unit, _glHEDP, 16] call _fnc_AddObjectsCargo;
 				[_unit, _glsmokeR, 8] call _fnc_AddObjectsCargo;
 				[_unit, _grenade, 8] call _fnc_AddObjectsCargo;				
 				[_unit, _smokegrenadeY, 8] call _fnc_AddObjectsCargo;
@@ -451,7 +451,7 @@ if (_isMan) then {
 			};
 
 			case "small_box": {
-				[_unit, _glHE, 24] call _fnc_AddObjectsCargo;
+				[_unit, _glHEDP, 24] call _fnc_AddObjectsCargo;
 				[_unit, _glsmokeR, 20] call _fnc_AddObjectsCargo;
 				[_unit, _grenade, 16] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 15] call _fnc_AddObjectsCargo;
@@ -506,7 +506,7 @@ if (_isMan) then {
 			};
 
 			case "big_box": {
-				[_unit, _glHE, 50] call _fnc_AddObjectsCargo;
+				[_unit, _glHEDP, 50] call _fnc_AddObjectsCargo;
 				[_unit, _glsmokeR, 40] call _fnc_AddObjectsCargo;
 				[_unit, _glflareR, 40] call _fnc_AddObjectsCargo;
 				[_unit, _glflareG, 40] call _fnc_AddObjectsCargo;

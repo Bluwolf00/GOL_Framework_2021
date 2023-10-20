@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7442;
+		nextID=7464;
 	};
 	class Camera
 	{
-		pos[]={59.987698,35.717468,30.026711};
-		dir[]={0.023664344,-0.54256773,0.83973384};
-		up[]={0.015283493,0.83999074,0.54238886};
-		aside[]={0.99964988,-2.9586954e-007,-0.028168658};
+		pos[]={55.186111,53.814453,-17.655479};
+		dir[]={0.15448339,-0.51022053,0.84613389};
+		up[]={0.091646403,0.86001891,0.50197095};
+		aside[]={0.98380309,6.6414941e-008,-0.17961709};
 	};
 };
 binarizationWanted=0;
@@ -14477,7 +14477,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=8;
+		items=7;
 		class Item0
 		{
 			dataType="Layer";
@@ -22458,7 +22458,7 @@ class Mission
 			name="Updated Entities (Replay Updating)";
 			class Entities
 			{
-				items=11;
+				items=12;
 				class Item0
 				{
 					dataType="Object";
@@ -22733,126 +22733,126 @@ class Mission
 					id=2674;
 					type="Land_Billboard_F";
 				};
+				class Item11
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={141.25999,5,115.012};
+					};
+					id=2724;
+					type="SAN_HeadlampSettings";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="SAN_HeadlampSettings_HeadlampMode";
+							expression="_this setVariable ['HeadlampMode',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=2;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="SAN_HeadlampSettings_AI_Manual_Headlamp_MinHour";
+							expression="_this setVariable ['AI_Manual_Headlamp_MinHour',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=20;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="SAN_HeadlampSettings_Multiplayer_Headlamp_UpdateRate";
+							expression="_this setVariable ['Multiplayer_Headlamp_UpdateRate',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=30;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="SAN_HeadlampSettings_Headlamp_RenderDistance";
+							expression="_this setVariable ['Headlamp_RenderDistance',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1500;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="SAN_HeadlampSettings_AI_Allowed_Headlamp";
+							expression="_this setVariable ['AI_Allowed_Headlamp',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0;
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="SAN_HeadlampSettings_AI_Headlamp_UpdateRate";
+							expression="_this setVariable ['AI_Headlamp_UpdateRate',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=10;
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="SAN_HeadlampSettings_AI_AutoEnable_Headlamp";
+							expression="_this setVariable ['AI_AutoEnable_Headlamp',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0;
+								};
+							};
+						};
+						class Attribute7
+						{
+							property="SAN_HeadlampSettings_AI_Manual_Headlamp_MaxHour";
+							expression="_this setVariable ['AI_Manual_Headlamp_MaxHour',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=6;
+								};
+							};
+						};
+						nAttributes=8;
+					};
+				};
 			};
 			id=2723;
-		};
-		class Item7
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={141.25999,5,115.012};
-			};
-			id=2724;
-			type="SAN_HeadlampSettings";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="SAN_HeadlampSettings_HeadlampMode";
-					expression="_this setVariable ['HeadlampMode',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=2;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="SAN_HeadlampSettings_AI_Manual_Headlamp_MinHour";
-					expression="_this setVariable ['AI_Manual_Headlamp_MinHour',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=20;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="SAN_HeadlampSettings_Multiplayer_Headlamp_UpdateRate";
-					expression="_this setVariable ['Multiplayer_Headlamp_UpdateRate',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=30;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="SAN_HeadlampSettings_Headlamp_RenderDistance";
-					expression="_this setVariable ['Headlamp_RenderDistance',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=1500;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="SAN_HeadlampSettings_AI_Allowed_Headlamp";
-					expression="_this setVariable ['AI_Allowed_Headlamp',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=0;
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="SAN_HeadlampSettings_AI_Headlamp_UpdateRate";
-					expression="_this setVariable ['AI_Headlamp_UpdateRate',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=10;
-						};
-					};
-				};
-				class Attribute6
-				{
-					property="SAN_HeadlampSettings_AI_AutoEnable_Headlamp";
-					expression="_this setVariable ['AI_AutoEnable_Headlamp',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=0;
-						};
-					};
-				};
-				class Attribute7
-				{
-					property="SAN_HeadlampSettings_AI_Manual_Headlamp_MaxHour";
-					expression="_this setVariable ['AI_Manual_Headlamp_MaxHour',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=6;
-						};
-					};
-				};
-				nAttributes=8;
-			};
 		};
 	};
 };
