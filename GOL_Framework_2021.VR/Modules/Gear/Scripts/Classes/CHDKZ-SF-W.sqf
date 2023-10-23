@@ -2,6 +2,7 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 // Not required since it uses M320 secondary for Grenadiers
 // _glHE = "rhs_VOG25P";
+// _glHEDP = "rhs_VOG25P";
 // _glsmokeW = "rhs_GRD40_White";
 // _glsmokeB = "";
 // _glsmokeG = "rhs_GRD40_Green";
