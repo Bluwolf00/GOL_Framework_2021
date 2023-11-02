@@ -318,6 +318,9 @@ if (_isMan) then {
 							};
 
 							_opticMag = (["",(configfile >> "CfgWeapons" >> (_compatibleItems select (_CV - 1)))] call ace_arsenal_fnc_statTextStatement_scopeMag);
+							if(count _opticMag > 5) then {
+								_opticMag = _opticMag select [5];
+							};
 							_opticMag = parseNumber _opticMag;
 
 								if(GOL_MAGNIFIED_OPTICS isEqualTo 0 || isNil "GOL_MAGNIFIED_OPTICS") then {

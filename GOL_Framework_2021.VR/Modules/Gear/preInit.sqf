@@ -51,6 +51,7 @@ GVAR(StaminaCoef) = 0.5;
 			"INSURGENT-AFRICA",
 			"INSURGENT-TANOA",
 			"INSURGENT-FIA",
+			"INSURGENT-MALDEN",
 			"LIVONIA-W",
 			// "LIVONIA-1950-W",
 			"FINLAND-W",
@@ -103,6 +104,7 @@ GVAR(StaminaCoef) = 0.5;
 			"INSURGENT African",
 			"INSURGENT Tanoan",
 			"INSURGENT FIA",
+			"INSURGENT Malden",
 			"Livonian Army Woodland",
 			// "Livonian Army 1950 Woodland",
 			"Finnish Army Woodland",
@@ -162,6 +164,7 @@ GVAR(StaminaCoef) = 0.5;
 			"INSURGENT-AFRICA",
 			"INSURGENT-TANOA",
 			"INSURGENT-FIA",
+			"INSURGENT-MALDEN",
 			"CUSTOM-E"
 		],
 		[
@@ -189,6 +192,7 @@ GVAR(StaminaCoef) = 0.5;
 			"INSURGENT African",
 			"INSURGENT Tanoan",
 			"INSURGENT FIA",
+			"INSURGENT Malden",
 			"CUSTOM-East"
 		],
 		0
@@ -228,6 +232,8 @@ GVAR(StaminaCoef) = 0.5;
 			"INSURGENT-CHDKZ",
 			"INSURGENT-AFRICA",
 			"INSURGENT-TANOA",
+			"INSURGENT-FIA",
+			"INSURGENT-MALDEN",
 			"CUSTOM-I"
 		],
 		[
@@ -257,6 +263,8 @@ GVAR(StaminaCoef) = 0.5;
 			"INSURGENT ChDkz",
 			"INSURGENT African",
 			"INSURGENT Tanoan",
+			"INSURGENT FIA",
+			"INSURGENT Malden",
 			"CUSTOM-Independent"
 		],
 		0

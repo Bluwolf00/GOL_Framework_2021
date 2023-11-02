@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2725;
+		nextID=2727;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7464;
+		nextID=7508;
 	};
 	class Camera
 	{
-		pos[]={55.186111,53.814453,-17.655479};
-		dir[]={0.15448339,-0.51022053,0.84613389};
-		up[]={0.091646403,0.86001891,0.50197095};
-		aside[]={0.98380309,6.6414941e-008,-0.17961709};
+		pos[]={34.601212,23.153257,48.317661};
+		dir[]={0.62522197,-0.47235194,0.62127465};
+		up[]={0.33505961,0.88141006,0.33294445};
+		aside[]={0.70486456,-6.3562766e-008,-0.70934272};
 	};
 };
 binarizationWanted=0;
@@ -3659,7 +3659,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.80000001;
+														value=1;
 													};
 												};
 												class Item1
@@ -3686,7 +3686,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1;
+														value=1.2;
 													};
 												};
 												class Item1
@@ -3956,7 +3956,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.8;
+														value=1.9;
 													};
 												};
 												class Item1
@@ -3983,7 +3983,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.80000001;
+														value=0.69999999;
 													};
 												};
 												class Item1
@@ -4010,7 +4010,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -18476,7 +18476,6 @@ class Mission
 										rank="LIEUTENANT";
 										name="wpl";
 										description="Platoon Leader@1-Actual ";
-										isPlayer=1;
 										isPlayable=1;
 										stance="Up";
 									};
@@ -18935,7 +18934,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={34.352356,5.0014391,73.687607};
+										position[]={34.352001,5.0014391,73.688004};
 										angles[]={0,0.019477876,0};
 									};
 									side="West";
@@ -18945,6 +18944,7 @@ class Mission
 										rank="CORPORAL";
 										name="wcrew1";
 										description="Crew Commander@Pig 1";
+										isPlayer=1;
 										isPlayable=1;
 										stance="Up";
 									};
@@ -22458,7 +22458,7 @@ class Mission
 			name="Updated Entities (Replay Updating)";
 			class Entities
 			{
-				items=12;
+				items=14;
 				class Item0
 				{
 					dataType="Object";
@@ -22850,6 +22850,40 @@ class Mission
 						};
 						nAttributes=8;
 					};
+				};
+				class Item12
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={56.831982,6.743187,89.149994};
+						angles[]={0,0.017575465,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						name="scoreboard_west_support";
+					};
+					id=2725;
+					type="Land_Billboard_F";
+				};
+				class Item13
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={91.260483,6.743187,90.597282};
+						angles[]={0,0.017575465,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+						name="scoreboard_east_support";
+					};
+					id=2726;
+					type="Land_Billboard_F";
 				};
 			};
 			id=2723;
