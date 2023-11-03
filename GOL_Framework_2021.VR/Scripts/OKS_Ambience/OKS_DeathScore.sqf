@@ -4,12 +4,12 @@
 private _stringHint = "";
 private _ArrayOfDeathsAndNames = "";
 private _SupportUnits = [
-	wcrew1,wcrew2,wcrew3,wcrew4,wcrew5,wcrew6,wecho1,wecho2,wecho3,wecho4,wecho5,wecho6,
-	ecrew1,ecrew2,ecrew3,ecrew4,ecrew5,ecrew6,eecho1,eecho2,eecho3,eecho4,eecho5,eecho6
+	"wcrew1","wcrew2","wcrew3","wcrew4","wcrew5","wcrew6","wecho1","wecho2","wecho3","wecho4","wecho5","wecho6",
+	"ecrew1","ecrew2","ecrew3","ecrew4","ecrew5","ecrew6","eecho1","eecho2","eecho3","eecho4","eecho5","eecho6"
 ];
 
 // Calculate Squad Casualties
-_GroundPlayers = (allPlayers - entities "HeadlessClient_F") select {!(_X in _SupportUnits)};
+_GroundPlayers = (allPlayers - entities "HeadlessClient_F") select {!((str _X) in _SupportUnits)};
 
 if(count _GroundPlayers > 0) then {
 	private _DeathSortedPlayerArray = [_GroundPlayers, [], {_X getVariable ["GOL_Player_Deaths",0]}, "ASCEND"] call BIS_fnc_sortBy;
@@ -48,7 +48,7 @@ if(count _GroundPlayers > 0) then {
 };
 
 // Calculate Support Casualties
-_SupportPlayers = (allPlayers - entities "HeadlessClient_F") select {_X in _SupportUnits};
+_SupportPlayers = (allPlayers - entities "HeadlessClient_F") select {(str _X) in _SupportUnits};
 
 if(count _SupportPlayers > 0) then {
 	private _DeathSortedSupportPlayerArray = [_SupportPlayers, [], {_X getVariable ["GOL_Player_Deaths",0]}, "ASCEND"] call BIS_fnc_sortBy;
