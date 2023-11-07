@@ -54,7 +54,14 @@ OKS_Enemy_Speak = {
 	if(_Dice < _Chance) then {
 		SystemChat format ["Dice %1 lower than chance %2. Successful trigger...",_Dice,_Chance];
 		(_NearestViableArray select 0) Params ["_Player","_Enemy","_Distance"];
-		_SoundFileName = selectRandom ["vn-talks-n-01","vn-talks-n-02","vn-talks-n-03","vn-talks-n-04","vn-talks-n-05","vn-talks-n-06","vn-talks-n-07","vn-talks-n-08","vn-talks-n-09","vn-talks-n-10","vn-talks-n-11","vn-talks-n-12","vn-talks-n-13","vn-talks-n-14","vn-talks-n-15","vn-talks-n-16","vn-talks-n-17","vn-talks-n-18","vn-talks-n-19","vn-talks-n-20","vn-talks-n-21","vn-talks-n-22","vn-talks-n-23","vn-talks-n-24","vn-talks-n-25","vn-talks-n-26","vn-talks-n-27","vn-talks-n-28","vn-talks-n-29","vn-talks-n-30"];
+		_SoundFileName = selectRandom [
+			"vn-talks-n-01","vn-talks-n-02","vn-talks-n-03","vn-talks-n-04","vn-talks-n-05",
+			"vn-talks-n-06","vn-talks-n-07","vn-talks-n-08","vn-talks-n-09","vn-talks-n-10",
+			"vn-talks-n-11","vn-talks-n-12","vn-talks-n-13","vn-talks-n-14","vn-talks-n-15",
+			"vn-talks-n-16","vn-talks-n-17","vn-talks-n-18","vn-talks-n-19","vn-talks-n-20",
+			"vn-talks-n-21","vn-talks-n-22","vn-talks-n-23","vn-talks-n-24","vn-talks-n-25",
+			"vn-talks-n-26","vn-talks-n-27","vn-talks-n-28","vn-talks-n-29","vn-talks-n-30"
+		];
 		SystemChat format["Selected SoundFile: %1.ogg",_SoundFileName];
 		_Group setVariable ["OKS_Talking_Currently",true,true];
 		if(_Distance > 50 || _SoundFileName in ["Radio6","Radio7","Radio8","Radio9","Radio10"]) then {

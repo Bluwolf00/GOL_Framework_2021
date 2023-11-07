@@ -365,6 +365,28 @@ if (_isMan) then {
 						};																															
 					};
 
+					while {
+						_compatibleItems find "HLC_Charm_Herstal" != -1 ||
+						_compatibleItems find "HLC_Charm_Izhmash" != -1 ||
+						_compatibleItems find "HLC_Charm_Teethgang" != -1 ||
+						_compatibleItemsLMG find "HLC_Charm_Herstal" != -1 ||
+						_compatibleItemsLMG find "HLC_Charm_Izhmash" != -1 ||
+						_compatibleItemsLMG find "HLC_Charm_Teethgang" != -1 ||
+						_compatibleItemsGL find "HLC_Charm_Herstal" != -1 ||
+						_compatibleItemsGL find "HLC_Charm_Izhmash" != -1 ||
+						_compatibleItemsGL find "HLC_Charm_Teethgang" != -1
+					} do {			
+						_compatibleItems deleteAt (_compatibleItems find "HLC_Charm_Herstal");					
+						_compatibleItems deleteAt (_compatibleItems find "HLC_Charm_Izhmash");
+						_compatibleItemsLMG deleteAt (_compatibleItemsLMG find "HLC_Charm_Herstal");
+						_compatibleItems deleteAt (_compatibleItems find "HLC_Charm_Teethgang");
+						_compatibleItemsLMG deleteAt (_compatibleItemsLMG find "HLC_Charm_Izhmash");
+						_compatibleItemsLMG deleteAt (_compatibleItemsLMG find "HLC_Charm_Teethgang");
+						_compatibleItemsGL deleteAt (_compatibleItemsGL find "HLC_Charm_Herstal");
+						_compatibleItemsGL deleteAt (_compatibleItemsGL find "HLC_Charm_Izhmash");
+						_compatibleItemsGL deleteAt (_compatibleItemsGL find "HLC_Charm_Teethgang");					
+					};
+
 					_compatibleItems append _whiteList;
 					[_unit, _compatibleItems] call ace_arsenal_fnc_initBox;
 					[GOL_Arsenal_LMG, _compatibleItemsLMG] call ace_arsenal_fnc_initBox;
