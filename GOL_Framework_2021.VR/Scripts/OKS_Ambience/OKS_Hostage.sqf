@@ -10,9 +10,9 @@ Params [
 	["_ParentTask",nil,[""]]
 ];
 
-private _randomTaskVariableName = nil;
+private _randomTaskVariableName = "";
 if(isNil "_fallbackPosition") then {
-	_fallbackPosition = null;
+	_fallbackPosition = "";
 };
 
 _captive = _this select 0;
@@ -87,7 +87,7 @@ if(_showTaskOnStart) then {
 							(_this select 0) setBehaviour "SAFE";
 
 							_waypoint = _this select 3 select 1;
-							if(!isNull _waypoint) then {
+							if(_waypoint != "") then {
 								(_this select 0) enableAI "MOVE";
 								_wp = group (_this select 0) addWaypoint [_waypoint,25];
                            		_wp setWaypointType "DISMISS";
