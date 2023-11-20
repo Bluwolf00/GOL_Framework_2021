@@ -6,10 +6,10 @@ if(isServer) then {
 
 if (hasInterface) then {
 
-    _conditionMG = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticMGWeapon" && ("GW_Item_StaticDummy" in (itemsWithMagazines player))}; //<only works MP
-	_conditionMortar = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticMortar" && ("GW_Item_StaticDummy" in (itemsWithMagazines player))}; //<only works MP
-	_conditionGMG = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticGrenadeLauncher" && ("GW_Item_StaticDummy" in (itemsWithMagazines player))}; //<only works MP
-	_conditionAT = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticATWeapon" && ("GW_Item_StaticDummy" in (itemsWithMagazines player))}; //<only works MP
+    _conditionMG = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticMGWeapon" && ("ToolKit" in (itemsWithMagazines player))}; //<only works MP
+	_conditionMortar = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticMortar" && ("ToolKit" in (itemsWithMagazines player))}; //<only works MP
+	_conditionGMG = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticGrenadeLauncher" && ("ToolKit" in (itemsWithMagazines player))}; //<only works MP
+	_conditionAT = {(player getVariable ["OKS_PackedClassname",""] isNotEqualTo "") && (player getVariable ["OKS_PackedClassname",""]) isKindOf "StaticATWeapon" && ("ToolKit" in (itemsWithMagazines player))}; //<only works MP
 
 
 	_codeDeploy = {	
@@ -34,8 +34,8 @@ if (hasInterface) then {
 				_pos set [2, ((getPosATL player) select 2)];
 
 				{
-					if !(_x isEqualTo "GW_Item_StaticDummy") exitWith {
-						_unit removeItem "GW_Item_StaticDummy";
+					if !(_x isEqualTo "ToolKit") exitWith {
+						_unit removeItem "ToolKit";
 						_objectRemoved = true;
 					};
 				} count (itemsWithMagazines _unit);
@@ -78,7 +78,7 @@ if (hasInterface) then {
 			
 			systemChat format["%1 packed.",[configFile >> "CfgVehicles" >> typeOf _target] call BIS_fnc_displayName];
 
-			private _item = "GW_Item_StaticDummy";
+			private _item = "ToolKit";
 			if (_player canAdd _item) then {
 				_player additem _item;
 			} else {
@@ -96,7 +96,7 @@ if (hasInterface) then {
 	_SelectHMG = {
 		_SelectWeaponPacked = {
 			Params ["_player","_Classname"];
-			private _item = "GW_Item_StaticDummy";
+			private _item = "ToolKit";
 			if (_player canAdd _item) then {
 				_player additem _item;
 				_player setVariable ["OKS_PackedClassname",_Classname,true];
@@ -111,7 +111,7 @@ if (hasInterface) then {
 	_SelectMortar = {
 		_SelectWeaponPacked = {
 			Params ["_player","_Classname"];
-			private _item = "GW_Item_StaticDummy";
+			private _item = "ToolKit";
 			if (_player canAdd _item) then {
 				_player additem _item;
 				_player setVariable ["OKS_PackedClassname",_Classname,true];
@@ -126,7 +126,7 @@ if (hasInterface) then {
 	_SelectGMG = {
 		_SelectWeaponPacked = {
 			Params ["_player","_Classname"];
-			private _item = "GW_Item_StaticDummy";
+			private _item = "ToolKit";
 			if (_player canAdd _item) then {
 				_player additem _item;
 				_player setVariable ["OKS_PackedClassname",_Classname,true];
@@ -141,7 +141,7 @@ if (hasInterface) then {
 	_SelectAT = {
 		_SelectWeaponPacked = {
 			Params ["_player","_Classname"];
-			private _item = "GW_Item_StaticDummy";
+			private _item = "ToolKit";
 			if (_player canAdd _item) then {
 				_player additem _item;
 				_player setVariable ["OKS_PackedClassname",_Classname,true];
