@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2729;
+		nextID=2730;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7552;
+		nextID=7596;
 	};
 	class Camera
 	{
-		pos[]={44.438854,26.14152,46.221184};
-		dir[]={0.075475715,-0.51780725,0.85219109};
-		up[]={0.045683801,0.85548919,0.51581138};
-		aside[]={0.99612927,2.3774919e-007,-0.088223331};
+		pos[]={61.122032,63.969391,-3.1263499};
+		dir[]={0.020998128,-0.6158967,0.78756851};
+		up[]={0.016415676,0.78782159,0.615686};
+		aside[]={0.99965972,3.3672404e-007,-0.026654162};
 	};
 };
 binarizationWanted=0;
@@ -3965,7 +3965,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.9;
+														value=2;
 													};
 												};
 												class Item1
@@ -14375,7 +14375,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.6011824;
+														value=0.80000001;
 													};
 												};
 												class Item1
@@ -14641,8 +14641,8 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={140.60153,5,163.97498};
-						angles[]={0,1.6311014,0};
+						position[]={143.09494,5,-48.923637};
+						angles[]={-0,1.6311014,0};
 					};
 					name="HC2";
 					isPlayable=1;
@@ -14655,8 +14655,8 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={140.36203,5,159.98212};
-						angles[]={0,1.6311014,0};
+						position[]={142.85544,5,-52.916496};
+						angles[]={-0,1.6311014,0};
 					};
 					name="HC3";
 					isPlayable=1;
@@ -14669,8 +14669,8 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={140.48857,5,164.54623};
-						angles[]={0,1.6311014,0};
+						position[]={142.98198,5,-48.352379};
+						angles[]={-0,1.6311014,0};
 					};
 					title="Headless Clients";
 					id=272;
@@ -14680,8 +14680,8 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={140.84399,5,167.968};
-						angles[]={0,1.6310974,0};
+						position[]={143.3374,5,-44.930611};
+						angles[]={-0,1.6310974,0};
 					};
 					name="HC";
 					isPlayable=1;
@@ -14753,8 +14753,8 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={78.202972,5,48.443367};
-						angles[]={0,3.9513838,0};
+						position[]={70.57608,5,46.180676};
+						angles[]={-0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
 					description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -14776,8 +14776,8 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={52.96489,5,48.242809};
-						angles[]={0,0.11193988,0};
+						position[]={54.360641,5,18.86434};
+						angles[]={-0,0.11193988,0};
 					};
 					title="MHQ 2";
 					description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Small";
@@ -14788,8 +14788,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={52.957809,7.1761513,49.145935};
-						angles[]={0,0.0073827426,0};
+						position[]={54.18248,7.1761513,18.456375};
+						angles[]={-0,0.0073827426,0};
 					};
 					side="Empty";
 					flags=4;
@@ -14851,8 +14851,8 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={39.74836,5,49.00053};
-						angles[]={0,0.11193988,0};
+						position[]={44.866268,5,18.678701};
+						angles[]={-0,0.11193988,0};
 					};
 					title="MHQ 3";
 					description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Boat";
@@ -14863,8 +14863,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={39.537807,8.3238735,48.703018};
-						angles[]={0,0.0073827426,0};
+						position[]={44.655716,8.3238735,18.381189};
+						angles[]={-0,0.0073827426,0};
 					};
 					side="Empty";
 					flags=4;
@@ -14926,7 +14926,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11.600694,11.68958,47.928711};
+						position[]={21.969734,11.68958,16.422625};
 					};
 					side="Empty";
 					flags=4;
@@ -14988,7 +14988,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={11.455693,5,49.227715};
+						position[]={21.824734,5,17.721628};
 					};
 					title="MHQ Paradrop";
 					description="This vehicle is used for scripted paradrops that AAC can conduct while flying non-cargo airframes.  The player who requests reinsert can do so at the flag and the pilots can start the drop once they are below 250km/h and above 200m altitude. MHQ paradrop must be enabled in MissionSettings.sqf to work.";
@@ -14999,8 +14999,8 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={65.302002,5,19.9};
-						angles[]={0,6.2464318,0};
+						position[]={66.758804,5,17.093422};
+						angles[]={-0,6.2464318,0};
 					};
 					title="Reinsert Helipad";
 					description="This helipad is used by the AI to land helicopters to bring reinserts into the field. Do not place these near AACs helipads as it may confuse the AI and make them try to land on AACs helipads.";
@@ -15011,8 +15011,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={65.315002,5,20.625999};
-						angles[]={0,0.0096167643,0};
+						position[]={66.771805,5,17.819422};
+						angles[]={-0,0.0096167643,0};
 					};
 					side="Empty";
 					flags=4;
@@ -17873,7 +17873,7 @@ class Mission
 				class Item10
 				{
 					dataType="Trigger";
-					position[]={38.323311,5,162.29871};
+					position[]={-2.3560069,5,15.945297};
 					class Attributes
 					{
 						name="NEKY_PARADROP_TRIGGER";
@@ -18308,7 +18308,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={38.575001,5,162.382};
+						position[]={-2.1043169,5,16.028595};
 					};
 					title="Paradrop Trigger";
 					description="This is the Paradrop Trigger that is required for NEKY Paradrop to be used. It is the position that reinserts will be dropped at. Delete this if you want to disable Paradrop reinsert in your mission";
@@ -18362,8 +18362,8 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={65.565552,5,48.500854};
-								angles[]={0,0.06816864,0};
+								position[]={57.938656,5,46.238163};
+								angles[]={-0,0.06816864,0};
 							};
 							title="MHQ 1";
 							description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
@@ -18374,8 +18374,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={65.320999,7.6292419,50.415001};
-								angles[]={0,6.2772336,0};
+								position[]={57.694103,7.6292419,48.152309};
+								angles[]={-0,6.2772336,0};
 							};
 							side="Empty";
 							flags=4;
@@ -18566,8 +18566,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={78.197998,7.5393777,49.57};
-								angles[]={0,0.00064577186,0};
+								position[]={70.571106,7.5393777,47.307308};
+								angles[]={-0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;
@@ -22509,7 +22509,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={78.166618,5.3815289,89.350632};
-								angles[]={-0,4.7180462,0};
+								angles[]={0,4.7180462,0};
 							};
 							side="Empty";
 							flags=4;
@@ -22568,7 +22568,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={80.610947,5,89.42202};
-								angles[]={-0,6.2279806,0};
+								angles[]={0,6.2279806,0};
 							};
 							side="Empty";
 							flags=4;
@@ -22634,7 +22634,7 @@ class Mission
 						};
 					};
 					id=423;
-					atlOffset=102370.16;
+					atlOffset=204740.31;
 				};
 				class Item4
 				{
@@ -22757,7 +22757,7 @@ class Mission
 				};
 			};
 			id=404;
-			atlOffset=25592.539;
+			atlOffset=51185.078;
 		};
 		class Item6
 		{
@@ -22788,11 +22788,10 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={27.681999,5.2668285,50.123001};
+						position[]={64.298096,5.5682545,47.042019};
 						angles[]={0,6.2083454,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						init="[this, ""small""] call GW_MHQ_Fnc_Handler;";
@@ -22800,6 +22799,7 @@ class Mission
 					};
 					id=2679;
 					type="Misc_Backpackheap";
+					atlOffset=0.30142593;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -22823,19 +22823,20 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={28.479757,5,50.028713};
-						angles[]={0,0.11193988,0};
+						position[]={65.09584,5.3014259,46.947727};
+						angles[]={0.06910339,0.11193988,5.5377564};
 					};
 					title="Tent MHQ";
 					description="This is a tent MHQ, you can use this MHQ for small scale missions that you don't want to use the other scripted solutions for respawn. This tent can be moved by leaders with self-interaction, the missionSetting ""GOL_OKS_TentMHQ"" must be set to 1 to be used.";
 					id=2666;
+					atlOffset=0.30142593;
 				};
 				class Item3
 				{
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={140.91489,5,147.66841};
+						position[]={143.40829,5,-65.230202};
 					};
 					id=2540;
 					type="DAPS_Options";
@@ -22940,7 +22941,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={141.26454,5,135.66656};
+						position[]={143.75795,5,-77.232048};
 					};
 					id=2541;
 					type="DAPS_AssignAPS";
@@ -22967,7 +22968,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={140.85875,5,147.66714};
+						position[]={143.35216,5,-65.231468};
 					};
 					title="DAPS Options";
 					description="This is the module for Active protection system. It sets the mission to clear all assigned Active protection systems on default vehicles. If you want to enable DAPS remove this module.";
@@ -22978,7 +22979,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={141.26556,5,135.42781};
+						position[]={143.75897,5,-77.470802};
 					};
 					title="DAPS Assign";
 					description="Certain vehicles may not have Active protection system enabled, if you want a specific vehicle to have it, create a dummy of the vehicle you want it to apply to and then synchronize this module with the dummy vehicle. That vehicle class will now have the type of APS assigned to it." \n "" \n "Do note this dummy vehicle should be hidden from view on some corner of the map.";
@@ -22989,7 +22990,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={141.00301,5,121.61};
+						position[]={143.49641,5,-91.288612};
 					};
 					name="GOL_Arsenal_GL";
 					id=2664;
@@ -23000,7 +23001,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={141.35576,5,128.76659};
+						position[]={143.84917,5,-84.132027};
 					};
 					name="GOL_Arsenal_LMG";
 					id=2663;
@@ -23028,7 +23029,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={141.25999,5,115.012};
+						position[]={143.7534,5,-97.886612};
 					};
 					id=2724;
 					type="SAN_HeadlampSettings";
@@ -23177,6 +23178,7 @@ class Mission
 				};
 			};
 			id=2723;
+			atlOffset=0.0002207756;
 		};
 	};
 	class Connections

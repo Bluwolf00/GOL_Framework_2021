@@ -12,8 +12,8 @@ GOL_PACKED_GMG = "RHS_MK19_TriPod_USMC_WD";
 
 /* AI Gear Settings */
 // 0 = 0%, 1 = 100%
-GOL_LAT_Chance = 0.5;
-GOL_MAT_Chance = 0.25;
+GOL_LAT_Chance = 0.25;
+GOL_MAT_Chance = 0.15;
 GOL_UGL_Chance = 0.25;
 
 /* AI Static Settings */
@@ -35,10 +35,10 @@ GOL_NEKY_SERVICESTATION = 1;
 GOL_NEKY_RESUPPLY = 1;
 GOL_NEKY_PARADROP = 0;
 GOL_NEKY_PICKUP = 0;
-GOL_NEKY_REINSERT = 0;
-GOL_OKS_REINFORCEMENT = 0;
+GOL_NEKY_REINSERT = 0;  // Requires Additional Script
+GOL_OKS_REINFORCEMENT = 0;  // Requires Additional Script
 GOL_NEKY_FASTROPE = 0; // Not particularly good - engine limitations stop helicopters from hovering under 50-ish meters.
-GOL_OKS_SUPPORT = 0;
+GOL_OKS_SUPPORT = 0;  // Requires Additional Script
 
 GOL_OKS_TentMHQ = 1; 
 /* ^ Change code in "Scripts/OKS_TentMHQ/ACE_MoveMHQ.sqf" to enable all players to move tent.
@@ -46,10 +46,10 @@ Requires init.sqf line 28 to be commented out and replaced with line 29.
 _condition = {true} is the correct one to use for that. */
 
 /* AI Settings & Scripts*/
-GOL_NEKY_SHARE = 0;
+GOL_NEKY_SHARE = 0; // Requires Additional Script
 GOL_OKS_SPAWN = 1;
 GOL_OKS_AMBIENCE = 1;
-GOL_OKS_HUNT = 0;
+GOL_OKS_HUNT = 0; // Requires Additional Script
 GOL_OKS_Enemy_Talk = 0;
 
 /* HuntBases */
@@ -66,10 +66,10 @@ publicVariable "NEKY_Hunt_CurrentCount";
 GOL_AAC_SETUP = 1; // Adds ability for pilots to switch seats more freely
 GOL_AAC_DoorGunReplacement = false; // Changes miniguns to Yak-9s for better accuracy of tracers. Causes hearing damage so needs to be fired at a slower rate.
 GOL_OKS_TASK = 1;
-GOL_OKS_TANKER = 0;
-GOL_NEKY_TASK = 0;
-GOL_OKS_SCRAMBLER = 0;
-GOL_OKS_MHQ_PARADROP = 0;
+GOL_OKS_TANKER = 0;  // Requires Additional Script
+GOL_NEKY_TASK = 0; 
+GOL_OKS_SCRAMBLER = 0;  // Requires Additional Script
+GOL_OKS_MHQ_PARADROP = 0;  // Requires Additional Script
 GOL_EnableHelicopterScriptToAllVehicles = 0;
 GOL_BLU_AUTO_TS_CHANNEL = 1;
 

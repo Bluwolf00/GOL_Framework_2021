@@ -46,8 +46,7 @@ Sleep 5;
 		};
 	};
 
-	execVM "Scripts\OKS_Vehicles\Init.sqf";
-	execVM "Scripts\OKS_Vehicles\OKS_StaticPacking.sqf";	
+	execVM "Scripts\OKS_Vehicles\Init.sqf";	
 
 	if(GOL_EnableHelicopterScriptToAllVehicles isEqualTo 1) then {
 		[objNull,false,false] execVM "Scripts\OKS_Vehicles\OKS_Helicopter.sqf";
