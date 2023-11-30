@@ -53,6 +53,21 @@ if(!isServer) exitWith {};
 
 switch (_TypeOfObjective) do {
 
+	case "neutralize": {
+		_TargetGroup = _Position;
+		OKS_Objective_Positions pushBackUnique (getPos (leader _Position));
+		if(_EnableObjectiveTasks) then {
+			_ObjectiveId = format["OKS_Neutralize_Objective_%1",(round(random 9000))];
+			_Task = [true, _ObjectiveId, ["The opposition has occupied a building in the area of operations. Neutralize the enemy force defending the building.", "Clear Building", "Clear Building"], (getPos (leader _Position)),"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+
+			[_ObjectiveId,"kill"] call BIS_fnc_taskSetType;
+			[_ObjectiveId,(nearestBuilding (leader _TargetGroup))] call BIS_fnc_taskSetDestination;
+
+			waitUntil { sleep 5; {Alive _X || [_X] call ace_common_fnc_isAwake} count units _TargetGroup < 1};
+			[_ObjectiveId,"SUCCEEDED",_TaskNotification] call BIS_fnc_taskSetState;
+		};
+	};
+
 	case "sector": {
 
 		switch(OKS_FRIENDLY_SIDE) do {

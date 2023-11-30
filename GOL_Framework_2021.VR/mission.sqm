@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7596;
+		nextID=7662;
 	};
 	class Camera
 	{
-		pos[]={60.061619,38.55431,14.706375};
-		dir[]={0.020998128,-0.6158967,0.78756851};
-		up[]={0.016415676,0.78782159,0.615686};
-		aside[]={0.99965972,3.3672404e-007,-0.026654162};
+		pos[]={47.269123,38.55431,39.288273};
+		dir[]={0.036658462,-0.49471623,0.86828768};
+		up[]={0.020868145,0.86905384,0.49427804};
+		aside[]={0.99911505,1.36788e-009,-0.042181734};
 	};
 };
 binarizationWanted=0;
@@ -14642,7 +14642,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={143.09494,5,-48.923637};
-						angles[]={-0,1.6311014,0};
+						angles[]={0,1.6311014,0};
 					};
 					name="HC2";
 					isPlayable=1;
@@ -14656,7 +14656,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={142.85544,5,-52.916496};
-						angles[]={-0,1.6311014,0};
+						angles[]={0,1.6311014,0};
 					};
 					name="HC3";
 					isPlayable=1;
@@ -14670,7 +14670,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={142.98198,5,-48.352379};
-						angles[]={-0,1.6311014,0};
+						angles[]={0,1.6311014,0};
 					};
 					title="Headless Clients";
 					id=272;
@@ -14681,7 +14681,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={143.3374,5,-44.930611};
-						angles[]={-0,1.6310974,0};
+						angles[]={0,1.6310974,0};
 					};
 					name="HC";
 					isPlayable=1;
@@ -14754,7 +14754,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={70.57608,5,46.180676};
-						angles[]={-0,3.9513838,0};
+						angles[]={0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
 					description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -14777,7 +14777,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={54.360641,5,18.86434};
-						angles[]={-0,0.11193988,0};
+						angles[]={0,0.11193988,0};
 					};
 					title="MHQ 2";
 					description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Small";
@@ -14789,7 +14789,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={54.18248,7.1761513,18.456375};
-						angles[]={-0,0.0073827426,0};
+						angles[]={0,0.0073827426,0};
 					};
 					side="Empty";
 					flags=4;
@@ -14852,7 +14852,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={44.866268,5,18.678701};
-						angles[]={-0,0.11193988,0};
+						angles[]={0,0.11193988,0};
 					};
 					title="MHQ 3";
 					description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Boat";
@@ -14864,7 +14864,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={44.655716,8.3238735,18.381189};
-						angles[]={-0,0.0073827426,0};
+						angles[]={0,0.0073827426,0};
 					};
 					side="Empty";
 					flags=4;
@@ -15000,7 +15000,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={66.758804,5,17.093422};
-						angles[]={-0,6.2464318,0};
+						angles[]={0,6.2464318,0};
 					};
 					title="Reinsert Helipad";
 					description="This helipad is used by the AI to land helicopters to bring reinserts into the field. Do not place these near AACs helipads as it may confuse the AI and make them try to land on AACs helipads.";
@@ -15012,7 +15012,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={66.771805,5,17.819422};
-						angles[]={-0,0.0096167643,0};
+						angles[]={0,0.0096167643,0};
 					};
 					side="Empty";
 					flags=4;
@@ -18363,7 +18363,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={57.938656,5,46.238163};
-								angles[]={-0,0.06816864,0};
+								angles[]={0,0.06816864,0};
 							};
 							title="MHQ 1";
 							description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
@@ -18375,7 +18375,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={57.694103,7.6292419,48.152309};
-								angles[]={-0,6.2772336,0};
+								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
 							flags=4;
@@ -18567,7 +18567,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={70.571106,7.5393777,47.307308};
-								angles[]={-0,0.00064577186,0};
+								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;

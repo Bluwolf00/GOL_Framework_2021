@@ -3,10 +3,12 @@
 //	This initializes all the functions for OKS Dynamic Spawns.
 //
 //	Made by Oksman
+OKS_AllUnits = [];
 OKS_Logics = (allMissionObjects "all") select {typeOf _X in ["LocationCamp_F","LocationResupplyPoint_F","LocationRespawnPoint_F","LocationEvacPoint_F","LocationFOB_F","LocationCityCapital_F","LocationCity_F","LocationVillage_F","LocationArea_F","LocationBase_F","LocationOutpost_F","LocationCamp_F","LocationRespawnPoint_F"]};
 
 OKS_Locations = OKS_Logics select {typeOf _X in ["LocationResupplyPoint_F","LocationEvacPoint_F","LocationCityCapital_F","LocationCity_F","LocationArea_F"]};
-OKS_Compounds = OKS_Logics select {typeOf _X in ["LocationBase_F","LocationOutpost_F"]};
+OKS_Compounds = OKS_Logics select {typeOf _X in ["LocationOutpost_F"]};
+OKS_Strongholds = OKS_Logics select {typeOf _X in ["LocationBase_F"]};
 OKS_Objectives = OKS_Logics select {typeOf _X in ["LocationCamp_F"]};
 OKS_HuntLocations = OKS_Logics select {typeOf _X in ["LocationRespawnPoint_F"]};
 OKS_RoadBlocks = OKS_Logics select {typeOf _X in ["LocationFOB_F"]};
@@ -23,6 +25,7 @@ OKS_Populate_Sandbag = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OK
 OKS_CreateUnitMarker = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_CreateUnitMarker.sqf";
 OKS_SetStatic = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_SetStatic.sqf";
 OKS_EnablePath = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_EnablePath.sqf";
+OKS_Finale =  compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Finale.sqf";
 
 //OKS_CreateComposition = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_CreateComposition.sqf";
 //OKS_GetComposition = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_GetComposition.sqf";

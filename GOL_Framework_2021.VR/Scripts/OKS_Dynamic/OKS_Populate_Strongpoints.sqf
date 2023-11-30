@@ -6,7 +6,7 @@
 if(HasInterface && !isServer) exitWith {};
 
 Params["_MainTrigger","_Side","_InfantryNumber","_CreateObjective","_CreateLocalPatrols"];
-private ["_House","_AllBuildings","_buildingArray","_SelectedBuildings","_HouseCount","_i","_HouseMax","_Strongpoint","_Location","_CountStrongpoints","_Group","_GarrisonNumber","_Location","_Debug_Variable","_Strongpoint","_SortedBuildings","_SafePos","_Marker","_AllNumbers","_SelectedStrongpoints","_Strongpoints","_MarkerPos","_PlacedStrongpoints","_Locations","_PatrolNumber"];
+private ["_StrongholdNumber","_House","_AllBuildings","_buildingArray","_SelectedBuildings","_HouseCount","_i","_HouseMax","_Strongpoint","_Location","_CountStrongpoints","_Group","_GarrisonNumber","_Location","_Debug_Variable","_Strongpoint","_SortedBuildings","_SafePos","_Marker","_AllNumbers","_SelectedStrongpoints","_Strongpoints","_MarkerPos","_PlacedStrongpoints","_Locations","_PatrolNumber"];
 
 _Settings = [_Side] call OKS_Dynamic_Setting;
 _Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configuration"];
@@ -24,6 +24,7 @@ private _Compounds = [];
 
 _Locations = OKS_Locations select {_X inArea _MainTrigger};
 _Compounds = OKS_Compounds select {_X inArea _MainTrigger};
+_Strongholds = OKS_Strongholds select {_X inArea _MainTrigger};
 
 if(_Debug_Variable) then {
 	systemChat format ["Locations: %1",count _Locations];
@@ -67,22 +68,24 @@ if(count _Locations > 0) then {
 	} foreach _Locations;
 };
 
-_CountStrongpoints = ((count _SelectedStrongpoints) + (count _Compounds));
+_CountStrongpoints = ((count _SelectedStrongpoints) + (count _Compounds) + (count _Strongholds));
 if(_CountStrongpoints > 0) then {
 
 	_AllNumbers = round(_InfantryNumber / _CountStrongpoints);
-
+	systemChat str _AllNumbers;
 	if(_CreateLocalPatrols) then {
 		if(_Debug_Variable) then {
 			systemChat format ["CreateLocalPatrols is True."];
 		};
-		_GarrisonNumber = round(_AllNumbers * 0.7);
-		_PatrolNumber = round((_AllNumbers * 0.3) / 3);
+		_GarrisonNumber = round(_AllNumbers * 0.4);
+		_StrongholdNumber = round(_AllNumbers * 0.4);
+		_PatrolNumber = round((_AllNumbers * 0.2) / 3);
 	} else {
 		if(_Debug_Variable) then {
 			systemChat format ["CreateLocalPatrols is False."];
 		};
 		_GarrisonNumber = _AllNumbers;
+		_StrongholdNumber = _AllNumbers;
 		_PatrolNumber = 0;
 	};
 
@@ -127,6 +130,22 @@ if(_CountStrongpoints > 0) then {
 			};
 			sleep 3;
 		} foreach _Compounds;
+	};
+
+	if(_Strongholds isNotEqualTo []) then {
+		{
+			_Stronghold = createMarker [format ["oks_Stronghold_Marker_%1",str round(random 90000)],_X];
+			if(_EnableEnemyMarkers && _Side != civilian) then {
+				[_Compound,_Side,"infantry",_StrongholdNumber,0.8] spawn OKS_CreateUnitMarker;
+			};
+
+			_Group = [_StrongholdNumber,nearestBuilding (getPos _X),_Side,_UnitArray] call OKS_Garrison;
+
+			if(_CreateObjective) then {
+				[_Group,"neutralize",100,_Side,_Settings] spawn OKS_CreateObjectives;
+			};
+			sleep 3;
+		} foreach _Strongholds;
 	};
 
 	if(_Debug_Variable) then {

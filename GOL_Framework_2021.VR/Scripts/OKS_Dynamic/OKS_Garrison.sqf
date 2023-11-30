@@ -1,14 +1,13 @@
 	// OKS_Garrison
-	// [5,nearestBuilding player,east,["O_Soldier_F"]] spawn OKS_Garrison_Compound;
+	// [5,nearestBuilding player,east,["O_Soldier_F"]] spawn OKS_Garrison;
 	if(HasInterface && !isServer) exitWith {};
 
 	Params ["_NumberInfantry","_House","_Side","_UnitArray"];
 	_UnitArray Params ["_Leaders","_Units","_Officer"];
-	Private ["_GarrisonPositions","_GarrisonMaxSize","_GarrisonMaxSize","_Unit"];
+	Private ["_GarrisonPositions","_GarrisonMaxSize","_GarrisonMaxSize","_Unit","_Group"];
 
 	_GarrisonPositions = [_House] call BIS_fnc_buildingPositions;
 	_GarrisonMaxSize = count _GarrisonPositions;
-
 
 	if(_NumberInfantry > _GarrisonMaxSize) then {
 		_NumberInfantry = _GarrisonMaxSize;
@@ -44,7 +43,6 @@
 			};
 			_Unit disableAI "PATH";
 			_Unit setUnitPos (selectRandom ["UP","MIDDLE"]);
-			sleep 0.5;
 		};
 
 		{
@@ -66,11 +64,19 @@
 		//private _type = typeOf nearestBuilding (getPos (leader _group));
 		_House setVariable ["OKS_isGarrisoned",true];
 
-		waitUntil {sleep 5; !(isNil "ace_ai_fnc_garrison") && !(isNil "OKS_EnablePath")};
-		_Group setVariable ["GOL_IsStatic",true,true];
-		[getPos (leader _Group), [typeOf _House], units _Group, 5, 2, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
-		sleep 2;
-		{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
-		[_Group] remoteExec ["OKS_SetStatic",0];
-		[_Group,GOL_Static_Enable_Chance,GOL_Static_Enable_Refresh] spawn OKS_EnablePath;
+		[_Group,_House] spawn {
+			Params ["_Group","_House"];
+
+			waitUntil {sleep 5; !(isNil "ace_ai_fnc_garrison") && !(isNil "OKS_EnablePath")};
+			
+			_Group setVariable ["GOL_IsStatic",true,true];
+			//[getPos (leader _Group), [typeOf _House], units _Group, 5, 2, false, true] remoteExec  ["ace_ai_fnc_garrison",0];
+			sleep 2;
+
+			{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
+			[_Group] remoteExec ["OKS_SetStatic",0];
+			[_Group,GOL_Static_Enable_Chance,GOL_Static_Enable_Refresh] spawn OKS_EnablePath;
+		}	
 	};
+
+	_Group;
