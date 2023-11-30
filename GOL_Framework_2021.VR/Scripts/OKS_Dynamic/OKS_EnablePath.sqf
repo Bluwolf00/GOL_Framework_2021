@@ -17,7 +17,14 @@
 				_Unit = selectRandom _Units;
 
 				If(isNull (ObjectParent _Unit)) then {
+
+					_newGroup = createGroup (side _Unit);
+					_Unit joinAs [_newGroup,0];
 					_Unit enableAI "PATH";
+
+					waitUntil {sleep 5; !isNil "lambs_wp_fnc_moduleRush"};	
+					[_newGroup,200,15,[],getPos _Unit,true] remoteExec ["lambs_wp_fnc_taskRush",0];
+
 					if(_Debug_Variable) then { systemChat format ["Garrison Unit Detached: %1",_Unit]};
 				} else {
 					if(_Debug_Variable) then { systemChat format ["Ignored (Unit in Vehicle): %1",_Unit]};
