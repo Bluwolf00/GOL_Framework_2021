@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2730;
+		nextID=2731;
 	};
 	class MarkerIDProvider
 	{
@@ -17889,7 +17889,7 @@ class Mission
 					name="Hunt Base / Dynamic Trigger";
 					class Entities
 					{
-						items=25;
+						items=26;
 						class Item0
 						{
 							dataType="Object";
@@ -18126,7 +18126,7 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={450.54312,5,179.04761};
+								position[]={444.24036,5,266.23877};
 							};
 							id=1776;
 							type="LocationArea_F";
@@ -18136,7 +18136,7 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={451.43625,5,231.51712};
+								position[]={444.24036,5,166.89844};
 							};
 							id=1775;
 							type="LocationBase_F";
@@ -18156,7 +18156,7 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={451.26471,5,194.10126};
+								position[]={444.96194,5,281.29242};
 							};
 							id=1774;
 							type="LocationCityCapital_F";
@@ -18166,7 +18166,7 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={451.71704,5,246.77498};
+								position[]={446.15894,5,323.97046};
 							};
 							id=1777;
 							type="LocationEvacPoint_F";
@@ -18206,7 +18206,7 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={451.285,5,213.96655};
+								position[]={444.98224,5,301.15771};
 							};
 							id=1778;
 							type="LocationCity_F";
@@ -18281,7 +18281,7 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={456.30719,5,213.85721};
+								position[]={445.81638,5,293.48315};
 							};
 							title="Strongpoints Locations";
 							description="All these location logics are strongpoint definitions for dynamic scripts. If you have static infantry contacts in the array, they will spread among the strongpoints defined. If not defined they will automatically find towns.";
@@ -18299,9 +18299,20 @@ class Mission
 							description="This zone defines the area in which the dynamic scripts will generate content. Check the init.sqf for more information on how it is used. The location markers surrounding this trigger need to be inside the trigger for them to be used by the zone";
 							id=1658;
 						};
+						class Item25
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={443.21268,5,172.37939};
+							};
+							title="Stronghold Locations";
+							description="The base location gives a stronghold marker that spawns a large amount of units in the nearest building to the position. Creating a clear house objective, essentially a specified strong one-building garrison.";
+							id=2730;
+						};
 					};
 					id=1661;
-					atlOffset=4.7683716e-006;
+					atlOffset=2.3841858e-006;
 				};
 				class Item12
 				{

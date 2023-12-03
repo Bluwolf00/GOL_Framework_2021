@@ -196,9 +196,9 @@ switch (toLower(_role)) do {
 		[_rifle, _rifle_mag, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_cables,2],[_rifle_mag,2],[_pistol_mag,2],[_smokegrenadeY,4]] call _addToUniform;
-		[[_rifle_mag,2],[_rifle_mag_tr,2],[_grenade,2],[_flashBang,2]] call _addToVest;
-		[[_LMG_mag,COUNT_AG_MAGS(_LMG_mag)],[_clacker,1],[_demoCharge,3]] call _addToBackpack;
+		[[_cables,2],[_rifle_mag,2],[_pistol_mag,2],[_smokegrenadeY,4],[_grenade,2],[_flashBang,2]] call _addToUniform;
+		[[_rifle_mag,2],[_rifle_mag_tr,2],[_clacker,1],[_demoCharge,3]] call _addToVest;
+		[[_LMG_mag,COUNT_AG_MAGS(_LMG_mag)]] call _addToBackpack;
 		if (GVAR(extraGear)) then {
 			(_FAKBig) call _addToBackpack;
 		} else {
