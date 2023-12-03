@@ -25,6 +25,8 @@
 	if(isNil "_Group" || typeName _Group isEqualTo "STRING") exitWith { systemChat format["Failed to create group. Reason: %1",_Group]};
 	if(!isNil "_ExfilPos") then {
 		_AdditionalTaskText = " The squad will attempt to fallback once relieved. You do not need to escort them."
+	} else {
+		_AdditionalTaskText = "";
 	};
 
 	// Setup Group
@@ -46,7 +48,6 @@
 				"Callsign %1, a squad of infantry located in the area, they need to be relieved. Use the action on one of the friendly soldiers to relieve them.%2",
 				[groupId _Group, 2] call BIS_fnc_trimString,
 				_AdditionalTaskText
-
 			],
 			format[
 				"Relieve %1",
