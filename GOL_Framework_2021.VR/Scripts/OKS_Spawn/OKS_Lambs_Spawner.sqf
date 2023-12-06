@@ -13,7 +13,8 @@
 		["_Side",east,[sideUnknown]],
 		["_Range",1500,[0]],
 		["_Array",[],[[]]],
-		["_ActivatedToDisableSpawner",objNull,[objNull,""]]
+		["_ActivatedToDisableSpawner",objNull,[objNull,""]],
+		["_RespawnDelay",180,[0]]
 	];
 	private ["_RandomPos","_Center","_Condition1","_Condition2"];
 
@@ -70,7 +71,8 @@
 			[_Group,_Range,10,[],[],false] remoteExec ["lambs_wp_fnc_taskRush",0];
 
 			waitUntil { sleep 5; {Alive _X || [_X] call ace_common_fnc_isAwake} count units _Group < 1};
-			systemChat "Group destroyed or unconscious. Passed WaitUntil";
+			systemChat format["Group destroyed or unconscious. Passed WaitUntil. Sleep: %1",_RespawnDelay];
+			sleep _RespawnDelay;
 		};
 		
 		if(_Condition2) exitWith {

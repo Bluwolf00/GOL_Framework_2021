@@ -1,5 +1,5 @@
 	// OKS_Relieve_Friendly
-	// [group this,nil,[4756.37,5623.24,0]] spawn OKS_Relieve_Friendly;
+	// [group this,nil,[8766.02,6715.17,0]] spawn OKS_Relieve_Friendly;
 	// [5,getPos house_1,[4756.37,5623.24,0]] spawn OKS_Relieve_Friendly;
 	//  [group this] execVM "Scripts\OKS_Task\OKS_Relieve_Friendly.sqf";
 	if(!isServer) exitWith {};
@@ -9,7 +9,8 @@
 		["_HouseLocation",nil,[[]]],
 		["_ExfilPos",nil,[[]]],
 		["_ShouldDeleteOnExfil",true,[true]],
-		["_Side",west,[]]
+		["_Side",west,[]],
+		["_ActivateRange",250,[0]]
 	];
 	Private ["_Group","_GarrisonPositions","_GarrisonMaxSize","_AdditionalTaskText"];
 	Private _Debug_Variable = true;
@@ -34,7 +35,27 @@
 	{
 		_X disableAI "PATH"; _X enableAI "COVER"; _X enableAI "FSM"; _X setUnitPos "UP";
 		_X enableAI "SUPPRESSION"; _x enableAttack true; _x allowFleeing 0;
+
+		if(!isNil "_ActivateRange") then {
+			_X setCaptive true;
+		};
 	} foreach units _Group;
+
+	if(!isNil "_ActivateRange") then {
+		_Group setCombatMode "BLUE";
+		_Group setBehaviour "CARELESS";
+		[_Group, _ActivateRange] spawn {
+			Params ["_Group","_ActivateRange"];
+			waitUntil {
+				sleep 5;
+				_random = selectRandom units _Group;
+				{_random distance _X < _ActivateRange} count allPlayers > 0
+			};
+			_Group setBehaviour "COMBAT";
+			_Group setCombatMode "RED";
+			{_X setCaptive false} foreach units _Group;
+		};
+	};	
 
 	_TaskId = (round(random 99999));
 	_Task = format["OKS_RELIEVETASK_%1",_TaskId];
@@ -85,22 +106,22 @@
 		[_Task,"FAILED"] call BIS_fnc_taskSetState;
 	};
 
-	if(!isNil "_ExfilPos") then {
+	if(!isNil "_ExfilPos" && !isNil "_ShouldDeleteOnExfil") then {
 		{
 			_IndividualGroup = createGroup (side _X);
 			_x joinAs [_IndividualGroup, 0];
 			_X enableAI "PATH"; _X enableAI "MOVE"; _X disableAI "COVER"; _X disableAI "FSM";
 			_X disableAI "SUPPRESSION"; _x enableAttack false; _x allowFleeing 0;
 
-			[_X,_ExfilPos] spawn {
-				params ["_unit","_ExfilPos"];
+			[_X,_ExfilPos,_ShouldDeleteOnExfil] spawn {
+				params ["_unit","_ExfilPos","_ShouldDeleteOnExfil"];
 				while {alive _unit} do {
 					_unit doMove _ExfilPos;	
 					sleep 5;
 				};
-				if(_unit distance _ExfilPos < 15 && _ShouldDeleteOnExfil) then {
+				if(_unit distance _ExfilPos < 15 && _ShouldDeleteOnExfil) exitWith {
 					deleteVehicle _unit;
-				}
+				};
 			};
 		} foreach units _Group;
 	}
