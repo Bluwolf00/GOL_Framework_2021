@@ -3,9 +3,12 @@
 
 	Params ["_Group","_Chance","_Sleep"];
 	Private ["_Units","_Unit"];
- 	Private _Debug_Variable = true;
+ 	Private _Debug_Variable = false;
 
-
+	if(_Debug_Variable) then {
+		systemChat format["%1 ran code for OKS_EnablePath, Chance: %2, Time: %3",_Group,_Chance,_Sleep];
+	};
+	
 	while{{Alive _X} count units _Group > 0} do {
 		_Units = units _Group select {Alive _X};
 		_RandomUnit = selectRandom _Units;
@@ -20,9 +23,11 @@
 
 					_newGroup = createGroup (side _Unit);
 					_Unit joinAs [_newGroup,0];
-					_Unit enableAI "PATH";
+					[_Unit,selectRandom ["moveUp_1","moveUp_2","advance","OnTheWay_1"],_Debug_Variable] remoteExec ["JBOY_Speak",0]; 
 
-					waitUntil {sleep 5; !isNil "lambs_wp_fnc_moduleRush"};	
+					[_Unit, "PATH"] remoteExec ["enableAI",0];
+
+					waitUntil {sleep 1; !isNil "lambs_wp_fnc_taskRush"};	
 					[_newGroup,200,15,[],getPos _Unit,true] remoteExec ["lambs_wp_fnc_taskRush",0];
 
 					if(_Debug_Variable) then { systemChat format ["Garrison Unit Detached: %1",_Unit]};
