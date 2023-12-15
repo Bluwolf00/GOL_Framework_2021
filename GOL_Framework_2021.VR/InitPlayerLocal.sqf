@@ -28,75 +28,113 @@ default {_rank ="PRIVATE";};
 
 // ACE Medical - Pop Up Message Script
 // Will be transferred to the GW Addon at a later date... hopefully
-fnc_myFunction = {
-  params ["_caller", "_target", "_selectionName", "_className", "_itemUser", "_usedItem"];
-  if (!(_caller isEqualTo _target) && (_target == player)) then {
-  _Unconscious = _target getVariable ["ACE_isUnconscious",false];
-  _Action = "DEBUG";
-  switch (_usedItem) do {
-      case ("ACE_tourniquet"): {
-          _Action = "Applying a tourniquet to";
-      };
-      case "ACE_fieldDressing";
-      case "ACE_elasticBandage";
-      case "ACE_packingBandage";
-      case "ACE_quickclot": {_Action = "Bandaging";};
 
-      case "ACE_bloodIV";
-      case "ACE_bloodIV_250";
-      case "ACE_bloodIV_500";
-      case "ACE_salineIV";
-      case "ACE_salineIV_250";
-      case "ACE_salineIV_500";
-      case "ACE_plasmaIV";
-      case "ACE_plasmaIV_250";
-      case "ACE_plasmaIV_500": {_Action = "Transfusing fluids to";};
-
-      case ("ACE_personalAidKit"): {
-          _Action = "Applying a PAK to";
-      };
-      case ("ACE_splint"): {
-          _Action = "Applying a splint to";
-      };
-      case ("ACE_morphine"): {
-          _Action = "Injecting morphine to";
-      };
-      case ("ACE_epinephrine"): {
-          _Action = "Injecting epinephrine to";
-      };
-      case ("ACE_adenosine"): {
-          _Action = "Injecting adenosine to";
-      };
-      case ("ACE_surgicalKit"): {
-          _Action = "stitching your";
-      };
-      default {
-          _Action = "tending to";
-      };
-  };
-
-  if !(_Unconscious) then {
-    switch (_selectionName) do {
-        case ("head"): {
-            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " is " + _Action + " your head"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
+fnc_displayText = {
+    params ["_caller","_target","_bodyPart","_action"];
+    if (_bodyPart == "") then {
+        [[("<t size='1.3'>" + "Someone" + " is " + _action + " you" + "</t>"), "PLAIN DOWN", -1, true, true]] remoteExec ["titleText", _target];
+    } else {
+        if (_action in ["CheckPulse","CheckBloodPressure","PersonalAidKit","Diagnose"]) then {
+            [[("<t size='1.3'>" + (name _caller) + " is " + _action + " you" + "</t>"), "PLAIN DOWN", -1, true, true]] remoteExec ["titleText", _target];
+        } else {
+            [[("<t size='1.3'>" + (name _caller) + " is " + _action + " your " + _bodyPart + "</t>"), "PLAIN DOWN", -1, true, true]] remoteExec ["titleText", _target];
         };
-        case ("leftarm"): {
-            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " is " + _Action + " your left Arm"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
-        };
-        case ("rightarm"): {
-            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " is " + _Action + " your right arm"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
-        };
-        case ("leftleg"): {
-            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " is " + _Action + " your left leg"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
-        };
-        case ("rightleg"): {
-            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " is " + _Action + " your right leg"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
-        };
-        case ("body"): {
-            [[name _caller,_Action],{Params ["_caller","_Action"]; titleText [(_caller + " is " + _Action + " your torso"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];
-        };
-      };
-    } else {[[name _caller,_Action],{Params ["_caller","_Action"]; titleText [("Someone is tending to you"),"PLAIN DOWN"]}] remoteExec ["BIS_FNC_CALL",_target];};
+    };
 };
+
+fnc_medicalMessage = {
+    params ["_caller", "_target", "_selectionName", "_className", "_itemUser", "_usedItem"];
+
+    if (!(_caller == _target)) then {
+        _uncon = _target getVariable ["ace_isUnconscious", false];
+        _action = "Tending to";
+
+        switch (_className) do {
+            case "ApplyTourniquet": {
+                _action = "applying a tourniquet to ";
+            };
+
+            case "Morphine": {
+                _action = "injecting morphine to";
+            };
+
+            case "Epinephrine": {
+                _action = "injecting epinephrine to";
+            };
+
+            case "FieldDressing";
+            case "ElasticBandage";
+            case "PackingBandage";
+            case "QuikClot": {
+                _action = "bandaging";
+            };
+
+            case "BloodIV";
+            case "BloodIV_500";
+            case "BloodIV_250";
+            case "PlasmaIV";
+            case "PlasmaIV_500";
+            case "PlasmaIV_250";
+            case "SalineIV";
+            case "SalineIV_500";
+            case "SalineIV_250": {
+                _action = "transfusing fluids to";
+            };
+
+            case "PersonalAidKit": {
+                _action = "PAKing";
+            };
+
+            case "CheckPulse": {
+                _action = "checking your pulse";
+            };
+
+            case "CheckBloodPressure": {
+                _action = "checking your blood pressure";
+            };
+
+            case "Diagnose": {
+                _action = "diagnosing";
+            };
+
+            default {
+                _action = "tending to";
+            };
+        };
+        if !(_uncon) then {
+            switch (_selectionName) do {
+                case "head": {
+                    [_caller, _target, "Head", _action] call fnc_displayText;
+                };
+
+                case "leftarm": {
+                    [_caller, _target, "Left arm", _action] call fnc_displayText;
+                };
+                
+                case "rightarm": {
+                    [_caller, _target, "Right arm", _action] call fnc_displayText;
+                };
+
+                case "leftleg": {
+                    [_caller, _target, "Left leg", _action] call fnc_displayText;
+                };
+
+                case "rightleg": {
+                    [_caller, _target, "Right leg", _action] call fnc_displayText;
+                };
+
+                case "body": {
+                    [_caller, _target, "Body", _action] call fnc_displayText;
+                };
+
+                default {
+                    [_caller, _target, "", "tending to"] call fnc_displayText;
+                };
+            };
+        } else {
+            [_caller, _target, "", "tending to"] call fnc_displayText;
+        };
+    };
 };
-["ace_treatmentStarted", fnc_myFunction] call CBA_fnc_addEventHandler;
+
+["ace_treatmentStarted", fnc_medicalMessage] call CBA_fnc_addEventHandler;
