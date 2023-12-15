@@ -3,7 +3,7 @@ Author: Blu.
 
 Set the Teamspeak Channel to the appropriate one according to the real-time date.
 
-Do not question me about the math as I have no idea myself.
+Do not question the math as I have no idea myself.
 
 */
 

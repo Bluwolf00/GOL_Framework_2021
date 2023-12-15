@@ -23,9 +23,9 @@ if(HasInterface && isNil "OKS_FRIENDLY_SIDE") then {
 Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 Sleep 5;
 
-	if (GOL_BLU_AUTO_TS_CHANNEL isEqualTo 1) then {
-		execVM "Scripts\BLU_SetChannel.sqf";
-	};
+	// if (GOL_BLU_AUTO_TS_CHANNEL isEqualTo 1) then {
+	// 	 execVM "Scripts\BLU_SetChannel.sqf";
+	// };
 
 	{
 		[_x] execVM "Scripts\BLU_HeliActions.sqf";

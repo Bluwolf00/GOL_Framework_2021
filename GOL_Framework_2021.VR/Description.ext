@@ -91,6 +91,18 @@ class CfgFunctions {
 			};
         };
     };
+
+	class BLU
+	{
+		class Radios
+		{
+			class Radio_Channel_Init
+			{
+				file = "Scripts\BLU_SetChannel.sqf";
+				preInit = 1;
+			}
+		}
+	}
 };
 
 class GW_Modules_Base {
