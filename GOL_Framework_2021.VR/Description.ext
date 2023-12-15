@@ -100,9 +100,9 @@ class CfgFunctions {
 			{
 				file = "Scripts\BLU_SetChannel.sqf";
 				preInit = 1;
-			}
-		}
-	}
+			};
+		};
+	};
 };
 
 class GW_Modules_Base {
