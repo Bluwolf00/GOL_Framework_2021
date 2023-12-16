@@ -92,7 +92,7 @@ class CfgFunctions {
         };
     };
 
-	class BLU
+	class BLUFUNC
 	{
 		class Radios
 		{
