@@ -7,7 +7,7 @@ Params [
     ["_captive",objNull,[objNull]],
     ["_fallbackPosition",nil,[]],
 	["_showTaskOnStart",false,[false]],
-	["_ParentTask",nil,[""]]
+	["_ParentTask","Hostage_Main",[""]]
 ];
 
 private _randomTaskVariableName = "";

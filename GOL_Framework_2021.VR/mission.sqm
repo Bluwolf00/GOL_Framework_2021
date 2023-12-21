@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7662;
+		nextID=7706;
 	};
 	class Camera
 	{
-		pos[]={47.269123,38.55431,39.288273};
-		dir[]={0.036658462,-0.49471623,0.86828768};
-		up[]={0.020868145,0.86905384,0.49427804};
-		aside[]={0.99911505,1.36788e-009,-0.042181734};
+		pos[]={46.445763,38.55431,19.786034};
+		dir[]={0.03665825,-0.49471328,0.86828279};
+		up[]={0.020867836,0.86905628,0.49427301};
+		aside[]={0.99911004,0,-0.042181678};
 	};
 };
 binarizationWanted=0;
@@ -296,7 +296,7 @@ class ScenarioData
 	enableTeamSwitch=0;
 	class Header
 	{
-		gameType="COOP";
+		gameType="Coop";
 		minPlayers=1;
 		maxPlayers=79;
 	};
@@ -500,7 +500,7 @@ class CustomAttributes
 							class data
 							{
 								singleType="STRING";
-								value="Counter";
+								value="Wave";
 							};
 						};
 						class Item1
@@ -508,7 +508,7 @@ class CustomAttributes
 							class data
 							{
 								singleType="STRING";
-								value="Wave";
+								value="Counter";
 							};
 						};
 					};
@@ -14495,6 +14495,7 @@ class Mission
 	class Intel
 	{
 		briefingName="COOP@30 Mission Name";
+		overviewText="Framework Version 2.0";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;

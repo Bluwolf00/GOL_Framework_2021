@@ -10,29 +10,32 @@
 	};
 	
 	while{{Alive _X} count units _Group > 0} do {
-		_Units = units _Group select {Alive _X};
+		_Units = units _Group select {Alive _X || [_X] call ace_common_fnc_isAwake};
 		_RandomUnit = selectRandom _Units;
-		_closePlayers = (_RandomUnit nearEntities [["Man"], 15]) select {(side _X != (side leader _Group)) && ((side leader _Group) getFriend (side _X) <= 0.6) && isPlayer _X && (side leader _Group) knowsAbout _X > 2.5};
 
-		if(!(_closePlayers isEqualTo [])) then {
-			if(_Debug_Variable) then { systemChat format ["Players Near Garrison - %1",_closePlayers]};
-			if(Random 1 <= _Chance) then {
-				_Unit = selectRandom _Units;
+		if(!(isNull _RandomUnit)) then {
+			_closePlayers = (_RandomUnit nearEntities [["Man"], 15]) select {(side _X != (side leader _Group)) && ((side leader _Group) getFriend (side _X) <= 0.6) && isPlayer _X && (side leader _Group) knowsAbout _X > 2.5};
 
-				If(isNull (ObjectParent _Unit)) then {
+			if(!(_closePlayers isEqualTo [])) then {
+				if(_Debug_Variable) then { systemChat format ["Players Near Garrison - %1",_closePlayers]};
+				if(Random 1 <= _Chance) then {
+					_Unit = selectRandom _Units;
 
-					_newGroup = createGroup (side _Unit);
-					_Unit joinAs [_newGroup,0];
-					[_Unit,selectRandom ["moveUp_1","moveUp_2","advance","OnTheWay_1"],_Debug_Variable] remoteExec ["JBOY_Speak",0]; 
+					If(isNull (ObjectParent _Unit)) then {
 
-					[_Unit, "PATH"] remoteExec ["enableAI",0];
+						_newGroup = createGroup (side _Unit);
+						_Unit joinAs [_newGroup,0];
+						[_Unit,selectRandom ["moveUp_1","moveUp_2","advance","OnTheWay_1"],_Debug_Variable] remoteExec ["JBOY_Speak",0]; 
 
-					waitUntil {sleep 1; !isNil "lambs_wp_fnc_taskRush"};	
-					[_newGroup,200,15,[],getPos _Unit,true] remoteExec ["lambs_wp_fnc_taskRush",0];
+						[_Unit, "PATH"] remoteExec ["enableAI",0];
 
-					if(_Debug_Variable) then { systemChat format ["Garrison Unit Detached: %1",_Unit]};
-				} else {
-					if(_Debug_Variable) then { systemChat format ["Ignored (Unit in Vehicle): %1",_Unit]};
+						waitUntil {sleep 1; !isNil "lambs_wp_fnc_taskRush"};	
+						[_newGroup,200,15,[],getPos _Unit,true] remoteExec ["lambs_wp_fnc_taskRush",0];
+
+						if(_Debug_Variable) then { systemChat format ["Garrison Unit Detached: %1",_Unit]};
+					} else {
+						if(_Debug_Variable) then { systemChat format ["Ignored (Unit in Vehicle): %1",_Unit]};
+					};
 				};
 			};
 		};
