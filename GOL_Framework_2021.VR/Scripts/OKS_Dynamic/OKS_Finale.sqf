@@ -46,7 +46,8 @@ waitUntil {Sleep 30; (({Alive _X && !isPlayer _X && side _X != [player] call GW_
 				_Rush = true;
 			};
 			if(_Rush isEqualTo true) then {
-				[_X, _Range,_Interval,[],[],TRUE] spawn lambs_wp_fnc_taskRush;
+				systemChat format["%1 is responding to finale hunt.",_X];
+				[_X, _Range,_Interval,[],[],TRUE,true,true] spawn lambs_wp_fnc_taskHunt;
 			};
 		};
 	} foreach allGroups;

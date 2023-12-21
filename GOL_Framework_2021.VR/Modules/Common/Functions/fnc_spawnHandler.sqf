@@ -192,6 +192,9 @@ if !(_waypointArray isEqualTo []) then {
 		if(!isNil "OKS_Enemy_Talk") then {
 			[_group] execVM "Scripts\OKS_Ambience\OKS_Enemy_Talk.sqf";
 		};
+		if(!isNil "OKS_Tracker" && GOL_OKS_Tracker isEqualTo 1) then {
+			[_group] remoteExec ["OKS_Tracker",2];
+		};		
 	};
 	{
 		_x params [["_position",[0,0,0]], ["_attributes",[]]];

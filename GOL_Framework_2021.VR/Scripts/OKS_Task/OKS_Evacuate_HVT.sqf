@@ -7,7 +7,8 @@ if(!isServer) exitWith {};
 		["_ExfilSite",[0,0,0],[[],objNull]],
 		["_Side",west,[sideUnknown]],
 		["_HelicopterEvac",false,[false]],
-		["_ParentTask","",[""]]
+		["_ParentTask","",[""]],
+		["_IsCaptive",true,[true]]
 	];
 
 	Private ["_Units","_ExfilPosition","_TaskDescription"];
@@ -32,23 +33,32 @@ if(!isServer) exitWith {};
 	{
 		if([_X] call GW_Common_Fnc_getSide != civilian) then {
 			waitUntil {sleep 1; currentWeapon _X != ""};
-		};		
-		_X disableAI "MOVE";
-		_X setUnitPos "MIDDLE";
-		_X setCaptive true;
-		removeAllWeapons _X;
-		removeGoggles _X;
-		removeBackpack _X;
-		removeHeadgear _X;
-		_X addGoggles "G_Blindfold_01_black_F";
-		_X playMove "acts_aidlpsitmstpssurwnondnon04";
+		};	
 
-		_X spawn {
-			waitUntil {sleep 1; _this getVariable ["ace_captives_isHandcuffed", false] || !Alive _this};
-			if(alive _this) then {
-				removeGoggles _this;
+		if(_isCaptive) then {
+			_X disableAI "MOVE";
+			_X setUnitPos "MIDDLE";
+			_X setCaptive true;
+			removeAllWeapons _X;
+			removeGoggles _X;
+			removeBackpack _X;
+			removeHeadgear _X;
+			_X addGoggles "G_Blindfold_01_black_F";
+			_X playMove "acts_aidlpsitmstpssurwnondnon04";
+
+			_X spawn {
+				waitUntil {sleep 1; _this getVariable ["ace_captives_isHandcuffed", false] || !Alive _this};
+				if(alive _this) then {
+					removeGoggles _this;
+				};			
 			};			
+		} else {
+			_X disableAI "PATH";
+			if(!isNil "OKS_Surrender") then {
+				[_X,0.5,50,true,true] spawn OKS_Surrender;
+			};
 		};
+		_X setVariable ["GOL_IsStatic",true,true];
 	} forEach _Units;
 	
 	Private _TaskId = format["RescueHVTTask_%1",(random 9999)];

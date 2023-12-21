@@ -51,6 +51,7 @@ GOL_OKS_SPAWN = 1;
 GOL_OKS_AMBIENCE = 1;
 GOL_OKS_HUNT = 0; // Requires Additional Script
 GOL_OKS_Enemy_Talk = 0;
+GOL_OKS_Tracker = 0;
 
 /* HuntBases */
 GOL_NEKY_HUNT = 1;

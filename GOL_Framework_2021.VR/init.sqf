@@ -175,6 +175,9 @@ Sleep 5;
 			[flag_independent_1, _AMHQ, _Steerable, _Height] execVM "Scripts\NEKY_Paradrop\OKS_MHQ_Paradrop.sqf";
 		};
 	};
+	if(GOL_OKS_Tracker isEqualTo 1) then {
+		[] execVM "Scripts\OKS_Tracker\Init.sqf";
+	};
 
 Sleep 10;
 

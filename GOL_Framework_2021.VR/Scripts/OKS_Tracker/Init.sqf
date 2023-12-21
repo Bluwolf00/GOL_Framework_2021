@@ -4,6 +4,8 @@
 //
 //	Made by Oksman
 
+OKS_HuntedGroups = [];
+
 if (hasInterface && !isServer) exitWith {false};	// Ensures only server or HC runs this script
 
 // Functions

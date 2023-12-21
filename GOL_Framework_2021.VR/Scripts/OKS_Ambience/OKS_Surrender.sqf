@@ -15,6 +15,7 @@ private ["_NearPlayers"];
 (group _unit) setVariable ["acex_headless_blacklist",true];
 [_Unit,"PATH"] remoteExec ["disableAI",0];
 _Unit setUnitPos "UP";
+_Unit setVariable ["GOL_isStatic",true,true];
 
 GOL_ThrowWeaponsOnGround = {
     _Debug = 0;

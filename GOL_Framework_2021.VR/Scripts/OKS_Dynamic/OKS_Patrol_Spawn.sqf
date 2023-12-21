@@ -20,7 +20,7 @@
 		private _iteration = 20;
 		while {_iteration > 0} do {
 			_RandomPos = _Area call BIS_fnc_randomPosTrigger;
-			_SpawnPos = [_RandomPos, 1, 100, 10, 0, 35, 0] call BIS_fnc_findSafePos;
+			_SpawnPos = [_RandomPos, 1, 100, 20, 0, 35, 0] call BIS_fnc_findSafePos;
 			_NoPatrolsNearby = (_SpawnPos nearEntities ["Man",_Range]) select {_X getVariable ["OKS_Patrol_Unit", false] == true};
 			_iteration = _iteration - 1;
 			if(_SpawnPos inArea _Area && (count _NoPatrolsNearby) == 0) exitWith {};
@@ -33,15 +33,15 @@
 		Private "_Unit";
 		if ( (count (units _Group)) == 0 ) then
 		{
-			_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [_SpawnPos select 0,_SpawnPos select 1,0], [], 30, "NONE"];
+			_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), [_SpawnPos select 0,_SpawnPos select 1,0], [], 3, "NONE"];
 			_Unit setRank "SERGEANT";
 			_Unit setVariable ["OKS_Patrol_Unit",true,true];
 		} else {
 			if(count (units _Group) == 1) then {
-				_Unit = _Group CreateUnit [(_Units select 0), [_SpawnPos select 0,_SpawnPos select 1,0], [], 30, "NONE"];
+				_Unit = _Group CreateUnit [(_Units select 0), [_SpawnPos select 0,_SpawnPos select 1,0], [], 3, "NONE"];
 				_Unit setVariable ["OKS_Patrol_Unit",true,true];
 			} else {
-				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_SpawnPos select 0,_SpawnPos select 1,0], [], 30, "NONE"];
+				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_SpawnPos select 0,_SpawnPos select 1,0], [], 3, "NONE"];
 				_Unit setVariable ["OKS_Patrol_Unit",true,true];
 			}				
 		};
@@ -76,3 +76,8 @@
 		waitUntil {sleep 10; count waypoints _Group > 0};
 		[_Area,_Group,_Range] spawn OKS_Check_Waypoints;
 	};
+
+	if(!isNil "OKS_Tracker" && GOL_OKS_Tracker isEqualTo 1) then {
+		[_Group] remoteExec ["OKS_Tracker",2];
+	};
+	
