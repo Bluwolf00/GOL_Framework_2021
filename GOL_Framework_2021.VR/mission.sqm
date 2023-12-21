@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7706;
+		nextID=7728;
 	};
 	class Camera
 	{
@@ -288,6 +288,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
+	overviewText="Framework Version 2.0";
 	saving=0;
 	respawnDialog=0;
 	disabledAI=1;
