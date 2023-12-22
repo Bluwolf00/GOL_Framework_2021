@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7750;
+		nextID=7772;
 	};
 	class Camera
 	{
-		pos[]={47.43734,26.503597,45.123096};
-		dir[]={0.020536778,-0.47952941,0.8772884};
-		up[]={0.011222402,0.8775261,0.47939837};
-		aside[]={0.9997282,-6.5374479e-009,-0.023403011};
+		pos[]={46.16486,26.503597,47.322575};
+		dir[]={0.029659119,-0.66595602,0.74540716};
+		up[]={0.02647684,0.74598998,0.66543096};
+		aside[]={0.99921256,2.9598596e-008,-0.03975793};
 	};
 };
 binarizationWanted=0;
@@ -35,7 +35,7 @@ sourceName="GOL_Framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
-	"EO_Sullen_Skies_Abel",
+	"Desert",
 	"A3_Ui_F",
 	"A3_Soft_F_Exp_LSV_01",
 	"A3_Boat_F_Boat_Armed_01",
@@ -63,7 +63,6 @@ addons[]=
 	"ace_vehicle_damage",
 	"A3_Armor_F_Beta_APC_Wheeled_01",
 	"FIR_PilotCrewPack_US",
-	"real_uniform_unlock",
 	"ace_gforces",
 	"ace_parachute",
 	"ace_medical_treatment",
@@ -76,7 +75,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=30;
+		items=29;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -86,9 +85,8 @@ class AddonsMetaData
 		};
 		class Item1
 		{
-			className="EO_Sullen_Skies_Abel";
-			name="EO_Sullen_Skies_Abel";
-			author="EO";
+			className="Desert";
+			name="Desert";
 		};
 		class Item2
 		{
@@ -242,36 +240,30 @@ class AddonsMetaData
 		};
 		class Item24
 		{
-			className="real_uniform_unlock";
-			name="Real Uniform Unlock";
-			author="amartyn";
-		};
-		class Item25
-		{
 			className="ace_parachute";
 			name="ACE3 - Parachute";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item26
+		class Item25
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item27
+		class Item26
 		{
 			className="CUP_Misc3_Config";
 			name="CUP_Misc3_Config";
 		};
-		class Item28
+		class Item27
 		{
 			className="DrongosAPS";
 			name="Drongo's APS";
 			author="Drongo";
 		};
-		class Item29
+		class Item28
 		{
 			className="SAN_Headlamp";
 			name="san_headlamp";

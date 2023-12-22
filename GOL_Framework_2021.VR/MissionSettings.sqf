@@ -50,6 +50,7 @@ GOL_NEKY_SHARE = 0; // Requires Additional Script
 GOL_OKS_SPAWN = 1;
 GOL_OKS_AMBIENCE = 1;
 GOL_OKS_HUNT = 0; // Requires Additional Script
+GOL_OKS_Stealth_Mission = 0; // Requires the two below to be set to 1.
 GOL_OKS_Enemy_Talk = 0;
 GOL_OKS_Tracker = 0;
 
