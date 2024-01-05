@@ -51,6 +51,9 @@ if(HasInterface && !isServer) exitWith {};
 				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [_SpawnPos select 0,_SpawnPos select 1,(getPosATL _X select 2 + 0.1)], [], -1, "CAN_COLLIDE"];
 				_Unit setRank "PRIVATE";
 			};
+			if(OKS_Suppression isEqualTo 1) then {
+				[_unit] remoteExec ["OKS_Suppressed",0];
+			};
 			_Unit disableAI "PATH";
 			_Unit setUnitPosWeak "UP";
 			_Unit setDir ((_Unit getDir _Position) - 180);

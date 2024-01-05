@@ -20,10 +20,13 @@
 			} else {
 				_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _Position getPos [(random 8),(random 360)], [], 0, "NONE"];
 				_Unit setRank "PRIVATE";
-
 			};
 			if(_Debug_Variable) then {SystemChat format ["%1 Pos %2",group _unit,getPos _Unit]};
 			_Unit disableAI "PATH";
+			
+			if(OKS_Suppression isEqualTo 1) then {
+				[_unit] remoteExec ["OKS_Suppressed",0];
+			};				
 
 			if(_Side isNotEqualTo civilian) then {
 				_Unit setUnitPos (selectRandom ["UP","MIDDLE"]);

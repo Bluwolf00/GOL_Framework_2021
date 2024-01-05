@@ -57,6 +57,9 @@ if !((count _unitArray) isEqualTo 0) then {
 		_unit setPosATL _pos;
 		_unit setVariable [QGVAR(isSpawned), true];
 		_unit disableAI "MINEDETECTION";
+		if(OKS_Suppression isEqualTo 1) then {
+			[_unit] remoteExec ["OKS_Suppressed",0];
+		};
 		TRACE_1("Created", _unit);
 
 		if (_unitPos isEqualType "") then {

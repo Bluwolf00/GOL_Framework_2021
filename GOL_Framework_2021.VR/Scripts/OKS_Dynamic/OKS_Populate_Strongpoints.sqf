@@ -113,10 +113,16 @@ if(_CountStrongpoints > 0) then {
 							_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
 							_Unit setRank "SERGEANT";
 							_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
+							if(OKS_Suppression isEqualTo 1) then {
+								[_unit] remoteExec ["OKS_Suppressed",0];
+							};							
 						} else {
 							_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
 							_Unit setRank "PRIVATE";
 							_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
+							if(OKS_Suppression isEqualTo 1) then {
+								[_unit] remoteExec ["OKS_Suppressed",0];
+							};							
 						};
 						sleep 1;
 					};
@@ -182,10 +188,16 @@ if(_CountStrongpoints > 0) then {
 						_Unit = _Group CreateUnit [(_Leaders call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
 						_Unit setRank "SERGEANT";
 						_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
+						if(OKS_Suppression isEqualTo 1) then {
+							[_unit] remoteExec ["OKS_Suppressed",0];
+						};						
 					} else {
 						_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), _SafePos, [], 0, "NONE"];
 						_Unit setRank "PRIVATE";
 						_Unit remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
+						if(OKS_Suppression isEqualTo 1) then {
+							[_unit] remoteExec ["OKS_Suppressed",0];
+						};						
 					};
 					sleep 1;
 				};

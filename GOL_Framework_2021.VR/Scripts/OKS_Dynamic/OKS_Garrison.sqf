@@ -25,6 +25,9 @@
 			_Unit setRank "PRIVATE";
 			_Unit disableAI "PATH";
 			_Unit setUnitPos (selectRandom ["UP","MIDDLE"]);
+			if(OKS_Suppression isEqualTo 1) then {
+				[_unit] remoteExec ["OKS_Suppressed",0];
+			};				
 		} foreach _GarrisonPositions;
 	} else {
 

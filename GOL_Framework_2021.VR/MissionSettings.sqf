@@ -20,6 +20,7 @@ GOL_UGL_Chance = 0.25;
 // 0 = 0%, 1 = 100%
 GOL_Static_Enable_Chance = 0.5;
 GOL_Static_Enable_Refresh = 30;
+OKS_Suppression = 0;
 OKS_Suppressed_Threshold = 0.95;
 OKS_Suppressed_MinimumTime = 3;
 OKS_Suppressed_MaximumTime = 5;
