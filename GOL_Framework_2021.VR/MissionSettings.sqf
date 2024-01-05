@@ -20,6 +20,9 @@ GOL_UGL_Chance = 0.25;
 // 0 = 0%, 1 = 100%
 GOL_Static_Enable_Chance = 0.5;
 GOL_Static_Enable_Refresh = 30;
+OKS_Suppressed_Threshold = 0.95;
+OKS_Suppressed_MinimumTime = 3;
+OKS_Suppressed_MaximumTime = 5;
 
 /* AI Vehicle Settings */
 // Removes HE/FRAG rounds from SPG-9, T-** Tanks and BMP1s.
@@ -50,8 +53,8 @@ GOL_NEKY_SHARE = 0; // Requires Additional Script
 GOL_OKS_SPAWN = 1;
 GOL_OKS_AMBIENCE = 1;
 GOL_OKS_HUNT = 0; // Requires Additional Script
-GOL_OKS_Stealth_Mission = 0; // Requires the two below to be set to 1.
-GOL_OKS_Enemy_Talk = 0;
+GOL_OKS_Stealth_Mission = 0;
+GOL_OKS_Enemy_Talk = 0; // This requires sound effects from the "GOL_Framework_2021\Additional Radio\Vietnamese" folder to be moved to "MissionFolder\Scripts\OKS_Stealth\Talk"
 GOL_OKS_Tracker = 0;
 
 /* HuntBases */

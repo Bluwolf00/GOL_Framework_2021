@@ -69,7 +69,7 @@
 		_Group setSpeedMode "LIMITED";
 	};
 	if(!isNil "OKS_Enemy_Talk") then {
-		[_Group] execVM "Scripts\OKS_Ambience\OKS_Enemy_Talk.sqf";
+		[_Group] spawn OKS_Enemy_Talk;
 	};
 
 	if(isNil "lambs_wp_fnc_taskPatrol") then {

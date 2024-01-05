@@ -9,3 +9,9 @@ if(!isNull _oldUnit) then {
 _newUnit addEventHandler ["HandleScore", {
 	false
 }];
+
+if(!isNil "GOL_OKS_Stealth_Mission") then {
+	if(GOL_OKS_Stealth_Mission isEqualTo 1) then {
+		Player setUnitTrait ["camouflageCoef",0.4];
+	};
+};

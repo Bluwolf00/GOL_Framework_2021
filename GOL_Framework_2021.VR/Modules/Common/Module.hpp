@@ -14,7 +14,6 @@
 		class West {
 			Side = 1;
 			Leader[] = {
-				"B_Soldier_TL_F",
 				"B_Soldier_SL_F"
 			};
 			Units[] = {
@@ -24,6 +23,7 @@
 				"B_HeavyGunner_F",
 				"B_soldier_M_F",
 				"B_Soldier_F",
+				"B_Soldier_SL_F",
 				"B_Soldier_F",
 				"B_Soldier_F",
 				"B_Soldier_LAT_F"
@@ -32,7 +32,6 @@
 		class East {
 			Side = 0;
 			Leader[] = {
-				"O_Soldier_TL_F",
 				"O_Soldier_SL_F"
 			};
 			Units[] = {			
@@ -42,6 +41,7 @@
 				"O_HeavyGunner_F",
 				"O_soldier_M_F",
 				"O_Soldier_F",
+				"O_Soldier_SL_F",
 				"O_Soldier_F",
 				"O_Soldier_F",
 				"O_Soldier_LAT_F"
@@ -50,7 +50,6 @@
 		class Independent {
 			Side = 2;
 			Leader[] = {
-				"I_Soldier_TL_F",
 				"I_Soldier_SL_F"
 			};
 			Units[] = {			
@@ -60,6 +59,7 @@
 				"I_HeavyGunner_F",
 				"I_soldier_M_F",
 				"I_Soldier_F",
+				"I_Soldier_SL_F",
 				"I_Soldier_F",
 				"I_Soldier_F",
 				"I_Soldier_LAT_F"

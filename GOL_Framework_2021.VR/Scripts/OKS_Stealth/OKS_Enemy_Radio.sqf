@@ -1,6 +1,6 @@
 OKS_EnemyFaction = _this select 0;
 // [Independent] spawn OKS_Enemy_Radio;
-// [EAST] execVM "Scripts\OKS_Ambience\OKS_Enemy_Radio.sqf";
+// [EAST] execVM "Scripts\OKS_Stealth\OKS_Enemy_Radio.sqf";
 if (!isServer) exitWith {false};	// Ensures only server or HC runs this script - Tack Neky
 
 OKS_Radios = [];
@@ -29,7 +29,7 @@ OKS_Loop_Radio = {
 			systemChat "Play Radio";
 			_Corpse setVariable ["OKS_Transmit_Currently",true];
 			_Sound = selectRandom ["Radio1","Radio2","Radio3","Radio4","Radio5"];
-			playSound3D [MISSION_ROOT + format["Scripts\OKS_Ambience\Radio\%1.ogg",_Sound], _Corpse, false, getPosASL _Corpse, 2.5, 1, 12];
+			playSound3D [MISSION_ROOT + format["Scripts\OKS_Stealth\Radio\%1.ogg",_Sound], _Corpse, false, getPosASL _Corpse, 2.5, 1, 12];
 			sleep 5+(Random 5);
 			_Corpse setVariable ["OKS_Transmit_Currently",false];
 

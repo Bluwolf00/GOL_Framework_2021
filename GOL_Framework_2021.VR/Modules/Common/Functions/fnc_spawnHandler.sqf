@@ -72,7 +72,11 @@ if !((count _unitArray) isEqualTo 0) then {
 			} else {
 				_unit setUnitPos _unitPos;
 			};
-			[[_unit],{ Params ["_unit"]; _unit disableAI "PATH"; doStop _unit; }] remoteExec ["BIS_FNC_CALL",0]; 
+			[[_unit],{ Params ["_unit"]; _unit disableAI "PATH"; doStop _unit; }] remoteExec ["BIS_FNC_CALL",0];
+
+			if(GOL_OKS_Stealth_Mission isEqualTo 1 && !isNil "OKS_Enemy_Sentry") then {
+				[_unit] spawn OKS_Enemy_Sentry;
+			};
 			//[_unit] remoteExec ["doStop",0];
 			//[_unit,"PATH"] remoteExec ["disableAI",0];
 		};
@@ -190,7 +194,7 @@ if ((count _vehicleArray) > 0) then {
 if !(_waypointArray isEqualTo []) then {
 	if((count _vehicleArray) == 0) then {
 		if(!isNil "OKS_Enemy_Talk") then {
-			[_group] execVM "Scripts\OKS_Ambience\OKS_Enemy_Talk.sqf";
+			[_group] spawn OKS_Enemy_Talk;
 		};
 		if(!isNil "OKS_Tracker" && GOL_OKS_Tracker isEqualTo 1) then {
 			[_group] remoteExec ["OKS_Tracker",2];

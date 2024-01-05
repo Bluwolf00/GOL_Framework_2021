@@ -1,31 +1,27 @@
-MISSION_ROOT = call {
-    private "_arr";
-    _arr = toArray __FILE__;
-    _arr resize (count _arr - 8);
-    toString _arr
-};
-
-/* Define Player Side for Scripts */
-if(HasInterface && isNil "OKS_FRIENDLY_SIDE") then {
-	OKS_FRIENDLY_SIDE = [player] call GW_Common_Fnc_getSide;
-	publicVariable "OKS_FRIENDLY_SIDE";
-};
-
-// Scoreboard Loop
-[] spawn {
-	while {true} do {
-		execVM "Scripts\OKS_Ambience\OKS_DeathScore.sqf";
-		sleep 20;
+	MISSION_ROOT = call {
+		private "_arr";
+		_arr = toArray __FILE__;
+		_arr resize (count _arr - 8);
+		toString _arr
 	};
-};
 
-/* Set GOL Mission Settings */
-Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
-Sleep 5;
+	/* Define Player Side for Scripts */
+	if(HasInterface && isNil "OKS_FRIENDLY_SIDE") then {
+		OKS_FRIENDLY_SIDE = [player] call GW_Common_Fnc_getSide;
+		publicVariable "OKS_FRIENDLY_SIDE";
+	};
 
-	// if (GOL_BLU_AUTO_TS_CHANNEL isEqualTo 1) then {
-	// 	 execVM "Scripts\BLU_SetChannel.sqf";
-	// };
+	// Scoreboard Loop
+	[] spawn {
+		while {true} do {
+			execVM "Scripts\OKS_Ambience\OKS_DeathScore.sqf";
+			sleep 20;
+		};
+	};
+
+	/* Set GOL Mission Settings */
+	Call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
+	Sleep 5;
 
 	{
 		[_x] execVM "Scripts\BLU_HeliActions.sqf";
@@ -177,6 +173,9 @@ Sleep 5;
 	};
 	if(GOL_OKS_Tracker isEqualTo 1) then {
 		[] execVM "Scripts\OKS_Tracker\Init.sqf";
+	};
+	if(GOL_OKS_Stealth_Mission isEqualTo 1) then {
+		player setUnitTrait ["camouflageCoef",0.4];
 	};
 
 Sleep 10;

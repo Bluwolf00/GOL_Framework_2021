@@ -196,7 +196,7 @@ while {alive _Base && _Waves > 0} do
 						{
 							_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 							if(!isNil "OKS_Enemy_Talk") then {
-								[_Group] execVM "Scripts\OKS_Ambience\OKS_Enemy_Talk.sqf";
+								[_Group] spawn OKS_Enemy_Talk;
 							};
 						};
 

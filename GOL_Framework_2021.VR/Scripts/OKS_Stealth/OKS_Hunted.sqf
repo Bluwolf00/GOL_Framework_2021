@@ -1,15 +1,23 @@
 // [group this, Trigger_1] execVM "Scripts\OKS_Tracker\OKS_Hunted.sqf";
 
-params ["_HuntedGroup","_HuntedTriggerArea"];
+params [
+	["_HuntedGroup",grpNull,[grpNull]],
+	["_HuntedTriggerArea",nil,[objNull]]
+];
 
 OKS_HuntedGroups pushBackUnique _HuntedGroup;
 publicVariable "OKS_HuntedGroups";
 
-private _debugMessages = false;
-private _debugObject = false;
+private _debugMessages = true;
+private _debugObject = true;
 
-private ["_TrackObject","_OriginBasePosition","_TracksArray","_PlayerWithMostNearestPlayers","_PlayerWithMostNearestPlayersList"];
+private ["_TrackObject","_OriginBasePosition","_TracksArray","_PlayerWithMostNearestPlayers","_PlayerWithMostNearestPlayersList","_Condition"];
 _OriginBasePosition = getMarkerPos format["respawn_%1",side (_HuntedGroup)];
+
+if(_OriginBasePosition isEqualTo [0,0,0]) exitWith {
+	SystemChat format["Hunted Script failed to find respawn_%1 marker. Exiting..",side (_HuntedGroup)];
+};
+
 _TracksArray = [];
 
 if(_debugObject) then {
@@ -17,10 +25,13 @@ if(_debugObject) then {
 } else {
 	_TrackObject = "Land_ClutterCutter_small_F";
 };
-
-	while {
-		{(alive _X || [_X] call ace_common_fnc_isAwake) && _X inArea _HuntedTriggerArea} count units _HuntedGroup > 0
-	} do {
+ 	_Condition = {{(alive _X || [_X] call ace_common_fnc_isAwake)} count units _HuntedGroup > 0};
+	if(!isNil "_HuntedTriggerArea") then {
+		_Condition = {{(alive _X || [_X] call ace_common_fnc_isAwake) && _X inArea _HuntedTriggerArea} count units _HuntedGroup > 0}
+	};
+	while 
+		_Condition
+	do {
 		if(_debugMessages) then { systemChat "Track loop start." };
 		_PlayerWithMostNearestPlayersList = 
 		([

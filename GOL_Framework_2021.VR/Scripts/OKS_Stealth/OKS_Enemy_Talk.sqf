@@ -1,5 +1,5 @@
 /*
-	[_Group] execVM "Scripts\OKS_Ambience\OKS_Enemy_Talk.sqf";
+	[_Group] execVM "Scripts\OKS_Stealth\OKS_Enemy_Talk.sqf";
 */
 Params [
 	["_Group",grpNull,[grpNull]],
@@ -65,9 +65,9 @@ OKS_Enemy_Speak = {
 		SystemChat format["Selected SoundFile: %1.ogg",_SoundFileName];
 		_Group setVariable ["OKS_Talking_Currently",true,true];
 		if(_Distance > 50 || _SoundFileName in ["Radio6","Radio7","Radio8","Radio9","Radio10"]) then {
-			playSound3D [MISSION_ROOT + format["Scripts\OKS_Ambience\Talk\%1.ogg",_SoundFileName], _Enemy, false, getPosASL _Enemy, 5, 1, 150];		
+			playSound3D [MISSION_ROOT + format["Scripts\OKS_Stealth\Talk\%1.ogg",_SoundFileName], _Enemy, false, getPosASL _Enemy, 5, 1, 150];		
 		} else {
-			playSound3D [MISSION_ROOT + format["Scripts\OKS_Ambience\Talk\%1.ogg",_SoundFileName], _Enemy, false, getPosASL _Enemy, 2.5, 1, 100];		
+			playSound3D [MISSION_ROOT + format["Scripts\OKS_Stealth\Talk\%1.ogg",_SoundFileName], _Enemy, false, getPosASL _Enemy, 2.5, 1, 100];		
 		};		
 	} else {
 		SystemChat format ["Dice %1 higher than chance %2. Failed trigger...",_Dice,_Chance];

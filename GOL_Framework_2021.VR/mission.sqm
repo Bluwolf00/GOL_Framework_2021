@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2731;
+		nextID=2739;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7772;
+		nextID=7816;
 	};
 	class Camera
 	{
-		pos[]={46.16486,26.503597,47.322575};
-		dir[]={0.029659119,-0.66595602,0.74540716};
-		up[]={0.02647684,0.74598998,0.66543096};
-		aside[]={0.99921256,2.9598596e-008,-0.03975793};
+		pos[]={48.301472,25.025076,49.329659};
+		dir[]={0.016817031,-0.54445392,0.83862346};
+		up[]={0.010915874,0.83878952,0.5443458};
+		aside[]={0.99980074,4.0108716e-008,-0.020048402};
 	};
 };
 binarizationWanted=0;
@@ -289,6 +289,9 @@ class ScenarioData
 {
 	author="Editor";
 	overviewText="Framework Version 2.0";
+	overViewPicture="Core\loadImage.jpg";
+	overViewPictureLocked="Core\loadImage.jpg";
+	loadScreen="Core\loadImage.jpg";
 	saving=0;
 	respawnDialog=0;
 	disabledAI=1;
@@ -14079,7 +14082,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="STRING";
-														value="CIVI-ALTIS";
+														value="CIVI-CHERNARUS";
 													};
 												};
 												class Item1

@@ -33,7 +33,7 @@ switch (toLower(_role)) do {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
 		[_rifle, _rifle_mag_tr, ""] call _addPrimary;
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,4]] call _addToUniform;
+		[[_rifle_mag_tr,4]] call _addToUniform;
 		[[_grenademini,2],[_rifle_mag_tr,5]] call _addToVest;
 		[[_rifle_mag,7]] call _addToBackpack;
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
@@ -46,7 +46,7 @@ switch (toLower(_role)) do {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
 		[_rifle, _rifle_mag, ""] call _addPrimary;
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,4]] call _addToUniform;
+		[[_rifle_mag_tr,4]] call _addToUniform;
 		[[_grenademini,2],[_rifle_mag_tr,5]] call _addToVest;
 		[[_rifle_mag,7]] call _addToBackpack;
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
@@ -63,7 +63,7 @@ switch (toLower(_role)) do {
 			[_rifle, _rifle_mag_tr, ""] call _addPrimary;
 		};
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
+		[[_rifle_mag_tr,2],[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,13],[_glHE,1]] call _addToVest;
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight))) then {
@@ -78,7 +78,7 @@ switch (toLower(_role)) do {
 		};
 		[_rifle, _rifle_mag_tr, ""] call _addPrimary;
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
+		[[_rifle_mag_tr,2],[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,13]] call _addToVest;
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
 		if ((random 1) <= GOL_MAT_Chance) then {
@@ -104,7 +104,7 @@ switch (toLower(_role)) do {
 			[_rifle, _rifle_mag_tr, ""] call _addPrimary;
 		};
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
+		[[_rifle_mag_tr,2],[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,13]] call _addToVest;
 		["", "", "", "", "", _nvg] call _addLinkedItems;
 		if ((random 1) <= GOL_LAT_Chance) then {
@@ -123,7 +123,7 @@ switch (toLower(_role)) do {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		[_rifle, _rifle_mag_tr, ""] call _addPrimary;
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
+		[[_rifle_mag_tr,2],[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,14]] call _addToVest;
 		["", "", "", "", "", _nvg] call _addLinkedItems;
 	};
@@ -132,7 +132,7 @@ switch (toLower(_role)) do {
 		[_goggles,_helmet,_uniform,_vest,""] call _addEquipment;
 		[_LMG, _LMG_mag, ""] call _addPrimary;
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
+		[[_LMG_mag,2],[_grenademini,2]] call _addToUniform;
 		[[_LMG_mag,5],[_LMG_mag_tr,5]] call _addToVest;
 		["", "", "", "", "", _nvg] call _addLinkedItems;
 	};
@@ -142,7 +142,7 @@ switch (toLower(_role)) do {
 		[_rifleL, _rifleL_mag, ""] call _addPrimary;
 		[[_grenademini,2],[_rifleL_mag,7],[_rifleL_mag_tr,7]] call _addToVest;
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,3]] call _addToUniform;
+		[[_rifleL_mag,3]] call _addToUniform;
 		if ((random 1) <= GOL_LAT_Chance) then {
 			[_LAT, _LAT_mag, ""] call _addLaunchers;
 			if (_LAT_ReUsable) then {
@@ -161,7 +161,7 @@ switch (toLower(_role)) do {
 		[_rifleC, _rifleC_mag, ""] call _addPrimary;
 		[[_grenademini,2],[_rifleC_mag,7],[_rifleC_mag_tr,7]] call _addToVest;
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,3]] call _addToUniform;
+		[[_rifleC_mag,4]] call _addToUniform;
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
@@ -173,7 +173,7 @@ switch (toLower(_role)) do {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
 		[_pdw, _pdw_mag_tr, ""] call _addPrimary;
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,1],[_smokegrenadeP,1],[_grenademini,2]] call _addToUniform;
+		[[_grenademini,2]] call _addToUniform;
 		[[_pdw_mag_tr,12]] call _addToVest;
 		["", "", "", "", "", _nvg] call _addLinkedItems;
 	};
@@ -182,7 +182,7 @@ switch (toLower(_role)) do {
 		[_goggles,_helmet,_uniform,_vest] call _addEquipment;
 		[_rifleC, _rifleC_mag_tr, ""] call _addPrimary;
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
+		[[_grenademini,2]] call _addToUniform;
 		[[_rifleC_mag_tr,12]] call _addToVest;
 		["", "", "", "", "", _nvg] call _addLinkedItems;
 	};
@@ -191,7 +191,7 @@ switch (toLower(_role)) do {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		[_rifle, _rifle_mag_tr, ""] call _addPrimary;
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
+		[[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,12]] call _addToVest;
 		if ((random 1) <= GOL_MAT_Chance) then {
 			[_MAT, _MAT_mag, ""] call _addLaunchers;
@@ -213,7 +213,7 @@ switch (toLower(_role)) do {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		[_rifle, _rifle_mag_tr, ""] call _addPrimary;
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
+		[[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,12]] call _addToVest;
 		["", "", "", "", "", _nvg] call _addLinkedItems;
 	};
@@ -222,7 +222,7 @@ switch (toLower(_role)) do {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		[_rifle, _rifle_mag_tr, ""] call _addPrimary;
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
+		[[_grenademini,2]] call _addToUniform;
 		[[_rifle_mag_tr,12]] call _addToVest;
 		["", "", "", "", "", _nvg] call _addLinkedItems;
 	};
@@ -231,7 +231,7 @@ switch (toLower(_role)) do {
 		[_goggles,_helmet,_uniform,_vest,""] call _addEquipment;
 		[_MMG, _MMG_mag, ""] call _addPrimary;
 		_IFAK call _addToUniform;
-		[[_smokegrenadeW,2],[_grenademini,2]] call _addToUniform;
+		[[_grenademini,2]] call _addToUniform;
 		[[_MMG_mag_tr,6]] call _addToVest;
 		["", "", "", "", "", _nvg] call _addLinkedItems;
 	};
@@ -240,7 +240,7 @@ switch (toLower(_role)) do {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		[_rifleMarksman, _rifleMarksman_mag, ""] call _addPrimary;
 		_IFAK call _addToUniform;
-		[[_rifleMarksman_mag,3],[_grenademini,2],[_smokegrenadeW,6]] call _addToVest;
+		[[_rifleMarksman_mag,3],[_grenademini,2]] call _addToVest;
 		[[_rifleMarksman_mag_tr,2]] call _addToBackpack;
 		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {

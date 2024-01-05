@@ -1,19 +1,28 @@
 /*
 	OKS_Enemy_Sentry
 	[this, east, 0.3,true,true, 1000, 500, Hunt_1] spawn OKS_Enemy_Sentry;
-	[this, east, 0.3,true,false, 500, 500, nil] execVM "Scripts\OKS_Ambience\OKS_Enemy_Sentry.sqf";
-	[Unit or Position, Side, ChanceForRadioGear, RequiresRadioToCallHunt, ShouldStartHunt, RangeFromUnitFindHunters, HuntersRange, VariableToSetToTrue] execVM "Scripts\OKS_Ambience\OKS_Enemy_Sentry.sqf";
+	[this, east, 0.3,true,false, 500, 500, nil] execVM "Scripts\OKS_Stealth\OKS_Enemy_Sentry.sqf";
+	[Unit or Position, Side, ChanceForRadioGear, RequiresRadioToCallHunt, ShouldStartHunt, RangeFromUnitFindHunters, HuntersRange, VariableToSetToTrue] execVM "Scripts\OKS_Stealth\OKS_Enemy_Sentry.sqf";
 */
 
  	if(!isServer) exitWith {};
 
-	Params ["_Unit","_Side","_ChanceForRadioEquipment","_RequiresRadioToCallHunt","_ShouldSetNearbyToHunt","_NearbyHunterRange","_HuntRange","_Variable"];
-	Private ["_Units","_Dice","_Leader","_NearFriendlies","_RadioNearby"];
+	Params [
+		["_Unit",objNull,[objNull]],
+		["_Side",east,[sideUnknown]],
+		["_ChanceForRadioEquipment",0.25,[0]],
+		["_RequiresRadioToCallHunt",true,[true]],
+		["_ShouldSetNearbyToHunt",false,[true]],
+		["_NearbyHunterRange",500,[0]],
+		["_HuntRange",500,[0]],
+		["_Variable",nil,[""]]
+	];
+	Private ["_Units","_Dice","_Leaders","_NearFriendlies","_RadioNearby"];
 	Switch (_Side) do
 	{
 		case blufor:	// BLUFOR settings
 		{
-			_Leader = "B_soldier_SL_F";
+			_Leaders = ["B_Soldier_SL_F"];
 			_Units = [
 				"B_Soldier_A_F",
 				"B_Soldier_AR_F",
@@ -29,9 +38,9 @@
 				"B_Soldier_LAT_F"
 			];
 		};
-		case opfor:	// BLUFOR settings
+		case opfor:	// OPFOR settings
 		{
-			_Leader = "O_soldier_SL_F";
+			_Leaders = ["O_Soldier_SL_F"];
 			_Units = [
 				"O_Soldier_A_F",
 				"O_Soldier_AR_F",
@@ -47,9 +56,9 @@
 				"O_Soldier_LAT_F"
 			];
 		};
-		case independent:	// BLUFOR settings
+		case independent:	// INDEP settings
 		{
-			_Leader = "I_soldier_SL_F";
+			_Leaders = ["I_Soldier_SL_F"];;
 			_Units = [
 				"I_Soldier_A_F",
 				"I_Soldier_AR_F",
@@ -79,7 +88,7 @@
 
 		_Dice = random 1;
 		if(_Dice < _ChanceForRadioEquipment && _RequiresRadioToCallHunt) then {
-			_Unit = _Group CreateUnit [_Leader, _Pos, [], 0, "CAN_COLLIDE"];
+			_Unit = _Group CreateUnit [_Leaders, _Pos, [], 0, "CAN_COLLIDE"];
 			_Unit setVariable ["GOL_HasRadio",true,true];
 		} else {
 			_Unit = _Group CreateUnit [_UnitClass, _Pos, [], 0, "CAN_COLLIDE"];	
@@ -88,9 +97,12 @@
 		_Unit setDir (random 360);
 	} else {
 		if(_Unit isKindOf "Man") then {
-			if(typeOf _Unit == _Leader) then {
+			if(count units group _Unit > 1) then {
+				_SingleGroup = createGroup (side _Unit);
+				[_Unit] joinSilent _SingleGroup;
+			};
+			if(typeOf _Unit in _Leaders) then {
 				_Unit setVariable ["GOL_HasRadio",true,true];
-				SystemChat "Is Squad Leader giving Radio Variable.";
 			};	
 		} else {
 			_Pos = getPosATL _Unit;
@@ -100,15 +112,17 @@
 
 			_Dice = random 1;
 			if(_Dice < _ChanceForRadioEquipment && _RequiresRadioToCallHunt) then {
-				_Unit = _Group CreateUnit [_Leader, _Pos, [], 0, "CAN_COLLIDE"];
+				_Unit = _Group CreateUnit [_Leaders, _Pos, [], 0, "CAN_COLLIDE"];
 				_Unit setVariable ["GOL_HasRadio",true,true];
 			} else {
 				_Unit = _Group CreateUnit [_UnitClass, _Pos, [], 0, "CAN_COLLIDE"];	
 			};		
 			_Unit setRank "PRIVATE";
 			_Unit setDir (getDir _PosObject);
+			_Unit setFormDir (getDir _PosObject);
 			_Unit doWatch (_Unit getPos [15,(getDir _Unit)]);
 			_Unit lookAt (_Unit getPos [15,(getDir _Unit)]);
+			
 			deleteVehicle _PosObject;
 		}
 	};
@@ -126,7 +140,7 @@
 
 	if(Alive _Unit && [_Unit] call ace_common_fnc_isAwake) then {
 		_SoundFileName = selectRandom ["vn-talks-y-07","vn-talks-y-08","vn-talks-y-09","vn-talks-y-20","vn-talks-y-26","vn-talks-y-17"];
-		playSound3D [MISSION_ROOT + format["Scripts\OKS_Ambience\Talk\%1.ogg",_SoundFileName], _Unit, false, getPosASL _Unit, 5, 1, 150];	
+		playSound3D [MISSION_ROOT + format["Scripts\OKS_Stealth\Talk\%1.ogg",_SoundFileName], _Unit, false, getPosASL _Unit, 5, 1, 150];	
 	};
 	sleep 5;
 	if(Alive _Unit && [_Unit] call ace_common_fnc_isAwake) then {
@@ -138,7 +152,7 @@
 		if(_RequiresRadioToCallHunt && !(_Unit getVariable ["GOL_HasRadio",false]) && !(_RadioNearby)) exitWith { SystemChat "Requires Radio In vicinity to request reinforcements. Exiting.."};
 		systemChat "Radio Nearby or In-hand. Calling hunt.";	
 		_SoundFileName = selectRandom ["vn-radio-y-17","vn-radio-y-18","vn-radio-y-19","vn-radio-y-09","vn-radio-y-05"];
-		playSound3D [MISSION_ROOT + format["Scripts\OKS_Ambience\Talk\%1.ogg",_SoundFileName], _Unit, false, getPosASL _Unit, 5, 1, 150];	
+		playSound3D [MISSION_ROOT + format["Scripts\OKS_Stealth\Talk\%1.ogg",_SoundFileName], _Unit, false, getPosASL _Unit, 5, 1, 150];	
 		if(!isNil "_Variable") then {
 			SystemChat format ["%1 set to true",_Variable];
 			Call Compile Format ["%1 = True; PublicVariable '%1'",_Variable];
