@@ -21,7 +21,7 @@ class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 		#define LOBBY_DESCRIPTION ""							// Description in mission select
 		#define ON_LOAD_TEXT ""									// Description on loading
 		#define MISSION_VERSION 1								// Version of mission
-		#define SELECT_PICTURE "Core\loadImage.jpg"								// Path to loading screen
+		#define SELECT_PICTURE "loadImage.jpg"								// Path to loading screen
 		//#define SELECT_PICTURE RANDOM_PICTURES					// Random loading screen
 
 		Author = "Editor";				// Author

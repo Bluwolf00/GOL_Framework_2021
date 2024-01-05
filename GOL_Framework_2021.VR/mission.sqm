@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7816;
+		nextID=7860;
 	};
 	class Camera
 	{
-		pos[]={48.301472,25.025076,49.329659};
-		dir[]={0.0069402144,-0.55157113,0.83410448};
-		up[]={0.0045893039,0.83412659,0.5515545};
-		aside[]={0.99997067,1.0459189e-008,-0.008319621};
+		pos[]={62.295509,29.386986,30.517595};
+		dir[]={0.033253826,-0.57817191,0.81524116};
+		up[]={0.023564294,0.81591403,0.57769501};
+		aside[]={0.99917346,1.5701517e-008,-0.040755741};
 	};
 };
 binarizationWanted=0;
@@ -289,9 +289,9 @@ class ScenarioData
 {
 	author="Editor";
 	overviewText="Framework Version 2.0";
-	overViewPicture="Core\loadImage.jpg";
-	overViewPictureLocked="Core\loadImage.jpg";
-	loadScreen="Core\loadImage.jpg";
+	overViewPicture="loadImage.jpg";
+	overViewPictureLocked="loadImage.jpg";
+	loadScreen="loadImage.jpg";
 	saving=0;
 	respawnDialog=0;
 	disabledAI=1;
