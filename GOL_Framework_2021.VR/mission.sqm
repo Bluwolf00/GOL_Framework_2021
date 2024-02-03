@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7860;
+		nextID=7926;
 	};
 	class Camera
 	{
-		pos[]={54.195,29.386986,41.924809};
-		dir[]={0.056163773,-0.60462868,0.79453164};
-		up[]={0.042633884,0.79650652,0.60312855};
-		aside[]={0.99751753,1.86119e-008,-0.070511691};
+		pos[]={70.617523,58.486893,8.455102};
+		dir[]={-0.00079257885,-0.71906739,0.69496363};
+		up[]={-0.00082010363,0.69493908,0.71907485};
+		aside[]={1.0000181,-2.575448e-007,0.0011408804};
 	};
 };
 binarizationWanted=0;
@@ -288,7 +288,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 2.0";
+	overviewText="Framework Version 2.1";
 	overViewPicture="loadImage.jpg";
 	overViewPictureLocked="loadImage.jpg";
 	loadScreen="loadImage.jpg";
@@ -3672,7 +3672,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1;
+														value=0.94999999;
 													};
 												};
 												class Item1
@@ -4050,7 +4050,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -13596,7 +13596,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=0.19585064;
 													};
 												};
 												class Item1
@@ -14499,7 +14499,7 @@ class Mission
 	class Intel
 	{
 		briefingName="COOP@30 Mission Name";
-		overviewText="Framework Version 2.0";
+		overviewText="Framework Version 2.1";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
@@ -14838,7 +14838,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_space";
-							expression="[_this, _value] call ace_cargo_fnc_setSpace;";
+							expression="[_this, _value] call ace_cargo_fnc_setSpace";
 							class Value
 							{
 								class data
@@ -14913,7 +14913,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_space";
-							expression="[_this, _value] call ace_cargo_fnc_setSpace;";
+							expression="[_this, _value] call ace_cargo_fnc_setSpace";
 							class Value
 							{
 								class data
@@ -14975,7 +14975,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_space";
-							expression="[_this, _value] call ace_cargo_fnc_setSpace;";
+							expression="[_this, _value] call ace_cargo_fnc_setSpace";
 							class Value
 							{
 								class data
@@ -18554,7 +18554,7 @@ class Mission
 								class Attribute3
 								{
 									property="ace_cargo_space";
-									expression="[_this, _value] call ace_cargo_fnc_setSpace;";
+									expression="[_this, _value] call ace_cargo_fnc_setSpace";
 									class Value
 									{
 										class data
@@ -18760,7 +18760,7 @@ class Mission
 								class Attribute3
 								{
 									property="ace_cargo_space";
-									expression="[_this, _value] call ace_cargo_fnc_setSpace;";
+									expression="[_this, _value] call ace_cargo_fnc_setSpace";
 									class Value
 									{
 										class data
