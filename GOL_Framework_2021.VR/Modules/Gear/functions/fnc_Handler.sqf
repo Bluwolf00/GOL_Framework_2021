@@ -35,6 +35,7 @@
 #include "functions.sqf"
 
 private [
+	"_compatibleItems","_opticValues",
 	"_isMan","_isCar","_isTank","_type","_allowedNightStuff","_isCivilian","_isPlayer","_side","_errorCode","_loadout","_loadoutFile","_insignia",
 	"_addEquipment","_addLinkedItems","_addPrimary","_addLaunchers","_addHandGun","_addToUniform","_addToVest","_addToBackPack","_addBino",
 	"_grenade","_grenademini",
@@ -297,50 +298,112 @@ if (_isMan) then {
 						{ if !(_X in _compatibleItems) then {_compatibleItems pushBack _X}} foreach (_backpackRadio);
 					} else {
 						 if !(_X in _compatibleItems) then {_compatibleItems pushBack _backpackRadio}
-					};					
+					};		
+
+					_blackList = ["rhsusf_acc_SpecterDR_pvs27","rhsusf_acc_su230","rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","ACE_acc_pointer_green","ACE_acc_pointer_green_ir","ACE_acc_pointer_red","acc_pointer_ir","acc_pointer_ir_broken","rhsusf_acc_anpeq15_top_h","rhsusf_acc_anpeq15_top_sc","rhsusf_acc_anpeq15_wmx_sc","rhsusf_acc_anpeq15_wmx_h","rhsusf_acc_anpeq15_wmx_light_sc","rhsusf_acc_anpeq15_wmx_light_h","rhsusf_acc_anpeq15_bk_top_h","rhsusf_acc_anpeq15_bk_top_sc","rhsusf_acc_anpeq15_h","rhsusf_acc_anpeq15_sc","rhsusf_acc_anpeq15_light_sc","rhsusf_acc_anpeq15_light_h","rhsusf_acc_anpeq15_bk_h","rhsusf_acc_anpeq15_bk_sc","rhsusf_acc_anpeq15_bk_light_sc","rhsusf_acc_anpeq15_bk_light_h","rhsusf_acc_anpeq16a_top_sc","rhsusf_acc_anpeq16a_top_h","rhsusf_acc_anpeq16a_light_top_sc","rhsusf_acc_anpeq16a_light_top_h","rhsusf_acc_anpas13gv1","hlc_charm_herstal","hlc_charm_izhmash","hlc_charm_teethgang","rhsusf_acc_anpvs27","hlc_isopod"];
+					_whiteList = ["rhs_weap_optic_smaw"];							
 						
 					if(GOL_OPTICS == 1) then {
-						{ if !(_X in _compatibleItems) then {_compatibleItems pushBack _X}} foreach ((_rifle select 0) call BIS_fnc_compatibleItems);
-						{ if !(_X in _compatibleItems) then {_compatibleItems pushBack _X}} foreach ((_rifleC select 0) call BIS_fnc_compatibleItems);
-						{ if !(_X in _compatibleItems) then {_compatibleItems pushBack _X}} foreach ((_pistol select 0) call BIS_fnc_compatibleItems);
-						{ if !(_X in _compatibleItems) then {_compatibleItems pushBack _X}} foreach ((_LMG select 0) call BIS_fnc_compatibleItems);
-						{ if !(_X in _compatibleItems) then {_compatibleItems pushBack _X}} foreach ((_MMG select 0) call BIS_fnc_compatibleItems);
+		
+						if(GOL_MAGNIFIED_OPTICS isEqualTo 0 || isNil "GOL_MAGNIFIED_OPTICS") then {
+							_opticValues = ["1.0x"]
+						} else {
+							_opticValues = ["1.0x","1.0x-2.0x"]
+						};
+
+						{
+							_DoesExistInArray = (_X in _compatibleItems);
+							_ScopeMagnificationInArray = (["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag) in _opticValues;
+							_IsNotSight = ["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag == "?";
+							_IsBlackListed = (_X in _blackList);					
+		
+							if ((!(_DoesExistInArray) && !(_IsBlackListed)) && (_ScopeMagnificationInArray || _IsNotSight)) then {						
+								_compatibleItems pushBack _X;
+							};
+						} foreach ((_rifle select 0) call BIS_fnc_compatibleItems);
+
+						{
+							_DoesExistInArray = (_X in _compatibleItems);
+							_ScopeMagnificationInArray = (["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag) in _opticValues;
+							_IsNotSight = ["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag == "?";
+							_IsBlackListed = (_X in _blackList);					
+		
+							if ((!(_DoesExistInArray) && !(_IsBlackListed)) && (_ScopeMagnificationInArray || _IsNotSight)) then {						
+								_compatibleItems pushBack _X;
+							};
+						} foreach ((_rifleC select 0) call BIS_fnc_compatibleItems);
+
+						{
+							_DoesExistInArray = (_X in _compatibleItems);
+							_ScopeMagnificationInArray = (["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag) in _opticValues;
+							_IsNotSight = ["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag == "?";
+							_IsBlackListed = (_X in _blackList);					
+		
+							if ((!(_DoesExistInArray) && !(_IsBlackListed)) && (_ScopeMagnificationInArray || _IsNotSight)) then {						
+								_compatibleItems pushBack _X;
+							};
+						} foreach ((_rifleL select 0) call BIS_fnc_compatibleItems);
+
+						{
+							_DoesExistInArray = (_X in _compatibleItems);
+							_ScopeMagnificationInArray = (["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag) in _opticValues;
+							_IsNotSight = ["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag == "?";
+							_IsBlackListed = (_X in _blackList);					
+		
+							if ((!(_DoesExistInArray) && !(_IsBlackListed)) && (_ScopeMagnificationInArray || _IsNotSight)) then {						
+								_compatibleItems pushBack _X;
+							};
+						} foreach ((_rifleGL select 0) call BIS_fnc_compatibleItems);	
+
+						{
+							_DoesExistInArray = (_X in _compatibleItems);
+							_ScopeMagnificationInArray = (["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag) in _opticValues;
+							_IsNotSight = ["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag == "?";
+							_IsBlackListed = (_X in _blackList);					
+		
+							if ((!(_DoesExistInArray) && !(_IsBlackListed)) && (_ScopeMagnificationInArray || _IsNotSight)) then {						
+								_compatibleItems pushBack _X;
+							};
+						} foreach ((_LMG select 0) call BIS_fnc_compatibleItems);																
+					
+						{
+							_DoesExistInArray = (_X in _compatibleItems);
+							_ScopeMagnificationInArray = (["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag) in _opticValues;
+							_IsNotSight = ["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag == "?";
+							_IsBlackListed = (_X in _blackList);					
+		
+							if ((!(_DoesExistInArray) && !(_IsBlackListed)) && (_ScopeMagnificationInArray || _IsNotSight)) then {						
+								_compatibleItems pushBack _X;
+							};
+						} foreach ((_MMG select 0) call BIS_fnc_compatibleItems);
+
+						{
+							_DoesExistInArray = (_X in _compatibleItems);
+							_ScopeMagnificationInArray = (["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag) in _opticValues;
+							_IsNotSight = ["",(configfile >> "CfgWeapons" >> _X)] call ace_arsenal_fnc_statTextStatement_scopeMag == "?";
+							_IsBlackListed = (_X in _blackList);					
+		
+							if ((!(_DoesExistInArray) && !(_IsBlackListed)) && (_ScopeMagnificationInArray || _IsNotSight)) then {						
+								_compatibleItems pushBack _X;
+							};
+						} foreach ((_pistol select 0) call BIS_fnc_compatibleItems);
+
+						{	
+							if(_X in _blackList) then {
+								_compatibleItems deleteAt (_compatiblesItems find _X);
+							};
+						} forEach _compatibleItems;
+
 					};
-
-					_blackList = ["rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","ACE_acc_pointer_green","ACE_acc_pointer_green_ir","ACE_acc_pointer_red","acc_pointer_ir","acc_pointer_ir_broken","rhsusf_acc_anpeq15_top_h","rhsusf_acc_anpeq15_top_sc","rhsusf_acc_anpeq15_wmx_sc","rhsusf_acc_anpeq15_wmx_h","rhsusf_acc_anpeq15_wmx_light_sc","rhsusf_acc_anpeq15_wmx_light_h","rhsusf_acc_anpeq15_bk_top_h","rhsusf_acc_anpeq15_bk_top_sc","rhsusf_acc_anpeq15_h","rhsusf_acc_anpeq15_sc","rhsusf_acc_anpeq15_light_sc","rhsusf_acc_anpeq15_light_h","rhsusf_acc_anpeq15_bk_h","rhsusf_acc_anpeq15_bk_sc","rhsusf_acc_anpeq15_bk_light_sc","rhsusf_acc_anpeq15_bk_light_h","rhsusf_acc_anpeq16a_top_sc","rhsusf_acc_anpeq16a_top_h","rhsusf_acc_anpeq16a_light_top_sc","rhsusf_acc_anpeq16a_light_top_h","rhsusf_acc_anpas13gv1","hlc_charm_herstal","hlc_charm_izhmash","hlc_charm_teethgang","rhsusf_acc_anpvs27","hlc_isopod"];
-					_whiteList = ["rhs_weap_optic_smaw"];
-
-					_CV = 0;
-					For [{_CV = 1}, {_CV < (count _compatibleItems)}, {_CV = _CV + 1}] do {
-							If ((_compatibleItems select (_CV - 1)) in _blackList) then {
-							  _compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV - 1)));
-								_CV = _CV - 1;
-							};
-
-							_opticMag = (["",(configfile >> "CfgWeapons" >> (_compatibleItems select (_CV - 1)))] call ace_arsenal_fnc_statTextStatement_scopeMag);
-							if(count _opticMag > 5) then {
-								_opticMag = _opticMag select [5];
-							};
-							_opticMag = parseNumber _opticMag;
-
-								if(GOL_MAGNIFIED_OPTICS isEqualTo 0 || isNil "GOL_MAGNIFIED_OPTICS") then {
-									If (_opticMag > 1 || _opticMag == 0.9) then {
-										_compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV - 1)));
-										_CV = _CV - 1;
-									};
-								} else {
-									if (_opticMag > 2 || _opticMag == 0.9) then {
-										_compatibleItems deleteAt (_compatibleItems find (_compatibleItems select (_CV - 1)));
-										_CV = _CV - 1;
-									};
-								};
-							};
 
 					_compatibleItemsGL = [];
 					{_compatibleItemsGL pushBackUnique _X} foreach _compatibleItems;
 
 					_compatibleItemsLMG = [];
 					{_compatibleItemsLMG pushBackUnique _X} foreach _compatibleItems;
+
+					//systemChat str _compatibleItems;
+				 	//copyToClipboard str _compatibleItems;
 
 					if(GOL_WEAPONS == 1) then {
 						if(TYPENAME (_rifle select 0) == "ARRAY") then {
@@ -374,8 +437,10 @@ if (_isMan) then {
 						_compatibleItemsLMG find "HLC_Charm_Teethgang" != -1 ||
 						_compatibleItemsGL find "HLC_Charm_Herstal" != -1 ||
 						_compatibleItemsGL find "HLC_Charm_Izhmash" != -1 ||
+						_compatibleItemsGL find "HLC_Isopod" != -1 ||
 						_compatibleItemsGL find "HLC_Charm_Teethgang" != -1
-					} do {			
+					} do {		
+						_compatibleItems deleteAt (_compatibleItems find "HLC_Isopod");	
 						_compatibleItems deleteAt (_compatibleItems find "HLC_Charm_Herstal");					
 						_compatibleItems deleteAt (_compatibleItems find "HLC_Charm_Izhmash");
 						_compatibleItemsLMG deleteAt (_compatibleItemsLMG find "HLC_Charm_Herstal");
@@ -388,7 +453,8 @@ if (_isMan) then {
 					};
 
 					_compatibleItems append _whiteList;
-					[_unit, _compatibleItems] call ace_arsenal_fnc_initBox;
+
+					[_unit, _compatibleItems] call ace_arsenal_fnc_initBox;			
 					[GOL_Arsenal_LMG, _compatibleItemsLMG] call ace_arsenal_fnc_initBox;
 					[GOL_Arsenal_GL, _compatibleItemsGL] call ace_arsenal_fnc_initBox;
 				};

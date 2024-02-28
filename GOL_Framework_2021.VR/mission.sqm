@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7926;
+		nextID=8014;
 	};
 	class Camera
 	{
-		pos[]={70.617523,58.486893,8.455102};
-		dir[]={-0.00079257885,-0.71906739,0.69496363};
-		up[]={-0.00082010363,0.69493908,0.71907485};
-		aside[]={1.0000181,-2.575448e-007,0.0011408804};
+		pos[]={65.14035,106.5088,-35.214279};
+		dir[]={0.0064904094,-0.76578265,0.6430667};
+		up[]={0.0077285762,0.64309949,0.76574367};
+		aside[]={0.9999491,0,-0.010092389};
 	};
 };
 binarizationWanted=0;
@@ -19085,8 +19085,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={40.377304,5.0014391,79.214493};
-										angles[]={0,0.019485444,0};
+										position[]={40.376999,5.0014391,79.214005};
+										angles[]={0,0.019477876,0};
 									};
 									side="West";
 									flags=5;
@@ -19099,6 +19099,36 @@ class Mission
 									};
 									id=1364;
 									type="B_medic_F";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="GW_TeamColor";
+											expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="main";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="GW_LoadoutSelector";
+											expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										nAttributes=2;
+									};
 								};
 								class Item4
 								{
@@ -20432,8 +20462,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={43.741665,5.3815289,88.207161};
-								angles[]={0,4.725883,0};
+								position[]={43.742001,5.3815289,88.207001};
+								angles[]={0,4.7258806,0};
 							};
 							side="Empty";
 							flags=4;
@@ -22524,8 +22554,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={78.166618,5.3815289,89.350632};
-								angles[]={0,4.7180462,0};
+								position[]={78.167,5.3815289,89.350998};
+								angles[]={0,4.7180438,0};
 							};
 							side="Empty";
 							flags=4;
