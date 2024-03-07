@@ -645,15 +645,6 @@ cba_optics_usePipOptics = true;
 cba_ui_notifyLifetime = 4;
 cba_ui_StorePasswords = 1;
 
-// Diwako Stalker Like Anomalies
-ANOMALY_DEBUG = false;
-ANOMALY_DETECTION_RANGE = 20;
-ANOMALY_DETECTOR_ITEM = "AnomalyDetector";
-ANOMALY_GAS_MASKS = "GP5_RaspiratorPS,GP5Filter_RaspiratorPS,GP7_RaspiratorPS,GP21_GasmaskPS,SE_S10,G_Respirator_white_F,MASK_M40_OD,MASK_M40,MASK_M50";
-ANOMALY_IDLE_DISTANCE = 350;
-ANOMALY_TRIGGER_DISTANCE = 300;
-diwako_anomalies_enable = false;
-
 // DUI - Squad Radar - Indicators
 diwako_dui_indicators_crew_range_enabled = false;
 diwako_dui_indicators_fov_scale = false;
