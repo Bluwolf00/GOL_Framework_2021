@@ -29,8 +29,8 @@
 
 						[_Unit, "PATH"] remoteExec ["enableAI",0];
 
-						waitUntil {sleep 1; !isNil "lambs_wp_fnc_taskRush"};	
-						[_newGroup,200,15,[],getPos _Unit,true] remoteExec ["lambs_wp_fnc_taskRush",0];
+						//waitUntil {sleep 1; !isNil "lambs_wp_fnc_taskRush"};	
+						//[_newGroup,200,15,[],getPos _Unit,true] remoteExec ["lambs_wp_fnc_taskRush",0];
 
 						if(_Debug_Variable) then { systemChat format ["Garrison Unit Detached: %1",_Unit]};
 					} else {
