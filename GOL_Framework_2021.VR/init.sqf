@@ -177,6 +177,10 @@
 	if(GOL_OKS_Stealth_Mission isEqualTo 1) then {
 		player setUnitTrait ["camouflageCoef",0.4];
 	};
+	
+	// Set Respawn Time
+	_respawnCounter = "RespawnDelay_Param" call BIS_fnc_getParamValue;
+	setPlayerRespawnTime _respawnCounter;
 
 Sleep 10;
 

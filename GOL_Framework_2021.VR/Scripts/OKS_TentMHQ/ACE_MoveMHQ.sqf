@@ -8,15 +8,15 @@ if (hasInterface) then {
 		_EnemyNearUnits = (player nearEntities ["Man", 100]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
 		if(count _EnemyNearUnits == 0) then {
 			[Tent_MHQ,(player getPos [3,getDir player])] remoteExec ["setPos",2];
-			_mhqMarkerId = _mhq getVariable ["MHQ_MarkerId",""];
-			_mhqMarkerAreaId = format["%1_Area",_mhqMarkerId];
-			_mhqMarkerId setMarkerPos _mhq;
-			_mhqMarkerAreaId setMarkerPos _mhq;
 
 			_Players = allPlayers select {_X distance flag_west_1 < 100 || _X distance flag_east_1 < 100};
 			_Players spawn {
 				_Players = _this;
 				sleep 5;
+				_mhqMarkerId = Tent_MHQ getVariable ["MHQ_MarkerId",""];
+				_mhqMarkerAreaId = format["%1_Area",_mhqMarkerId];
+				[_mhqMarkerId,Tent_MHQ] remoteExec ["setMarkerPos",0];
+				[_mhqMarkerAreaId,Tent_MHQ] remoteExec ["setMarkerPos",0];	
 				["The MHQ has been moved to a new safe location."] remoteExec ["systemChat",_Players];
 			};
 		} else {

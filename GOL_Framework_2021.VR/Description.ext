@@ -67,13 +67,21 @@ corpseManagerMode = 0;
 wreckManagerMode = 0;
 
 respawn = "BASE";
-respawndelay = 20;
 respawnOnStart = 0;
+respawnTemplates[] = {"ACE_Spectator"}; // Enables the spectator template for all
 
 class Params {
 	#define LOAD_PARAMS
 		#include "Modules\Modules.cpp"
 	#undef LOAD_PARAMS
+
+	class RespawnDelay_Param
+	{
+		title = "Respawn Delay";
+		texts[] = { "No Respawn", "Standard Respawn" };
+		values[] = { 648000, 20};
+		default = 20;
+	};
 };
 
 class CfgFunctions {

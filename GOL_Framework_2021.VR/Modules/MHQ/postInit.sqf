@@ -230,7 +230,7 @@
 						_Players = allPlayers select {_X distance flag_east_1 < 100};
 					};
 					
-					_waitUntilDelayOver = {
+					MHQ_waitUntilDelayOver = {
 						Params ["_MHQ"];
 						waituntil{sleep 1; !(player getVariable ["GOL_TeleportDelay",false])};
 
@@ -241,7 +241,10 @@
 							"<br/><br/><t size='1.1'>YOU MAY NOW TELEPORT TO MHQ.</t></t>")) 
 						};
 					};
-					[((_this select 0) select 0)] remoteExec [_waitUntilDelayOver,_Players];
+
+					if(!isNil "_Players") then {
+						[((_this select 0) select 0)] remoteExec ["MHQ_waitUntilDelayOver",_Players];
+					};					
 				},
 				{
 					hint "Aborted";
