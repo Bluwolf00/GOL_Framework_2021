@@ -49,6 +49,10 @@
 	};
 	_Group setBehaviour "SAFE";
 
+	if(OKS_Suppression isEqualTo 1) then {
+		{[_X] remoteExec ["OKS_Suppressed",0]} foreach units _Group;
+	};		
+
 	if(isNil "lambs_wp_fnc_taskPatrol") then {
 		[_Group, _Spawnpos, _Range] call CBA_fnc_taskPatrol;
 	} else {

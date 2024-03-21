@@ -53,6 +53,10 @@
 			_AllSpawnedUnits pushBackUnique _X;
 		} foreach units _Group;
 
+		if(OKS_Suppression isEqualTo 1) then {
+			{[_X] remoteExec ["OKS_Suppressed",0]} foreach units _group;
+		};	
+
 
 		sleep 5;
 		switch (toLower _LambsType) do {
@@ -93,7 +97,7 @@
 					3: Area the AI Camps in, default [] <ARRAY>
 					4: Center Position, if no position or Empty Array is given it uses the Group as Center and updates the position every Cycle, default [] <ARRAY>
 					5: Only Players, default true <BOOL>
-				*/
+				*/			
 				waitUntil {sleep 1; !isNil "lambs_wp_fnc_moduleRush"};
 				[_Group,_Range,10,[],[],false] remoteExec ["lambs_wp_fnc_taskRush",0];	
 			};

@@ -28,6 +28,10 @@ if !(isNil "FRAMEWORK_Gear_Run") then
 	} forEach (Units _Grp);
 };
 
+if(OKS_Suppression isEqualTo 1) then {
+	{[_X] remoteExec ["OKS_Suppressed",0]} foreach units _Grp;
+};	
+
 _Grp AllowFleeing 0;
 
 // Returns

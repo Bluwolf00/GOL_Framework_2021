@@ -34,6 +34,10 @@
 	{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill"]; _Array pushBackUnique _X } foreach units _Group;
 	Call Compile Format ["PublicVariable '%1'",_Array];
 
+	if(OKS_Suppression isEqualTo 1) then {
+		{[_X] remoteExec ["OKS_Suppressed",0]} foreach units _group;
+	};	
+
 	sleep 5;
 	switch (toLower _LambsType) do {
 		case "hunt": {

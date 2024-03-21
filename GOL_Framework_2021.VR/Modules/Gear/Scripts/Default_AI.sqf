@@ -15,6 +15,14 @@ crew	- Crew memeber
 p		- Pilot
 */
 
+if(isNil "_cswGunBackpack") then {
+	_cswGunBackpack = "RHS_DShkM_Gun_Bag";
+};
+
+if(isNil "_cswTripodBackpack") then {
+	_cswTripodBackpack = "RHS_DShkM_TripodLow_Bag";
+};
+
 switch (toLower(_role)) do {
 
 	case "officer": {
@@ -70,6 +78,32 @@ switch (toLower(_role)) do {
 			//[[_glFlareW,1]] call _addToBackpack;
 		};
 	};
+
+	case "csw_gunner": {
+		[_goggles,_helmet,_uniform,_vest,_cswGunBackpack] call _addEquipment;
+		[_rifle, _rifle_mag_tr, ""] call _addPrimary;
+
+		_IFAK call _addToUniform;
+		[[_rifle_mag_tr,2],[_grenademini,2]] call _addToUniform;
+		[[_rifle_mag_tr,13],[_glHE,1]] call _addToVest;
+		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
+		if ((call EFUNC(Common,isNight))) then {
+			//[[_glFlareW,1]] call _addToBackpack;
+		};
+	};	
+
+	case "csw_tripod": {
+		[_goggles,_helmet,_uniform,_vest,_cswTripodBackpack] call _addEquipment;
+		[_rifle, _rifle_mag_tr, ""] call _addPrimary;
+
+		_IFAK call _addToUniform;
+		[[_rifle_mag_tr,2],[_grenademini,2]] call _addToUniform;
+		[[_rifle_mag_tr,13],[_glHE,1]] call _addToVest;
+		[_map, "", "ItemRadio", _compass, _watch, _nvg] call _addLinkedItems;
+		if ((call EFUNC(Common,isNight))) then {
+			//[[_glFlareW,1]] call _addToBackpack;
+		};
+	};		
 
 	case "r": {
 		[_goggles,_helmet,_uniform,_vest] call _addEquipment;

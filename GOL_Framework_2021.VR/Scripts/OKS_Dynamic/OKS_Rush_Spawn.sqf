@@ -39,6 +39,10 @@
 		};
 		{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
 		waitUntil {sleep 5; !isNil "lambs_wp_fnc_moduleRush"};	
+
+		if(OKS_Suppression isEqualTo 1) then {
+			{[_X] remoteExec ["OKS_Suppressed",0]} foreach units _group;
+		};	
 		[_Group,_Range,_Interval,[],_Center,true] remoteExec ["lambs_wp_fnc_taskRush",0];
 	} foreach _Spawns;
 

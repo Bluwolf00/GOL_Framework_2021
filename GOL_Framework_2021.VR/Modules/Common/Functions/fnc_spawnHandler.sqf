@@ -56,7 +56,6 @@ if !((count _unitArray) isEqualTo 0) then {
 		_unit setRank "PRIVATE";
 		_unit setPosATL _pos;
 		_unit setVariable [QGVAR(isSpawned), true];
-		_unit disableAI "MINEDETECTION";
 		if(OKS_Suppression isEqualTo 1) then {
 			[_unit] remoteExec ["OKS_Suppressed",0];
 		};
@@ -173,9 +172,15 @@ if ((count _vehicleArray) > 0) then {
 				};
 				case "turret": {
 					_unit moveInTurret [_vehicle, (_x select 2)];
+					if(OKS_Suppression isEqualTo 1) then {
+						[_unit] remoteExec ["OKS_Suppressed",0];
+					};						
 				};
 				case "cargo": {
 					_unit moveInCargo [_vehicle, (_x select 1)];
+					if(OKS_Suppression isEqualTo 1) then {
+						[_unit] remoteExec ["OKS_Suppressed",0];
+					};	
 				};
 			};
 			_unit enableSimulationGlobal true;
@@ -201,7 +206,10 @@ if !(_waypointArray isEqualTo []) then {
 		};
 		if(!isNil "OKS_Tracker" && GOL_OKS_Tracker isEqualTo 1) then {
 			[_group] remoteExec ["OKS_Tracker",2];
-		};		
+		};
+		if(OKS_Suppression isEqualTo 1) then {
+			{[_X] remoteExec ["OKS_Suppressed",0]} foreach units _group;
+		};			
 	};
 	{
 		_x params [["_position",[0,0,0]], ["_attributes",[]]];

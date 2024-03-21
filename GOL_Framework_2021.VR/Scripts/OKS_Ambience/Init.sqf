@@ -3,6 +3,7 @@
 //	This initializes all the functions for OKS Ambience.
 //
 //	Made by Oksman
+OKS_Suppressed_Debug = false;
 
 OKS_Chat = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Chat.sqf"; // Used by Clients only
 if (hasInterface && !isServer) exitWith {false};	// Ensures only server or HC runs this script

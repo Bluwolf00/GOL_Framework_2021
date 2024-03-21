@@ -46,6 +46,9 @@
 			};
 			sleep 0.5;
 		};
+		if(OKS_Suppression isEqualTo 1) then {
+			{[_X] remoteExec ["OKS_Suppressed",0]} foreach units _group;
+		};	
 	};
 	if(typeName _ClassnameOrNumber == "STRING") then {
 		_Vehicle = CreateVehicle [_ClassnameOrNumber,_Spawn];

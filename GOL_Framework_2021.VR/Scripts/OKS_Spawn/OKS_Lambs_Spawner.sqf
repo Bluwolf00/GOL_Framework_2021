@@ -67,6 +67,10 @@
 				5: Only Players, default true <BOOL>
 			*/
 			sleep 15;
+			if(OKS_Suppression isEqualTo 1) then {
+				{[_X] remoteExec ["OKS_Suppressed",0]} foreach units _group;
+			};	
+
 			waitUntil {sleep 1; !isNil "lambs_wp_fnc_moduleRush"};
 			[_Group,_Range,10,[],[],false] remoteExec ["lambs_wp_fnc_taskRush",0];
 
