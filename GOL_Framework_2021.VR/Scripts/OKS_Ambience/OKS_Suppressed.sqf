@@ -10,6 +10,10 @@ params [
     ["_MaximumTime",OKS_Suppressed_MaximumTime,[1]]
 ];
 
+if(isNil "OKS_Suppressed_Debug") then {
+    OKS_Suppressed_Debug = false;
+};
+
 _Unit setVariable ["lambs_danger_disableAI", true,true];
 _Unit setVariable ["OKS_DefaultStance",UnitPos _Unit,true];
 _Unit setVariable ["OKS_SuppressedThreshold",_SuppressThreshold,true];
