@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8080;
+		nextID=8102;
 	};
 	class Camera
 	{
-		pos[]={61.098846,38.138969,46.660248};
-		dir[]={0.017263541,-0.63570094,0.77175069};
-		up[]={0.014216605,0.77193165,0.63554204};
-		aside[]={0.99975157,-1.8964784e-008,-0.022363791};
+		pos[]={61.980869,37.713001,38.499863};
+		dir[]={0.041622713,-0.64427501,0.76366043};
+		up[]={0.035063662,0.76479387,0.6433202};
+		aside[]={0.99851799,1.8626451e-009,-0.054423437};
 	};
 };
 binarizationWanted=0;
@@ -17292,8 +17292,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={124.90305,5.8924227,31.146456};
-								angles[]={0,0.0051803077,0};
+								position[]={124.903,5.8924227,31.146};
+								angles[]={0,0.0051836278,0};
 							};
 							side="Empty";
 							flags=4;
@@ -17304,6 +17304,23 @@ class Mission
 							};
 							id=2032;
 							type="B_supplyCrate_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F"",""FirstAidKit""],[1,2,1,10]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item29
 						{
@@ -20511,14 +20528,15 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={46.16864,5,88.163643};
-								angles[]={0,6.2279873,0};
+								position[]={46.168999,5,88.164001};
+								angles[]={0,6.2279806,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
 								init="[this, [""med_box"",""west""]] call GW_Gear_Fnc_Init;";
+								name="medical_box_west";
 								description="Medical box";
 							};
 							id=2547;
@@ -22613,7 +22631,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={80.610947,5,89.42202};
+								position[]={80.611,5,89.421997};
 								angles[]={0,6.2279806,0};
 							};
 							side="Empty";
@@ -22621,6 +22639,7 @@ class Mission
 							class Attributes
 							{
 								init="[this, [""med_box"",""east""]] call GW_Gear_Fnc_Init;";
+								name="medical_box_east";
 								description="Medical box";
 							};
 							id=2548;
