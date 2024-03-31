@@ -287,14 +287,15 @@ switch (toLower(_role)) do {
 		[_rifleC, _rifleC_mag_tr, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_gps,1],[_pistol_mag,2],[_smokegrenadeY,2]] call _addToUniform;
-		[[_rifleC_mag_tr,4],[_smokegrenadeP,3],[_grenade,1]] call _addToVest;
+		[[_gps,1],[_pistol_mag,2],[_smokegrenadeY,4],[_flashBang,2]] call _addToUniform;
+		[[_rifleC_mag_tr,8],[_smokegrenadeP,3],[_grenade,3]] call _addToVest;
 		[[_toolkit,1]] call _addToBackpack;
 		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
 			[[_mapFlashLight,1],[_IRStrobe,1]] call _addToUniform;
 		};
+		_rangefinder call _addBino;
 	};
 
 	case "mat": {
