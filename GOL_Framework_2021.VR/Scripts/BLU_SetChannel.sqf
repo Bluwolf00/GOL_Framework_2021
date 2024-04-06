@@ -30,10 +30,10 @@ _addition = _day + (_monthChart select _monthCode) + 6 + _yearEnd + _quotient;
 
 _weekDayNum = _addition mod 7;
 
-if ((_year mod 4) == 0) then 
+if (((_year mod 4) == 0) && (_month < 3)) then 
  { 
   _weekDayNum = _weekDayNum - 1; 
- }; 
+ };
 
 switch (_weekDayNum) do { 
  case 0: {
