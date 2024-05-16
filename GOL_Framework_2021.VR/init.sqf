@@ -178,10 +178,6 @@
 		player setUnitTrait ["camouflageCoef",0.4];
 	};
 	
-	// Set Respawn Time
-	_respawnCounter = "RespawnDelay_Param" call BIS_fnc_getParamValue;
-	setPlayerRespawnTime _respawnCounter;
-
 Sleep 10;
 
 	if(GOL_OKS_TASK isEqualTo 1) then {

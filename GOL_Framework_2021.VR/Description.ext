@@ -68,20 +68,19 @@ wreckManagerMode = 0;
 
 respawn = "BASE";
 respawnOnStart = 0;
-respawnTemplates[] = {"ACE_Spectator"}; // Enables the spectator template for all
+
+// Comment this to remove default respawn.
+respawnTemplates[] = {"Counter"};
+respawnDelay = 20;
+
+// Uncomment this for Spectator
+//respawnTemplates[] = {"ACE_Spectator"};
+//respawnDelay = 648000;
 
 class Params {
 	#define LOAD_PARAMS
 		#include "Modules\Modules.cpp"
 	#undef LOAD_PARAMS
-
-	class RespawnDelay_Param
-	{
-		title = "Respawn Delay";
-		texts[] = { "No Respawn", "Standard Respawn" };
-		values[] = { 648000, 20};
-		default = 20;
-	};
 };
 
 class CfgFunctions {
