@@ -36,6 +36,7 @@ if(!isServer) exitWith {};
 		};	
 
 		if(_isCaptive) then {
+			systemChat format["%1 set to captive HVT.", name _X];
 			_X disableAI "MOVE";
 			_X setUnitPos "MIDDLE";
 			_X setCaptive true;
@@ -53,6 +54,7 @@ if(!isServer) exitWith {};
 				};			
 			};			
 		} else {
+			systemChat format["%1 set to hostile HVT.", name _X];
 			_X disableAI "PATH";
 			if(!isNil "OKS_Surrender") then {
 				[_X,0.5,50,true,true] spawn OKS_Surrender;
