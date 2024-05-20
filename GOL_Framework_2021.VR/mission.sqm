@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2744;
+		nextID=2773;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8168;
+		nextID=8234;
 	};
 	class Camera
 	{
-		pos[]={65.074501,32.331059,29.305878};
-		dir[]={0.012374589,-0.52761227,0.84939516};
-		up[]={0.0076858131,0.84948534,0.5275563};
-		aside[]={0.9998939,0,-0.014567162};
+		pos[]={93.920288,104.93754,-45.327293};
+		dir[]={0.020766364,-0.77833694,0.627505};
+		up[]={0.025743853,0.62784648,0.77791226};
+		aside[]={0.99945462,-1.6771082e-009,-0.033075444};
 	};
 };
 binarizationWanted=0;
@@ -14868,7 +14868,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=7;
+		items=10;
 		class Item0
 		{
 			dataType="Layer";
@@ -14996,8 +14996,8 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={143.09494,5,-48.923637};
-						angles[]={0,1.6311014,0};
+						position[]={302.9859,5,67.516685};
+						angles[]={-0,1.6311014,0};
 					};
 					name="HC2";
 					isPlayable=1;
@@ -15010,8 +15010,8 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={142.85544,5,-52.916496};
-						angles[]={0,1.6311014,0};
+						position[]={302.7464,5,63.523827};
+						angles[]={-0,1.6311014,0};
 					};
 					name="HC3";
 					isPlayable=1;
@@ -15024,8 +15024,8 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={142.98198,5,-48.352379};
-						angles[]={0,1.6311014,0};
+						position[]={302.87296,5,68.087944};
+						angles[]={-0,1.6311014,0};
 					};
 					title="Headless Clients";
 					id=272;
@@ -15035,8 +15035,8 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={143.3374,5,-44.930611};
-						angles[]={0,1.6310974,0};
+						position[]={303.22839,5,71.509712};
+						angles[]={-0,1.6310974,0};
 					};
 					name="HC";
 					isPlayable=1;
@@ -15047,7 +15047,7 @@ class Mission
 				class Item4
 				{
 					dataType="Marker";
-					position[]={140.31805,22.872955,155.42197};
+					position[]={304.02545,22.872955,83.975082};
 					name="spectator";
 					type="Empty";
 					angle=227.03697;
@@ -15281,7 +15281,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={21.969734,11.68958,16.422625};
+						position[]={28.155451,11.68958,17.448067};
 					};
 					side="Empty";
 					flags=4;
@@ -15343,7 +15343,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={21.824734,5,17.721628};
+						position[]={28.01045,5,18.74707};
 					};
 					title="MHQ Paradrop";
 					description="This vehicle is used for scripted paradrops that AAC can conduct while flying non-cargo airframes.  The player who requests reinsert can do so at the flag and the pilots can start the drop once they are below 250km/h and above 200m altitude. MHQ paradrop must be enabled in MissionSettings.sqf to work.";
@@ -18245,7 +18245,7 @@ class Mission
 				class Item10
 				{
 					dataType="Trigger";
-					position[]={-2.3560069,5,15.945297};
+					position[]={7.8540068,5,16.193558};
 					class Attributes
 					{
 						name="NEKY_PARADROP_TRIGGER";
@@ -18691,7 +18691,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={-2.1043169,5,16.028595};
+						position[]={8.1056967,5,16.276855};
 					};
 					title="Paradrop Trigger";
 					description="This is the Paradrop Trigger that is required for NEKY Paradrop to be used. It is the position that reinserts will be dropped at. Delete this if you want to disable Paradrop reinsert in your mission";
@@ -23251,7 +23251,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={143.40829,5,-65.230202};
+						position[]={303.29926,5,51.210121};
 					};
 					id=2540;
 					type="DAPS_Options";
@@ -23356,7 +23356,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={143.75795,5,-77.232048};
+						position[]={303.64893,5,39.208275};
 					};
 					id=2541;
 					type="DAPS_AssignAPS";
@@ -23383,7 +23383,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={143.35216,5,-65.231468};
+						position[]={303.24313,5,51.208855};
 					};
 					title="DAPS Options";
 					description="This is the module for Active protection system. It sets the mission to clear all assigned Active protection systems on default vehicles. If you want to enable DAPS remove this module.";
@@ -23394,7 +23394,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={143.75897,5,-77.470802};
+						position[]={303.64996,5,38.969521};
 					};
 					title="DAPS Assign";
 					description="Certain vehicles may not have Active protection system enabled, if you want a specific vehicle to have it, create a dummy of the vehicle you want it to apply to and then synchronize this module with the dummy vehicle. That vehicle class will now have the type of APS assigned to it." \n "" \n "Do note this dummy vehicle should be hidden from view on some corner of the map.";
@@ -23405,7 +23405,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={143.49641,5,-91.288612};
+						position[]={303.38739,5,25.151711};
 					};
 					name="GOL_Arsenal_GL";
 					id=2664;
@@ -23416,7 +23416,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={143.84917,5,-84.132027};
+						position[]={303.74014,5,32.308296};
 					};
 					name="GOL_Arsenal_LMG";
 					id=2663;
@@ -23444,7 +23444,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={143.7534,5,-97.886612};
+						position[]={303.64438,5,18.553711};
 					};
 					id=2724;
 					type="SAN_HeadlampSettings";
@@ -23594,6 +23594,54 @@ class Mission
 			};
 			id=2723;
 			atlOffset=0.0002207756;
+		};
+		class Item7
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1407.639,5,253.52};
+				angles[]={0,4.6523151,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="jetspawn_1";
+			};
+			id=2770;
+			type="Land_HelipadEmpty_F";
+		};
+		class Item8
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={326.965,5,264.58301};
+				angles[]={0,4.6523151,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="jetstrike_1";
+			};
+			id=2771;
+			type="Land_HelipadEmpty_F";
+		};
+		class Item9
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={-609.98138,5,273.75537};
+				angles[]={-0,4.6523151,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="jetexit_1";
+			};
+			id=2772;
+			type="Land_HelipadEmpty_F";
 		};
 	};
 	class Connections

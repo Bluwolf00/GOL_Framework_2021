@@ -91,6 +91,11 @@
     };
 
     {[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
+
+    if(_Vehicle isKindOf "LandVehicle") then {
+        [_Vehicle] spawn OKS_ForceVehicleSpeed;  
+    };   
+
     _Group
 
 

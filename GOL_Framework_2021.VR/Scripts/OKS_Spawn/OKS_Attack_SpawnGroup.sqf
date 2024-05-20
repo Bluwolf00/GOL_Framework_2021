@@ -57,6 +57,8 @@
 		};	
 		_Vehicle setDir _Dir;
 		_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
+
+		[_Vehicle] spawn OKS_ForceVehicleSpeed;  
 	};
 	if(typeName _ClassnameOrNumber == "ARRAY") then {
 		_ClassnameOrNumber = selectRandom _ClassnameOrNumber;
@@ -66,6 +68,8 @@
 		};	
 		_Vehicle setDir _Dir;
 		_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
+
+		[_Vehicle] spawn OKS_ForceVehicleSpeed;  
 	};
 	sleep 1;
 	{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;

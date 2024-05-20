@@ -38,6 +38,7 @@
 	};
 	if(typeName _ClassnameOrNumber == "STRING") then {
 		_Vehicle = CreateVehicle [_ClassnameOrNumber,_Spawn];
+		
 		if(GOL_Remove_HE_From_StaticAndVehicle) then {
 			[_Vehicle] spawn OKS_RemoveVehicleHE;	
 		};			
@@ -49,6 +50,8 @@
 			_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
 		};
 		_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
+		
+		[_Vehicle] spawn OKS_ForceVehicleSpeed;  
 	};
 	if(typeName _ClassnameOrNumber == "ARRAY") then {
 		_Classname = selectRandom _ClassnameOrNumber;

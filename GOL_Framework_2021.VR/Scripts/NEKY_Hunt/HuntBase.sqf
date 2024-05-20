@@ -170,6 +170,8 @@ while {alive _Base && _Waves > 0} do
 
 							if((_AliveNumber + (_CargoSeats + 1)) <= NEKY_Hunt_MaxCount && _Vehicle emptyPositions "cargo" > 0) then {
 									_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
+
+									[_Vehicle] spawn OKS_ForceVehicleSpeed; 
 									SystemChat "Creating Transport Cargo...";
 									 ///Create Leader
 									_Unit = _Group CreateUnit [(_Units call BIS_FNC_selectRandom), [0,0,50], [], 0, "NONE"];
@@ -195,9 +197,8 @@ while {alive _Base && _Waves > 0} do
 						else
 						{
 							_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
-							if(!isNil "OKS_Enemy_Talk") then {
-								[_Group] spawn OKS_Enemy_Talk;
-							};
+
+							[_Vehicle] spawn OKS_ForceVehicleSpeed;  
 						};
 
 						{NEKY_Hunt_CurrentCount pushBackUnique _X} foreach crew _Vehicle;

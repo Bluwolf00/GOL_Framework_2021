@@ -32,3 +32,14 @@ systemChat "Bombs away.";
 _bomb = createVehicle ["BombCluster_01_Ammo_F", [_StrikePos select 0,_StrikePos select 1,60], [], 0, "NONE"];
 _bomb setDir _Direction;
 _bomb setVelocityModelSpace [0, 50, -150];
+
+sleep 15;
+_ClusterRemains = _StrikePos nearObjects 1500 select {typeOf _X == "BombCluster_01_UXO3_Ammo_F"};
+{
+	if(typeOf _X == "BombCluster_01_UXO3_Ammo_F") then {
+		deleteVehicle _X;
+		systemChat format["%1 munition deleted.",typeof _X];
+		sleep 0.2;
+	};
+} foreach _ClusterRemains;
+

@@ -73,6 +73,8 @@
 
 			if(_Vehicle emptyPositions "cargo" > 0) then {
 					_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
+
+					[_Vehicle] spawn OKS_ForceVehicleSpeed;  
 					if(_Debug_Variable) then {
 						SystemChat "Creating Transport Cargo...";
 					};
@@ -104,6 +106,8 @@
 		else
 		{
 			_Group = [_Vehicle,_Side] call OKS_AddVehicleCrew;
+
+			[_Vehicle] spawn OKS_ForceVehicleSpeed;  
 		};
 
 		if(count units _Group > 1 || _Side == civilian) then {

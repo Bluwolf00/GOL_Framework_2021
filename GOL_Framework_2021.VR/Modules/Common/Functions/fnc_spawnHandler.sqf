@@ -119,7 +119,7 @@ if ((count _vehicleArray) > 0) then {
 		};
 
 		if (_waypointArray isEqualTo []) then {
-			_vehicle allowCrewInImmobile true;
+			_vehicle allowCrewInImmobile false;
 		};
 
 		if (_collision isEqualTo "FLY") then {
@@ -191,6 +191,7 @@ if ((count _vehicleArray) > 0) then {
 		} forEach _crewList;
 
 		_vehicle enableSimulationGlobal true;
+		[_vehicle] spawn OKS_ForceVehicleSpeed;  
 		TRACE_1("Units added to vehicle", _groupNew);
 		if (((count _vehicleArray) > 1) && !_skipDelays) then {
 			sleep 5;
