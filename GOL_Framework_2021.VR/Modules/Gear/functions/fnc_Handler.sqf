@@ -44,7 +44,7 @@ private [
 	"_glHE","_glHEDP","_glsmokeW","_glsmokeB","_glsmokeG","_glsmokeO","_glsmokeP","_glsmokeR","_glsmokeY","_glflareG","_glflareR","_glflareW",
 	"_map","_gps","_compass","_watch","_nvg","_parachute","_demoCharge","_satchelCharge","_toolKit",
 	"_cTab","_Android","_microDAGR","_HelmetCam",
-	"_bandage","_blood","_epi","_morph","_IFAK","_FAKSmall","_FAKBig","_pak","_saline","_salineSm",
+	"_bandage","_blood","_epi","_morph","_IFAK","_FAKSmall","_FAKMedium","_FAKBig","_pak","_saline","_salineSm",
 	"_barrel","_cables","_clacker","_defusalKit","_IRStrobe","_mapFlashLight","_mapTools","_rangefinder","_laserDesignator","_battery","_rangecard",
 	"_flashBang","_handFlareG","_handFlareR","_handFlareW","_handFlareY",
 	"_goggles","_helmet","_uniform","_vest","_backpack","_backpackRadio","_OfficerHelmet",
@@ -91,6 +91,39 @@ if (_isMan) then {
 	_isCivilian = (getNumber(configfile >> "CfgVehicles" >> (typeOf _unit) >> "side") isEqualTo 3);
 	_isPlayer = (isPlayer _unit);
 	_unit setVariable [QGVAR(Loadout), _role, _isPlayer];
+
+	_roleArray = [_role];
+	switch (_role) do {
+		case "pl": { _DisplayName = "Platoon Leader"; _roleArray pushBack _DisplayName};
+		case "fac": { _DisplayName = "Forward Air Controller"; _roleArray pushBack _DisplayName};
+		case "sl": { _DisplayName = "Squad Leader"; _roleArray pushBack _DisplayName};
+		case "sm": { _DisplayName = "Squad Medic"; _roleArray pushBack _DisplayName};
+		case "ftl": { _DisplayName = "Fireteam Leader"; _roleArray pushBack _DisplayName};
+		case "r": { _DisplayName = "Rifleman"; _roleArray pushBack _DisplayName};
+		case "g": { _DisplayName = "Grenadier"; _roleArray pushBack _DisplayName};
+		case "ag": { _DisplayName = "Asst. Gunner"; _roleArray pushBack _DisplayName};
+		case "ar": { _DisplayName = "Automatic Rifleman"; _roleArray pushBack _DisplayName};
+		case "ammg": { _DisplayName = "Asst. Medium Machine Gunner"; _roleArray pushBack _DisplayName};
+		case "mmg": { _DisplayName = "Medium Machine Gunner"; _roleArray pushBack _DisplayName};
+		case "crew": { _DisplayName = "Vehicle Crew"; _roleArray pushBack _DisplayName};
+		case "dragon": { _DisplayName = "Dragon"; _roleArray pushBack _DisplayName};
+		case "lr": { _DisplayName = "Light Rifleman"; _roleArray pushBack _DisplayName};
+		case "ab": { _DisplayName = "Ammo Bearer"; _roleArray pushBack _DisplayName};
+		case "aa": { _DisplayName = "Anti-Air"; _roleArray pushBack _DisplayName};
+		case "ahat": { _DisplayName = "Asst. Heavy AT"; _roleArray pushBack _DisplayName};
+		case "hat": { _DisplayName = "Heavy AT"; _roleArray pushBack _DisplayName};
+		case "p": { _DisplayName = "Chopper Pilot"; _roleArray pushBack _DisplayName};
+		case "pj": { _DisplayName = "Para-Rescueman"; _roleArray pushBack _DisplayName};
+		case "jetp": { _DisplayName = "Jet Pilot"; _roleArray pushBack _DisplayName};
+		case "marksman": { _DisplayName = "Marksman"; _roleArray pushBack _DisplayName};		
+	};
+	_unit setVariable ["GOL_SelectedRole",_roleArray,true];
+
+	if(time > 10) then {
+		format["%1 has selected the %2 kit.",name _unit,_roleArray select 1] remoteExec ["systemChat",0];
+	};
+
+
 	_unit setVariable ["BIS_enableRandomization", false];
 	if (_isPlayer) then {
 		_unit setVariable [QEGVAR(Common,isPlayer), true, true];

@@ -202,7 +202,7 @@ switch (toLower(_role)) do {
 		if (GVAR(extraGear)) then {
 			(_FAKBig) call _addToBackpack;
 		} else {
-			(_FAKSmall) call _addToBackpack;
+			(_FAKMedium) call _addToBackpack;
 		};
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
@@ -340,7 +340,7 @@ switch (toLower(_role)) do {
 		_IFAK call _addToUniform;
 		[[_cables,2],[_smokegrenadeY,4],[_grenade,2]] call _addToUniform;
 		[[_pistol_mag,2],[_rifle_mag_tr,6]] call _addToVest;
-		(_FAKSmall + [[_MMG_mag,COUNT_AMMG_MAGS(_MMG_mag)],[_clacker,1],[_demoCharge,1]]) call _addToBackpack;
+		(_FAKMedium + [[_MMG_mag,COUNT_AMMG_MAGS(_MMG_mag)],[_clacker,1],[_demoCharge,1]]) call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
@@ -451,17 +451,19 @@ switch (toLower(_role)) do {
 
 	case "dragon": {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
-		[_rifle, _rifle_mag, ""] call _addPrimary;
+		[_rifleC, _rifleC_mag, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_gps,1],[_mortarRangeCard,1]] call _addToUniform;
+		[[_gps,1],[_mortarRangeCard,1],[_mapTools,1]] call _addToUniform;
 		[[_pistol_mag,2],[_grenade,2]] call _addToUniform;
-		[[_rifle_mag,4],[_smokegrenadeY,6],[_smokegrenadeB,6],[_smokegrenadeB,2],[_smokegrenadeP,2]] call _addToVest;
-		[[_smokegrenadeB,5],[_rifle_mag_tr,3]] call _addToBackpack;
+		[[_rifleC_mag,4],[_smokegrenadeY,8],[_smokegrenadeB,6]] call _addToVest;
+		[[_smokegrenadeB,5],[_rifleC_mag_tr,3]] call _addToBackpack;
+		_FAKSmall call _addToBackpack;
 		if (call EFUNC(Common,isNight)) then {
 			[[_chemG,5],[_chemR,5],[_handFlareG,2],[_IRStrobe,3]] call _addToBackpack;
 		};
 		[_map, "", "", _compass, _watch, _nvg] call _addLinkedItems;
+		_rangefinder call _addBino;
 	};
 
 	case "aa": {

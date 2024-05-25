@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8234;
+		nextID=8278;
 	};
 	class Camera
 	{
-		pos[]={93.920288,104.93754,-45.327293};
-		dir[]={0.020766364,-0.77833694,0.627505};
-		up[]={0.025743853,0.62784648,0.77791226};
-		aside[]={0.99945462,-1.6771082e-009,-0.033075444};
+		pos[]={60.139751,74.871048,-10.859346};
+		dir[]={0.006058021,-0.76542938,0.64349145};
+		up[]={0.0072056619,0.64351988,0.76539546};
+		aside[]={0.99995577,0,-0.0094138822};
 	};
 };
 binarizationWanted=0;
@@ -5129,7 +5129,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -14868,7 +14868,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=10;
+		items=7;
 		class Item0
 		{
 			dataType="Layer";
@@ -14997,7 +14997,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={302.9859,5,67.516685};
-						angles[]={-0,1.6311014,0};
+						angles[]={0,1.6311014,0};
 					};
 					name="HC2";
 					isPlayable=1;
@@ -15011,7 +15011,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={302.7464,5,63.523827};
-						angles[]={-0,1.6311014,0};
+						angles[]={0,1.6311014,0};
 					};
 					name="HC3";
 					isPlayable=1;
@@ -15025,7 +15025,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={302.87296,5,68.087944};
-						angles[]={-0,1.6311014,0};
+						angles[]={0,1.6311014,0};
 					};
 					title="Headless Clients";
 					id=272;
@@ -15036,7 +15036,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={303.22839,5,71.509712};
-						angles[]={-0,1.6310974,0};
+						angles[]={0,1.6310974,0};
 					};
 					name="HC";
 					isPlayable=1;
@@ -23594,54 +23594,6 @@ class Mission
 			};
 			id=2723;
 			atlOffset=0.0002207756;
-		};
-		class Item7
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1407.639,5,253.52};
-				angles[]={0,4.6523151,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="jetspawn_1";
-			};
-			id=2770;
-			type="Land_HelipadEmpty_F";
-		};
-		class Item8
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={326.965,5,264.58301};
-				angles[]={0,4.6523151,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="jetstrike_1";
-			};
-			id=2771;
-			type="Land_HelipadEmpty_F";
-		};
-		class Item9
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={-609.98138,5,273.75537};
-				angles[]={-0,4.6523151,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="jetexit_1";
-			};
-			id=2772;
-			type="Land_HelipadEmpty_F";
 		};
 	};
 	class Connections
