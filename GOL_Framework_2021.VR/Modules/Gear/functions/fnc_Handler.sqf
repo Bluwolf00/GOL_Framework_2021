@@ -119,7 +119,7 @@ if (_isMan) then {
 	};
 	_unit setVariable ["GOL_SelectedRole",_roleArray,true];
 
-	if(time > 10) then {
+	if(time > 10 && isPlayer _unit) then {
 		format["%1 has selected the %2 kit.",name _unit,_roleArray select 1] remoteExec ["systemChat",0];
 	};
 
@@ -333,7 +333,7 @@ if (_isMan) then {
 						 if !(_X in _compatibleItems) then {_compatibleItems pushBack _backpackRadio}
 					};		
 
-					_blackList = ["rhsusf_acc_SpecterDR_pvs27","rhsusf_acc_su230","rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","ACE_acc_pointer_green","ACE_acc_pointer_green_ir","ACE_acc_pointer_red","acc_pointer_ir","acc_pointer_ir_broken","rhsusf_acc_anpeq15_top_h","rhsusf_acc_anpeq15_top_sc","rhsusf_acc_anpeq15_wmx_sc","rhsusf_acc_anpeq15_wmx_h","rhsusf_acc_anpeq15_wmx_light_sc","rhsusf_acc_anpeq15_wmx_light_h","rhsusf_acc_anpeq15_bk_top_h","rhsusf_acc_anpeq15_bk_top_sc","rhsusf_acc_anpeq15_h","rhsusf_acc_anpeq15_sc","rhsusf_acc_anpeq15_light_sc","rhsusf_acc_anpeq15_light_h","rhsusf_acc_anpeq15_bk_h","rhsusf_acc_anpeq15_bk_sc","rhsusf_acc_anpeq15_bk_light_sc","rhsusf_acc_anpeq15_bk_light_h","rhsusf_acc_anpeq16a_top_sc","rhsusf_acc_anpeq16a_top_h","rhsusf_acc_anpeq16a_light_top_sc","rhsusf_acc_anpeq16a_light_top_h","rhsusf_acc_anpas13gv1","hlc_charm_herstal","hlc_charm_izhmash","hlc_charm_teethgang","rhsusf_acc_anpvs27","hlc_isopod"];
+					_blackList = ["rhsusf_acc_SpecterDR_pvs27","rhsusf_acc_su230","rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","ACE_acc_pointer_green","ACE_acc_pointer_green_ir","ACE_acc_pointer_red","acc_pointer_ir","acc_pointer_ir_broken","rhsusf_acc_anpeq15_top_h","rhsusf_acc_anpeq15_top_sc","rhsusf_acc_anpeq15_wmx_sc","rhsusf_acc_anpeq15_wmx_h","rhsusf_acc_anpeq15_wmx_light_sc","rhsusf_acc_anpeq15_wmx_light_h","rhsusf_acc_anpeq15_bk_top_h","rhsusf_acc_anpeq15_bk_top_sc","rhsusf_acc_anpeq15_h","rhsusf_acc_anpeq15_sc","rhsusf_acc_anpeq15_light_sc","rhsusf_acc_anpeq15_light_h","rhsusf_acc_anpeq15_bk_h","rhsusf_acc_anpeq15_bk_sc","rhsusf_acc_anpeq15_bk_light_sc","rhsusf_acc_anpeq15_bk_light_h","rhsusf_acc_anpeq16a_top_sc","rhsusf_acc_anpeq16a_top_h","rhsusf_acc_anpeq16a_light_top_sc","rhsusf_acc_anpeq16a_light_top_h","rhsusf_acc_anpas13gv1"];
 					_whiteList = ["rhs_weap_optic_smaw"];							
 						
 					if(GOL_OPTICS == 1) then {
@@ -459,30 +459,6 @@ if (_isMan) then {
 								if !(_X in _compatibleItemsLMG) then {_compatibleItemsLMG pushBack _X};
 							} foreach (_LMG select 0);							
 						};																															
-					};
-
-					while {
-						_compatibleItems find "HLC_Charm_Herstal" != -1 ||
-						_compatibleItems find "HLC_Charm_Izhmash" != -1 ||
-						_compatibleItems find "HLC_Charm_Teethgang" != -1 ||
-						_compatibleItemsLMG find "HLC_Charm_Herstal" != -1 ||
-						_compatibleItemsLMG find "HLC_Charm_Izhmash" != -1 ||
-						_compatibleItemsLMG find "HLC_Charm_Teethgang" != -1 ||
-						_compatibleItemsGL find "HLC_Charm_Herstal" != -1 ||
-						_compatibleItemsGL find "HLC_Charm_Izhmash" != -1 ||
-						_compatibleItemsGL find "HLC_Isopod" != -1 ||
-						_compatibleItemsGL find "HLC_Charm_Teethgang" != -1
-					} do {		
-						_compatibleItems deleteAt (_compatibleItems find "HLC_Isopod");	
-						_compatibleItems deleteAt (_compatibleItems find "HLC_Charm_Herstal");					
-						_compatibleItems deleteAt (_compatibleItems find "HLC_Charm_Izhmash");
-						_compatibleItemsLMG deleteAt (_compatibleItemsLMG find "HLC_Charm_Herstal");
-						_compatibleItems deleteAt (_compatibleItems find "HLC_Charm_Teethgang");
-						_compatibleItemsLMG deleteAt (_compatibleItemsLMG find "HLC_Charm_Izhmash");
-						_compatibleItemsLMG deleteAt (_compatibleItemsLMG find "HLC_Charm_Teethgang");
-						_compatibleItemsGL deleteAt (_compatibleItemsGL find "HLC_Charm_Herstal");
-						_compatibleItemsGL deleteAt (_compatibleItemsGL find "HLC_Charm_Izhmash");
-						_compatibleItemsGL deleteAt (_compatibleItemsGL find "HLC_Charm_Teethgang");					
 					};
 
 					_compatibleItems append _whiteList;

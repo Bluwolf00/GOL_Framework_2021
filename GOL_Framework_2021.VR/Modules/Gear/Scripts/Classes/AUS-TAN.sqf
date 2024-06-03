@@ -50,24 +50,24 @@ _pointer = "";
 _sight = "";
 _bipod = "rhsusf_acc_grip2";
 
-// Primary Weapon
-_rifle = ["hlc_rifle_auga3_b", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_rifle_auga2carb_b", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_auga3_GL_B", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_STG58F", _silencer, _pointer, "rhsusf_acc_g33_t1", _bipod];
+_rifle = ["uk3cb_auga3_blk", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["uk3cb_auga2_carb_blk", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["uk3cb_auga3_gl_blk", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["uk3cb_auga2_sr_hbar_blk", _silencer, _pointer, _sight, _bipod];
+_rifle_mag = "UK3CB_AUG_42Rnd_556x45_Magazine_R";
+_rifle_mag_tr = "UK3CB_AUG_42Rnd_556x45_Magazine_RT";
+_rifleC_mag = "UK3CB_AUG_42Rnd_556x45_Magazine_R";
+_rifleC_mag_tr = "UK3CB_AUG_42Rnd_556x45_Magazine_RT";
+_rifleGL_mag = "UK3CB_AUG_42Rnd_556x45_Magazine_R";
+_rifleGL_mag_tr = "UK3CB_AUG_42Rnd_556x45_Magazine_RT";
+_rifleL_mag = "UK3CB_AUG_42Rnd_556x45_Magazine_R";
+_rifleL_mag_tr = "UK3CB_AUG_42Rnd_556x45_Magazine_RT";
 
-_rifle_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
-_rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
-_rifleGL_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
-_rifleGL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
-_rifleL_mag = "hlc_20Rnd_762x51_B_fal";
-_rifleL_mag_tr = "hlc_20Rnd_762x51_T_fal";
+_LMG = ["UK3CB_M60", _silencer, _pointer, "optic_Hamr", _bipod];
+_LMG_mag = "rhsusf_100Rnd_762x51_m62_tracer";
 
-_LMG = ["hlc_lmg_M60E4", _silencer, _pointer, "optic_Hamr", _bipod];
-_LMG_mag = "hlc_100Rnd_762x51_T_M60E4";
-
-_MMG = ["hlc_lmg_MG3KWS_b", _silencer, _pointer, "optic_Hamr", _bipod];
-_MMG_mag = "hlc_100Rnd_762x51_T_MG3";
+_MMG = ["UK3CB_MG3_KWS_B", _silencer, _pointer, "optic_Hamr", _bipod];
+_MMG_mag = "UK3CB_MG3_250rnd_762x51_RT";
 
 // Launchers
 _silencer = "";
@@ -98,6 +98,6 @@ _pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";
 _pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
 
 // Marksman
-_rifleMarksman = ["hlc_rifle_psg1A1", _silencer, _pointer, "hlc_optic_STANAGZF_G3", "bipod_01_f_blk"];
-_rifleMarksman_mag = "hlc_20rnd_762x51_b_G3";
-_rifleMarksman_mag_tr = "hlc_20rnd_762x51_T_G3";
+_rifleMarksman = ["UK3CB_PSG1A1_RIS", _silencer, _pointer, "optic_lrps", "JCA_bipod_04_black"];
+_rifleMarksman_mag = "UK3CB_G3_20rnd_762x51_R";
+_rifleMarksman_mag_tr = "UK3CB_G3_20rnd_762x51_RT";

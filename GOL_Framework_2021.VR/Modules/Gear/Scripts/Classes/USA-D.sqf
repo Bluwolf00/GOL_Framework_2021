@@ -54,10 +54,10 @@ _pointer = "rhsusf_acc_anpeq15side_bk";
 _sight = "rhsusf_acc_eotech_xps3";
 _bipod = "rhsusf_acc_tdstubby_tan";
 
-_rifle = ["hlc_WP_SCARL_CQC", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_wp_SCAR_PDW", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_wp_SCARL_CQC_EGLM", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_wp_SCARL_STD_SRX", _silencer, _pointer, _sight, _bipod];
+_rifle = ["JCA_arifle_M4A4_VFG_sand_F", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["JCA_arifle_M4A4_AFG_sand_F", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["JCA_arifle_M4A4_GL_sand_F", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["rhs_weap_m16a4_imod", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
 _rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 _rifleGL_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
@@ -68,11 +68,11 @@ _rifleL_mag = "ACE_30Rnd_556x45_Stanag_Mk262_mag";
 _rifleL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 
 
-_LMG = ["LMG_03_F", _silencer, _pointer, _sight, ""];
-_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
+_LMG = ["rhs_weap_m249_light_S", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "rhsusf_200rnd_556x45_mixed_box";
 
-_MMG = ["hlc_lmg_mk48mod1", _silencer, _pointer, _sight, ""];
-_MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
+_MMG = ["UK3CB_BAF_L110_762", _silencer, _pointer, _sight, ""];
+_MMG_mag = "UK3CB_BAF_762_200Rnd_T";
 
 _LAT = ["UK3CB_BAF_AT4_CS_AT_Launcher", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "UK3CB_BAF_AT4_CS_AT_Mag";

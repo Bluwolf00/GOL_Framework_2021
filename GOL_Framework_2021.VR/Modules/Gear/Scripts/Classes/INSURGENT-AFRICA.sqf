@@ -77,9 +77,8 @@ _bipod = "";
 
 _rifleC = ["rhs_weap_aks74u", _silencer, _pointer, _sight, _bipod];
 
-
-_LMG = ["hlc_rifle_rpk74n", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "hlc_60Rnd_545x39_t_rpk";
+_LMG = ["rhs_weap_rpk74m", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "UK3CB_RPK74_60rnd_545x39_GT";
 
 _MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhs_100Rnd_762x54mmR_green";

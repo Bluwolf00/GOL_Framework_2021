@@ -64,20 +64,20 @@ _rifle = [selectRandom["rhs_weap_pm63","rhs_weap_akm","rhs_weap_akms"], _silence
 _rifleC = ["rhs_weap_akms", _silencer, _pointer, _sight, _bipod];
 _rifleGL = [selectRandom["rhs_weap_akm_gp25","rhs_weap_akms_gp25"], _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_svdp", _silencer, _pointer, "rhs_acc_pso1m21", _bipod];
-_rifle_mag = "hlc_30Rnd_762x39_AP_ak";
-_rifle_mag_tr = "hlc_30Rnd_762x39_t_ak";
-_rifleGL_mag = "hlc_30Rnd_762x39_AP_ak";
-_rifleGL_mag_tr = "hlc_30Rnd_762x39_t_ak";
-_rifleC_mag = "hlc_30Rnd_762x39_AP_ak";
-_rifleC_mag_tr = "hlc_30Rnd_762x39_t_ak";
-_rifleL_mag = "rhs_10Rnd_762x54mmR_7N14";
-_rifleL_mag_tr = "ACE_10Rnd_762x54_Tracer_mag";
+_rifle_mag = "UK3CB_AK47_30Rnd_Magazine_R";
+_rifle_mag_tr = "UK3CB_AK47_30Rnd_Magazine_RT";
+_rifleGL_mag = "UK3CB_AK47_30Rnd_Magazine_R";
+_rifleGL_mag_tr = "UK3CB_AK47_30Rnd_Magazine_RT";
+_rifleC_mag = "UK3CB_AK47_30Rnd_Magazine_R";
+_rifleC_mag_tr = "UK3CB_AK47_30Rnd_Magazine_RT";
+_rifleL_mag = "UK3CB_SVD_10rnd_762x54_R";
+_rifleL_mag_tr = "UK3CB_SVD_10rnd_762x54_RT";
 
-_LMG = ["hlc_rifle_rpk", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "UK3CB_RPK_75rnd_762x39_RM";
+_LMG = ["rhs_weap_rpk74m", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "UK3CB_RPK74_60rnd_545x39_RT";
 
 _MMG = ["rhs_weap_fnmag", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
+_MMG_mag = "rhsusf_100Rnd_762x51_m62_tracer";
 
 _sight = "";
 
@@ -95,8 +95,8 @@ _HAT_mag = "Vorona_HEAT";
 _AA = ["rhs_weap_igla", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "rhs_mag_9k38_rocket";
 
-_pistol = ["hlc_pistol_P226R_357Combat", _silencer, "acc_flashlight_pistol", "hlc_optic_hp", _bipod];
-_pistol_mag = "hlc_12Rnd_357SIG_JHP_P226";
+_pistol = ["UK3CB_USP", _silencer, _pointer, _sight, _bipod];
+_pistol_mag = "UK3CB_USP_9_15Rnd";
 
 _pdw = ["UK3CB_MP5A4", _silencer, _pointer, _sight, _bipod];
 _pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";

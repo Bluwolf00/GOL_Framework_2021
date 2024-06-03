@@ -49,11 +49,11 @@ _rifle = ["UK3CB_BAF_L119A1", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["UK3CB_BAF_L119A1_CQB", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["UK3CB_BAF_L119A1_UKUGL", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["UK3CB_BAF_L129A1", _silencer, _pointer, "optic_mrco", "uk3cb_underbarrel_acc_fgrip_bipod"];
-_rifle_mag = "hlc_30rnd_556x45_SOST";
-_rifle_mag_tr = "hlc_30rnd_556x45_t";
-_rifleC_mag = "hlc_30rnd_556x45_EPR_EMAG";
-_rifleGL_mag = "hlc_30rnd_556x45_SOST";
-_rifleGL_mag_tr = "hlc_30rnd_556x45_t";
+_rifle_mag = "UK3CB_BAF_556_30Rnd";
+_rifle_mag_tr = "UK3CB_BAF_556_30Rnd_T";
+_rifleC_mag = "UK3CB_BAF_556_30Rnd";
+_rifleGL_mag = "UK3CB_BAF_556_30Rnd";
+_rifleGL_mag_tr = "UK3CB_BAF_556_30Rnd_T";
 _rifleL_mag = "UK3CB_BAF_762_L42A1_20Rnd_T";
 
 _LMG = ["LMG_Mk200_black_F", _silencer, _pointer, _sight, _bipod];

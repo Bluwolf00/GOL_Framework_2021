@@ -43,10 +43,10 @@ _pointer = "gvl_x2000_wide";
 _sight = "";
 _bipod = "";
 
-_rifle = ["hlc_rifle_M4", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_rifle_CQBR", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_m4m203", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_CQBR", _silencer, _pointer, _sight, _bipod];
+_rifle = ["rhs_weap_m4a1_carryhandle", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["rhs_weap_m4a1_carryhandle", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["rhs_weap_m4a1_carryhandle_m203S", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["rhs_weap_m4a1_carryhandle", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "rhs_mag_30Rnd_556x45_Mk318_Stanag";
 _rifle_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 _rifleGL_mag = "rhs_mag_30Rnd_556x45_Mk318_Stanag";
@@ -60,7 +60,7 @@ _LMG = ["rhs_weap_m249", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "rhsusf_200rnd_556x45_mixed_box";
 
 _MMG = ["rhs_weap_m240G", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "hlc_100Rnd_762x51_T_M60E4";
+_MMG_mag = "rhsusf_100Rnd_762x51_m62_tracer";
 
 _sight = "";
 

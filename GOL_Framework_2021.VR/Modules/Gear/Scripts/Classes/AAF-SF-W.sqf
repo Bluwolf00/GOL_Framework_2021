@@ -56,11 +56,11 @@ _rifleC_mag_tr = "rhssaf_30rnd_556x45_Tracers_G36";
 _rifleL_mag = "UK3CB_G3_50rnd_762x51_R";
 _rifleL_mag_tr = "UK3CB_G3_50rnd_762x51_RT";
 
-_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
+_LMG = ["rhs_weap_m249_light_L", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "rhsusf_200rnd_556x45_mixed_box";
 
 _MMG = ["UK3CB_MG3_KWS_B", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
+_MMG_mag = "UK3CB_MG3_250rnd_762x51_RT";
 
 
 _LAT = ["UK3CB_BAF_AT4_CS_AT_Launcher", _silencer, _pointer, _sight, _bipod];

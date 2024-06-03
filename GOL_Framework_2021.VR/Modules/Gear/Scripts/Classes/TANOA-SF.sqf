@@ -47,29 +47,29 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "hlc_muzzle_556nato_rotexiiic_grey";
-_pointer = "rhsusf_acc_anpeq15side_bk";
-_sight = "rhsusf_acc_eotech_xps3";
-_bipod = "hlc_grip_pmvfg_black";
+_silencer = "";
+_pointer = "";
+_sight = "";
+_bipod = "";
 
-_rifle = ["hlc_rifle_ACR_SBR_black", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_rifle_ACR_SBR_black", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_ACR_GL_SBR_black", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_ACR68_full_black", "hlc_muzzle_aac_762sdn6", _pointer, _sight, _bipod];
-_rifle_mag = "hlc_30rnd_556x45_M";
-_rifle_mag_tr = "hlc_30rnd_556x45_t";
-_rifleC_mag = "hlc_30rnd_556x45_M";
-_rifleC_mag_tr = "hlc_30rnd_556x45_t";
-_rifleGL_mag = "hlc_30rnd_556x45_M";
-_rifleGL_mag_tr = "hlc_30rnd_556x45_t";
-_rifleL_mag = "hlc_30rnd_68x43_MFMJ";
-_rifleL_mag_tr = "hlc_30rnd_68x43_Tracer";
+_rifle = [["UK3CB_ACR_Rifle","UK3CB_ACR_Carbine"], _silencer, _pointer, _sight, _bipod];
+_rifleC = ["UK3CB_ACR_Crew", _silencer, _pointer, _sight, _bipod];
+_rifleGL = [["UK3CB_ACR_Carbine_UGL"], _silencer, _pointer, _sight, _bipod];
+_rifleL = ["UK3CB_ACR_Rifle_Long", _silencer, _pointer, _sight, _bipod];
+_rifle_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifle_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
+_rifleGL_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifleGL_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
+_rifleC_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifleC_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
+_rifleL_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifleL_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
 
 _LMG = ["UK3CB_BAF_L110A3", "uk3cb_baf_silencer_l110", _pointer, _sight, _bipod];
 _LMG_mag = "UK3CB_BAF_556_200Rnd_T";
 
 _MMG = ["UK3CB_BAF_L110_762", "uk3cb_baf_silencer_l110", _pointer, _sight, _bipod];
-_MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
+_MMG_mag = "UK3CB_BAF_762_200Rnd_T";
 
 _sight = "";
 
@@ -87,7 +87,7 @@ _HAT_mag = "Titan_AT";
 _AA = ["launch_B_Titan_olive_F", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "Titan_AA";
 
-_pistol = ["rhsusf_weap_glock17g4", "rhsusf_acc_omega9k", "hlc_acc_dbalpl", _sight, _bipod];
+_pistol = ["rhsusf_weap_glock17g4", "rhsusf_acc_omega9k", _pointer, _sight, _bipod];
 _pistol_mag = "rhsusf_mag_17Rnd_9x19_FMJ";
 
 _pdw = ["UK3CB_MP5A4", _silencer, _pointer, _sight, _bipod];

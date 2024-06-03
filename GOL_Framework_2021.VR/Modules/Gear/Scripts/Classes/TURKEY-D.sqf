@@ -48,21 +48,22 @@ _pointer = "uk3cb_baf_llm_flashlight_black";
 _sight = "";
 _bipod = "rhs_acc_grip_ffg2";
 
-_rifle = ["hlc_rifle_416N", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_rifle_416C", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_416N_gl", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_416D20", _silencer, _pointer, "optic_erco_blk_f", "rhsusf_acc_harris_bipod"];
-_rifle_mag = "hlc_30rnd_556x45_SOST_EMAG";
-_rifleC_mag_tr = "hlc_30rnd_556x45_t_EMAG";
-_rifleL_mag_tr = "hlc_30rnd_556x45_t_EMAG";
-_rifleGL_mag_tr = "hlc_30rnd_556x45_t_EMAG";
-_rifle_mag_tr = "hlc_30rnd_556x45_t_EMAG";
+_rifle = [["rhs_weap_hk416d145"], _silencer, _pointer, _sight, _bipod];
+_rifleC = ["rhs_weap_hk416d10", _silencer, _pointer, _sight, _bipod];
+_rifleGL = [["rhs_weap_hk416d145_m320"], _silencer, _pointer, _sight, _bipod];
+_rifleL = ["UK3CB_G3SG1_RIS", _silencer, _pointer, _sight, _bipod];
+_rifle_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifle_mag_tr = "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
+_rifleGL_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifleGL_mag_tr = "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
+_rifleC_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifleC_mag_tr = "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
 
-_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
+_LMG = ["rhs_weap_m249_light_L", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "rhsusf_200rnd_556x45_mixed_box";
 
-_MMG = ["hlc_lmg_M60E4", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "hlc_100Rnd_762x51_T_M60E4";
+_MMG = ["UK3CB_M60", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "rhsusf_100Rnd_762x51_m62_tracer";
 
 _sight = "";
 
@@ -89,9 +90,9 @@ _pistol_mag = "16Rnd_9x21_Mag";
 
 _silencer = "";
 _pointer = "";
-_sight = "hlc_optic_leupoldm3a";
+_sight = "rhsusf_acc_LEUPOLDMK4_2";
 _bipod = "rhsusf_acc_harris_bipod";
 
-_rifleMarksman = ["hlc_rifle_PSG1A1_RIS", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman = ["UK3CB_G3SG1_RIS", _silencer, _pointer, _sight, _bipod];
 _rifleMarksman_mag = "ACE_20Rnd_762x51_Mk316_Mod_0_Mag";
 _rifleMarksman_mag_tr = "ACE_20Rnd_762x51_Mag_Tracer";

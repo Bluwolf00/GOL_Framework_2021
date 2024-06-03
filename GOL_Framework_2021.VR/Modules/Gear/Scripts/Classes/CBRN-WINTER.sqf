@@ -42,28 +42,28 @@ if (_role isEqualTo "jetp") then {
 
 _silencer = "";
 _pointer = "";
-_sight = "rhs_acc_rakurspm";
+_sight = "JCA_optic_AHO_black";
 _bipod = "";
 
-_rifle = ["hlc_rifle_SG550_TAC", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_rifle_SG550_TAC", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_SG550_TAC_GL", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_SG550_TAC", _silencer, _pointer, _sight, _bipod];
-_rifle_mag = "hlc_30Rnd_556x45_T_sg550";
-_rifle_mag_tr = "hlc_30Rnd_556x45_T_sg550";
-_rifleC_mag = "hlc_30Rnd_556x45_T_sg550";
-_rifleC_mag_tr = "hlc_30Rnd_556x45_T_sg550";
-_rifleGL_mag = "hlc_30Rnd_556x45_T_sg550";
-_rifleGL_mag_tr = "hlc_30Rnd_556x45_T_sg550";
-_rifleL_mag = "hlc_30Rnd_556x45_T_sg550";
-_rifleL_mag_tr = "hlc_30Rnd_556x45_T_sg550";
+_rifle = ["JCA_arifle_M4A4_VFG_black_F", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["JCA_arifle_M4A4_AFG_black_F", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["JCA_arifle_M4A4_GL_black_F", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["JCA_arifle_SR10_VFG_black_F", _silencer, _pointer, _sight, _bipod];
+_rifle_mag = "JCA_30Rnd_556x45_Red_PMAG";
+_rifle_mag_tr = "JCA_30Rnd_556x45_Tracer_Red_PMAG";
+_rifleC_mag = "JCA_30Rnd_556x45_Red_PMAG";
+_rifleC_mag_tr = "JCA_30Rnd_556x45_Tracer_Red_PMAG";
+_rifleGL_mag = "JCA_30Rnd_556x45_Red_PMAG";
+_rifleGL_mag_tr = "JCA_30Rnd_556x45_Tracer_Red_PMAG";
+_rifleL_mag = "JCA_20Rnd_762x51_Red_PMAG";
+_rifleL_mag_tr = "JCA_20Rnd_762x51_Tracer_Red_PMAG";
 
 
 _LMG = ["LMG_Mk200_F", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "200Rnd_65x39_cased_Box_Tracer_Red";
 
 _MMG = ["rhs_weap_m240G", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
+_MMG_mag = "rhsusf_100Rnd_762x51_m62_tracer";
 
 _sight = "";
 
@@ -93,5 +93,5 @@ _pointer = "";
 _sight = "optic_lrps";
 _bipod = "";
 
-_rifleMarksman = ["hlc_rifle_awmagnum_BL", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "hlc_5rnd_300WM_FMJ_AWM";
+_rifleMarksman = ["rhs_weap_m24sws", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman_mag = "rhsusf_5Rnd_762x51_m993_Mag";

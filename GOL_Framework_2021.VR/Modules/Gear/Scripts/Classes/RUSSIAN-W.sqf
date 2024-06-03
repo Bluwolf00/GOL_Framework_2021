@@ -57,12 +57,12 @@ _bipod = "";
 _rifle = ["rhs_weap_ak74m", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["rhs_weap_aks74u", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["rhs_weap_ak74m_gp25", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_aek971_mtk", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["rhs_weap_rpk74m_npz", _silencer, _pointer, _sight, _bipod];
 _rifle_mag = "rhs_30Rnd_545x39_7N22_plum_AK";
 _rifle_mag_tr = "rhs_30Rnd_545x39_AK_plum_green";
 _rifleGL_mag = "rhs_30Rnd_545x39_7N22_plum_AK";
 _rifleGL_mag_tr = "rhs_30Rnd_545x39_AK_plum_green";
-_rifleL_mag = "hlc_60Rnd_545x39_t_rpk";
+_rifleL_mag = "rhs_60Rnd_545X39_AK_Green";
 
 _LMG = ["rhs_weap_rpk74m_npz", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "rhs_60Rnd_545X39_AK_Green";

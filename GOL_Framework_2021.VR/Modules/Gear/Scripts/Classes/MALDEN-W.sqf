@@ -48,27 +48,31 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "hlc_muzzle_17SBrake";
+_silencer = "";
 _pointer = "ACE_DBAL_A3_Red";
 _sight = "optic_Hamr";
 _bipod = "";
 
-_rifle = [["hlc_rifle_ACR68_Carb_black","hlc_rifle_ACR68_MID_black","hlc_rifle_ACR68_aron"], _silencer, _pointer, _sight, _bipod];
-_rifleC = [["hlc_rifle_ACR68_SBR_black"], _silencer, _pointer, _sight, _bipod];
-_rifleGL = [["hlc_rifle_ACR68_GL_Carb_black","hlc_rifle_ACR68_GL_SBR_black","hlc_rifle_ACR68_GL_mid_black"], _silencer, _pointer, _sight, _bipod];
-_rifleL = ["hlc_rifle_ACR68_full_black", _silencer, _pointer, _sight, _bipod];
-_rifle_mag = "hlc_30rnd_68x43_MFMJ_PMAG";
-_rifle_mag_tr = "hlc_30rnd_68x43_Tracer_PMAG";
-_rifleGL_mag = "hlc_30rnd_68x43_MFMJ_PMAG";
-_rifleGL_mag_tr = "hlc_30rnd_68x43_Tracer_PMAG";
-_rifleL_mag = "hlc_30rnd_68x43_MFMJ_PMAG";
-_rifleL_mag_tr = "hlc_30rnd_68x43_Tracer_PMAG";
+// Primary Weapon
+_rifle = [["UK3CB_ACR_Rifle","UK3CB_ACR_Carbine"], _silencer, _pointer, _sight, _bipod];
+_rifleC = ["UK3CB_ACR_Crew", _silencer, _pointer, _sight, _bipod];
+_rifleGL = [["UK3CB_ACR_Carbine_UGL"], _silencer, _pointer, _sight, _bipod];
+_rifleL = ["UK3CB_ACR_Rifle_Long", _silencer, _pointer, _sight, _bipod];
 
-_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
+_rifle_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifle_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
+_rifleGL_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifleGL_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
+_rifleC_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifleC_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
+_rifleL_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_rifleL_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
 
-_MMG = ["hlc_lmg_M60E4", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
+_LMG = ["rhs_weap_m249_light_L", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "rhsusf_200rnd_556x45_mixed_box";
+
+_MMG = ["UK3CB_M60", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "rhsusf_100Rnd_762x51_m62_tracer";
 
 _sight = "";
 

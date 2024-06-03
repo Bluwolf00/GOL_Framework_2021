@@ -65,9 +65,11 @@ _sight = "";
 _bipod = "rhs_acc_grip_ffg2";
 
 _rifle = ["rhs_weap_ak74mr", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_rifle_aku12", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["rhs_weap_aks74un", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["rhs_weap_ak74mr_gp25", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_svds", _silencer, _pointer, "rhs_acc_pso1m21", _bipod];
+_rifle_mag = "rhs_30Rnd_545x39_7N22_plum_AK";
+_rifle_mag_tr = "rhs_30Rnd_545x39_AK_plum_green";
 _rifle_mag = "rhs_30Rnd_545x39_7N22_plum_AK";
 _rifle_mag_tr = "rhs_30Rnd_545x39_AK_plum_green";
 _rifleGL_mag = "rhs_30Rnd_545x39_7N22_plum_AK";
@@ -78,8 +80,8 @@ _rifleL_mag_tr = "ACE_10Rnd_762x54_Tracer_mag";
 _LMG = ["UK3CB_BAF_L110_762", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "UK3CB_BAF_762_200Rnd_T";
 
-_MMG = ["hlc_lmg_MG3KWS_b_100rnd", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
+_MMG = ["UK3CB_MG3_KWS_B", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "UK3CB_MG3_100rnd_762x51_GT";
 
 _LAT = ["rhs_weap_rpg18", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "rhs_rpg18_mag";
@@ -94,8 +96,8 @@ _HAT_mag = "Vorona_HEAT";
 _AA = ["rhs_weap_igla", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "rhs_mag_9k38_rocket";
 
-_pistol = ["hlc_pistol_P226R_Stainless", _silencer, _pointer, "hlc_optic_docter_cadex", _bipod];
-_pistol_mag = "hlc_12Rnd_357SIG_JHP_P226";
+_pistol = ["UK3CB_PC9_ZOAF", _silencer, _pointer, _sight, _bipod];
+_pistol_mag = "UK3CB_PC9_ZOAF_9_12Rnd";
 
 _pdw = ["rhs_weap_pp2000", _silencer, _pointer, _sight, _bipod];
 _pdw_mag = "rhs_mag_9x19mm_7n31_44";

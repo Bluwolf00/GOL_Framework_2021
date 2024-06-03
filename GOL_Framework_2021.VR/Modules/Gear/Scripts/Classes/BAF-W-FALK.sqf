@@ -45,8 +45,8 @@ _sight = "";
 _bipod = "";
 
 _rifle = ["rhs_weap_l1a1", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["hlc_wp_mod733", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["hlc_rifle_Colt727_GL", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["UK3CB_BAF_L119A1", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["UK3CB_BAF_L119A1_UKUGL", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_l1a1", _silencer, _pointer, _sight, _bipod];
 _rifleGL_mag = "rhs_mag_30Rnd_556x45_Mk318_Stanag";
 _rifleGL_mag_tr = "30Rnd_556x45_Stanag_Tracer_Red";

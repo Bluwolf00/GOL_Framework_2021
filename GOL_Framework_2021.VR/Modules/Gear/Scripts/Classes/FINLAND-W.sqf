@@ -46,24 +46,24 @@ _bipod = "";
 
 // Primary Weapon
 _rifle = ["arifle_AK12_F", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["arifle_AKS_F", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["arifle_AK12_F", _silencer, _pointer, _sight, _bipod];
 _rifleGL = ["arifle_AK12_GL_F", _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_svdp", _silencer, _pointer, "rhs_acc_pso1m21", _bipod];
 _rifleMarksman = ["rhs_weap_svdp", _silencer, _pointer, "rhs_acc_pso1m21", _bipod];
-_rifle_mag = "hlc_30Rnd_762x39_AP_ak_Valmet";
-_rifle_mag_tr = "hlc_30Rnd_762x39_t_ak_Valmet";
-_rifleGL_mag = "hlc_30Rnd_762x39_AP_ak_Valmet";
-_rifleGL_mag_tr = "hlc_30Rnd_762x39_t_ak_Valmet";
-_rifleC_mag = "rhs_30Rnd_545x39_7N22_AK";
-_rifleC_mag_tr = "hlc_30Rnd_545x39_t_ak";
+_rifle_mag = "30Rnd_762x39_AK12_Mag_F";
+_rifle_mag_tr = "30Rnd_762x39_AK12_Mag_Tracer_F";
+_rifleGL_mag = "30Rnd_762x39_AK12_Mag_F";
+_rifleGL_mag_tr = "30Rnd_762x39_AK12_Mag_Tracer_F";
+_rifleC_mag = "30Rnd_762x39_AK12_Mag_F";
+_rifleC_mag_tr = "30Rnd_762x39_AK12_Mag_Tracer_F";
 _rifleMarksman_mag = "rhs_10Rnd_762x54mmR_7N14";
 _rifleMarksman_mag_tr = "ACE_10Rnd_762x54_Tracer_mag";
 
 _LMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "rhs_100Rnd_762x54mmR_green";
 
-_MMG = ["hlc_lmg_MG3KWS_b", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
+_MMG = ["UK3CB_MG3_KWS_B", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "UK3CB_MG3_250rnd_762x51_RM";
 
 // Launchers
 _silencer = "";

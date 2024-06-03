@@ -57,8 +57,8 @@ _rifleL_mag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 _LMG = ["arifle_MX_SW_F", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "100Rnd_65x39_caseless_mag_Tracer";
 
-_MMG = ["hlc_lmg_M60E4", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "hlc_200Rnd_762x51_T_M60E4";
+_MMG = ["rhs_weap_m249_pip_L", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "rhsusf_200rnd_556x45_mixed_box";
 
 _sight = "";
 

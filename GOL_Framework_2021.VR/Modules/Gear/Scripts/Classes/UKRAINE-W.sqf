@@ -77,7 +77,7 @@ _bipod = "";
 _rifle = [["rhs_weap_aks74n","rhs_weap_aks74","rhs_weap_ak74n_2","rhs_weap_ak74n","rhs_weap_ak74m_fullplum","rhs_weap_ak74m"], _silencer, _pointer, _sight, _bipod];
 _rifleC = ["rhs_weap_aks74un", _silencer, _pointer, _sight, _bipod];
 _rifleGL = [["rhs_weap_ak74n_2_gp25","rhs_weap_ak74n_gp25","rhs_weap_aks74_gp25","rhs_weap_aks74n_gp25","rhs_weap_ak74m_gp25","rhs_weap_ak74_gp25"], _silencer, _pointer, _sight, _bipod];
-_rifleL = ["srifle_DMR_07_blk_F", "hlc_muzzle_aac_762sdn6", _pointer, "hlc_optic_hensoldtzo_hi_docter", ""];
+_rifleL = ["srifle_DMR_07_blk_F", "muzzle_snds_65_TI_blk_F", _pointer, "rhsusf_acc_LEUPOLDMK4_2", ""];
 _rifle_mag = selectRandom ["rhs_30Rnd_545x39_7N22_plum_AK","rhs_30Rnd_545x39_7N10_2mag_plum_AK"];
 _rifle_mag_tr = "rhs_30Rnd_545x39_AK_plum_green";
 _rifleC_mag = selectRandom ["rhs_30Rnd_545x39_7N22_plum_AK","rhs_30Rnd_545x39_7N10_2mag_plum_AK"];
@@ -87,8 +87,8 @@ _rifleGL_mag_tr = "rhs_30Rnd_545x39_AK_plum_green";
 _rifleL_mag = "ACE_20Rnd_65_Creedmor_mag";
 _rifleL_mag_tr = "ACE_20Rnd_65_Creedmor_mag";
 
-_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "200Rnd_556x45_Box_Tracer_F";
+_LMG = ["rhs_weap_m249_pip", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "rhsusf_200rnd_556x45_mixed_box";
 
 _MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhs_100Rnd_762x54mmR_green";
@@ -107,11 +107,11 @@ _HAT_mag = "Vorona_HEAT";
 _AA = ["rhs_weap_igla", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "rhs_mag_9k38_rocket";
 
-_pistol = ["hlc_pistol_P229R_40Elite", _silencer, _pointer, "hlc_optic228_romeo1_rx", _bipod];
-_pistol_mag = "hlc_12Rnd_40SW_B_P226";
+_pistol = ["UK3CB_USP", _silencer, _pointer, _sight, _bipod];
+_pistol_mag = "UK3CB_USP_9_15Rnd";
 
 _pdw = ["SMG_05_F", _silencer, _pointer, _sight, _bipod];
-_pdw_mag = "hlc_30Rnd_9x19_B_MP5";
+_pdw_mag = "30Rnd_9x21_Mag_SMG_02_Tracer_Red";
 
 _silencer = "";
 _pointer = "";
