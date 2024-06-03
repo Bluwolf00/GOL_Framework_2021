@@ -40,8 +40,8 @@ if (_role isEqualTo "jetp") then {
 
 // Attachments
 _silencer = "";
-_pointer = "rhsusf_acc_anpeq15_bk";
-_sight = "rhsusf_acc_t1_high";
+_pointer = "";
+_sight = "";
 _bipod = "";
 
 // Primary Weapon

@@ -46,9 +46,10 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
+// Attachments
 _silencer = "";
-_pointer = "uk3cb_baf_llm_ir_black";
-_sight = "optic_erco_blk_f";
+_pointer = "";
+_sight = "";
 _bipod = "";
 
 // Primary Weapon

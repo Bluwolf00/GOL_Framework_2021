@@ -46,10 +46,11 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "rhsusf_acc_sfmb556";
-_pointer = "rhsusf_acc_anpeq15_bk";
-_sight = "rhsusf_acc_eotech_552";
-_bipod = "rhsusf_acc_grip2";
+// Attachments
+_silencer = "";
+_pointer = "";
+_sight = "";
+_bipod = "";
 
 _rifle = ["rhs_weap_mk18_KAC_bk", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["rhs_weap_m4a1_carryhandle", _silencer, _pointer, _sight, _bipod];

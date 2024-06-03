@@ -49,6 +49,7 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
+// Attachments
 _silencer = "";
 _pointer = "";
 _sight = "";

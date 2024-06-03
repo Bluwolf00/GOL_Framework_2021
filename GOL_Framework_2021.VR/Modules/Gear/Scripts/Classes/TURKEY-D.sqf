@@ -43,10 +43,11 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "acp_gol_TUR_TLF_B_RadioBag_01_TUR_TLF_F";
 };
 
-_silencer = "rhsusf_acc_sfmb556";
-_pointer = "uk3cb_baf_llm_flashlight_black";
+// Attachments
+_silencer = "";
+_pointer = "";
 _sight = "";
-_bipod = "rhs_acc_grip_ffg2";
+_bipod = "";
 
 _rifle = [["rhs_weap_hk416d145"], _silencer, _pointer, _sight, _bipod];
 _rifleC = ["rhs_weap_hk416d10", _silencer, _pointer, _sight, _bipod];

@@ -47,7 +47,7 @@ if (_role isEqualTo "jetp") then {
 
 _silencer = "";
 _pointer = "";
-_sight = "JCA_optic_ACOG_sand";
+_sight = "";
 _bipod = "";
 
 _rifle = ["arifle_SPAR_01_snd_F", _silencer, _pointer, _sight, _bipod];

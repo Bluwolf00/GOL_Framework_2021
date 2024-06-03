@@ -38,10 +38,11 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "rhssaf_acc_g36_rotex";
+// Attachments
+_silencer = "";
 _pointer = "";
 _sight = "";
-_bipod = "rhsusf_acc_tdstubby_blk";
+_bipod = "";
 
 _rifle = ["rhs_weap_g36kv", _silencer, _pointer, _sight, _bipod];
 _rifleC = ["rhs_weap_g36c", _silencer, _pointer, _sight, _bipod];

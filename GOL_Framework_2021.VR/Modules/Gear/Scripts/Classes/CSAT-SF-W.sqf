@@ -46,9 +46,10 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-_silencer = "muzzle_snds_58_blk_f";
-_pointer = "acc_pointer_ir";
-_sight = "optic_yorris";
+// Attachments
+_silencer = "";
+_pointer = "";
+_sight = "";
 _bipod = "";
 
 _rifle = ["arifle_CTARS_blk_F", _silencer, _pointer, _sight, _bipod];

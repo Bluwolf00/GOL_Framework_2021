@@ -39,7 +39,7 @@ if (_role isEqualTo "jetp") then {
 };
 
 _silencer = "";
-_pointer = "acc_pointer_IR";
+_pointer = "";
 _sight = "";
 _bipod = "";
 

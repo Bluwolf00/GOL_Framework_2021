@@ -48,10 +48,10 @@ if (_role isEqualTo "jetp") then {
 };
 
 // Attachments
-_silencer = "rhsusf_acc_sfmb556";
+_silencer = "";
 _pointer = "";
-_sight = "optic_erco_blk_f";
-_bipod = "rhsusf_acc_grip3";
+_sight = "";
+_bipod = "";
 
 // Primary Weapon
 _rifle = [["rhs_weap_hk416d145"], _silencer, _pointer, _sight, _bipod];

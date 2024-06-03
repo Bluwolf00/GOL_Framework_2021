@@ -39,9 +39,10 @@ if (_role isEqualTo "jetp") then {
 	_backpack = _backpackRadio;
 };
 
-_silencer = "UK3CB_BAF_SFFH";
+// Attachments
+_silencer = "";
 _pointer = "";
-_sight = "optic_ERCO_blk_F";
+_sight = "";
 _bipod = "";
 
 _rifle = ["UK3CB_BAF_L85A2", _silencer, _pointer, _sight, _bipod];

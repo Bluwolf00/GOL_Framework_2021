@@ -40,8 +40,9 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
+// Attachments
 _silencer = "";
-_pointer = "gvl_x2000_wide";
+_pointer = "";
 _sight = "";
 _bipod = "";
 
