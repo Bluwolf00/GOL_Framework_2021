@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={62.080662,40.932186,41.146667};
-		dir[]={-0.020993963,-0.66080743,0.75029659};
-		up[]={-0.018482849,0.75054103,0.66056734};
-		aside[]={0.99963391,-1.5428668e-008,0.027970541};
+		pos[]={66.358223,40.932186,27.64212};
+		dir[]={-0.010127593,-0.63434088,0.77299094};
+		up[]={-0.0083105182,0.77305245,0.63428926};
+		aside[]={0.99991775,8.2240149e-008,0.01310038};
 	};
 };
 binarizationWanted=0;
@@ -331,7 +331,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category3
+	class Category2
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -514,7 +514,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category4
+	class Category3
 	{
 		name="Scenario";
 		class Attribute0
@@ -14896,7 +14896,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=9;
+		items=7;
 		class Item0
 		{
 			dataType="Layer";
@@ -15412,7 +15412,7 @@ class Mission
 					name="OPFOR FARP";
 					class Entities
 					{
-						items=44;
+						items=46;
 						class Item0
 						{
 							dataType="Object";
@@ -16790,9 +16790,103 @@ class Mission
 								nAttributes=1;
 							};
 						};
+						class Item44
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={194.31741,8.1747437,42.298565};
+								angles[]={0,0.0090931654,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="[this, false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
+							};
+							id=2779;
+							type="RHS_Mi24V_vvs";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit"",""Medikit""],[8,1]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red"",""rhs_mag_rdg2_white""],[30,10,10,4]],[[""ToolKit""],[1]],[[],[]]],false]";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="rhs_decalNumber_type";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHSAIRMI24NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item45
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={194.3754,8.1747437,14.914785};
+								angles[]={0,0.0090931654,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="[this, false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
+							};
+							id=2778;
+							type="RHS_Mi24V_vvs";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit"",""Medikit""],[8,1]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red"",""rhs_mag_rdg2_white""],[30,10,10,4]],[[""ToolKit""],[1]],[[],[]]],false]";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="rhs_decalNumber_type";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHSAIRMI24NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
 					};
 					id=2720;
-					atlOffset=371466.22;
+					atlOffset=92866.555;
 				};
 				class Item9
 				{
@@ -18834,7 +18928,7 @@ class Mission
 				};
 			};
 			id=2569;
-			atlOffset=5804.5645;
+			atlOffset=3628.0049;
 		};
 		class Item3
 		{
@@ -23704,100 +23798,6 @@ class Mission
 			};
 			id=2723;
 			atlOffset=0.0002207756;
-		};
-		class Item7
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={194.3754,8.1747437,14.914785};
-				angles[]={0,0.0090931654,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
-			};
-			id=2778;
-			type="RHS_Mi24V_vvs";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="[[[[""FirstAidKit"",""Medikit""],[8,1]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red"",""rhs_mag_rdg2_white""],[30,10,10,4]],[[""ToolKit""],[1]],[[],[]]],false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="rhs_decalNumber_type";
-					expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHSAIRMI24NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="NoChange";
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item8
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={194.31741,8.1747437,42.298565};
-				angles[]={0,0.0090931654,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="[this, false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
-			};
-			id=2779;
-			type="RHS_Mi24V_vvs";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="[[[[""FirstAidKit"",""Medikit""],[8,1]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red"",""rhs_mag_rdg2_white""],[30,10,10,4]],[[""ToolKit""],[1]],[[],[]]],false]";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="rhs_decalNumber_type";
-					expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHSAIRMI24NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="NoChange";
-						};
-					};
-				};
-				nAttributes=2;
-			};
 		};
 	};
 	class Connections
