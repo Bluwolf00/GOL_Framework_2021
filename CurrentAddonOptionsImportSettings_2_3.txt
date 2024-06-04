@@ -114,7 +114,7 @@ ace_dragging_skipContainerWeight = false;
 ace_dragging_weightCoefficient = 1;
 
 // ACE Explosives
-ace_explosives_customTimerDefault = 30;
+force ace_explosives_customTimerDefault = 300;
 ace_explosives_customTimerMax = 900;
 ace_explosives_customTimerMin = 5;
 force ace_explosives_explodeOnDefuse = true;
@@ -150,8 +150,8 @@ acex_fortify_settingHint = 2;
 force ace_frag_enabled = true;
 force ace_frag_maxTrack = 25;
 force ace_frag_maxTrackPerFrame = 15;
-force ace_frag_reflectionsEnabled = true;
-force ace_frag_spallEnabled = true;
+force ace_frag_reflectionsEnabled = false;
+force ace_frag_spallEnabled = false;
 
 // ACE G-Forces
 force ace_gforces_coef = 0.751836;
@@ -173,7 +173,7 @@ acex_headless_log = false;
 force acex_headless_transferLoadout = 1;
 
 // ACE Hearing
-force ace_hearing_autoAddEarplugsToUnits = true;
+ace_hearing_autoAddEarplugsToUnits = 1;
 force ace_hearing_disableEarRinging = true;
 ace_hearing_earplugsVolume = 0.5;
 force ace_hearing_enableCombatDeafness = true;
@@ -942,10 +942,6 @@ force lambs_main_radioGuer = 300;
 force lambs_main_radioShout = 74.6229;
 force lambs_main_radioWest = 300;
 
-// NIArms
-niarms_gripSwitch = true;
-niarms_magSwitch = true;
-
 // TFAR - Clientside settings
 TFAR_curatorCamEars = true;
 TFAR_default_radioVolume = 5.06336;
@@ -1016,7 +1012,27 @@ force TFAR_takingRadio = 2;
 force TFAR_Teamspeak_Channel_Name = "TaskForceRadio";
 force TFAR_Teamspeak_Channel_Password = "123";
 force tfar_terrain_interception_coefficient = 7;
-force TFAR_voiceCone = true;
+force TFAR_voiceCone = false;
+
+// TFAR Scribbles
+Rev_TFAR_148 = true;
+Rev_TFAR_152 = true;
+Rev_TFAR_155 = true;
+Rev_TFAR_164 = true;
+Rev_TFAR_210 = true;
+Rev_TFAR_bussole = true;
+Rev_TFAR_FADAK = true;
+Rev_TFAR_mr3000 = true;
+Rev_TFAR_mr6000l = true;
+Rev_TFAR_radioSettings = true;
+Rev_TFAR_rt1523g = true;
+Rev_TFAR_saveScribbles = true;
+Rev_TFAR_settings_LR_B = "";
+Rev_TFAR_settings_LR_I = "";
+Rev_TFAR_settings_LR_O = "";
+Rev_TFAR_settings_SR_B = "";
+Rev_TFAR_settings_SR_I = "";
+Rev_TFAR_settings_SR_O = "";
 
 // Turret Enhanced
 Fat_Lurch_Grid = true;
@@ -1033,10 +1049,6 @@ Fat_Lurch_ShowTarget = true;
 uk3cb_pipstretchfactor = 0;
 uk3cb_preferedOptic = 0;
 uk3cb_preferedOpticHighMag = 0;
-
-// WebKnight's Two Primary Weapons
-WBK_DualWeapons_SaveWeaponAfterRespawn = false;
-WBK_DualWeapons_WhereWeaponAt = "Pelvis";
 
 // Zeus Enhanced
 zen_area_markers_editableMarkers = 0;
@@ -1145,7 +1157,6 @@ zen_faction_filter_0_rhsgref_faction_chdkz_groups = true;
 zen_faction_filter_0_rhsgref_faction_tla = true;
 zen_faction_filter_0_rhssaf_faction_airforce_opfor = true;
 zen_faction_filter_0_rhssaf_faction_army_opfor = true;
-zen_faction_filter_0_SAFP_HELI_CATEGORIE = true;
 zen_faction_filter_0_UK3CB_AAF_O = true;
 zen_faction_filter_0_UK3CB_ADA_O = true;
 zen_faction_filter_0_UK3CB_ADC_O = true;
@@ -1229,7 +1240,6 @@ zen_faction_filter_1_rhsgref_faction_cdf_ground_b = true;
 zen_faction_filter_1_rhsgref_faction_cdf_ground_b_groups = true;
 zen_faction_filter_1_rhsgref_faction_cdf_ng_b = true;
 zen_faction_filter_1_rhsgref_faction_hidf = true;
-zen_faction_filter_1_SAFP_HELI_CATEGORIE = true;
 zen_faction_filter_1_UK3CB_AAF_B = true;
 zen_faction_filter_1_UK3CB_ADA_B = true;
 zen_faction_filter_1_UK3CB_ADC_B = true;
@@ -1298,7 +1308,6 @@ zen_faction_filter_2_rhsgref_faction_un = true;
 zen_faction_filter_2_rhssaf_faction_airforce = true;
 zen_faction_filter_2_rhssaf_faction_army = true;
 zen_faction_filter_2_rhssaf_faction_un = true;
-zen_faction_filter_2_SAFP_HELI_CATEGORIE = true;
 zen_faction_filter_2_UK3CB_AAF_I = true;
 zen_faction_filter_2_UK3CB_ADA_I = true;
 zen_faction_filter_2_UK3CB_ADC_I = true;
