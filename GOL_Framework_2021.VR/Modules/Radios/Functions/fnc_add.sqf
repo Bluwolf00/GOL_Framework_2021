@@ -31,7 +31,7 @@ if (GVARMAIN(mod_TFAR)) then {
 	};
 
 	if (_role in _radioSmall) then {
-		_unit linkItem "TFAR_rf7800str";
+		_unit linkItem "TFAR_anprc148jem";
 	};
 	if (_role in _radioMedium) then {
 		if (_role in _radioSmall) then {
