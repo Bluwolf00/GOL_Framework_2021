@@ -62,7 +62,7 @@ _rifleGL_mag = "30Rnd_545x39_Mag_F";
 _rifleGL_mag_tr = "30Rnd_545x39_Mag_Tracer_F";
 _rifleL_mag = "rhs_30Rnd_762x39mm_bakelite_tracer";
 
-_LMG = ["UK3CB_RPK74_60rnd_545x39_GT", _silencer, _pointer, _sight, _bipod];
+_LMG = ["rhs_weap_rpk74m", _silencer, _pointer, _sight, _bipod];
 _LMG_mag = "UK3CB_RPK74_60rnd_545x39_GT";
 
 _MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
