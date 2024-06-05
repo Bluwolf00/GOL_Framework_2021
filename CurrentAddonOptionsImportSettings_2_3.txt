@@ -1024,15 +1024,15 @@ Rev_TFAR_bussole = true;
 Rev_TFAR_FADAK = true;
 Rev_TFAR_mr3000 = true;
 Rev_TFAR_mr6000l = true;
-Rev_TFAR_radioSettings = true;
+force Rev_TFAR_radioSettings = true;
 Rev_TFAR_rt1523g = true;
-Rev_TFAR_saveScribbles = true;
-Rev_TFAR_settings_LR_B = "";
-Rev_TFAR_settings_LR_I = "";
-Rev_TFAR_settings_LR_O = "";
-Rev_TFAR_settings_SR_B = "";
-Rev_TFAR_settings_SR_I = "";
-Rev_TFAR_settings_SR_O = "";
+force Rev_TFAR_saveScribbles = true;
+force Rev_TFAR_settings_LR_B = "1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
+force Rev_TFAR_settings_LR_I = "1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
+force Rev_TFAR_settings_LR_O = "1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
+force Rev_TFAR_settings_SR_B = "1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
+force Rev_TFAR_settings_SR_I = "1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
+force Rev_TFAR_settings_SR_O = "1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
 
 // Turret Enhanced
 Fat_Lurch_Grid = true;

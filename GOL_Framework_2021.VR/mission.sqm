@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8344;
+		nextID=8366;
 	};
 	class Camera
 	{
-		pos[]={66.358223,40.932186,27.64212};
-		dir[]={-0.010127593,-0.63434088,0.77299094};
-		up[]={-0.0083105182,0.77305245,0.63428926};
-		aside[]={0.99991775,8.2240149e-008,0.01310038};
+		pos[]={65.098007,32.983768,38.351898};
+		dir[]={-0.010127624,-0.63433897,0.77298868};
+		up[]={-0.0083103357,0.77305502,0.6342845};
+		aside[]={0.99991417,4.6566129e-010,0.013100781};
 	};
 };
 binarizationWanted=0;
@@ -544,7 +544,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=398;
+									items=406;
 									class Item0
 									{
 										class data
@@ -3729,6 +3729,70 @@ class CustomAttributes
 											value="ace_explosives_customtimerdefault";
 										};
 									};
+									class Item398
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rev_tfar_settings_sr_b";
+										};
+									};
+									class Item399
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rev_tfar_settings_lr_b";
+										};
+									};
+									class Item400
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rev_tfar_settings_sr_o";
+										};
+									};
+									class Item401
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rev_tfar_settings_lr_o";
+										};
+									};
+									class Item402
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rev_tfar_settings_sr_i";
+										};
+									};
+									class Item403
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rev_tfar_settings_lr_i";
+										};
+									};
+									class Item404
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rev_tfar_radiosettings";
+										};
+									};
+									class Item405
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rev_tfar_savescribbles";
+										};
+									};
 								};
 							};
 						};
@@ -3739,7 +3803,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=398;
+									items=406;
 									class Item0
 									{
 										class data
@@ -14785,6 +14849,222 @@ class CustomAttributes
 													{
 														singleType="SCALAR";
 														value=300;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item398
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item399
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item400
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item401
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item402
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item403
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item404
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item405
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
 													};
 												};
 												class Item1
