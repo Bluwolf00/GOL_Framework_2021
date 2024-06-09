@@ -27,6 +27,7 @@ OKS_Lambs_ChargeSpawn = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS
 OKS_Lambs_Spawner = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Lambs_Spawner.sqf";
 OKS_Lambs_SpawnGroup = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Lambs_SpawnGroup.sqf";
 OKS_Lambs_Wavespawn = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Lambs_Wavespawn.sqf";
+OKS_Mechanized_Spawn = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Mechanized_Spawn.sqf";
 OKS_PlayerWaypoint_SpawnGroup = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_PlayerWaypoint_SpawnGroup.sqf";
 OKS_RemoveVehicleHE = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_RemoveVehicleHE.sqf";
 OKS_ForceVehicleSpeed = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_ForceVehicleSpeed.sqf";

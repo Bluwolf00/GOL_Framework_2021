@@ -5,12 +5,12 @@ _insignia = "";
 _goggles = "rhs_balaclava1_olive";
 _helmet = "H_HelmetAggressor_F";
 _OfficerHelmet = "H_Beret_CSAT_01_F";
-_uniform = "U_O_V_Soldier_Viper_F";
+_uniform = ["UK3CB_CSAT_G_O_U_CombatUniform","UK3CB_CSAT_G_O_U_CombatUniform_Shortsleeve"];
 _vest = ["rhs_6b3_AK","rhs_6b3","rhs_6b3_holster","rhs_6b3_AK_2","rhs_6b3_AK_3"];
 _backpack =  ["rhs_rk_sht_30_olive","rhs_rk_sht_30_olive_engineer_empty"];
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "UK3CB_LDF_B_B_RadioBag_OLI";
+	_backpackRadio = "UK3CB_CSAT_G_O_B_RadioBag";
 };
 
 if (_role in ["sl","tl","fac"]) then {

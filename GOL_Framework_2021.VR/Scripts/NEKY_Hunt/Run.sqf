@@ -133,6 +133,8 @@ if (_isSide) then
 	if ((typeName _Side) == "GROUP") then {_Grp = _Side};
 };
 
+if(_Grp getVariable ["Disable_Hunt",false]) exitWith  { SystemChat "Hunt disabled on _Grp.. exiting" };
+
 if(isNil "_Grp") exitWith { SystemChat "Run.sqf _Grp is null.. exiting" };
 
 // Start hunting
