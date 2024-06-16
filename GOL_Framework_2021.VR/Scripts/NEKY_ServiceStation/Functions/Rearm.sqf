@@ -210,65 +210,116 @@ if !(((Count _Turrets) isEqualTo 0) && ((Count _Pylons) isEqualTo 0)) then
 };
 
 	// Add Extra Flares
-	_CMWeapons = (_Vehicle weaponsTurret [-1]) select {["CM", _X,false] call BIS_fnc_inString};
+	_CMWeapons = (_Veh weaponsTurret [-1]) select {["CM", _X,false] call BIS_fnc_inString};
 	{
 		_CMWeapon = _X;
 		systemchat str _CMWeapon;
 		_FlareMag = (getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines")
 			select 
 				(count (getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines"))) - 1 );
-		{_Vehicle removeMagazinesTurret [_X,[-1]]} forEach getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines");
+		{_Veh removeMagazinesTurret [_X,[-1]]} forEach getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines");
 		systemchat str _FlareMag;
-		_Vehicle addMagazineTurret [_FlareMag,[-1]];
-		_Vehicle addMagazineTurret [_FlareMag,[-1]];
+		_Veh addMagazineTurret [_FlareMag,[-1]];
+		_Veh addMagazineTurret [_FlareMag,[-1]];
 	} foreach _CMWeapons;
 
 /// Drongos APS
 _Veh call DAPS_fnc_RearmAPS;
 sleep 2;
 
-if (["FV432_Mk3_GPMG",(typeOf _Veh)] call BIS_fnc_inString || ["Panther_GPMG",(typeOf _Veh)] call BIS_fnc_inString || ["WMIK_GPMG",(typeOf _Veh)] call BIS_fnc_inString ) then {
-	private _Index = ((getMagazineCargo _Veh) select 0) find "UK3CB_BAF_762_200Rnd_T";
-	private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
-	private _rearm = 10 - _AmmoCount;
-	_Veh AddMagazineCargo ["UK3CB_BAF_762_200Rnd_T",_rearm];
+if (
+	["FV432_Mk3_GPMG",(typeOf _Veh)] call BIS_fnc_inString ||
+	["Panther_GPMG",(typeOf _Veh)] call BIS_fnc_inString ||
+	["Logistics_GPMG",(typeOf _Veh)] call BIS_fnc_inString ||	
+	["Passenger_GPMG",(typeOf _Veh)] call BIS_fnc_inString ||		
+	["WMIK_GPMG",(typeOf _Veh)] call BIS_fnc_inString
+) then {
+	private _rearm = 10;
+	private _ammoClass = "UK3CB_BAF_762_200Rnd_T";
+	private _Index = ((getMagazineCargo _Veh) select 0) find _ammoClass;
+
+	if(_Index != -1) then {
+		private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
+		_rearm = (_rearm - _AmmoCount);
+	};
+
+	_Veh AddMagazineCargo [_ammoClass,_rearm];
 	["Primary Ammunition Added", _Veh] spawn NEKY_ServiceStation_Hints;
 	sleep 2;
 };
 
-if (["Passenger_HMG",(typeOf _Veh)] call BIS_fnc_inString || ["L111A1",(typeOf _Veh)] call BIS_fnc_inString || ["FV432_Mk3_RWS",(typeOf _Veh)] call BIS_fnc_inString || ["LandRover_WMIK_HMG",(typeOf _Veh)] call BIS_fnc_inString ) then {
-	private _Index = ((getMagazineCargo _Veh) select 0) find "UK3CB_BAF_127_100Rnd";
-	private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
-	private _rearm = 10 - _AmmoCount;
-	_Veh AddMagazineCargo ["UK3CB_BAF_127_100Rnd",_rearm];
+if (
+	["Passenger_HMG",(typeOf _Veh)] call BIS_fnc_inString ||
+	["Logistics_HMG",(typeOf _Veh)] call BIS_fnc_inString ||
+	["L111A1",(typeOf _Veh)] call BIS_fnc_inString ||
+	["FV432_Mk3_RWS",(typeOf _Veh)] call BIS_fnc_inString||
+	["LandRover_WMIK_HMG",(typeOf _Veh)] call BIS_fnc_inString
+) then {
+	private _rearm = 10;
+	private _ammoClass = "UK3CB_BAF_127_100Rnd";
+	private _Index = ((getMagazineCargo _Veh) select 0) find _ammoClass;
+
+	if(_Index != -1) then {
+		private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
+		_rearm = (_rearm - _AmmoCount);
+	};
+
+	_Veh AddMagazineCargo [_ammoClass,_rearm];
 	["Primary Ammunition Added", _Veh] spawn NEKY_ServiceStation_Hints;
 	sleep 2;
 };
 
-if(["L134A1",(typeOf _Veh)] call BIS_fnc_inString || ["WMIK_GMG",(typeOf _Veh)] call BIS_fnc_inString) then {
-	private _Index = ((getMagazineCargo _Veh) select 0) find "UK3CB_BAF_32Rnd_40mm_G_Box";
-	private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
-	private _rearm = 10 - _AmmoCount;
-	_Veh AddMagazineCargo ["UK3CB_BAF_32Rnd_40mm_G_Box",_rearm];
+if(
+	["L134A1",(typeOf _Veh)] call BIS_fnc_inString ||
+	["Passenger_GMG",(typeOf _Veh)] call BIS_fnc_inString ||
+	["Logistics_GMG",(typeOf _Veh)] call BIS_fnc_inString ||	
+	["WMIK_GMG",(typeOf _Veh)] call BIS_fnc_inString
+) then {
+	private _rearm = 10;
+	private _ammoClass = "UK3CB_BAF_32Rnd_40mm_G_Box";
+	private _Index = ((getMagazineCargo _Veh) select 0) find _ammoClass;
+
+	if(_Index != -1) then {
+		private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
+		_rearm = (_rearm - _AmmoCount);
+	};
+
+	_Veh AddMagazineCargo [_ammoClass,_rearm];
 	["Primary Ammunition Added", _Veh] spawn NEKY_ServiceStation_Hints;
+	sleep 2;
+};
+
+if(
+	["WMIK",(typeOf _Veh)] call BIS_fnc_inString ||
+	["Coyote",(typeOf _Veh)] call BIS_fnc_inString ||
+	["Jackal2",(typeOf _Veh)] call BIS_fnc_inString 
+) then {
+	private _rearm = 10;
+	private _ammoClass = "UK3CB_BAF_762_100Rnd_T";
+	private _Index = ((getMagazineCargo _Veh) select 0) find _ammoClass;
+
+	if(_Index != -1) then {
+		private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
+		_rearm = (_rearm - _AmmoCount);
+	};
+
+	_Veh AddMagazineCargo [_ammoClass,_rearm];
+	["Secondary Ammunition Added", _Veh] spawn NEKY_ServiceStation_Hints;
 	sleep 2;
 };
 
 if(["WMIK_Milan",(typeOf _Veh)] call BIS_fnc_inString) then {
-	private _Index = ((getMagazineCargo _Veh) select 0) find "UK3CB_BAF_1Rnd_Milan";
-	private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
-	private _rearm = 5 - _AmmoCount;
-	_Veh AddMagazineCargo ["UK3CB_BAF_1Rnd_Milan",_rearm];
-	["Primary Ammunition Added", _Veh] spawn NEKY_ServiceStation_Hints;
-	sleep 2;
-};
+	private _rearm = 5;
+	private _ammoClass = "UK3CB_BAF_1Rnd_Milan";
+	private _Index = ((getMagazineCargo _Veh) select 0) find _ammoClass;
 
-if(["WMIK",(typeOf _Veh)] call BIS_fnc_inString || ["Coyote",(typeOf _Veh)] call BIS_fnc_inString || ["Jackal2",(typeOf _Veh)] call BIS_fnc_inString  ) then {
-	private _Index = ((getMagazineCargo _Veh) select 0) find "UK3CB_BAF_762_100Rnd_T";
-	private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
-	private _rearm = 10 - _AmmoCount;
-	_Veh AddMagazineCargo ["UK3CB_BAF_762_100Rnd_T",_rearm];
-	["Secondary Ammunition Added", _Veh] spawn NEKY_ServiceStation_Hints;
+	if(_Index != -1) then {
+		private _AmmoCount = ((getMagazineCargo _Veh) select 1) select _Index;
+		_rearm = (_rearm - _AmmoCount);
+	};
+
+	_Veh AddMagazineCargo [_ammoClass,_rearm];
+	["Primary Ammunition Added", _Veh] spawn NEKY_ServiceStation_Hints;
 	sleep 2;
 };
 
