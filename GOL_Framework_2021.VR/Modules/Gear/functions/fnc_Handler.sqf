@@ -185,16 +185,6 @@ if (_isMan) then {
 	if !(_errorCode) then {
 		_unit setUnitLoadout _loadout;
 
-		if(_isPlayer && GOL_OKS_SecondPrimaryWeapon isEqualTo 1) then {
-			_WKB_SecondWeapon = _unit getVariable "WBK_SecondWeapon";
-			if(!isNil "_WKB_SecondWeapon") then {
-				_crate = _WKB_SecondWeapon select 0;
-				deleteVehicle _crate;
-				_unit setVariable ["WBK_SecondWeapon",nil,true];
-			};
-			[_unit,_role] execVM "Scripts\OKS_Second_PrimaryWeapon.sqf";	
-		};
-
 		if (_isPlayer && _useFactionRadio && _roleUseRadio) then {
 			if(!isNil "_insignia") then {
 				[_unit,_insignia] call BIS_fnc_setUnitInsignia;
@@ -203,6 +193,43 @@ if (_isMan) then {
 				[{
 					_this call EFUNC(Radios,add);
 				}, [_unit, _role], 0.1] call CBA_fnc_waitAndExecute;
+			};
+		};
+
+		if (isMultiplayer || isDedicated) then
+		{
+			[_isPlayer,_unit] spawn {
+
+				Params ["_isPlayer","_unit"];
+
+				if(!_isPlayer) then { break; };
+				
+				waitUntil{
+					sleep 2;
+					!isNil "TFAR_fnc_activeSWRadio" &&
+					!isNil "TFAR_fnc_activeLrRadio" && 
+					!isNil "TFAR_fnc_radiosList" && 
+					!isNil "TFAR_fnc_setSwVolume" &&
+					!isNil "TFAR_fnc_setLrVolume"
+				};
+				_radiosSW = _unit call TFAR_fnc_radiosList;
+				_activeLR = _unit call TFAR_fnc_haveLRRadio;
+
+				if(!isNil "_radiosSW") then {
+					private _i = 0;
+					{
+						private _volume = 5;
+						if(_i == 1) then {
+							_volume = 6;
+						};
+						[_X, _volume] call TFAR_fnc_setSwVolume;
+						_i = _i + 1;
+					} foreach _radiosSW;
+				};
+
+				if(_activeLR == true) then {		
+					[_unit call TFAR_fnc_activeLrRadio, 6] call TFAR_fnc_setLrVolume; 
+				};	
 			};
 		};
 		LOG(FORMAT_2("Unit: %1, Role: %2", _unit, _role));

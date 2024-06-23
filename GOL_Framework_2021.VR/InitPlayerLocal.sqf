@@ -150,3 +150,35 @@ player addEventHandler ["InventoryOpened", {
         format["%1 accessed an ammo crate at base.",name _unit] remoteExec ["systemChat",0];
     };
 }];
+
+// Set Radio Volumes
+
+if (isMultiplayer || isDedicated) then
+{
+    waitUntil{
+        sleep 15;
+        !isNil "TFAR_fnc_activeSWRadio" &&
+        !isNil "TFAR_fnc_activeLrRadio" && 
+        !isNil "TFAR_fnc_radiosList" && 
+        !isNil "TFAR_fnc_setSwVolume" &&
+        !isNil "TFAR_fnc_setLrVolume"
+    };
+    _radiosSW = player call TFAR_fnc_radiosList;
+    _activeLR = player call TFAR_fnc_haveLRRadio;
+
+    if(!isNil "_radiosSW") then {
+        private _i = 0;
+        {
+            private _volume = 5;
+            if(_i == 1) then {
+                _volume = 6;
+            };
+            [_X, _volume] call TFAR_fnc_setSwVolume;
+            _i = _i + 1;
+        } foreach _radiosSW;
+    };
+
+    if(_activeLR == true) then {		
+        [player call TFAR_fnc_activeLrRadio, 6] call TFAR_fnc_setLrVolume; 
+    };	
+};
