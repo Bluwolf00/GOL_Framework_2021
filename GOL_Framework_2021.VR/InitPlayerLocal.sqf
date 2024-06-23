@@ -172,6 +172,7 @@ if (isMultiplayer || isDedicated) then
             private _volume = 5;
             if(_i == 1) then {
                 _volume = 6;
+                [_X, 4] call TFAR_fnc_setSwChannel;
             };
             [_X, _volume] call TFAR_fnc_setSwVolume;
             _i = _i + 1;
@@ -180,5 +181,6 @@ if (isMultiplayer || isDedicated) then
 
     if(_activeLR == true) then {		
         [player call TFAR_fnc_activeLrRadio, 6] call TFAR_fnc_setLrVolume; 
+        [player call TFAR_fnc_activeLrRadio, 4] call TFAR_fnc_setLrChannel;
     };	
 };
