@@ -1,7 +1,7 @@
 /*
 	OKS_Attack_SpawnGroup
-	[SpawnPosOrObject,"",5,Side,Range] spawn OKS_Mechanized_Spawn;
-	[SpawnPosOrObject,"",5,Side,Range] execVM "Scripts\OKS_Spawn\OKS_Mechanized_Spawn.sqf";
+	[SpawnPosOrObject,HuntTrigger,"",5,Side,Range] spawn OKS_Mechanized_Spawn;
+	[SpawnPosOrObject,HuntTrigger,"",5,Side,Range] execVM "Scripts\OKS_Spawn\OKS_Mechanized_Spawn.sqf";
 */
 
  	if(!isServer) exitWith {};
@@ -111,7 +111,3 @@
 	};
 
 	[_CrewGroup,_InfantryGroup,_Vehicle] spawn _FollowSquad;
-	
-
-
-
