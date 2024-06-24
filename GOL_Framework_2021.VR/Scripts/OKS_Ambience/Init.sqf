@@ -18,4 +18,5 @@ OKS_HVT_MoraleHit_Intel = compile preprocessFileLineNumbers "Scripts\OKS_Ambienc
 OKS_AlarmSound = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_AlarmSound.sqf";
 OKS_PowerGenerator = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_PowerGenerator.sqf";
 OKS_Destroy_Houses = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_Destroy_Houses.sqf";
+OKS_TFAR_RadioSetup = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\OKS_TFAR_RadioSetup.sqf";
 JBOY_Speak = compile preprocessFileLineNumbers "Scripts\OKS_Ambience\Talk\JBOY_Speak.sqf";

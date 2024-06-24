@@ -204,35 +204,10 @@ if (_isMan) then {
 
 				if(!_isPlayer) then { break; };
 				
-				waitUntil{
-					sleep 2;
-					!isNil "TFAR_fnc_activeSWRadio" &&
-					!isNil "TFAR_fnc_activeLrRadio" && 
-					!isNil "TFAR_fnc_radiosList" && 
-					!isNil "TFAR_fnc_setSwVolume" &&
-					!isNil "TFAR_fnc_setLrVolume"
+				_unit spawn {
+					waitUntil {sleep 1; !isNil "OKS_TFAR_RadioSetup"};
+					_this spawn OKS_TFAR_RadioSetup;
 				};
-				_radiosSW = _unit call TFAR_fnc_radiosList;
-				_activeLR = _unit call TFAR_fnc_haveLRRadio;
-
-				if(!isNil "_radiosSW") then {
-					private _i = 0;
-					{
-						private _volume = 5;
-						if(_i == 1) then {
-							_volume = 6;
-							[_X, 4] call TFAR_fnc_setSwChannel;
-						};
-						[_X, _volume] call TFAR_fnc_setSwVolume;
-						
-						_i = _i + 1;
-					} foreach _radiosSW;
-				};
-
-				if(_activeLR == true) then {		
-					[_unit call TFAR_fnc_activeLrRadio, 6] call TFAR_fnc_setLrVolume;
-					[_unit call TFAR_fnc_activeLrRadio, 4] call TFAR_fnc_setLrChannel;
-				};	
 			};
 		};
 		LOG(FORMAT_2("Unit: %1, Role: %2", _unit, _role));

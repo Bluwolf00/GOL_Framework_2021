@@ -152,35 +152,16 @@ player addEventHandler ["InventoryOpened", {
 }];
 
 // Set Radio Volumes
-
-if (isMultiplayer || isDedicated) then
-{
+player spawn {
     waitUntil{
         sleep 15;
         !isNil "TFAR_fnc_activeSWRadio" &&
         !isNil "TFAR_fnc_activeLrRadio" && 
         !isNil "TFAR_fnc_radiosList" && 
         !isNil "TFAR_fnc_setSwVolume" &&
-        !isNil "TFAR_fnc_setLrVolume"
+        !isNil "TFAR_fnc_setLrVolume" &&
+        !isNil "OKS_TFAR_RadioSetup"
     };
-    _radiosSW = player call TFAR_fnc_radiosList;
-    _activeLR = player call TFAR_fnc_haveLRRadio;
+    _this spawn OKS_TFAR_RadioSetup;
+}
 
-    if(!isNil "_radiosSW") then {
-        private _i = 0;
-        {
-            private _volume = 5;
-            if(_i == 1) then {
-                _volume = 6;
-                [_X, 4] call TFAR_fnc_setSwChannel;
-            };
-            [_X, _volume] call TFAR_fnc_setSwVolume;
-            _i = _i + 1;
-        } foreach _radiosSW;
-    };
-
-    if(_activeLR == true) then {		
-        [player call TFAR_fnc_activeLrRadio, 6] call TFAR_fnc_setLrVolume; 
-        [player call TFAR_fnc_activeLrRadio, 4] call TFAR_fnc_setLrChannel;
-    };	
-};
