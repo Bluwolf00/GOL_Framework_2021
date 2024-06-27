@@ -173,12 +173,12 @@ acex_headless_log = false;
 force acex_headless_transferLoadout = 1;
 
 // ACE Hearing
-force ace_hearing_autoAddEarplugsToUnits = 0;
+ace_hearing_autoAddEarplugsToUnits = 1;
 force ace_hearing_disableEarRinging = true;
 force ace_hearing_earplugsVolume = 1;
 force ace_hearing_enableCombatDeafness = false;
 force ace_hearing_enabledForZeusUnits = false;
-force ace_hearing_unconsciousnessVolume = 0.534822;
+force ace_hearing_unconsciousnessVolume = 0.696238;
 
 // ACE Interaction
 force ace_interaction_disableNegativeRating = true;
@@ -1138,6 +1138,7 @@ zen_attributes_enableWaypointTimeout = true;
 zen_attributes_enableWaypointType = true;
 
 // Zeus Enhanced - Faction Filter
+zen_faction_filter_0_BRPMC = true;
 zen_faction_filter_0_OPF_F = true;
 zen_faction_filter_0_OPF_G_F = true;
 zen_faction_filter_0_OPF_GEN_F = true;
@@ -1240,6 +1241,8 @@ zen_faction_filter_1_rhsgref_faction_cdf_ground_b = true;
 zen_faction_filter_1_rhsgref_faction_cdf_ground_b_groups = true;
 zen_faction_filter_1_rhsgref_faction_cdf_ng_b = true;
 zen_faction_filter_1_rhsgref_faction_hidf = true;
+zen_faction_filter_1_TF160 = true;
+zen_faction_filter_1_TF562 = true;
 zen_faction_filter_1_UK3CB_AAF_B = true;
 zen_faction_filter_1_UK3CB_ADA_B = true;
 zen_faction_filter_1_UK3CB_ADC_B = true;
@@ -1287,6 +1290,9 @@ zen_faction_filter_1_UK3CB_TKC_B = true;
 zen_faction_filter_1_UK3CB_TKM_B = true;
 zen_faction_filter_1_UK3CB_TKP_B = true;
 zen_faction_filter_1_UK3CB_UN_B = true;
+zen_faction_filter_1_USA = true;
+zen_faction_filter_1_USMC = true;
+zen_faction_filter_1_USN = true;
 zen_faction_filter_1_vtf_kf_B_KDF = true;
 zen_faction_filter_1_vtf_kf_B_KFL = true;
 zen_faction_filter_2_IND_C_F = true;
@@ -1308,6 +1314,7 @@ zen_faction_filter_2_rhsgref_faction_un = true;
 zen_faction_filter_2_rhssaf_faction_airforce = true;
 zen_faction_filter_2_rhssaf_faction_army = true;
 zen_faction_filter_2_rhssaf_faction_un = true;
+zen_faction_filter_2_RWG = true;
 zen_faction_filter_2_UK3CB_AAF_I = true;
 zen_faction_filter_2_UK3CB_ADA_I = true;
 zen_faction_filter_2_UK3CB_ADC_I = true;
