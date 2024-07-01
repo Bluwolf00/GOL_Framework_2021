@@ -405,12 +405,12 @@ ace_nametags_showVehicleCrewInfo = true;
 ace_nametags_tagSize = 2;
 
 // ACE Nightvision
-force ace_nightvision_aimDownSightsBlur = 0.499311;
+force ace_nightvision_aimDownSightsBlur = 0;
 force ace_nightvision_disableNVGsWithSights = false;
-force ace_nightvision_effectScaling = 0.5;
+force ace_nightvision_effectScaling = 0.316373;
 force ace_nightvision_fogScaling = 0;
 force ace_nightvision_noiseScaling = 0.1;
-force ace_nightvision_shutterEffects = true;
+force ace_nightvision_shutterEffects = false;
 
 // ACE Overheating
 force ace_overheating_cookoffCoef = 0;
@@ -793,7 +793,7 @@ emr_main_yeetCoefficient = 1.4;
 // Fawks' Enhanced NVGs
 PDT_ENVG_ACE = false;
 PDT_ENVG_Blacklist = "";
-PDT_ENVG_Effect = "";
+force PDT_ENVG_Effect = "wpEffect";
 
 // GRAD Trenches
 grad_trenches_functions_allowBigEnvelope = true;
@@ -813,7 +813,7 @@ grad_trenches_functions_bigEnvelopeDigTime = 40;
 grad_trenches_functions_bigEnvelopeRemovalTime = -1;
 grad_trenches_functions_buildFatigueFactor = 1;
 grad_trenches_functions_camouflageRequireEntrenchmentTool = true;
-grad_trenches_functions_createTrenchMarker = false;
+force grad_trenches_functions_createTrenchMarker = true;
 grad_trenches_functions_decayTime = 1800;
 grad_trenches_functions_giantEnvelopeDamageMultiplier = 1;
 grad_trenches_functions_giantEnvelopeDigTime = 90;
@@ -907,7 +907,7 @@ force lambs_danger_disableAIPlayerGroup = true;
 force lambs_danger_disableAIPlayerGroupReaction = true;
 lambs_danger_disableAutonomousFlares = false;
 lambs_danger_disableAutonomousSmokeGrenades = false;
-force lambs_danger_panicChance = 0.0990013;
+force lambs_danger_panicChance = 0.249656;
 
 // LAMBS Danger Eventhandlers
 force lambs_eventhandlers_ExplosionEventHandlerEnabled = false;
@@ -917,21 +917,21 @@ lambs_eventhandlers_ExplosionReactionTime = 9;
 lambs_wp_autoAddArtillery = false;
 
 // LAMBS Main
-force lambs_main_combatShareRange = 150;
+force lambs_main_combatShareRange = 250;
 lambs_main_debug_drawAllUnitsInVehicles = false;
 lambs_main_debug_Drawing = false;
 lambs_main_debug_FSM = false;
 lambs_main_debug_FSM_civ = false;
 lambs_main_debug_functions = false;
 lambs_main_debug_RenderExpectedDestination = false;
-lambs_main_disableAICallouts = false;
+force lambs_main_disableAICallouts = true;
 lambs_main_disableAIDodge = false;
-force lambs_main_disableAIFleeing = false;
-force lambs_main_disableAIGestures = false;
+force lambs_main_disableAIFleeing = true;
+force lambs_main_disableAIGestures = true;
 lambs_main_disableAutonomousMunitionSwitching = false;
 force lambs_main_disablePlayerGroupSuppression = true;
 lambs_main_indoorMove = 0.1;
-force lambs_main_maxRevealValue = 0.396005;
+force lambs_main_maxRevealValue = 0.8;
 force lambs_main_minFriendlySuppressionDistance = 9.5235;
 lambs_main_minObstacleProximity = 5;
 force lambs_main_minSuppressionRange = 200;
