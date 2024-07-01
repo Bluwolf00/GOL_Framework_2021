@@ -209,6 +209,39 @@ if !(((Count _Turrets) isEqualTo 0) && ((Count _Pylons) isEqualTo 0)) then
 	Sleep 2;
 };
 
+	// Rearm Potential Doorguns
+	if("rhs_weap_yakB" in (_Veh weaponsTurret [0])) then {	
+		private _MaxMagazines = 2;
+		private _CurrentMagazines = count ((_Veh magazinesTurret [0]) select {_X == "rhs_mag_127x108mm_1slt_1470"});
+		if(_CurrentMagazines != 0) then {
+			_MagazineDifference = _MaxMagazines - _CurrentMagazines;
+			for "_i" from 1 to _MagazineDifference do {
+				_Veh addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[0]];
+			};
+		}	
+	};
+	if("rhs_weap_yakB" in (_Veh weaponsTurret [1])) then {	
+		private _MaxMagazines = 2;
+		private _CurrentMagazines = count ((_Veh magazinesTurret [1]) select {_X == "rhs_mag_127x108mm_1slt_1470"});
+		if(_CurrentMagazines != 0) then {
+			_MagazineDifference = _MaxMagazines - _CurrentMagazines;
+			for "_i" from 1 to _MagazineDifference do {
+				_Veh addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[1]];
+			};
+		}	
+	};
+	if("rhs_weap_yakB" in (_Veh weaponsTurret [2])) then {	
+		private _MaxMagazines = 2;
+		private _CurrentMagazines = count ((_Veh magazinesTurret [2]) select {_X == "rhs_mag_127x108mm_1slt_1470"});
+
+		if(_CurrentMagazines != 0) then {
+			_MagazineDifference = _MaxMagazines - _CurrentMagazines;
+			for "_i" from 1 to _MagazineDifference do {
+				_Veh addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[2]];
+			};
+		}	
+	};	
+
 	// Add Extra Flares
 	_CMWeapons = (_Veh weaponsTurret [-1]) select {["CM", _X,false] call BIS_fnc_inString};
 	{

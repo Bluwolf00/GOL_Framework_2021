@@ -36,8 +36,8 @@ ACE_maxWeightDrag = 2200;
 /* Logistics & Support Settings */
 GOL_NEKY_SERVICESTATION = 1;
 GOL_NEKY_RESUPPLY = 1;
-GOL_NEKY_PARADROP = 0;
-GOL_NEKY_PICKUP = 0;
+GOL_NEKY_PARADROP = 0; // Requires Additional Script
+GOL_NEKY_PICKUP = 0; // Requires Additional Script
 GOL_NEKY_REINSERT = 0;  // Requires Additional Script
 GOL_OKS_REINFORCEMENT = 0;  // Requires Additional Script
 GOL_NEKY_FASTROPE = 0; // Not particularly good - engine limitations stop helicopters from hovering under 50-ish meters.
@@ -53,9 +53,9 @@ GOL_NEKY_SHARE = 0; // Requires Additional Script
 GOL_OKS_SPAWN = 1;
 GOL_OKS_AMBIENCE = 1;
 GOL_OKS_HUNT = 0; // Requires Additional Script
-GOL_OKS_Stealth_Mission = 0;
+GOL_OKS_Stealth_Mission = 0; // Requires Additional Script
 GOL_OKS_Enemy_Talk = 0; // This requires sound effects from the "GOL_Framework_2021\Additional Radio\Vietnamese" folder to be moved to "MissionFolder\Scripts\OKS_Stealth\Talk"
-GOL_OKS_Tracker = 0;
+GOL_OKS_Tracker = 0; // Requires Additional Script
 
 /* HuntBases */
 GOL_NEKY_HUNT = 1;
@@ -69,7 +69,7 @@ publicVariable "NEKY_Hunt_CurrentCount";
 
 /* Optional Settings */
 GOL_AAC_SETUP = 1; // Adds ability for pilots to switch seats more freely
-GOL_AAC_DoorGunReplacement = false; // Changes miniguns to Yak-9s for better accuracy of tracers. Causes hearing damage so needs to be fired at a slower rate.
+GOL_AAC_DoorGunReplacement = true; // Changes miniguns to Yak-9s for better accuracy of tracers. Causes hearing damage so needs to be fired at a slower rate.
 GOL_OKS_TASK = 1;
 GOL_OKS_TANKER = 0;  // Requires Additional Script
 GOL_NEKY_TASK = 0; 
@@ -94,8 +94,6 @@ if(!isNil "Vehicle_1") then {
 
 		sleep 5;
 		[_Vehicle] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";	
-
-
 	};
 };
 if(!isNil "MHQ_1") then {

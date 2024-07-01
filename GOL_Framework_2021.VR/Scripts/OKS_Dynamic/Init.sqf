@@ -16,8 +16,7 @@ OKS_Villages = OKS_Logics select {typeOf _X in ["LocationVillage_F"]};
 
 // Functions
 OKS_Dynamic_Setting = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\Settings.sqf";
-OKS_Hunt_Setting = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\HuntSettings.sqf";
-OKS_Hunt_Setting = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\HuntSettings.sqf";
+OKS_Hunt_Setting = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_HuntSettings.sqf";
 OKS_CreateMarker = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_CreateMarker.sqf";
 OKS_CreateTrigger = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_CreateTrigger.sqf";
 OKS_Civilians = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Civilians.sqf";
@@ -42,12 +41,11 @@ OKS_Vehicle_Waypoints = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\O
 OKS_Check_Waypoints = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Check_Waypoints.sqf";
 OKS_Vehicle_Patrol = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Vehicle_Patrol.sqf";
 OKS_Patrol_Spawn = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Patrol_Spawn.sqf";
-OKS_Rush_Spawn = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Rush_Spawn.sqf";
+//OKS_Rush_Spawn = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Rush_Spawn.sqf";
 OKS_Populate_Strongpoints = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Populate_Strongpoints.sqf";
 OKS_Populate_StaticWeapons = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Populate_StaticWeapons.sqf";
 OKS_Populate_Bunkers = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_Populate_Bunkers.sqf";
 OKS_CreateObjectives = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
-
 OKS_CreateZone = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_CreateZone.sqf";
 
 OKS_RoadBlock_Positions = [];

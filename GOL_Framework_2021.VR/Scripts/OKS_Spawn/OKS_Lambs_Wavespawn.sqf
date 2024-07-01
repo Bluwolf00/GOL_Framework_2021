@@ -1,5 +1,5 @@
 /*
-	OKS_Rush_Wavespawn
+	OKS_Lambs_Wavespawn
 	[SpawnPosOrPositionsInArray,UnitsPerWave,AmountOfWaves,DelayPerWave,TypeOfWP,Side,Range,"VariableNameSetTrueUponAllClear"] spawn OKS_Lambs_Wavespawn;
 	[SpawnPosOrPositionsInArray,UnitsPerWave,AmountOfWaves,DelayPerWave,TypeOfWP,Side,Range,"VariableNameSetTrueUponAllClear"] execVM "Scripts\OKS_Spawn\OKS_Lambs_Wavespawn.sqf";
 

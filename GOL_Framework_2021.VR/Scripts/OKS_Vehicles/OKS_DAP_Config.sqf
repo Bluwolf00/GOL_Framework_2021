@@ -1,7 +1,10 @@
-Params ["_Vehicle","_ShouldChangeDoorGuns"];
+Params [
+	["_Vehicle",objNull,[objNull]],
+	["_ShouldChangeDoorGuns",false,[false]]
+];
 
 // How to use (in init of vehicle):
-// _null = [] execVM "OKS_AAC\OKS_DAP_Config.sqf";
+// _null = [this,false] execVM "Scripts\OKS_Vehicles\OKS_DAP_Config.sqf";
 
 
 /*if (TypeOf _Vehicle  == "CUP_B_UH1Y_Gunship_Dynamic_USMC" || TypeOf _Vehicle == "CUP_O_UH1H_gunship_TKA" || TypeOf _Vehicle == "CUP_B_MH47E_USA" || TypeOf _Vehicle == "CUP_B_UH1D_armed_GER_KSK" || typeOf _Vehicle == "CUP_B_UH1D_slick_GER_KSK" ||
@@ -65,8 +68,10 @@ OKS_AIR_CONFIG = {
 		};	
 };
 
-if(isNil "_Vehicle") then {
-	{[_X,_ShouldChangeDoorGuns] spawn OKS_AIR_CONFIG; } forEach entities "helicopter";
+if(isNull _Vehicle) then {
+	{
+		[_X,_ShouldChangeDoorGuns] spawn OKS_AIR_CONFIG;
+	} forEach (entities "helicopter");
 } else {
 	[_Vehicle,_ShouldChangeDoorGuns] spawn OKS_AIR_CONFIG; 
 };

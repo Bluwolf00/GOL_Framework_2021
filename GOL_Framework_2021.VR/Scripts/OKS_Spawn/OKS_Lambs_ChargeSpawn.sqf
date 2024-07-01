@@ -1,5 +1,5 @@
 /*
-	OKS_Rush_Wavespawn
+	OKS_Lambs_Chargespawn
 	[Spawnobject,UnitsPerWave,AmountOfWaves,Side,Range,"VariableNameSetTrueUponAllClear"] spawn OKS_Lambs_ChargeSpawn;
 	[Spawnobject,UnitsPerWave,AmountOfWaves,Side,Range,"VariableNameSetTrueUponAllClear"] execVM "Scripts\OKS_Spawn\OKS_Lambs_ChargeSpawn.sqf";
 
