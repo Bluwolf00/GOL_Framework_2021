@@ -1,9 +1,9 @@
 /* Gear Settings */
-GOL_MAGNIFIED_OPTICS = 0;
-GOL_OPTICS = 1;
-GOL_WEAPONS = 1;
-GOL_ARSENAL_ALLOWED = 1;
-GOL_ENTRENCH = 0;
+GOL_MAGNIFIED_OPTICS = 0; // Allows magnified 2x sights to be selected from the Arsenal.
+GOL_OPTICS = 1; 		  // Allows sights to be selected from the Arsenal.
+GOL_WEAPONS = 1;		  // Allows weapon variations to be selected from Arsenal (If Faction is setup for it).
+GOL_ARSENAL_ALLOWED = 1;  // Allows Attachment Menu
+GOL_ENTRENCH = 0;		  // Adds Entrenching Tools to certain roles.
 GOL_PACKED_HMG = "RHS_M2StaticMG_USMC_D";
 GOL_PACKED_MORTAR = "B_G_Mortar_01_F";
 GOL_PACKED_AT = "RHS_TOW_TriPod_USMC_D";
@@ -11,18 +11,18 @@ GOL_PACKED_GMG = "RHS_MK19_TriPod_USMC_WD";
 
 /* AI Gear Settings */
 // 0 = 0%, 1 = 100%
-GOL_LAT_Chance = 0.25;
-GOL_MAT_Chance = 0.15;
-GOL_UGL_Chance = 0.25;
+GOL_LAT_Chance = 0.25; // Chance for Light AT to be given to AI.
+GOL_MAT_Chance = 0.15; // Chance for Medium AT to be given to AI.
+GOL_UGL_Chance = 0.25; // Chance for UGL to be given to AI.
 
 /* AI Static Settings */
 // 0 = 0%, 1 = 100%
-GOL_Static_Enable_Chance = 0.3;
-GOL_Static_Enable_Refresh = 90;
-OKS_Suppression = 1;
-OKS_Suppressed_Threshold = 0.75;
-OKS_Suppressed_MinimumTime = 6;
-OKS_Suppressed_MaximumTime = 10;
+GOL_Static_Enable_Chance = 0.3; // Chance per loop to enable a Static AI to move.
+GOL_Static_Enable_Refresh = 90; // Delay per loop to enable movement.
+OKS_Suppression = 1; // Adds suppression sensitivty to AI.
+OKS_Suppressed_Threshold = 0.75; // Minimum value for Suppression.
+OKS_Suppressed_MinimumTime = 6; // Minimum time for Suppressed state.
+OKS_Suppressed_MaximumTime = 10; // Maximum time for Suppressed state.
 
 /* AI Vehicle Settings */
 // Removes HE/FRAG rounds from SPG-9, T-** Tanks and BMP1s.
@@ -44,9 +44,11 @@ GOL_NEKY_FASTROPE = 0; // Not particularly good - engine limitations stop helico
 GOL_OKS_SUPPORT = 0;  // Requires Additional Script
 
 GOL_OKS_TentMHQ = 1; 
-/* ^ Change code in "Scripts/OKS_TentMHQ/ACE_MoveMHQ.sqf" to enable all players to move tent.
-Requires init.sqf line 28 to be commented out and replaced with line 29.
-_condition = {true} is the correct one to use for that. */
+/*
+Change code in "Scripts\GOL_PlayerSetup\init.sqf" to enable all players to move tent.
+Requires line 34 to be replaced with line below.
+	_condition = {true};
+*/
 
 /* AI Settings & Scripts*/
 GOL_NEKY_SHARE = 0; // Requires Additional Script
@@ -81,7 +83,7 @@ GOL_BLU_AUTO_TS_CHANNEL = 1;
 /* GOL Dynamic Scripts */
 GOL_OKS_DYNAMIC = 1;
 
-/* Classname Settings */
+/* Classname Settings for Scripted Resupply Helicopters */
 GOL_NEKY_SUPPLY_HELICOPTER = "";
 
 if(!isNil "Vehicle_1") then {

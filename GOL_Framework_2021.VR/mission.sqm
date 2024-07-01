@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8606;
+		nextID=8627;
 	};
 	class Camera
 	{
@@ -15442,7 +15442,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={73.423347,5,49.924503};
-						angles[]={-0,3.9513838,0};
+						angles[]={0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
 					description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -16294,7 +16294,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={65.705589,5,50.298901};
-						angles[]={-0,0.11193988,0};
+						angles[]={0,0.11193988,0};
 					};
 					title="Tent MHQ";
 					description="This is a tent MHQ, you can use this MHQ for small scale missions that you don't want to use the other scripted solutions for respawn. This tent can be moved by leaders with self-interaction, the missionSetting ""GOL_OKS_TentMHQ"" must be set to 1 to be used.";
@@ -16641,7 +16641,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={59.63216,5,51.094761};
-								angles[]={-0,0.06816864,0};
+								angles[]={0,0.06816864,0};
 							};
 							title="MHQ 1";
 							description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
@@ -16653,7 +16653,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={59.476368,7.6292419,51.088543};
-								angles[]={-0,6.2772336,0};
+								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
 							flags=4;
@@ -16845,7 +16845,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={73.418373,7.5393777,51.051136};
-								angles[]={-0,0.00064577186,0};
+								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;
