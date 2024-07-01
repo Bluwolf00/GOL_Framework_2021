@@ -16,7 +16,7 @@ _ScanVehicles = False;										// When scanning for targets, count manned vehic
 _Ammo = 30;												// Total ammo the mortar can spend. Once empty, unit will dismount.													Number (Mortars)
 
 //	Firing Mode settings
-_PreciseSize = [2,3,4];									// Randomly select number of mortars per "Precise" rotation.														Array of numbers (Mortars)
+_PreciseSize = [1,2,3];									// Randomly select number of mortars per "Precise" rotation.														Array of numbers (Mortars)
 _PreciseReloadTime = 420;									// The time it takes for the mortar to prepare for another strike after performing a Precise strike.				Number (Seconds)
 _BarrageSize = [8,10,12];									// Randomly selected number of mortars per barrage.																	Array of numbers (Mortars)
 _BarrageReloadTime = 480;									// The time it takes for the mortar to prepare for another strike after performing a Barrage.						Number (Seconds)
@@ -31,12 +31,11 @@ _ScreenSize = [6,8,10];										// Randomly select number of mortars per "Scree
 _ScreenReloadTime = 150;									// The time it takes for the mortar to prepare for another strike after performing a Screen strike.					Number (Seconds)
 
 // Class Names
-_Light = "Sh_82mm_AMOS";									// Class name of light mortar round.																				String
-_Medium = "Sh_120mm_HE";									// Class name of medium mortar round.																				String
+_Light = "UK3CB_BAF_Sh_60mm_AMOS";									// Class name of light mortar round.																				String
+_Medium = "Sh_82mm_AMOS";									// Class name of medium mortar round.																				String
 _Heavy = "Sh_155mm_AMOS";									// Class name of heavy mortar round.																				String
 _Smoke = "Smoke_120mm_AMOS_White";							// Class name of smoke round.																						String
 _Flare = "F_40mm_White";									// Class name of flare round.																						String
-
 
 // Day/Night time
 _Sunrise = 4.00;											// The time it gets bright enough for smokes to be used instead of flares.											Number (0.00 - 23.59)
@@ -51,8 +50,8 @@ _INDEPGunner = ["I_Soldier_F"];								// INDEPENDENT Gunner for the Mortar
 
 //	Marking and Sound effects
 _Marking = [false,true,true,false,false];					// If marking should be used on firing modes. [Sporadic,Precise,Barrage,Guided,Screen] True / False					Array of Booleans
-_SoundOn = [true,false,false,false,true];					// If sound effect should be applied to mortar round when incoming. [Light,Medium,Heavy,Smoke,Flare] True / False	Array of Booleans
-_SoundTypes = ["mortar1","","",""];							// The sound effects used by using Say3d. [Light,Medium,Heavy,Smoke]												Array of Strings
+_SoundOn = [true,true,false,false,true];					// If sound effect should be applied to mortar round when incoming. [Light,Medium,Heavy,Smoke,Flare] True / False	Array of Booleans
+_SoundTypes = ["mortar1","mortar1","",""];							// The sound effects used by using Say3d. [Light,Medium,Heavy,Smoke]												Array of Strings
 _MarkSmoke = "SmokeShellRed";								// Class name of smoke that marks target area.																		String
 _MarkFlare = "F_40mm_Red";									// Class name of flare that marks target area.																		String
 
