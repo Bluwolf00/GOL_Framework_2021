@@ -10,7 +10,7 @@ _vest = "acp_gol_FR_CE_V_PlateCarrier2_FR_CE";
 _backpack = "acp_gol_FR_CE_B_Kitbag_rgr_FR_CE";
 _backpackRadio = _backpack;
 if (GVARMAIN(mod_TFAR)) then {
-	_backpackRadio = "acp_gol_FR_CE_B_RadioBag_01_FR_CE_F";
+	_backpackRadio = "FRXA_tf_rt1523g_big_M81";
 };
 
 if (_role in ["sl","tl","pl"]) then {
