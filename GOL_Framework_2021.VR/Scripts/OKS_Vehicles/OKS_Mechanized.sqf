@@ -23,7 +23,7 @@ clearItemCargoGlobal _Vehicle;
 clearWeaponCargoGlobal _Vehicle;
 clearMagazineCargoGlobal _Vehicle;
 clearBackpackCargoGlobal _Vehicle;
-_Vehicle setFuel 0.4;
+_Vehicle setFuelConsumptionCoef 10;
 
 if(_ShouldDisableThermal) then {
 	_Vehicle disableTIEquipment true;
@@ -164,12 +164,14 @@ while{alive _Vehicle} do {
 };
 */
 
-_Vehicle spawn {
-	_Vehicle = _this;
-	while {alive _Vehicle} do {
-		if(fuel _Vehicle > 0.4) then {
-			_Vehicle setFuel 0.4;
-		};
-		sleep 30;
-	}
-}
+
+
+// _Vehicle spawn {
+// 	_Vehicle = _this;
+// 	while {alive _Vehicle} do {
+// 		if(fuel _Vehicle > 0.4) then {
+// 			_Vehicle setFuel 0.4;
+// 		};
+// 		sleep 30;
+// 	}
+// }

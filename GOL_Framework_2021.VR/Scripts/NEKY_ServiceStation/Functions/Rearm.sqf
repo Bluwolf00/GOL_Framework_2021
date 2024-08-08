@@ -243,18 +243,20 @@ if !(((Count _Turrets) isEqualTo 0) && ((Count _Pylons) isEqualTo 0)) then
 	};	
 
 	// Add Extra Flares
-	_CMWeapons = (_Veh weaponsTurret [-1]) select {["CM", _X,false] call BIS_fnc_inString};
-	{
-		_CMWeapon = _X;
-		systemchat str _CMWeapon;
-		_FlareMag = (getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines")
-			select 
-				(count (getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines"))) - 1 );
-		{_Veh removeMagazinesTurret [_X,[-1]]} forEach getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines");
-		systemchat str _FlareMag;
-		_Veh addMagazineTurret [_FlareMag,[-1]];
-		_Veh addMagazineTurret [_FlareMag,[-1]];
-	} foreach _CMWeapons;
+	if(typeof _Veh != "RHS_MELB_AH6M") then {
+		_CMWeapons = (_Veh weaponsTurret [-1]) select {["CM", _X,false] call BIS_fnc_inString};
+		{
+			_CMWeapon = _X;
+			systemchat str _CMWeapon;
+			_FlareMag = (getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines")
+				select 
+					(count (getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines"))) - 1 );
+			{_Veh removeMagazinesTurret [_X,[-1]]} forEach getArray (configFile >> "CfgWeapons" >> (_CMWeapon) >> "magazines");
+			systemchat str _FlareMag;
+			_Veh addMagazineTurret [_FlareMag,[-1]];
+			_Veh addMagazineTurret [_FlareMag,[-1]];
+		} foreach _CMWeapons;
+	};
 
 /// Drongos APS
 _Veh call DAPS_fnc_RearmAPS;
@@ -355,6 +357,8 @@ if(["WMIK_Milan",(typeOf _Veh)] call BIS_fnc_inString) then {
 	["Primary Ammunition Added", _Veh] spawn NEKY_ServiceStation_Hints;
 	sleep 2;
 };
+
+_Veh setVehicleAmmo 1;
 
 
 if (!(_Veh in NEKY_ServiceStationArray)) exitWith {[_SS,true] call NEKY_ServiceStation_Available; ["You have left the service station, service ending",_Veh] call NEKY_ServiceStation_Hints};

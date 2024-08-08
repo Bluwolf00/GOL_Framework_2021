@@ -149,6 +149,10 @@ player addEventHandler ["InventoryOpened", {
     if(typeOf _container in ["Box_Syndicate_Ammo_F","Box_Syndicate_Wps_F","B_supplyCrate_F"] && {_container distance _X < 150} count [flag_west_1,flag_east_1,flag_west_2,flag_east_2] > 0) then {
         format["%1 accessed an ammo crate at base.",name _unit] remoteExec ["systemChat",0];
     };
+
+    if(typeOf _container in ["Box_NATO_Equip_F"] && {_container distance _X < 150} count [flag_west_1,flag_east_1,flag_west_2,flag_east_2] > 0) then {
+        format["%1 accessed the equipment crate at base.",name _unit] remoteExec ["systemChat",0];
+    };  
 }];
 
 // Set Radio Volumes

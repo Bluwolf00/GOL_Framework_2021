@@ -12,6 +12,8 @@ Params
 	["_shouldDisableNVG", false, [true]]
 ];
 
+_Vehicle setFuelConsumptionCoef 3;
+
 OKS_isWhiteList = {
 	Params ["_Vehicle"];
 	Private "_return";
