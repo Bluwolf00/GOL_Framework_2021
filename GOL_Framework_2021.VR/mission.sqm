@@ -24,7 +24,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={149.81305,118.28368,-77.901169};
+		pos[]={149.76495,118.28368,-64.246452};
 		dir[]={-0.0024116114,-0.72885334,0.68474394};
 		up[]={-0.0025665576,0.68464047,0.72887915};
 		aside[]={1.0000434,-1.4678835e-007,0.0035216352};
@@ -15451,7 +15451,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=15;
+		items=13;
 		class Item0
 		{
 			dataType="Layer";
@@ -19104,7 +19104,7 @@ class Mission
 					name="BLUFOR FARP";
 					class Entities
 					{
-						items=49;
+						items=50;
 						class Item0
 						{
 							dataType="Object";
@@ -20917,13 +20917,29 @@ class Mission
 								nAttributes=2;
 							};
 						};
+						class Item49
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={126.01376,5,46.230732};
+								angles[]={-0,6.2766471,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=2800;
+							type="Land_HelipadSquare_F";
+						};
 					};
 					id=2721;
-					atlOffset=23216.637;
+					atlOffset=11608.318;
 				};
 			};
 			id=403;
-			atlOffset=34824.953;
+			atlOffset=29020.797;
 		};
 		class Item4
 		{
@@ -23172,7 +23188,7 @@ class Mission
 					name="OPFOR FARP";
 					class Entities
 					{
-						items=46;
+						items=47;
 						class Item0
 						{
 							dataType="Object";
@@ -24813,13 +24829,29 @@ class Mission
 								nAttributes=2;
 							};
 						};
+						class Item46
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={182.01506,5,46.20747};
+								angles[]={-0,0.0025688971,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=2803;
+							type="Land_HelipadSquare_F";
+						};
 					};
 					id=2720;
-					atlOffset=92866.555;
+					atlOffset=46433.277;
 				};
 			};
 			id=404;
-			atlOffset=52831.414;
+			atlOffset=29614.773;
 		};
 		class Item5
 		{
@@ -24964,38 +24996,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={126.01376,5,46.230732};
-				angles[]={-0,6.2766471,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=2800;
-			type="Land_HelipadSquare_F";
-		};
-		class Item9
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={182.01506,5,46.20747};
-				angles[]={-0,0.0025688971,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=2803;
-			type="Land_HelipadSquare_F";
-		};
-		class Item10
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={189.83942,5.5128922,42.554485};
 				angles[]={-0,0.05210565,0};
 			};
@@ -25037,7 +25037,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item11
+		class Item9
 		{
 			dataType="Object";
 			class PositionInfo
@@ -25070,7 +25070,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item12
+		class Item10
 		{
 			dataType="Object";
 			class PositionInfo
@@ -25129,7 +25129,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item13
+		class Item11
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -25140,7 +25140,7 @@ class Mission
 			description="This helipad is for refuel/rearm and repair.";
 			id=2807;
 		};
-		class Item14
+		class Item12
 		{
 			dataType="Comment";
 			class PositionInfo
