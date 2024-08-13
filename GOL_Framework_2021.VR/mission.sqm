@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8648;
+		nextID=8669;
 	};
 	class Camera
 	{
-		pos[]={149.76495,118.28368,-64.246452};
-		dir[]={-0.0024116114,-0.72885334,0.68474394};
-		up[]={-0.0025665576,0.68464047,0.72887915};
-		aside[]={1.0000434,-1.4678835e-007,0.0035216352};
+		pos[]={144.84987,58.893169,-59.562195};
+		dir[]={0.0043326458,-0.51435363,0.85759157};
+		up[]={0.0025983518,0.85757703,0.51434815};
+		aside[]={1.0000026,5.3707481e-008,-0.0050528385};
 	};
 };
 binarizationWanted=0;
@@ -45,9 +45,11 @@ addons[]=
 	"san_headlamp",
 	"A3_Soft_F_Exp_LSV_01",
 	"A3_Boat_F_Boat_Armed_01",
+	"GatlingSoundOverhaul_Boats",
 	"A3_Air_F_Exp_VTOL_01",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Armor_F_Beta_APC_Tracked_01",
+	"AltMun_CRV",
 	"tfar_external_intercom",
 	"ace_realisticnames",
 	"ace_rearm",
@@ -69,15 +71,16 @@ addons[]=
 	"ace_cargo",
 	"A3_Modules_F_Multiplayer",
 	"rhsusf_c_melb",
-	"rhs_c_a2port_air",
+	"Vsqz_melber",
 	"A3_Supplies_F_Heli_Fuel",
-	"A3_Structures_F_Tank_Military_RepairDepot"
+	"A3_Structures_F_Tank_Military_RepairDepot",
+	"rhs_c_a2port_air"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=30;
+		items=32;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -153,131 +156,143 @@ class AddonsMetaData
 		};
 		class Item11
 		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item12
+		{
 			className="A3_Air_F_Exp";
 			name="Arma 3 Apex - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item13
 		{
 			className="A3_Armor_F_Beta";
 			name="Arma 3 Beta - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item14
+		{
+			className="A3_Armor_F";
+			name="Arma 3 Alpha - Armored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item15
 		{
 			className="tfar_external_intercom";
 			name="TFAR - Intercom Phone";
 			author="Task Force Arrowhead Radio Team";
 		};
-		class Item14
+		class Item16
 		{
 			className="ace_rearm";
 			name="ACE3 - Rearm";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item15
+		class Item17
 		{
 			className="ace_refuel";
 			name="ACE3 - Refuel";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item16
+		class Item18
 		{
 			className="ace_vehicle_damage";
 			name="ACE3 - Vehicle Damage";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item17
+		class Item19
 		{
 			className="CUP_Misc3_Config";
 			name="CUP_Misc3_Config";
 		};
-		class Item18
+		class Item20
 		{
 			className="FIR_PilotCrewPack_US";
 			name="FIR_PilotCrewPack_US";
 		};
-		class Item19
+		class Item21
 		{
 			className="ace_parachute";
 			name="ACE3 - Parachute";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item20
+		class Item22
 		{
 			className="A3_Supplies_F_Exp";
 			name="Arma 3 Apex - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item23
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item22
+		class Item24
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item23
-		{
-			className="A3_Weapons_F";
-			name="Arma 3 Alpha - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item24
+		class Item25
 		{
 			className="RHS_US_A2_AirImport";
 			name="RHSUSF A2 Air Ports";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item25
+		class Item26
 		{
 			className="A3_Supplies_F_Heli";
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item26
+		class Item27
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item27
+		class Item28
 		{
 			className="rhsusf_c_melb";
 			name="MELB";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item28
-		{
-			className="rhs_c_a2port_air";
-			name="A2 ported air";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
-		};
 		class Item29
+		{
+			className="Vsqz_melber";
+			name="Vsqz_melber";
+		};
+		class Item30
 		{
 			className="A3_Structures_F_Tank";
 			name="Arma 3 Tank - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item31
+		{
+			className="rhs_c_a2port_air";
+			name="A2 ported air";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
 		};
 	};
 };
@@ -292,8 +307,8 @@ dlcs[]=
 	"Expansion",
 	"RHS_USAF",
 	"Heli",
-	"RHS_AFRF",
-	"Tank"
+	"Tank",
+	"RHS_AFRF"
 };
 randomSeed=15706391;
 class ScenarioData
@@ -562,7 +577,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=413;
+									items=416;
 									class Item0
 									{
 										class data
@@ -3867,6 +3882,30 @@ class CustomAttributes
 											value="ace_refuel_progressduration";
 										};
 									};
+									class Item413
+									{
+										class data
+										{
+											singleType="STRING";
+											value="simplesuppress_suppress_overlayopacity";
+										};
+									};
+									class Item414
+									{
+										class data
+										{
+											singleType="STRING";
+											value="simplesuppress_suppress_overlayfadeouttime";
+										};
+									};
+									class Item415
+									{
+										class data
+										{
+											singleType="STRING";
+											value="simplesuppress_suppress_shootermindistance";
+										};
+									};
 								};
 							};
 						};
@@ -3877,7 +3916,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=413;
+									items=416;
 									class Item0
 									{
 										class data
@@ -15353,6 +15392,87 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item413
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=0.85227233;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item414
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=9.0201826;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item415
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=15;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -15451,7 +15571,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=13;
+		items=5;
 		class Item0
 		{
 			dataType="Layer";
@@ -19104,14 +19224,14 @@ class Mission
 					name="BLUFOR FARP";
 					class Entities
 					{
-						items=50;
+						items=53;
 						class Item0
 						{
 							dataType="Object";
 							class PositionInfo
 							{
 								position[]={111.05806,5.149631,17.98344};
-								angles[]={-0,6.2464318,0};
+								angles[]={0,6.2464318,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19159,7 +19279,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={142.68387,5.149631,18.531218};
-								angles[]={-0,0.016638665,0};
+								angles[]={0,0.016638665,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19207,7 +19327,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={111.02264,5.149631,-8.364872};
-								angles[]={-0,6.2464318,0};
+								angles[]={0,6.2464318,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19255,7 +19375,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={141.69254,5.149631,-17.268299};
-								angles[]={-0,0.016638665,0};
+								angles[]={0,0.016638665,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19350,7 +19470,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.83712,5.6349964,12.265884};
-								angles[]={-0,6.2662187,0};
+								angles[]={0,6.2662187,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19384,7 +19504,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={109.18553,5,23.143682};
-								angles[]={-0,6.246429,0};
+								angles[]={0,6.246429,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19443,7 +19563,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={142.86884,5,23.327906};
-								angles[]={-0,0.016638665,0};
+								angles[]={0,0.016638665,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19502,7 +19622,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={108.41744,5,-12.902304};
-								angles[]={-0,6.2464318,0};
+								angles[]={0,6.2464318,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19561,7 +19681,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={141.8775,5,-12.471607};
-								angles[]={-0,0.016638665,0};
+								angles[]={0,0.016638665,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19620,7 +19740,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.88825,5,12.127083};
-								angles[]={-0,6.2662187,0};
+								angles[]={0,6.2662187,0};
 							};
 							title="Mobile Service Station";
 							description="This also adds pylon configuration options";
@@ -19632,7 +19752,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={109.17224,5,22.418291};
-								angles[]={-0,6.2464318,0};
+								angles[]={0,6.2464318,0};
 							};
 							title="Service Station";
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
@@ -19644,7 +19764,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={142.81677,5,22.604319};
-								angles[]={-0,0.016638665,0};
+								angles[]={0,0.016638665,0};
 							};
 							title="Service Station";
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
@@ -19656,7 +19776,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={108.40405,5,-13.627645};
-								angles[]={-0,6.2464318,0};
+								angles[]={0,6.2464318,0};
 							};
 							title="Service Station";
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
@@ -19668,7 +19788,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={141.82544,5,-13.195194};
-								angles[]={-0,0.016638665,0};
+								angles[]={0,0.016638665,0};
 							};
 							title="Service Station";
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
@@ -19774,7 +19894,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.87812,5.8924227,3.3694725};
-								angles[]={-0,0.0051803077,0};
+								angles[]={0,0.0051803077,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19792,7 +19912,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.07362,5.069725,-2.0758095};
-								angles[]={-0,3.1667206,0};
+								angles[]={0,3.1667206,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19827,7 +19947,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={127.677,5.069725,-2.196682};
-								angles[]={-0,3.1667206,0};
+								angles[]={0,3.1667206,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19862,7 +19982,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={124.94794,5.069725,17.995102};
-								angles[]={-0,3.1667206,0};
+								angles[]={0,3.1667206,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19897,7 +20017,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={127.54234,5.069725,17.925072};
-								angles[]={-0,3.1667206,0};
+								angles[]={0,3.1667206,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19932,7 +20052,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={123.96408,5.069725,-2.0474586};
-								angles[]={-0,3.1667206,0};
+								angles[]={0,3.1667206,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19967,7 +20087,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={126.36219,5.069725,-2.0946388};
-								angles[]={-0,3.1667206,0};
+								angles[]={0,3.1667206,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20002,7 +20122,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={126.24921,5.069725,17.950718};
-								angles[]={-0,3.1667206,0};
+								angles[]={0,3.1667206,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20037,7 +20157,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.84751,5.8924227,5.3147163};
-								angles[]={-0,0.0051803077,0};
+								angles[]={0,0.0051803077,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20055,7 +20175,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.87738,5.8924227,7.3015022};
-								angles[]={-0,0.0051803077,0};
+								angles[]={0,0.0051803077,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20073,7 +20193,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.84866,5.8924227,9.393219};
-								angles[]={-0,0.0051836278,0};
+								angles[]={0,0.0051836278,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20108,7 +20228,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={127.64001,5.2100425,-1.2485313};
-								angles[]={-0,3.1668601,0};
+								angles[]={0,3.1668601,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20143,7 +20263,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.47591,5.2100425,18.913864};
-								angles[]={-0,3.1668601,0};
+								angles[]={0,3.1668601,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20178,7 +20298,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.8775,5.2100425,-1.2122231};
-								angles[]={-0,3.1668601,0};
+								angles[]={0,3.1668601,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20213,7 +20333,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={124.20902,5.2100425,-1.1820259};
-								angles[]={-0,3.1668601,0};
+								angles[]={0,3.1668601,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20248,7 +20368,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={127.34489,5.2100425,18.88036};
-								angles[]={-0,3.1668601,0};
+								angles[]={0,3.1668601,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20283,7 +20403,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={127.6517,5.2100425,-0.39992142};
-								angles[]={-0,3.1668601,0};
+								angles[]={0,3.1668601,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20318,7 +20438,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.4876,5.2100425,19.76247};
-								angles[]={-0,3.1668601,0};
+								angles[]={0,3.1668601,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20353,7 +20473,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.88919,5.2100425,-0.36361313};
-								angles[]={-0,3.1668601,0};
+								angles[]={0,3.1668601,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20388,7 +20508,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={124.22071,5.2100425,-0.33343124};
-								angles[]={-0,3.1668601,0};
+								angles[]={0,3.1668601,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20423,7 +20543,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={127.35656,5.2100425,19.728966};
-								angles[]={-0,3.1668601,0};
+								angles[]={0,3.1668601,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20458,7 +20578,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.78228,8.9768047,10.548992};
-								angles[]={-0,0.028832838,0};
+								angles[]={0,0.028832838,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20493,7 +20613,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.88371,5,7.3925667};
-								angles[]={-0,6.2517023,0};
+								angles[]={0,6.2517023,0};
 							};
 							title="BLUFOR Large Resupply";
 							description="We're trying to shift away from large resupplies to increase the flow of supplies having to be brought to the front. So we prefer that you use the small crates next to the flag. This exists still if the terrain does not allow for continueous  resupply from AAC.";
@@ -20675,7 +20795,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={123.76718,5.2100425,18.991295};
-								angles[]={-0,3.1668601,0};
+								angles[]={0,3.1668601,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20710,7 +20830,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={123.77888,5.2100425,19.839901};
-								angles[]={-0,3.1668601,0};
+								angles[]={0,3.1668601,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20745,7 +20865,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={123.39652,5.069725,18.071438};
-								angles[]={-0,3.1667206,0};
+								angles[]={0,3.1667206,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20779,7 +20899,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={142.74886,6.9401751,22.672491};
+								position[]={142.74899,6.9401751,22.672001};
 							};
 							side="Empty";
 							flags=4;
@@ -20787,6 +20907,7 @@ class Mission
 							{
 								init="[this, false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
 								reportOwnPosition=1;
+								pylons="1500Rnd_gau1950cal_tracer_red_shells;rhs_mag_M229_19;rhs_mag_M229_19;1500Rnd_gau1950cal_tracer_red_shells;";
 							};
 							id=2793;
 							type="RHS_MELB_AH6M";
@@ -20827,7 +20948,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.81084,5.149631,40.7589};
-								angles[]={-0,0.016638665,0};
+								angles[]={0,0.016638665,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20874,18 +20995,111 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={181.76231,5.149631,40.737713};
-								angles[]={-0,0.025745777,0};
+								position[]={126.01376,5,46.230732};
+								angles[]={0,6.2766471,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="call{this setVariable [""ace_rearm_isSupplyVehicle"", true]}";
-								disableSimulation=1;
 							};
-							id=2802;
-							type="Box_NATO_WpsLaunch_F";
+							id=2800;
+							type="Land_HelipadSquare_F";
+						};
+						class Item49
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={133.87106,5.5128922,42.649155};
+								angles[]={0,0.042998537,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=2797;
+							type="FlexibleTank_01_forest_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ace_refuel_fuelCargo";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=-10;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item50
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={136.93175,7.4179983,45.489723};
+								angles[]={0,4.7239738,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=2799;
+							type="Land_RepairDepot_01_green_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item51
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={134.64021,5.7898083,49.137997};
+								angles[]={0,4.7056437,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=2796;
+							type="Box_NATO_AmmoVeh_F";
 							class CustomAttributes
 							{
 								class Attribute0
@@ -20910,36 +21124,44 @@ class Mission
 										class data
 										{
 											singleType="BOOL";
-											value=1;
+											value=0;
 										};
 									};
 								};
-								nAttributes=2;
+								class Attribute2
+								{
+									property="ace_rearm_rearmCargo";
+									expression="if (_value != (if (isNumber (configOf _this >> 'ace_rearm_defaultSupply')) then {getNumber (configOf _this >> 'ace_rearm_defaultSupply')} else {(if (getAmmoCargo _this > 0) then {getAmmoCargo _this} else {-1})})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=99999;
+										};
+									};
+								};
+								nAttributes=3;
 							};
 						};
-						class Item49
+						class Item52
 						{
-							dataType="Object";
+							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={126.01376,5,46.230732};
-								angles[]={-0,6.2766471,0};
+								position[]={125.87019,5,46.525703};
 							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=2800;
-							type="Land_HelipadSquare_F";
+							title="Rearm/Repair/Refuel Station";
+							description="This helipad is for refuel/rearm and repair.";
+							id=2808;
 						};
 					};
 					id=2721;
-					atlOffset=11608.318;
+					atlOffset=1451.0398;
 				};
 			};
 			id=403;
-			atlOffset=29020.797;
+			atlOffset=23942.156;
 		};
 		class Item4
 		{
@@ -23188,14 +23410,14 @@ class Mission
 					name="OPFOR FARP";
 					class Entities
 					{
-						items=47;
+						items=52;
 						class Item0
 						{
 							dataType="Object";
 							class PositionInfo
 							{
 								position[]={181.96292,5.6349964,8.3783073};
-								angles[]={-0,6.2662187,0};
+								angles[]={0,6.2662187,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23229,7 +23451,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={182.01405,5,8.2395058};
-								angles[]={-0,6.2662187,0};
+								angles[]={0,6.2662187,0};
 							};
 							title="Mobile Service Station";
 							description="This also adds pylon configuration options";
@@ -23241,7 +23463,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={162.94267,5.149631,18.421682};
-								angles[]={-0,6.2464318,0};
+								angles[]={0,6.2464318,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23289,7 +23511,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={200.55023,5.149631,18.589687};
-								angles[]={-0,0.016638665,0};
+								angles[]={0,0.016638665,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23337,7 +23559,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={162.75139,5.149631,-17.369467};
-								angles[]={-0,6.2464318,0};
+								angles[]={0,6.2464318,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23385,7 +23607,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={200.54285,5.149631,-17.036879};
-								angles[]={-0,0.016638665,0};
+								angles[]={0,0.016638665,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23433,7 +23655,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={162.87138,5,23.221407};
-								angles[]={-0,6.2464318,0};
+								angles[]={0,6.2464318,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23492,7 +23714,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={200.7352,5,23.386375};
-								angles[]={-0,0.016638665,0};
+								angles[]={0,0.016638665,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23551,7 +23773,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={162.6801,5,-12.569746};
-								angles[]={-0,6.2464318,0};
+								angles[]={0,6.2464318,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23610,7 +23832,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={200.72781,5,-12.240194};
-								angles[]={-0,0.016638665,0};
+								angles[]={0,0.016638665,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23669,7 +23891,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={162.85799,5,22.496069};
-								angles[]={-0,6.2464318,0};
+								angles[]={0,6.2464318,0};
 							};
 							title="Service Station";
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
@@ -23681,7 +23903,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={200.68314,5,22.662788};
-								angles[]={-0,0.016638665,0};
+								angles[]={0,0.016638665,0};
 							};
 							title="Service Station";
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
@@ -23693,7 +23915,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={162.6667,5,-13.29508};
-								angles[]={-0,6.2464318,0};
+								angles[]={0,6.2464318,0};
 							};
 							title="Service Station";
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
@@ -23705,7 +23927,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={200.67575,5,-12.963781};
-								angles[]={-0,0.016638665,0};
+								angles[]={0,0.016638665,0};
 							};
 							title="Service Station";
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
@@ -23785,7 +24007,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={181.90067,8.9768047,6.5222206};
-								angles[]={-0,4.7083049,0};
+								angles[]={0,4.7083049,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23820,7 +24042,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={181.80923,5.8924227,-1.3404579};
-								angles[]={-0,3.1556382,0};
+								angles[]={0,3.1556382,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23838,7 +24060,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={181.7941,5.8924227,0.62660599};
-								angles[]={-0,3.1556382,0};
+								angles[]={0,3.1556382,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23856,7 +24078,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={181.85474,5.8924227,2.8213615};
-								angles[]={-0,3.1556382,0};
+								angles[]={0,3.1556382,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23874,7 +24096,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={181.90234,5.8924227,5.1401939};
-								angles[]={-0,3.1556382,0};
+								angles[]={0,3.1556382,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23892,7 +24114,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={180.04532,5.3049998,-5.868351};
-								angles[]={0.00069053395,1.5814443,-0};
+								angles[]={0.00069053395,1.5814443,0};
 							};
 							title="OPFOR Small Resupply";
 							description="Small resupply crates meant only for a fire-teams resupply. The Ammo Boxes have the standard ammunition for the Squad, the Basic Weapons Crate has the secondary ammunitions such as for the roles of MAT, AMAT, AMMG, MMG, Light Rifleman, Marksman. Medical box is for medical resupply.";
@@ -23905,7 +24127,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={180.1225,5.2100425,-5.7440834};
-								angles[]={-0,3.1547937,0};
+								angles[]={0,3.1547937,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23940,7 +24162,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={180.58734,5.2100425,12.920948};
-								angles[]={-0,3.1692638,0};
+								angles[]={0,3.1692638,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23975,7 +24197,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={181.69255,5.2100425,-5.7473335};
-								angles[]={-0,3.1369805,0};
+								angles[]={0,3.1369805,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24010,7 +24232,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={183.46596,5.2100425,-5.7236061};
-								angles[]={-0,3.1491137,0};
+								angles[]={0,3.1491137,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24045,7 +24267,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={180.12619,5.2100425,-4.8528557};
-								angles[]={-0,3.1547937,0};
+								angles[]={0,3.1547937,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24080,7 +24302,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={180.59105,5.2100425,13.812164};
-								angles[]={-0,3.1692638,0};
+								angles[]={0,3.1692638,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24115,7 +24337,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={181.69626,5.2100425,-4.8561134};
-								angles[]={-0,3.1369805,0};
+								angles[]={0,3.1369805,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24150,7 +24372,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={183.46965,5.2100425,-4.8323936};
-								angles[]={-0,3.1491137,0};
+								angles[]={0,3.1491137,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24185,7 +24407,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={182.19066,5.3436961,12.950523};
-								angles[]={-0,3.1692638,0};
+								angles[]={0,3.1692638,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24221,7 +24443,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={182.19435,5.2100425,13.841755};
-								angles[]={-0,3.1692638,0};
+								angles[]={0,3.1692638,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24256,7 +24478,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={180.67499,5.069725,12.030315};
-								angles[]={-0,3.130636,0};
+								angles[]={0,3.130636,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24291,7 +24513,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={182.95816,5.069725,12.04232};
-								angles[]={-0,3.130636,0};
+								angles[]={0,3.130636,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24326,7 +24548,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={181.51364,5.069725,-6.5704536};
-								angles[]={-0,3.130636,0};
+								angles[]={0,3.130636,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24361,7 +24583,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={182.63751,5.069725,-6.5745659};
-								angles[]={-0,3.130636,0};
+								angles[]={0,3.130636,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24396,7 +24618,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={181.81686,5.069725,12.038605};
-								angles[]={-0,3.130636,0};
+								angles[]={0,3.130636,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24431,7 +24653,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={180.37804,5.069725,-6.5944939};
-								angles[]={-0,3.130636,0};
+								angles[]={0,3.130636,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24466,7 +24688,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={183.76799,5.069725,-6.5628433};
-								angles[]={-0,3.130636,0};
+								angles[]={0,3.130636,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24670,7 +24892,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={183.46416,5.3436961,12.821182};
-								angles[]={-0,3.1692638,0};
+								angles[]={0,3.1692638,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24706,7 +24928,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={183.46785,5.2100425,13.712414};
-								angles[]={-0,3.1692638,0};
+								angles[]={0,3.1692638,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24741,7 +24963,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={200.46619,8.1747437,21.84708};
-								angles[]={-0,0.0090931654,0};
+								angles[]={0,0.0090931654,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24788,7 +25010,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={200.55222,8.1747437,-14.814955};
-								angles[]={-0,0.0090931654,0};
+								angles[]={0,0.0090931654,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24835,7 +25057,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={182.01506,5,46.20747};
-								angles[]={-0,0.0025688971,0};
+								angles[]={0,0.0025688971,0};
 							};
 							side="Empty";
 							flags=4;
@@ -24845,311 +25067,210 @@ class Mission
 							id=2803;
 							type="Land_HelipadSquare_F";
 						};
+						class Item47
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={189.83942,5.5128922,42.554485};
+								angles[]={0,0.05210565,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=2804;
+							type="FlexibleTank_01_forest_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ace_refuel_fuelCargo";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=-10;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item48
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={192.92584,7.4179983,45.367062};
+								angles[]={0,4.7330809,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=2805;
+							type="Land_RepairDepot_01_green_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item49
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={190.66763,5.7898083,49.036053};
+								angles[]={0,4.7147508,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=2806;
+							type="Box_NATO_AmmoVeh_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="hideObject";
+									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="ace_rearm_rearmCargo";
+									expression="if (_value != (if (isNumber (configOf _this >> 'ace_rearm_defaultSupply')) then {getNumber (configOf _this >> 'ace_rearm_defaultSupply')} else {(if (getAmmoCargo _this > 0) then {getAmmoCargo _this} else {-1})})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=99999;
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item50
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={182.15344,5,45.993973};
+							};
+							title="Rearm/Repair/Refuel Station";
+							description="This helipad is for refuel/rearm and repair.";
+							id=2807;
+						};
+						class Item51
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={181.76231,5.149631,40.737713};
+								angles[]={0,0.025745777,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="call{this setVariable [""ace_rearm_isSupplyVehicle"", true]}";
+								disableSimulation=1;
+							};
+							id=2802;
+							type="Box_NATO_WpsLaunch_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="hideObject";
+									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
 					};
 					id=2720;
-					atlOffset=46433.277;
+					atlOffset=1451.0399;
 				};
 			};
 			id=404;
-			atlOffset=29614.773;
-		};
-		class Item5
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={134.64021,5.7898083,49.137997};
-				angles[]={-0,4.7056437,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=2796;
-			type="Box_NATO_AmmoVeh_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ace_rearm_rearmCargo";
-					expression="if (_value != (if (isNumber (configOf _this >> 'ace_rearm_defaultSupply')) then {getNumber (configOf _this >> 'ace_rearm_defaultSupply')} else {(if (getAmmoCargo _this > 0) then {getAmmoCargo _this} else {-1})})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=99999;
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item6
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={133.87106,5.5128922,42.649155};
-				angles[]={-0,0.042998537,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=2797;
-			type="FlexibleTank_01_forest_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=-10;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item7
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={136.93175,7.4179983,45.489723};
-				angles[]={-0,4.7239738,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=2799;
-			type="Land_RepairDepot_01_green_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item8
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={189.83942,5.5128922,42.554485};
-				angles[]={-0,0.05210565,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=2804;
-			type="FlexibleTank_01_forest_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=-10;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item9
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={192.92584,7.4179983,45.367062};
-				angles[]={-0,4.7330809,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=2805;
-			type="Land_RepairDepot_01_green_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item10
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={190.66763,5.7898083,49.036053};
-				angles[]={-0,4.7147508,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=2806;
-			type="Box_NATO_AmmoVeh_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ace_rearm_rearmCargo";
-					expression="if (_value != (if (isNumber (configOf _this >> 'ace_rearm_defaultSupply')) then {getNumber (configOf _this >> 'ace_rearm_defaultSupply')} else {(if (getAmmoCargo _this > 0) then {getAmmoCargo _this} else {-1})})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
-					class Value
-					{
-						class data
-						{
-							singleType="SCALAR";
-							value=99999;
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item11
-		{
-			dataType="Comment";
-			class PositionInfo
-			{
-				position[]={182.15344,5,45.993973};
-			};
-			title="Rearm/Repair/Refuel Station";
-			description="This helipad is for refuel/rearm and repair.";
-			id=2807;
-		};
-		class Item12
-		{
-			dataType="Comment";
-			class PositionInfo
-			{
-				position[]={125.87019,5,46.525703};
-			};
-			title="Rearm/Repair/Refuel Station";
-			description="This helipad is for refuel/rearm and repair.";
-			id=2808;
+			atlOffset=7123.6548;
 		};
 	};
 	class Connections
