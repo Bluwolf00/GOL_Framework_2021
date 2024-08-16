@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8669;
+		nextID=8690;
 	};
 	class Camera
 	{
-		pos[]={144.74397,58.893169,-80.540245};
-		dir[]={0.0043326458,-0.51435363,0.85759157};
-		up[]={0.0025983518,0.85757703,0.51434815};
-		aside[]={1.0000026,5.3707481e-008,-0.0050528385};
+		pos[]={126.39249,35.259357,26.215504};
+		dir[]={0.0043324265,-0.51434278,0.85757375};
+		up[]={0.0025984051,0.85758471,0.51433623};
+		aside[]={0.9999873,-2.3283064e-010,-0.0050518936};
 	};
 };
 binarizationWanted=0;
@@ -577,7 +577,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=416;
+									items=419;
 									class Item0
 									{
 										class data
@@ -3906,6 +3906,30 @@ class CustomAttributes
 											value="simplesuppress_suppress_shootermindistance";
 										};
 									};
+									class Item416
+									{
+										class data
+										{
+											singleType="STRING";
+											value="simplesuppress_suppress_overlaytexture";
+										};
+									};
+									class Item417
+									{
+										class data
+										{
+											singleType="STRING";
+											value="simplesuppress_suppress_projectilemaxdistance";
+										};
+									};
+									class Item418
+									{
+										class data
+										{
+											singleType="STRING";
+											value="simplesuppress_suppress_checklos";
+										};
+									};
 								};
 							};
 						};
@@ -3916,7 +3940,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=416;
+									items=419;
 									class Item0
 									{
 										class data
@@ -15405,7 +15429,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.85227233;
+														value=0.50254011;
 													};
 												};
 												class Item1
@@ -15432,7 +15456,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=9.0201826;
+														value=8;
 													};
 												};
 												class Item1
@@ -15459,7 +15483,88 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=15;
+														value=20;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item416
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item417
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=9;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item418
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=0;
 													};
 												};
 												class Item1
