@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2809;
+		nextID=2829;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8690;
+		nextID=8711;
 	};
 	class Camera
 	{
-		pos[]={142.70753,70.789764,-43.728378};
-		dir[]={-0.12275571,-0.67954636,0.72330636};
-		up[]={-0.11370387,0.73362803,0.66997254};
-		aside[]={0.98591775,4.3647015e-007,0.1673229};
+		pos[]={155.46254,70.290665,-75.326309};
+		dir[]={0.049823944,-0.55491245,0.8304162};
+		up[]={0.033234313,0.83190835,0.55391657};
+		aside[]={0.99820536,-1.3387762e-009,-0.059891094};
 	};
 };
 binarizationWanted=0;
@@ -10398,7 +10398,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -17502,7 +17502,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={123.53932,5.0014391,86.43972};
+										position[]={123.539,5.0014391,86.440002};
 										angles[]={0,0.001553343,0};
 									};
 									side="West";
@@ -21163,7 +21163,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={136.93175,7.4179983,45.489723};
-								angles[]={-0,3.1458178,0};
+								angles[]={0,3.1458178,0};
 							};
 							side="Empty";
 							flags=4;
@@ -21196,7 +21196,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={134.26988,5.7898083,47.68047};
-								angles[]={-0,4.7056437,0};
+								angles[]={0,4.7056437,0};
 							};
 							side="Empty";
 							flags=4;
@@ -25178,7 +25178,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={190.27133,5.5128922,43.444172};
-								angles[]={-0,0.05210565,0};
+								angles[]={0,0.05210565,0};
 							};
 							side="Empty";
 							flags=4;
@@ -25224,7 +25224,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={192.55544,7.4179983,45.741982};
-								angles[]={-0,3.1634946,0};
+								angles[]={0,3.1634946,0};
 							};
 							side="Empty";
 							flags=4;
@@ -25257,7 +25257,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={190.27153,5.7898083,48.225548};
-								angles[]={-0,4.7147508,0};
+								angles[]={0,4.7147508,0};
 							};
 							side="Empty";
 							flags=4;
