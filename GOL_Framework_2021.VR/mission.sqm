@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={155.46254,70.290665,-75.326309};
-		dir[]={0.049823944,-0.55491245,0.8304162};
-		up[]={0.033234313,0.83190835,0.55391657};
-		aside[]={0.99820536,-1.3387762e-009,-0.059891094};
+		pos[]={151.68951,70.290665,-37.040127};
+		dir[]={0.01175137,-0.59505779,0.80360371};
+		up[]={0.0087007973,0.80367917,0.59499758};
+		aside[]={0.99989772,-2.1493179e-008,-0.014621821};
 	};
 };
 binarizationWanted=0;
@@ -16667,7 +16667,7 @@ class Mission
 		class Item1
 		{
 			dataType="Layer";
-			name="Optional Template Items (Hidden)";
+			name="Optional (Hidden) - Delete if not used!";
 			state=3;
 			class Entities
 			{
