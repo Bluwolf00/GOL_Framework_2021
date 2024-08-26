@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2829;
+		nextID=2876;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8711;
+		nextID=8743;
 	};
 	class Camera
 	{
-		pos[]={151.68951,70.290665,-37.040127};
-		dir[]={0.01175137,-0.59505779,0.80360371};
-		up[]={0.0087007973,0.80367917,0.59499758};
-		aside[]={0.99989772,-2.1493179e-008,-0.014621821};
+		pos[]={145.73917,71.77906,-94.085915};
+		dir[]={0.049161512,-0.40736133,0.9119488};
+		up[]={0.021928476,0.91326785,0.40677449};
+		aside[]={0.9985556,3.9362931e-009,-0.053830326};
 	};
 };
 binarizationWanted=0;
@@ -74,13 +74,20 @@ addons[]=
 	"Vsqz_melber",
 	"A3_Supplies_F_Heli_Fuel",
 	"A3_Structures_F_Tank_Military_RepairDepot",
-	"rhs_c_a2port_air"
+	"rhs_c_a2port_air",
+	"A3_Structures_F_Ind_WindPowerPlant",
+	"A3_Weapons_F_Explosives",
+	"A3_Modules_F_Curator_Mines",
+	"A3_Structures_F_Ind_Cargo",
+	"UK3CB_Factions_Objects_Pallets",
+	"rhs_c_2s1",
+	"rhs_c_trucks"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=32;
+		items=37;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -294,6 +301,41 @@ class AddonsMetaData
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
+		class Item32
+		{
+			className="A3_Structures_F_Ind";
+			name="Arma 3 - Industrial Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item33
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item34
+		{
+			className="UK3CB_Factions_Objects_Pallets";
+			name="3CB Factions - Pallets";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
+		class Item35
+		{
+			className="rhs_c_2s1";
+			name="2S1 SPG";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item36
+		{
+			className="rhs_c_trucks";
+			name="GAZ-66";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
 	};
 };
 class DynamicSimulation
@@ -308,7 +350,9 @@ dlcs[]=
 	"RHS_USAF",
 	"Heli",
 	"Tank",
-	"RHS_AFRF"
+	"RHS_AFRF",
+	"Curator",
+	"UK3CB_Factions"
 };
 randomSeed=15706391;
 class ScenarioData
@@ -15676,7 +15720,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=5;
+		items=6;
 		class Item0
 		{
 			dataType="Layer";
@@ -25376,6 +25420,1344 @@ class Mission
 			};
 			id=404;
 			atlOffset=7123.6548;
+		};
+		class Item5
+		{
+			dataType="Layer";
+			name="Script Examples (Hidden) - Delete if not used!";
+			state=3;
+			class Entities
+			{
+				items=10;
+				class Item0
+				{
+					dataType="Layer";
+					name="Destroy House Example";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={110.91838,5,788.94196};
+							};
+							title="Destroy Houses Trigger";
+							description="Param 1: Trigger" \n "Param 2: Random damage (True/False)" \n "Param 3: Random Damage (1-10)" \n "" \n "This is a trigger to destroy buildings inside an area to create ruins. Avoid placement of units in buildings that are turned to ruins as they may stand ""inside"" the ruined building if they spawn after it's destruction. This  trigger can be adjusted to fit an entire village or just a portion. Try not to overlap different triggers.";
+							id=2835;
+						};
+						class Item1
+						{
+							dataType="Trigger";
+							position[]={111.01433,5,790.31311};
+							class Attributes
+							{
+								name="DestroyHouseTrigger_1";
+								condition="time > 30";
+								onActivation="[thisTrigger,false,[8,10]] spawn OKS_Destroy_Houses;";
+								sizeA=15;
+								sizeB=15;
+								isServerOnly=1;
+							};
+							id=2832;
+							type="EmptyDetectorAreaR250";
+						};
+						class Item2
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={110.95842,5,783.96741};
+							};
+							init="(nearestObject [getPos this,""HOUSE""]) setVariable [""OKS_Destroy_Blacklist"",true,true];" \n "(nearestBuilding this) setVariable [""OKS_Destroy_Blacklist"",true,true];";
+							id=2833;
+							type="Logic";
+						};
+						class Item3
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={110.93584,5,784.05872};
+							};
+							title="Blacklist - Do not destroy Building";
+							description="Use this gamelogic and place it as near to the center of the buildings as possible on the X/Y axis. It will be blacklisted from the house destruction script.";
+							id=2836;
+						};
+					};
+					id=2834;
+				};
+				class Item1
+				{
+					dataType="Layer";
+					name="Power Generator Script";
+					class Entities
+					{
+						items=2;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={150.66081,5.795527,784.01422};
+								angles[]={-0,1.5381936,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="_this spawn { sleep 25; [_this,true,true,1000] spawn OKS_PowerGenerator }";
+							};
+							id=2837;
+							type="Land_PowerGenerator_F";
+						};
+						class Item1
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={150.64482,5,783.61322};
+							};
+							title="Disable Power Generator";
+							description="Param 1: Object to add action" \n "Param 2: Should add action (True/False)" \n "Param 3: Should turn off nearby lights (True/False)" \n "Param 4: Range of effect to nearby lights (distance in meters)" \n "" \n "Use this power generator to enable us to disable lights in the area. This does not add a task.";
+							id=2838;
+						};
+					};
+					id=2861;
+				};
+				class Item2
+				{
+					dataType="Layer";
+					name="Hostage/HVT Task Example";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Group";
+							side="West";
+							class Entities
+							{
+								items=1;
+								class Item0
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={134.16264,5.0014391,763.08929};
+										angles[]={0,3.0860071,-0};
+									};
+									side="West";
+									flags=7;
+									class Attributes
+									{
+										init="_this spawn { sleep 25; [Group _this,getMarkerPos ""respawn_west"",west,false,nil,true] spawn OKS_Evacuate_HVT};";
+										name="HVT_1";
+									};
+									id=2851;
+									type="B_G_officer_F";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="GW_TeamColor";
+											expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="main";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="GW_LoadoutSelector";
+											expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+							};
+							class Attributes
+							{
+							};
+							id=2850;
+						};
+						class Item1
+						{
+							dataType="Group";
+							side="East";
+							class Entities
+							{
+								items=1;
+								class Item0
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={128.21733,5.0014391,763.14496};
+										angles[]={0,3.1522043,0};
+									};
+									side="East";
+									flags=7;
+									class Attributes
+									{
+										init="_this spawn { sleep 25; [Group _this,getMarkerPos ""respawn_west"",west,false,nil,false] spawn OKS_Evacuate_HVT};";
+										name="officer_1";
+									};
+									id=2849;
+									type="O_G_officer_F";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="GW_TeamColor";
+											expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="main";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="GW_LoadoutSelector";
+											expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+							};
+							class Attributes
+							{
+							};
+							id=2848;
+						};
+						class Item2
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={128.42033,5,763.01099};
+							};
+							title="HVT Objective: Enemy Officer";
+							description="The code is added to the HVT upon start, however the task will only show up once the HVT is ""captive"". This code allows the HVT to be a combatant until wounded or flashbanged to make him surrender." \n "" \n "Example Code:" \n "[Group Officer_1,getMarkerPos ""respawn_west"",west,false,nil,false] spawn OKS_Evacuate_HVT;" \n "" \n "Param 1: Group of Target" \n "Param 2: Exfil location (Bring HVT to this position to complete)" \n "Param 3: Faction of pickup helicopter is enabled" \n "Param 4: Should call AI extraction" \n "Param 5: Parent Task" \n "Param 6: IsCaptive (True for Hostages, False for combatant)" \n "" \n "To add more Officers in the same task, add more officers to the group of the target officer.";
+							id=2852;
+						};
+						class Item3
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={134.22136,5,763.11792};
+							};
+							title="HVT Objective: Friendly Captive";
+							description="The code is added to the HVT upon start, however the task will only show up once the HVT is ""captive"". This code allows the HVT to be a hostage without weapons and tied/blindfolded." \n "" \n "Example Code:" \n "[Group HVT_1,getMarkerPos ""respawn_west"",west,false,nil,true] spawn OKS_Evacuate_HVT;" \n "" \n "Param 1: Group of Target" \n "Param 2: Exfil location (Bring HVT to this position to complete)" \n "Param 3: Faction of pickup helicopter is enabled" \n "Param 4: Should call AI extraction" \n "Param 5: Parent Task" \n "Param 6: IsCaptive (True for Hostages, False for combatant)" \n "" \n "To add more hostages/captives in the same task, add more units to the group of the target.";
+							id=2853;
+						};
+					};
+					id=2862;
+				};
+				class Item3
+				{
+					dataType="Layer";
+					name="Defuse Bomb Example";
+					class Entities
+					{
+						items=2;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={110.15947,5,763.1947};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="bomb_1";
+							};
+							id=2839;
+							type="SatchelCharge_F";
+						};
+						class Item1
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={110.14043,5,763.03369};
+							};
+							title="Defuse Bomb Tasks";
+							description="Add this code in the spawnList case where you wish the task to activate. Changed the params based on your needs." \n "" \n "[bomb_1,60] spawn OKS_Defuse_Explosive;" \n "If you use more than one bomb make sure to change the code!" \n "" \n "Param 1: Name of bomb or XYZ Position" \n "Param 2: Seconds until explosion";
+							id=2840;
+						};
+					};
+					id=2863;
+				};
+				class Item4
+				{
+					dataType="Layer";
+					name="Destroy Barricade Example";
+					class Entities
+					{
+						items=3;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={106.81877,6.3243098,746.93506};
+								angles[]={-0,0.0023911009,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="barricade_1";
+							};
+							id=2841;
+							type="Land_Cargo20_military_green_F";
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={113.81035,6.3243098,746.71008};
+								angles[]={-0,0.0023911009,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="barricade_2";
+							};
+							id=2842;
+							type="Land_Cargo20_military_green_F";
+						};
+						class Item2
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={110.34477,5,747.03607};
+							};
+							title="Destroy Barricade Task";
+							description="Add this code in the spawnList case where you wish the task to activate. Changed the params based on your needs." \n "" \n "[[barricade_1,barricade_2]] spawn OKS_Destroy_Barricade;" \n "If you use more than one barricade make sure to change the code!" \n "" \n "Param 1: Array with Barricade names";
+							id=2843;
+						};
+					};
+					id=2864;
+				};
+				class Item5
+				{
+					dataType="Layer";
+					name="Destroy Object Example";
+					class Entities
+					{
+						items=2;
+						class Item0
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={132.26091,5,746.82397};
+							};
+							title="Destroy Task";
+							description="Use this task to add mission objectives to destroy an objective. When the code is run the task will be created either use in init as the example or move the code to spawnList." \n "" \n "Param 1: Target" \n "Param 2: Custom Task Title" \n "Param 3: Custom Display Name" \n "Param 4: Custom Description" \n "Param 5: Custom Icon" \n "Param 6: Task Parent" \n "Param 7: Should show location" \n "Param 8: Should popup notification" \n "" \n "Example Code:" \n "[officer_1,""Kill the Officer"",""Enemy Officer"",""You need to kill this %1 because it needs to happen"",true,true,nil] spawn OKS_Destroy_Task;";
+							id=2845;
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={132.16081,5.5748615,746.53357};
+								angles[]={-0,0.0023911009,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="_this spawn { sleep 25; [_this] spawn OKS_Destroy_Task; }";
+							};
+							id=2847;
+							type="UK3CB_Cocaine_Pallet_Wrapped_Green";
+						};
+					};
+					id=2865;
+				};
+				class Item6
+				{
+					dataType="Layer";
+					name="Scripted Ambient Artillery Example";
+					class Entities
+					{
+						items=4;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={151.46928,6.8568587,750.63391};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this spawn { sleep 25; [east,_this,ArtyTarget_1,7,300,300] spawn OKS_ArtyFire};";
+								name="arty_1";
+							};
+							id=2856;
+							type="rhs_2s1_tv";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="rhs_decalPlatoonHullRight";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1HullRightSymbol],  _this getVariable ['rhs_decalPlatoonHullRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="rhs_ammoslot_4_type";
+									expression="_this setVariable ['rhs_ammoslot_4_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rhs_mag_bk6m";
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="rhs_decalNumber_type2";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type2', _value];[_this,[['Number', cRHS2S1BackSmallNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="rhs_decalNumber_type3";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type3', _value];[_this,[['Number', cRHS2S1BackLargeNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								class Attribute4
+								{
+									property="rhs_decalNumber_type4";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type4', _value];[_this,[['Number', cRHS2S1BackTurretNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								class Attribute5
+								{
+									property="rhs_decalNumber_type5";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type5', _value];[_this,[['Number', cRHS2S1FrontTurretNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								class Attribute6
+								{
+									property="rhs_decalNumber_type6";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type6', _value];[_this,[['Number', cRHS2S1SerbianNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								class Attribute7
+								{
+									property="rhs_decalNumber_type";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHS2S1NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								class Attribute8
+								{
+									property="rhs_decalPlatoonTurretFrontRight";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretFrontRightSymbol],  _this getVariable ['rhs_decalPlatoonTurretFrontRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute9
+								{
+									property="rhs_decalPlatoonTurretBackRight";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretBackRightSymbol],  _this getVariable ['rhs_decalPlatoonTurretBackRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute10
+								{
+									property="rhs_decalPlatoonTurretBackLeft";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretBackLeftSymbol],  _this getVariable ['rhs_decalPlatoonTurretBackLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute11
+								{
+									property="rhs_decalPlatoonTurretFrontRight_type";
+									expression="_this setVariable ['rhs_decalPlatoonTurretFrontRight_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute12
+								{
+									property="rhs_ammoslot_3_type";
+									expression="_this setVariable ['rhs_ammoslot_3_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rhs_mag_s463";
+										};
+									};
+								};
+								class Attribute13
+								{
+									property="rhs_decalPlatoon";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1BackSymbol],  _this getVariable ['rhs_decalPlatoonBack_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute14
+								{
+									property="rhs_decalPlatoonTurretFrontLeft_type";
+									expression="_this setVariable ['rhs_decalPlatoonTurretFrontLeft_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute15
+								{
+									property="rhs_ammoslot_2_type";
+									expression="_this setVariable ['rhs_ammoslot_2_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rhs_mag_d462";
+										};
+									};
+								};
+								class Attribute16
+								{
+									property="rhs_decalPlatoonTurretFrontLeft";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretFrontLeftSymbol],  _this getVariable ['rhs_decalPlatoonTurretFrontLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute17
+								{
+									property="rhs_decalPlatoonBack_type";
+									expression="_this setVariable ['rhs_decalPlatoonBack_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute18
+								{
+									property="rhs_ammoslot_1_type";
+									expression="_this setVariable ['rhs_ammoslot_1_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rhs_mag_of462";
+										};
+									};
+								};
+								class Attribute19
+								{
+									property="rhs_decalPlatoonHullRight_type";
+									expression="_this setVariable ['rhs_decalPlatoonHullRight_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute20
+								{
+									property="rhs_decalPlatoonHullLeft_type";
+									expression="_this setVariable ['rhs_decalPlatoonHullLeft_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute21
+								{
+									property="rhs_decalPlatoonTurretBackLeft_type";
+									expression="_this setVariable ['rhs_decalPlatoonTurretBackLeft_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute22
+								{
+									property="rhs_decalPlatoonHullLeft";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1HullLeftSymbol],  _this getVariable ['rhs_decalPlatoonHullLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute23
+								{
+									property="rhs_decalPlatoonTurretBackRight_type";
+									expression="_this setVariable ['rhs_decalPlatoonTurretBackRight_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute24
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[4]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red""],[10,10,10]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=25;
+							};
+						};
+						class Item1
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={151.7343,5,750.26697};
+							};
+							title="Scripted Ambient Artillery";
+							description="The code is added to the Artillery upon start. If you wish it to start from spawn use the code in the spawnList script. " \n "" \n "Example Code:" \n "[east,arty_1,ArtyTarget_1,7,300,300] spawn OKS_ArtyFire;" \n "" \n "Param 1: Side of Artillery Crew" \n "Param 2: Artillery Vehicle Name" \n "Param 3: Target Location (Does not impact, sometimes it does so not near friendly base)" \n "Param 4: Rounds per salvo" \n "Param 5: Rearm Time (When out of ammo)" \n "Param 6: Reload Time (Between Salvos)";
+							id=2857;
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={148.07585,5,750.53156};
+							};
+							side="Empty";
+							class Attributes
+							{
+								name="ArtyTarget_1";
+							};
+							id=2858;
+							type="Land_HelipadEmpty_F";
+						};
+						class Item3
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={148.14079,5,750.46326};
+							};
+							title="Scripted Artillery Target";
+							description="This is the designated target for the artillery. The artillery will aim at this, however the script should delete the rounds upon exit, to avoid impacting performance.";
+							id=2859;
+						};
+					};
+					id=2866;
+				};
+				class Item7
+				{
+					dataType="Layer";
+					name="Scripted AAA Example";
+					class Entities
+					{
+						items=2;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={150.96831,6.6393785,763.68976};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="_this spawn { sleep 30; [_this,east,false,2500,true] spawn GW_Ambient_AAA};";
+								name="AAA_1";
+							};
+							id=2854;
+							type="rhs_gaz66_zu23_vv";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="rhs_decalArmy_type";
+									expression="_this setVariable ['rhs_decalArmy_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Army";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="rhs_decalNumber_type";
+									expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cTrucksGaz4NumberPlaces, _value]]] call rhs_fnc_decalsInit";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Default";
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="rhs_decalArmy";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cTrucksGazRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="rhs_decalPlatoon_type";
+									expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Army";
+										};
+									};
+								};
+								class Attribute4
+								{
+									property="rhs_decalPlatoon";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cTrucksGazRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute5
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[10]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=6;
+							};
+						};
+						class Item1
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={150.87944,5,764.76782};
+							};
+							title="Scripted AAA";
+							description="The code is added to the AAA upon start. You can also add the script in spawnList if you use names. In this case AAA_1;" \n "Example Code:" \n "[this,east,false,1500,true] spawn GW_Ambient_AAA;" \n "" \n "Param 1: Target AAA" \n "Param 2: AAA Side" \n "Param 3: isHMG (true/false)" \n "Param 4: Range of AAA" \n "Param 5: Should use radar for better awareness (true/false)";
+							id=2855;
+						};
+					};
+					id=2867;
+				};
+				class Item8
+				{
+					dataType="Layer";
+					name="Scripted Live Artillery Example";
+					class Entities
+					{
+						items=6;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={169.1143,6.8568587,750.71796};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this spawn { sleep 35; [livearty_1,[getPos ArtySuppress_1,getPos ArtySuppress_2,getPos ArtySuppress_3],east,1,1,true,true,30,true] spawn OKS_ArtySupression;" \n "};";
+								name="livearty_1";
+							};
+							id=2868;
+							type="rhs_2s1_tv";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="rhs_decalPlatoonHullRight";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1HullRightSymbol],  _this getVariable ['rhs_decalPlatoonHullRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="rhs_ammoslot_4_type";
+									expression="_this setVariable ['rhs_ammoslot_4_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rhs_mag_bk6m";
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="rhs_decalNumber_type2";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type2', _value];[_this,[['Number', cRHS2S1BackSmallNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="rhs_decalNumber_type3";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type3', _value];[_this,[['Number', cRHS2S1BackLargeNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								class Attribute4
+								{
+									property="rhs_decalNumber_type4";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type4', _value];[_this,[['Number', cRHS2S1BackTurretNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								class Attribute5
+								{
+									property="rhs_decalNumber_type5";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type5', _value];[_this,[['Number', cRHS2S1FrontTurretNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								class Attribute6
+								{
+									property="rhs_decalNumber_type6";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type6', _value];[_this,[['Number', cRHS2S1SerbianNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								class Attribute7
+								{
+									property="rhs_decalNumber_type";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHS2S1NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								class Attribute8
+								{
+									property="rhs_decalPlatoonTurretFrontRight";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretFrontRightSymbol],  _this getVariable ['rhs_decalPlatoonTurretFrontRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute9
+								{
+									property="rhs_decalPlatoonTurretBackRight";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretBackRightSymbol],  _this getVariable ['rhs_decalPlatoonTurretBackRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute10
+								{
+									property="rhs_decalPlatoonTurretBackLeft";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretBackLeftSymbol],  _this getVariable ['rhs_decalPlatoonTurretBackLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute11
+								{
+									property="rhs_decalPlatoonTurretFrontRight_type";
+									expression="_this setVariable ['rhs_decalPlatoonTurretFrontRight_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute12
+								{
+									property="rhs_ammoslot_3_type";
+									expression="_this setVariable ['rhs_ammoslot_3_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rhs_mag_s463";
+										};
+									};
+								};
+								class Attribute13
+								{
+									property="rhs_decalPlatoon";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1BackSymbol],  _this getVariable ['rhs_decalPlatoonBack_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute14
+								{
+									property="rhs_decalPlatoonTurretFrontLeft_type";
+									expression="_this setVariable ['rhs_decalPlatoonTurretFrontLeft_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute15
+								{
+									property="rhs_ammoslot_2_type";
+									expression="_this setVariable ['rhs_ammoslot_2_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rhs_mag_d462";
+										};
+									};
+								};
+								class Attribute16
+								{
+									property="rhs_decalPlatoonTurretFrontLeft";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretFrontLeftSymbol],  _this getVariable ['rhs_decalPlatoonTurretFrontLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute17
+								{
+									property="rhs_decalPlatoonBack_type";
+									expression="_this setVariable ['rhs_decalPlatoonBack_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute18
+								{
+									property="rhs_ammoslot_1_type";
+									expression="_this setVariable ['rhs_ammoslot_1_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="rhs_mag_of462";
+										};
+									};
+								};
+								class Attribute19
+								{
+									property="rhs_decalPlatoonHullRight_type";
+									expression="_this setVariable ['rhs_decalPlatoonHullRight_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute20
+								{
+									property="rhs_decalPlatoonHullLeft_type";
+									expression="_this setVariable ['rhs_decalPlatoonHullLeft_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute21
+								{
+									property="rhs_decalPlatoonTurretBackLeft_type";
+									expression="_this setVariable ['rhs_decalPlatoonTurretBackLeft_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute22
+								{
+									property="rhs_decalPlatoonHullLeft";
+									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1HullLeftSymbol],  _this getVariable ['rhs_decalPlatoonHullLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="-1";
+										};
+									};
+								};
+								class Attribute23
+								{
+									property="rhs_decalPlatoonTurretBackRight_type";
+									expression="_this setVariable ['rhs_decalPlatoonTurretBackRight_type', _value];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Platoon";
+										};
+									};
+								};
+								class Attribute24
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[4]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red""],[10,10,10]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=25;
+							};
+						};
+						class Item1
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={169.37932,5,750.35095};
+							};
+							title="Scripted Live Artillery";
+							description="The code is added to the Artillery upon start. If you wish it to start from spawn use the code in the spawnList script. " \n "" \n "Example Code:" \n "[livearty_1,[getPos ArtySuppress_1,getPos ArtySuppress_2,getPos ArtySuppress_3],east,1,1,true,true,30,true] spawn OKS_ArtySupression;" \n "" \n "Param 1: Artillery Vehicle Name" \n "Param 2: Array of Target Positions" \n "Param 3: Side of Artillery Crew" \n "Param 4: Rounds per target" \n "Param 5: Seconds between target" \n "Param 6: Unlimited Ammo (true/false)" \n "Param 7: Should Loop until destroyed/out of ammo (true/false)" \n "Param 8: Delay between Loops (Seconds)" \n "Param 9: Should mark with smoke on target (true/false)";
+							id=2869;
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={170.62138,5,757.90979};
+							};
+							side="Empty";
+							class Attributes
+							{
+								name="ArtySuppress_1";
+							};
+							id=2870;
+							type="Land_HelipadEmpty_F";
+						};
+						class Item3
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={169.38908,5,757.90265};
+							};
+							title="Scripted Artillery Targets";
+							description="This is the designated target for the artillery. The artillery will aim at this, different to the other ambient artillery script, this script will actually impact the target area. Do note it has to be further than minimum distance and within maximum distance of the artillery.";
+							id=2871;
+						};
+						class Item4
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={169.55913,5,757.93127};
+							};
+							side="Empty";
+							class Attributes
+							{
+								name="ArtySuppress_2";
+							};
+							id=2872;
+							type="Land_HelipadEmpty_F";
+						};
+						class Item5
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={168.70427,5,757.91406};
+							};
+							side="Empty";
+							class Attributes
+							{
+								name="ArtySuppress_3";
+							};
+							id=2873;
+							type="Land_HelipadEmpty_F";
+						};
+					};
+					id=2874;
+				};
+				class Item9
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={140.43713,5,844.69531};
+					};
+					title="GOL Script Examples!";
+					id=2875;
+				};
+			};
+			id=2860;
 		};
 	};
 	class Connections

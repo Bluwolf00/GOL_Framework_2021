@@ -1,5 +1,5 @@
 // [Group HVT_1,getPos ExfilSite_1,west,false,nil] execVM "Scripts\OKS_Task\OKS_Evacuate_HVT.sqf";
-
+// [Group HVT_1,getPos ExfilSite_1,west,false,nil] spawn OKS_Evacuate_HVT;
 if(!isServer) exitWith {};
 
 	Params [
