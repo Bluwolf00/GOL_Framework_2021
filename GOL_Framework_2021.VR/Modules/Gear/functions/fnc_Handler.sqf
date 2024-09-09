@@ -129,10 +129,17 @@ if (_isMan) then {
 		_unit setVariable [QEGVAR(Common,isPlayer), true, true];
 		_unit setUnitTrait ["engineer", true];
 		_unit setUnitTrait ["explosiveSpecialist", true];
+		_unit setUnitTrait ["uavhacker", true];
 		if (GVARMAIN(mod_ACE3)) then {
-			_unit setVariable ["ACE_Medical_MedicClass", 2];
-			_unit setVariable ["ACE_IsEngineer", 1];
-			_unit setVariable ["ACE_GForceCoef", 0.5];			// IsPilot
+			_unit setVariable ["ACE_Medical_MedicClass", 1, true];
+			_unit setVariable ["ACE_IsEngineer", 1, true];
+			
+
+			if(_unit getVariable ["GOL_SelectedRole",""] in ["jetp","p","crew"]) then {
+				_unit setVariable ["ACE_IsEngineer", 2, true];
+				_unit setVariable ["ACE_Medical_MedicClass", 2, true];
+				_unit setVariable ["ACE_GForceCoef", 0.5];			// IsPilot
+			};
 		};
 	};
 

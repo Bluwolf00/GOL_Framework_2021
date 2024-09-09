@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2876;
+		nextID=2881;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8743;
+		nextID=8774;
 	};
 	class Camera
 	{
-		pos[]={145.73917,71.77906,-94.085915};
-		dir[]={0.049161512,-0.40736133,0.9119488};
-		up[]={0.021928476,0.91326785,0.40677449};
-		aside[]={0.9985556,3.9362931e-009,-0.053830326};
+		pos[]={75.872719,87.104973,-52.998047};
+		dir[]={0.5214898,-0.64689112,0.55643743};
+		up[]={0.44236362,0.76258099,0.47200918};
+		aside[]={0.72966534,2.5611371e-008,-0.6838395};
 	};
 };
 binarizationWanted=0;
@@ -73,7 +73,7 @@ addons[]=
 	"rhsusf_c_melb",
 	"Vsqz_melber",
 	"A3_Supplies_F_Heli_Fuel",
-	"A3_Structures_F_Tank_Military_RepairDepot",
+	"A3_Missions_F_Oldman",
 	"rhs_c_a2port_air",
 	"A3_Structures_F_Ind_WindPowerPlant",
 	"A3_Weapons_F_Explosives",
@@ -289,8 +289,8 @@ class AddonsMetaData
 		};
 		class Item30
 		{
-			className="A3_Structures_F_Tank";
-			name="Arma 3 Tank - Buildings and Structures";
+			className="A3_Missions_F_Oldman";
+			name="Arma 3 Old Man - Playable Content";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -349,7 +349,6 @@ dlcs[]=
 	"Expansion",
 	"RHS_USAF",
 	"Heli",
-	"Tank",
 	"RHS_AFRF",
 	"Curator",
 	"UK3CB_Factions"
@@ -621,7 +620,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=419;
+									items=421;
 									class Item0
 									{
 										class data
@@ -3974,6 +3973,22 @@ class CustomAttributes
 											value="simplesuppress_suppress_checklos";
 										};
 									};
+									class Item419
+									{
+										class data
+										{
+											singleType="STRING";
+											value="ace_repair_miscrepairtime";
+										};
+									};
+									class Item420
+									{
+										class data
+										{
+											singleType="STRING";
+											value="ace_repair_wheelchangetime";
+										};
+									};
 								};
 							};
 						};
@@ -3984,7 +3999,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=419;
+									items=421;
 									class Item0
 									{
 										class data
@@ -10847,7 +10862,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=50;
+														value=15;
 													};
 												};
 												class Item1
@@ -10982,7 +10997,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.8953163;
+														value=0.4971588;
 													};
 												};
 												class Item1
@@ -11009,7 +11024,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -11063,7 +11078,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=2;
+														value=3;
 													};
 												};
 												class Item1
@@ -15622,6 +15637,60 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item419
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=6;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item420
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=5;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -19373,7 +19442,7 @@ class Mission
 					name="BLUFOR FARP";
 					class Entities
 					{
-						items=53;
+						items=52;
 						class Item0
 						{
 							dataType="Object";
@@ -21096,72 +21165,26 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={125.81084,5.149631,40.7589};
-								angles[]={0,0.016638665,0};
+								position[]={126.014,5,46.230999};
+								angles[]={0,6.2766404,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="call{this setVariable [""ace_rearm_isSupplyVehicle"", true]}";
-								disableSimulation=1;
+								init="this setVariable [""ace_repair_canRepair"", 1, true]; this setVariable [""ace_isRepairFacility"", 1, true];";
+								name="Rearm_Helipad_1";
 							};
-							id=2801;
-							type="Box_NATO_WpsLaunch_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
+							id=2800;
+							type="Land_HelipadSquare_F";
 						};
 						class Item48
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={126.01376,5,46.230732};
-								angles[]={0,6.2766471,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=2800;
-							type="Land_HelipadSquare_F";
-						};
-						class Item49
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={133.87106,5.5128922,42.649155};
-								angles[]={0,0.042998537,0};
+								position[]={132.63399,5.5128922,45.332298};
+								angles[]={-0,0.043004911,0};
 							};
 							side="Empty";
 							flags=4;
@@ -21201,21 +21224,79 @@ class Mission
 								nAttributes=2;
 							};
 						};
+						class Item49
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={125.87019,5,46.525703};
+							};
+							title="Rearm/Repair/Refuel Station";
+							description="This helipad is for refuel/rearm and repair.";
+							id=2808;
+						};
 						class Item50
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={136.93175,7.4179983,45.489723};
-								angles[]={0,3.1458178,0};
+								position[]={189.27269,5.5128922,45.146885};
+								angles[]={-0,0.043004911,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
 							};
-							id=2799;
-							type="Land_RepairDepot_01_green_F";
+							id=2879;
+							type="FlexibleTank_01_forest_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ace_refuel_fuelCargo";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=-10;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item51
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={132.63899,5.2100425,46.709297};
+								angles[]={-0,4.7095962,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="[this, 9999] call ace_rearm_fnc_makeSource; this setVariable [""ace_rearm_isSupplyVehicle"", true, true]";
+							};
+							id=2878;
+							type="VirtualReammoBox_small_F";
 							class CustomAttributes
 							{
 								class Attribute0
@@ -21233,76 +21314,6 @@ class Mission
 								};
 								nAttributes=1;
 							};
-						};
-						class Item51
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={134.26988,5.7898083,47.68047};
-								angles[]={0,4.7056437,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=2796;
-							type="Box_NATO_AmmoVeh_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ace_rearm_rearmCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> 'ace_rearm_defaultSupply')) then {getNumber (configOf _this >> 'ace_rearm_defaultSupply')} else {(if (getAmmoCargo _this > 0) then {getAmmoCargo _this} else {-1})})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=99999;
-										};
-									};
-								};
-								nAttributes=3;
-							};
-						};
-						class Item52
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={125.87019,5,46.525703};
-							};
-							title="Rearm/Repair/Refuel Station";
-							description="This helipad is for refuel/rearm and repair.";
-							id=2808;
 						};
 					};
 					id=2721;
@@ -23559,7 +23570,7 @@ class Mission
 					name="OPFOR FARP";
 					class Entities
 					{
-						items=52;
+						items=49;
 						class Item0
 						{
 							dataType="Object";
@@ -25205,78 +25216,46 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={182.01506,5,46.20747};
-								angles[]={0,0.0025688971,0};
+								position[]={182.015,5,46.207001};
+								angles[]={0,0.002565634,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""ace_repair_canRepair"", 1, true]; this setVariable [""ace_isRepairFacility"", 1, true];";
+								name="Rearm_Helipad_2";
 							};
 							id=2803;
 							type="Land_HelipadSquare_F";
 						};
 						class Item47
 						{
-							dataType="Object";
+							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={190.27133,5.5128922,43.444172};
-								angles[]={0,0.05210565,0};
+								position[]={182.15344,5,45.993973};
 							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=2804;
-							type="FlexibleTank_01_forest_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=-10;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=2;
-							};
+							title="Rearm/Repair/Refuel Station";
+							description="This helipad is for refuel/rearm and repair.";
+							id=2807;
 						};
 						class Item48
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={192.55544,7.4179983,45.741982};
-								angles[]={0,3.1634946,0};
+								position[]={189.27769,5.2100425,46.523884};
+								angles[]={-0,4.7095962,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
+								init="[this, 9999] call ace_rearm_fnc_makeSource; this setVariable [""ace_rearm_isSupplyVehicle"", true, true]";
 							};
-							id=2805;
-							type="Land_RepairDepot_01_green_F";
+							id=2880;
+							type="VirtualReammoBox_small_F";
 							class CustomAttributes
 							{
 								class Attribute0
@@ -25295,131 +25274,13 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item49
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={190.27153,5.7898083,48.225548};
-								angles[]={0,4.7147508,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=2806;
-							type="Box_NATO_AmmoVeh_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ace_rearm_rearmCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> 'ace_rearm_defaultSupply')) then {getNumber (configOf _this >> 'ace_rearm_defaultSupply')} else {(if (getAmmoCargo _this > 0) then {getAmmoCargo _this} else {-1})})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=99999;
-										};
-									};
-								};
-								nAttributes=3;
-							};
-						};
-						class Item50
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={182.15344,5,45.993973};
-							};
-							title="Rearm/Repair/Refuel Station";
-							description="This helipad is for refuel/rearm and repair.";
-							id=2807;
-						};
-						class Item51
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={181.76231,5.149631,40.737713};
-								angles[]={0,0.025745777,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="call{this setVariable [""ace_rearm_isSupplyVehicle"", true]}";
-								disableSimulation=1;
-							};
-							id=2802;
-							type="Box_NATO_WpsLaunch_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
 					};
 					id=2720;
-					atlOffset=1451.0399;
+					atlOffset=2902.0798;
 				};
 			};
 			id=404;
-			atlOffset=7123.6548;
+			atlOffset=7849.1748;
 		};
 		class Item5
 		{
@@ -25487,6 +25348,7 @@ class Mission
 						};
 					};
 					id=2834;
+					atlOffset=-5;
 				};
 				class Item1
 				{
@@ -25501,7 +25363,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={150.66081,5.795527,784.01422};
-								angles[]={-0,1.5381936,0};
+								angles[]={0,1.5381936,0};
 							};
 							side="Empty";
 							flags=4;
@@ -25525,6 +25387,7 @@ class Mission
 						};
 					};
 					id=2861;
+					atlOffset=-5;
 				};
 				class Item2
 				{
@@ -25546,7 +25409,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={134.16264,5.0014391,763.08929};
-										angles[]={0,3.0860071,-0};
+										angles[]={0,3.0860071,0};
 									};
 									side="West";
 									flags=7;
@@ -25593,6 +25456,7 @@ class Mission
 							{
 							};
 							id=2850;
+							atlOffset=-5;
 						};
 						class Item1
 						{
@@ -25654,6 +25518,7 @@ class Mission
 							{
 							};
 							id=2848;
+							atlOffset=-5;
 						};
 						class Item2
 						{
@@ -25679,6 +25544,7 @@ class Mission
 						};
 					};
 					id=2862;
+					atlOffset=-5;
 				};
 				class Item3
 				{
@@ -25716,6 +25582,7 @@ class Mission
 						};
 					};
 					id=2863;
+					atlOffset=-5;
 				};
 				class Item4
 				{
@@ -25730,7 +25597,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={106.81877,6.3243098,746.93506};
-								angles[]={-0,0.0023911009,0};
+								angles[]={0,0.0023911009,0};
 							};
 							side="Empty";
 							flags=4;
@@ -25747,7 +25614,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={113.81035,6.3243098,746.71008};
-								angles[]={-0,0.0023911009,0};
+								angles[]={0,0.0023911009,0};
 							};
 							side="Empty";
 							flags=4;
@@ -25771,6 +25638,7 @@ class Mission
 						};
 					};
 					id=2864;
+					atlOffset=-5;
 				};
 				class Item5
 				{
@@ -25796,7 +25664,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={132.16081,5.5748615,746.53357};
-								angles[]={-0,0.0023911009,0};
+								angles[]={0,0.0023911009,0};
 							};
 							side="Empty";
 							flags=4;
@@ -25809,6 +25677,7 @@ class Mission
 						};
 					};
 					id=2865;
+					atlOffset=-5;
 				};
 				class Item6
 				{
@@ -26202,6 +26071,7 @@ class Mission
 						};
 					};
 					id=2866;
+					atlOffset=-5;
 				};
 				class Item7
 				{
@@ -26322,6 +26192,7 @@ class Mission
 						};
 					};
 					id=2867;
+					atlOffset=-5;
 				};
 				class Item8
 				{
@@ -26745,6 +26616,7 @@ class Mission
 						};
 					};
 					id=2874;
+					atlOffset=-5;
 				};
 				class Item9
 				{
@@ -26758,6 +26630,7 @@ class Mission
 				};
 			};
 			id=2860;
+			atlOffset=-0.0048828125;
 		};
 	};
 	class Connections
