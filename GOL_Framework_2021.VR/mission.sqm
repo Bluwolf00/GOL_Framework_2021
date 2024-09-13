@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2881;
+		nextID=2882;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8774;
+		nextID=8805;
 	};
 	class Camera
 	{
-		pos[]={75.872719,87.104973,-52.998047};
-		dir[]={0.5214898,-0.64689112,0.55643743};
-		up[]={0.44236362,0.76258099,0.47200918};
-		aside[]={0.72966534,2.5611371e-008,-0.6838395};
+		pos[]={157.33183,94.133041,-64.789528};
+		dir[]={0.025033314,-0.67114502,0.74091494};
+		up[]={0.022663664,0.74132603,0.67076689};
+		aside[]={0.99943721,-6.8248482e-008,-0.033768162};
 	};
 };
 binarizationWanted=0;
@@ -15353,7 +15353,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="STRING";
-														value="wpEffect";
+														value="mwEffect";
 													};
 												};
 												class Item1
@@ -15361,7 +15361,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1;
+														value=0;
 													};
 												};
 											};
@@ -21184,7 +21184,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={132.63399,5.5128922,45.332298};
-								angles[]={-0,0.043004911,0};
+								angles[]={0,0.043004911,0};
 							};
 							side="Empty";
 							flags=4;
@@ -21241,7 +21241,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={189.27269,5.5128922,45.146885};
-								angles[]={-0,0.043004911,0};
+								angles[]={0,0.043004911,0};
 							};
 							side="Empty";
 							flags=4;
@@ -21287,7 +21287,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={132.63899,5.2100425,46.709297};
-								angles[]={-0,4.7095962,0};
+								angles[]={0,4.7095962,0};
 							};
 							side="Empty";
 							flags=4;
@@ -21317,11 +21317,11 @@ class Mission
 						};
 					};
 					id=2721;
-					atlOffset=1451.0398;
+					atlOffset=2902.0796;
 				};
 			};
 			id=403;
-			atlOffset=23942.156;
+			atlOffset=24667.676;
 		};
 		class Item4
 		{
@@ -25246,7 +25246,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={189.27769,5.2100425,46.523884};
-								angles[]={-0,4.7095962,0};
+								angles[]={0,4.7095962,0};
 							};
 							side="Empty";
 							flags=4;
@@ -25276,11 +25276,11 @@ class Mission
 						};
 					};
 					id=2720;
-					atlOffset=2902.0798;
+					atlOffset=11608.319;
 				};
 			};
 			id=404;
-			atlOffset=7849.1748;
+			atlOffset=12202.295;
 		};
 		class Item5
 		{
@@ -25691,13 +25691,13 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={151.46928,6.8568587,750.63391};
+								position[]={151.46899,6.8568587,750.63397};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this spawn { sleep 25; [east,_this,ArtyTarget_1,7,300,300] spawn OKS_ArtyFire};";
+								init="this spawn { sleep 25; [east,_this,getPos ArtyTarget_1,7,300,300] spawn OKS_ArtyFire};";
 								name="arty_1";
 							};
 							id=2856;
@@ -26623,9 +26623,10 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={140.43713,5,844.69531};
+						position[]={140.437,5,844.69501};
 					};
 					title="GOL Script Examples!";
+					description="These are best put inside spawnList. If you use code elsewhere make sure to remove the init of the units/script examples.";
 					id=2875;
 				};
 			};
