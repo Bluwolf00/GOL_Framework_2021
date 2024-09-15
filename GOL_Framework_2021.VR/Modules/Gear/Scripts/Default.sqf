@@ -275,9 +275,8 @@ switch (toLower(_role)) do {
 		[[_gps,1],[_smokegrenadeY,2],[_smokegrenadeP,3],[_grenade,1]] call _addToUniform;
 		[[_toolkit,1],[_pdw_mag_tr,4]] call _addToVest;
 		_FAKBig call _addToBackpack;
-		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
-		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
-			_nvg call _addNVG;
+		[_map, "", "", _compass, _watch, _nvg] call _addLinkedItems;
+		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {		
 			[[_mapFlashLight,1],[_handFlareG,5],[_handFlareR,3]] call _addToUniform;
 		};
 	};
