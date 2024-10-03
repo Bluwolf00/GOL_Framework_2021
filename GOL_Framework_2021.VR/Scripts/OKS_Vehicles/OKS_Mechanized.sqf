@@ -23,7 +23,7 @@ clearItemCargoGlobal _Vehicle;
 clearWeaponCargoGlobal _Vehicle;
 clearMagazineCargoGlobal _Vehicle;
 clearBackpackCargoGlobal _Vehicle;
-_Vehicle setFuelConsumptionCoef 10;
+_Vehicle setFuelConsumptionCoef 3;
 
 if(_ShouldDisableThermal) then {
 	_Vehicle disableTIEquipment true;
@@ -53,8 +53,8 @@ if(_ServiceStation && !(_Vehicle getVariable ["GOL_isMSS",false]) && GOL_NEKY_SE
 	ClearWeaponCargoGlobal _Crate;
 	ClearItemCargoGlobal _Crate;
 
-	_fuelCan = "Land_CanisterFuel_F" createVehicle [0,0,0];
-	[_fuelCan,30] call ace_refuel_fnc_makeJerryCan;
+	_fuelCan = "FlexibleTank_01_forest_F" createVehicle [0,0,0];
+	[_fuelCan,100] call ace_refuel_fnc_makeJerryCan;
 
 	//[_vehicle, ["car","west"]] call GW_Gear_Fnc_Init;
 	waitUntil {!isNil "NEKY_MobileSS"};

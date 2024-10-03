@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8805;
+		nextID=8836;
 	};
 	class Camera
 	{
-		pos[]={-57.111984,238.87117,-53.443512};
-		dir[]={0.75753206,-0.34795526,0.55236107};
-		up[]={0.28116211,0.93751049,0.20501147};
-		aside[]={0.58917695,-3.3172546e-007,-0.80802268};
+		pos[]={190.08017,18.26816,32.590782};
+		dir[]={-0.010311473,-0.5761317,0.81729674};
+		up[]={-0.0072684158,0.81735444,0.57608879};
+		aside[]={0.99992406,-9.7130396e-008,0.012616201};
 	};
 };
 binarizationWanted=0;
@@ -25362,14 +25362,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={150.66081,5.795527,784.01422};
+								position[]={150.661,5.795527,784.01398};
 								angles[]={0,1.5381936,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="_this spawn { sleep 25; [_this,true,true,1000] spawn OKS_PowerGenerator }";
+								name="Generator_1";
 							};
 							id=2837;
 							type="Land_PowerGenerator_F";
@@ -25379,10 +25379,10 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={150.64482,5,783.61322};
+								position[]={150.645,5,783.61298};
 							};
 							title="Disable Power Generator";
-							description="Param 1: Object to add action" \n "Param 2: Should add action (True/False)" \n "Param 3: Should turn off nearby lights (True/False)" \n "Param 4: Range of effect to nearby lights (distance in meters)" \n "" \n "Use this power generator to enable us to disable lights in the area. This does not add a task.";
+							description="Param 1: Object to add action" \n "Param 2: Should add action (True/False)" \n "Param 3: Should turn off nearby lights (True/False)" \n "Param 4: Range of effect to nearby lights (distance in meters)" \n "" \n "Example: [_this,true,true,1000] spawn OKS_PowerGenerator ;" \n "" \n "Use this power generator to enable us to disable lights in the area. This does not add a task.";
 							id=2838;
 						};
 					};
@@ -25408,14 +25408,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={134.16264,5.0014391,763.08929};
-										angles[]={0,3.0860071,0};
+										position[]={134.16299,5.0014391,763.08899};
+										angles[]={0,3.086004,0};
 									};
 									side="West";
 									flags=7;
 									class Attributes
 									{
-										init="_this spawn { sleep 25; [Group _this,getMarkerPos ""respawn_west"",west,false,nil,true] spawn OKS_Evacuate_HVT};";
+										init="this disableAI ""MOVE""; this setUnitPos ""UP"";";
 										name="HVT_1";
 									};
 									id=2851;
@@ -25470,14 +25470,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={128.21733,5.0014391,763.14496};
+										position[]={128.217,5.0014391,763.14496};
 										angles[]={0,3.1522043,0};
 									};
 									side="East";
 									flags=7;
 									class Attributes
 									{
-										init="_this spawn { sleep 25; [Group _this,getMarkerPos ""respawn_west"",west,false,nil,false] spawn OKS_Evacuate_HVT};";
+										init="this disableAI ""MOVE""; this setUnitPos ""UP"";";
 										name="officer_1";
 									};
 									id=2849;
@@ -25663,7 +25663,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={132.16081,5.5748615,746.53357};
+								position[]={132.161,5.5748615,746.534};
 								angles[]={0,0.0023911009,0};
 							};
 							side="Empty";
@@ -25671,6 +25671,7 @@ class Mission
 							class Attributes
 							{
 								init="_this spawn { sleep 25; [_this] spawn OKS_Destroy_Task; }";
+								name="Destroy_1";
 							};
 							id=2847;
 							type="UK3CB_Cocaine_Pallet_Wrapped_Green";
@@ -25697,7 +25698,6 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="this spawn { sleep 25; [east,_this,getPos ArtyTarget_1,7,300,300] spawn OKS_ArtyFire};";
 								name="arty_1";
 							};
 							id=2856;
@@ -26085,13 +26085,12 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={150.96831,6.6393785,763.68976};
+								position[]={150.968,6.6393785,763.68982};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="_this spawn { sleep 30; [_this,east,false,2500,true] spawn GW_Ambient_AAA};";
 								name="AAA_1";
 							};
 							id=2854;
@@ -26206,13 +26205,12 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={169.1143,6.8568587,750.71796};
+								position[]={169.114,6.8568587,750.71802};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this spawn { sleep 35; [livearty_1,[getPos ArtySuppress_1,getPos ArtySuppress_2,getPos ArtySuppress_3],east,1,1,true,true,30,true] spawn OKS_ArtySupression;" \n "};";
 								name="livearty_1";
 							};
 							id=2868;

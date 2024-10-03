@@ -89,7 +89,7 @@ if(!isServer) exitWith {};
 		_Explosive setDamage 1;
 	};
 	sleep 0.1;
-	_NearPlayerToExplosive = {_X distance _ExplosivePos < 3 && Alive _X && [_X] call ace_common_fnc_isAwake} count AllPlayers > 0;
+	_NearPlayerToExplosive = {_X distance _ExplosivePos < 5 && Alive _X && [_X] call ace_common_fnc_isAwake} count AllPlayers > 0;
 	private _DoesTargetExistAndIsAlive = true;
 	if(!isNil "_TargetObject") then {
 		_DoesTargetExistAndIsAlive = alive _TargetObject
