@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8836;
+		nextID=8898;
 	};
 	class Camera
 	{
-		pos[]={190.08017,18.26816,32.590782};
-		dir[]={-0.010311473,-0.5761317,0.81729674};
-		up[]={-0.0072684158,0.81735444,0.57608879};
-		aside[]={0.99992406,-9.7130396e-008,0.012616201};
+		pos[]={154.89978,138.42412,-73.059425};
+		dir[]={0.014471909,-0.75944799,0.65044242};
+		up[]={0.016893698,0.65054619,0.75927776};
+		aside[]={0.99977469,-2.1129381e-07,-0.022244046};
 	};
 };
 binarizationWanted=0;
@@ -51,6 +51,7 @@ addons[]=
 	"A3_Armor_F_Beta_APC_Tracked_01",
 	"AltMun_CRV",
 	"tfar_external_intercom",
+	"ace_interaction",
 	"ace_realisticnames",
 	"ace_rearm",
 	"ace_refuel",
@@ -87,7 +88,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=37;
+		items=38;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -197,139 +198,146 @@ class AddonsMetaData
 		};
 		class Item16
 		{
+			className="ace_interaction";
+			name="ACE3 - Interaction";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item17
+		{
 			className="ace_rearm";
 			name="ACE3 - Rearm";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item17
+		class Item18
 		{
 			className="ace_refuel";
 			name="ACE3 - Refuel";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item18
+		class Item19
 		{
 			className="ace_vehicle_damage";
 			name="ACE3 - Vehicle Damage";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item19
+		class Item20
 		{
 			className="CUP_Misc3_Config";
 			name="CUP_Misc3_Config";
 		};
-		class Item20
+		class Item21
 		{
 			className="FIR_PilotCrewPack_US";
 			name="FIR_PilotCrewPack_US";
 		};
-		class Item21
+		class Item22
 		{
 			className="ace_parachute";
 			name="ACE3 - Parachute";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item22
+		class Item23
 		{
 			className="A3_Supplies_F_Exp";
 			name="Arma 3 Apex - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item23
+		class Item24
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item24
+		class Item25
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item25
+		class Item26
 		{
 			className="RHS_US_A2_AirImport";
 			name="RHSUSF A2 Air Ports";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item26
+		class Item27
 		{
 			className="A3_Supplies_F_Heli";
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item27
+		class Item28
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item28
+		class Item29
 		{
 			className="rhsusf_c_melb";
 			name="MELB";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item29
+		class Item30
 		{
 			className="Vsqz_melber";
 			name="Vsqz_melber";
 		};
-		class Item30
+		class Item31
 		{
 			className="A3_Missions_F_Oldman";
 			name="Arma 3 Old Man - Playable Content";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item31
+		class Item32
 		{
 			className="rhs_c_a2port_air";
 			name="A2 ported air";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item32
+		class Item33
 		{
 			className="A3_Structures_F_Ind";
 			name="Arma 3 - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item33
+		class Item34
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item34
+		class Item35
 		{
 			className="UK3CB_Factions_Objects_Pallets";
 			name="3CB Factions - Pallets";
 			author="3 Commando Brigade";
 			url="www.3commandobrigade.com";
 		};
-		class Item35
+		class Item36
 		{
 			className="rhs_c_2s1";
 			name="2S1 SPG";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item36
+		class Item37
 		{
 			className="rhs_c_trucks";
 			name="GAZ-66";
@@ -413,7 +421,7 @@ class CustomAttributes
 		class Attribute0
 		{
 			property="ENH_dynamicSkill";
-			expression="if (!is3DEN && _value # 0 && isServer) then      {        _value params        [          '_enable',          '_skillMinBLUFOR',          '_skillAimMinBLUFOR',          '_skillMaxBLUFOR',          '_skillAimMaxBlUFOR',          '_skillMinOPFOR',          '_skillAimMinOPFOR',          '_skillMaxOPFOR',          '_skillAimMaxOPFOR',          '_skillMinIndependent',          '_skillAimMinIndependent',          '_skillMaxIndependent',          '_skillAimMaxIndependent'        ];        [          true,          [            [WEST, _skillMinBLUFOR, _skillAimMinBLUFOR, _skillMaxBLUFOR, _skillAimMaxBlUFOR],            [EAST, _skillMinOPFOR, _skillAimMinOPFOR, _skillMaxOPFOR, _skillAimMaxOPFOR],            [INDEPENDENT, _skillMinIndependent, _skillAimMinIndependent, _skillMaxIndependent, _skillAimMaxIndependent]          ]        ] call BIS_fnc_EXP_camp_dynamicAISkill;      }";
+			expression="if (!is3DEN && _value # 0 && isServer) then            {                _value params                [                    '_enable',                    '_skillMinBLUFOR',                    '_skillAimMinBLUFOR',                    '_skillMaxBLUFOR',                    '_skillAimMaxBlUFOR',                    '_skillMinOPFOR',                    '_skillAimMinOPFOR',                    '_skillMaxOPFOR',                    '_skillAimMaxOPFOR',                    '_skillMinIndependent',                    '_skillAimMinIndependent',                    '_skillMaxIndependent',                    '_skillAimMaxIndependent'                ];                [                    true,                    [                        [WEST, _skillMinBLUFOR, _skillAimMinBLUFOR, _skillMaxBLUFOR, _skillAimMaxBlUFOR],                        [EAST, _skillMinOPFOR, _skillAimMinOPFOR, _skillMaxOPFOR, _skillAimMaxOPFOR],                        [INDEPENDENT, _skillMinIndependent, _skillAimMinIndependent, _skillMaxIndependent, _skillAimMaxIndependent]                    ]                ] call BIS_fnc_EXP_camp_dynamicAISkill;            }";
 			class Value
 			{
 				class data
@@ -533,7 +541,7 @@ class CustomAttributes
 		class Attribute1
 		{
 			property="ENH_saveLoadout";
-			expression="if (!isMultiplayer || !_value || is3DEN || !hasInterface) exitWith {};    0 spawn    {      waitUntil {sleep 1; !isNull player};      player setVariable ['ENH_savedLoadout', getUnitloadout player];      player addMPEventHandler ['MPRespawn',      {        params ['_unit'];        private _loadout = _unit getVariable ['ENH_savedLoadout', []];        if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};      }];    };";
+			expression="if (!isMultiplayer || !_value || is3DEN || !hasInterface) exitWith {};        0 spawn        {            waitUntil {sleep 1; !isNull player};            player setVariable ['ENH_savedLoadout', getUnitloadout player];            player addMPEventHandler ['MPRespawn',            {                params ['_unit'];                private _loadout = _unit getVariable ['ENH_savedLoadout', []];                if (_loadout isNotEqualTo []) then {_unit setUnitLoadout _loadout};            }];        };";
 			class Value
 			{
 				class data
@@ -546,7 +554,7 @@ class CustomAttributes
 		class Attribute2
 		{
 			property="ENH_dynamicGroups";
-			expression="        if (!is3DEN && isMultiplayer && _value) then        {          if (isServer) then {['Initialize'] call BIS_fnc_dynamicGroups};          if (hasInterface) then          {            0 spawn            {              scriptName 'ENH_Attribute_DynamicGroups';              waitUntil {!isNull player};              ['InitializePlayer', [player]] call BIS_fnc_dynamicGroups;            };          };        };      ";
+			expression="                if (!is3DEN && isMultiplayer && _value) then                {                    if (isServer) then {['Initialize'] call BIS_fnc_dynamicGroups};                    if (hasInterface) then                    {                        0 spawn                        {                            scriptName 'ENH_Attribute_DynamicGroups';                            waitUntil {!isNull player};                            ['InitializePlayer', [player]] call BIS_fnc_dynamicGroups;                        };                    };                };            ";
 			class Value
 			{
 				class data
@@ -4283,7 +4291,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -13949,7 +13957,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.19585064;
+														value=0.099001251;
 													};
 												};
 												class Item1
@@ -15709,7 +15717,7 @@ class CustomAttributes
 		class Attribute1
 		{
 			property="ENH_SPR";
-			expression="if (!is3DEN && _value # 0 > 0 && !isMultiplayer) then      {        ENH_SPR_Ruleset = _value param [0, 0];        ENH_SPR_Delay = _value param [1, 20];        ENH_SPR_CanDie = _value param [2, false];        ENH_SPR_RestoreLoadout = _value param [3, false];        ENH_SPR_OnRespawnCode = compile (_value param [4, '']);        ENH_SPR_Positions =        [          allMapMarkers select {'respawn_east' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_west' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_guerilla' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_civilian' in toLower _x} apply {getMarkerPos _x}        ];        {          _x setVariable ['ENH_SPR_OriginalSide', side group _x];          _x setVariable ['ENH_SPR_OriginalLoadout', getUnitLoadout _x];          _x addEventHandler ['handleDamage',          {            params ['_unit', '', '_damage', '', '', '_index'];            if (!alive _unit || lifeState _unit isEqualTo 'INCAPACITATED') exitWith {0};            if (_unit getVariable ['ENH_SPR_Tickets', 0] == 0) then            {              _unit removeEventHandler ['handleDamage', _thisEventHandler];              _damage;            };            if (ENH_SPR_CanDie && _index in [1, 2] && _damage >= 1) exitWith            {              _unit removeEventHandler ['handleDamage', _thisEventHandler];              1;            };            if (_index < 8 && (_damage min 0.95) == 0.95) then            {              setAccTime 1;              _unit allowDamage false;              _unit setCaptive true;              _unit setUnconscious true;              _unit setVariable ['ENH_SPR_Tickets', (_unit getVariable ['ENH_SPR_Tickets', 0]) - 1];              if (isPlayer _unit) then {enableTeamSwitch false} else {removeSwitchableUnit _unit};              moveOut _unit;              _unit spawn ENH_fnc_SPR_respawnTimer;            };            _damage min 0.95;          }];        } forEach (allUnits select {_x getVariable ['ENH_SPR_Tickets', 0] > 0});                ENH_fnc_SPR_respawn =        {          scriptName 'ENH_Attribute_SPR_Respawn';          params ['_unit'];          if (isPlayer _unit) then {enableTeamSwitch true} else {addSwitchableUnit _unit};          if (ENH_SPR_RestoreLoadout) then {_unit setUnitLoadout (_unit getVariable 'ENH_SPR_OriginalLoadout')};          private _sideID = (_unit getVariable 'ENH_SPR_OriginalSide') call BIS_fnc_sideID;          private _positions = ENH_SPR_Positions select _sideID;          if (_positions isNotEqualTo []) then          {            switch (ENH_SPR_Ruleset) do            {              case 3:              {                _unit setPos (([_positions, [], {_unit distance _x}, 'ASCEND'] call BIS_fnc_sortBy) select 0);              };              case 2:              {                _unit setPos selectRandom _positions;              };            };          };          _unit setUnconscious false;          _unit allowDamage true;          _unit setDamage 0;          _unit switchMove '';          _unit call ENH_SPR_OnRespawnCode;          _unit spawn          {            sleep 8;            _this setCaptive false;          };        };                ENH_fnc_SPR_respawnTimer =        {          scriptName 'ENH_Attribute_SPR_RespawnTimer';          params ['_unit'];          private _respawnTime = time + ENH_SPR_Delay;          if (isPlayer _unit) then          {            private _ctrlRespawnTimer = (call BIS_fnc_displayMission) ctrlCreate ['RscStructuredText',-1];            _ctrlRespawnTimer ctrlSetPosition [0.25, 0, 0.5, 0.06];            _ctrlRespawnTimer ctrlSetBackgroundColor [0, 0, 0, 0.1];            _ctrlRespawnTimer ctrlCommit 0;            ENH_SPR_OriginalVolume = [soundVolume, musicVolume, radioVolume, speechVolume, environmentVolume];            0 cutText ['', 'BLACK OUT', 0.3];            0.3 fadeSound 0;            0.3 fadeMusic 0;            0.3 fadeRadio 0;            0.3 fadeSpeech 0;            0.3 fadeEnvironment 0;            showChat false;            while {time < _respawnTime} do            {              _ctrlRespawnTimer ctrlSetStructuredText parseText format ['<t size=''1.25'' color=''#218a36'' align=''center''>%1</t>', [(_respawnTime - time), 'HH:MM'] call BIS_fnc_timeToString];              sleep 0.1;            };            ctrlDelete _ctrlRespawnTimer;            0 cutText ['', 'BLACK IN', 8];            8 fadeSound (ENH_SPR_OriginalVolume # 0);            8 fadeMusic (ENH_SPR_OriginalVolume # 1);            8 fadeRadio (ENH_SPR_OriginalVolume # 2);            8 fadeSpeech (ENH_SPR_OriginalVolume # 3);            8 fadeEnvironment (ENH_SPR_OriginalVolume # 4);            showChat true;            [              ['Respawned'],              [format ['GRID: %1', mapGridPosition _unit]],              [format ['Tickets left: %1', _unit getVariable 'ENH_SPR_Tickets']]            ] spawn BIS_fnc_EXP_camp_SITREP;          }          else          {            private _respawnEH = -1;            if ((side player getFriend (_unit getVariable 'ENH_SPR_OriginalSide')) >= 0.6) then            {              _respawnEH = addMissionEventHandler              [                'draw3D',                {                  drawIcon3D ['\a3\Modules_f\data\portraitRespawn_ca.paa', [0.13, 0.54, 0.21, 0.8], ASLToAGL ((_thisArgs # 0) modelToWorldVisualWorld [0, 0, 1]), 1, 1, 0, str round ((_thisArgs # 1) - time), 2];                },                [_unit, _respawnTime]              ];            };            sleep ENH_SPR_Delay;            removeMissionEventHandler ['draw3D', _respawnEH];            [str _unit, 'onEachFrame'] call BIS_fnc_removeStackedEventHandler;          };          _unit call ENH_fnc_SPR_respawn;        };      }";
+			expression="if (!is3DEN && _value # 0 > 0 && !isMultiplayer) then            {                ENH_SPR_Ruleset = _value param [0, 0];                ENH_SPR_Delay = _value param [1, 20];                ENH_SPR_CanDie = _value param [2, false];                ENH_SPR_RestoreLoadout = _value param [3, false];                ENH_SPR_OnRespawnCode = compile (_value param [4, '']);                ENH_SPR_Positions =                [                    allMapMarkers select {'respawn_east' in toLower _x} apply {getMarkerPos _x},                    allMapMarkers select {'respawn_west' in toLower _x} apply {getMarkerPos _x},                    allMapMarkers select {'respawn_guerilla' in toLower _x} apply {getMarkerPos _x},                    allMapMarkers select {'respawn_civilian' in toLower _x} apply {getMarkerPos _x}                ];                {                    _x setVariable ['ENH_SPR_OriginalSide', side group _x];                    _x setVariable ['ENH_SPR_OriginalLoadout', getUnitLoadout _x];                    _x addEventHandler ['handleDamage',                    {                        params ['_unit', '', '_damage', '', '', '_index'];                        if (!alive _unit || lifeState _unit isEqualTo 'INCAPACITATED') exitWith {0};                        if (_unit getVariable ['ENH_SPR_Tickets', 0] == 0) then                        {                            _unit removeEventHandler ['handleDamage', _thisEventHandler];                            _damage;                        };                        if (ENH_SPR_CanDie && _index in [1, 2] && _damage >= 1) exitWith                        {                            _unit removeEventHandler ['handleDamage', _thisEventHandler];                            1;                        };                        if (_index < 8 && (_damage min 0.95) == 0.95) then                        {                            setAccTime 1;                            _unit allowDamage false;                            _unit setCaptive true;                            _unit setUnconscious true;                            _unit setVariable ['ENH_SPR_Tickets', (_unit getVariable ['ENH_SPR_Tickets', 0]) - 1];                            if (isPlayer _unit) then {enableTeamSwitch false} else {removeSwitchableUnit _unit};                            moveOut _unit;                            _unit spawn ENH_fnc_SPR_respawnTimer;                        };                        _damage min 0.95;                    }];                } forEach (allUnits select {_x getVariable ['ENH_SPR_Tickets', 0] > 0});                                ENH_fnc_SPR_respawn =                {                    scriptName 'ENH_Attribute_SPR_Respawn';                    params ['_unit'];                    if (isPlayer _unit) then {enableTeamSwitch true} else {addSwitchableUnit _unit};                    if (ENH_SPR_RestoreLoadout) then {_unit setUnitLoadout (_unit getVariable 'ENH_SPR_OriginalLoadout')};                    private _sideID = (_unit getVariable 'ENH_SPR_OriginalSide') call BIS_fnc_sideID;                    private _positions = ENH_SPR_Positions select _sideID;                    if (_positions isNotEqualTo []) then                    {                        switch (ENH_SPR_Ruleset) do                        {                            case 3:                            {                                _unit setPos (([_positions, [], {_unit distance _x}, 'ASCEND'] call BIS_fnc_sortBy) select 0);                            };                            case 2:                            {                                _unit setPos selectRandom _positions;                            };                        };                    };                    _unit setUnconscious false;                    _unit allowDamage true;                    _unit setDamage 0;                    _unit switchMove '';                    _unit call ENH_SPR_OnRespawnCode;                    _unit spawn                    {                        sleep 8;                        _this setCaptive false;                    };                };                                ENH_fnc_SPR_respawnTimer =                {                    scriptName 'ENH_Attribute_SPR_RespawnTimer';                    params ['_unit'];                    private _respawnTime = time + ENH_SPR_Delay;                    if (isPlayer _unit) then                    {                        private _ctrlRespawnTimer = (call BIS_fnc_displayMission) ctrlCreate ['RscStructuredText',-1];                        _ctrlRespawnTimer ctrlSetPosition [0.25, 0, 0.5, 0.06];                        _ctrlRespawnTimer ctrlSetBackgroundColor [0, 0, 0, 0.1];                        _ctrlRespawnTimer ctrlCommit 0;                        ENH_SPR_OriginalVolume = [soundVolume, musicVolume, radioVolume, speechVolume, environmentVolume];                        0 cutText ['', 'BLACK OUT', 0.3];                        0.3 fadeSound 0;                        0.3 fadeMusic 0;                        0.3 fadeRadio 0;                        0.3 fadeSpeech 0;                        0.3 fadeEnvironment 0;                        showChat false;                        while {time < _respawnTime} do                        {                            _ctrlRespawnTimer ctrlSetStructuredText parseText format ['<t size=''1.25'' color=''#218a36'' align=''center''>%1</t>', [(_respawnTime - time), 'HH:MM'] call BIS_fnc_timeToString];                            sleep 0.1;                        };                        ctrlDelete _ctrlRespawnTimer;                        0 cutText ['', 'BLACK IN', 8];                        8 fadeSound (ENH_SPR_OriginalVolume # 0);                        8 fadeMusic (ENH_SPR_OriginalVolume # 1);                        8 fadeRadio (ENH_SPR_OriginalVolume # 2);                        8 fadeSpeech (ENH_SPR_OriginalVolume # 3);                        8 fadeEnvironment (ENH_SPR_OriginalVolume # 4);                        showChat true;                        [                            ['Respawned'],                            [format ['GRID: %1', mapGridPosition _unit]],                            [format ['Tickets left: %1', _unit getVariable 'ENH_SPR_Tickets']]                        ] spawn BIS_fnc_EXP_camp_SITREP;                    }                    else                    {                        private _respawnEH = -1;                        if ((side player getFriend (_unit getVariable 'ENH_SPR_OriginalSide')) >= 0.6) then                        {                            _respawnEH = addMissionEventHandler                            [                                'draw3D',                                {                                    drawIcon3D ['\a3\Modules_f\data\portraitRespawn_ca.paa', [0.13, 0.54, 0.21, 0.8], ASLToAGL ((_thisArgs # 0) modelToWorldVisualWorld [0, 0, 1]), 1, 1, 0, str round ((_thisArgs # 1) - time), 2];                                },                                [_unit, _respawnTime]                            ];                        };                        sleep ENH_SPR_Delay;                        removeMissionEventHandler ['draw3D', _respawnEH];                        [str _unit, 'onEachFrame'] call BIS_fnc_removeStackedEventHandler;                    };                    _unit call ENH_fnc_SPR_respawn;                };            }";
 			class Value
 			{
 				class data
@@ -16106,7 +16114,7 @@ class Mission
 							};
 							id=853;
 							type="Land_Cargo_HQ_V1_F";
-							atlOffset=4.7683716e-007;
+							atlOffset=4.7683716e-07;
 						};
 						class Item5
 						{
@@ -16350,7 +16358,7 @@ class Mission
 						};
 					};
 					id=1661;
-					atlOffset=2.3841858e-006;
+					atlOffset=2.3841858e-06;
 				};
 				class Item12
 				{
@@ -17276,7 +17284,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (_this call ace_refuel_fnc_getFuelCargo)) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -19357,14 +19365,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={120.70532,8.9768047,90.514717};
+								position[]={120.705,8.9768047,90.514999};
 								angles[]={0,0.028832838,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="if(!isNil ""flag_west_2"") then {this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_west_2}]; }";
+								init="if(!isNil ""flag_west_2"") then {this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_west_2}]; }; this setFlagTexture ""Images\hellfish.jpg"";";
 								name="flag_west_1";
 							};
 							id=2546;
@@ -19736,7 +19744,7 @@ class Mission
 								class Attribute0
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (_this call ace_refuel_fnc_getFuelCargo)) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -19795,7 +19803,7 @@ class Mission
 								class Attribute0
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (_this call ace_refuel_fnc_getFuelCargo)) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -19854,7 +19862,7 @@ class Mission
 								class Attribute0
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (_this call ace_refuel_fnc_getFuelCargo)) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -19913,7 +19921,7 @@ class Mission
 								class Attribute0
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (_this call ace_refuel_fnc_getFuelCargo)) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -20795,14 +20803,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={125.78228,8.9768047,10.548992};
+								position[]={125.782,8.9768047,10.549};
 								angles[]={0,0.028832838,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this AddAction [""Teleport to Staging area"",{(_this select 1) setPosATL getPosATL flag_west_1}];";
+								init="this AddAction [""Teleport to Staging area"",{(_this select 1) setPosATL getPosATL flag_west_1}];  this setFlagTexture ""Images\aac.jpg"";";
 								name="flag_west_2";
 							};
 							id=2572;
@@ -21198,7 +21206,7 @@ class Mission
 								class Attribute0
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (_this call ace_refuel_fnc_getFuelCargo)) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -21255,7 +21263,7 @@ class Mission
 								class Attribute0
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (_this call ace_refuel_fnc_getFuelCargo)) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -23377,14 +23385,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={177.27972,8.9768047,94.125206};
-								angles[]={0,3.1455245,0};
+								position[]={177.28,8.9768047,94.125};
+								angles[]={0,3.1455197,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="if(!isNil ""flag_east_2"") then {this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_east_2}]; }";
+								init="if(!isNil ""flag_east_2"") then {this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_east_2}]; }; this setFlagTexture ""Images\hellfish.jpg"";";
 								name="flag_east_1";
 							};
 							id=2670;
@@ -23829,7 +23837,7 @@ class Mission
 								class Attribute0
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (_this call ace_refuel_fnc_getFuelCargo)) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -23888,7 +23896,7 @@ class Mission
 								class Attribute0
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (_this call ace_refuel_fnc_getFuelCargo)) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -23947,7 +23955,7 @@ class Mission
 								class Attribute0
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (_this call ace_refuel_fnc_getFuelCargo)) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -24006,7 +24014,7 @@ class Mission
 								class Attribute0
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (_this call ace_refuel_fnc_getFuelCargo)) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -24166,14 +24174,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={181.90067,8.9768047,6.5222206};
+								position[]={181.901,8.9768047,6.5219998};
 								angles[]={0,4.7083049,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this AddAction [""Teleport to Staging area"",{(_this select 1) setPosATL getPosATL flag_east_1}];";
+								init="this AddAction [""Teleport to Staging area"",{(_this select 1) setPosATL getPosATL flag_east_1}]; this setFlagTexture ""Images\aac.jpg"";";
 								name="flag_east_2";
 							};
 							id=2615;
