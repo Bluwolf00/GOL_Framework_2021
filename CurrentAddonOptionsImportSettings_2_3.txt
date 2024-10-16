@@ -853,7 +853,6 @@ force GW_Common_AutoLock = false;
 force GW_Common_autoQueue = true;
 force GW_Common_BlockAIGear = true;
 force GW_Common_disableThermals = 2;
-force GW_Common_Faction = "east";
 GW_Common_radioDistnace = 1.9;
 GW_Common_slingloadEnabled = true;
 force GW_HeadlessController_Enable = false;
@@ -869,11 +868,7 @@ GW_UI_allowSpectator = false;
 // GW_Gear
 force GW_Gear_Auto_Assign = 1;
 force GW_Gear_autoRemoveCargo = true;
-force GW_Gear_Blufor = "NATO-D";
-force GW_Gear_Civilian = "CIVI-TAKISTAN";
 force GW_Gear_extraGear = false;
-force GW_Gear_Independent = "AAF-W";
-force GW_Gear_Opfor = "CSAT-H";
 force GW_Gear_randomGear = true;
 
 // GW_Performance
