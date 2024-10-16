@@ -37,7 +37,6 @@ force ace_advanced_throwing_showThrowArc = true;
 // ACE Advanced Vehicle Damage
 ace_vehicle_damage_enableCarDamage = false;
 force ace_vehicle_damage_enabled = false;
-ace_vehicle_damage_removeAmmoDuringCookoff = true;
 
 // ACE AI
 ace_ai_assignNVG = false;
@@ -90,14 +89,15 @@ ace_common_settingFeedbackIcons = 1;
 ace_common_settingProgressBarLocation = 0;
 force ace_common_swayFactor = 0.252886;
 
-// ACE Cook off
+// ACE Cook-off
 force ace_cookoff_ammoCookoffDuration = 2.3;
+ace_cookoff_cookoffDuration = 1;
 ace_cookoff_destroyVehicleAfterCookoff = false;
-force ace_cookoff_enable = 1;
 force ace_cookoff_enableAmmobox = true;
 force ace_cookoff_enableAmmoCookoff = false;
 ace_cookoff_enableFire = true;
 force ace_cookoff_probabilityCoef = 0.7;
+ace_cookoff_removeAmmoDuringCookoff = true;
 
 // ACE Crew Served Weapons
 force ace_csw_ammoHandling = 2;
@@ -148,10 +148,9 @@ acex_fortify_settingHint = 2;
 
 // ACE Fragmentation Simulation
 force ace_frag_enabled = true;
-force ace_frag_maxTrack = 25;
-force ace_frag_maxTrackPerFrame = 15;
 force ace_frag_reflectionsEnabled = false;
 force ace_frag_spallEnabled = false;
+ace_frag_spallIntensity = 1;
 
 // ACE G-Forces
 force ace_gforces_coef = 0.751836;
@@ -178,15 +177,19 @@ force ace_hearing_disableEarRinging = true;
 force ace_hearing_earplugsVolume = 1;
 force ace_hearing_enableCombatDeafness = false;
 force ace_hearing_enabledForZeusUnits = false;
+ace_hearing_explosionDeafnessCoefficient = 1;
 force ace_hearing_unconsciousnessVolume = 0.696238;
 
 // ACE Interaction
 force ace_interaction_disableNegativeRating = true;
+ace_interaction_enableAnimActions = true;
 ace_interaction_enableGroupRenaming = true;
 force ace_interaction_enableMagazinePassing = true;
 force ace_interaction_enableTeamManagement = true;
 ace_interaction_enableWeaponAttachments = true;
+ace_interaction_interactWithEnemyCrew = 0;
 ace_interaction_interactWithTerrainObjects = false;
+ace_interaction_remoteTeamManagement = true;
 
 // ACE Interaction Menu
 ace_gestures_showOnInteractionMenu = 2;
@@ -211,6 +214,7 @@ ace_interact_menu_useListMenu = false;
 ace_interact_menu_useListMenuSelf = false;
 
 // ACE Kill Tracker
+ace_killtracker_showCrewKills = false;
 ace_killtracker_trackAI = true;
 
 // ACE Logistics
@@ -226,6 +230,7 @@ ace_rearm_enabled = true;
 force ace_rearm_level = 0;
 force ace_rearm_supply = 0;
 force ace_refuel_cargoRate = 250;
+ace_refuel_enabled = true;
 force ace_refuel_hoseLength = 15;
 force ace_refuel_progressDuration = 1;
 force ace_refuel_rate = 25;
@@ -283,11 +288,11 @@ force ace_medical_bleedingCoefficient = 0.95;
 force ace_medical_blood_bloodLifetime = 900;
 force ace_medical_blood_enabledFor = 2;
 force ace_medical_blood_maxBloodObjects = 100;
-force ace_medical_deathChance = 0.195851;
+force ace_medical_deathChance = 0.0990013;
 ace_medical_dropWeaponUnconsciousChance = 0;
 force ace_medical_enableVehicleCrashes = false;
 ace_medical_engine_damagePassThroughEffect = 1;
-force ace_medical_fatalDamageSource = 1;
+force ace_medical_fatalDamageSource = 0;
 force ace_medical_fractureChance = 0;
 force ace_medical_fractures = 0;
 force ace_medical_ivFlowRate = 25;
@@ -488,9 +493,10 @@ force ace_scopes_deduceBarometricPressureFromTerrainAltitude = false;
 force ace_scopes_defaultZeroRange = 100;
 force ace_scopes_enabled = true;
 force ace_scopes_forceUseOfAdjustmentTurrets = false;
+ace_scopes_inScopeAdjustment = false;
 force ace_scopes_overwriteZeroRange = false;
 force ace_scopes_simplifiedZeroing = false;
-force ace_scopes_useLegacyUI = false;
+ace_scopes_useLegacyUI = false;
 force ace_scopes_zeroReferenceBarometricPressure = 1013.25;
 force ace_scopes_zeroReferenceHumidity = 0;
 force ace_scopes_zeroReferenceTemperature = 15;
@@ -524,6 +530,8 @@ ace_fastroping_autoAddFRIES = false;
 force ace_fastroping_requireRopeItems = true;
 ace_gunbag_swapGunbagEnabled = true;
 force ace_hitreactions_minDamageToTrigger = 0.0266016;
+ace_hitreactions_weaponDropChanceArmHitAI = 0;
+ace_hitreactions_weaponDropChanceArmHitPlayer = 0;
 ace_inventory_inventoryDisplaySize = 0;
 ace_laser_dispersionCount = 2;
 force ace_laser_showLaserOnMap = 3;
@@ -532,7 +540,8 @@ ace_microdagr_mapDataAvailable = 2;
 ace_microdagr_waypointPrecision = 3;
 ace_noradio_enabled = true;
 force ace_optionsmenu_showNewsOnMainMenu = false;
-force ace_overpressure_distanceCoefficient = 0.503318;
+ace_overpressure_backblastDistanceCoefficient = 1;
+ace_overpressure_overpressureDistanceCoefficient = 1;
 ace_parachute_failureChance = 0;
 ace_parachute_hideAltimeter = true;
 force ace_tagging_quickTag = 1;
@@ -731,9 +740,11 @@ diwako_dui_namelist_text_shadow = 2;
 diwako_dui_namelist_width = 215;
 diwako_dui_radar_ace_finger = true;
 diwako_dui_radar_ace_medic = true;
+diwako_dui_radar_always_show_unit_numbers = false;
 diwako_dui_radar_compassRangeCrew = 500;
 diwako_dui_radar_dir_padding = 25;
 diwako_dui_radar_dir_shadow = 1;
+diwako_dui_radar_enable_seat_icons = 2;
 diwako_dui_radar_group_by_vehicle = false;
 diwako_dui_radar_icon_opacity = 1;
 diwako_dui_radar_icon_opacity_no_player = true;
@@ -837,10 +848,10 @@ grad_trenches_functions_vehicleEnvelopeRemovalTime = -1;
 force grad_trenches_functions_vehicleTrenchBuildSpeed = 9.64434;
 
 // GW_Common
-GW_Common_autoDelete = true;
+force GW_Common_autoDelete = true;
 force GW_Common_AutoLock = false;
-GW_Common_autoQueue = true;
-GW_Common_BlockAIGear = true;
+force GW_Common_autoQueue = true;
+force GW_Common_BlockAIGear = true;
 force GW_Common_disableThermals = 2;
 force GW_Common_Faction = "east";
 GW_Common_radioDistnace = 1.9;
@@ -856,14 +867,14 @@ GW_GameLoop_SafeMode_useType = 0;
 GW_UI_allowSpectator = false;
 
 // GW_Gear
-GW_Gear_Auto_Assign = 1;
+force GW_Gear_Auto_Assign = 1;
 force GW_Gear_autoRemoveCargo = true;
 force GW_Gear_Blufor = "NATO-D";
 force GW_Gear_Civilian = "CIVI-TAKISTAN";
-GW_Gear_extraGear = false;
+force GW_Gear_extraGear = false;
 force GW_Gear_Independent = "AAF-W";
 force GW_Gear_Opfor = "CSAT-H";
-GW_Gear_randomGear = true;
+force GW_Gear_randomGear = true;
 
 // GW_Performance
 GW_Performance_autoCaching = 3;
@@ -875,22 +886,13 @@ GW_Performance_disableWakeUp = 0;
 GW_Performance_Simulation = false;
 GW_Performance_UnitEnabled = true;
 
-// GW_respawnLimit
-GW_respawnLimit_Count = 0;
-GW_respawnLimit_CountTeamEast = 0;
-GW_respawnLimit_CountTeamIndependent = 0;
-GW_respawnLimit_CountTeamWest = 0;
-GW_respawnLimit_JIP = true;
-GW_respawnLimit_Mode = 0;
-
 // GW_setDifficulty
-force GW_setDifficulty_damageResistance = true;
 force GW_setDifficulty_randomSkill = false;
 force GW_setDifficulty_unitTraining = 3;
 
 // GW_StartUp
-GW_StartUp_DistanceLimit = 50;
-GW_StartUp_TimeLimit = 5;
+force GW_StartUp_DistanceLimit = 50;
+force GW_StartUp_TimeLimit = 5;
 
 // GW_UI
 GW_UI_nameShadow = 2;
@@ -1042,7 +1044,7 @@ force Rev_TFAR_settings_SR_B = "1st Squad,2nd Squad, , ,Platoon Net,Support Net,
 force Rev_TFAR_settings_SR_I = "1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
 force Rev_TFAR_settings_SR_O = "1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
 
-// TSP Animate
+// TSP Animate - Radio
 tsp_cba_radio = true;
 tsp_cba_radio_aiming = true;
 tsp_cba_radio_headsets = "[""G_WirelessEarpiece_F""]";
@@ -1070,6 +1072,7 @@ tsp_cba_radio_vests = "[]";
 
 // TSP Core
 tsp_cba_angle = -0.1;
+tsp_cba_compat = false;
 tsp_cba_core_chvd = false;
 tsp_cba_core_pause = false;
 tsp_cba_hint = "Subtitle";
