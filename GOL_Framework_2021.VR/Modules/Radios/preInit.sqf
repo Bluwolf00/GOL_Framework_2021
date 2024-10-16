@@ -6,10 +6,10 @@ PREP(interference);
 
 GVAR(allJamers) = [];
 
-if (GVARMAIN(mod_ACRE)) then {
+if (false) then {
 	#include "Functions\Init_ACRE.sqf"
 };
 
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	#include "Functions\Init_TFAR.sqf"
 };

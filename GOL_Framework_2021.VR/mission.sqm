@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8929;
+		nextID=8960;
 	};
 	class Camera
 	{
-		pos[]={154.89978,138.42412,-73.059425};
-		dir[]={0.014471909,-0.75944799,0.65044242};
-		up[]={0.016893698,0.65054619,0.75927776};
-		aside[]={0.99977469,-2.1129381e-07,-0.022244046};
+		pos[]={146.33467,138.42412,-67.48291};
+		dir[]={-0.0013913761,-0.76871139,0.63959455};
+		up[]={-0.0016722508,0.63959599,0.76870942};
+		aside[]={0.99999779,6.7711881e-10,0.002175394};
 	};
 };
 binarizationWanted=0;
@@ -365,7 +365,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 2.3";
+	overviewText="Framework Version 2.4";
 	overViewPicture="loadImage.jpg";
 	overViewPictureLocked="loadImage.jpg";
 	loadScreen="loadImage.jpg";
@@ -15778,7 +15778,7 @@ class Mission
 	class Intel
 	{
 		briefingName="COOP@30 Mission Name";
-		overviewText="Framework Version 2.3";
+		overviewText="Framework Version 2.4";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
@@ -15789,9 +15789,9 @@ class Mission
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
 		year=2035;
-		day=28;
-		hour=14;
-		minute=-22;
+		day=11;
+		hour=12;
+		minute=0;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
 	};

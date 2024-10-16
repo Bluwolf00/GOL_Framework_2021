@@ -8,7 +8,7 @@ _OfficerHelmet = "rhsusf_patrolcap_ucp";
 _uniform = "rhs_uniform_cu_ucp_10th";
 _vest = "rhsusf_spcs_ucp_rifleman_alt";
 _backpack = "B_Kitbag_cbr";
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "tfw_ilbe_blade_coy";
 };
 

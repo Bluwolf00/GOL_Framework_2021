@@ -1,9 +1,9 @@
 #include "script_Component.hpp"
 
-if (GVARMAIN(mod_ACRE)) then {
+if (false) then {
 };
 
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	[QGVARMAIN(missionLoaded), {
 		private _group = (group player);
 		_group setVariable ["TF_sw_frequency", TF_freq_west];

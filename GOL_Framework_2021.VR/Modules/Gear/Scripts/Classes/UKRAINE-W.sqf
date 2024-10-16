@@ -33,7 +33,7 @@ _vest = ["UK3CB_V_MBAV_MG_OLI","UK3CB_V_MBAV_RIFLEMAN_OLI","UK3CB_V_MBAV_LIGHT_O
 _backpack = "UK3CB_ION_B_B_RIF_OLI_01";
 _backpackRadio = _backpack;
 
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "UK3CB_ION_B_B_RadioBag_OLI";
 };
 

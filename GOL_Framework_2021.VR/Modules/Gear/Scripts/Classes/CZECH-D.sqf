@@ -9,7 +9,7 @@ _uniform = ["acp_gol_CZ_VZ95_Desert_U_I_E_Uniform_shortsleeve_CZ_VZ95_Desert_01_
 _vest = ["acp_gol_CZ_VZ95_Desert_V_PlateCarrierIA2_CZ_VZ95_Desert"];
 _backpack = "acp_gol_CZ_VZ95_Desert_B_AssaultPackEnhanced_CZ_VZ95_Desert_insignia";
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "acp_gol_CZ_VZ95_Desert_B_RadioBag_01_CZ_VZ95_Desert_F";
 };
 

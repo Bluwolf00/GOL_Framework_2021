@@ -23,7 +23,7 @@ _uniform = "rhsgref_uniform_olive";
 _vest = "rhs_6b3_holster";
 _backpack = "UK3CB_CHC_C_B_HIKER";
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "UK3CB_CW_SOV_O_LATE_B_ASS_BERGEN_Radio";
 };
 

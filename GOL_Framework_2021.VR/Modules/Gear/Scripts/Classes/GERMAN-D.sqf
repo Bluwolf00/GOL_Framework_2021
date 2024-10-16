@@ -10,7 +10,7 @@ _vest = "acp_gol_DE_Tropentarn_V_CarrierRigKBT_01_light_DE_Tropentarn_F";
 _backpack = "acp_gol_DE_Tropentarn_B_AssaultPackEnhanced_DE_Tropentarn_insignia";
 _backpackRadio = _backpack;
 
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "acp_gol_DE_Tropentarn_B_RadioBag_01_DE_Tropentarn_F";
 };
 

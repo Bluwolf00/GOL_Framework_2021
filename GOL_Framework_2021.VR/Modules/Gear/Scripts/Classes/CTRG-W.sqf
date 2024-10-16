@@ -8,7 +8,7 @@ _OfficerHelmet = "UK3CB_ANA_B_H_Beret_MAR";
 _uniform = ["U_B_CTRG_Soldier_F","U_B_CTRG_Soldier_3_F","U_B_CTRG_Soldier_2_F"];
 _vest = "acp_gol_GB_DPM95_V_PlateCarrier2_GB_DPM95_insignia";
 _backpack = "acp_gol_GB_DPM95_B_Kitbag_rgr_GB_DPM95";
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "acp_gol_GB_DPM95_B_RadioBag_01_GB_DPM95_F";
 };
 

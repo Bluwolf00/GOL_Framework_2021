@@ -9,7 +9,7 @@ _uniform = selectRandom ["acp_gol_CN_Type_07_Universal_U_I_E_Uniform_CN_Type_07_
 _vest = "acp_gol_CN_Type_07_Universal_V_CarrierRigKBT_01_light_CN_Type_07_Universal_F";
 _backpack = "acp_gol_CN_Type_07_Universal_B_AssaultPackEnhanced_CN_Type_07_Universal_insignia";
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "acp_gol_CN_Type_07_Universal_B_RadioBag_01_CN_Type_07_Universal_F";
 };
 

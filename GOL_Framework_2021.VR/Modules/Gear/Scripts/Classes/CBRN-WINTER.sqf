@@ -9,7 +9,7 @@ _uniform = "acp_gol_CN_Type_07_Universal_U_C_CBRN_Suit_01_CN_Type_07_Universal_F
 _vest = "acp_gol_CN_Type_07_Universal_V_PlateCarrier1_CN_Type_07_Universal";
 _backpack = "acp_gol_CN_Type_07_Universal_B_Kitbag_rgr_CN_Type_07_Universal";
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "acp_gol_CN_Type_07_Universal_B_RadioBag_01_CN_Type_07_Universal_F";
 };
 

@@ -25,7 +25,7 @@ _uniform = ["UK3CB_MDF_B_U_CombatUniform_01_LIZ","UK3CB_CW_SOV_O_Late_U_VDV_Comb
 _vest = ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK","UK3CB_V_Belt_Rig_KHK","rhsgref_chicom","V_SmershVest_01_F","UK3CB_V_Chestrig_TKA_OLI","UK3CB_TKA_I_V_6Sh92_Oli","UK3CB_TKA_I_V_6Sh92_vog_Oli"];
 _backpack = "rhs_sidor";
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "tfar_mr3000_rhs";
 };
 

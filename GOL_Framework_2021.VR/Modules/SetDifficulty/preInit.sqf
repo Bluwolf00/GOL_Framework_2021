@@ -40,6 +40,6 @@ for "_i" from 0 to ((count BEHAVIOURS) - 1) step 1 do {
 
 [QGVAR(randomSkill), "CHECKBOX", ["Use Skill Variation", "Makes each unit have slightly diffrent skill levels within a defined %"], QUOTE(ADDON), true, CBA_SERVEROVERWRITE] call FUNCMAIN(settingsInit);
 
-if (GVARMAIN(mod_ACE3)) then {
+if (true) then {
 	[QGVAR(damageResistance), "CHECKBOX", ["Damage Resistance in Vehicles", "Players recive less direct damage when in a light vehicle example: prowler, reverts back to normal on exit"], QUOTE(ADDON), false, CBA_SERVEROVERWRITE] call FUNCMAIN(settingsInit);
 };

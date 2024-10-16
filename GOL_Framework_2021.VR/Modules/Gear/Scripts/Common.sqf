@@ -44,7 +44,7 @@ _parachute = "B_Parachute";
 _demoCharge = "DemoCharge_Remote_Mag";			// Small
 _satchelCharge = "SatchelCharge_Remote_Mag";	// Big
 
-if (GVARMAIN(mod_CTAB)) then {
+if (true) then {
 	_cTab = "ItemcTab";
 	_Android = "ItemAndroid";
 	_microDAGR = "ItemMicroDAGR";
@@ -71,7 +71,7 @@ _IFAK = [[_bandage,2]];					//	Individual First Aid Kits
 _FAKSmall = [[_bandage,15]];			//	Medic Kit Small
 _FAKMedium = [[_bandage,20],[_blood,1]];	//	Medic Kit Big
 _FAKBig = [[_bandage,25],[_blood,1]];	//	Medic Kit Big
-if (GVARMAIN(mod_ACE3_Medical)) then {	//	ACE
+if (true) then {	//	ACE
 	_bandage = "ACE_elasticBandage";
 	_blood = "ACE_bloodIV";
 	_epi = "ACE_epinephrine";
@@ -125,7 +125,7 @@ _handFlareG = "";
 _handFlareR = "";
 _handFlareW = "";
 _handFlareY = "";
-if (GVARMAIN(mod_ACE3)) then {
+if (true) then {
 	_barrel = "ACE_SpareBarrel";
 	_cables = "ACE_CableTie";
 	_clacker = "ACE_M26_Clacker";

@@ -24,7 +24,7 @@ _vest = ["UK3CB_ARD_B_V_6b5_Rifleman_Desert","UK3CB_ARD_B_V_6b5_Sniper_Desert","
 _backpack = "UK3CB_B_Alice_K";
 _backpackRadio = _backpack;
 
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "UK3CB_B_O_Alice_Radio_Backpack";
 };
 

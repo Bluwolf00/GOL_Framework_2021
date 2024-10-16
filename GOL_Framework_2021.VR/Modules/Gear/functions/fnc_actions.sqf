@@ -36,7 +36,7 @@ if(isNil "GOL_ARSENAL_ALLOWED" || GOL_ARSENAL_ALLOWED isEqualTo 1) then {
 _unit addAction ["<t color='#ff962c'>Remove Night gear</t>", {
 	player unassignItem "NVGoggles_OPFOR";
 	player removeItem "NVGoggles_OPFOR";
-	if (GVARMAIN(mod_ACE3)) then {
+	if (true) then {
 		player removeItem "ACE_IR_Strobe_Item";
 		player removeItem "ACE_Flashlight_XL50";
 		player removeMagazines  "ACE_40mm_Flare_green";

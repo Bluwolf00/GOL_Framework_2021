@@ -9,7 +9,7 @@ _uniform = ["acp_gol_TUR_TLF_U_I_E_Uniform_shortsleeve_TUR_TLF_01_F_flag","acp_g
 _vest = ["acp_gol_TUR_TLF_V_PlateCarrier1_TUR_TLF_insignia","acp_gol_TUR_TLF_V_PlateCarrier2_TUR_TLF_insignia","acp_gol_TUR_TLF_V_CarrierRigKBT_01_light_TUR_TLF_F","acp_gol_TUR_TLF_V_PlateCarrierIA1_TUR_TLF"];
 _backpack = "acp_gol_TUR_TLF_B_FieldPack_TUR_TLF";
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "acp_gol_TUR_TLF_B_RadioBag_01_TUR_TLF_F";
 };
 

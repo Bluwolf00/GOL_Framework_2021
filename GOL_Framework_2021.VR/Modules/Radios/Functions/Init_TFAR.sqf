@@ -1,5 +1,5 @@
 
-if (GVARMAIN(mod_TFAR_CORE)) then {
+if (true) then {
 	["CBA_settingsInitializedDelayed", {	// TFAR calls cba settings in postInit so this needs a delay
 		_disableAutoLongRange = true;
 		_givePersonalRadio = false;

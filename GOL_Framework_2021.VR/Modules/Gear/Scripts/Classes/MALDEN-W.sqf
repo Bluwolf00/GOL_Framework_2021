@@ -14,7 +14,7 @@ _vest = [
 ];
 _backpack = ["UK3CB_ION_B_B_RIF_OLI_01"];
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "FRXA_tf_rt1523g_big_Ranger_Green";
 };
 if (_role in ["ag","ammg","sm"]) then {

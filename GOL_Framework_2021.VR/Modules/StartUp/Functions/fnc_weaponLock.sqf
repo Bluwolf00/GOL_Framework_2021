@@ -19,7 +19,7 @@ if (_this) then {
 	player setCaptive true;
 	player allowDamage false;
 	player setVariable [QGVAR(weaponLock), true];
-	if (GVARMAIN(mod_ACE3)) then {
+	if (true) then {
 		player setVariable ["ACE_Medical_AllowDamage", false];
 		if ((currentWeapon player) in (player getVariable ["ACE_SafeMode_safedWeapons", []])) then {
 			[CURRENT_WEAPONS] call ACE_SafeMode_fnc_lockSafety;
@@ -30,7 +30,7 @@ if (_this) then {
 	player setCaptive false;
 	player allowDamage true;
 	player setVariable [QGVAR(weaponLock), false];
-	if (GVARMAIN(mod_ACE3)) then {
+	if (true) then {
 		player setVariable ["ACE_Medical_AllowDamage", true];
 		if ((currentWeapon player) in (player getVariable ["ACE_SafeMode_safedWeapons", []])) then {
 			[CURRENT_WEAPONS] call ACE_SafeMode_fnc_unlockSafety;

@@ -9,7 +9,7 @@ _uniform = ["acp_gol_FI_M05_Woodland_U_I_E_Uniform_shortsleeve_FI_M05_Woodland_0
 _vest = "acp_gol_FI_M05_Woodland_V_PlateCarrier1_FI_M05_Woodland_insignia";
 _backpack = "acp_gol_FI_M05_Woodland_B_AssaultPackEnhanced_FI_M05_Woodland_insignia";
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "acp_gol_FI_M05_Woodland_B_RadioBag_01_FI_M05_Woodland_F";
 };
 if(_role in ["ag","sm","ammg"]) then {

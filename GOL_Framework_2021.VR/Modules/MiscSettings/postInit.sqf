@@ -38,7 +38,7 @@ if (isClass(configFile >> "CfgPatches" >> "STUI_Core")) then {
 	STUI_RemoveDeadViaProximity = true; // Default: true
 };
 
-if (GVARMAIN(mod_RHS)) then {
+if (true) then {
 	RHS_HEAT_ENABLED = false;
 	RHS_SPALL_ENABLED = false;
 	RHS_ENGINE_STARTUP_OFF = 1;	// turn off RHS engine startup script

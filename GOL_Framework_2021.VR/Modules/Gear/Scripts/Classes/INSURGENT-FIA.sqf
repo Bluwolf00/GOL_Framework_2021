@@ -27,7 +27,7 @@ _backpack = [
 	"UK3CB_B_Fieldpack","UK3CB_B_Hiker","UK3CB_ION_B_B_RIF_OLI_01","UK3CB_B_Largepack","UK3CB_KDF_B_B_Sidor_RIF_OLI","B_CivilianBackpack_01_Everyday_Black_F","B_Messenger_Olive_F","rhs_rd54"
 ];
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "UK3CB_CW_SOV_O_LATE_B_ASS_BERGEN_Radio";
 };
 

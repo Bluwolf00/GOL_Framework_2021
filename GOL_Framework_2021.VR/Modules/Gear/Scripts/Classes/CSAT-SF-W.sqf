@@ -9,7 +9,7 @@ _uniform = ["UK3CB_CSAT_G_O_U_CombatUniform","UK3CB_CSAT_G_O_U_CombatUniform_Sho
 _vest = ["rhs_6b3_AK","rhs_6b3","rhs_6b3_holster","rhs_6b3_AK_2","rhs_6b3_AK_3"];
 _backpack =  ["rhs_rk_sht_30_olive","rhs_rk_sht_30_olive_engineer_empty"];
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "UK3CB_CSAT_G_O_B_RadioBag";
 };
 

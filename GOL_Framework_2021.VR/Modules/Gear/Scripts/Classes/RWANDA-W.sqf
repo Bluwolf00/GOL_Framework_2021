@@ -24,7 +24,7 @@ _uniform = ["rhssaf_uniform_m10_digital_summer"];
 _vest = ["UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI","UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_OLI","UK3CB_LDF_B_V_Vest_KKZ10_OLI"];
 _backpack = "UK3CB_UN_B_B_ASS";
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "tfw_ilbe_dd_gr";
 };
 if(_role in ["ar","mmg"]) then {

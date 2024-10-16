@@ -9,7 +9,7 @@ _uniform = ["acp_gol_CZ_vz95_U_B_CTRG_Soldier_CZ_vz95_F_insignia","acp_gol_CZ_vz
 _vest = ["acp_gol_CZ_vz95_V_PlateCarrierSpec_CZ_vz95_insignia","acp_gol_CZ_vz95_V_PlateCarrierSpec_CZ_vz95","acp_gol_CZ_vz95_V_PlateCarrier2_CZ_vz95_insignia","acp_gol_CZ_vz95_V_PlateCarrier2_CZ_vz95","acp_gol_CZ_vz95_V_PlateCarrierIAGL_CZ_vz95"];
 _backpack = "acp_gol_CZ_vz95_B_Kitbag_rgr_CZ_vz95";
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "acp_gol_CZ_vz95_B_RadioBag_01_CZ_vz95_F";
 };
 

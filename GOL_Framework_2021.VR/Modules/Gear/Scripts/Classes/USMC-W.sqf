@@ -8,7 +8,7 @@ _OfficerHelmet = "rhs_8point_marpatwd";
 _uniform = ["UK3CB_ADM_B_U_CombatUniform_01_MAR","UK3CB_ADM_B_U_CombatUniform_Shortsleeve_01_MAR"];
 _vest = ["rhsusf_spc_light","rhsusf_spc_corpsman","rhsusf_spc_iar","rhsusf_spc_mg","rhsusf_spc_marksman","rhsusf_spc_patchless_radio","rhsusf_spc_rifleman","rhsusf_spc_sniper","rhsusf_spc_squadleader","rhsusf_spc"];
 _backpack = ["rhsusf_falconii_coy_gr","rhsusf_assault_eagleaiii_coy"];
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "FRXA_tf_rt1523g_big_MARPAT_Woodlaand";
 };
 

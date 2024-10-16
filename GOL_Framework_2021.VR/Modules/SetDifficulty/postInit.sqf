@@ -25,7 +25,7 @@
 	}, true, [], true] call CBA_fnc_addClassEventHandler;
 
 	ace_medical_playerDamageThreshold = 1;
-	if (GVARMAIN(mod_ACE3)) then {
+	if (true) then {
 		GVAR(damageResistanceDefault) = ace_medical_playerDamageThreshold;
 		if (GVAR(damageResistance)) then {
 			["CAManBase", "GetInMan", {

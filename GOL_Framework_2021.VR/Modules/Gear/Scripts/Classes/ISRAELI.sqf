@@ -9,7 +9,7 @@ _uniform = ["acp_gol_IL_IDF_U_I_CombatUniform_IL_IDF_insignia","acp_gol_IL_IDF_U
 _vest = ["acp_gol_IL_IDF_V_PlateCarrier2_IL_IDF_insignia"];
 _backpack = "acp_gol_IL_IDF_B_AssaultPackEnhanced_IL_IDF_insignia";
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "acp_gol_IL_IDF_B_RadioBag_01_IL_IDF_F";
 };
 

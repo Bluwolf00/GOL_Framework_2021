@@ -25,7 +25,7 @@ _uniform = ["UK3CB_CHD_B_U_H_Pilot_Uniform_03","UK3CB_CHD_B_U_CombatUniform_07",
 _vest = ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
 _backpack = "rhs_sidor";
 _backpackRadio = _backpack;
-if (GVARMAIN(mod_TFAR)) then {
+if (true) then {
 	_backpackRadio = "tfar_mr3000_rhs";
 };
 
