@@ -284,20 +284,20 @@ force ace_maptools_rotateModifierKey = 3;
 force ace_medical_ai_enabledFor = 1;
 ace_medical_ai_requireItems = 0;
 force ace_medical_AIDamageThreshold = 0.7;
-force ace_medical_bleedingCoefficient = 0.95;
+force ace_medical_bleedingCoefficient = 0.9;
 force ace_medical_blood_bloodLifetime = 900;
 force ace_medical_blood_enabledFor = 2;
 force ace_medical_blood_maxBloodObjects = 100;
-force ace_medical_deathChance = 0.0990013;
+force ace_medical_deathChance = 0.201231;
 ace_medical_dropWeaponUnconsciousChance = 0;
 force ace_medical_enableVehicleCrashes = false;
 ace_medical_engine_damagePassThroughEffect = 1;
-force ace_medical_fatalDamageSource = 0;
+force ace_medical_fatalDamageSource = 1;
 force ace_medical_fractureChance = 0;
 force ace_medical_fractures = 0;
 force ace_medical_ivFlowRate = 25;
 force ace_medical_limping = 0;
-force ace_medical_painCoefficient = 1.2;
+force ace_medical_painCoefficient = 1.3;
 force ace_medical_painUnconsciousChance = 0.3;
 force ace_medical_painUnconsciousThreshold = 0.8;
 force ace_medical_playerDamageThreshold = 2;
@@ -848,10 +848,10 @@ grad_trenches_functions_vehicleEnvelopeRemovalTime = -1;
 force grad_trenches_functions_vehicleTrenchBuildSpeed = 9.64434;
 
 // GW_Common
-force GW_Common_autoDelete = true;
+GW_Common_autoDelete = true;
 force GW_Common_AutoLock = false;
-force GW_Common_autoQueue = true;
-force GW_Common_BlockAIGear = true;
+GW_Common_autoQueue = true;
+GW_Common_BlockAIGear = true;
 force GW_Common_disableThermals = 2;
 GW_Common_radioDistnace = 1.9;
 GW_Common_slingloadEnabled = true;
@@ -866,10 +866,10 @@ GW_GameLoop_SafeMode_useType = 0;
 GW_UI_allowSpectator = false;
 
 // GW_Gear
-force GW_Gear_Auto_Assign = 1;
+GW_Gear_Auto_Assign = 1;
 force GW_Gear_autoRemoveCargo = true;
-force GW_Gear_extraGear = false;
-force GW_Gear_randomGear = true;
+GW_Gear_extraGear = false;
+GW_Gear_randomGear = true;
 
 // GW_Performance
 GW_Performance_autoCaching = 3;
@@ -882,12 +882,13 @@ GW_Performance_Simulation = false;
 GW_Performance_UnitEnabled = true;
 
 // GW_setDifficulty
+force GW_setDifficulty_damageResistance = true;
 force GW_setDifficulty_randomSkill = false;
 force GW_setDifficulty_unitTraining = 3;
 
 // GW_StartUp
-force GW_StartUp_DistanceLimit = 50;
-force GW_StartUp_TimeLimit = 5;
+GW_StartUp_DistanceLimit = 50;
+GW_StartUp_TimeLimit = 5;
 
 // GW_UI
 GW_UI_nameShadow = 2;
