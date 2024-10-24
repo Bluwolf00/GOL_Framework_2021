@@ -49,24 +49,28 @@ if (_unit isKindOf "CAManBase") then {
 
 	_unit setVariable ["acex_headless_blacklist", true, true]; // If Auto-Gear is being applied disable HC transfer until gear is applied
 
-	_role = (_unit getVariable [QGVAR(Loadout), ""]);	// Check if specific is role assigned
+		if !(typeOf _unit isEqualTo "ace_dragging_clone") then {
+		_role = (_unit getVariable [QGVAR(Loadout), ""]);	// Check if specific is role assigned
 
-	if (_role isEqualTo "") then {	// get role
-		_role = "r";
-		private _groupType = ((group _unit) getVariable [QGVAR(Loadout_Type), false]);
-		private _displayName = getText (configfile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
+		if (_role isEqualTo "") then {	// get role
+			_role = "r";
+			private _groupType = ((group _unit) getVariable [QGVAR(Loadout_Type), false]);
+			private _displayName = getText (configfile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
 
-		_role = selectRandom ["r","mat","amat","g","ag","ar"];	// Random role
+			_role = selectRandom ["r","mat","amat","g","ag","ar"];	// Random role
 
-		if (_isPlayable || !(GVAR(randomGear)) || !_isSpawned) then {
-			_role = [_unit] call FUNC(getLoadoutClass);
+			if (_isPlayable || !(GVAR(randomGear)) || !_isSpawned) then {
+				_role = [_unit] call FUNC(getLoadoutClass);
+			};
 		};
-	};
 
-	if (_mainScope) then {
-		[{
-			_this call FUNC(Handler);
-		}, [_unit, _role], 0.5] call CBA_fnc_waitAndExecute;
+		if (_mainScope) then {
+			[{
+				_this call FUNC(Handler);
+			}, [_unit, _role], 0.5] call CBA_fnc_waitAndExecute;
+		};
+	} else {
+		["Unit is ACE Clone - Bypassing Gear Settings"] remoteExec ["systemChat", 2];
 	};
 } else {
 	if (GVAR(autoRemoveCargo)) then {
