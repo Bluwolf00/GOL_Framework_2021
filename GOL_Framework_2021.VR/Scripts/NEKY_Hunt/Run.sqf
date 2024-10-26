@@ -133,9 +133,8 @@ if (_isSide) then
 	if ((typeName _Side) == "GROUP") then {_Grp = _Side};
 };
 
-if(_Grp getVariable ["Disable_Hunt",false]) exitWith  { SystemChat "Hunt disabled on _Grp.. exiting" };
-
 if(isNil "_Grp") exitWith { SystemChat "Run.sqf _Grp is null.. exiting" };
+if(_Grp getVariable ["Disable_Hunt",false]) exitWith  { SystemChat "Hunt disabled on _Grp.. exiting" };
 
 // Start hunting
 [_Grp,_Player,_Zone,_UpdateFreq,_Distance,_Number,_Code,_ForceRespawnMultiplier,_Repeat] Spawn NEKY_Hunt_Hunting;
