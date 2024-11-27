@@ -45,6 +45,93 @@ switch (_case) do {
 		ERROR(FORMAT_1("Case missing: %1", _case));
 	};
 };
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*
+	GOL SCRIPT EXAMPLES
+
+	=======================================
+
+	Creates a defuse explosive objective with 600 (10 minutes) seconds to complete on the "SatchelCharge" object with the name bomb_1.
+	This can be replaced with a position to create an explosive on the position using getPos bomb_1.
+
+	Code:
+	[bomb_1,600] spawn OKS_Defuse_Explosive;
+
+	Params:
+	[bomb_1,600,bombtarget_1,"BombDetonated","BombDefused"] spawn OKS_Defuse_Explosive;
+	Bomb Object or Position, Time Delay (Seconds), Target Object (Destroyed upon detonation), VariableName to set to true if failed, VariableName to set to true if succeeded.
+
+	=======================================
+
+	Sets up a generator to be disabled by action to turn off light sources in the area around it. 
+
+	Code:
+	[Generator_1,true,true,1000] spawn OKS_PowerGenerator;
+
+	Params:
+	Generator Object, Should Add Action to disable, Turn Off Lights when disabled, Range of disabled lights from Generator
+
+    =======================================
+
+	Setup a scripted AAA that fires randomly into the air until it finds a target and locks on. It has less accuracy than standard AAA positions for balance.
+
+	Code:
+	[aaa_1,east,false,1500,true] spawn GW_Ambient_AAA;
+
+	Params:
+	AAA Object, side of crew, Is an HMG, Range of AAA, Should be assisted by nearby radar
+
+    =======================================
+
+	Setup an artillery to fire into the sky until destroyed. Take note that it is supposed to delete the rounds from landing to save performance.
+	This might fail, so make sure the target is not near friendly positions or bases.
+
+	Code:
+	[east,arty_1,ArtyTarget_1,7,300,180,false] spawn OKS_ArtyFire;
+
+	Params:
+	Side of Crew, Artillery Object, Artillery Target, Rounds per Salvo, Rearm Delay, Reload Delay, Should give full crew.
+
+    =======================================
+
+	Setup an active artillery barrage on specified targets until destroyed.
+
+	Code:
+	[livearty_1,[getPos ArtySuppress_1,getPos ArtySuppress_2,getPos ArtySuppress_3],east,1,1,true,true,300,true] spawn OKS_ArtySupression;
+
+	Params:
+	Artillery Object, Array with Target positions, Side of Crew, Rounds per target, Delay per target, Unlimited Ammo, Should Loop until Destroyed, Delay per Salvo, Mark with Red Smoke on Target.
+
+	=======================================
+
+	Setup a destroy/kill objective on a target.
+
+	Code:
+	[officer_1,"Kill the Officer","Enemy Officer","You need to kill this %1 because it needs to happen","kill",nil,true,true] spawn OKS_Destroy_Task;
+
+	Params:
+	Target Object, Task Title, Target Type, Task Description, Task Icon, Task Parent, Should Mark Position on Map, Should Show Popup when created/completed
+
+	=======================================
+
+	Setup a HVT Capture Objective. The last variable sets true/false if they target should be set to captive (tied hands). False for enemy officers, true for friendly captives.
+
+	Code:
+	[Group HVT_1,getMarkerPos "respawn_west",west,false,nil,true] spawn OKS_Evacuate_HVT;
+
+	Params:
+	Group of HVT, Exfil Position (Either pickup (Extract On) or dropoff (Extract off)), Side of Extract Helicopter, Should Send AI Helicopter Evac, Parent Task, Is Captive
+
+	=======================================
+
+	Setup Barricade Objective. Objective to destroy objects lined up as a blockade on a road. Make sure the object is destructible by testing it.
+
+	Code:
+	[[barricade_1,barricade_2]] spawn OKS_Destroy_Barricade;
+
+	Params:
+	Array with Barricade Objects
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 

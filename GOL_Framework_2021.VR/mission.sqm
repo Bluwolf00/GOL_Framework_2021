@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8991;
+		nextID=9053;
 	};
 	class Camera
 	{
-		pos[]={153.12831,97.713867,-62.840275};
-		dir[]={-0.073862433,-0.60578036,0.79220462};
-		up[]={-0.056237333,0.79562944,0.60316926};
-		aside[]={0.99568927,-1.36788e-09,0.092834823};
+		pos[]={156.61967,153.04146,-127.46537};
+		dir[]={0.032178748,-0.66903543,0.7425946};
+		up[]={0.028966343,0.743204,0.66844106};
+		aside[]={0.99910104,2.3508619e-08,-0.04329266};
 	};
 };
 binarizationWanted=0;
@@ -18796,7 +18796,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={129.41203,5.0014391,75.200439};
+										position[]={129.412,5.0014391,75.200005};
 										angles[]={0,0.019477876,0};
 									};
 									side="West";
@@ -18805,7 +18805,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										name="wcrew4";
-										description="Crew Commander@Pig 2";
+										description="Crew Commander@Foxtrot 2";
 										isPlayable=1;
 									};
 									id=2713;
@@ -18846,7 +18846,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={131.41203,5.0014391,75.162437};
+										position[]={131.412,5.0014391,75.162003};
 										angles[]={0,0.019477876,0};
 									};
 									side="West";
@@ -18855,7 +18855,7 @@ class Mission
 									{
 										skill=0.40000001;
 										name="wcrew5";
-										description="Crew@Pig 2";
+										description="Crew@Foxtrot 2";
 										isPlayable=1;
 									};
 									id=2714;
@@ -18896,7 +18896,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={133.41104,5.0014391,75.122444};
+										position[]={133.411,5.0014391,75.122002};
 										angles[]={0,0.019477876,0};
 									};
 									side="West";
@@ -18905,7 +18905,7 @@ class Mission
 									{
 										skill=0.40000001;
 										name="wcrew6";
-										description="Crew@Pig 2";
+										description="Crew@Foxtrot 2";
 										isPlayable=1;
 									};
 									id=2715;
@@ -25319,7 +25319,7 @@ class Mission
 						class Item1
 						{
 							dataType="Trigger";
-							position[]={111.01433,5,790.31311};
+							position[]={111.014,5,790.31299};
 							class Attributes
 							{
 								name="DestroyHouseTrigger_1";
@@ -25356,7 +25356,6 @@ class Mission
 						};
 					};
 					id=2834;
-					atlOffset=-5;
 				};
 				class Item1
 				{
@@ -25395,7 +25394,6 @@ class Mission
 						};
 					};
 					id=2861;
-					atlOffset=-5;
 				};
 				class Item2
 				{
@@ -25464,7 +25462,6 @@ class Mission
 							{
 							};
 							id=2850;
-							atlOffset=-5;
 						};
 						class Item1
 						{
@@ -25526,7 +25523,6 @@ class Mission
 							{
 							};
 							id=2848;
-							atlOffset=-5;
 						};
 						class Item2
 						{
@@ -25544,7 +25540,7 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={134.22136,5,763.11792};
+								position[]={134.22099,5,763.11798};
 							};
 							title="HVT Objective: Friendly Captive";
 							description="The code is added to the HVT upon start, however the task will only show up once the HVT is ""captive"". This code allows the HVT to be a hostage without weapons and tied/blindfolded." \n "" \n "Example Code:" \n "[Group HVT_1,getMarkerPos ""respawn_west"",west,false,nil,true] spawn OKS_Evacuate_HVT;" \n "" \n "Param 1: Group of Target" \n "Param 2: Exfil location (Bring HVT to this position to complete)" \n "Param 3: Faction of pickup helicopter is enabled" \n "Param 4: Should call AI extraction" \n "Param 5: Parent Task" \n "Param 6: IsCaptive (True for Hostages, False for combatant)" \n "" \n "To add more hostages/captives in the same task, add more units to the group of the target.";
@@ -25552,7 +25548,6 @@ class Mission
 						};
 					};
 					id=2862;
-					atlOffset=-5;
 				};
 				class Item3
 				{
@@ -25590,7 +25585,6 @@ class Mission
 						};
 					};
 					id=2863;
-					atlOffset=-5;
 				};
 				class Item4
 				{
@@ -25638,7 +25632,7 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={110.34477,5,747.03607};
+								position[]={110.345,5,747.03601};
 							};
 							title="Destroy Barricade Task";
 							description="Add this code in the spawnList case where you wish the task to activate. Changed the params based on your needs." \n "" \n "[[barricade_1,barricade_2]] spawn OKS_Destroy_Barricade;" \n "If you use more than one barricade make sure to change the code!" \n "" \n "Param 1: Array with Barricade names";
@@ -25646,7 +25640,6 @@ class Mission
 						};
 					};
 					id=2864;
-					atlOffset=-5;
 				};
 				class Item5
 				{
@@ -25686,7 +25679,6 @@ class Mission
 						};
 					};
 					id=2865;
-					atlOffset=-5;
 				};
 				class Item6
 				{
@@ -26079,7 +26071,6 @@ class Mission
 						};
 					};
 					id=2866;
-					atlOffset=-5;
 				};
 				class Item7
 				{
@@ -26199,7 +26190,6 @@ class Mission
 						};
 					};
 					id=2867;
-					atlOffset=-5;
 				};
 				class Item8
 				{
@@ -26622,7 +26612,6 @@ class Mission
 						};
 					};
 					id=2874;
-					atlOffset=-5;
 				};
 				class Item9
 				{
@@ -26637,7 +26626,6 @@ class Mission
 				};
 			};
 			id=2860;
-			atlOffset=-0.0048828125;
 		};
 	};
 	class Connections

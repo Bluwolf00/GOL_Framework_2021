@@ -18,7 +18,7 @@ playSound3D [MISSION_ROOT + "Scripts\OKS_Ambience\Sound\GeneratorOn.wav", _Gener
 sleep 8.66;
 _Generator setVariable ["GeneratorOn",true,true];
 
-while {_Generator getVariable ["GeneratorOn",false]} do {
+while {_Generator getVariable ["GeneratorOn",false] && Alive _Generator} do {
 	playSound3D [MISSION_ROOT + "Scripts\OKS_Ambience\Sound\GeneratorIdle.wav", _Generator, false, getPosASL _Generator, 4, 1, 40];
 	sleep 5.88;
 	if !(_Generator getVariable ["GeneratorOn",false]) exitWith {

@@ -5,8 +5,8 @@
 	[officer_1] spawn OKS_Destroy_Task;
 	[officer_1] execVM "Scripts\OKS_Task\OKS_Destroy_Task.sqf";
 
-	[officer_1,"Kill the Officer","Enemy Officer","You need to kill this %1 because it needs to happen",true,true,nil] spawn OKS_Destroy_Task;
-	[officer_1,"Kill the Officer","Enemy Officer","You need to kill this %1 because it needs to happen",true,true,nil] execVM "Scripts\OKS_Task\OKS_Destroy_Task.sqf";	
+	[officer_1,"Kill the Officer","Enemy Officer","You need to kill this %1 because it needs to happen","kill",nil,true,true] spawn OKS_Destroy_Task;
+	[officer_1,"Kill the Officer","Enemy Officer","You need to kill this %1 because it needs to happen","kill",nil,true,true] execVM "Scripts\OKS_Task\OKS_Destroy_Task.sqf";	
 */
 
 Params [
