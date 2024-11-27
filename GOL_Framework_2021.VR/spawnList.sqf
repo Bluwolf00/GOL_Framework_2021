@@ -88,7 +88,7 @@ switch (_case) do {
 	This might fail, so make sure the target is not near friendly positions or bases.
 
 	Code:
-	[east,arty_1,ArtyTarget_1,7,300,180,false] spawn OKS_ArtyFire;
+	[east,arty_1,getpos ArtyTarget_1,7,300,180,false] spawn OKS_ArtyFire;
 
 	Params:
 	Side of Crew, Artillery Object, Artillery Target, Rounds per Salvo, Rearm Delay, Reload Delay, Should give full crew.

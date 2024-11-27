@@ -1,5 +1,5 @@
 
-///// _null = [east,ArtyName,TargetObject,RoundsFired,RearmTime,ReloadTime] spawn OKS_ArtyFire;
+///// _null = [east,ArtyName,TargetObjectPosition,RoundsFired,RearmTime,ReloadTime] spawn OKS_ArtyFire;
 //// _null = [east,this,getMarkerPos "respawn_west",7,300,30] spawn OKS_ArtyFire;
 /*
 	[east,this,getMarkerPos "respawn_west",10,300,30] execVM "Scripts\OKS_Spawn\OKS_ArtyFire.sqf";
