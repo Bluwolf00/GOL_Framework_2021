@@ -133,6 +133,27 @@ switch (_case) do {
 	Params:
 	Array with Barricade Objects
 
+	=======================================
+
+	Spawn a convoy that moves until engaged, they will dismount, armed vehicles will hunt and dismounts will rush.
+
+	Code:
+	[spawn_1,waypoint_1,end_1,west,[4,["rhs_btr60_msv"], 6, 25],[true,6],[], false, false] spawn OKS_Convoy_Spawn;
+
+	Params:
+	Spawn Position, First Waypoint, End Waypoint (Scattered formation), Side of Convoy, Convoy Array [](Number, [TypeArray]), Speed meters/second, dispersion]
+	Dismount Array (Should have dismount, how many), ConvoyArray to populate variable, forced careless (ignore everything), delete on arrival.
+
+	=======================================
+
+	Spawns a team that either creep/rush/hunt based on LAMBS. Used for quick and intense counter-attacks by enemy infantry.
+
+	Code:
+	[SpawnPos,"rush",UnitsPerBase,Side,Range,[]] spawn OKS_Lambs_SpawnGroup;
+
+	Params:
+	Position, Type of Waypoint (rush,creep,hunt), Units to spawn, Side of units, Range of waypoint (around the spawn), unit array that gets populated with the units.
+
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 		/*
