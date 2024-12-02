@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2883;
+		nextID=2917;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=9053;
+		nextID=9114;
 	};
 	class Camera
 	{
-		pos[]={156.52353,122.05457,-87.758179};
-		dir[]={0.024576968,-0.7022081,0.71155739};
-		up[]={0.024239808,0.7119692,0.70179456};
-		aside[]={0.99941289,-6.9041562e-08,-0.03451924};
+		pos[]={152.68684,81.745316,-67.423302};
+		dir[]={-0.0035951785,-0.64200562,0.76669407};
+		up[]={-0.0030104704,0.76669884,0.64200014};
+		aside[]={0.999991,6.8694135e-09,0.0046890937};
 	};
 };
 binarizationWanted=0;
@@ -43,11 +43,6 @@ addons[]=
 	"A3_Modules_F",
 	"drongosaps",
 	"san_headlamp",
-	"A3_Soft_F_Exp_LSV_01",
-	"A3_Boat_F_Boat_Armed_01",
-	"GatlingSoundOverhaul_Boats",
-	"A3_Air_F_Exp_VTOL_01",
-	"A3_Structures_F_Mil_Helipads",
 	"A3_Armor_F_Beta_APC_Tracked_01",
 	"AltMun_CRV",
 	"tfar_external_intercom",
@@ -69,6 +64,7 @@ addons[]=
 	"A3_Weapons_F_Ammoboxes",
 	"RHS_US_A2_AirImport",
 	"A3_Supplies_F_Heli_CargoNets",
+	"A3_Structures_F_Mil_Helipads",
 	"ace_cargo",
 	"A3_Modules_F_Multiplayer",
 	"rhsusf_c_melb",
@@ -88,7 +84,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=38;
+		items=35;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -150,194 +146,173 @@ class AddonsMetaData
 		};
 		class Item9
 		{
-			className="A3_Soft_F_Exp";
-			name="Arma 3 Apex - Unarmored Land Vehicles";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item10
-		{
-			className="A3_Boat_F";
-			name="Arma 3 Alpha - Boats and Submersibles";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item11
-		{
-			className="A3_Weapons_F";
-			name="Arma 3 Alpha - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item12
-		{
-			className="A3_Air_F_Exp";
-			name="Arma 3 Apex - Aircraft";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item13
-		{
 			className="A3_Armor_F_Beta";
 			name="Arma 3 Beta - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
+		class Item10
 		{
 			className="A3_Armor_F";
 			name="Arma 3 Alpha - Armored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item11
 		{
 			className="tfar_external_intercom";
 			name="TFAR - Intercom Phone";
 			author="Task Force Arrowhead Radio Team";
 		};
-		class Item16
+		class Item12
 		{
 			className="ace_interaction";
 			name="ACE3 - Interaction";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item17
+		class Item13
 		{
 			className="ace_rearm";
 			name="ACE3 - Rearm";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item18
+		class Item14
 		{
 			className="ace_refuel";
 			name="ACE3 - Refuel";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item19
+		class Item15
 		{
 			className="ace_vehicle_damage";
 			name="ACE3 - Vehicle Damage";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item20
+		class Item16
 		{
 			className="CUP_Misc3_Config";
 			name="CUP_Misc3_Config";
 		};
-		class Item21
+		class Item17
 		{
 			className="FIR_PilotCrewPack_US";
 			name="FIR_PilotCrewPack_US";
 		};
-		class Item22
+		class Item18
 		{
 			className="ace_parachute";
 			name="ACE3 - Parachute";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item23
+		class Item19
 		{
 			className="A3_Supplies_F_Exp";
 			name="Arma 3 Apex - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item24
+		class Item20
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item25
+		class Item21
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item26
+		class Item22
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item23
 		{
 			className="RHS_US_A2_AirImport";
 			name="RHSUSF A2 Air Ports";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item27
+		class Item24
 		{
 			className="A3_Supplies_F_Heli";
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item28
+		class Item25
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item29
+		class Item26
 		{
 			className="rhsusf_c_melb";
 			name="MELB";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item30
+		class Item27
 		{
 			className="Vsqz_melber";
 			name="Vsqz_melber";
 		};
-		class Item31
+		class Item28
 		{
 			className="A3_Missions_F_Oldman";
 			name="Arma 3 Old Man - Playable Content";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item32
+		class Item29
 		{
 			className="rhs_c_a2port_air";
 			name="A2 ported air";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item33
+		class Item30
 		{
 			className="A3_Structures_F_Ind";
 			name="Arma 3 - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item34
+		class Item31
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item35
+		class Item32
 		{
 			className="UK3CB_Factions_Objects_Pallets";
 			name="3CB Factions - Pallets";
 			author="3 Commando Brigade";
 			url="www.3commandobrigade.com";
 		};
-		class Item36
+		class Item33
 		{
 			className="rhs_c_2s1";
 			name="2S1 SPG";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item37
+		class Item34
 		{
 			className="rhs_c_trucks";
 			name="GAZ-66";
@@ -15797,7 +15772,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=6;
+		items=5;
 		class Item0
 		{
 			dataType="Layer";
@@ -16788,323 +16763,6 @@ class Mission
 		class Item1
 		{
 			dataType="Layer";
-			name="Optional (Hidden) - Delete if not used!";
-			state=3;
-			class Entities
-			{
-				items=12;
-				class Item0
-				{
-					dataType="Comment";
-					class PositionInfo
-					{
-						position[]={54.360641,5,18.86434};
-						angles[]={0,0.11193988,0};
-					};
-					title="MHQ 2";
-					description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Small";
-					id=271;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={54.18248,7.1761513,18.456375};
-						angles[]={0,0.0073827426,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						health=0.89999998;
-						lock="UNLOCKED";
-						init="[this, ""small""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf"";  [this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
-						name="mhq_2";
-						presence=0;
-					};
-					id=944;
-					type="B_LSV_01_unarmed_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ace_isMedicalVehicle";
-							expression="_this setVariable [""ace_medical_isMedicalVehicle"", _value, true]";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ammoBox";
-							expression="[_this,_value] call bis_fnc_initAmmoBox;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ace_cargo_space";
-							expression="[_this, _value] call ace_cargo_fnc_setSpace";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=40;
-								};
-							};
-						};
-						nAttributes=3;
-					};
-				};
-				class Item2
-				{
-					dataType="Comment";
-					class PositionInfo
-					{
-						position[]={44.866268,5,18.678701};
-						angles[]={0,0.11193988,0};
-					};
-					title="MHQ 3";
-					description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Boat";
-					id=1785;
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={44.655716,8.3238735,18.381189};
-						angles[]={0,0.0073827426,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						health=0.89999998;
-						lock="UNLOCKED";
-						init="[this, ""boat""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf"";  [this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
-						name="mhq_3";
-						presence=0;
-					};
-					id=1788;
-					type="B_Boat_Armed_01_minigun_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ace_isMedicalVehicle";
-							expression="_this setVariable [""ace_medical_isMedicalVehicle"", _value, true]";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ammoBox";
-							expression="[_this,_value] call bis_fnc_initAmmoBox;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ace_cargo_space";
-							expression="[_this, _value] call ace_cargo_fnc_setSpace";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=40;
-								};
-							};
-						};
-						nAttributes=3;
-					};
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={28.155001,11.68958,17.448};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						name="AMHQ_1";
-						presence=0;
-						reportRemoteTargets=1;
-						receiveRemoteTargets=1;
-						reportOwnPosition=1;
-					};
-					id=1945;
-					type="B_T_VTOL_01_armed_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="ace_isMedicalVehicle";
-							expression="_this setVariable [""ace_medical_isMedicalVehicle"", _value, true]";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="ammoBox";
-							expression="[_this,_value] call bis_fnc_initAmmoBox;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="[[[[""FirstAidKit"",""Medikit""],[10,1]],[[],[]],[[""ToolKit""],[1]],[[""B_Parachute""],[4]]],false]";
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="ace_cargo_space";
-							expression="[_this, _value] call ace_cargo_fnc_setSpace";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=50;
-								};
-							};
-						};
-						nAttributes=3;
-					};
-				};
-				class Item5
-				{
-					dataType="Comment";
-					class PositionInfo
-					{
-						position[]={28.01045,5,18.74707};
-					};
-					title="MHQ Paradrop";
-					description="This vehicle is used for scripted paradrops that AAC can conduct while flying non-cargo airframes.  The player who requests reinsert can do so at the flag and the pilots can start the drop once they are below 250km/h and above 200m altitude. MHQ paradrop must be enabled in MissionSettings.sqf to work.";
-					id=1946;
-				};
-				class Item6
-				{
-					dataType="Comment";
-					class PositionInfo
-					{
-						position[]={66.758804,5,17.093422};
-						angles[]={0,6.2464318,0};
-					};
-					title="Reinsert Helipad";
-					description="This helipad is used by the AI to land helicopters to bring reinserts into the field. Do not place these near AACs helipads as it may confuse the AI and make them try to land on AACs helipads.";
-					id=2538;
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={66.771805,5,17.819422};
-						angles[]={0,0.0096167643,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						name="reinsert_helipad";
-						presence=0;
-					};
-					id=2539;
-					type="Land_HelipadSquare_F";
-				};
-				class Item8
-				{
-					dataType="Trigger";
-					position[]={15.872508,5,17.618805};
-					class Attributes
-					{
-						name="NEKY_PARADROP_TRIGGER";
-						sizeA=0;
-						sizeB=0;
-					};
-					id=1659;
-					type="EmptyDetector";
-				};
-				class Item9
-				{
-					dataType="Comment";
-					class PositionInfo
-					{
-						position[]={16.124205,5,17.70166};
-					};
-					title="Paradrop Trigger";
-					description="This is the Paradrop Trigger that is required for NEKY Paradrop to be used. It is the position that reinserts will be dropped at. Delete this if you want to disable Paradrop reinsert in your mission";
-					id=1754;
-				};
-				class Item10
-				{
-					dataType="Comment";
-					class PositionInfo
-					{
-						position[]={573.91144,6.6210179,754.02905};
-						angles[]={0,3.0554278,0};
-					};
-					title="This is one of the Hunt Triggers";
-					description="If players are within this zone and detected by the specificed faction, the bases will start sending reinforcements.";
-					id=839;
-					atlOffset=1.6210179;
-				};
-				class Item11
-				{
-					dataType="Comment";
-					class PositionInfo
-					{
-						position[]={576.70404,5,808.3515};
-						angles[]={0,3.1306186,0};
-					};
-					title="These are activated through the init.sqf";
-					description="If you check the init.sqf you'll find examples of how these 3 bases are used. One is for infantry, the other for aircraft and the last for ground vehicles.";
-					id=838;
-				};
-			};
-			id=2569;
-			atlOffset=0.40525436;
-		};
-		class Item2
-		{
-			dataType="Layer";
 			name="MHQ / Vehicles / Base";
 			class Entities
 			{
@@ -17597,7 +17255,7 @@ class Mission
 			id=410;
 			atlOffset=0.15071297;
 		};
-		class Item3
+		class Item2
 		{
 			dataType="Layer";
 			name="BLUFOR PLAYER";
@@ -17624,7 +17282,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={123.539,5.0014391,86.440002};
-										angles[]={0,0.001553343,0};
+										angles[]={-0,0.001553343,0};
 									};
 									side="West";
 									flags=6;
@@ -17738,7 +17396,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={114.01578,5.0014391,83.715103};
-										angles[]={0,6.2782059,0};
+										angles[]={-0,6.2782059,0};
 									};
 									side="West";
 									flags=6;
@@ -17832,7 +17490,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={116.04094,5.0014391,81.368919};
-										angles[]={0,0.019477876,0};
+										angles[]={-0,0.019477876,0};
 									};
 									side="West";
 									flags=4;
@@ -17954,7 +17612,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={122.03569,5.0014391,81.245483};
-										angles[]={0,0.019485444,0};
+										angles[]={-0,0.019485444,0};
 									};
 									side="West";
 									flags=4;
@@ -18010,7 +17668,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={115.94384,5.0014391,78.603188};
-										angles[]={0,0.019485444,0};
+										angles[]={-0,0.019485444,0};
 									};
 									side="West";
 									flags=4;
@@ -18089,7 +17747,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={121.93734,5.0014391,78.486603};
-										angles[]={0,0.019485444,0};
+										angles[]={-0,0.019485444,0};
 									};
 									side="West";
 									flags=4;
@@ -18124,7 +17782,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={114.01433,5.0014391,75.761719};
-										angles[]={0,0.019477876,0};
+										angles[]={-0,0.019477876,0};
 									};
 									side="West";
 									flags=6;
@@ -18175,7 +17833,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={116.01168,5.0014391,75.718315};
-										angles[]={0,0.019477876,0};
+										angles[]={-0,0.019477876,0};
 									};
 									side="West";
 									flags=4;
@@ -18226,7 +17884,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={118.01768,5.0014391,75.678322};
-										angles[]={0,0.019477876,0};
+										angles[]={-0,0.019477876,0};
 									};
 									side="West";
 									flags=4;
@@ -18300,7 +17958,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={129.60901,5.0014391,83.304062};
-										angles[]={0,0.019480437,0};
+										angles[]={-0,0.019480437,0};
 									};
 									side="West";
 									flags=4;
@@ -18438,7 +18096,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={131.37048,5.0014391,80.69838};
-										angles[]={0,0.019480437,0};
+										angles[]={-0,0.019480437,0};
 									};
 									side="West";
 									flags=4;
@@ -18548,7 +18206,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={137.37225,5.0014391,80.581558};
-										angles[]={0,0.019480437,0};
+										angles[]={-0,0.019480437,0};
 									};
 									side="West";
 									flags=4;
@@ -18636,7 +18294,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={131.33281,5.0014391,77.882225};
-										angles[]={0,0.019480437,0};
+										angles[]={-0,0.019480437,0};
 									};
 									side="West";
 									flags=4;
@@ -18746,7 +18404,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={137.33702,5.0014391,77.757042};
-										angles[]={0,0.019480437,0};
+										angles[]={-0,0.019480437,0};
 									};
 									side="West";
 									flags=4;
@@ -18797,7 +18455,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={129.412,5.0014391,75.200005};
-										angles[]={0,0.019477876,0};
+										angles[]={-0,0.019477876,0};
 									};
 									side="West";
 									flags=6;
@@ -18847,7 +18505,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={131.412,5.0014391,75.162003};
-										angles[]={0,0.019477876,0};
+										angles[]={-0,0.019477876,0};
 									};
 									side="West";
 									flags=4;
@@ -18897,7 +18555,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={133.411,5.0014391,75.122002};
-										angles[]={0,0.019477876,0};
+										angles[]={-0,0.019477876,0};
 									};
 									side="West";
 									flags=4;
@@ -19281,7 +18939,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={123.40433,5.3815289,90.280716};
-								angles[]={0,4.7258806,0};
+								angles[]={-0,4.7258806,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19330,7 +18988,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={125.83132,5,90.237717};
-								angles[]={0,6.2279806,0};
+								angles[]={-0,6.2279806,0};
 							};
 							side="Empty";
 							flags=4;
@@ -19366,7 +19024,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={120.705,8.9768047,90.514999};
-								angles[]={0,0.028832838,0};
+								angles[]={-0,0.028832838,0};
 							};
 							side="Empty";
 							flags=4;
@@ -21331,7 +20989,7 @@ class Mission
 			id=403;
 			atlOffset=24667.676;
 		};
-		class Item4
+		class Item3
 		{
 			dataType="Layer";
 			name="OPFOR PLAYER";
@@ -23291,7 +22949,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={180.12941,5.3815289,93.340256};
-								angles[]={0,4.7180438,0};
+								angles[]={-0,4.7180438,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23350,7 +23008,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={182.57341,5,93.411255};
-								angles[]={0,6.2279806,0};
+								angles[]={-0,6.2279806,0};
 							};
 							side="Empty";
 							flags=4;
@@ -23386,7 +23044,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={177.28,8.9768047,94.125};
-								angles[]={0,3.1455197,0};
+								angles[]={-0,3.1455197,0};
 							};
 							side="Empty";
 							flags=4;
@@ -25290,7 +24948,7 @@ class Mission
 			id=404;
 			atlOffset=12202.295;
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Layer";
 			name="Script Examples (Hidden) - Delete if not used!";

@@ -44,6 +44,7 @@ GOL_NEKY_FASTROPE = 0; // Not particularly good - engine limitations stop helico
 GOL_OKS_SUPPORT = 0;  // Requires Additional Script
 
 GOL_OKS_TentMHQ = 1; 
+GOL_OKS_MhqSafeZone = 100;
 /*
 Change code in "Scripts\GOL_PlayerSetup\init.sqf" to enable all players to move tent.
 Requires line 34 to be replaced with line below.
