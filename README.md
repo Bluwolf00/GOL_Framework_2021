@@ -1,12 +1,26 @@
+<div align="center">
+    <h1 align="center">GW Framework
+    <br/>
+    <br/>
+    <a href="https://gol-clan.com/home">
+        <img src="https://github.com/Bluwolf00/GOL_Framework_2021/blob/main/AnimatedGOLlogo.png?raw=true#gh-dark-mode-only" alt="GOL Logo" height="300">
+		<!-- <img src="https://github.com/oksmantv/GOL_Addon/blob/master/img/GWLogo_DK.png?raw=true#gh-light-mode-only" alt="GOL Logo" height="300"> -->
+    </a>
+    </h1>
+</div>
 
+<div align="center">
+<a><img src="https://img.shields.io/github/contributors/Bluwolf00/GOL_Framework_2021?color=yellow"></img></a>
+<a><img src="https://img.shields.io/github/commit-activity/t/Bluwolf00/GOL_Framework_2021"></img></a>
+<a href="https://github.com/Bluwolf00/GOL_Framework_2021/issues"><img src="https://img.shields.io/github/issues-raw/Bluwolf00/GOL_Framework_2021"></img></a>
+<a href="https://gol-clan.com/home"><img src="https://img.shields.io/badge/Website-Click_Me-blue"></img></a>
+<a href="https://discord.gg/k9BfvVjtYv"><img src="https://img.shields.io/discord/437979456196444161?label=Discord&color=%23BA55D3"></img></a>
+</div>
 
-<p align="center">
-    <h1> GOL_Framework_2021 </h1>
-    <img src="https://github.com/Bluwolf00/GOL_Framework_2021/blob/main/AnimatedGOLlogo.png" width="160">
-</p>
+## Introduction
 
-Guerrillas Of Liberation's custom framework for Arma 3</br>
-Edited by the GOL Technical Team.</br>
+This is the Guerrillas Of Liberation's custom framework for Arma 3 mission making. This includes a number of quality of life features for editing as well as general tweaks.
+Edited by the GOL Technical Team.
 
 USE THE RELEASE FOR THE LATEST **STABLE** BUILD
 
