@@ -46,9 +46,11 @@
 			_unit setUnitLoadout (_unit getVariable QGVAR(unitGear));
 			_unit selectWeapon (primaryWeapon _unit);
 			[_unit, true] call ace_hearing_fnc_putInEarplugs;
-			[{
-				[] call EFUNC(Common,setGroupColor);
-			}, [_unit, (_unit getVariable QGVAR(Loadout))], 0.3] call CBA_fnc_waitAndExecute;
+
+			// Set soldier's group colour after respawn - Disabled
+			// [{
+			// 	[] call EFUNC(Common,setGroupColor);
+			// }, [_unit, (_unit getVariable QGVAR(Loadout))], 0.3] call CBA_fnc_waitAndExecute;
 
 			[QGVAR(setPlayerStamina), []] call CBA_fnc_localEvent;
 		}, _this, 0.1] call CBA_fnc_waitAndExecute;
