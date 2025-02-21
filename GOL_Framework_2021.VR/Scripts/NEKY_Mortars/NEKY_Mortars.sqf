@@ -589,6 +589,7 @@ While {((Alive _Mortar) && (Alive _Unit) && (_Unit in _Mortar)) or (_OffMap)} do
 	};
 	if ((_OffMap) or !(_Scanner)) exitWith 
 	{
+		missionNamespace setVariable ["Active_UAV_Mortar",false,true];
 		systemChat "Off map mode or not in auto mode, exiting script"
 	};
 	DeleteVehicle _Zone;

@@ -150,6 +150,9 @@ switch (toLower(_role)) do {
 		if(GOL_ENTRENCH isEqualTo 1) then {
 			[["ACE_EntrenchingTool",1]] call _addToBackpack;
 		};
+		if(GOL_WIRECUTTER isEqualTo 1) then {
+			[[_wirecutter,1]] call _addToBackpack;
+		};
 		if(_MAT select 0 == "") then {
 			[_LAT, _LAT_mag, ""] call _addLaunchers;
 			if (_LAT_ReUsable) then {

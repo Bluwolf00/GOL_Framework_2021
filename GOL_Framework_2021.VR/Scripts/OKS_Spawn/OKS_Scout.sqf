@@ -17,6 +17,7 @@
 		["LOITER",false],		
 		[500,4],
 		[250,500],
+		["","","","","","",""],
 		true
 	] spawn OKS_Scout;
 
@@ -52,18 +53,19 @@
 
 	_SpottingArray Params ["_SpottingRange","_SpottingValue"];
 	_FlyingArray Params ["_Altitude","_LoiterDistance"];
+	_BehaviourArray Params ["_WaypointType","_Careless"];
 
 	_Aircraft = createVehicle [_Classname, _SpawnPosition, [], 0, "FLY"];
-	_Aircraft setPos [_SpawnPosition select 0,_SpawnPosition select 1,_Altitude];
+	_Aircraft setPos [_SpawnPosition select 0,_SpawnPosition select 1,_Altitude + 100];
 	_Aircraft setDir (_Aircraft getDir _TargetArea);
 
 	
 	_Crew = _Side createVehicleCrew _Aircraft;
 	
 	_WP = _Crew addWaypoint [_TargetArea,200];
-	_WP setWaypointType _WAYPOINT;
+	_WP setWaypointType _WaypointType;
 
-	if(_CARELESS) then {
+	if(_Careless) then {
 		_WP setWaypointCombatMode "BLUE";
 		_WP setWaypointBehaviour "CARELESS";
 	} else {
@@ -85,11 +87,14 @@
 	while {alive _Aircraft && {Alive _X} count crew _Aircraft >= 1} do {
 		_NearPlayers = AllPlayers select {
 			_X distance _Aircraft < _SpottingRange &&
-			[objNull, "VIEW"] checkVisibility [getPosASL _Aircraft, getPosASL _X] >= 0.3
+			[objNull, "VIEW"] checkVisibility [getPosASL _Aircraft, (getPosASL vehicle _X)] >= 0.3
 		};
-		systemChat str [_NearPlayers,([objNull, "VIEW"] checkVisibility [getPosASL _Aircraft, getPosASL player])];
+		if(count _NearPlayers > 0) then {
+			systemChat format["Scout Spotted Value: %1",_NearPlayers];
+		};
 		{
 			_requiredValueForSpotting = 0.5;
+			_ValueSpotted = [objNull, "VIEW"] checkVisibility [getPosASL _Aircraft, (getPosASL vehicle _X)];
 			_nearConcealment = count (nearestTerrainObjects [_X, [], 10]);
 			if(stance _X == "PRONE" && _nearConcealment >= 1) then {
 				systemChat "Player is prone and near concealment. Required value is 0.65";
@@ -97,11 +102,11 @@
 			} else {
 				systemChat "Player isn't prone. Required value is 0.5";
 			};
-
-			if([objNull, "VIEW"] checkVisibility [getPosASL _Aircraft, getPosASL _X] >= _requiredValueForSpotting) then {
+			
+			if(_ValueSpotted >= _requiredValueForSpotting) then {
 				_crew reveal [_X,_SpottingValue];
 				(leader _crew) doTarget _X;
-				_WP setWaypointPosition getPos _X;
+				_WP setWaypointPosition [getPos _X,0];
 				_WP setWaypointLoiterRadius (_LoiterDistance * 0.5);
 				systemChat format ["%1 was revealed (%2) by %3.",name _X,_SpottingValue,[configFile >> "CfgVehicles" >> typeOf _Aircraft] call BIS_fnc_displayName];
 			};		
@@ -113,6 +118,12 @@
 				systemChat format ["%1 was targeted by mortar.",name _targetPlayer];
 				missionNamespace setVariable ["Active_UAV_Mortar",true,true];
 				["OffMap", _Side, "Precise", "light", [getPos _targetPlayer, 5]] execVM "Scripts\NEKY_Mortars\NEKY_Mortars.sqf";
+			};
+
+			if(!(_Careless)) then {
+				_WP setWaypointPosition [getPos _X,0];
+				_WP setWaypointType "SAD";
+				systemChat format ["%1 was spotted (%2) by %3. Not careless - Adding SAD waypoint.",name _X,_ValueSpotted,[configFile >> "CfgVehicles" >> typeOf _Aircraft] call BIS_fnc_displayName];
 			};
 		};
 		sleep 2;

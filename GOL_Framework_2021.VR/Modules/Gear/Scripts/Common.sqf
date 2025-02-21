@@ -127,6 +127,7 @@ _handFlareW = "";
 _handFlareY = "";
 if (true) then {
 	_barrel = "ACE_SpareBarrel";
+	_wirecutter = "ACE_wirecutter";
 	_cables = "ACE_CableTie";
 	_clacker = "ACE_M26_Clacker";
 	_defusalKit = "ACE_DefusalKit";

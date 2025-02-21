@@ -55,3 +55,5 @@ OKS_SpawnPatrol = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Spawn
 OKS_Scout = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Scout.sqf";
 OKS_Hold_waypoint = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Hold_waypoint.sqf";
 OKS_Civilian_Vehicle = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Civilian_Vehicle.sqf";
+OKS_Radar = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Radar.sqf";
+OKS_SAM = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_SAM.sqf";

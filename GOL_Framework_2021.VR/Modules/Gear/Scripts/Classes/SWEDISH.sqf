@@ -5,7 +5,7 @@ _insignia = "";
 _goggles = ["G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F","rhsusf_shemagh2_gogg_grn","rhsusf_shemagh_gogg_grn","rhsusf_shemagh_grn","rhsusf_shemagh2_grn","rhsusf_oakley_goggles_blk","UK3CB_G_Tactical_Clear_Shemagh_Green","acp_gol_SE_M90_G_Bandanna_SE_M90","acp_gol_SE_M90_G_Balaclava_lowprofile_SE_M90"];
 _helmet = ["acp_gol_SE_M90_H_HelmetSpecter_cover_SE_M90_F","acp_gol_SE_M90_H_HelmetSpecter_headset_SE_M90_F","acp_gol_SE_M90_H_HelmetSpecter_SE_M90_F","acp_gol_SE_M90_H_HelmetSpecB_SE_M90_insignia","acp_gol_SE_M90_H_HelmetB_light_SE_M90_insignia"];
 _OfficerHelmet = "acp_gol_SE_M90_H_MilCap_SE_M90";
-_uniform = ["acp_gol_SE_M90_U_B_CombatUniform_SE_M90_insignia","acp_gol_SE_M90_U_B_CombatUniform_vest_SE_M90_insignia","acp_gol_SE_M90_U_B_CombatUniform_tshirt_SE_M90","acp_gol_SE_M90_U_I_E_Uniform_tanktop_SE_M90_01_F","acp_gol_SE_M90_U_I_E_Uniform_shortsleeve_SE_M90_01_F_flag","acp_gol_SE_M90_U_I_E_Uniform_SE_M90_01_F_insignia"];
+_uniform = ["acp_gol_SE_M90_U_B_CombatUniform_SE_M90_insignia","acp_gol_SE_M90_U_B_CombatUniform_vest_SE_M90_insignia","acp_gol_SE_M90_U_I_E_Uniform_shortsleeve_SE_M90_01_F_flag","acp_gol_SE_M90_U_I_E_Uniform_SE_M90_01_F_insignia"];
 _vest = ["acp_gol_SE_M90_V_PlateCarrier2_SE_M90_insignia","acp_gol_SE_M90_V_PlateCarrierSpec_SE_M90_insignia","acp_gol_SE_M90_V_PlateCarrier1_SE_M90_insignia","acp_gol_SE_M90_V_PlateCarrierIA2_SE_M90"];
 _backpack = "acp_gol_SE_M90_B_Kitbag_rgr_SE_M90";
 _backpackRadio = _backpack;
@@ -48,15 +48,15 @@ if (_role isEqualTo "jetp") then {
 };
 
 // Attachments
-_silencer = "";
+_silencer = "rhsusf_acc_SFMB556";
 _pointer = "";
-_sight = "";
-_bipod = "";
+_sight = "JCA_optic_AICO_black";
+_bipod = "JCA_bipod_04_black";
 
 // Primary Weapon
-_rifle = [["rhs_weap_hk416d145"], _silencer, _pointer, _sight, _bipod];
-_rifleC = ["rhs_weap_hk416d10", _silencer, _pointer, _sight, _bipod];
-_rifleGL = [["rhs_weap_hk416d145_m320"], _silencer, _pointer, _sight, _bipod];
+_rifle = [["arifle_SPAR_02_blk_F"], _silencer, _pointer, _sight, _bipod];
+_rifleC = ["arifle_SPAR_01_blk_F", _silencer, _pointer, _sight, _bipod];
+_rifleGL = [["arifle_SPAR_01_GL_blk_F"], _silencer, _pointer, _sight, _bipod];
 _rifleL = ["UK3CB_G3SG1_RIS", _silencer, _pointer, _sight, _bipod];
 _rifleMarksman = ["UK3CB_G3SG1_RIS", _silencer, _pointer, "rhsusf_acc_LEUPOLDMK4_2", _bipod];
 _rifle_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
