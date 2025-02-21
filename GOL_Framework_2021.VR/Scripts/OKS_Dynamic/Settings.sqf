@@ -16,7 +16,7 @@ OPFOR FACTIONS:        CHEDAKI TKA TURKEY* DESERT_INSURGENTS RUSSIA_MODERN SOVIE
 INDEPENDENT FACTIONS:  NAPA* SYRIA*
 
 */
-Private _Faction = "CHEDAKI";
+Private _Faction = "TKA";
 Switch (_Faction) do {
 	case "SYNDIKAT": {
 		// Syndikat/Livonian Seperatist Militia 3CB - OPFOR

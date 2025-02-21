@@ -76,7 +76,7 @@
 
 			waitUntil { sleep 5; {Alive _X || [_X] call ace_common_fnc_isAwake} count units _Group < 1};
 			systemChat format["Group destroyed or unconscious. Passed WaitUntil. Sleep: %1",_RespawnDelay];
-			sleep (_RespawnDelay * OKS_ResponseMultiplier); 
+			sleep (_RespawnDelay * OKS_ResponseMultiplier);
 		};
 		
 		if(_Condition2) exitWith {

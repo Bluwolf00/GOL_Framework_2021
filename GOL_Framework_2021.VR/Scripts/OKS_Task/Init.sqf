@@ -21,4 +21,4 @@ OKS_Evacuate_HVT = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Evacu
 //OKS_Relieve_Friendly = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Relieve_Friendly\OKS_Relieve_Friendly.sqf";
 OKS_Destroy_Barricade = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Destroy_Barricade.sqf";
 OKS_Destroy_Task = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Destroy_Task.sqf";
-//OKS_Treat_Casualty = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_Treat_Casualty.sqf";
+OKS_ClearImmediateArea = compile preprocessFileLineNumbers "Scripts\OKS_TASK\OKS_ClearImmediateArea.sqf";
