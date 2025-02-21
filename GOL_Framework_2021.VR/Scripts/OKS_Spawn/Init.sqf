@@ -22,7 +22,7 @@ if (hasInterface && !isServer) exitWith {false};	// Ensures only server or HC ru
 
 // Functions
 GW_Ambient_AAA = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\GW_Ambient_AAA.sqf";
-//OKS_AA_Guard = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_AA_Guard.sqf";
+OKS_IR_AA = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_IR_AA.sqf";
 OKS_AddVehicleCrew = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_AddVehicleCrew.sqf";
 OKS_AI_Battle = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_AI_Battle.sqf";
 //OKS_AirCargoDrop = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_AirCargoDrop.sqf";
@@ -46,4 +46,8 @@ OKS_Mechanized_Spawn = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_
 OKS_RemoveVehicleHE = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_RemoveVehicleHE.sqf";
 OKS_ForceVehicleSpeed = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_ForceVehicleSpeed.sqf";
 //OKS_ScudLaunch = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_ScudLaunch.sqf";
-//OKS_Static_Spawner = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Static_Spawner.sqf";
+OKS_SpawnStatic = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_SpawnStatic.sqf";
+OKS_SpawnPatrol = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_SpawnPatrol.sqf";
+OKS_Scout = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Scout.sqf";
+OKS_Hold_waypoint = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Hold_waypoint.sqf";
+OKS_Civilian_Vehicle = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_Civilian_Vehicle.sqf";

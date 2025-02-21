@@ -13,7 +13,10 @@ if !(isServer) exitWith {};
 Private ["_SelectTask"];
 Params ["_Var"];
 
-_Kills = ((MissionNameSpace getVariable _Var) +1); // +1 to count add this kill
+_Kills = ((MissionNameSpace getVariable _Var) + 1); // +1 to count add this kill
+OKS_ForceMultiplier = OKS_ForceMultiplier * 1.25;
+OKS_ResponseMultiplier = OKS_ResponseMultiplier * 0.8;
+
 MissionNameSpace setVariable [_Var, _Kills];
 _SettingsVar = (Format ["%1_Settings",_Var]);
 _Settings = MissionNameSpace getVariable _SettingsVar;

@@ -7,6 +7,7 @@ if(!isServer) exitWith {};
 Params
 [
 	["_Vehicle", ObjNull, [ObjNull]],
+	["_Flag",nil,[""]],
 	["_AddMortar", false, [true]],
 	["_ServiceStation", true, [true]],
 	["_ShouldDisableThermal", true, [true]],
@@ -15,6 +16,10 @@ Params
 ];
 
 sleep 5;
+
+if(!isNil "_Flag") then {
+	_Vehicle forceFlagTexture _Flag;
+};
 
 Private _Debug_Variable = false;
 _Vehicle setVariable ["GW_Disable_autoRemoveCargo",true,true];

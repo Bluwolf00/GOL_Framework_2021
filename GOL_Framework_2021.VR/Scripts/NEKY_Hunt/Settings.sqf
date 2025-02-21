@@ -47,4 +47,4 @@ Switch (_Side) do
 };
 
 // DO NOT EDIT ANYTHING BELOW \\
-[_MinDistance, _UpdateFreq, _SkillVariables, _Skill, _Leaders, _Units,_MaxCargoSeats];
+[_MinDistance, _UpdateFreq, _SkillVariables, _Skill, _Leaders, _Units,(_MaxCargoSeats * OKS_ForceMultiplier)];

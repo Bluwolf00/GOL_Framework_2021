@@ -75,7 +75,7 @@ _Settings Params ["_MinDistance","_UpdateFreqSettings","_SkillVariables","_Skill
 	_EyeCheck enableSimulation false;
 
 
-while {alive _Base && _Waves > 0} do
+while {alive _Base && (_Waves * OKS_ForceMultiplier) > 0} do
 {
 	//SystemChat "Inside Base & Waves";
 	//SystemChat Str [_Side,({isTouchingGround (vehicle _X) && (isPlayer _X)} count list _HuntZone > 0)];
@@ -83,7 +83,7 @@ while {alive _Base && _Waves > 0} do
 	if ((dayTime > 04.30) and (dayTime < 19.30)) then {_KnowsAboutValue = 3.975} else {_KnowsAboutValue = 3.975; _IsNight = true;};
 	SystemChat format["Looking for Players in %1..",_HuntZone];
 	if( {(_Side knowsAbout _X > _KnowsAboutValue || _Side knowsAbout vehicle _X > _KnowsAboutValue) && isTouchingGround (vehicle _X) && (isPlayer _X)} count list _HuntZone > 0) then {
-		_DetectDelay = round(_RefreshRate + (Random _RefreshRate));
+		_DetectDelay = round((_RefreshRate * OKS_ResponseMultiplier) + (Random _RefreshRate * OKS_ResponseMultiplier));
 		SystemChat format["Players detected in %1 - Delay %2 seconds",_HuntZone,_DetectDelay];
 		sleep _DetectDelay;
 
@@ -102,6 +102,7 @@ while {alive _Base && _Waves > 0} do
 				};
 				if(typeName _Soldiers == "SCALAR") then
 				{
+					_Soldiers = _Soldiers * OKS_ForceMultiplier;
 					_Waves = _Waves - 1;
 					_AliveCurrentCount = NEKY_Hunt_CurrentCount select {alive _X};
 					_AliveNumber = count _AliveCurrentCount;
@@ -139,7 +140,7 @@ while {alive _Base && _Waves > 0} do
 
 					_AliveNumber  = count (NEKY_Hunt_CurrentCount select {alive _X});
 
-					if(NEKY_Hunt_MaxCount >= _AliveNumber) then {
+					if((NEKY_Hunt_MaxCount * OKS_ForceMultiplier) >= _AliveNumber) then {
 						_Waves = _Waves - 1;
 						if(typeName _Soldiers == "ARRAY") then {
 							_VehicleClass = _Soldiers call BIS_fnc_selectRandom;
@@ -218,13 +219,13 @@ while {alive _Base && _Waves > 0} do
 				sleep 5;
 				_AliveNumber  = count (NEKY_Hunt_CurrentCount select {alive _X});
 				//SystemChat format ["%1 Spawned %2 - Current Count %3 - Max Count: %4",_Base,count units _Group,_AliveNumber,NEKY_Hunt_MaxCount];
-				sleep _RespawnDelay;
+				sleep (_RespawnDelay * OKS_ResponseMultiplier);
 			};
 		};
 	}
 	else
 	{
-		sleep _RefreshRate;
+		sleep (_RefreshRate * OKS_ResponseMultiplier);
 	};
 
 };

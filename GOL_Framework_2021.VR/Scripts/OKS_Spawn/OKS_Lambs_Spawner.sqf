@@ -41,7 +41,7 @@
 			SystemChat "Trigger inactive, spawning new hunter.";
 			_Group = CreateGroup _Side;
 			_Group setVariable ["acex_headless_blacklist",true,true];
-			for "_i" from 1 to (_NumberInfantry) do
+			for "_i" from 1 to round(_NumberInfantry * OKS_ForceMultiplier) do
 			{
 				Private "_Unit";
 				if ( (count (units _Group)) == 0 ) then
@@ -76,7 +76,7 @@
 
 			waitUntil { sleep 5; {Alive _X || [_X] call ace_common_fnc_isAwake} count units _Group < 1};
 			systemChat format["Group destroyed or unconscious. Passed WaitUntil. Sleep: %1",_RespawnDelay];
-			sleep _RespawnDelay;
+			sleep (_RespawnDelay * OKS_ResponseMultiplier); 
 		};
 		
 		if(_Condition2) exitWith {

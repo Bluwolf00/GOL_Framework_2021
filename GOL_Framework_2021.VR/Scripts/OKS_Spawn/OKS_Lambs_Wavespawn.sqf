@@ -30,7 +30,7 @@
 		_UnitArray Params ["_Leaders","_Units","_Officer"];
 		_Group = CreateGroup _Side;
 		_Group setVariable ["acex_headless_blacklist",true,true];
-		for "_i" from 1 to (_UnitsPerWave) do
+		for "_i" from 1 to round(_UnitsPerWave * OKS_ForceMultiplier) do
 		{
 			Private "_Unit";
 			if ( (count (units _Group)) == 0 ) then
@@ -118,7 +118,7 @@
 		};
 		
 		if(_i != _AmountOfWaves) then {
-			sleep _DelayPerWave;
+			sleep (_DelayPerWave * OKS_ResponseMultiplier);
 		};	
 		SystemChat format ["Wavespawn Current Count: %1",count _AllSpawnedUnits];
 	};
