@@ -22,7 +22,11 @@ if (hasInterface && !isServer) exitWith {false};	// Ensures only server or HC ru
 
 // Functions
 GW_Ambient_AAA = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\GW_Ambient_AAA.sqf";
-OKS_IR_AA = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_IR_AA.sqf";
+OKS_IR_AA = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_IR\OKS_IR_AA.sqf";
+OKS_Forced_Reload = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_IR\OKS_Forced_Reload.sqf";
+OKS_Target_Finder = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_IR\OKS_Target_Finder.sqf";
+OKS_Remove_InfantryWeapons = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_IR\OKS_Remove_InfantryWeapons.sqf";
+OKS_Spawn_AntiAir_Soldier = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_IR\OKS_Spawn_AntiAir_Soldier.sqf";
 OKS_AddVehicleCrew = compile preprocessFileLineNumbers "Scripts\OKS_Dynamic\OKS_AddVehicleCrew.sqf";
 OKS_AI_Battle = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_AI_Battle.sqf";
 //OKS_AirCargoDrop = compile preprocessFileLineNumbers "Scripts\OKS_Spawn\OKS_AirCargoDrop.sqf";
