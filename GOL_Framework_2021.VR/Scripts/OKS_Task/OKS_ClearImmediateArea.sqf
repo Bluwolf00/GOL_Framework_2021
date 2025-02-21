@@ -1,6 +1,6 @@
 
 /*
- 	Add clear task to an area
+ 	Add clear task to clear an area
 
 	[house_1,nil,45,"Clear Area","attack"] spawn OKS_ClearImmediateArea;
 	[house_1,nil,15,"Clear Building","kill"] execVM "Scripts\OKS_Task\OKS_ClearImmediateArea.sqf";	
@@ -8,11 +8,29 @@
 
 Params [
 	["_Target",objNull,[objNull]],
+	["_Side","EAST",["",sideUnknown]],
 	["_Parent",nil,[""]],
 	["_Range",15,[0]],
 	["_TaskTitle","Secure Area",[""]],
 	["_TaskIcon","attack",[""]]
 ];
+
+if(typename _Side == sideUnknown) then {	
+	switch (_Side) do {
+		case west: { 
+			_Side = "WEST";
+		};
+		case east: {
+			_Side = "EAST";
+		};
+		case independent: {
+			_Side = "GUER";
+		};		
+		default {
+			_Side = "WEST";
+		};
+	};
+};
 
 _TaskId = format["OKS_ClearImmediateArea_%1",round(random 9999)];
 _TaskDetails = _TaskId;
