@@ -4,6 +4,7 @@ GOL_OPTICS = 1; 		  // Allows sights to be selected from the Arsenal.
 GOL_WEAPONS = 1;		  // Allows weapon variations to be selected from Arsenal (If Faction is setup for it).
 GOL_ARSENAL_ALLOWED = 1;  // Allows Attachment Menu
 GOL_ENTRENCH = 0;		  // Adds Entrenching Tools to certain roles.
+GOL_WIRECUTTER = 1; 	  // Adds Wirecutters to Riflemen.
 GOL_PACKED_HMG = "RHS_M2StaticMG_USMC_D";
 GOL_PACKED_MORTAR = "B_G_Mortar_01_F";
 GOL_PACKED_AT = "RHS_TOW_TriPod_USMC_D";

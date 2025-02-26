@@ -4,7 +4,8 @@ if (hasInterface) then {
 	_code =
 	{
 		openMap true;
-		[Side Player, systemChat "Pilot: Awaiting coordinates"] onMapSingleClick
+		_Side = [player] call GW_Common_Fnc_getSide;
+		[_Side, systemChat "Pilot: Awaiting coordinates"] onMapSingleClick
 		{
 			[
 				(_This select 0),GOL_NEKY_SUPPLY_HELICOPTER,
