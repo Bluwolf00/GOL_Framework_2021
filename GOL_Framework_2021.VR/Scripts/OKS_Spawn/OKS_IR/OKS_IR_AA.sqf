@@ -25,6 +25,26 @@ if(!isNil "_Array") then {
 	publicVariable ["_Array"];
 };
 
+		/*
+		 	Activate in dev release branch Arma 3 2.18
+			_NearbyTargets = AllPlayers select {vehicle _X isKindOf "AIR" && _X distance _Unit < 3000};
+			SystemChat str _NearbyTargets;
+			{
+				systemChat str [getPos _X select 2,_X distance _Unit];
+				if(getPos _X select 2 >= _MinimumAltitude && _X distance _Unit >= _MinimumRange) then {
+
+					// Activate in dev release branch Arma 3 2.18
+					// (group _Unit) ignoreTarget [_X, false];
+
+
+					SystemChat format["%1 set to target for AA (%2).",_X,_Unit];
+				} else {
+					// Activate in dev release branch Arma 3 2.18
+					//(group _Unit) ignoreTarget [_X, true];
+				};
+			} foreach _NearbyTargets;
+		*/
+
 [_Unit,_ReloadTime,_MinimumAltitude,_MinimumRange,_MaximumRange] spawn {
 	params ["_Unit","_ReloadTime","_MinimumAltitude","_MinimumRange","_MaximumRange"];
 	sleep 10;

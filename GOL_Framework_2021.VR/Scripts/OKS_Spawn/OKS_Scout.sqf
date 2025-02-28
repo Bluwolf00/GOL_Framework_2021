@@ -86,8 +86,10 @@
 
 	while {alive _Aircraft && {Alive _X} count crew _Aircraft >= 1} do {
 		_NearPlayers = AllPlayers select {
-			_X distance _Aircraft < _SpottingRange &&
-			[objNull, "VIEW"] checkVisibility [getPosASL _Aircraft, (getPosASL vehicle _X)] >= 0.3
+			_Player = _X;
+			_Player distance _Aircraft < _SpottingRange &&
+			[objNull, "VIEW"] checkVisibility [getPosASL _Aircraft, (getPosASL vehicle _Player)] >= 0.3 &&
+			{_Player distance _X > 500} count [flag_west_1,flag_west_2,flag_east_1,flag_east_2] == 4
 		};
 		if(count _NearPlayers > 0) then {
 			systemChat format["Scout Spotted Value: %1",_NearPlayers];
