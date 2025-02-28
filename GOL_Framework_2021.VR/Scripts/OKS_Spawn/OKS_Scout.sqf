@@ -55,6 +55,18 @@
 	_FlyingArray Params ["_Altitude","_LoiterDistance"];
 	_BehaviourArray Params ["_WaypointType","_Careless"];
 
+	_SafeZones = ["flag_west_1","flag_west_2","flag_east_1","flag_east_2"];
+	_ActiveSafeZones = [];
+	{
+		if(!isNil _X) then {
+			_SafeZone = missionNamespace getVariable [_X , objNull]; // Get the object variable
+
+			if(!isNull _SafeZone) then {
+				_ActiveSafeZones pushbackUnique _SafeZone;
+			}
+		}
+	} foreach _SafeZones;
+
 	_Aircraft = createVehicle [_Classname, _SpawnPosition, [], 0, "FLY"];
 	_Aircraft setPos [_SpawnPosition select 0,_SpawnPosition select 1,_Altitude + 100];
 	_Aircraft setDir (_Aircraft getDir _TargetArea);
@@ -89,7 +101,7 @@
 			_Player = _X;
 			_Player distance _Aircraft < _SpottingRange &&
 			[objNull, "VIEW"] checkVisibility [getPosASL _Aircraft, (getPosASL vehicle _Player)] >= 0.3 &&
-			{_Player distance _X > 500} count [flag_west_1,flag_west_2,flag_east_1,flag_east_2] == 4
+			{_Player distance _X > 500} count _ActiveSafeZones == count _ActiveSafeZones
 		};
 		if(count _NearPlayers > 0) then {
 			systemChat format["Scout Spotted Value: %1",_NearPlayers];
