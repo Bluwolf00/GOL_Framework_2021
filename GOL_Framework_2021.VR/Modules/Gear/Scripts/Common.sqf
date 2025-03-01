@@ -81,17 +81,15 @@ if (true) then {	//	ACE
 	_saline = "ACE_salineIV";
 	_salineSm = "ACE_SalineIV_500";
 
-	_IFAK = [[_bandage,15],["ACE_tourniquet",2],[_morph,3]];
+	_IFAK = [[_bandage,15],[_tourn,2],[_morph,3]];
 
 		_FAKSmall = [
-			[_bandage,10],
-			[_saline,8],
-			[_morph,2],
-			[_epi,4],
-			[_pak,1]
+			[_bandage,15],
+			[_morph,3]
 		];
 		_FAKMedium = [
 			[_bandage,15],
+			[_morph,3],
 			[_tourn,3],
 			[_epi,5],
 			[_saline,12],

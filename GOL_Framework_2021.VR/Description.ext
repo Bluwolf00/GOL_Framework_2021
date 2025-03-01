@@ -81,6 +81,24 @@ class Params {
 	#define LOAD_PARAMS
 		#include "Modules\Modules.cpp"
 	#undef LOAD_PARAMS
+
+	// If you want to enable dynamic time selection at mission setup.
+	// class Daytime
+	// {
+	// 	title = "Time";
+	// 	texts[] = { "Dawn", "Noon", "Afternoon", "Evening", "Night" };
+	// 	values[] = { 5.6, 12, 16, 19, 23 };
+	// 	default = 23;
+	// 	function = "BIS_fnc_paramDaytime";
+	// };	
+
+	class ShouldGiveMedicalToAsstGunner
+	{
+		title = "Should Asst. Gunner have medical supplies?";
+		texts[] = { "No", "Yes" };
+		values[] = { 0, 1 };
+		default = 1;
+	};		
 };
 
 class CfgFunctions {

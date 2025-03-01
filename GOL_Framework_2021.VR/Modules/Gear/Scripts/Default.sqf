@@ -20,7 +20,6 @@ marksman	- Marksman
 switch (toLower(_role)) do {
 
 	case "officer": {
-
 		if(isNil '_OfficerHelmet') then {
 			[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
 		} else {
@@ -201,11 +200,11 @@ switch (toLower(_role)) do {
 		_IFAK call _addToUniform;
 		[[_mapTools,1],[_cables,2],[_rifle_mag,2],[_pistol_mag,2],[_smokegrenadeY,4],[_grenade,2],[_flashBang,2]] call _addToUniform;
 		[[_rifle_mag,2],[_rifle_mag_tr,2],[_clacker,1],[_demoCharge,3]] call _addToVest;
-		[[_LMG_mag,COUNT_AG_MAGS(_LMG_mag)]] call _addToBackpack;
-		if (GVAR(extraGear)) then {
-			(_FAKBig) call _addToBackpack;
-		} else {
+		[[_LMG_mag,COUNT_AG_MAGS(_LMG_mag)]] call _addToBackpack;		
+		if(GOL_MedicalAsstGunner isEqualTo 1) then {
 			(_FAKMedium) call _addToBackpack;
+		} else {
+			(_FAKSmall) call _addToBackpack;
 		};
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
@@ -343,7 +342,12 @@ switch (toLower(_role)) do {
 		_IFAK call _addToUniform;
 		[[_flashBang,3],[_mapTools,1],[_cables,2],[_smokegrenadeY,4],[_grenade,2]] call _addToUniform;
 		[[_pistol_mag,2],[_rifle_mag_tr,6]] call _addToVest;
-		(_FAKMedium + [[_MMG_mag,COUNT_AMMG_MAGS(_MMG_mag)],[_clacker,1],[_demoCharge,1]]) call _addToBackpack;
+		[[_MMG_mag,COUNT_AMMG_MAGS(_MMG_mag)],[_clacker,1],[_demoCharge,1]] call _addToBackpack;
+		if (GOL_MedicalAsstGunner isEqualTo 1) then {
+			(_FAKMedium) call _addToBackpack;
+		} else {
+			(_FAKSmall) call _addToBackpack;
+		};		
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 			_nvg call _addNVG;
