@@ -84,7 +84,8 @@ if (true) then {	//	ACE
 	_IFAK = [[_bandage,15],[_tourn,2],[_morph,3]];
 
 		_FAKSmall = [
-			[_bandage,15],
+			[_bandage,5],
+			[_tourn,2],
 			[_morph,3]
 		];
 		_FAKMedium = [
