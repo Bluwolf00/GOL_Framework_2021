@@ -63,8 +63,18 @@ enableDebugConsole = 1;
 joinUnassigned = 1;
 scriptedPlayer = 1;
 
-corpseManagerMode = 0;
-wreckManagerMode = 0;
+corpseManagerMode = 3;
+corpseLimit = 25; // Default: 15
+corpseRemovalMinTime = 120; // seconds. Default: 10
+corpseRemovalMaxTime = 600; // seconds. Default: 3600
+disposalCheckPeriod = 30; // seconds. Default: 10
+minPlayerDistance[] = {250, 1000, 0}; // meters. Default: {0, 0, 0}
+weaponholderManagerMode = 0; // Default: 0
+wreckManagerMode = 1;
+wreckLimit = 10; // seconds. Default: 15
+wreckRemovalMinTime = 180; // seconds. Default: 10
+wreckRemovalMaxTime = 900; // seconds. Default: 36000 (10 hours)
+
 
 respawn = "BASE";
 respawnOnStart = 0;
