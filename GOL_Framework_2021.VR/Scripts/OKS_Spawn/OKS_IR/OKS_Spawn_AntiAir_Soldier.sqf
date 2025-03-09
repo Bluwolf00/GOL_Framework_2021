@@ -17,7 +17,7 @@ Params ["_Position","_Side"];
 		};
 		_Group = createGroup _Side;
 		_Unit = _Group createUnit [_Classname, _Position, [], 0, "CAN_COLLIDE"];
-		_Unit setPos _Position;
+		_Unit setPosATL _Position;
 	} else {
 		_Unit = _Position;
 	};

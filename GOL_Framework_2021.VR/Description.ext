@@ -14,15 +14,16 @@ class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 		Version = QUOTE(VERSION);
 	};
 
-	class Naming {		//	NOTE: Changing any of these settings will require mission reload for it to be affected
-		#define GAME_MODE "COOP"									// GameMode
-		#define PLAYER_COUNT "30"								// Player Count
-		#define BRIEFING_NAME "Mission_Name"						// Mission Name
+	class Naming {		
+		//	NOTE: Changing any of these settings will require mission reload for it to be affected
+		#define GAME_MODE "COOP"								// GameMode
+		#define PLAYER_COUNT "36"								// Player Count - Do not go above 36 - Server Limit 
+		#define BRIEFING_NAME "Mission_Name"					// Mission Name
 		#define LOBBY_DESCRIPTION ""							// Description in mission select
 		#define ON_LOAD_TEXT ""									// Description on loading
 		#define MISSION_VERSION 1								// Version of mission
 		#define SELECT_PICTURE ""								// Path to loading screen
-		//#define SELECT_PICTURE RANDOM_PICTURES					// Random loading screen
+		//#define SELECT_PICTURE RANDOM_PICTURES				// Random loading screen
 
 		Author = "Editor";				// Author
 		AuthorUID[] = {"_SP_PLAYER_"};			// UIDs with admin access

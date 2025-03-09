@@ -135,7 +135,7 @@
 			};
 
 			if(!(_Careless)) then {
-				_WP setWaypointPosition [getPos _X,0];
+				_WP setWaypointPosition [getPos _targetPlayer,0];
 				_WP setWaypointType "SAD";
 				systemChat format ["%1 was spotted (%2) by %3. Not careless - Adding SAD waypoint.",name _X,_ValueSpotted,[configFile >> "CfgVehicles" >> typeOf _Aircraft] call BIS_fnc_displayName];
 			};

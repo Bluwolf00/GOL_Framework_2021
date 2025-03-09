@@ -1,18 +1,32 @@
 /*
 
-["_SpawnPosition","_VehicleType","_Speed","_EndPosition"] spawn OKS_Civilian_Vehicle;
-    [getPos civilian_1,
-        selectRandom ["UK3CB_ADC_C_Skoda", "UK3CB_ADC_C_Sedan", "UK3CB_ADC_C_Lada", 
-            "UK3CB_ADC_C_Datsun_Civ_Open", "UK3CB_ADC_C_Datsun_Civ_Closed", 
-            "UK3CB_ADC_C_Hatchback"],10,getPos Civilian_2] execVM "Scripts\OKS_Spawn\OKS_Civilian_Vehicle.sqf";
+    [
+        getPos civilianStart_1,
+        getPos CivilianEnd_1,     
+        selectRandom ["UK3CB_ADC_C_Datsun_Civ_Open","UK3CB_ADC_C_Hatchback","UK3CB_ADC_C_V3S_Repair","UK3CB_ADC_C_Skoda","UK3CB_ADC_C_Sedan","UK3CB_ADC_C_UAZ_Open","UK3CB_ADC_C_UAZ_Closed"],
+        10,
+        true
+    ] spawn OKS_Civilian_Vehicle;
+ 
+    [
+        getPos civilian_1,
+        getPos Civilian_2,     
+        selectRandom ["UK3CB_ADC_C_Datsun_Civ_Open","UK3CB_ADC_C_Hatchback","UK3CB_ADC_C_V3S_Repair","UK3CB_ADC_C_Skoda","UK3CB_ADC_C_Sedan","UK3CB_ADC_C_UAZ_Open","UK3CB_ADC_C_UAZ_Closed"],
+        10,
+        true
+    ] execVM "Scripts\OKS_Spawn\OKS_Civilian_Vehicle.sqf";
 
 */
 
-
-
 if(!isServer) exitWith {};
 
-Params ["_SpawnPosition","_VehicleType","_Speed","_EndPosition"];
+Params [
+    "_SpawnPosition",
+    "_EndPosition",   
+    "_VehicleType",
+    ["_Speed",8,[0]],
+    ["_ShouldDelete",true,[true]]
+];
 
 _vehicle = createVehicle [_VehicleType, _SpawnPosition, [], 0, "CAN_COLLIDE"];
 _civilianGroup = createGroup civilian;
@@ -26,5 +40,14 @@ _waypoint setWaypointBehaviour "CARELESS";
 _vehicle forceSpeed _Speed;
 
 waitUntil {sleep 5; _vehicle distance _EndPosition < 20};
-deleteVehicle _driver;
-deleteVehicle _vehicle;
+
+if(_ShouldDelete) then {
+    deleteVehicle _driver;
+    deleteVehicle _vehicle;
+} else {
+    _waypointGetout = _civilianGroup addWaypoint [_EndPosition,0];
+    _waypointGetout setWaypointType "GETOUT";   
+    _waypointEnd = _civilianGroup addWaypoint [_EndPosition,0];
+    _waypoint setWaypointType "DISMISS";
+    _waypoint setWaypointBehaviour "SAFE";
+};
