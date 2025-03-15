@@ -25,7 +25,7 @@ if(!isServer) exitWith {};
 Params
 [
 	["_Vehicle", ObjNull, [ObjNull]],
-	["_TextureArray",[],[""]]
+	["_TextureArray",[],[[]]]
 ];
 
 for "_i" from 1 to (count _TextureArray) do {
