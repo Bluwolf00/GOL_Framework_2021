@@ -28,7 +28,7 @@ Params
 	["_TextureArray",[],[[]]]
 ];
 
-for "_i" from 1 to (count _TextureArray) do {
+for "_i" from 0 to (count _TextureArray - 1) do {
 	_Vehicle setObjectTextureGlobal [_i,_TextureArray select _i];
 };
 
