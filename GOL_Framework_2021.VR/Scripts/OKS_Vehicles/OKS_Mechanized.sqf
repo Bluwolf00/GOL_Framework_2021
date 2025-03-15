@@ -77,6 +77,8 @@ _Vehicle addMagazineCargoGlobal ["SatchelCharge_Remote_Mag",2];
 _Vehicle addMagazineCargoGlobal ["DemoCharge_Remote_Mag",4];
 _Vehicle addWeaponCargoGlobal ["rhs_weap_fim92",2];
 _Vehicle addMagazineCargoGlobal ["Titan_AA",10];
+_Vehicle addMagazineCargoGlobal ["ACE_rope6",1];
+_Vehicle addMagazineCargoGlobal ["ACE_rope12",1];
 
 if(_AddMortar) then {
 	if(_Debug_Variable) then {SystemChat "Adding Mortar Equipment"};

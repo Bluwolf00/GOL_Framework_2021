@@ -34,6 +34,7 @@ if (hasInterface && !isServer) exitWith {false};	// Ensures only server or HC ru
 //OKS_CreateCrew = compile preprocessFileLineNumbers "Scripts\OKS_Vehicles\OKS_CreateCrew.sqf";
 OKS_Helicopter = compile preprocessFileLineNumbers "Scripts\OKS_Vehicles\OKS_Helicopter.sqf";
 OKS_Mechanized = compile preprocessFileLineNumbers "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";
+OKS_Retexture = compile preprocessFileLineNumbers "Scripts\OKS_Vehicles\OKS_Retexture.sqf";
 OKS_ReduceDamage = compile preprocessFileLineNumbers "Scripts\OKS_Vehicles\OKS_ReduceDamage.sqf";
 OKS_DAP_Config = compile preprocessFileLineNumbers "Scripts\OKS_Vehicles\OKS_DAP_Config.sqf";
 OKS_Interact_Apply = compile preprocessFileLineNumbers "Scripts\OKS_Vehicles\OKS_Interact_Apply.sqf";

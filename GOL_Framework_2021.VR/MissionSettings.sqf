@@ -103,6 +103,7 @@ if(!isNil "Vehicle_1") then {
 		[_Vehicle] execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf";	
 	};
 };
+
 if(!isNil "MHQ_1") then {
 	GOL_NEKY_MHQDROP_VEHICLECLASS = (typeOf MHQ_1); // Classname
 	GOL_NEKY_MHQDROP_APPEARANCE = compile ([MHQ_1,""] call BIS_fnc_exportVehicle);
