@@ -42,7 +42,7 @@ _CargoArray Params ["_ShouldHaveCargo","_Soldiers"];
 _VehicleArray Params ["_Count","_Vehicles","_SpeedMeterPerSecond","_DispersionInMeters"];
 _ConvoyArray = [];
 
-Private ["_crewClass","_Units","_Leader","_Vehicles","_DismountCode","_Classname"];
+Private ["_crewClass","_Units","_Leader","_Vehicles","_DismountCode","_Classname","_StartMarker","_EndMarker"];
 private _Debug_Variable = false;
 
 if(isNil "_ConvoyArray") then {
@@ -67,6 +67,7 @@ private _WaitUntilCombat = {
     _Vehicle forceSpeed 0;
     _Vehicle setFuel 0;
     _Vehicle setVehicleLock "UNLOCKED";
+	_Vehicle setVariable ["GW_Disable_autoRemoveCargo",true,true];
     [_CargoGroup,_Vehicle] spawn _DismountCode;
 };
 
@@ -238,7 +239,7 @@ For "_i" from 1 to _Count do {
 waitUntil{
 	sleep 2;
 	{
-		(leader _X) distance _End < 10;
+		(leader _X) distance _End < 25;
 	} count _ConvoyArray > 0
 };
 if(_Debug_Variable) then {SystemChat "Reached Site, Deploying.."};
@@ -275,9 +276,6 @@ private _SpawnResupplyCrateWithTask = {
 	_Crate = CreateVehicle [_BoxClass, _CratePos, [], 0, "CAN_COLLIDE"];
 	_Crate call _BoxCode;
 
-	deleteMarker _startMarker;
-	deleteMarker _endMarker;
-
 	if(_ShouldCreateTask) then {
 		sleep 5;
 		[true, _VariableSetToTrue, ["A friendly force has brought in resupply for your squad. Make use of the supplies.", "1-1 Resupply", "1-1 Resupply"], _Crate, "ASSIGNED", 2, true, "rearm"] call BIS_fnc_taskCreate;
@@ -290,5 +288,12 @@ private _SpawnResupplyCrateWithTask = {
 if(_ShouldResupply) then {
 	[leader (_ConvoyArray select 0),_ResupplySize,_ShouldCreateTask,_VariableSetToTrue,_StartMarker,_EndMarker] spawn _SpawnResupplyCrateWithTask;
 };
+
+if(!isNil "_startMarker") then {
+	deleteMarker _startMarker;
+};
+if(!isNil "_endMarker") then {
+	deleteMarker _endMarker;
+};	
 
 

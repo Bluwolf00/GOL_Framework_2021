@@ -55,6 +55,8 @@
 	_FlyingArray Params ["_Altitude","_LoiterDistance"];
 	_BehaviourArray Params ["_WaypointType","_Careless"];
 
+	private ["_ValueSpotted"];
+
 	_SafeZones = ["flag_west_1","flag_west_2","flag_east_1","flag_east_2"];
 	_ActiveSafeZones = [];
 	{
@@ -101,10 +103,11 @@
 			_Player = _X;
 			_Player distance _Aircraft < _SpottingRange &&
 			[objNull, "VIEW"] checkVisibility [getPosASL _Aircraft, (getPosASL vehicle _Player)] >= 0.3 &&
-			{_Player distance _X > 500} count _ActiveSafeZones == count _ActiveSafeZones
+			{_Player distance _X > 500} count _ActiveSafeZones == count _ActiveSafeZones &&
+			!(vehicle _Player isKindOf "air")
 		};
 		if(count _NearPlayers > 0) then {
-			systemChat format["Scout Spotted Value: %1",_NearPlayers];
+			systemChat format["Scout Spotted: %1",_NearPlayers];
 		};
 		{
 			_requiredValueForSpotting = 0.5;
@@ -135,9 +138,10 @@
 			};
 
 			if(!(_Careless)) then {
+				_targetPlayer = (selectRandom _NearPlayers);
 				_WP setWaypointPosition [getPos _targetPlayer,0];
 				_WP setWaypointType "SAD";
-				systemChat format ["%1 was spotted (%2) by %3. Not careless - Adding SAD waypoint.",name _X,_ValueSpotted,[configFile >> "CfgVehicles" >> typeOf _Aircraft] call BIS_fnc_displayName];
+				systemChat format ["%1 was spotted (%2) by %3. Not careless - Adding SAD waypoint.",name _targetPlayer,_ValueSpotted,[configFile >> "CfgVehicles" >> typeOf _Aircraft] call BIS_fnc_displayName];
 			};
 		};
 		sleep 2;

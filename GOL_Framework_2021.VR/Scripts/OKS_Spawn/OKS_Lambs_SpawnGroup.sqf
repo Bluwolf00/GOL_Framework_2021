@@ -56,6 +56,9 @@
 			[_Group, _Range, 30, [], [], true,false,false] remoteExec ["lambs_wp_fnc_taskHunt",0];
 		};
 		case "creep":{
+
+			{_X setUnitPos "DOWN"; _X setBehaviour "STEALTH"; _X setCombatMode "GREEN"; } foreach units _Group;
+			waitUntil {sleep 5; {_X distance (leader _Group) < 150} count AllPlayers > 0};
 			/* 
 				* Arguments:
 				* 0: Group performing action, either unit <OBJECT> or group <GROUP>
@@ -67,6 +70,7 @@
 			*/
 			waitUntil {sleep 1; !(isNil "lambs_wp_fnc_taskCreep")};
 			[_Group, _Range, 30, [], [], true] remoteExec ["lambs_wp_fnc_taskCreep",0];
+			{_X setUnitPos "AUTO"; _X setBehaviour "AWARE"; _X setCombatMode "RED"; } foreach units _Group;
 		};
 		default {
 			/* 

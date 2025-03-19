@@ -230,8 +230,8 @@ while {alive _Base && (_Waves * OKS_ForceMultiplier) > 0} do
 
 };
 
-if(!alive _Base) exitWith { SystemChat "Base Destroyed - Exiting Script"};
-if(_Waves == 0) exitWith { SystemChat "Waves Depleted - Exiting Script"};
+if(!alive _Base) exitWith { SystemChat "Base Destroyed - Exiting Script"; deleteVehicle _Base};
+if(_Waves == 0) exitWith { SystemChat "Waves Depleted - Exiting Script"; deleteVehicle _Base};
 
 /*
 	Params ["_Side","_Number","_Leaders","_Units","_Pos"];

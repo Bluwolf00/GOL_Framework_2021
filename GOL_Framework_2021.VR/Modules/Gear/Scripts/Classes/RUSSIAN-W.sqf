@@ -16,11 +16,11 @@ _glflareR = "rhs_VG40OP_red";
 _glflareW = "rhs_VG40OP_white";
 
 _insignia = "";
-_goggles = "G_Headband_red_F";
+_goggles = "G_Armband_red_alt_F";
 _helmet = ["rhs_6b47","rhs_6b47_bare","rhs_6b47_6m2","rhs_6b47_6m2_1","rhs_6b47_bala","rhs_6b47_6B50"];
 _OfficerHelmet = "rhs_6b7_1m_ess";
 _uniform = "rhs_uniform_emr_patchless";
-_vest = ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK"];
+_vest = ["rhs_6b2_chicom","rhs_6b2_lifchik","rhs_6b2_RPK","rhs_6b45_rifleman","rhs_6b43","rhs_6b5"];
 _backpack = "rhs_rd54_emr1";
 _backpackRadio = _backpack;
 
