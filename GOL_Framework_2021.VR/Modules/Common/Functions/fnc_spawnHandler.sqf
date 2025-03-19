@@ -125,8 +125,20 @@ if ((count _vehicleArray) > 0) then {
 		if (_collision isEqualTo "FLY") then {
 			_vehicle engineOn true;
 			_vehicle flyInHeight (_pos select 2);
+		};	
+		if(["T55", typeOf _unit] call BIS_fnc_inString && ["UK3CB", typeOf _unit] call BIS_fnc_inString) then {
+			[_unit] spawn OKS_AdjustDamage;
 		};
-
+		if(["T34", typeOf _unit] call BIS_fnc_inString && ["UK3CB", typeOf _unit] call BIS_fnc_inString) then {
+			[_unit] spawn OKS_AdjustDamage;
+		};
+		if(["T72", typeOf _unit] call BIS_fnc_inString && ["UK3CB", typeOf _unit] call BIS_fnc_inString) then {
+			[_unit] spawn OKS_AdjustDamage;
+		};
+		// if(["T80", typeOf _unit] call BIS_fnc_inString && ["UK3CB", typeOf _unit] call BIS_fnc_inString) then {
+		// 	[_unit] spawn OKS_AdjustDamage;
+		// };			
+		[this] spawn OKS_AbandonVehicle;
 		_vehicle setVariable [QEGVAR(gear,side), GVAR(Faction)];
 
 		[_vehicle, _specials] call FUNC(setAttributes);

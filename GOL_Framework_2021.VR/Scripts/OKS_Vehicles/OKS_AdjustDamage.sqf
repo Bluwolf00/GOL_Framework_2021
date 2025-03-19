@@ -13,18 +13,35 @@ Params
 	_Vehicle addEventHandler ["HandleDamage",
 		{
 			params ["_unit", "_selection", "_newDamage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint", "_directHit"];
-
-			//SystemChat str _Selection;
+			private ["_selectedMultiplier","_hitpointName"];
+			//SystemChat str [_Selection,_hitIndex,_hitPoint,_directHit];
+			//copyToClipboard str [_Selection,_hitIndex,_hitPoint,_directHit];
 
 			// Exits
 			if !(Alive _Unit) exitWith {};
 			if ( 
-				!((ToLower _hitPoint) in ["hithull","hitturret","hitgun"])
+				!((ToLower _hitPoint) in ["hithull","hitturret","hitgun","hitengine","hitfuel","hitltrack","hitrtrack"])
 			) exitWith {};
 
 			// Variables
-			_Multiplier = 0.1;
-
+			private _Multiplier = 0.1;
+			if(["T55", typeOf _unit] call BIS_fnc_inString && ["UK3CB", typeOf _unit] call BIS_fnc_inString) then {
+				_Multiplier = 3;
+				_unit setVehicleArmor 0.3;
+			};
+			if(["T34", typeOf _unit] call BIS_fnc_inString && ["UK3CB", typeOf _unit] call BIS_fnc_inString) then {
+				_Multiplier = 3;
+				_unit setVehicleArmor 0.3;
+			};
+			if(["T72", typeOf _unit] call BIS_fnc_inString && ["UK3CB", typeOf _unit] call BIS_fnc_inString) then {
+				_Multiplier = 3;
+				_unit setVehicleArmor 0.3;
+			};
+			if(["T80", typeOf _unit] call BIS_fnc_inString && ["UK3CB", typeOf _unit] call BIS_fnc_inString) then {
+				_Multiplier = 3;
+				_unit setVehicleArmor 0.3;
+			};		
+				
 			// Added Damage
 			_newDamage = if (_newDamage > 1) then { 1 } else { _newDamage };
 			_oldDamage = _Unit getVariable [format["NEKY_oldDamage_%1",_hitPoint],0];

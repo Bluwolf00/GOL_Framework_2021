@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2936;
+		nextID=2940;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=9324;
+		nextID=9444;
 	};
 	class Camera
 	{
-		pos[]={106.18169,108.64347,165.27374};
-		dir[]={-0.013791029,-0.76804566,-0.64025748};
-		up[]={-0.016539732,0.64039469,-0.76786917};
-		aside[]={-0.99977553,-4.2343891e-07,0.021534741};
+		pos[]={79.949287,30.776186,74.01722};
+		dir[]={0.053696156,-0.38095698,0.92303234};
+		up[]={0.022124255,0.92459273,0.38031405};
+		aside[]={0.99831229,0,-0.058075465};
 	};
 };
 binarizationWanted=0;
@@ -718,7 +718,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=431;
+									items=432;
 									class Item0
 									{
 										class data
@@ -4167,6 +4167,14 @@ class CustomAttributes
 											value="ace_arsenal_loadoutssaveinsignia";
 										};
 									};
+									class Item431
+									{
+										class data
+										{
+											singleType="STRING";
+											value="ace_cookoff_destroyvehicleaftercookoff";
+										};
+									};
 								};
 							};
 						};
@@ -4177,7 +4185,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=431;
+									items=432;
 									class Item0
 									{
 										class data
@@ -9294,7 +9302,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -16126,6 +16134,33 @@ class CustomAttributes
 													{
 														singleType="BOOL";
 														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item431
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
 													};
 												};
 												class Item1
