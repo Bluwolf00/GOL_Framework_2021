@@ -53,9 +53,6 @@ if(isServer) then {
 	{
 		[_X] spawn OKS_AdjustDamage; sleep 0.25;
 	} foreach _whitelistedVehicles;
-	{
-		[_X] spawn OKS_AbandonVehicle;
-	} foreach vehicles;
 };
 
 [nil,GOL_AAC_DoorGunReplacement] spawn OKS_DAP_Config;

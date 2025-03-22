@@ -10,12 +10,17 @@ GOL_PACKED_HMG = "RHS_M2StaticMG_USMC_D";
 GOL_PACKED_MORTAR = "B_G_Mortar_01_F";
 GOL_PACKED_AT = "RHS_TOW_TriPod_USMC_D";
 GOL_PACKED_GMG = "RHS_MK19_TriPod_USMC_WD";
+GOL_ForceNVG = 0; // Forces addition of NVGs
+//GOL_ForceNVGClassname = ""; // Forces the classname to be used as NVG.
+
 
 /* AI Gear Settings */
 // 0 = 0%, 1 = 100%
 GOL_LAT_Chance = 0.25; // Chance for Light AT to be given to AI.
 GOL_MAT_Chance = 0.15; // Chance for Medium AT to be given to AI.
 GOL_UGL_Chance = 0.25; // Chance for UGL to be given to AI.
+GOL_AIForceNVG = 0; // Forces addition of NVGs
+//GOL_AIForceNVGClassname = ""; // Forces the AI classname to be used as NVG.
 
 /* AI Static Settings */
 // 0 = 0%, 1 = 100%
