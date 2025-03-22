@@ -21,8 +21,8 @@ if(isNil "_cswGunBackpack") then {
 if(isNil "_cswTripodBackpack") then {
 	_cswTripodBackpack = "RHS_DShkM_TripodLow_Bag";
 };
-if(!isNil "GOL_ForceNVGClassname") then {
-	_nvg = GOL_ForceNVGClassname;
+if(!isNil "GOL_AIForceNVGClassname") then {
+	_nvg = GOL_AIForceNVGClassname;
 };
 
 switch (toLower(_role)) do {
