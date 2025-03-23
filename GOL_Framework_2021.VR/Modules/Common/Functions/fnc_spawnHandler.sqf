@@ -126,17 +126,17 @@ if ((count _vehicleArray) > 0) then {
 			_vehicle engineOn true;
 			_vehicle flyInHeight (_pos select 2);
 		};	
-		if(["T55", typeOf _unit] call BIS_fnc_inString && ["UK3CB", typeOf _unit] call BIS_fnc_inString) then {
-			[_unit] spawn OKS_AdjustDamage;
+		if(["T55", typeOf _vehicle] call BIS_fnc_inString && ["UK3CB", typeOf _vehicle] call BIS_fnc_inString) then {
+			[_vehicle] spawn OKS_AdjustDamage;
 		};
-		if(["T34", typeOf _unit] call BIS_fnc_inString && ["UK3CB", typeOf _unit] call BIS_fnc_inString) then {
-			[_unit] spawn OKS_AdjustDamage;
+		if(["T34", typeOf _vehicle] call BIS_fnc_inString && ["UK3CB", typeOf _vehicle] call BIS_fnc_inString) then {
+			[_vehicle] spawn OKS_AdjustDamage;
 		};
-		if(["T72", typeOf _unit] call BIS_fnc_inString && ["UK3CB", typeOf _unit] call BIS_fnc_inString) then {
-			[_unit] spawn OKS_AdjustDamage;
+		if(["T72", typeOf _vehicle] call BIS_fnc_inString && ["UK3CB", typeOf _vehicle] call BIS_fnc_inString) then {
+			[_vehicle] spawn OKS_AdjustDamage;
 		};
-		// if(["T80", typeOf _unit] call BIS_fnc_inString && ["UK3CB", typeOf _unit] call BIS_fnc_inString) then {
-		// 	[_unit] spawn OKS_AdjustDamage;
+		// if(["T80", typeOf _vehicle] call BIS_fnc_inString && ["UK3CB", typeOf _vehicle] call BIS_fnc_inString) then {
+		// 	[_vehicle] spawn OKS_AdjustDamage;
 		// };			
 
 		_vehicle setVariable [QEGVAR(gear,side), GVAR(Faction)];
