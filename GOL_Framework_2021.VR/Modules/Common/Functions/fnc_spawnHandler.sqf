@@ -138,7 +138,7 @@ if ((count _vehicleArray) > 0) then {
 		// if(["T80", typeOf _unit] call BIS_fnc_inString && ["UK3CB", typeOf _unit] call BIS_fnc_inString) then {
 		// 	[_unit] spawn OKS_AdjustDamage;
 		// };			
-		[this] spawn OKS_AbandonVehicle;
+
 		_vehicle setVariable [QEGVAR(gear,side), GVAR(Faction)];
 
 		[_vehicle, _specials] call FUNC(setAttributes);
@@ -202,6 +202,7 @@ if ((count _vehicleArray) > 0) then {
 			};
 		} forEach _crewList;
 
+		[_vehicle] spawn OKS_AbandonVehicle;
 		_vehicle enableSimulationGlobal true;
 		[_vehicle] spawn OKS_ForceVehicleSpeed;  
 		TRACE_1("Units added to vehicle", _groupNew);
