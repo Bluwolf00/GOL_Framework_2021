@@ -1,4 +1,4 @@
-/* Gear Settings */
+ /* Gear Settings */
 GOL_MAGNIFIED_OPTICS = 0; // Allows magnified 2x sights to be selected from the Arsenal.
 GOL_OPTICS = 1; 		  // Allows sights to be selected from the Arsenal.
 GOL_WEAPONS = 1;		  // Allows weapon variations to be selected from Arsenal (If Faction is setup for it).
@@ -10,8 +10,8 @@ GOL_PACKED_HMG = "RHS_M2StaticMG_USMC_D";
 GOL_PACKED_MORTAR = "B_G_Mortar_01_F";
 GOL_PACKED_AT = "RHS_TOW_TriPod_USMC_D";
 GOL_PACKED_GMG = "RHS_MK19_TriPod_USMC_WD";
-GOL_ForceNVG = 1; // Forces addition of NVGs
-GOL_ForceNVGClassname = "G_Armband_NVG_red_alt_F"; // Forces the classname to be used as NVG.
+GOL_ForceNVG = 0; // Forces addition of NVGs
+//GOL_ForceNVGClassname = "G_Armband_NVG_red_alt_F"; // Forces the classname to be used as NVG.
 
 
 /* AI Gear Settings */
@@ -19,8 +19,8 @@ GOL_ForceNVGClassname = "G_Armband_NVG_red_alt_F"; // Forces the classname to be
 GOL_LAT_Chance = 0.25; // Chance for Light AT to be given to AI.
 GOL_MAT_Chance = 0.15; // Chance for Medium AT to be given to AI.
 GOL_UGL_Chance = 0.25; // Chance for UGL to be given to AI.
-GOL_AIForceNVG = 1; // Forces addition of NVGs
-GOL_AIForceNVGClassname = "G_Armband_NVG_grn_alt_F"; // Forces the AI classname to be used as NVG.
+GOL_AIForceNVG = 0; // Forces addition of NVGs
+//GOL_AIForceNVGClassname = "G_Armband_NVG_grn_alt_F"; // Forces the AI classname to be used as NVG.
 
 /* AI Static Settings */
 // 0 = 0%, 1 = 100%
