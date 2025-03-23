@@ -1027,7 +1027,7 @@ tfar_core_noTSNotConnectedHint = false;
 force TFAR_defaultIntercomSlot = 0;
 TFAR_disableAutoMute = false;
 force TFAR_enableIntercom = true;
-force TFAR_experimentalVehicleIsolation = true;
+force TFAR_experimentalVehicleIsolation = false;
 TFAR_externalIntercomEnable = 0;
 TFAR_externalIntercomMaxRange_Phone = 5;
 TFAR_externalIntercomMaxRange_Wireless = 15;
@@ -1091,11 +1091,6 @@ force Rev_TFAR_settings_LR_O = "1st Squad,2nd Squad, , ,Platoon Net,Support Net,
 force Rev_TFAR_settings_SR_B = "1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
 force Rev_TFAR_settings_SR_I = "1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
 force Rev_TFAR_settings_SR_O = "1st Squad,2nd Squad, , ,Platoon Net,Support Net,Air Net, ";
-
-// The Free World Armoury
-sp_fwa_pipstretchfactor = 0;
-sp_fwa_preferedOptic = 0;
-sp_fwa_preferedOpticHighMag = 0;
 
 // TSP Animate - Radio
 tsp_cba_radio = true;

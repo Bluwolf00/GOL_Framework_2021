@@ -20,11 +20,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=9594;
+		nextID=9624;
 	};
 	class Camera
 	{
-		pos[]={110.05904,56.126102,-30.900459};
+		pos[]={107.95071,63.419086,-30.236982};
 		dir[]={-0.0066036303,-0.53166121,0.84695208};
 		up[]={-0.0041447072,0.84695476,0.53165829};
 		aside[]={0.99999064,9.2346454e-08,0.007796363};
@@ -6099,7 +6099,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
