@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=2994;
+		nextID=2996;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=9534;
+		nextID=9564;
 	};
 	class Camera
 	{
-		pos[]={78.445427,20.565611,88.612549};
-		dir[]={0.020331554,-0.53424722,0.84508908};
-		up[]={0.012849524,0.84532684,0.53409523};
-		aside[]={0.99971586,-4.9949449e-09,-0.024051638};
+		pos[]={106.2648,56.126102,-24.975922};
+		dir[]={-0.012887104,-0.5658052,0.8244549};
+		up[]={-0.0088427076,0.82453549,0.56574607};
+		aside[]={0.99989384,-1.527369e-07,0.015629131};
 	};
 };
 binarizationWanted=0;
@@ -21718,14 +21718,14 @@ class Mission
 					name="Misc";
 					class Entities
 					{
-						items=7;
+						items=8;
 						class Item0
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={76.309792,5.3815289,123.27406};
-								angles[]={0,4.7258806,0};
+								position[]={75.537048,5.3815289,123.02946};
+								angles[]={-0,4.7258806,0};
 							};
 							side="Empty";
 							flags=4;
@@ -21772,8 +21772,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={78.736786,5,123.23106};
-								angles[]={0,6.2279806,0};
+								position[]={80.000763,5,123.08424};
+								angles[]={-0,3.1239059,0};
 							};
 							side="Empty";
 							flags=4;
@@ -21882,6 +21882,42 @@ class Mission
 							};
 							id=2673;
 							type="Land_Billboard_F";
+						};
+						class Item7
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={83.628784,5.3815289,123.0536};
+								angles[]={-0,4.7258806,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="call{[this, [""gearbox"",""west""]] call GW_Gear_Fnc_Init;}";
+								name="gearbox_1";
+								description="Gearbox";
+							};
+							id=2994;
+							type="Box_NATO_Equip_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 					};
 					id=413;
@@ -25907,13 +25943,13 @@ class Mission
 					name="Misc";
 					class Entities
 					{
-						items=7;
+						items=8;
 						class Item0
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={133.03488,5.3815289,126.3336};
+								position[]={132.57401,5.3815289,126.383};
 								angles[]={0,4.7180438,0};
 							};
 							side="Empty";
@@ -25921,6 +25957,7 @@ class Mission
 							class Attributes
 							{
 								init="call{[this, [""gearbox"",""east""]] call GW_Gear_Fnc_Init;}";
+								name="gearbox_3";
 								description="Gearbox";
 							};
 							id=339;
@@ -25971,8 +26008,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={135.47888,5,126.40459};
-								angles[]={0,6.2279806,0};
+								position[]={136.4431,5,126.356};
+								angles[]={-0,3.1115339,0};
 							};
 							side="Empty";
 							flags=4;
@@ -26070,6 +26107,42 @@ class Mission
 							};
 							id=2674;
 							type="Land_Billboard_F";
+						};
+						class Item7
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={140.1153,5.3815289,126.42763};
+								angles[]={-0,4.7180438,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="call{[this, [""gearbox"",""east""]] call GW_Gear_Fnc_Init;}";
+								name="gearbox_4";
+								description="Gearbox";
+							};
+							id=2995;
+							type="Box_NATO_Equip_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 					};
 					id=423;
