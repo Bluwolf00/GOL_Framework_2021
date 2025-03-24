@@ -641,7 +641,7 @@ acex_viewrestriction_modeSelectiveSea = 0;
 acex_viewrestriction_preserveView = false;
 
 // ACE Volume
-force acex_volume_enabled = true;
+force acex_volume_enabled = false;
 acex_volume_fadeDelay = 1;
 acex_volume_lowerInVehicles = false;
 force acex_volume_reduction = 6;
