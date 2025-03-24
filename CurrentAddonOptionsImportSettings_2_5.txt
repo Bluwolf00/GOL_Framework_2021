@@ -114,7 +114,7 @@ force ace_csw_progressBarTimeCoefficent = 0.3;
 ace_dragging_allowRunWithLightweight = true;
 force ace_dragging_dragAndFire = false;
 ace_dragging_skipContainerWeight = false;
-force ace_dragging_weightCoefficient = 0;
+force ace_dragging_weightCoefficient = 0.3;
 
 // ACE Explosives
 force ace_explosives_customTimerDefault = 300;
