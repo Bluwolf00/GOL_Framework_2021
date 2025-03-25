@@ -1,7 +1,7 @@
 /*
 	OKS_Lambs_Wavespawn
 	[SpawnPosOrPositionsInArray,UnitsPerWave,AmountOfWaves,DelayPerWave,TypeOfWP,Side,Range,"VariableNameSetTrueUponAllClear"] spawn OKS_Lambs_Wavespawn;
-	[SpawnPosOrPositionsInArray,UnitsPerWave,AmountOfWaves,DelayPerWave,TypeOfWP,Side,Range,"VariableNameSetTrueUponAllClear"] execVM "Scripts\OKS_Spawn\OKS_Lambs_Wavespawn.sqf";
+	[SpawnPosOrPositionsInArray,UnitsPerWave,AmountOfWaves,DelayPerWave,TypeOfWP,Side,Range,"VariableNameSetTrueUponAllClear"] execVM "Scripts\OKS_Spawn\OKS_Lambs\OKS_Lambs_Wavespawn.sqf";
 
 	[[getPos spawn_1,getPos spawn_2],5,2,120,"hunt",east,1500,"WaveSpawn1Destroyed"] spawn OKS_Lambs_Wavespawn;
 */

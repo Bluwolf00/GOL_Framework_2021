@@ -1,7 +1,7 @@
 /*
 	OKS_Lambs_SpawnGroup
 	[SpawnPos,"rush",UnitsPerBase,Side,Range,[]] spawn OKS_Lambs_SpawnGroup;
-	[SpawnPos,"creep",UnitsPerBase,Side,Range,[]] execVM "Scripts\OKS_Spawn\OKS_Lambs_SpawnGroup.sqf";
+	[SpawnPos,"creep",UnitsPerBase,Side,Range,[]] execVM "Scripts\OKS_Spawn\OKS_Lambs\OKS_Lambs_SpawnGroup.sqf";
 */
 
  	if(!isServer) exitWith {};

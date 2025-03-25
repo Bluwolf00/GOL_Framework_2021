@@ -1,10 +1,10 @@
 /*
 	OKS_Lambs_Chargespawn
 	[Spawnobject,UnitsPerWave,AmountOfWaves,Side,Range,"VariableNameSetTrueUponAllClear"] spawn OKS_Lambs_ChargeSpawn;
-	[Spawnobject,UnitsPerWave,AmountOfWaves,Side,Range,"VariableNameSetTrueUponAllClear"] execVM "Scripts\OKS_Spawn\OKS_Lambs_ChargeSpawn.sqf";
+	[Spawnobject,UnitsPerWave,AmountOfWaves,Side,Range,"VariableNameSetTrueUponAllClear"] execVM "Scripts\OKS_Spawn\OKS_Lambs\OKS_Lambs_ChargeSpawn.sqf";
 
 	[charge_1,5,2,east,1500,"ChargeSpawn1Destroyed"] spawn OKS_Lambs_ChargeSpawn;
-	[charge_1,5,12,east,1500,"ChargeSpawn1Destroyed"] execVM "Scripts\OKS_Spawn\OKS_Lambs_ChargeSpawn.sqf";
+	[charge_1,5,12,east,1500,"ChargeSpawn1Destroyed"] execVM "Scripts\OKS_Spawn\OKS_Lambs\OKS_Lambs_ChargeSpawn.sqf";
 */
 
  	if(!isServer) exitWith {};
@@ -126,7 +126,7 @@ Switch (_Side) do
 		sleep 2;
 	};
 	sleep 15;
-	playSound3D [MISSION_ROOT + "Scripts\OKS_Spawn\ChargeWarcry.ogg", _SpawnPos, false, getPosASL _SpawnPos, 2.5, 1, 1500];
+	playSound3D [MISSION_ROOT + "Scripts\OKS_Spawn\OKS_Lambs\ChargeWarcry.ogg", _SpawnPos, false, getPosASL _SpawnPos, 2.5, 1, 1500];
 	waitUntil { sleep 1; Call Compile Format ["%1 = false; PublicVariable '%1'",_Variable]; {Alive _X || [_X] call ace_common_fnc_isAwake} count _AllSpawnedUnits < 1};
 	Call Compile Format ["%1 = True; PublicVariable '%1'",_Variable];
 	SystemChat "Rush Chargespawner Ended.";

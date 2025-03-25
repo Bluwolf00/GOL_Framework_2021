@@ -1,6 +1,6 @@
 // How to use
 // [UnitOrPosition,_Side,_MinimumAltitude,_MinimumRange,_MaximumRange,_ReloadTime] spawn OKS_IR_AA;
-// [UnitOrPosition,_Side,_MinimumAltitude,_MinimumRange,_MaximumRange,_ReloadTime] execVM "Scripts\OKS_Spawn\OKS_IR_AA.sqf";
+// [UnitOrPosition,_Side,_MinimumAltitude,_MinimumRange,_MaximumRange,_ReloadTime] execVM "Scripts\OKS_Spawn\OKS_IR\OKS_IR_AA.sqf";
 
 Params [
 	["_UnitOrPosition",objNull,[objNull,[]]],

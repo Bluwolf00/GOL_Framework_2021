@@ -2,7 +2,7 @@
 /*
 	Created by Oksman from Guerrillas of Liberation
 
-	[arty_1,[getPos target_1,getPos target_2,getPos target_3,getPos target_4],east,1,1,true,true,30,true] execVM "Scripts\OKS_Spawn\OKS_ArtySupression.sqf";
+	[arty_1,[getPos target_1,getPos target_2,getPos target_3,getPos target_4],east,1,1,true,true,30,true] execVM "Scripts\OKS_Spawn\OKS_Arty\OKS_ArtySupression.sqf";
 	[arty_1,[getPos target_1,getPos target_2,getPos target_3,getPos target_4],east,1,1,true,true,30,true] spawn OKS_ArtySupression;
 	Parameters
 	1 - Object - Artillery Unit

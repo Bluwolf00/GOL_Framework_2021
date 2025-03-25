@@ -1,5 +1,5 @@
 // [reinforce_1,reinforce_2,reinforce_3,west,[4,["rhs_btr60_msv"], 6, 25],[true,6], false, "variable", "small", true, true] spawn OKS_Convoy_Reinforce;
-// [spawnpos_1,waypoint_1,end_1,east,[4,["rhs_btr60_msv"], 6, 30],[true,6], false, "variable", "small", true, true] execVM "Scripts\OKS_Spawn\OKS_Convoy_Reinforce.sqf";
+// [spawnpos_1,waypoint_1,end_1,east,[4,["rhs_btr60_msv"], 6, 30],[true,6], false, "variable", "small", true, true] execVM "Scripts\OKS_Spawn\OKS_Convoy\OKS_Convoy_Reinforce.sqf";
 /*
 	Params:
 	1 - Object - Spawn Position

@@ -42,6 +42,8 @@ OKS_Interact_Copilot = compile preprocessFileLineNumbers "Scripts\OKS_Vehicles\O
 OKS_Interact_DoorGunner = compile preprocessFileLineNumbers "Scripts\OKS_Vehicles\OKS_Interact_DoorGunner.sqf";
 OKS_Interact_Pilot = compile preprocessFileLineNumbers "Scripts\OKS_Vehicles\OKS_Interact_Pilot.sqf";
 OKS_AbandonVehicle = compile preprocessFileLineNumbers "Scripts\OKS_Vehicles\OKS_AbandonVehicle.sqf";
+OKS_RemoveVehicleHE = compile preprocessFileLineNumbers "Scripts\OKS_Vehicles\OKS_RemoveVehicleHE.sqf";
+OKS_ForceVehicleSpeed = compile preprocessFileLineNumbers "Scripts\OKS_Vehicles\OKS_ForceVehicleSpeed.sqf";
 
 sleep 5;
 

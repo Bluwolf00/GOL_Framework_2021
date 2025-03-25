@@ -1,7 +1,7 @@
 /*
 	OKS_Lambs_Spawner
 	[SpawnPos,"hunt",UnitsPerBase,Side,Range,[],TriggerActivatedToDisableSpawner] spawn OKS_Lambs_Spawner;
-	[SpawnPos,"rush",UnitsPerBase,Side,Range,[],TriggerActivatedToDisableSpawner] execVM "Scripts\OKS_Spawn\OKS_Lambs_Spawner.sqf";
+	[SpawnPos,"rush",UnitsPerBase,Side,Range,[],TriggerActivatedToDisableSpawner] execVM "Scripts\OKS_Spawn\OKS_Lambs\OKS_Lambs_Spawner.sqf";
 */
 
  	if(!isServer) exitWith {};
