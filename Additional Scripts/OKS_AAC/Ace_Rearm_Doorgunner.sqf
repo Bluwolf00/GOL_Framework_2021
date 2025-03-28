@@ -1,4 +1,9 @@
 // [this] execVM "Scripts\NEKY_ServiceStation\Ace_Rearm_Doorgunner.sqf";
+/*
+	Obsolete: Uses _Vehicle setVariable ["ace_rearm_scriptedLoadout", true, true]; instead.
+
+	FML.
+*/
 
 Params ["_Box"];
 
@@ -6,12 +11,16 @@ if (hasInterface) then {
     _condition = {count (_target nearEntities [["helicopter"], 30]) > 0};
 	_rearmCode =
 	{
+
+		
 		_Helicopters = _target nearEntities [["helicopter"], 30];
 		if(count _Helicopters isEqualTo 0) exitWith {
 			"No Helicopters in the vicinity." remoteExec ["SystemChat",_player];
 		};		
 		[_Helicopters,_Player] spawn {
 			Params ["_Helicopters","_Player"];
+
+
 
 			OKS_AIR_MagazineForeach = {
 				Params ["_Vehicle","_Magazine","_Index","_MagazineCount"];

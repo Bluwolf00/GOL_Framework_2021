@@ -61,7 +61,8 @@ OKS_AIR_CONFIG = {
 
 					_Vehicle setVariable ["OKS_DoorGunMagazineClass",_Magazine,true];
 					_Vehicle setVariable ["OKS_DoorGunIndexes",[1,2],true];
-					_Vehicle setVariable ["OKS_DoorgunMagazineCount",_MagazinesPerTurret];
+					_Vehicle setVariable ["OKS_DoorgunMagazineCount",_MagazinesPerTurret,true];
+					_Vehicle setVariable ["ace_rearm_scriptedLoadout", true, true];
 				};
 				if (["UH60",TypeOf _Vehicle] call BIS_fnc_inString ||
 					["MH60",TypeOf _Vehicle] call BIS_fnc_inString ||
@@ -91,7 +92,8 @@ OKS_AIR_CONFIG = {
 
 					_Vehicle setVariable ["OKS_DoorGunMagazineClass",_Magazine,true];
 					_Vehicle setVariable ["OKS_DoorGunIndexes",[1,2],true];
-					_Vehicle setVariable ["OKS_DoorgunMagazineCount",_MagazinesPerTurret];
+					_Vehicle setVariable ["OKS_DoorgunMagazineCount",_MagazinesPerTurret,true];
+					_Vehicle setVariable ["ace_rearm_scriptedLoadout", true, true];
 				};
 			};
 
