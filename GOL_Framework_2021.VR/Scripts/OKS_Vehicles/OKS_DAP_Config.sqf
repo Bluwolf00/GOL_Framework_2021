@@ -1,7 +1,17 @@
 Params [
 	["_Vehicle",objNull,[objNull]],
-	["_ShouldChangeDoorGuns",false,[false]]
+	["_ShouldChangeDoorGuns",true,[false]],
+	["_WeaponMagazineTurret",nil,[[]]], // Example: ["gau19_gunpod","1500Rnd_gau1950cal_tracer_red_shells"],
+	["_MagazinesPerTurret",4,[0]]
 ];
+
+if(isNil "_WeaponMagazineTurret") then {
+	/*
+		Examples:
+		["rhs_weap_yakB","rhs_mag_127x108mm_1slt_1470"]
+	*/
+	_WeaponMagazineTurret = ["gau19_gunpod","1500Rnd_gau1950cal_tracer_red_shells"];
+};
 
 // How to use (in init of vehicle):
 // _null = [this,false] execVM "Scripts\OKS_Vehicles\OKS_DAP_Config.sqf";
@@ -11,55 +21,77 @@ Params [
 typeOf _Vehicle == "CUP_B_UH1D_slick_GER_KSK_Des" || typeOf _Vehicle == "CUP_B_UH1D_gunship_GER_KSK_Des" || typeOf _Vehicle == "CUP_B_UH1D_gunship_GER_KSK" || typeOf _Vehicle == "CUP_B_UH1D_GER_KSK_Des" || typeOf _Vehicle == "CUP_B_UH1D_armed_GER_KSK_Des" || typeOf _Vehicle == "CUP_B_UH1D_GER_KSK") then
 */
 
-/// VTX Guns: vtx_wpn_m134 vtx_wpn_m134_2nd vtx_2000Rnd_65x39_Belt_Tracer_Red
-
 OKS_Global_Air_Array = [];
 
 OKS_AIR_CONFIG = {
 
-	Params["_Vehicle","_ShouldChangeDoorGuns"];
+	Params["_Vehicle","_ShouldChangeDoorGuns","_WeaponMagazineTurret","_MagazinesPerTurret"];
+	systemChat str typeof _Vehicle;
+	OKS_AIR_MagazineForeach = {
+		Params ["_Vehicle","_Magazine","_Index","_MagazinesPerTurret"];
+
+		for "_i" from 1 to _MagazinesPerTurret do {
+			_vehicle addMagazineTurret [_Magazine,[_Index]];
+		};
+	};
+
+	_WeaponMagazineTurret params ["_Weapon","_Magazine"];
 
 		if (!(_Vehicle in OKS_Global_Air_Array) && _vehicle isKindOf "Helicopter") then {
 			if(_ShouldChangeDoorGuns) then {		
-				if (["UH1",TypeOf _Vehicle] call BIS_fnc_inString || ["MH47",TypeOf _Vehicle] call BIS_fnc_inString || ["CH47", TypeOf _Vehicle] call BIS_fnc_inString) then
+				if (["UH1",TypeOf _Vehicle] call BIS_fnc_inString ||
+					["MH47",TypeOf _Vehicle] call BIS_fnc_inString ||
+					["CH47", TypeOf _Vehicle] call BIS_fnc_inString) then
+				{
+					_vehicle removeWeaponTurret ["LMG_Minigun_Transport",[1]];
+					_vehicle removeWeaponTurret ["LMG_Minigun_Transport2",[2]];			
+					_vehicle removeWeaponTurret ["rhs_weap_m134_minigun_1",[1]];
+					_vehicle removeWeaponTurret ["rhs_weap_m134_minigun_2",[2]];				
+
+					//// Add Weapon
+					if (Count (_vehicle weaponsTurret [0]) < 1) then {
+						_vehicle addWeaponTurret [_Weapon,[0]];
+						[_Vehicle, _Magazine, 0, _MagazinesPerTurret] spawn OKS_AIR_MagazineForeach;
+					};
+
+					if (Count (_vehicle weaponsTurret [1]) < 1) then {
+						_vehicle addWeaponTurret [_Weapon,[1]];
+						[_Vehicle, _Magazine, 1, _MagazinesPerTurret] spawn OKS_AIR_MagazineForeach;
+					};
+
+					_Vehicle setVariable ["OKS_DoorGunMagazineClass",_Magazine,true];
+					_Vehicle setVariable ["OKS_DoorGunIndexes",[1,2],true];
+					_Vehicle setVariable ["OKS_DoorgunMagazineCount",_MagazinesPerTurret];
+				};
+				if (["UH60",TypeOf _Vehicle] call BIS_fnc_inString ||
+					["MH60",TypeOf _Vehicle] call BIS_fnc_inString ||
+					["RHS_UH1Y",TypeOf _Vehicle] call BIS_fnc_inString ||
+					["RHS_CH_47",TypeOf _Vehicle] call BIS_fnc_inString ||
+					["Bell412",TypeOf _Vehicle] call BIS_fnc_inString || 
+					["Heli_Transport_01",TypeOf _Vehicle] call BIS_fnc_inString ||
+					["B_Heli_Transport_03_F",TypeOf _Vehicle] call BIS_fnc_inString) then
 				{
 					_vehicle removeWeaponTurret ["LMG_Minigun_Transport",[1]];
 					_vehicle removeWeaponTurret ["LMG_Minigun_Transport2",[2]];
 					_vehicle removeWeaponTurret ["rhs_weap_m134_minigun_1",[1]];
 					_vehicle removeWeaponTurret ["rhs_weap_m134_minigun_2",[2]];
-
-					//// Add Weapon
-					if (Count (_vehicle weaponsTurret [0]) < 1) then {
-					_vehicle addWeaponTurret ["rhs_weap_yakB",[0]];
-						_vehicle addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[0]];
-						_vehicle addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[0]];
-					};
-
-					if (Count (_vehicle weaponsTurret [1]) < 1) then {
-					_vehicle addWeaponTurret ["rhs_weap_yakB",[1]];
-						_vehicle addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[1]];
-						_vehicle addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[1]];
-					};
-				};
-				if (["UH60",TypeOf _Vehicle] call BIS_fnc_inString || ["MH60",TypeOf _Vehicle] call BIS_fnc_inString || ["RHS_UH1Y",TypeOf _Vehicle] call BIS_fnc_inString || ["RHS_CH_47",TypeOf _Vehicle] call BIS_fnc_inString) then {
-
-					_vehicle removeWeaponTurret ["LMG_Minigun_Transport",[1]];
-					_vehicle removeWeaponTurret ["LMG_Minigun_Transport2",[2]];
-					_vehicle removeWeaponTurret ["rhs_weap_m134_minigun_1",[1]];
-					_vehicle removeWeaponTurret ["rhs_weap_m134_minigun_2",[2]];
+					_vehicle removeWeaponTurret ["UK3CB_M134_LSV_L",[1]];
+					_vehicle removeWeaponTurret ["UK3CB_M134_LSV_R",[2]];							
 
 					//// Add Weapon
 					if (Count (_vehicle weaponsTurret [1]) < 1) then {
-						_vehicle addWeaponTurret ["rhs_weap_yakB",[1]];
-						_vehicle addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[1]];
-						_vehicle addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[1]];
+						_vehicle addWeaponTurret [_Weapon,[1]];
+						[_Vehicle, _Magazine, 1, _MagazinesPerTurret] spawn OKS_AIR_MagazineForeach;
 					};
 
 					if (Count (_vehicle weaponsTurret [2]) < 1) then {
-						_vehicle addWeaponTurret ["rhs_weap_yakB",[2]];
-						_vehicle addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[2]];
-						_vehicle addMagazineTurret ["rhs_mag_127x108mm_1slt_1470",[2]];					
+						_vehicle addWeaponTurret [_Weapon,[2]];
+						[_Vehicle, _Magazine, 2, _MagazinesPerTurret] spawn OKS_AIR_MagazineForeach;				
 					};
+
+					_Vehicle setVariable ["OKS_DoorGunMagazineClass",_Magazine,true];
+					_Vehicle setVariable ["OKS_DoorGunIndexes",[1,2],true];
+					_Vehicle setVariable ["OKS_DoorgunMagazineCount",_MagazinesPerTurret];
 				};
 			};
 
@@ -70,8 +102,8 @@ OKS_AIR_CONFIG = {
 
 if(isNull _Vehicle) then {
 	{
-		[_X,_ShouldChangeDoorGuns] spawn OKS_AIR_CONFIG;
+		[_X,_ShouldChangeDoorGuns,_WeaponMagazineTurret,_MagazinesPerTurret] spawn OKS_AIR_CONFIG;
 	} forEach (entities "helicopter");
 } else {
-	[_Vehicle,_ShouldChangeDoorGuns] spawn OKS_AIR_CONFIG; 
+	[_Vehicle,_ShouldChangeDoorGuns,_WeaponMagazineTurret,_MagazinesPerTurret] spawn OKS_AIR_CONFIG; 
 };

@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3038;
+		nextID=3040;
 	};
 	class MarkerIDProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={110.25981,81.980034,-32.650158};
-		dir[]={0.034413923,-0.63775182,0.76947272};
-		up[]={0.028494349,0.77024192,0.63711488};
-		aside[]={0.99900132,-1.8626451e-09,-0.044679366};
+		pos[]={109.02821,46.545696,-21.882336};
+		dir[]={-0.0099892719,-0.49009961,0.87161255};
+		up[]={-0.0056165047,0.87166607,0.49006826};
+		aside[]={0.99993575,4.6984496e-09,0.011459876};
 	};
 };
 binarizationWanted=0;
@@ -23898,14 +23898,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={85.544456,5.2100425,79.702637};
+								position[]={85.543999,5.2100425,79.703003};
 								angles[]={0,4.7095962,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, 9999] call ace_rearm_fnc_makeSource; this setVariable [""ace_rearm_isSupplyVehicle"", true, true]";
+								init="[this, 9999] call ace_rearm_fnc_makeSource; this setVariable [""ace_rearm_isSupplyVehicle"", true, true]; [this] execVM ""Scripts\NEKY_ServiceStation\Ace_Rearm_Doorgunner.sqf"";";
 							};
 							id=2878;
 							type="VirtualReammoBox_small_F";
@@ -28040,14 +28040,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={146.84065,5.2100425,79.191254};
+								position[]={146.841,5.2100425,79.191002};
 								angles[]={0,4.7095962,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, 9999] call ace_rearm_fnc_makeSource; this setVariable [""ace_rearm_isSupplyVehicle"", true, true]";
+								init="[this, 9999] call ace_rearm_fnc_makeSource; this setVariable [""ace_rearm_isSupplyVehicle"", true, true]; [this] execVM ""Scripts\NEKY_ServiceStation\Ace_Rearm_Doorgunner.sqf"";";
 							};
 							id=2880;
 							type="VirtualReammoBox_small_F";
