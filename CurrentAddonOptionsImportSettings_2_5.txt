@@ -51,9 +51,9 @@ ace_arsenal_enableModIcons = 1;
 ace_arsenal_EnableRPTLog = false;
 ace_arsenal_favoritesColor = [0.9,0.875,0.6];
 ace_arsenal_fontHeight = 4.5;
-force ace_arsenal_loadoutsSaveFace = true;
+force ace_arsenal_loadoutsSaveFace = false;
 force ace_arsenal_loadoutsSaveInsignia = false;
-force ace_arsenal_loadoutsSaveVoice = true;
+force ace_arsenal_loadoutsSaveVoice = false;
 ace_arsenal_showUnavailableItems = 0;
 
 // ACE Artillery
@@ -707,6 +707,7 @@ diwako_dui_indicators_useACENametagsRange = true;
 
 // DUI - Squad Radar - Line Compass
 diwako_dui_linecompass_ACEFingeringColor = [1,0.66,0,1];
+diwako_dui_linecompass_AllowNumericDrawBearing = true;
 diwako_dui_linecompass_CompassAvailableShown = true;
 force diwako_dui_linecompass_compassRange = 50;
 diwako_dui_linecompass_compassRangeLimit = 50;
@@ -853,9 +854,9 @@ PDT_ENVG_Blacklist = "";
 PDT_ENVG_Effect = "mwEffect";
 
 // FoxHole
-force J3FF_FHcover = "2";
+force J3FF_FHcover = "4";
 J3FF_FHcustomItem = false;
-force J3FF_FHdepth = "2";
+force J3FF_FHdepth = "1.3";
 force J3FF_FHdig = "4";
 
 // GRAD Trenches
@@ -1452,7 +1453,6 @@ zen_faction_filter_2_UK3CB_UN_I = true;
 zen_faction_filter_2_vtf_kf_I_KAL = true;
 zen_faction_filter_3_CIV_F = true;
 zen_faction_filter_3_CIV_IDAP_F = true;
-zen_faction_filter_3_EdCat_jbad_vehicles = true;
 zen_faction_filter_3_IND_L_F = true;
 zen_faction_filter_3_UK3CB_ADC_C = true;
 zen_faction_filter_3_UK3CB_CHC_C = true;
