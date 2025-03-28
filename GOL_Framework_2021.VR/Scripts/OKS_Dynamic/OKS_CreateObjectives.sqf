@@ -1,18 +1,37 @@
 /*
 	OKS_Createobjectives
-	Params: Position, Type, Range, Side, Patrols?
+	Params: Position, Type, Range, Side, Patrols?, PlaceObjects?, OverrideTaskNotification?
 
-	[Object_1,"sector",300,EAST,false] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
-	[Object_1,"sector",300,EAST,false] spawn OKS_CreateObjectives;
+	Types Available:
+	sector (Clear an area)
+	neutralize (Clear a building)
+	cache (destroy weapons cache)
+	motorpool (destroy supply vehicle)
+	ammotruck (destroy a patrolling supply vehicle)
+	radiotower (destroy a radiotower - decreases hunt response/respawn delay)
+	hvttruck (destroy a patrolling vehicle with an HVT)
+	artillery (destroy an active artillery piece)
+	antiair (destroy an active anti-air position)
+	hostage (secure a building with hostiles & two hostages)
 
-	[Position/Object,TypeOfObjective,Range,EAST,Patrols?] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
-	[Position/Object,TypeOfObjective,Range,EAST,Patrols?] spawn OKS_CreateObjectives;
+	[Object_1,"sector",300,EAST,false,false,false] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
+	[Object_1,"sector",300,EAST,false,false,false] spawn OKS_CreateObjectives;
+
+	[Position/Object,TypeOfObjective,Range,EAST,Patrols?,PlaceObjects?,OverrideTaskNotification?] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
+	[Position/Object,TypeOfObjective,Range,EAST,Patrols?,PlaceObjects?,OverrideTaskNotification?] spawn OKS_CreateObjectives;
+
+	Returned Variables:
+	If the "_Position" field is an object, it will receive a setVariable "OKS_ObjectiveComplete" once the objective is completed.
+	If you want to trigger a response in the code after an objective is completed use the following code:
+
+	waitUntil {sleep 10; ObjectName getVariable ["OKS_ObjectiveComplete",false]};
+	*** YOUR FOLLOW UP CODE ***
 */
 
 if(!isServer) exitWith {};
 
-	Params ["_Position","_TypeOfObjective","_Range","_Side","_ObjectivePatrols"];
-	private ["_marker","_Condition","_playerSide","_trg","_EnemySideString","_playerSideString","_playerColor","_Area","_SpawnPos","_Repetitions","_Debug_Variable","_LocationsInArea","_Dir"];
+	Params ["_Position","_TypeOfObjective","_Range","_Side","_ObjectivePatrols",["_ShouldAddObjects",true,[false]],["_OverrideTaskNotification",false,[false]]];
+	private ["_marker","_Condition","_playerSide","_trg","_EnemySideString","_playerSideString","_playerColor","_Area","_SpawnPos","_Repetitions","_Debug_Variable","_LocationsInArea","_Dir","_Object","_TargetGroup"];
 
 	_Settings = [_Side] call OKS_Dynamic_Setting;
 	_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian","_ObjectiveTypes","_Configuration"];
@@ -20,14 +39,15 @@ if(!isServer) exitWith {};
 	_UnitArray Params ["_Leaders","_Units","_Officer"];
 	_Civilian Params ["_CivilianUnits","_HVT"];
 	_Vehicles Params ["_Wheeled","_APC","_Tank","_Artillery","_Helicopter","_Transport","_Supply","_AntiAir"];
-
+	if(_OverrideTaskNotification) then {
+		_TaskNotification = _OverrideTaskNotification
+	};
 	_Debug_Variable = false;
-
 
 	switch(typeName _Position) do {
 		case "OBJECT":{
-
 			if(["EmptyDetector", typeOf _Position] call BIS_fnc_inString || typeOf _Position == "LocationCamp_F") then {
+				_Object = _Position;
 				_Area = _Position;
 				_Position = getPos _Position;
 				Private _LocationsInArea = OKS_Objectives select {_X inArea _Area};
@@ -42,29 +62,60 @@ if(!isServer) exitWith {};
 				};
 			} else {
 				_Area = nil;
+				_Object = _Position;
+				_Position setVariable ["OKS_ObjectiveComplete",false,true];
 				_Dir = getDir _Position;
-				_Position = getPos _Position;
+				_Position = getPos _Position;		
 			};
 		};
 		default {
 			_Area = nil;
+			_Object = "Land_HelipadEmpty_F" createVehicle _Position;
+			_Object setVehicleVarName format["OKS_RandomObjectName_%1",round(random 9999)];
 		}
 	};
 
 switch (_TypeOfObjective) do {
-
 	case "neutralize": {
-		_TargetGroup = _Position;
-		OKS_Objective_Positions pushBackUnique (getPos (leader _Position));
+		switch (typename _Object) do {
+			case "OBJECT": {
+				systemChat "neutralize object";
+				_TargetGroup = _Object getVariable ["OKS_NeutralizeGroup",nil];
+				if(isNil "_TargetGroup") then {
+					_House = nearestBuilding _Position;
+					_GarrisonPositions = [_House] call BIS_fnc_buildingPositions;
+					_GarrisonMaxSize = round(count _GarrisonPositions * 0.6);
+					_Group = [_GarrisonMaxSize,_House,_Side,_UnitArray] call OKS_Garrison;
+					_TargetGroup = _Group;
+				};
+			};
+			case "GROUP": {
+				systemChat "group object";
+				_TargetGroup = _Position;
+			};
+			case "ARRAY": {
+				systemChat "array object";
+				_House = nearestBuilding _Position;
+				_GarrisonPositions = [_House] call BIS_fnc_buildingPositions;
+				_GarrisonMaxSize = round(count _GarrisonPositions * 0.6);
+				_Group = [_GarrisonMaxSize,_House,_Side,_UnitArray] call OKS_Garrison;
+				_TargetGroup = _Group;				
+			};
+			default { systemChat "Neutralize Script Failed - _Position not defined as OBJECT/GROUP/ARRAY."};
+		};
+
+		if(isNil "_TargetGroup") exitWith { systemChat "Neutralize Script Failed - _TargetGroup not defined"};
+		OKS_Objective_Positions pushBackUnique (getPos (leader _TargetGroup));
 		if(_EnableObjectiveTasks) then {
 			_ObjectiveId = format["OKS_Neutralize_Objective_%1",(round(random 9000))];
-			_Task = [true, _ObjectiveId, ["The opposition has occupied a building in the area of operations. Neutralize the enemy force defending the building.", "Clear Building", "Clear Building"], (getPos (leader _Position)),"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+			_Task = [true, _ObjectiveId, ["The opposition has occupied a building in the area of operations. Neutralize the enemy force defending the building.", "Clear Building", "Clear Building"], (getPos (leader _TargetGroup)),"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 
 			[_ObjectiveId,"kill"] call BIS_fnc_taskSetType;
 			[_ObjectiveId,(nearestBuilding (leader _TargetGroup))] call BIS_fnc_taskSetDestination;
 
 			waitUntil { sleep 5; {Alive _X || [_X] call ace_common_fnc_isAwake} count units _TargetGroup < 1};
 			[_ObjectiveId,"SUCCEEDED",_TaskNotification] call BIS_fnc_taskSetState;
+			_Object setVariable ["OKS_ObjectiveComplete",true,true];	
 		};
 	};
 
@@ -125,7 +176,7 @@ switch (_TypeOfObjective) do {
 		if(_EnableObjectiveTasks) then {
 			_Task = [true,format["OKS_Sector_Objective_%1",(round(random 9000))], ["The enemy is in control of this area, to complete the objective, you must seize the area and destroy the majority of enemy forces.", "Secure Area", "Secure Area"], getPos _trg,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 			[_Task,"attack"] call BIS_fnc_taskSetType;
-			_trg setTriggerStatements ["this", format ["'%1' setMarkerColor '%2'; ['%3','SUCCEEDED',%4] call BIS_fnc_taskSetState;",_marker,_playerColor,_Task,_TaskNotification], ""];
+			_trg setTriggerStatements ["this", format ["'%1' setMarkerColor '%2'; ['%3','SUCCEEDED',%4] call BIS_fnc_taskSetState; %5 setVariable ['OKS_ObjectiveComplete',true,true]",_marker,_playerColor,_Task,_TaskNotification,_Object], ""];
 		} else {
 			_trg setTriggerStatements ["this", format ["'%1' setMarkerColor '%2';",_marker,_playerColor], ""];
 		};
@@ -182,8 +233,11 @@ switch (_TypeOfObjective) do {
 		_Crate enableSimulation true;
 
 		_AmmoCamp = selectRandom ["AmmoCampSite_1","AmmoCampSite_2","AmmoCampSite_3","AmmoCampSite_4","Bunker_2","Bunker_3","Bunker_4","ArtilleryNest","ArtilleryNest_3","ArtilleryNest_4","ArtilleryNest_5","ArtilleryNest_6"];
-		[_AmmoCamp,getPos _Crate, [0,0,0], getDir _Crate] call LARs_fnc_spawnComp;
-		[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
+		
+		if(_ShouldAddObjects) then {
+			[_AmmoCamp,getPos _Crate, [0,0,0], getDir _Crate] call LARs_fnc_spawnComp;
+			[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
+		};
 
 		//systemChat format["OKS_Sector_Objective_%1",(round(random 9000))];
 
@@ -195,7 +249,8 @@ switch (_TypeOfObjective) do {
 			_trg triggerAttachVehicle [_Crate];
 			_Task = [true,format["OKS_Cache_Objective_%1",(round(random 9000))], ["The Enemy forces have access to weapons and ammunitions caches in the area of operations. Find them and destroy them.", "Destroy Ammo Cache", "Destroy Ammo Cache"], getPos _Crate,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 			[_Task,"destroy"] call BIS_fnc_taskSetType;
-			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
+			systemchat str _Object;
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState; %3 setVariable ['OKS_ObjectiveComplete',true,true]",_Task,_TaskNotification,_Object], ""];
 		};
 		if(_ObjectivePatrols) then {
 			[_Crate getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
@@ -236,9 +291,11 @@ switch (_TypeOfObjective) do {
 		_Crate enableSimulation true;
 
 		_AmmoCamp = selectRandom ["AmmoCampSite_3","ArtilleryNest","ArtilleryNest_3","ArtilleryNest_4","ArtilleryNest_5","ArtilleryNest_6"];
-		[_AmmoCamp,getPos _Crate, [0,0,0], _Dir] call LARs_fnc_spawnComp;
+		if(_ShouldAddObjects) then {
+			[_AmmoCamp,getPos _Crate, [0,0,0], _Dir] call LARs_fnc_spawnComp;
+			[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
+		};
 		//SystemChat str _SpawnPos;
-		[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
 
 		//systemChat format["OKS_Sector_Objective_%1",(round(random 9000))];
 		if(_EnableObjectiveTasks) then {
@@ -250,7 +307,7 @@ switch (_TypeOfObjective) do {
 
 			_Task = [true,format["OKS_MotorPool_Objective_%1",(round(random 9000))], ["The Enemy forces use a motor pool located in the area of operations to resupply and repair their combat vehicles. Move in on the position and destroy the motorpool.", "Destroy Motorpool", "Destroy Motorpool"], getPos _Crate,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 			[_Task,"refuel"] call BIS_fnc_taskSetType;
-			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState; %3 setVariable ['OKS_ObjectiveComplete',true,true]",_Task,_TaskNotification,_Object], ""];
 		};
 		if(_ObjectivePatrols) then {
 			[_Crate getPos [25,(random 360)],4,150,_Side] spawn OKS_Patrol_Spawn;
@@ -313,7 +370,7 @@ switch (_TypeOfObjective) do {
 
 				[_Task,"truck"] call BIS_fnc_taskSetType;
 				[_Task,[_Truck,true]] call BIS_fnc_taskSetDestination;
-			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
+				_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState; %3 setVariable ['OKS_ObjectiveComplete',true,true]",_Task,_TaskNotification,_Object], ""];
 		};
 
 	};
@@ -341,21 +398,28 @@ switch (_TypeOfObjective) do {
 
 		if(_Repetitions > 50) exitWith { systemChat "Unable to find position: Radio Tower Objective" };
 
-		_towerclass = selectRandom ["radiotower_1","radiotower_2","ArtilleryNest_2"];
 
-		if(isNil "_Dir") then {
-			_Dir = (random 360);
-		};
+
 		//systemChat str [_towerclass,_SpawnPos];
-		[_towerclass,[_SpawnPos select 0,_SpawnPos select 1,0], [0,0,0], _Dir] call LARs_fnc_spawnComp;
-		sleep 2;
-		_Tower = nearestObject [_SpawnPos, "Land_Vysilac_FM"];
-		//systemChat str _Tower;
-		_Tower setVehicleVarName format["OKS_RadioTower_%1",round(random 9999)];
-		_Tower allowDamage true;
-		_Tower enableSimulation true;
 
-		[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
+		if(_ShouldAddObjects) then {
+			if(isNil "_Dir") then {
+				_Dir = (random 360);
+			};	
+			_towerclass = selectRandom ["radiotower_1","radiotower_2","ArtilleryNest_2"];
+			[_towerclass,[_SpawnPos select 0,_SpawnPos select 1,0], [0,0,0], _Dir] call LARs_fnc_spawnComp;
+			sleep 2;
+			_Tower = nearestObject [_SpawnPos, "Land_Vysilac_FM"];
+			//systemChat str _Tower;
+			_Tower setVehicleVarName format["OKS_RadioTower_%1",round(random 9999)];
+			_Tower allowDamage true;
+			_Tower enableSimulation true;
+			[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
+		} else {
+			_Tower = "Land_Vysilac_FM" createVehicle [_SpawnPos select 0,_SpawnPos select 1,0];
+			_Tower setVehicleVarName format["OKS_RadioTower_%1",round(random 9999)];
+		};
+
 		if(_ObjectivePatrols) then {
 			[_SpawnPos getPos [25,(random 360)],3,150,_Side] spawn OKS_Patrol_Spawn;
 			[_SpawnPos getPos [25,(random 360)],3,150,_Side] spawn OKS_Patrol_Spawn;
@@ -363,7 +427,17 @@ switch (_TypeOfObjective) do {
 		if(_EnableObjectiveTasks) then {
 			_Task = [true,format["OKS_RadioTower_Objective_%1",(round(random 9000))], ["The Enemy forces have installed a radio tower in the area to boost their signal to relay information and request support. Destroy the radio tower.", "Sabotage Radio Tower", "Sabotage Radio Tower"], getPos _Tower,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 			[_Task,"radio"] call BIS_fnc_taskSetType;
-			[_Tower,_Task,_TaskNotification] spawn { waitUntil{sleep 10; !Alive (_this select 0) || getDammage (_this select 0) > 0.8}; [_this select 1,'SUCCEEDED',_this select 2] call BIS_fnc_taskSetState };
+			[_Tower,_Task,_TaskNotification,_Object] spawn {
+				Params ["_Tower","_Task","_TaskNotification","_Object"];
+				waitUntil{sleep 10; !Alive _Tower || getDammage _Tower > 0.8};
+				[_Task,'SUCCEEDED',_TaskNotification] call BIS_fnc_taskSetState;
+				_Object setVariable ['OKS_ObjectiveComplete',true,true];
+
+				OKS_ForceMultiplier = OKS_ForceMultiplier * 0.75;
+				OKS_ResponseMultiplier = OKS_ForceMultiplier * 0.75;
+				publicVariable "OKS_ForceMultiplier";
+				publicVariable "OKS_ResponseMultiplier";
+			};
 		};
 	};
 
@@ -460,7 +534,7 @@ switch (_TypeOfObjective) do {
 			_exfil setTriggerTimeout [5, 7, 10, true];
 			_exfil triggerAttachVehicle [_Civilian];
 			_exfil setTriggerArea [200,200,0,false,5];
-			_exfil setTriggerStatements ["this", format ["['%1','SUCCEEDED',true] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
+			_exfil setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState; %3 setVariable ['OKS_ObjectiveComplete',true,true]",_Task,_TaskNotification,_Object], ""];
 		};
 	};
 
@@ -510,7 +584,7 @@ switch (_TypeOfObjective) do {
 					[_Arty getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
 				};
 
-			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState; %3 setVariable ['OKS_ObjectiveComplete',true,true]",_Task,_TaskNotification,_Object], ""];
 		};
 
 		if(!isNil "OKS_ArtyFire") then {
@@ -536,10 +610,13 @@ switch (_TypeOfObjective) do {
 			_Group = [_Arty,_Side] call OKS_AddVehicleCrew;
 		};
 		_ArtilleryNest = selectRandom ["ArtilleryNest","ArtilleryNest_3","ArtilleryNest_4","ArtilleryNest_5","ArtilleryNest_6"];
-		[_ArtilleryNest,getPos _Arty, [0,0,0], getDir _Arty] call LARs_fnc_spawnComp;
-		sleep 5;
-		[getPos _Arty,_Side,(round random 4),15] spawn OKS_Populate_Sandbag;
-		[getPos _Arty,40,_Side] spawn OKS_Populate_StaticWeapons;
+
+		if(_ShouldAddObjects) then {
+			[_ArtilleryNest,getPos _Arty, [0,0,0], getDir _Arty] call LARs_fnc_spawnComp;
+			sleep 5;
+			[getPos _Arty,_Side,(round random 4),15] spawn OKS_Populate_Sandbag;
+			[getPos _Arty,40,_Side] spawn OKS_Populate_StaticWeapons;
+		};
 	 	//[getPos _Arty,_Side,(1+(round random 3)),40] spawn OKS_Populate_Bunkers;
 	};
 
@@ -587,7 +664,7 @@ switch (_TypeOfObjective) do {
 				if(_ObjectivePatrols) then {
 					[_AA getPos [25,(random 360)],5,150,_Side] spawn OKS_Patrol_Spawn;
 				};
-			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState;",_Task,_TaskNotification], ""];
+			_trg setTriggerStatements ["this", format ["['%1','SUCCEEDED',%2] call BIS_fnc_taskSetState; %3 setVariable ['OKS_ObjectiveComplete',true,true]",_Task,_TaskNotification,_Object], ""];
 		};
 
 		if(!isNil "GW_Ambient_AAA") then {
@@ -600,18 +677,20 @@ switch (_TypeOfObjective) do {
 		};
 		sleep 2;
 		_AntiAirComp = selectRandom ["AntiAir_1","ArtilleryNest","ArtilleryNest_3","ArtilleryNest_4","ArtilleryNest_5","ArtilleryNest_6"];
-		[_AntiAirComp,getPos _AA, [0,0,0], getDir _AA] call LARs_fnc_spawnComp;
-		sleep 3;
-		[getPos _AA,_Side,(round random 4),15] spawn OKS_Populate_Sandbag;
-		[getPos _AA,40,_Side] spawn OKS_Populate_StaticWeapons;
-		_Objects = nearestObjects [getpos _AA,[],35];
-		_Objects = _Objects select { getPos _X select 2 > 0 && !(_X isKindOf "MAN") && !(_X isKindOf "StaticWeapon")};
-		{_X setPos [getPos _X select 0,getpos _X select 1,-0.1]; _X setVectorUp [0,0,1] } foreach _Objects;
+
+		if(_ShouldAddObjects) then {
+			[_AntiAirComp,getPos _AA, [0,0,0], getDir _AA] call LARs_fnc_spawnComp;
+			sleep 3;
+			[getPos _AA,_Side,(round random 4),15] spawn OKS_Populate_Sandbag;
+			[getPos _AA,40,_Side] spawn OKS_Populate_StaticWeapons;
+			_Objects = nearestObjects [getpos _AA,[],35];
+			_Objects = _Objects select { getPos _X select 2 > 0 && !(_X isKindOf "MAN") && !(_X isKindOf "StaticWeapon")};
+			{_X setPos [getPos _X select 0,getpos _X select 1,-0.1]; _X setVectorUp [0,0,1] } foreach _Objects;
+		};
 	 	//[getPos _Arty,_Side,(1+(round random 3)),40] spawn OKS_Populate_Bunkers;
 	};
 
 	case "hostage": {
-
 		private ["_House","_GarrisonMaxSize","_GarrisonPositions","_Target","_HostageGroup","_Repetitions","_Task"];
 		_Repetitions = 0;
 		if(!isNil "_Area") then {
@@ -637,20 +716,32 @@ switch (_TypeOfObjective) do {
 		_House setVariable ["OKS_HostageObjective",true];
 		_Group = CreateGroup _Side;
 		_HostageGroup = CreateGroup civilian;
-		_Hostage1 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
-		_Hostage2 = _Group CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
+		_Hostage1 = _HostageGroup CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
+		_Hostage2 = _HostageGroup CreateUnit [(selectRandom _CivilianUnits), getPos _House, [], 0, "NONE"];
 
+		_SortedPositions = [_GarrisonPositions, [], {_x distance _House}, "ASCEND"] call BIS_fnc_sortBy;
+		_Hostage1 setPosATL (_SortedPositions select 0);
+		_Hostage2 setPosATL (_SortedPositions select 1);
 		{
-			_X disableAI "MOVE";
-			_X setUnitPos "MIDDLE";
-			_X setCaptive true;
-			removeAllWeapons _X;
-			removeGoggles _X;
-			removeBackpack _X;
-			removeHeadgear _X;
-			_X addGoggles "G_Blindfold_01_black_F";
-			_X playMove "acts_aidlpsitmstpssurwnondnon04";
+			_X setDir (_X getDir _House)
 		} foreach [_Hostage1,_Hostage2];
+
+		[_Hostage1,_Hostage2] spawn {
+			{
+				_X disableAI "MOVE";
+				_X setUnitPos "MIDDLE";
+				_X setCaptive true;
+			} foreach _this;
+			sleep 10;
+			{
+				removeAllWeapons _X;
+				removeGoggles _X;
+				removeBackpack _X;
+				removeHeadgear _X;
+				_X addGoggles "G_Blindfold_01_black_F";
+				_X playMove "acts_aidlpsitmstpssurwnondnon04";
+			} foreach _this;
+		};
 
 		if (_GarrisonMaxSize > 10) then { _GarrisonMaxSize = 10 };
 
@@ -670,11 +761,11 @@ switch (_TypeOfObjective) do {
 				_Unit setUnitPos (selectRandom ["MIDDLE","UP"]);
 			};
 		};
-		
+
 		[getPos _House, nil, units _Group, 1, 1, false, true] remoteExec ["ace_ai_fnc_garrison",0];
 		sleep 0.5;
 
-		{[_X] join _HostageGroup} foreach [_Hostage1,_Hostage2];
+		//{[_X] join _HostageGroup} foreach [_Hostage1,_Hostage2];
 
 		switch(OKS_FRIENDLY_SIDE) do {
 			case west:{
@@ -690,22 +781,24 @@ switch (_TypeOfObjective) do {
 			};
 		};
 
+		if(_ObjectivePatrols) then {
+			[_House getPos [35,(random 360)],3,120,_Side] spawn OKS_Patrol_Spawn;
+			[_House getPos [35,(random 360)],3,120,_Side] spawn OKS_Patrol_Spawn;
+		};	
+
 		if(_EnableObjectiveTasks) then {
 			_Task = [true,format["OKS_Hostage_Objective_%1",(round(random 9000))], ["The Enemy have taken hostages and are keeping them inside a building under guard. Rescue the hostages and extract them back to base", "Rescue Hostages", "Rescue Hostages"], getPos _House,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 
 			[_Task,"help"] call BIS_fnc_taskSetType;
 			[_Task,[_House,true]] call BIS_fnc_taskSetDestination;
 
-			if(_ObjectivePatrols) then {
-				[_House getPos [35,(random 360)],3,120,_Side] spawn OKS_Patrol_Spawn;
-				[_House getPos [35,(random 360)],3,120,_Side] spawn OKS_Patrol_Spawn;
-			};
-
+			waitUntil {sleep 2; count (units _HostageGroup) > 0};
 			waitUntil {sleep 10; {!alive _X || _X distance _Target < 300} count (units _HostageGroup) isEqualTo count (units _HostageGroup)};
-			if( {Alive _X} count (units _HostageGroup) < 1 ) then {
+			if( {Alive _X} count (units _HostageGroup) == 0) then {
 				[_Task,'FAILED',true] call BIS_fnc_taskSetState;
 			} else {
 				[_Task,'SUCCEEDED',_TaskNotification] call BIS_fnc_taskSetState;
+				_Object setVariable ['OKS_ObjectiveComplete',true,true]
 			};
 		};
 	};

@@ -132,7 +132,7 @@ if(_CountStrongpoints > 0) then {
 				};
 			};
 			if(_CreateObjective && {_X getVariable ["isSectorTrigger",false]} count (_X nearObjects ["EmptyDetector",(_CompoundSize * 3)]) < 1) then {
-				[getPos _X,"sector",(_CompoundSize * 2),_Side,_Settings] spawn OKS_CreateObjectives;
+				[getPos _X,"sector",(_CompoundSize * 2),_Side,_CreateLocalPatrols] spawn OKS_CreateObjectives;
 			};
 			sleep 3;
 		} foreach _Compounds;
@@ -146,9 +146,9 @@ if(_CountStrongpoints > 0) then {
 			};
 
 			_Group = [_StrongholdNumber,nearestBuilding (getPos _X),_Side,_UnitArray] call OKS_Garrison;
-
+			_X setVariable ["OKS_NeutralizeGroup",_Group,true];
 			if(_CreateObjective) then {
-				[_Group,"neutralize",100,_Side,_Settings] spawn OKS_CreateObjectives;
+				[_X,"neutralize",100,_Side,_CreateLocalPatrols] spawn OKS_CreateObjectives;
 			};
 			sleep 3;
 		} foreach _Strongholds;
@@ -169,7 +169,7 @@ if(_CountStrongpoints > 0) then {
 		_MarkerPos = _X;
 
 		if(_CreateObjective && {_X getVariable ["isSectorTrigger",false]} count (_X nearObjects ["EmptyDetector", 250]) < 1) then {
-			[_MarkerPos,"sector",125,_Side,_Settings] spawn OKS_CreateObjectives;
+			[_MarkerPos,"sector",125,_Side,_CreateLocalPatrols] spawn OKS_CreateObjectives;
 		};
 
 		if(_CreateLocalPatrols) then {
