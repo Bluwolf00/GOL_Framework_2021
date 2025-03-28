@@ -28,7 +28,7 @@ if (true) then {
 	_backpackRadio = "UK3CB_B_O_Tactical_Backpack_Radio";
 };
 
-if(_role == "officer") then {
+if(_role isEqualTo "officer") then {
 	_helmet = "rhs_6b7_1m_ess";
 	_uniform = "rhs_uniform_vdv_emr";
 	_goggles = "G_Armband_red_F";
@@ -57,7 +57,7 @@ if (_role isEqualTo "jetp") then {
 	_backpack = "B_Parachute";
 };
 
-if (_role == "crew") then {
+if (_role isEqualTo "crew") then {
 	_Helmet = "rhs_6b48";
 };
 

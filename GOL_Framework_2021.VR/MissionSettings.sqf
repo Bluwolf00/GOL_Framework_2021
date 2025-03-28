@@ -3,6 +3,8 @@ GOL_MAGNIFIED_OPTICS = 0; // Allows magnified 2x sights to be selected from the 
 GOL_OPTICS = 1; 		  // Allows sights to be selected from the Arsenal.
 GOL_WEAPONS = 1;		  // Allows weapon variations to be selected from Arsenal (If Faction is setup for it).
 GOL_ARSENAL_ALLOWED = 1;  // Allows Attachment Menu
+GOL_AllowSpecialistGroundRoles = 0; // Dragon (Mortar), Light Rifleman, Ammo Bearer, Anti-Air, Asst. Heavy AT, Heavy AT
+GOL_AllowSpecialistAirRoles = 0; // Para-Rescueman, Jet Pilot, Marksman
 GOL_ENTRENCH = 0;		  // Adds Entrenching Tools to certain roles.
 GOL_WIRECUTTER = 0; 	  // Adds Wirecutters to Riflemen.
 GOL_MedicalAsstGunner = ["ShouldGiveMedicalToAsstGunner", 1] call BIS_fnc_getParamValue;
@@ -12,7 +14,6 @@ GOL_PACKED_AT = "RHS_TOW_TriPod_USMC_D";
 GOL_PACKED_GMG = "RHS_MK19_TriPod_USMC_WD";
 GOL_ForceNVG = 0; // Forces addition of NVGs
 //GOL_ForceNVGClassname = "G_Armband_NVG_red_alt_F"; // Forces the classname to be used as NVG.
-
 
 /* AI Gear Settings */
 // 0 = 0%, 1 = 100%

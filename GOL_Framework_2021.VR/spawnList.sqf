@@ -52,27 +52,28 @@ switch (_case) do {
 
 	=======================================
 
-	Creates a defuse explosive objective with 600 (10 minutes) seconds to complete on the "SatchelCharge" object with the name bomb_1.
-	This can be replaced with a position to create an explosive on the position using getPos bomb_1.
+	OKS_Createobjectives - Creates an objective based on OKS_Dynamic settings with task creation/completion.
 
-	Code:
-	[bomb_1,600] spawn OKS_Defuse_Explosive;
+	[Object_1,"sector",300,EAST,false,false,false] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
+	[Object_1,"sector",300,EAST,false,false,false] spawn OKS_CreateObjectives;
 
-	Params:
-	[bomb_1,600,bombtarget_1,"BombDetonated","BombDefused"] spawn OKS_Defuse_Explosive;
-	Bomb Object or Position, Time Delay (Seconds), Target Object (Destroyed upon detonation), VariableName to set to true if failed, VariableName to set to true if succeeded.
+	Params: Position, Type, Range, Side, Patrols?, PlaceObjects?, OverrideTaskNotification?
 
-	=======================================
-
-	Sets up a generator to be disabled by action to turn off light sources in the area around it. 
-
-	Code:
-	[Generator_1,true,true,1000] spawn OKS_PowerGenerator;
-
-	Params:
-	Generator Object, Should Add Action to disable, Turn Off Lights when disabled, Range of disabled lights from Generator
+	Types Available:
+	sector (Clear an area)
+	neutralize (Clear a building)
+	cache (destroy weapons cache)
+	motorpool (destroy supply vehicle)
+	ammotruck (destroy a patrolling supply vehicle)
+	radiotower (destroy a radiotower - decreases hunt response/respawn delay)
+	hvttruck (destroy a patrolling vehicle with an HVT)
+	artillery (destroy an active artillery piece)
+	antiair (destroy an active anti-air position)
+	hostage (secure a building with hostiles & two hostages)
 
     =======================================
+
+	GW_Ambient_AAA
 
 	Setup a scripted AAA that fires randomly into the air until it finds a target and locks on. It has less accuracy than standard AAA positions for balance.
 
@@ -83,6 +84,8 @@ switch (_case) do {
 	AAA Object, side of crew, Is an HMG, Range of AAA, Should be assisted by nearby radar
 
     =======================================
+
+	OKS_ArtyFire
 
 	Setup an artillery to fire into the sky until destroyed. Take note that it is supposed to delete the rounds from landing to save performance.
 	This might fail, so make sure the target is not near friendly positions or bases.
@@ -95,6 +98,8 @@ switch (_case) do {
 
     =======================================
 
+	OKS_ArtySupression
+
 	Setup an active artillery barrage on specified targets until destroyed.
 
 	Code:
@@ -104,6 +109,8 @@ switch (_case) do {
 	Artillery Object, Array with Target positions, Side of Crew, Rounds per target, Delay per target, Unlimited Ammo, Should Loop until Destroyed, Delay per Salvo, Mark with Red Smoke on Target.
 
 	=======================================
+
+	OKS_Destroy_Task
 
 	Setup a destroy/kill objective on a target.
 
@@ -115,6 +122,8 @@ switch (_case) do {
 
 	=======================================
 
+	OKS_Evacuate_HVT
+
 	Setup a HVT Capture Objective. The last variable sets true/false if they target should be set to captive (tied hands). False for enemy officers, true for friendly captives.
 
 	Code:
@@ -125,6 +134,8 @@ switch (_case) do {
 
 	=======================================
 
+	OKS_Destroy_Barricade
+
 	Setup Barricade Objective. Objective to destroy objects lined up as a blockade on a road. Make sure the object is destructible by testing it.
 
 	Code:
@@ -134,6 +145,8 @@ switch (_case) do {
 	Array with Barricade Objects
 
 	=======================================
+
+	OKS_Convoy_Spawn
 
 	Spawn a convoy that moves until engaged, they will dismount, armed vehicles will hunt and dismounts will rush.
 
@@ -146,6 +159,8 @@ switch (_case) do {
 
 	=======================================
 
+	OKS_Lambs_SpawnGroup
+
 	Spawns a team that either creep/rush/hunt based on LAMBS. Used for quick and intense counter-attacks by enemy infantry.
 
 	Code:
@@ -154,6 +169,33 @@ switch (_case) do {
 	Params:
 	Position, Type of Waypoint (rush,creep,hunt), Units to spawn, Side of units, Range of waypoint (around the spawn), unit array that gets populated with the units.
 
+
+	=======================================
+
+	OKS_Defuse_Explosive
+
+	Creates a defuse explosive objective with 600 (10 minutes) seconds to complete on the "SatchelCharge" object with the name bomb_1.
+	This can be replaced with a position to create an explosive on the position using getPos bomb_1.
+
+	Code:
+	[bomb_1,600] spawn OKS_Defuse_Explosive;
+
+	Params:
+	[bomb_1,600,bombtarget_1,"BombDetonated","BombDefused"] spawn OKS_Defuse_Explosive;
+	Bomb Object or Position, Time Delay (Seconds), Target Object (Destroyed upon detonation), VariableName to set to true if failed, VariableName to set to true if succeeded.
+
+	=======================================
+
+	OKS_PowerGenerator
+
+	Sets up a generator to be disabled by action to turn off light sources in the area around it. 
+
+	Code:
+	[Generator_1,true,true,1000] spawn OKS_PowerGenerator;
+
+	Params:
+	Generator Object, Should Add Action to disable, Turn Off Lights when disabled, Range of disabled lights from Generator
+	
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 		/*
@@ -274,3 +316,4 @@ switch (_case) do {
 			waitUntil{sleep 5; !(isNil "NEKY_Airbase")};
 			[Base_3,Spawn_3, NEKY_Hunt_Trigger_1,independent,"I_Heli_Transport_02_F","Random",[2,1]] spawn NEKY_Airbase;
 		};
+

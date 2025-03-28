@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={105.71876,163.73473,-82.191826};
-		dir[]={0.01820389,-0.70911348,0.70486838};
-		up[]={0.018307431,0.70508945,0.70887989};
-		aside[]={0.9996748,-1.0550139e-09,-0.025815828};
+		pos[]={110.25981,81.980034,-32.650158};
+		dir[]={0.034413923,-0.63775182,0.76947272};
+		up[]={0.028494349,0.77024192,0.63711488};
+		aside[]={0.99900132,-1.8626451e-09,-0.044679366};
 	};
 };
 binarizationWanted=0;
@@ -13243,7 +13243,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="STRING";
-														value="CSAT-H";
+														value="RUSSIAN-W";
 													};
 												};
 												class Item1
@@ -18456,7 +18456,6 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="COOP@30 Mission Name";
 		overviewText="Framework Version 2.5";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;

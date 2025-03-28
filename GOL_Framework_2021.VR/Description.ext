@@ -108,7 +108,7 @@ class Params {
 		title = "Should Asst. Gunner have medical supplies?";
 		texts[] = { "No", "Yes" };
 		values[] = { 0, 1 };
-		default = 1;
+		default = 0;
 	};		
 };
 
