@@ -1,7 +1,7 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
-_insignia = "111thID";
+_insignia = "";
 _goggles = ["G_Tactical_Clear","G_Balaclava_TI_blk_F","G_Balaclava_TI_G_blk_F","rhsusf_oakley_goggles_clr","rhsusf_shemagh2_gogg_od","rhsusf_shemagh_gogg_od","rhsusf_shemagh2_od","rhsusf_shemagh_od","UK3CB_G_KLR_Oli","G_Combat","UK3CB_G_Tactical_Clear"];
 _helmet = ["H_HelmetB_camo","H_HelmetB","H_HelmetSpecB"];
 _OfficerHelmet = "H_Beret_02";

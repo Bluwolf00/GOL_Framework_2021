@@ -195,15 +195,20 @@ if (_isMan) then {
 		_unit setUnitLoadout _loadout;
 
 		if (_isPlayer && _useFactionRadio && _roleUseRadio) then {
-			if(!isNil "_insignia") then {
-				[_unit,_insignia] call BIS_fnc_setUnitInsignia;
-			};
+
 			if (isClass ((missionConfigFile >> "GW_Modules" >> "Radios"))) then {
 				[{
 					_this call EFUNC(Radios,add);
 				}, [_unit, _role], 0.1] call CBA_fnc_waitAndExecute;
 			};
 		};
+		if(!isNil "_insignia") then {
+			if(_insignia isEqualTo "") then {
+				[_unit,"GOL_Insignia_Hellfish"] call BIS_fnc_setUnitInsignia;
+			} else {
+				[_unit,_insignia] call BIS_fnc_setUnitInsignia;
+			}
+		};		
 
 		if (isMultiplayer || isDedicated) then
 		{

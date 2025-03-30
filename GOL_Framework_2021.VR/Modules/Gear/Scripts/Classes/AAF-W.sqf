@@ -2,7 +2,7 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
-_insignia = "insignia_block35";
+_insignia = "";
 _goggles = ["rhs_balaclava1_olive"];
 _OfficerHelmet = "UK3CB_AAF_B_H_Beret_Army_Off";
 _helmet =  ["UK3CB_AAF_I_H_MKVI_Helmet_B_GRN","UK3CB_AAF_I_H_MKVI_Helmet_A_GRN"];
