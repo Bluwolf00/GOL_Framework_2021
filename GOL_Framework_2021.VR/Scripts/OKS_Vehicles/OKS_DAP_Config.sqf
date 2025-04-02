@@ -9,8 +9,9 @@ if(isNil "_WeaponMagazineTurret") then {
 	/*
 		Examples:
 		["rhs_weap_yakB","rhs_mag_127x108mm_1slt_1470"]
+		["RHS_weap_gau19",""rhsusf_mag_gau19_melb_right""]
 	*/
-	_WeaponMagazineTurret = ["gau19_gunpod","1500Rnd_gau1950cal_tracer_red_shells"];
+	_WeaponMagazineTurret = ["RHS_weap_gau19","rhsusf_mag_gau19_melb_right"];
 };
 
 // How to use (in init of vehicle):

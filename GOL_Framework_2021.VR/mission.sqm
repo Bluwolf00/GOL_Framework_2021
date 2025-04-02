@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=9810;
+		nextID=9841;
 	};
 	class Camera
 	{
-		pos[]={105.09047,69.293686,-30.363596};
-		dir[]={0.036100823,-0.5760361,0.81662995};
-		up[]={0.025440076,0.8174237,0.57547593};
-		aside[]={0.99902648,-8.236384e-09,-0.044164155};
+		pos[]={112.01688,42.394421,-31.889069};
+		dir[]={0.014626898,-0.49459454,0.86900073};
+		up[]={0.0083237672,0.86912388,0.49452451};
+		aside[]={0.99985838,-4.6566129e-10,-0.016829476};
 	};
 };
 binarizationWanted=0;
@@ -18475,7 +18475,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=9;
+		items=5;
 		class Item0
 		{
 			dataType="Layer";
@@ -20335,6 +20335,7 @@ class Mission
 						};
 					};
 					id=406;
+					atlOffset=-5;
 				};
 				class Item1
 				{
@@ -20897,6 +20898,7 @@ class Mission
 						};
 					};
 					id=407;
+					atlOffset=-5;
 				};
 				class Item2
 				{
@@ -21567,6 +21569,7 @@ class Mission
 						};
 					};
 					id=408;
+					atlOffset=-5;
 				};
 				class Item3
 				{
@@ -21885,6 +21888,7 @@ class Mission
 						};
 					};
 					id=409;
+					atlOffset=-5;
 				};
 				class Item4
 				{
@@ -22102,7 +22106,7 @@ class Mission
 					name="BLUFOR FARP";
 					class Entities
 					{
-						items=60;
+						items=62;
 						class Item0
 						{
 							dataType="Object";
@@ -24209,11 +24213,34 @@ class Mission
 								nAttributes=1;
 							};
 						};
+						class Item60
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={78.993874,5,25.194283};
+							};
+							title="Vehicle Fuel Resupply";
+							id=3017;
+						};
+						class Item61
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={79.032997,5.3590002,20.444};
+							};
+							title="Vehicle Ammo Resupply";
+							id=3018;
+							atlOffset=0.35900021;
+						};
 					};
 					id=2721;
+					atlOffset=0.1795001;
 				};
 			};
 			id=403;
+			atlOffset=-1.1602499;
 		};
 		class Item3
 		{
@@ -25003,6 +25030,7 @@ class Mission
 						};
 					};
 					id=420;
+					atlOffset=-5;
 				};
 				class Item1
 				{
@@ -25785,6 +25813,7 @@ class Mission
 						};
 					};
 					id=421;
+					atlOffset=-5;
 				};
 				class Item2
 				{
@@ -26161,6 +26190,7 @@ class Mission
 						};
 					};
 					id=422;
+					atlOffset=-5;
 				};
 				class Item3
 				{
@@ -26490,6 +26520,7 @@ class Mission
 						};
 					};
 					id=419;
+					atlOffset=-5;
 				};
 				class Item5
 				{
@@ -26497,7 +26528,7 @@ class Mission
 					name="OPFOR FARP";
 					class Entities
 					{
-						items=57;
+						items=59;
 						class Item0
 						{
 							dataType="Object";
@@ -28445,11 +28476,34 @@ class Mission
 								nAttributes=2;
 							};
 						};
+						class Item57
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={139.55852,5.2129745,16.555977};
+								angles[]={5.4880161,0,0};
+							};
+							title="Vehicle Ammo Resupply";
+							id=3019;
+						};
+						class Item58
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={139.33548,5,21.869026};
+							};
+							title="Vehicle Fuel Resupply";
+							id=3016;
+						};
 					};
 					id=2720;
+					atlOffset=0.053243637;
 				};
 			};
 			id=404;
+			atlOffset=-1.8483782;
 		};
 		class Item4
 		{
@@ -29839,48 +29893,6 @@ class Mission
 			};
 			id=2860;
 			atlOffset=-0.0024414063;
-		};
-		class Item5
-		{
-			dataType="Comment";
-			class PositionInfo
-			{
-				position[]={139.33548,5,21.869026};
-			};
-			title="Vehicle Fuel Resupply";
-			id=3016;
-		};
-		class Item6
-		{
-			dataType="Comment";
-			class PositionInfo
-			{
-				position[]={78.993874,5,25.194283};
-			};
-			title="Vehicle Fuel Resupply";
-			id=3017;
-		};
-		class Item7
-		{
-			dataType="Comment";
-			class PositionInfo
-			{
-				position[]={79.032997,5.3590002,20.444};
-			};
-			title="Vehicle Ammo Resupply";
-			id=3018;
-			atlOffset=0.35900021;
-		};
-		class Item8
-		{
-			dataType="Comment";
-			class PositionInfo
-			{
-				position[]={139.55852,5.2129745,16.555977};
-				angles[]={5.4880161,0,0};
-			};
-			title="Vehicle Ammo Resupply";
-			id=3019;
 		};
 	};
 	class Connections
