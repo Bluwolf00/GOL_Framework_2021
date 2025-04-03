@@ -203,7 +203,7 @@ if (_isMan) then {
 			};
 		};
 		if(!isNil "_insignia") then {
-			if(_insignia isEqualTo "") then {
+			if(_insignia isEqualTo "" && _isPlayer) then {
 				[_unit,"GOL_Insignia_Hellfish"] call BIS_fnc_setUnitInsignia;
 			} else {
 				[_unit,_insignia] call BIS_fnc_setUnitInsignia;
