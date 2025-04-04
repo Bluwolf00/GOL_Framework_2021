@@ -14,9 +14,9 @@
 */
 #include "script_Component.hpp"
 #define	bullShit nil,1,false,false,"",""
-#define	ALL nil,1,false,false,"","!([configFile >> 'CfgVehicles' >> typeOf _this] call BIS_fnc_displayName in ['Squad Leader','Team Leader','Grenadier','Autorifleman'])"
-#define	GL nil,1,false,false,"","[configFile >> 'CfgVehicles' >> typeOf _this] call BIS_fnc_displayName in ['Squad Leader','Team Leader','Grenadier']"
-#define	LMG nil,1,false,false,"","[configFile >> 'CfgVehicles' >> typeOf _this] call BIS_fnc_displayName in ['Autorifleman']"
+#define	ALL nil,1,false,false,"","!(((_this getVariable ['GOL_SelectedRole',['']]) select 0) in ['sl','ftl','g','ar','mmg','fac'])"
+#define	GL nil,1,false,false,"","(((_this getVariable ['GOL_SelectedRole',['']]) select 0) in ['sl','ftl','g','fac'])"
+#define	LMG nil,1,false,false,"","(((_this getVariable ['GOL_SelectedRole',['']]) select 0) in ['ar','mmg'])"
 params [["_unit", objNull, [objNull]]];
 
 if(isNil "GOL_ARSENAL_ALLOWED" || GOL_ARSENAL_ALLOWED isEqualTo 1) then {

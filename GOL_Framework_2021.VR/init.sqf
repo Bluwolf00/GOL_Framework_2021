@@ -1,10 +1,7 @@
 	MISSION_ROOT = call { private "_arr"; _arr = toArray __FILE__; _arr resize (count _arr - 8); toString _arr};
-
+	
 	/* Set GOL Mission Settings */
-	OKS_MissionSettings = Compile PreProcessFileLineNumbers "MissionSettings.sqf";
-	if(isServer) then {
-		[] remoteExec ["OKS_MissionSettings",0]
-	};
+	call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 	Sleep 5;
 
 	execVM "Scripts\GOL_PlayerSetup\init.sqf";
