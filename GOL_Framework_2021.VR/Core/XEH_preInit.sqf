@@ -14,7 +14,6 @@ enableEngineArtillery true;
 enableSentences false;
 enableRadio false;
 enableTeamSwitch false;
-enableEngineArtillery false;
 useAISteeringComponent true;
 0 fadeRadio 0;
 //	enableSatNormalOnDetail true;		//	<--------

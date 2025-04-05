@@ -259,10 +259,8 @@ if (!HasInterface || isServer) then
         		systemChat "Firing Artillery..";
 	        };
 	        _arty setVariable ["OKS_Arty_Target",_target];
-			enableEngineArtillery true;
 	        _arty doArtilleryFire [_target, _CfgMagazine,_rof];
 	        sleep _reload;
-			enableEngineArtillery false;
 		};
 
 		///// If out of ammo, reload

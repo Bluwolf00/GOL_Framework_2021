@@ -134,7 +134,6 @@
 				systemChat format ["%1 could not fire at target (Min-Max range): %2",_Artillery,_X];
 			};
 		} forEach _TargetArray;
-		enableEngineArtillery false;
 	};
 
 	
