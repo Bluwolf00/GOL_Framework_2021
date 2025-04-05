@@ -95,10 +95,10 @@
     if(_Vehicle isKindOf "LandVehicle") then {
         [_Vehicle] spawn OKS_ForceVehicleSpeed;
         [_Vehicle] spawn OKS_AbandonVehicle;
-        if((["T34", typeOf _X] call BIS_fnc_inString ||
-            ["T55", typeOf _X] call BIS_fnc_inString ||
-            ["T72", typeOf _X] call BIS_fnc_inString ||
-            ["T80", typeOf _X] call BIS_fnc_inString) && ["UK3CB", typeOf _X] call BIS_fnc_inString) then {
+        if((["T34", typeOf _Vehicle] call BIS_fnc_inString ||
+            ["T55", typeOf _Vehicle] call BIS_fnc_inString ||
+            ["T72", typeOf _Vehicle] call BIS_fnc_inString ||
+            ["T80", typeOf _Vehicle] call BIS_fnc_inString) && ["UK3CB", typeOf _Vehicle] call BIS_fnc_inString) then {
             [_Vehicle] spawn OKS_AdjustDamage;
         };
     };   
