@@ -27,7 +27,7 @@ OKS_Global_Air_Array = [];
 OKS_AIR_CONFIG = {
 
 	Params["_Vehicle","_ShouldChangeDoorGuns","_WeaponMagazineTurret","_MagazinesPerTurret"];
-	systemChat str typeof _Vehicle;
+	//systemChat str typeof _Vehicle;
 	OKS_AIR_MagazineForeach = {
 		Params ["_Vehicle","_Magazine","_Index","_MagazinesPerTurret"];
 
