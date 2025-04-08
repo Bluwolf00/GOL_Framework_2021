@@ -3,19 +3,9 @@
 	// We have no idea. Yet.
 	//execVM "Scripts\GOL_PlayerSetup\TeamMapIntel\init.sqf";
 
-
-	// Framework Missing Objects Check.
-	OKS_CheckFrameworkObjects = compile preprocessFileLineNumbers "Scripts\GOL_PlayerSetup\OKS_CheckFrameworkObjects.sqf";
-	if(isServer && !(isDedicated)) then {
-		waitUntil {sleep 1; !isNil "OKS_CheckFrameworkObjects"};
-		_Return = call OKS_CheckFrameworkObjects;
-		systemChat _Return;
-		copyToClipboard _Return;
-	};
-
 	/* Set GOL Mission Settings */
-	call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
-	Sleep 5;
+	_Complete = call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
+	waitUntil{_Complete};
 
 	execVM "Scripts\GOL_PlayerSetup\init.sqf";
 	execVM "Scripts\OKS_Vehicles\Init.sqf";	
@@ -27,4 +17,13 @@
 	if(GOL_OKS_DYNAMIC isEqualTo 1) then { execVM "Scripts\OKS_Dynamic\Init.sqf"};
 	if(GOL_NEKY_TASK isEqualTo 1) then { execVM "Scripts\NEKY_Tasks\Init.sqf"};	
 	if(GOL_OKS_TASK isEqualTo 1) then { execVM "Scripts\OKS_TASK\Init.sqf"};
+
+	// Framework Missing Objects Check.
+	OKS_CheckFrameworkObjects = compile preprocessFileLineNumbers "Scripts\GOL_PlayerSetup\OKS_CheckFrameworkObjects.sqf";
+	if(isServer && !(isDedicated)) then {
+		waitUntil {sleep 1; !isNil "OKS_CheckFrameworkObjects"};
+		_Return = call OKS_CheckFrameworkObjects;
+		systemChat _Return;
+		copyToClipboard _Return;
+	};	
 
