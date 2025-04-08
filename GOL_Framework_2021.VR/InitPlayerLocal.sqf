@@ -158,7 +158,7 @@ player addEventHandler ["InventoryOpened", {
 // Set Radio Volumes
 player spawn {
     waitUntil{
-        sleep 15;
+        sleep 5;
         !isNil "TFAR_fnc_activeSWRadio" &&
         !isNil "TFAR_fnc_activeLrRadio" && 
         !isNil "TFAR_fnc_radiosList" && 
@@ -167,5 +167,23 @@ player spawn {
         !isNil "OKS_TFAR_RadioSetup"
     };
     _this spawn OKS_TFAR_RadioSetup;
-}
+};
 
+player spawn {
+    waitUntil { 
+        sleep 10;
+        !isNil "TFAR_CurrentUnit"
+    };
+    while {true} do {
+        _lrspeakers = (call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrSpeakers;
+        _swspeakers = (call TFAR_fnc_activeSwRadio) call TFAR_fnc_getSwSpeakers;
+
+        if(_lrspeakers) then {
+            systemChat "WARNING! You have your long-range set to speaker not headphones. Change it!";
+        };
+        if(_swspeakers) then {
+            systemChat "WARNING! You have your short-range set to speaker not headphones. Change it!";
+        };       
+        sleep 10;
+    }
+};
