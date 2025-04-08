@@ -20,11 +20,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=9996;
+		nextID=10027;
 	};
 	class Camera
 	{
-		pos[]={106.42263,60.877239,-25.439926};
+		pos[]={107.63621,70.589317,-34.949219};
 		dir[]={0.0099431779,-0.58550477,0.81062442};
 		up[]={0.0071813148,0.81066501,0.58546579};
 		aside[]={0.99993819,-1.0017902e-07,-0.012265867};
@@ -471,7 +471,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 2.5";
+	overviewText="Framework Version 2.6";
 	overViewPicture="loadImage.jpg";
 	overViewPictureLocked="loadImage.jpg";
 	loadScreen="loadImage.jpg";
@@ -18456,7 +18456,7 @@ class Mission
 {
 	class Intel
 	{
-		overviewText="Framework Version 2.5";
+		overviewText="Framework Version 2.6";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;

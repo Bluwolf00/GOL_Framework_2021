@@ -2,7 +2,7 @@
 	call OKS_CheckFrameworkObjects;
 
 	- Updating Old Missions
-	This code is not in the older template versions, instead you can copy paste the code below into the debug console and run it.
+	This code is not in the older template versions, if you haven't imported the files, you can instead copy paste the code below into the debug console and run it.
 	It will return the missing objects into the return field, and will be copied to your clipboard.
 
 */
