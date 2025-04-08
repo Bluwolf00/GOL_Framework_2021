@@ -6,24 +6,40 @@ if(!isServer) exitWith {};
 
 Params
 [
-	["_Vehicle", ObjNull, [ObjNull]]
+	["_vehicle", ObjNull, [ObjNull]]
 ];
 
-waitUntil {sleep 5; not canFire _Vehicle && count (crew _Vehicle) > 0};
-_CrewArray = crew _Vehicle;
-_CrewArray allowGetIn false;
-{
-	unassignVehicle _X;
-	_X leaveVehicle _Vehicle;
-} foreach _CrewArray;
+// Check if vehicle has any gunner turrets (occupied or empty)
+private _hasGunnerSeat = {
+    params ["_vehicle"];
+    private _gunnerTurrets = [];
+    
+    // Get all turrets and check their roles
+    {
+        _turretConfig = [_vehicle, _x] call BIS_fnc_turretConfig;
+        _isGunner = getNumber (_turretConfig >> "primaryGunner") > 0;
+        if (_isGunner) then {_gunnerTurrets pushBack _x};
+    } forEach allTurrets [_vehicle, false];;
+    
+    count _gunnerTurrets > 0
+};
 
-
-if({_Vehicle isKindOf _X} count ["TrackedAPC","Tank","WheeledAPC"] > 0) then {
-	sleep (random 5 + (random 5));
-	_random = random 10;
-	if(_random > 5) then {
-		_Vehicle setDamage 1;
-	} else {
-		// create smokestack in vehicle?
+// Only proceed if vehicle has weapons
+if (_vehicle call _hasGunnerSeat) exitWith {
+	[_vehicle,_hasGunnerSeat] spawn {
+		params ["_vehicle","_hasGunnerSeat"];
+		
+		while {alive _vehicle} do {
+			// Re-check gunner seats in case turret gets destroyed
+			if ([_vehicle] call _hasGunnerSeat && !canFire _vehicle) then {
+				systemChat "_HasGunnerSeat and cannot fire. Abandon Vehicle.";
+				{_x leaveVehicle _vehicle} forEach crew _vehicle;
+				_vehicle lock true;
+				break;
+			};
+			sleep 5;
+		};
 	};
 };
+
+systemChat format["%1 does not have gunner. Exiting Abandon Vehicle", [configFile >> "CfgVehicles" >> typeOf _Vehicle] call BIS_fnc_displayName];

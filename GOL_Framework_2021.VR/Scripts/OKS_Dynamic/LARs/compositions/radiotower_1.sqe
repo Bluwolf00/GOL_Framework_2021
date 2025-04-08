@@ -52,7 +52,7 @@ class items
 					skill=0.2;
 				};
 				id=2460;
-				type="Land_Vysilac_FM";
+				type="Land_Vysilac_FM2";
 			};
 			class Item1
 			{

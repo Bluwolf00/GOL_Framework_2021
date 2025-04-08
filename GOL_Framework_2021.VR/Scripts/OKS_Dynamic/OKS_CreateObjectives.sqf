@@ -30,7 +30,16 @@
 
 if(!isServer) exitWith {};
 
-	Params ["_Position","_TypeOfObjective","_Range","_Side","_ObjectivePatrols",["_ShouldAddObjects",true,[false]],["_OverrideTaskNotification",false,[false]]];
+	Params [
+		"_Position",
+		"_TypeOfObjective",
+		"_Range",
+		"_Side",
+		"_ObjectivePatrols",
+		["_ShouldAddObjects",true,[false]],
+		["_OverrideTaskNotification",false,[false]],
+		["_Parent",nil,[""]]
+	];
 	private ["_marker","_Condition","_playerSide","_trg","_EnemySideString","_playerSideString","_playerColor","_Area","_SpawnPos","_Repetitions","_Debug_Variable","_LocationsInArea","_Dir","_Object","_TargetGroup"];
 
 	_Settings = [_Side] call OKS_Dynamic_Setting;
@@ -409,14 +418,14 @@ switch (_TypeOfObjective) do {
 			_towerclass = selectRandom ["radiotower_1","radiotower_2","ArtilleryNest_2"];
 			[_towerclass,[_SpawnPos select 0,_SpawnPos select 1,0], [0,0,0], _Dir] call LARs_fnc_spawnComp;
 			sleep 2;
-			_Tower = nearestObject [_SpawnPos, "Land_Vysilac_FM"];
+			_Tower = nearestObject [_SpawnPos, "Land_Vysilac_FM2"];
 			//systemChat str _Tower;
 			_Tower setVehicleVarName format["OKS_RadioTower_%1",round(random 9999)];
 			_Tower allowDamage true;
 			_Tower enableSimulation true;
 			[_SpawnPos,_Side,(3 + (random 3)),15] spawn OKS_Populate_Sandbag;
 		} else {
-			_Tower = "Land_Vysilac_FM" createVehicle [_SpawnPos select 0,_SpawnPos select 1,0];
+			_Tower = "Land_Vysilac_FM2" createVehicle [_SpawnPos select 0,_SpawnPos select 1,0];
 			_Tower setVehicleVarName format["OKS_RadioTower_%1",round(random 9999)];
 		};
 
@@ -425,7 +434,13 @@ switch (_TypeOfObjective) do {
 			[_SpawnPos getPos [25,(random 360)],3,150,_Side] spawn OKS_Patrol_Spawn;
 		};
 		if(_EnableObjectiveTasks) then {
-			_Task = [true,format["OKS_RadioTower_Objective_%1",(round(random 9000))], ["The Enemy forces have installed a radio tower in the area to boost their signal to relay information and request support. Destroy the radio tower.", "Sabotage Radio Tower", "Sabotage Radio Tower"], getPos _Tower,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
+
+			private _TaskId = format["OKS_RadioTower_Objective_%1",(round(random 9000))];
+			private _TaskArray = [_TaskId];
+			if(!isNil "_Parent") then {
+				_TaskArray = [_TaskId,_Parent];
+			};
+			_Task = [true,_TaskArray, ["The Enemy forces have installed a radio tower in the area to boost their signal to relay information and request support. Destroy the radio tower.", "Sabotage Radio Tower", "Sabotage Radio Tower"], getPos _Tower,"AUTOASSIGNED",-1,false] call BIS_fnc_taskCreate;
 			[_Task,"radio"] call BIS_fnc_taskSetType;
 			[_Tower,_Task,_TaskNotification,_Object] spawn {
 				Params ["_Tower","_Task","_TaskNotification","_Object"];
@@ -434,7 +449,7 @@ switch (_TypeOfObjective) do {
 				_Object setVariable ['OKS_ObjectiveComplete',true,true];
 
 				OKS_ForceMultiplier = OKS_ForceMultiplier * 0.75;
-				OKS_ResponseMultiplier = OKS_ForceMultiplier * 0.75;
+				OKS_ResponseMultiplier = OKS_ResponseMultiplier * 1.25;
 				publicVariable "OKS_ForceMultiplier";
 				publicVariable "OKS_ResponseMultiplier";
 			};

@@ -1,5 +1,9 @@
-// [explosive_1,60] execVM "Scripts\OKS_Task\OKS_Defuse_Explosive.sqf";
-// [[3127.24,879.851,0],60] spawn OKS_Defuse_Explosive;
+/*
+	OKS_Defuse_Explosive - Do not use too many at a time, can cause lag.
+
+ 	[explosive_1,60,targetObject,"Task_Main",true,"VariableOnSuccess","VariableOnFail"] execVM "Scripts\OKS_Task\OKS_Defuse_Explosive.sqf";
+ 	[getPos explosiveSite_1,60,targetObject,"Task_Main",true,"VariableOnSuccess","VariableOnFail"] spawn OKS_Defuse_Explosive;
+*/ 
 
 if(!isServer) exitWith {};
 
@@ -7,6 +11,8 @@ if(!isServer) exitWith {};
 		["_ExplosiveOrPositionATL",objNull,[[],objNull]],
 		["_TimeInSeconds",600,[0]],
 		["_TargetObject",nil,[objNull]],
+		["_Parent",nil,[""]],
+		["_PopUpNotification",true,[false]],
 		["_VariableTrueOnFail","ExplosiveDetonated",[""]],
 		["_VariableTrueOnSuccess","ExplosiveDefused",[""]]
 	];
@@ -48,7 +54,12 @@ if(!isServer) exitWith {};
 		_minutesString = format["0%1",_minutes];
 	};
 	_targetDayTimeAsString = format ["%1:%2:%3",_hours,_minutesString,_seconds];
+
 	_defuseTask = format["DefuseBombTask_%1",(random 9999)];
+	private _TaskId = _defuseTask;
+	if(!isNil "_Parent") then {
+		_TaskId = [_defuseTask,_Parent];
+	};
 
 	private _targetString = "";
 	if(!isNil "_TargetObject") then {
@@ -59,7 +70,7 @@ if(!isServer) exitWith {};
 
 	[
 		true,
-		_defuseTask,
+		_TaskId,
 		[
 			format["An explosive charge has been placed to destroy a %3. You must defuse the explosive before it detonates. We suspect the charge is set to go off in %2 minutes, local time: %1",_targetDayTimeAsString,_TimeInMinutes,_targetString],
 			"Defuse Explosive",
@@ -68,13 +79,10 @@ if(!isServer) exitWith {};
 		getPos _Explosive,
 		"ASSIGNED",
 		-1,
-		true,
+		_PopUpNotification,
 		"mine",
 		false
-	] call BIS_fnc_taskCreate;
-
-
-	
+	] call BIS_fnc_taskCreate;	
 
 	waitUntil {
 		sleep 1;
@@ -107,37 +115,3 @@ if(!isServer) exitWith {};
 			}		
 		} foreach (_ExplosivePos nearRoads 25)
 	};
-
-	// [
-	// 	true,
-	// 	format["RescueHVTTask_%1",(random 9999)],
-	// 	[
-	// 		"You have failed the extraction of HVTs. The HVTs were killed!",
-	// 		"Extract HVT",
-	// 		"Extract"
-	// 	],
-	// 	objNull,
-	// 	"FAILED",
-	// 	-1,
-	// 	true,
-	// 	"exit",
-	// 	false
-	// ] call BIS_fnc_taskCreate;		
-
-	// // Succeeded
-	// [
-	// 	true,
-	// 	format["RescueHVTTask_%1",(random 9999)],
-	// 	[
-	// 		"You have successfully extracted HVTs. Good work!",
-	// 		"Extract HVT",
-	// 		"Extract"
-	// 	],
-	// 	objNull,
-	// 	"SUCCEEDED",
-	// 	-1,
-	// 	true,
-	// 	"exit",
-	// 	false
-	// ] call BIS_fnc_taskCreate;
-		

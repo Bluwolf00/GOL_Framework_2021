@@ -52,9 +52,9 @@ if(_ShouldShowPosition) then {
 
 _TaskId = format["OKS_DestroyTask_%1",random 9999 + (random 9999)];
 if(isNil "_TaskParent") then {
-	_TaskInfo = [true, format["%1",_TaskId], [format[_CustomDescription,_TargetDisplayName], format["%1",_CustomTitle], ""], getPos _target,"AUTOASSIGNED",-1,_ShouldPopUpNotification,_TaskIcon] call BIS_fnc_taskCreate;
+	_TaskInfo = [true, format["%1",_TaskId], [format[_CustomDescription,_TargetDisplayName], format["%1",_CustomTitle], ""], _target,"AUTOASSIGNED",-1,_ShouldPopUpNotification,_TaskIcon] call BIS_fnc_taskCreate;
 } else {
-	_TaskInfo = [true, [format["%1",_TaskId],format["%1",_TaskParent]], [format[_CustomDescription,_TargetDisplayName], format["%1",_CustomTitle], ""], getPos _target,"AUTOASSIGNED",-1,_ShouldPopUpNotification,_TaskIcon] call BIS_fnc_taskCreate;
+	_TaskInfo = [true, [format["%1",_TaskId],format["%1",_TaskParent]], [format[_CustomDescription,_TargetDisplayName], format["%1",_CustomTitle], ""], _target,"AUTOASSIGNED",-1,_ShouldPopUpNotification,_TaskIcon] call BIS_fnc_taskCreate;
 };
 
 waitUntil {sleep 5; !Alive _Target};

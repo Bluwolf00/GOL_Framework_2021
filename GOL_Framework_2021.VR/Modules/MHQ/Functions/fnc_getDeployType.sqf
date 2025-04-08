@@ -34,6 +34,7 @@ switch (_type) do {
 		_return = [
 			["Box_NATO_Equip_F",268,[-0.19632,4.67848,-2.17615],["gearbox",(_mhq getVariable QGVAR(Side))]],
 			["Box_NATO_Equip_F",271,[0.0817223,-6.44015,-2.17615],["gearbox",(_mhq getVariable QGVAR(Side))]],
+			//["CamoNet_BLUFOR_open_F",88,[-0.580032,-0.977325,-2.17615]],
 			["Land_BagFence_01_round_green_F",23,[-2.69328,-7.52737,-2.17745]],
 			["Land_BagFence_01_round_green_F",320,[3.15591,-7.21935,-2.17745]],
 			["Land_BagFence_01_round_green_F",201,[2.13588,5.71606,-2.17745]],

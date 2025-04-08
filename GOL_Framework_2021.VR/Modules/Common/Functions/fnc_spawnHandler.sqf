@@ -119,7 +119,7 @@ if ((count _vehicleArray) > 0) then {
 		};
 
 		if (_waypointArray isEqualTo []) then {
-			_vehicle allowCrewInImmobile false;
+			_vehicle allowCrewInImmobile true;
 		};
 
 		if (_collision isEqualTo "FLY") then {
