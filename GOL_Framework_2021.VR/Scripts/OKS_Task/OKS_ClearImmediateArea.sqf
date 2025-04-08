@@ -15,7 +15,7 @@ Params [
 	["_TaskIcon","attack",[""]]
 ];
 
-if(typename _Side == sideUnknown) then {	
+if(typename _Side == "SIDE") then {	
 	switch (_Side) do {
 		case west: { 
 			_Side = "WEST";
@@ -55,7 +55,7 @@ _TaskInfo = [
 
 _trigger = createTrigger ["EmptyDetector", getPos _target];
 _trigger setTriggerArea [_Range, _Range, 0, true];
-_trigger setTriggerActivation ["EAST", "PRESENT", true];
+_trigger setTriggerActivation [_Side, "PRESENT", true];
 _trigger setTriggerStatements ["this", "", ""];
 
 waitUntil {sleep 1; triggerActivated _trigger};
