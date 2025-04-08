@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=10027;
+		nextID=10058;
 	};
 	class Camera
 	{
@@ -13243,7 +13243,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="STRING";
-														value="RUSSIAN-W";
+														value="CZECH-SOVIET-W";
 													};
 												};
 												class Item1

@@ -2,7 +2,7 @@ _useMineDetector = false;
 _allowedNightStuff = false;
 
 _insignia = "Roundel_Czech";
-_goggles = selectRandom [""];
+_goggles = selectRandom ["G_Armband_darred_alt_F"];
 _helmet = selectRandom ["rhs_ssh60"];
 _OfficerHelmet = "rhssaf_beret_red";
 _uniform = selectRandom ["rhs_uniform_afghanka_grey"];
@@ -73,13 +73,11 @@ _rifleL_mag_tr = "ACE_10Rnd_762x54_Tracer_mag";
 _rifleMarksman_mag = "10Rnd_762x54_Mag";
 _rifleMarksman_mag_tr = "ACE_10Rnd_762x54_Tracer_mag";
 
-_LMG = ["Hud_UK59_F", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "100Rnd_762x54_Tracer";
-_LMG_mag_tr = "100Rnd_762x54_Tracer";
+_LMG = ["UK3CB_RPD", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "UK3CB_RPD_100rnd_762x39_GT";
 
-_MMG = ["Hud_UK59_F", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "100Rnd_762x54_Tracer";
-_MMG_mag_tr = "100Rnd_762x54_Tracer";
+_MMG = ["UK3CB_RPD", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "UK3CB_RPD_100rnd_762x39_GT";
 
 // Launchers
 _silencer = "";
