@@ -1,5 +1,9 @@
 	MISSION_ROOT = call { private "_arr"; _arr = toArray __FILE__; _arr resize (count _arr - 8); toString _arr};
-	
+	// Team Map Intel - Added for testing.. do not enable, unless you want potentially massive lag.
+	// We have no idea. Yet.
+	//execVM "Scripts\GOL_PlayerSetup\TeamMapIntel\init.sqf";
+
+
 	// Framework Missing Objects Check.
 	OKS_CheckFrameworkObjects = compile preprocessFileLineNumbers "Scripts\GOL_PlayerSetup\OKS_CheckFrameworkObjects.sqf";
 	if(isServer && !(isDedicated)) then {
