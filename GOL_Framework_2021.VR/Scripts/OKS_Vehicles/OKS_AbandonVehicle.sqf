@@ -12,16 +12,17 @@ Params
 // Check if vehicle has any gunner turrets (occupied or empty)
 private _hasGunnerSeat = {
     params ["_vehicle"];
-    private _gunnerTurrets = [];
-    
-    // Get all turrets and check their roles
-    {
-        _turretConfig = [_vehicle, _x] call BIS_fnc_turretConfig;
-        _isGunner = getNumber (_turretConfig >> "primaryGunner") > 0;
-        if (_isGunner) then {_gunnerTurrets pushBack _x};
-    } forEach allTurrets [_vehicle, false];;
-    
-    count _gunnerTurrets > 0
+	private _Return = false;
+    _Gunner = gunner _vehicle;
+	if(!isNil "_Gunner") then {
+		_Return = true;
+	} else {
+		if(_vehicle emptyPositions "Cargo" > 0) then {
+			_Return = true;
+		}
+	};
+
+	_Return
 };
 
 // Only proceed if vehicle has weapons
