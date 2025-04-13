@@ -268,6 +268,28 @@ Switch (_Side) do
 		_Officer = ["C_man_1_1_F"];
 		_SideMarker = "empty";
 		_SideColor = "ColorCivilian";
+		_Wheeled = [
+			"UK3CB_C_Datsun_Closed", 
+			"UK3CB_C_Datsun_Open", "UK3CB_C_Hatchback", "UK3CB_C_Hilux_Closed", "UK3CB_C_Hilux_Open",
+			"UK3CB_C_Lada", "UK3CB_C_LandRover_Closed", "UK3CB_C_LandRover_Open", 
+			"UK3CB_C_Pickup", "UK3CB_C_Sedan", "UK3CB_C_Skoda", "UK3CB_C_S1203", "UK3CB_C_UAZ_Open", "UK3CB_C_Gaz24"
+		];
+		_APC = [
+			"UK3CB_C_Tractor", 
+			"UK3CB_C_Tractor_Old", 
+			"C_Van_01_transport_F", 
+			"UK3CB_C_Ural_Covered", 
+			"UK3CB_C_Ural_Empty", 
+			"UK3CB_C_Ural_Recovery", 
+			"UK3CB_C_Ural_Repair"
+		];
+		_Tank = ["UK3CB_C_Ikarus_RED","UK3CB_C_Ikarus"];
+		_Artillery = ["UK3CB_C_SUV"];
+		_Helicopter = ["UK3CB_ADC_C_Mi8AMT", "UK3CB_MEC_C_Bell412", "UK3CB_MEC_C_UH1H", "C_Heli_Light_01_civil_F"];
+		_Transport = ["C_Truck_02_transport_F", "C_Truck_02_covered_F"];
+		_Supply = ["C_Van_01_fuel_F", "UK3CB_C_Kamaz_Ammo", "UK3CB_C_Kamaz_Fuel", "UK3CB_C_Kamaz_Repair"];
+		_AntiAir = ["UK3CB_C_SUV"];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
 		_UnitArray = [_Leaders,_Units,_Officer];
 	};
 

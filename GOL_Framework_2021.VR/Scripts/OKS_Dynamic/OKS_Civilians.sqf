@@ -23,6 +23,10 @@ Private _Debug_Variable = false;
 Private _Spawns = 0;
 Private _AllModules = [];
 
+if(isNil "_MainTrigger") then {
+	_MainTrigger = _Trigger
+};
+
 Private _CreateSafeSpot = {
 	Params ["_Position","_UseBuilding","_SpawnPosition"];
 
@@ -96,4 +100,4 @@ waitUntil{sleep 30; if(_Debug_Variable) then { systemChat "Waiting to delete civ
 
 SystemChat "Deleting Civilians..";
 {deleteVehicle _X} foreach _AllModules;
-{ if ([_X] call GW_Common_Fnc_getSide == civilian && _X inArea _MainTrigger) then {deleteVehicle _X}} foreach allUnits;
+{deleteVehicle _X} foreach (allUnits select {[_X] call GW_Common_Fnc_getSide == civilian && _X inArea _MainTrigger && !isPlayer _X});
