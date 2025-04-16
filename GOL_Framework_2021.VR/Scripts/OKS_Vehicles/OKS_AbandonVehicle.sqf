@@ -9,13 +9,19 @@ Params
 	["_vehicle", ObjNull, [ObjNull]]
 ];
 
+if(_vehicle isKindOf "StaticWeapon") exitWith {
+	//systemChat "OKS_AbandonVehicle: Is Static Weapon Exiting.."
+};
+
 // Check if vehicle has any gunner turrets (occupied or empty)
 private _hasGunnerSeat = {
     params ["_vehicle"];
 	private _Return = false;
     _Gunner = gunner _vehicle;
 	if(!isNil "_Gunner") then {
-		_Return = true;
+		if(!isNull _Gunner) then {
+			_Return = true;
+		}
 	} else {
 		if(_vehicle emptyPositions "Cargo" > 0) then {
 			_Return = true;
@@ -23,6 +29,12 @@ private _hasGunnerSeat = {
 	};
 
 	_Return
+};
+_Repetitions = 0;
+waitUntil {_Repetitions = _Repetitions + 1; sleep 2; count (crew _vehicle) > 1 || _Repetitions > 10};
+
+if(_Repetitions > 10) exitWith {
+	systemChat "OKS_AbandonVehicle: Vehicle crew did not exist after 20 seconds. Exiting.. "
 };
 
 // Only proceed if vehicle has weapons
@@ -43,4 +55,4 @@ if (_vehicle call _hasGunnerSeat) exitWith {
 	};
 };
 
-systemChat format["%1 does not have gunner. Exiting Abandon Vehicle", [configFile >> "CfgVehicles" >> typeOf _Vehicle] call BIS_fnc_displayName];
+//systemChat format["%1 does not have gunner. Exiting Abandon Vehicle", [configFile >> "CfgVehicles" >> typeOf _Vehicle] call BIS_fnc_displayName];
