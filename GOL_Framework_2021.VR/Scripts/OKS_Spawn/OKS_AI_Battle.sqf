@@ -31,7 +31,7 @@ private _SpawnAttack = {
     Params ["_Position","_MeetingPos","_FactionClasses","_Side","_AllUnitsArray","_AllVehiclesArray","_DefendingSide"];
 
     _Vehicle = CreateVehicle [selectRandom _FactionClasses,_Position, [], -1, "NONE"];
-    [_Vehicle] spawn OKS_ReduceDamage;
+    [_Vehicle] spawn OKS_AdjustDamage;
     
     _AllVehiclesArray pushBack _Vehicle;
 

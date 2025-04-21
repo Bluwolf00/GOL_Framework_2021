@@ -16,8 +16,28 @@ OPFOR FACTIONS:        ARDISTAN CHEDAKI COMMUNIST_REBELS DESERT_INSURGENTS DESER
 INDEPENDENT FACTIONS:  NAPA
 
 */
-Private _Faction = "TKA";
+Private _Faction = "CSAT";
 Switch (_Faction) do {
+	case "CSAT": {
+		// CSAT - OPFOR
+		_Wheeled = [
+						"UK3CB_CSAT_B_O_BRDM2", "UK3CB_CSAT_B_O_Tigr_FFV", "UK3CB_CSAT_B_O_GAZ_Vodnik_PKT", 
+			"UK3CB_CSAT_B_O_GAZ_Vodnik", "UK3CB_CSAT_B_O_Kamaz_Covered", "UK3CB_CSAT_B_O_Kamaz_Open", 
+			"UK3CB_CSAT_B_O_Gaz66_Covered", "UK3CB_CSAT_B_O_Gaz66_Open", "UK3CB_CSAT_B_O_Ural_Open", 
+			"UK3CB_CSAT_B_O_UAZ_Closed", "UK3CB_CSAT_B_O_UAZ_Open", "UK3CB_CSAT_B_O_Typhoon_transport", 
+			"UK3CB_CSAT_B_O_Typhoon_transport_covered", "UK3CB_CSAT_B_O_LSV_02", "UK3CB_CSAT_B_O_Offroad_HMG",
+			 "UK3CB_CSAT_B_O_Offroad_Unarmed", "UK3CB_CSAT_B_O_Offroad_Comms", "UK3CB_CSAT_B_O_Offroad_Covered"
+		];
+		_APC = ["UK3CB_CSAT_B_O_BMD1", "UK3CB_CSAT_B_O_BMP1", "UK3CB_CSAT_B_O_MTLB_BMP", "UK3CB_CSAT_B_O_MTLB_Cannon", "UK3CB_CSAT_B_O_BTR80a"];
+		_Tank = ["UK3CB_CSAT_B_O_T55", "UK3CB_CSAT_B_O_T72A", "UK3CB_CSAT_B_O_T80"];
+		_Artillery = ["UK3CB_CSAT_B_O_2S1", "UK3CB_CSAT_B_O_2S3", "UK3CB_CSAT_B_O_BM21"];
+		_AntiAir = ["UK3CB_CSAT_B_O_Gaz66_ZU23", "UK3CB_CSAT_B_O_Ural_Zu23", "UK3CB_CSAT_B_O_ZsuTank"];
+		_Helicopter = ["UK3CB_CSAT_B_O_Orca_Armed_MULTI", "UK3CB_CSAT_B_O_Bell412_Utility", "UK3CB_CSAT_B_O_Mi8AMTSh"];
+		_Transport = ["UK3CB_CSAT_B_O_Tigr", "UK3CB_CSAT_B_O_GAZ_Vodnik", "UK3CB_CSAT_B_O_Gaz66_Open", "UK3CB_CSAT_B_O_Kamaz_Covered", "UK3CB_CSAT_B_O_Typhoon_transport_covered", "UK3CB_CSAT_B_O_LSV_02", "UK3CB_CSAT_B_O_Offroad_Comms"];
+		_Supply = ["UK3CB_CSAT_B_O_Gaz66_Ammo", "UK3CB_CSAT_B_O_Gaz66_Med", "UK3CB_CSAT_B_O_Gaz66_Radio", "UK3CB_CSAT_B_O_Gaz66_Repair", "UK3CB_CSAT_B_O_Kamaz_Ammo", "UK3CB_CSAT_B_O_Kamaz_Fuel"];
+		_Vehicles = [_Wheeled,_APC,_Tank,_Artillery,_Helicopter,_Transport,_Supply,_AntiAir];
+	};
+
 	case "ARDISTAN":
 	{
 		// African Desert Militia 3CB - OPFOR

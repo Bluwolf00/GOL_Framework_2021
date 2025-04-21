@@ -8,10 +8,10 @@ _Rendevouz = False;				// Whether AI units will rendevouz after a paradrop (Kind
 _ChuteHeight = 60;				// The height of where AI will start opening their parachute. If they open it early the wind tends to drag them way off target.
 _WPDistance = 150;				// The size of the area to search around when reaching their final SAD waypoint. For units.
 
-_AirbaseRespawnTimer = 120; 	// Timer until allowed to respawn another wave of reinforcements. How its calculated: ThisTime + (random ThisTime) so 300+(randomly between 1-300).
+_AirbaseRespawnTimer = 300; 	// Timer until allowed to respawn another wave of reinforcements. How its calculated: ThisTime + (random ThisTime) so 300+(randomly between 1-300).
 _AirbaseRandomDistanceLZ = 200; // Distance from player the helicopter will choose HLS. Calculated like Timer, 150 meters + (Randomly 1 to 150m) - Max 300, minimum 151 meters.
-_AirbaseRefreshRate = 30;		// Refresh timer, checks every X seconds if the player is within the attack zone and if they are detected.
-_AirbaseRespawnCount = 10;		// How many waves of reinforcements will be sent from this base if allowed?
+_AirbaseRefreshRate = 120;		// Refresh timer, checks every X seconds if the player is within the attack zone and if they are detected.
+_AirbaseRespawnCount = 4;		// How many waves of reinforcements will be sent from this base if allowed?
 _EgressPos = [0,0,0];
 
 _VehicleClassNameArray = ["B_LSV_01_armed_F","rhsusf_m113_usarmy"];

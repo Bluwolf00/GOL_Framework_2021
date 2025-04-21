@@ -44,7 +44,7 @@ Params
 	["_UnloadOrDropMarker", "", ["",[],objNull]],
 	["_Egress", "", ["",[],objNull]],
 	["_Units", [1,1], [[]]],
-	["_UnitsWPs", [""], [[""],[]]],
+	["_UnitsWPs", nil, [[""],[]]],
 	["_Override", false, [true]],			// AS LONG AS BI HAVEN'T FIXED THEIR SHIT
 	["_Airbase", false,[true]],
 	["_OKS_Zone", ObjNull,[ObjNull]]
@@ -82,9 +82,12 @@ NEKY_AirDropAISkill =
 
 // Convert possible markers to XYZ
 _Index = 0;
-for "_i" from 0 to ((count _UnitsWPs) -1) do
-{
-	if (typeName (_UnitsWPs select _Index) == "STRING") then {_Temp = getMarkerPos (_UnitsWPs select _Index); _UnitsWPs set [_Index, _Temp]; _Index = _Index +1;};
+
+if(!isNil "_UnitsWPs") then {
+	for "_i" from 0 to ((count _UnitsWPs) -1) do
+	{
+		if (typeName (_UnitsWPs select _Index) == "STRING") then {_Temp = getMarkerPos (_UnitsWPs select _Index); _UnitsWPs set [_Index, _Temp]; _Index = _Index +1;};
+	};
 };
 if (typeName _Ingress == "STRING") then {
 	_Ingress = getMarkerPos _Ingress;
@@ -243,7 +246,7 @@ Switch (_UnloadOrDrop) do
 	case "paradrop":
 	{
 		_Heli setPosATL [(GetPosATL _Heli select 0), (GetPosATL _Heli select 1), ((GetPosATL _Heli select 2) + 60)];
-		_Heli flyInHeight 130;
+		_Heli flyInHeight 150;
 		_Dir = [_Heli, _UnloadOrDropMarker] call BIS_fnc_dirTo;
 		if ((_Units select 0) > 0) then
 		{
@@ -404,24 +407,27 @@ if ((_Units Select 0) > 0) then
 			_WPIndex = _WPIndex +1;
 		};
 
-		//	Waypoints
-		for "_i" from 1 to (count _UnitsWPs -1) do
-		{
-			_Group addWaypoint [(_UnitsWPs select _Index), 20, _WPIndex];
-			[_Group,_WPIndex] SetWaypointType "MOVE";
+		if(!isNil "_UnitsWPs") then {
+			//	Waypoints
+			for "_i" from 1 to (count _UnitsWPs -1) do
+			{
+				_Group addWaypoint [(_UnitsWPs select _Index), 20, _WPIndex];
+				[_Group,_WPIndex] SetWaypointType "MOVE";
+				[_Group,_WPIndex] setWaypointBehaviour "AWARE";
+				[_Group,_WPIndex] setWaypointCombatMode "YELLOW";
+				[_Group,_WPIndex] setWaypointSpeed "NORMAL";
+				[_Group,_WPIndex] SetWaypointFormation "WEDGE";
+				_WPIndex = _WPIndex +1;
+				_Index = _Index +1;
+			};
+
+			_Group addWaypoint [(_UnitsWPs select _Index), 30, _WPIndex];
+			[_Group,_WPIndex] SetWaypointType "SAD";
 			[_Group,_WPIndex] setWaypointBehaviour "AWARE";
-			[_Group,_WPIndex] setWaypointCombatMode "YELLOW";
-			[_Group,_WPIndex] setWaypointSpeed "NORMAL";
+			[_Group,_WPIndex] setWaypointCombatMode "RED";
 			[_Group,_WPIndex] SetWaypointFormation "WEDGE";
-			_WPIndex = _WPIndex +1;
-			_Index = _Index +1;
+			sleep 1;
 		};
-		_Group addWaypoint [(_UnitsWPs select _Index), 30, _WPIndex];
-		[_Group,_WPIndex] SetWaypointType "SAD";
-		[_Group,_WPIndex] setWaypointBehaviour "AWARE";
-		[_Group,_WPIndex] setWaypointCombatMode "RED";
-		[_Group,_WPIndex] SetWaypointFormation "WEDGE";
-		sleep 1;
 
 		// 	Add waypoints around the target area
 		// for "_i" from 0 to 1 do
@@ -472,14 +478,17 @@ if ((_Units Select 0) > 0) then
 			_Dir = GetDir _Heli;
 			{if (Alive _x) then {unAssignVehicle _x; MoveOut _x; _x setDir _Dir; _x setVelocity (Velocity _Heli); _x disableAI "MOVE"; [_x] spawn {sleep 10; (_This select 0) EnableAI "MOVE"}; sleep 0.25;};} forEach (Units _Group);
 			_Index = _Index +1;
+			
 		};
 		if (_SAD) then {_Heli FlyInHeight 100};
 	};
 
 	// Make landed troops hunt
-	if !(isNil "lambs_wp_fnc_moduleRush") then
+	if !(isNil "lambs_wp_fnc_moduleRush" && isNil "_UnitsWPs") then
 	{	
-		{[_X,1000,15,[],[],true] remoteExec ["lambs_wp_fnc_taskRush",0]} foreach _Groups;
+		{
+			[_X,1000,15,[],[],true] remoteExec ["lambs_wp_fnc_taskRush",0]	
+		} foreach _Groups;
 		/// Change to massive zone to have unlimited hunt?
 		//{ if ( {Alive _x} count (Units _x) != 0) then { [_x, nil, _OKS_Zone, 0, 30, 0, {}] Spawn NEKY_Hunt_Run} } forEach _Groups;
 	};

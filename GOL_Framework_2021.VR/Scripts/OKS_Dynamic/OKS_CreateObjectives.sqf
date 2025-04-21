@@ -326,7 +326,7 @@ switch (_TypeOfObjective) do {
 
 	case "ammotruck": {
 
-		private ["_SupplyTruck","_Road","_RandomPos"];
+		private ["_SupplyTruck","_Road","_RandomPos","_SpawnPos"];
 		_SupplyTruck = selectRandom(_Supply);
 		_Repetitions = 0;
 		if(!isNil "_Area") then {
@@ -365,6 +365,12 @@ switch (_TypeOfObjective) do {
 			waitUntil {sleep 5; behaviour (driver _Vehicle) isEqualTo "COMBAT"};
 			_vehicle forceSpeed 15;
 		};
+
+		if(isNil "_Area") then {
+			_Area = createTrigger ["EmptyDetector", getPos player];
+			_Area setTriggerArea [1000, 1000, 0, false];
+		};
+				
 		[_Area,_Group,6] spawn OKS_Vehicle_Waypoints;
 
 		if(_EnableObjectiveTasks) then {
@@ -505,6 +511,12 @@ switch (_TypeOfObjective) do {
 			waitUntil {sleep 5; behaviour (driver _Vehicle) isEqualTo "COMBAT"};
 			_vehicle forceSpeed 15;
 		};
+
+		if(isNil "_Area") then {
+			_Area = createTrigger ["EmptyDetector", getPos player];
+			_Area setTriggerArea [1000, 1000, 0, false];
+		};
+
 		[_Area,_Group,6] spawn OKS_Vehicle_Waypoints;
 
 		_HVTGroup = CreateGroup _Side;

@@ -1,7 +1,7 @@
 // How to use
-// [SAMLAUNCHER,RATEOFFIRE,AMMO,RELOADRATE] spawn OKS_SAM;
-// [this,20,4,30] spawn OKS_SAM;
-// [this,20,4,30] execVM "OKS_SAM".sqf;
+// [SAMLAUNCHER;RADAR,RATEOFFIRE,AMMO,RELOADRATE] spawn OKS_SAM;
+// [this,radar_1,20,4,30] spawn OKS_SAM;
+// [this,radar_1,20,4,30] execVM "OKS_SAM".sqf;
 // Put this in the the missions init.sqf after 10 second delay
 
 Params [

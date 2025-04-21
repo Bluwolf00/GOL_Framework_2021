@@ -2,8 +2,8 @@
 /*
  	Add clear task to clear an area
 
-	[house_1,nil,45,"Clear Area","attack"] spawn OKS_ClearImmediateArea;
-	[house_1,nil,15,"Clear Building","kill"] execVM "Scripts\OKS_Task\OKS_ClearImmediateArea.sqf";	
+	[house_1,east,nil,45,"Clear Area","attack"] spawn OKS_ClearImmediateArea;
+	[house_1,east,nil,15,"Clear Building","kill"] execVM "Scripts\OKS_Task\OKS_ClearImmediateArea.sqf";	
 */
 
 Params [

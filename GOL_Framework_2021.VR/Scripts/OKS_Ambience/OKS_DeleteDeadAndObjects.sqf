@@ -4,6 +4,7 @@
 
     Example:
     [DeleteTrigger_1] spawn OKS_DeleteDeadAndObjects;
+    [DeleteTrigger_2] execVM "Scriptgs\OKS_Ambience\OKS_DeleteDeadAndObjects.sqf";
 
 */
 
@@ -15,6 +16,7 @@ Params [
 
 // If players are inside the zone, delay until they have left.
 if({_X inArea _TriggerName} count allPlayers > 0) then {
+    systemChat "OKS_DeleteDeadAndObjects: Player inside deletion zone. Waiting until cleared.";
     waitUntil {sleep 30; {_X inArea _TriggerName} count allPlayers == 0}
 };
 
@@ -23,10 +25,11 @@ if(_ShouldDeleteVehicles) then {
     {
         deleteVehicle _X;
         sleep 0.15;
-    } foreach ((allDead inAreaArray _TriggerName) select { vehicle _X != _X && !({[_X, vehicleVarName _X] call BIS_fnc_inString} count ["Vehicle_","Mhq_"] > 0)});
+    } foreach ((allDead inAreaArray _TriggerName) select { _vehicle = vehicle _X; vehicle _X != _X && !({[(_X), str (vehicleVarName _vehicle)] call BIS_fnc_inString} count ["Vehicle_","Mhq_"] > 0)});
 
     {
-        if ( (crew _x) findIf { isPlayer _x } == -1 && !({[_X, vehicleVarName _X] call BIS_fnc_inString} count ["Vehicle_","Mhq_"] > 0)) then {
+        _vehicle = vehicle _X;
+        if ( (crew _x) findIf { isPlayer _x } == -1 && !({[(_X), str (vehicleVarName _vehicle)] call BIS_fnc_inString} count ["Vehicle_","Mhq_"] > 0)) then {
             deleteVehicle _x;
             sleep 0.15;
         };

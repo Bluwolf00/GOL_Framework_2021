@@ -60,6 +60,10 @@ Private _Side = _OKS_Side;
 _type = toLower _type;
 
 #include "NEKY_Settings.sqf"
+
+if(typeName _Classname == "ARRAY") then {
+	_Classname = selectRandom _Classname
+};
 _Heli = CreateVehicle [_Classname, [0,0,0], [], 0, "CAN_COLLIDE"];
 _Heli enableSimulation false;
 _Heli allowDamage false;
@@ -106,11 +110,11 @@ While {Alive _Object && _AirbaseRespawnCount > 0 } do {
 			switch (_type) do {
 				case "unloadthenpatrol": {
 					SystemChat "Running Unload then Patrol";
-					[_OKS_Side, _Classname, true, _Type, _SpawnPos, _CalculatedIngress, _EgressPos, _Troops, [_CalculatedIngress],False,False,_ReinforcementZone] spawn NEKY_AirDrop;
+					[_OKS_Side, _Classname, true, _Type, _SpawnPos, _CalculatedIngress, _EgressPos, _Troops, [_CalculatedIngress],False,true,_ReinforcementZone] spawn NEKY_AirDrop;
 				};
 				case "unload": {
 					SystemChat "Running Unload";
-					[_OKS_Side, _Classname, False, _Type, _SpawnPos, _CalculatedIngress, _EgressPos, _Troops, [_CalculatedIngress],False,False,_ReinforcementZone] spawn NEKY_AirDrop;
+					[_OKS_Side, _Classname, False, _Type, _SpawnPos, _CalculatedIngress, _EgressPos, _Troops, [_CalculatedIngress],False,true,_ReinforcementZone] spawn NEKY_AirDrop;
 				};
 				case "slingdrop": {
 					SystemChat "Running SlingDrop";
