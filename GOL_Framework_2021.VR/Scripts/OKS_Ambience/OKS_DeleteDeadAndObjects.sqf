@@ -10,6 +10,7 @@
 
 Params [
     "_TriggerName",
+    ["_DeleteDelayPerDelete",0.01,[0]],
     ["_ShouldDeleteVehicles",true,[false]],
     ["_ShouldDeleteObjects",true,[false]]
 ];
@@ -20,18 +21,19 @@ if({_X inArea _TriggerName} count allPlayers > 0) then {
     waitUntil {sleep 30; {_X inArea _TriggerName} count allPlayers == 0}
 };
 
+
 // Deletes all vehicle wrecks and empty vehicles.
 if(_ShouldDeleteVehicles) then {
     {
         deleteVehicle _X;
-        sleep 0.15;
+        sleep _DeleteDelayPerDelete;
     } foreach ((allDead inAreaArray _TriggerName) select { _vehicle = vehicle _X; vehicle _X != _X && !({[(_X), str (vehicleVarName _vehicle)] call BIS_fnc_inString} count ["Vehicle_","Mhq_"] > 0)});
 
     {
         _vehicle = vehicle _X;
         if ( (crew _x) findIf { isPlayer _x } == -1 && !({[(_X), str (vehicleVarName _vehicle)] call BIS_fnc_inString} count ["Vehicle_","Mhq_"] > 0)) then {
             deleteVehicle _x;
-            sleep 0.15;
+            sleep _DeleteDelayPerDelete;
         };
     } forEach (vehicles inAreaArray _TriggerName);
 };
@@ -39,13 +41,13 @@ if(_ShouldDeleteVehicles) then {
 // Deletes all dead soldiers that aren't vehicles.
 {
     deleteVehicle _X;
-    sleep 0.15;
+    sleep _DeleteDelayPerDelete;
 } foreach ((allDead inAreaArray _TriggerName) select { vehicle _X == _X });
 
 // Deletes all non-player soldiers.
 {
     deleteVehicle _X;
-    sleep 0.15;
+    sleep _DeleteDelayPerDelete;
 } foreach ((allUnits inAreaArray _TriggerName) select { !isPlayer _X });
 
 // Deletes all objects placed in editor or Zeus.
@@ -58,6 +60,6 @@ if(_ShouldDeleteObjects) then {
     _nearObjects = (8 allObjects 0) inAreaArray _TriggerName select { !(["EmptyDetector", typeof _X] call BIS_fnc_inString) };  
     {
         deleteVehicle _X;
-        sleep 0.15;   
+        sleep _DeleteDelayPerDelete;   
     } foreach _nearObjects;
 };

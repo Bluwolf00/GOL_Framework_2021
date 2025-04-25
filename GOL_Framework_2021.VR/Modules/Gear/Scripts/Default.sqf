@@ -59,6 +59,22 @@ switch (toLower(_role)) do {
 		};
 	};
 
+	case "pm": {
+		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
+		[_rifleC, _rifleC_mag, ""] call _addPrimary;
+		[_pistol, _pistol_mag, ""] call _addHandGun;
+		_IFAK call _addToUniform;
+		[[_mapTools,1],["acex_intelitems_notepad",1],[_gps,1],[_cables,2],[_pistol_mag,2],[_smokegrenadeY,4]] call _addToUniform;
+		[[_smokegrenadeB,3],[_grenade,2],[_rifleC_mag_tr,6]] call _addToVest;
+		_FAKPlatoon call _addToBackpack;
+		_rangefinder call _addBino;
+		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
+		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || GOL_ForceNVG isEqualTo 1) then {
+			_nvg call _addNVG;
+			[[_mapFlashLight,1],[_IRStrobe,1]] call _addToUniform;
+		};
+	};
+
 	case "fac": {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
 		[_rifleGL, _rifle_mag_tr, _glsmokeR] call _addPrimary;
@@ -103,7 +119,7 @@ switch (toLower(_role)) do {
 		_IFAK call _addToUniform;
 		[[_mapTools,1],["acex_intelitems_notepad",1],[_cables,2],[_pistol_mag,2],[_smokegrenadeY,4]] call _addToUniform;
 		[[_smokegrenadeB,3],[_grenade,2],[_rifleC_mag_tr,6]] call _addToVest;
-		_FAKBig call _addToBackpack;
+		_FAKSquad call _addToBackpack;
 		_rangefinder call _addBino;
 		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
 		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || GOL_ForceNVG isEqualTo 1) then {
@@ -260,7 +276,7 @@ switch (toLower(_role)) do {
 	case "ab": {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		[_rifleC, _rifleC_mag, ""] call _addPrimary;
-		[[_mapTools,1],[_cables,2],[_flashBang,2],[_rifleGL_mag_tr,4],[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
+		[[_mapTools,1],[_cables,2],[_flashBang,2],[_gps,1],[_rifleGL_mag_tr,4],[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
 		[[_grenade,2],[_rifleC_mag,3],[_rifleC_mag_tr,3],[_rifle_mag_tr,2]] call _addToVest;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;

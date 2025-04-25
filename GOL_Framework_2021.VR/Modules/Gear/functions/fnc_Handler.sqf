@@ -44,7 +44,7 @@ private [
 	"_glHE","_glHEDP","_glsmokeW","_glsmokeB","_glsmokeG","_glsmokeO","_glsmokeP","_glsmokeR","_glsmokeY","_glflareG","_glflareR","_glflareW",
 	"_map","_gps","_compass","_watch","_nvg","_parachute","_demoCharge","_satchelCharge","_toolKit",
 	"_cTab","_Android","_microDAGR","_HelmetCam",
-	"_bandage","_blood","_epi","_morph","_IFAK","_FAKSmall","_FAKMedium","_FAKBig","_pak","_saline","_salineSm",
+	"_bandage","_blood","_epi","_morph","_IFAK","_FAKSmall","_FAKMedium","_FAKSquad","_FAKPlatoon","_pak","_saline","_salineSm",
 	"_barrel","_cables","_clacker","_defusalKit","_IRStrobe","_mapFlashLight","_mapTools","_rangefinder","_laserDesignator","_battery","_rangecard",
 	"_flashBang","_handFlareG","_handFlareR","_handFlareW","_handFlareY",
 	"_goggles","_helmet","_uniform","_vest","_backpack","_backpackRadio","_OfficerHelmet",
@@ -95,6 +95,7 @@ if (_isMan) then {
 	_roleArray = [_role];
 	switch (_role) do {
 		case "pl": { _DisplayName = "Platoon Leader"; _roleArray pushBack _DisplayName};
+		case "pm": { _DisplayName = "Platoon Medic"; _roleArray pushBack _DisplayName};
 		case "fac": { _DisplayName = "Forward Air Controller"; _roleArray pushBack _DisplayName};
 		case "sl": { _DisplayName = "Squad Leader"; _roleArray pushBack _DisplayName};
 		case "sm": { _DisplayName = "Squad Medic"; _roleArray pushBack _DisplayName};
@@ -289,7 +290,7 @@ if (_isMan) then {
 			case "gearbox": {
 				[_unit] remoteExecCall [QFUNC(actions), 0, true];	// Enables gear actions for all players
 				[_unit, _Earplugs, 20] call _fnc_AddObjectsCargo;
-				[_unit, "Toolkit", 10] call _fnc_AddObjectsCargo;		
+				[_unit, "Toolkit", 10] call _fnc_AddObjectsCargo;						
 				[_unit, "UK3CB_BAF_M6", 5] call _fnc_AddObjectsCargo;
 				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_Shells", 30] call _fnc_AddObjectsCargo;
 				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_AB_Shells", 30] call _fnc_AddObjectsCargo;
@@ -503,9 +504,10 @@ if (_isMan) then {
 				[_unit, _grenade, 8] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 10] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 4] call _fnc_AddObjectsCargo;
-				[_unit, _bandage, 20] call _fnc_AddObjectsCargo;
+				[_unit, _bandage, 30] call _fnc_AddObjectsCargo;
 				[_unit, _morph, 10] call _fnc_AddObjectsCargo;
 				if (true) then {
+					[_unit, _epi, 5] call _fnc_AddObjectsCargo;
 					[_unit, "ACE_salineIV", 10] call _fnc_AddObjectsCargo;
 					[_unit, _flashBang, 2] call _fnc_AddObjectsCargo;
 					[_unit, true, [0, 1.5, 0], 0, true] call ace_dragging_fnc_setDraggable;
@@ -544,6 +546,7 @@ if (_isMan) then {
 				[_unit, _morph, 8] call _fnc_AddObjectsCargo;
 				if (true) then {
 					[_unit, "ACE_salineIV", 10] call _fnc_AddObjectsCargo;
+					[_unit, _epi, 5] call _fnc_AddObjectsCargo;
 					[_unit, true, [0, 1.5, 0], 0, true] call ace_dragging_fnc_setDraggable;
 					[_unit, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
 				};
@@ -554,7 +557,7 @@ if (_isMan) then {
 				[_unit, _rifleMarksman_mag_tr, 10] call _fnc_AddObjectsCargo;
 				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 1.5)] call _fnc_AddObjectsCargo;
 				[_unit, _HAT_mag, 3] call _fnc_AddObjectsCargo;
-				[_unit, _AA_mag, 3] call _fnc_AddObjectsCargo;
+				[_unit, _AA_mag, 4] call _fnc_AddObjectsCargo;
 				[_unit, _demoCharge, 4] call _fnc_AddObjectsCargo;
 
 				if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
@@ -575,10 +578,11 @@ if (_isMan) then {
 				[_unit, _grenade, 16] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 15] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 5] call _fnc_AddObjectsCargo;
-				[_unit, _bandage, 40] call _fnc_AddObjectsCargo;
+				[_unit, _bandage, 50] call _fnc_AddObjectsCargo;
 				[_unit, _morph, 15] call _fnc_AddObjectsCargo;
 				if (true) then {
 					[_unit, "ACE_salineIV", 25] call _fnc_AddObjectsCargo;
+					[_unit, _epi, 10] call _fnc_AddObjectsCargo;
 					[_unit, _flashBang, 10	] call _fnc_AddObjectsCargo;
 					if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {
 						[_unit, "ACE_elasticBandage", 100] call _fnc_AddObjectsCargo;

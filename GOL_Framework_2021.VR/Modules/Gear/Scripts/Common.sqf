@@ -52,10 +52,12 @@ if (true) then {
 
 	if (_isPlayer) then {
 		_gps = "";
-		if (_role in ["pl","fac","crew","sl","ftl","sm","ab"]) then {
+		if(_role in ["pm","ab"]) then {
+			_gps = _microDAGR;
+		};
+		if (_role in ["pl","fac","crew","sl","ftl"]) then {
 			_gps = _Android;
 		};
-
 		if (_role in ["p","pj","dragon","marksman"]) then {
 			_gps = _cTab;
 		};
@@ -70,7 +72,8 @@ _morph = "";
 _IFAK = [[_bandage,2]];					//	Individual First Aid Kits
 _FAKSmall = [[_bandage,15]];			//	Medic Kit Small
 _FAKMedium = [[_bandage,20],[_blood,1]];	//	Medic Kit Big
-_FAKBig = [[_bandage,25],[_blood,1]];	//	Medic Kit Big
+_FAKSquad = [[_bandage,25],[_blood,1]];	//	Medic Kit Big
+_FAKPlatoon = [[_bandage,25],[_blood,1]];	//	Medic Kit Big
 if (true) then {	//	ACE
 	_bandage = "ACE_elasticBandage";
 	_blood = "ACE_bloodIV";
@@ -90,18 +93,26 @@ if (true) then {	//	ACE
 		];
 		_FAKMedium = [
 			[_bandage,15],
-			[_morph,3],
 			[_tourn,3],
+			[_morph,5],
 			[_epi,5],
-			[_saline,12],
+			[_saline,10],
 			[_pak,1]
-		];		
-		_FAKBig = [
-			[_bandage,20],
-			[_tourn,4],
-			[_morph,6],
-			[_epi,6],
-			[_saline,18],
+		];	
+		_FAKSquad = [
+			[_bandage,25],
+			[_tourn,3],
+			[_morph,10],
+			[_epi,10],
+			[_saline,16],
+			[_pak,1]
+		];				
+		_FAKPlatoon = [
+			[_bandage,30],
+			[_tourn,5],
+			[_morph,15],
+			[_epi,15],
+			[_saline,25],
 			[_pak,1]
 		];
 };

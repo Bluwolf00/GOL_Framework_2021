@@ -51,8 +51,9 @@ _unit addAction ["<t color='#ff962c'>Remove Night gear</t>", {
 	};
 },nil,1,false,false,"","!((((getUnitLoadout player) select 9) select 5) isEqualTo '')",5];
 
-_unit addAction ["<t color='#35D50D'>Platoon > Actual</t>","[player,'pl'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["<t color='#35D50D'>Platoon > Forward Air Controller</t>","[player,'fac'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#ffb400'>Platoon > Actual</t>","[player,'pl'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#ffb400'>Platoon > Platoon Medic</t>","[player,'pm'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#ffb400'>Platoon > Forward Air Controller</t>","[player,'fac'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#2eff2e'>Squad > Squad Leader</t>","[player,'sl'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#2eff2e'>Squad > Squad Medic</t>","[player,'sm'] call GW_Gear_Fnc_Handler;",bullShit,4];
 

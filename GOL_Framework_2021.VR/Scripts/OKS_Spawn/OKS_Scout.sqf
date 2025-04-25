@@ -130,11 +130,20 @@
 		} foreach _NearPlayers;
 
 		if(count _NearPlayers > 0) then {
-			if(!(missionNamespace getVariable ["Active_UAV_Mortar",false])) then {
+			if(!(missionNamespace getVariable ["Active_UAV_Mortar",false])) then {		
 				_targetPlayer = (selectRandom _NearPlayers);
-				systemChat format ["%1 was targeted by mortar.",name _targetPlayer];
-				missionNamespace setVariable ["Active_UAV_Mortar",true,true];
-				["OffMap", _Side, "Precise", "light", [getPos _targetPlayer, 5]] execVM "Scripts\NEKY_Mortars\NEKY_Mortars.sqf";
+				_nofriendlyNear = count ((_targetPlayer nearEntities ["Land", 150]) select {
+					!isPlayer _X &&
+					((side _x) == (side _crew)) &&
+					((side _crew) GetFriend (side _x) > 0.6)
+				}) <= 3;
+				if(_nofriendlyNear) then {
+					systemChat format ["%1 was targeted by mortar.",name _targetPlayer];
+					missionNamespace setVariable ["Active_UAV_Mortar",true,true];
+					["OffMap", _Side, "Precise", "light", [getPos _targetPlayer, 5]] execVM "Scripts\NEKY_Mortars\NEKY_Mortars.sqf";
+				} else {
+					systemChat "Friendly forces too close to strike. Aborting.";
+				}
 			};
 
 			if(!(_Careless)) then {
