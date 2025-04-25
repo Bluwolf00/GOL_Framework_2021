@@ -52,7 +52,7 @@ if (true) then {
 
 	if (_isPlayer) then {
 		_gps = "";
-		if (_role in ["pl","fac","crew","sl","ftl"]) then {
+		if (_role in ["pl","fac","crew","sl","ftl","sm","ab"]) then {
 			_gps = _Android;
 		};
 
