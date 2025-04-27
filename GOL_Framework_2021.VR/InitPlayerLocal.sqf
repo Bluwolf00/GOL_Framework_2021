@@ -13,13 +13,14 @@ waitUntil {!isNil "ace_hearing_fnc_putInEarplugs"};
 
 switch _uid do {
 
-case "76561198013929549": {_rank = _ltd};
-case "76561198086056020": {_rank = _sgt};
-case "76561198110128838": {_rank = _sgt};
-case "76561198005972885": {_rank = _cpl};
-case "76561198014971848": {_rank = _cpl};
-case "76561198091519166": {_rank = _cpl};
-case "76561198058521961": {_rank = _cpl};
+case "76561198013929549": {_rank = _ltd}; // Oksman
+case "76561198086056020": {_rank = _ltd}; // Blu.
+case "76561199681025229": {_rank = _sgt}; // Rutters
+case "76561198005972885": {_rank = _cpl}; // Pilgrim
+case "76561198014971848": {_rank = _cpl}; // Filth
+case "76561198091519166": {_rank = _cpl}; // Juan Sanchez
+case "76561198058521961": {_rank = _cpl}; // Joona
+case "76561198210159148": {_rank = _cpl}; // Eric
 
 default {_rank ="PRIVATE";};
 };
