@@ -29,13 +29,19 @@ if(count _GroundPlayers > 0) then {
 	} forEach _DeathSortedPlayerArray;
 
 	private _Color = "";
-	if(_allPlayerDeaths <= (count _GroundPlayers * 0.3)) then {
+	if(_allPlayerDeaths <= (count _GroundPlayers * 0.15)) then {
+		_Color = "#21d111";
+	};	
+	if(_allPlayerDeaths > (count _GroundPlayers * 0.15) && _allPlayerDeaths <= (count _GroundPlayers * 0.3)) then {
 		_Color = "#24930C";
 	};
-	if(_allPlayerDeaths > (count _GroundPlayers * 0.3) && _allPlayerDeaths < (count _GroundPlayers * 0.6)) then {
-		_Color = "#fcba03";
+	if(_allPlayerDeaths > (count _GroundPlayers * 0.3) && _allPlayerDeaths <= (count _GroundPlayers * 0.45)) then {
+		_Color = "#c49102";
+	};	
+	if(_allPlayerDeaths > (count _GroundPlayers * 0.45) && _allPlayerDeaths <= (count _GroundPlayers * 0.6)) then {
+		_Color = "#f26900";
 	};
-	if(_allPlayerDeaths >= (count _GroundPlayers * 0.6)) then {
+	if(_allPlayerDeaths > (count _GroundPlayers * 0.6)) then {
 		_Color = "#ff0000";
 	};
 

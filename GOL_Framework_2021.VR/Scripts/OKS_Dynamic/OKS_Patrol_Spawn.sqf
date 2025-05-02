@@ -7,7 +7,7 @@
 
 	Params ["_Area","_NumberInfantry","_Range","_Side"];
 	private ["_Spawnpos","_RandomPos"];
-
+	private _Exit = false;
 	_Settings = [_Side] call OKS_Dynamic_Setting;
 	_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian","_Trigger"];
 	_UnitArray Params ["_Leaders","_Units","_Officer"];
@@ -20,12 +20,14 @@
 		private _iteration = 20;
 		while {_iteration > 0} do {
 			_RandomPos = _Area call BIS_fnc_randomPosTrigger;
-			_SpawnPos = [_RandomPos, 1, 100, 20, 0, 35, 0] call BIS_fnc_findSafePos;
-			_NoPatrolsNearby = (_SpawnPos nearEntities ["Man",_Range]) select {_X getVariable ["OKS_Patrol_Unit", false] == true};
+			_SpawnPos = [_RandomPos, 1, 100, 5, 0, 35, 0] call BIS_fnc_findSafePos;
+			_NoPatrolsNearby = (_SpawnPos nearEntities ["Man",(_Range * 0.5)]) select {_X getVariable ["OKS_Patrol_Unit", false] == true};
 			_iteration = _iteration - 1;
 			if(_SpawnPos inArea _Area && (count _NoPatrolsNearby) == 0) exitWith {};
 		};
+		if(_iteration >= 20) exitWith {_Exit = true; systemChat "Failed to find patrol position. Exiting.."};
 	};
+	if(_Exit) exitWith { systemChat "Failed to find patrol position. Exiting.." };
 
 	_Group = CreateGroup _Side;
 	for "_i" from 1 to (_NumberInfantry) do
