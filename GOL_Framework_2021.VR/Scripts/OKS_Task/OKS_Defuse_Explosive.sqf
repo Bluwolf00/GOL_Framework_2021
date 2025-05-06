@@ -1,8 +1,8 @@
 /*
 	OKS_Defuse_Explosive - Do not use too many at a time, can cause lag.
 
- 	[explosive_1,60,targetObject,"Task_Main",true,"VariableOnSuccess","VariableOnFail"] execVM "Scripts\OKS_Task\OKS_Defuse_Explosive.sqf";
- 	[getPos explosiveSite_1,60,targetObject,"Task_Main",true,"VariableOnSuccess","VariableOnFail"] spawn OKS_Defuse_Explosive;
+ 	[explosive_1,60,targetObject,"Task_Main",true,false,"VariableOnSuccess","VariableOnFail"] execVM "Scripts\OKS_Task\OKS_Defuse_Explosive.sqf";
+ 	[getPos explosiveSite_1,60,targetObject,"Task_Main",true,true,"VariableOnSuccess","VariableOnFail"] spawn OKS_Defuse_Explosive;
 */ 
 
 if(!isServer) exitWith {};
@@ -13,11 +13,10 @@ if(!isServer) exitWith {};
 		["_TargetObject",nil,[objNull]],
 		["_Parent",nil,[""]],
 		["_PopUpNotification",true,[false]],
+		["_ShouldShowPosition",true,[false]],
 		["_VariableTrueOnFail","ExplosiveDetonated",[""]],
 		["_VariableTrueOnSuccess","ExplosiveDefused",[""]]
 	];
-
-	sleep 10;
 
 	Private ["_Explosive","_ExplosivePos","_TimeInMinutes","_TimeInVariable"];
 
@@ -68,6 +67,11 @@ if(!isServer) exitWith {};
 		_targetString = "sensitive area";
 	};
 
+	private _Position = objNull;
+	if(_ShouldShowPosition) then {
+		_Position = getPos _Explosive
+	};
+
 	[
 		true,
 		_TaskId,
@@ -76,7 +80,7 @@ if(!isServer) exitWith {};
 			"Defuse Explosive",
 			"Defuse"
 		],
-		getPos _Explosive,
+		_Position,
 		"ASSIGNED",
 		-1,
 		_PopUpNotification,
@@ -84,34 +88,35 @@ if(!isServer) exitWith {};
 		false
 	] call BIS_fnc_taskCreate;	
 
+	private _TimeExpired = 0;
 	waitUntil {
 		sleep 1;
+		_TimeExpired = _TimeExpired + 1;
 		private _DoesTargetExistAndIsDestroyed = false;
 		if(!isNil "_TargetObject") then {
 			_DoesTargetExistAndIsDestroyed = !alive _TargetObject
 		};		 
-		systemChat str [dayTime,_targetDayTime];
-		(dayTime >= _targetDayTime) || isNull _Explosive || _DoesTargetExistAndIsDestroyed
+		systemChat str [_TimeExpired,_TimeInSeconds];
+		_TimeExpired >= _TimeInSeconds || isNull _Explosive || _DoesTargetExistAndIsDestroyed
 	};
 	if(!isNull _Explosive) then {
 		_Explosive setDamage 1;
 	};
 	sleep 0.1;
-	_NearPlayerToExplosive = {_X distance _ExplosivePos < 5 && Alive _X && [_X] call ace_common_fnc_isAwake} count AllPlayers > 0;
+	// Find nearest GroundWeaponHolder for SatchelAmmo (Successful Disarm)
+	_WeaponHolders = _ExplosivePos nearObjects ["ALL",3] select {typeOf _X == "GroundWeaponHolder"};
+	_IsDisarmed = ({"SatchelCharge_Remote_Mag" in (magazineCargo _X)} count _WeaponHolders > 0);
+
+	// If target exists, check if its alive.
 	private _DoesTargetExistAndIsAlive = true;
 	if(!isNil "_TargetObject") then {
 		_DoesTargetExistAndIsAlive = alive _TargetObject
-	};		
-	if(isNull _Explosive && _NearPlayerToExplosive && _DoesTargetExistAndIsAlive) then {
+	};	
+
+	if(_IsDisarmed && _DoesTargetExistAndIsAlive) then {
 		[_defuseTask, "SUCCEEDED", true] call BIS_fnc_taskSetState;	
 		Call Compile Format ["%1 = True; PublicVariable '%1'",_VariableTrueOnSuccess];
 	} else {	
 		[_defuseTask, "FAILED", true] call BIS_fnc_taskSetState;
 		Call Compile Format ["%1 = True; PublicVariable '%1'",_VariableTrueOnFail];
-		{
-			systemChat str _X;
-			if(["bridge", str _X] call BIS_fnc_inString) then {
-				_X hideObject true
-			}		
-		} foreach (_ExplosivePos nearRoads 25)
 	};
