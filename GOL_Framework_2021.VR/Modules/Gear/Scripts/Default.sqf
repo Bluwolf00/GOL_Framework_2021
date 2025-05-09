@@ -296,7 +296,7 @@ switch (toLower(_role)) do {
 		_IFAK call _addToUniform;
 		[[_gps,1],["acex_intelitems_notepad",1],[_smokegrenadeY,2],[_smokegrenadeP,3],[_grenade,1]] call _addToUniform;
 		[[_toolkit,1],[_pdw_mag_tr,4]] call _addToVest;
-		_FAKBig call _addToBackpack;
+		_FAKSquad call _addToBackpack;
 		[_map, "", "", _compass, _watch, _nvg] call _addLinkedItems;
 		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || GOL_ForceNVG isEqualTo 1) then {		
 			[[_mapFlashLight,1],[_handFlareG,5],[_handFlareR,3]] call _addToUniform;
@@ -416,7 +416,7 @@ switch (toLower(_role)) do {
 		[[_gps,1],["acex_intelitems_notepad",1],[_pistol_mag,2],[_grenade,2]] call _addToUniform;
 		[[_rifle_mag_tr,3],[_smokegrenadeY,6],[_smokegrenadeB,6],[_smokegrenadeB,2],[_smokegrenadeP,2]] call _addToVest;
 		[[_smokegrenadeB,5]] call _addToBackpack;
-		_FAKBig call _addToBackpack;
+		_FAKPlatoon call _addToBackpack;
 		if (call EFUNC(Common,isNight)) then {
 			[[_chemG,5],[_chemR,5],[_handFlareG,2],[_IRStrobe,3]] call _addToBackpack;
 		};

@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3100;
+		nextID=3119;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=10154;
+		nextID=10314;
 	};
 	class Camera
 	{
-		pos[]={80.467186,36.255161,66.995537};
-		dir[]={0.0015629301,-0.59001929,0.80738765};
-		up[]={0.0011421492,0.8073892,0.59001821};
-		aside[]={0.99999821,5.8207661e-11,-0.0019357828};
+		pos[]={81.04818,30,134.13307};
+		dir[]={0.085983224,-0.63215125,0.77005953};
+		up[]={0.070148736,0.77484506,0.62824702};
+		aside[]={0.99382401,3.7252903e-09,-0.11096829};
 	};
 };
 binarizationWanted=0;
@@ -44,6 +44,7 @@ addons[]=
 	"drongosaps",
 	"san_headlamp",
 	"ace_fortify",
+	"A3_Modules_F_StrategicMap",
 	"A3_Armor_F_Beta_APC_Tracked_01",
 	"AltMun_CRV",
 	"tfar_external_intercom",
@@ -18482,7 +18483,7 @@ class Mission
 			name="Template Modules";
 			class Entities
 			{
-				items=23;
+				items=25;
 				class Item0
 				{
 					dataType="Logic";
@@ -19578,6 +19579,84 @@ class Mission
 								{
 									singleType="SCALAR";
 									value=2;
+								};
+							};
+						};
+						nAttributes=4;
+					};
+				};
+				class Item23
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={79.329224,5,168.31641};
+					};
+					title="ORBAT GROUP";
+					description="This module should be placed near our staging area. Don't place it right on top as the icon is fairly big. Offset it north of it by 50m - 100m";
+					id=3118;
+				};
+				class Item24
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={79.114998,5,168.358};
+					};
+					name="ORBAT_GROUP";
+					id=3105;
+					type="ModuleStrategicMapORBAT_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ModuleStrategicMapORBAT_F_Path";
+							expression="_this setVariable ['Path',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="missionconfigfile >> ""CfgORBAT"" >> ""GuerrillasOfLiberation""";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ModuleStrategicMapORBAT_F_Tags";
+							expression="_this setVariable ['Tags',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ModuleStrategicMapORBAT_F_Parent";
+							expression="_this setVariable ['Parent',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ModuleStrategicMapORBAT_F_Tiers";
+							expression="_this setVariable ['Tiers',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
 								};
 							};
 						};

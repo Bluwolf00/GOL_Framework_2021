@@ -141,17 +141,6 @@ class CfgFunctions {
 	};
 };
 
-class CfgUnitInsignia
-{
-	class GOL_Insignia_Hellfish
-	{
-		displayName = "1st Squad - Flying Hellfish";	// name displayed in Arsenal
-		author = "Bohemia Interactive";				// author displayed in Arsenal
-		texture = "Images\hellfish.paa"; // image path
-		textureVehicle = "";						// does nothing, was reserved for future use
-	};
-};
-
 class GW_Modules_Base {
 	name = "GW Modules Base";
 	Authors[] = {};
@@ -187,5 +176,7 @@ class ACE_Settings {
 	#undef LOAD_ACE
 };
 
+#include "Scripts\GOL_PlayerSetup\orbat.cfg"
+#include "Scripts\GOL_PlayerSetup\insignia.cfg"
 #include "Modules\Callsigns\defines.hpp"
 #include "Modules\Callsigns\dialogs.hpp"

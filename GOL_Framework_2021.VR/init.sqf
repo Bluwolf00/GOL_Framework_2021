@@ -25,5 +25,21 @@
 		_Return = call OKS_CheckFrameworkObjects;
 		systemChat _Return;
 		copyToClipboard _Return;
-	};	
+	};
+
+	// Run the ORBAT Group - Requires the ORBAT Module to be present on the map.
+	if(!isNil "ORBAT_GROUP") then {
+		// This value is set in missionSettings.sqf;
+		if(!isNil "GOL_Composition") then {
+			[GOL_Composition] execVM "Scripts\GOL_PlayerSetup\OKS_DynamicOrbat.sqf";
+		} else {
+			if(isServer) then {
+				systemChat "GOL_Composition variable is undefined. If you want to use the orbat, make sure to assign it in missionSettings.sqf."
+			}
+		}
+	} else {
+		if(isServer) then {
+			systemChat "The ORBAT Group module is missing.";
+		};
+	};
 
