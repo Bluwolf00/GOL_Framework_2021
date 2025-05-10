@@ -306,6 +306,12 @@ if (_isMan) then {
 				[_unit, "B_UavTerminal", 10] call _fnc_AddObjectsCargo;
 				[_unit, "O_UavTerminal", 10] call _fnc_AddObjectsCargo;
 				[_unit, "I_UavTerminal", 10] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_HMG", 6] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_GMG", 6] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_Mortar", 6] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_AT", 6] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_Drone_AP", 30] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_Drone_AT", 30] call _fnc_AddObjectsCargo;				
 				[_unit, _MAT_mag_HE, 10] call _fnc_AddObjectsCargo;
 				[_unit, (_LAT select 0), 30] call _fnc_AddObjectsCargo;
 				if (true) then {

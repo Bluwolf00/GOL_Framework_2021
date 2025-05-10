@@ -13,6 +13,9 @@ GOL_PACKED_HMG = "RHS_M2StaticMG_USMC_D";
 GOL_PACKED_MORTAR = "B_G_Mortar_01_F";
 GOL_PACKED_AT = "RHS_TOW_TriPod_USMC_D";
 GOL_PACKED_GMG = "RHS_MK19_TriPod_USMC_WD";
+GOL_PACKED_DRONE_AP = "B_UAFPV_RKG_AP"; // "B_UAFPV_AP" (IED) || "B_UAFPV_RKG_AP" (HE) || "B_Crocus_AP" (TGV-7)
+GOL_PACKED_DRONE_AT = "B_UAFPV_AT"; // "B_UAFPV_AT" (PG-7VL) || "B_Crocus_AT" (PG-7VL)
+GOL_PACKED_STATIC_WEAPONS = [GOL_PACKED_HMG,GOL_PACKED_MORTAR,GOL_PACKED_AT,GOL_PACKED_GMG];
 GOL_ForceNVG = 0; // Forces addition of NVGs
 //GOL_ForceNVGClassname = "G_Armband_NVG_red_alt_F"; // Forces the classname to be used as NVG.
 

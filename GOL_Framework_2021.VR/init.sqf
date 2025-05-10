@@ -24,7 +24,10 @@
 		waitUntil {sleep 1; !isNil "OKS_CheckFrameworkObjects"};
 		_Return = call OKS_CheckFrameworkObjects;
 		systemChat _Return;
-		copyToClipboard _Return;
+
+		if(_Return != "This template is not missing any NEW template items.") then {
+			copyToClipboard _Return;
+		};
 	};
 
 	// Run the ORBAT Group - Requires the ORBAT Module to be present on the map.

@@ -6,6 +6,12 @@ _sgt = "SERGEANT";
 _cpl = "CORPORAL";
 
 _uid = getPlayerUID (_this select 0);
+_didJIP = (_this select 1);
+
+// Add Static Weapon Actions.
+if(_didJIP) then {
+    execVM "Scripts\OKS_Vehicles\OKS_StaticPacking.sqf";
+};
 
 /* Set Earplugs Settings */
 waitUntil {!isNil "ace_hearing_fnc_putInEarplugs"};
