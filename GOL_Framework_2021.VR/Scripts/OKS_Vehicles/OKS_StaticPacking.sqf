@@ -5,7 +5,7 @@ if(isServer) then {
 };
 
 Private _Blacklist = [];
-OKS_DroneClassnames = ["B_Crocus_AP","B_Crocus_AT"];
+OKS_DroneClassnames = ["B_Crocus_AP","B_Crocus_AT","B_UAFPV_AP","B_UAFPV_RKG_AP","B_UAFPV_AT"];
 
 if (hasInterface) then {
  //  && !((player getVariable ["OKS_PackedClassname",""]) in _Blacklist
@@ -326,7 +326,7 @@ if (hasInterface) then {
 	private _actionDrone = ["Pack_Weapon", "Pack Drone","\OKS_GOL_Misc\Data\UI\GOL_Drone_Packed.paa", _PackCode, _PackConditionDrone] call ace_interact_menu_fnc_createAction; 
 	["Helicopter", 0, ["ACE_MainActions"], _actionDrone,true] call ace_interact_menu_fnc_addActionToClass;
 
-	_actionHMGDeploy = ["Deploy Weapon", "Deploy Static Weapon","\OKS_GOL_Misc\Data\UI\GOL_HMG_Packed.paa", _codeDeployHMG, _conditionMG] call ace_interact_menu_fnc_createAction;
+	_actionHMGDeploy = ["Deploy Weapon", "Deploy Static HMG","\OKS_GOL_Misc\Data\UI\GOL_HMG_Packed.paa", _codeDeployHMG, _conditionMG] call ace_interact_menu_fnc_createAction;
 	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _actionHMGDeploy] call ace_interact_menu_fnc_addActionToClass;
 
     _actionMortarDeploy = ["Deploy Mortar", "Deploy Mortar","\OKS_GOL_Misc\Data\UI\GOL_Mortar_Packed.paa", _codeDeployMortar, _conditionMortar] call ace_interact_menu_fnc_createAction;

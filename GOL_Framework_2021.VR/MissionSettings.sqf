@@ -1,5 +1,5 @@
  /* Gear Settings */
-//GOL_Composition = -1; // Composition Setup for ORBAT - -1 Disabled, 0 Infantry, 1 Mechanized.
+GOL_Composition = 0; // Composition Setup for ORBAT - -1 Disabled, 0 Infantry, 1 Mechanized.
 GOL_MAGNIFIED_OPTICS = 0; // Allows magnified 2x sights to be selected from the Arsenal.
 GOL_OPTICS = 1; 		  // Allows sights to be selected from the Arsenal.
 GOL_WEAPONS = 1;		  // Allows weapon variations to be selected from Arsenal (If Faction is setup for it).

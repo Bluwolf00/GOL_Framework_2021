@@ -4,9 +4,7 @@
 //
 //	Made by Oksman
 
-// Global Execution'
-// Setup Script for Packing/Unpacking Static Weapons.
-execVM "Scripts\OKS_Vehicles\OKS_StaticPacking.sqf";
+// Global Execution
 
 // Setup Scripted Resupply of Ammo/MHQ/Vehicles
 if(GOL_NEKY_RESUPPLY isEqualTo 1) then {

@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=10410;
+		nextID=10570;
 	};
 	class Camera
 	{
-		pos[]={100.99053,54.145103,-11.023241};
-		dir[]={0.013025722,-0.51222128,0.85876131};
-		up[]={0.0077690147,0.85885239,0.51216632};
-		aside[]={0.99989206,4.4090484e-08,-0.015165963};
+		pos[]={78.780441,35.79908,70.567421};
+		dir[]={0.0036085532,-0.57092315,0.82099557};
+		up[]={0.0025093763,0.82100356,0.57091767};
+		aside[]={0.99999034,0,-0.0043952959};
 	};
 };
 binarizationWanted=0;
@@ -472,7 +472,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 2.6";
+	overviewText="Framework Version 2.6.5";
 	overViewPicture="loadImage.jpg";
 	overViewPictureLocked="loadImage.jpg";
 	loadScreen="loadImage.jpg";
@@ -17132,7 +17132,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.30000001;
+														value=0.15495847;
 													};
 												};
 												class Item1
@@ -18457,7 +18457,7 @@ class Mission
 {
 	class Intel
 	{
-		overviewText="Framework Version 2.6";
+		overviewText="Framework Version 2.6.5";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;

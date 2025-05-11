@@ -13,6 +13,90 @@ if(_didJIP) then {
     execVM "Scripts\OKS_Vehicles\OKS_StaticPacking.sqf";
 };
 
+// Unconscious State
+["ace_unconscious", {
+    params ["_unit","_unconscious"];
+    if (_unit isNotEqualTo player) exitWith {};
+    if(_unconscious) then {
+        private _camera = nil;
+        //systemChat format["%1 is unconscious",name _unit];
+        _playerbloodVolume = _unit getVariable ["ace_medical_bloodVolume", 6];
+
+        //systemChat str _playerbloodVolume;
+        if(_playerbloodVolume <= 5.1) then {
+            //systemChat "Player is Tier 2";
+            //[false, 0] call ace_medical_feedback_fnc_effectUnconscious;
+            [_unit] spawn {
+                params ["_unit"];
+                private _dir = 0;
+                private _height = 4;
+                private _distance = 3;
+
+                _camera = _unit getVariable ["GOL_SpectatorCamera",nil];
+                if(isNil "_camera") then {
+                    //systemChat "Creating Camera";
+                    _Position = (getPosATL _unit) getPos [_distance,_Dir];
+                    _camera = "camera" camCreate [_Position select 0,_Position select 1,_height];     
+                };
+                _camera camSetTarget player;
+                _unit setVariable ["GOL_SpectatorCamera",_camera,true];	
+                cutText ["", "BLACK OUT",1]; sleep 1;
+                //systemChat "BLACK OUT";
+                
+                waitUntil {!isNil "ace_medical_feedback_ppUnconsciousBlur"};
+                ppEffectDestroy ace_medical_feedback_ppUnconsciousBlur;            
+
+                waitUntil {!isNil "ace_medical_feedback_ppUnconsciousBlackout"};
+                ppEffectDestroy ace_medical_feedback_ppUnconsciousBlackout;      
+
+                showCinemaBorder true;
+                _camera cameraEffect ["internal", "back"];
+                sleep 2;
+                cutText ["", "BLACK IN",3];
+                //systemChat "BLACK IN";
+
+                while {!([_unit] call ace_common_fnc_isAwake)} do {
+                    _playerbloodVolume = _unit getVariable ["ace_medical_bloodVolume", 6];
+                    private _Tier = "<t color='#ffff66'>TIER 3</t>";
+                    if(_playerbloodVolume < 5.1) then {
+                        _Tier = "<t color='#ff9933'>TIER 2</t>";
+                    };
+                    if (_playerbloodVolume < 3.6) then {
+                        _Tier = "<t color='#ff0000'>TIER 1</t>";
+                    };
+
+                    [format["YOU ARE A %1 CASUALTY.",_Tier], -1, 0, 5, 0, 0, 935] spawn BIS_fnc_dynamicText;
+                    _Position = (getPosATL _unit) getPos [_distance,_Dir];
+                    _Dir = _dir + 10;
+                    _camera camSetPos [_Position select 0,_Position select 1,_height];
+                    _camera camCommit 1;
+                    //systemChat "Unconscious - Moving Camera";
+                    sleep 1;
+                };			
+
+                //cutText ["", "BLACK IN",1];
+                //[true, 0] call ace_medical_feedback_fnc_effectUnconscious;   
+            };
+        };
+    };
+    if(!(_unconscious)) then {
+        // Exit Camera 
+        _unit spawn {
+            _camera = _this getVariable ["GOL_SpectatorCamera",objNull];
+            _camera camSetPos [(getPosATL _this) select 0,(getPosATL _this) select 1,0.1];
+            _camera camSetTarget _this;
+            _camera camCommit 0.5;      
+            cutText ["", "BLACK OUT",0.5]; sleep 0.6;
+            _this setVariable ["GOL_SpectatorCamera",nil,true];
+            _camera cameraEffect ["terminate", "back"];			
+            camDestroy _camera;
+            ["", -1, 0, 1, 2, 0, 935] spawn BIS_fnc_dynamicText;
+            sleep 0.05;
+            cutText ["", "BLACK IN",1];   
+        }
+    };
+}] call CBA_fnc_addEventHandler;
+
 /* Set Earplugs Settings */
 waitUntil {!isNil "ace_hearing_fnc_putInEarplugs"};
 [player, true] call ace_hearing_fnc_putInEarplugs;
