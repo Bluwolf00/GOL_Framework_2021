@@ -24,7 +24,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={78.780441,35.79908,70.567421};
+		pos[]={78.686852,35.79908,49.260609};
 		dir[]={0.0036085532,-0.57092315,0.82099557};
 		up[]={0.0025093763,0.82100356,0.57091767};
 		aside[]={0.99999034,0,-0.0043952959};
@@ -735,7 +735,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=494;
+									items=496;
 									class Item0
 									{
 										class data
@@ -4688,6 +4688,22 @@ class CustomAttributes
 											value="ace_medical_limbdamagethreshold";
 										};
 									};
+									class Item494
+									{
+										class data
+										{
+											singleType="STRING";
+											value="tracer_illuminate_list";
+										};
+									};
+									class Item495
+									{
+										class data
+										{
+											singleType="STRING";
+											value="fpv_isuavcaptive";
+										};
+									};
 								};
 							};
 						};
@@ -4698,7 +4714,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=494;
+									items=496;
 									class Item0
 									{
 										class data
@@ -4712,7 +4728,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1;
+														value=0.80000001;
 													};
 												};
 												class Item1
@@ -4739,7 +4755,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.5;
+														value=1.2;
 													};
 												};
 												class Item1
@@ -5036,7 +5052,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.60000002;
+														value=0.89999998;
 													};
 												};
 												class Item1
@@ -13244,7 +13260,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="STRING";
-														value="CZECH-SOVIET-W";
+														value="CSAT-H";
 													};
 												};
 												class Item1
@@ -14405,7 +14421,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.40000001;
+														value=0.59400815;
 													};
 												};
 												class Item1
@@ -15431,7 +15447,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1;
+														value=0.79846764;
 													};
 												};
 												class Item1
@@ -18366,6 +18382,60 @@ class CustomAttributes
 													{
 														singleType="SCALAR";
 														value=0.69999999;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item494
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="_10";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item495
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=0;
 													};
 												};
 												class Item1
