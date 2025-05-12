@@ -38,7 +38,7 @@
 			while {!isNil "ORBAT_GROUP"} do
 			{
 				[GOL_Composition] execVM "Scripts\GOL_PlayerSetup\OKS_DynamicOrbat.sqf";
-				sleep 30;
+				sleep 10;
 			} 
 		} else {
 			if(isServer) then {
