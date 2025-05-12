@@ -1,4 +1,4 @@
-// [1] execVM "Scripts\GOL_PlayerSetup\OKS_DynamicOrbat.sqf";
+// [1] execVM "Scripts\GOL_PlayerSetup\ORBAT\OKS_Orbat.sqf";
 /*
 
 		[
@@ -24,13 +24,34 @@ Params ["_MissionComposition"];
 private _Side = (str OKS_FRIENDLY_SIDE);
 
 Private ["_PlatoonType","_SquadType","_BravoType","_1stSquadAlphaName","_2ndSquadAlphaName","_1stSquadBravoName","_2ndSquadBravoName"];
-Private [
-	"_PlatoonLeader","_PlatoonLeaderString","_PlatoonFAC","_PlatoonFACString","_1SquadLeader","_1SquadLeaderString","_2SquadLeader","_2SquadLeaderString",
-	"_1SquadAlphaLeader","_1SquadAlphaLeaderString","_1SquadBravoLeader","_1SquadBravoLeaderString",
-	"_2SquadAlphaLeader","_2SquadAlphaLeaderString","_2SquadBravoLeader","_2SquadBravoLeaderString",
-	"_Echo1","_Echo1String","_Echo2","_Echo2String","_Echo3","_Echo3String",
-	"_Crew1","_Crew1String","_Crew2","_Crew2String"
-];
+Private ["_PlatoonLeader", "_PlatoonFAC", "_1SquadLeader", "_2SquadLeader", "_1SquadAlphaLeader", "_1SquadBravoLeader", "_2SquadAlphaLeader", "_2SquadBravoLeader", "_Echo1", "_Echo2", "_Echo3", "_Crew1", "_Crew2"];
+Private _PlatoonLeaderString = "w1a";
+Private _PlatoonFACString = "wfac";
+Private _1SquadLeaderString = "w1a";
+Private _2SquadLeaderString = "w2a";
+Private _1SquadAlphaLeaderString = "w1a1";
+Private _1SquadBravoLeaderString = "w1b1";
+Private _2SquadAlphaLeaderString = "w2a1";
+Private _2SquadBravoLeaderString = "w2b1";
+Private _Echo1String = "wecho1";
+Private _Echo2String = "wecho2";
+Private _Echo3String = "wecho3";
+Private _Crew1String = "wcrew1";
+Private _Crew2String = "wcrew4";
+Private _PlatoonLeader = objNull;
+Private _PlatoonFAC = objNull;
+Private _1SquadLeader = objNull;
+Private _2SquadLeader = objNull;
+Private _1SquadAlphaLeader = objNull;
+Private _1SquadBravoLeader = objNull;
+Private _2SquadAlphaLeader = objNull;
+Private _2SquadBravoLeader = objNull;
+Private _Echo1 = objNull;
+Private _Echo2 = objNull;
+Private _Echo3 = objNull;
+Private _Crew1 = objNull;
+Private _Crew2 = objNull;
+
 switch (toLower (_Side)) do {
 	case "west": { 
 		if(!isNil "wpl") then {
@@ -184,7 +205,8 @@ if(isNil "_PlatoonType") exitWith {
 };
 
 /// Change Commander name if applicable
-if(!isNil _PlatoonLeaderString) then {
+if(!isNil "_PlatoonLeaderString") then {
+	systemChat str _PlatoonLeaderString;
 	if((alive _PlatoonLeader)) then {	
 		[
 			missionconfigfile >> "CfgORBAT" >> "GuerrillasOfLiberation" >> "1stPlatoon",
@@ -213,7 +235,7 @@ if(!isNil _PlatoonLeaderString) then {
 	};
 };
 
-if(!isNil _1SquadLeaderString) then {
+if(!isNil "_1SquadLeaderString") then {
 	if((alive _1SquadLeader)) then {
 		[
 			missionconfigfile >> "CfgORBAT" >> "GuerrillasOfLiberation" >> "1stPlatoon" >> "1stSquad",
@@ -229,7 +251,7 @@ if(!isNil _1SquadLeaderString) then {
 	};
 };
 
-if(!isNil _2SquadLeaderString) then {
+if(!isNil "_2SquadLeaderString") then {
 	if((alive _2SquadLeader)) then {
 		[
 			missionconfigfile >> "CfgORBAT" >> "GuerrillasOfLiberation" >> "1stPlatoon" >> "2ndSquad",
@@ -246,7 +268,7 @@ if(!isNil _2SquadLeaderString) then {
 };
 
 // Alpha Teams
-if(!isNil _1SquadAlphaLeaderString) then {
+if(!isNil "_1SquadAlphaLeaderString") then {
 	if((alive _1SquadAlphaLeader)) then {
 		[
 			missionconfigfile >> "CfgORBAT" >> "GuerrillasOfLiberation" >> "1stPlatoon" >> "1stSquad" >> "AlphaTeam",
@@ -262,7 +284,7 @@ if(!isNil _1SquadAlphaLeaderString) then {
 	};
 };
 
-if(!isNil _2SquadAlphaLeaderString) then {
+if(!isNil "_2SquadAlphaLeaderString") then {
 	if((alive _2SquadAlphaLeader)) then {
 		[
 			missionconfigfile >> "CfgORBAT" >> "GuerrillasOfLiberation" >> "1stPlatoon" >> "2ndSquad" >> "AlphaTeam",
@@ -279,7 +301,7 @@ if(!isNil _2SquadAlphaLeaderString) then {
 };
 
 // Bravo Teams
-if(!isNil _1SquadBravoLeaderString) then {
+if(!isNil "_1SquadBravoLeaderString") then {
 	if((alive _1SquadBravoLeader)) then {
 		[
 			missionconfigfile >> "CfgORBAT" >> "GuerrillasOfLiberation" >> "1stPlatoon" >> "1stSquad" >> "BravoTeam",
@@ -295,7 +317,7 @@ if(!isNil _1SquadBravoLeaderString) then {
 	};
 };
 
-if(!isNil _2SquadBravoLeaderString) then {
+if(!isNil "_2SquadBravoLeaderString") then {
 	if((alive _2SquadBravoLeader)) then {
 		[
 			missionconfigfile >> "CfgORBAT" >> "GuerrillasOfLiberation" >> "1stPlatoon" >> "2ndSquad" >> "BravoTeam",
@@ -312,7 +334,7 @@ if(!isNil _2SquadBravoLeaderString) then {
 };
 
 // Hammer
-if(!isNil _PlatoonFACString) then {
+if(!isNil "_PlatoonFACString") then {
 	if((alive _PlatoonFAC)) then {
 		[
 			missionconfigfile >> "CfgORBAT" >> "GuerrillasOfLiberation" >> "1stPlatoon" >> "Hammer",
@@ -329,7 +351,7 @@ if(!isNil _PlatoonFACString) then {
 };
 
 /// AAC Callsigns
-if(!isNil _Echo1String) then {
+if(!isNil "_Echo1String") then {
 	if((alive _Echo1)) then {
 		_Callsign = _Echo1 getVariable ["OKS_Callsign","Echo 1"];
 		[
@@ -346,7 +368,7 @@ if(!isNil _Echo1String) then {
 	};
 };
 
-if(!isNil _Echo2String) then {
+if(!isNil "_Echo2String") then {
 	if((alive _Echo2)) then {
 		_Callsign = _Echo3 getVariable ["OKS_Callsign","Echo 2"];
 		[
@@ -363,7 +385,7 @@ if(!isNil _Echo2String) then {
 	};
 };
 
-if(!isNil _Echo3String) then {
+if(!isNil "_Echo3String") then {
 	if((alive _Echo3)) then {
 		_Callsign = _Echo3 getVariable ["OKS_Callsign","Echo 3"];
 		[

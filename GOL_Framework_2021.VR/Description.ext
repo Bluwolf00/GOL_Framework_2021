@@ -176,7 +176,7 @@ class ACE_Settings {
 	#undef LOAD_ACE
 };
 
-#include "Scripts\GOL_PlayerSetup\orbat.cfg"
+#include "Scripts\GOL_PlayerSetup\ORBAT\orbat.cfg"
 #include "Scripts\GOL_PlayerSetup\insignia.cfg"
 #include "Modules\Callsigns\defines.hpp"
 #include "Modules\Callsigns\dialogs.hpp"

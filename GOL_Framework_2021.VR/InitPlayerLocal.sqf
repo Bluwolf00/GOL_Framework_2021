@@ -269,12 +269,16 @@ player spawn {
         _lrspeakers = (call TFAR_fnc_activeLrRadio) call TFAR_fnc_getLrSpeakers;
         _swspeakers = (call TFAR_fnc_activeSwRadio) call TFAR_fnc_getSwSpeakers;
 
-        if(_lrspeakers) then {
-            systemChat "WARNING! You have your long-range set to speaker not headphones. Change it!";
+        if(!isNil "_lrspeakers") then {
+            if(_lrspeakers) then {
+                systemChat "WARNING! You have your long-range set to speaker not headphones. Change it!";
+            };
         };
-        if(_swspeakers) then {
-            systemChat "WARNING! You have your short-range set to speaker not headphones. Change it!";
-        };       
+        if(!isNil "_swspeakers") then {
+            if(_swspeakers) then {
+                systemChat "WARNING! You have your short-range set to speaker not headphones. Change it!";
+            };       
+        };
         sleep 10;
     }
 };

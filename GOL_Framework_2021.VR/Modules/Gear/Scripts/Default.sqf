@@ -222,9 +222,7 @@ switch (toLower(_role)) do {
 		[[_rifle_mag,2],[_rifle_mag_tr,2],[_clacker,1],[_demoCharge,3]] call _addToVest;
 		[[_LMG_mag,COUNT_AG_MAGS(_LMG_mag)]] call _addToBackpack;		
 		if(GOL_MedicalAsstGunner isEqualTo 1) then {
-			(_FAKMedium) call _addToBackpack;
-		} else {
-			(_FAKSmall) call _addToBackpack;
+			(_FAKSquad) call _addToBackpack;
 		};
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || GOL_ForceNVG isEqualTo 1) then {

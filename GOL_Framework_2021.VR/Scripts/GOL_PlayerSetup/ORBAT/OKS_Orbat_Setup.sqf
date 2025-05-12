@@ -1,0 +1,11 @@
+[] call OKS_Orbat_Platoon;
+[] call OKS_Orbat_Hammer;
+[] call OKS_Orbat_1stSquad;
+[] call OKS_Orbat_1stSquad_Alpha;
+[] call OKS_Orbat_1stSquad_Bravo;
+[] call OKS_Orbat_2ndSquad;
+[] call OKS_Orbat_2ndSquad_Alpha;
+[] call OKS_Orbat_2ndSquad_Bravo;
+[] call OKS_Orbat_Echo1;
+[] call OKS_Orbat_Echo2;
+[] call OKS_Orbat_Echo3;

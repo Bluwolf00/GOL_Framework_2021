@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=10602;
+		nextID=10666;
 	};
 	class Camera
 	{
-		pos[]={80.331856,50.946095,63.11871};
-		dir[]={0.0036085532,-0.57092315,0.82099557};
-		up[]={0.0025093763,0.82100356,0.57091767};
-		aside[]={0.99999034,0,-0.0043952959};
+		pos[]={106.75941,75.360329,-26.6362};
+		dir[]={0.011134971,-0.66547036,0.74634403};
+		up[]={0.0099273361,0.74642366,0.66539782};
+		aside[]={0.99989182,8.9457899e-09,-0.014917715};
 	};
 };
 binarizationWanted=0;
@@ -20267,7 +20267,6 @@ class Mission
 										rank="LIEUTENANT";
 										name="wpl";
 										description="Platoon Leader@1-Actual ";
-										isPlayer=1;
 										isPlayable=1;
 										receiveRemoteTargets=1;
 										stance="Up";
@@ -20654,8 +20653,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={68.552376,5.0014391,113.93827};
-										angles[]={0,0.019485444,0};
+										position[]={68.552002,5.0014391,113.938};
+										angles[]={0,0.019477876,0};
 									};
 									side="West";
 									flags=7;
@@ -20669,6 +20668,36 @@ class Mission
 									};
 									id=1361;
 									type="B_Soldier_TL_F";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="GW_TeamColor";
+											expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="main";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="GW_LoadoutSelector";
+											expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+											class Value
+											{
+												class data
+												{
+													singleType="STRING";
+													value="";
+												};
+											};
+										};
+										nAttributes=2;
+									};
 								};
 								class Item1
 								{
@@ -22209,6 +22238,7 @@ class Mission
 										rank="SERGEANT";
 										name="wecho1";
 										description=" @Echo 1";
+										isPlayer=1;
 										isPlayable=1;
 									};
 									id=1404;

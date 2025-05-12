@@ -511,7 +511,7 @@ if (_isMan) then {
 				[_unit, _smokegrenadeY, 10] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 4] call _fnc_AddObjectsCargo;
 				[_unit, _bandage, 30] call _fnc_AddObjectsCargo;
-				[_unit, _morph, 10] call _fnc_AddObjectsCargo;
+				[_unit, _morph, 15] call _fnc_AddObjectsCargo;
 				if (true) then {
 					[_unit, _epi, 5] call _fnc_AddObjectsCargo;
 					[_unit, "ACE_salineIV", 10] call _fnc_AddObjectsCargo;
@@ -549,7 +549,7 @@ if (_isMan) then {
 				[_unit, _smokegrenadeY, 8] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 6] call _fnc_AddObjectsCargo;
 				[_unit, _bandage, 20] call _fnc_AddObjectsCargo;
-				[_unit, _morph, 8] call _fnc_AddObjectsCargo;
+				[_unit, _morph, 15] call _fnc_AddObjectsCargo;
 				if (true) then {
 					[_unit, "ACE_salineIV", 10] call _fnc_AddObjectsCargo;
 					[_unit, _epi, 5] call _fnc_AddObjectsCargo;
@@ -585,7 +585,7 @@ if (_isMan) then {
 				[_unit, _smokegrenadeY, 15] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 5] call _fnc_AddObjectsCargo;
 				[_unit, _bandage, 50] call _fnc_AddObjectsCargo;
-				[_unit, _morph, 15] call _fnc_AddObjectsCargo;
+				[_unit, _morph, 25] call _fnc_AddObjectsCargo;
 				if (true) then {
 					[_unit, "ACE_salineIV", 25] call _fnc_AddObjectsCargo;
 					[_unit, _epi, 10] call _fnc_AddObjectsCargo;

@@ -35,11 +35,7 @@
 	if(!isNil "ORBAT_GROUP") then {
 		// This value is set in missionSettings.sqf;
 		if(!isNil "GOL_Composition") then {
-			while {!isNil "ORBAT_GROUP"} do
-			{
-				[GOL_Composition] execVM "Scripts\GOL_PlayerSetup\OKS_DynamicOrbat.sqf";
-				sleep 10;
-			} 
+			[] execVM "Scripts\GOL_PlayerSetup\ORBAT\Init.sqf";
 		} else {
 			if(isServer) then {
 				systemChat "GOL_Composition variable is undefined. If you want to use the orbat, make sure to assign it in missionSettings.sqf."
