@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=10666;
+		nextID=10730;
 	};
 	class Camera
 	{
-		pos[]={106.75941,75.360329,-26.6362};
-		dir[]={0.011134971,-0.66547036,0.74634403};
-		up[]={0.0099273361,0.74642366,0.66539782};
-		aside[]={0.99989182,8.9457899e-09,-0.014917715};
+		pos[]={90.778893,61.749416,-14.700693};
+		dir[]={0.016730538,-0.57005268,0.82144648};
+		up[]={0.011608106,0.82160366,0.56994164};
+		aside[]={0.99980098,1.2660166e-08,-0.020363081};
 	};
 };
 binarizationWanted=0;
@@ -18546,7 +18546,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=6;
+		items=5;
 		class Item0
 		{
 			dataType="Layer";
@@ -19660,7 +19660,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={79.329224,5,168.31641};
+						position[]={109.89986,5,182.7533};
 					};
 					title="ORBAT GROUP";
 					description="This module should be placed near our staging area. Don't place it right on top as the icon is fairly big. Offset it north of it by 50m - 100m";
@@ -19671,7 +19671,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={79.114998,5,168.358};
+						position[]={109.68564,5,182.79489};
 					};
 					name="ORBAT_GROUP";
 					id=3105;
@@ -20267,6 +20267,7 @@ class Mission
 										rank="LIEUTENANT";
 										name="wpl";
 										description="Platoon Leader@1-Actual ";
+										isPlayer=1;
 										isPlayable=1;
 										receiveRemoteTargets=1;
 										stance="Up";
@@ -22238,7 +22239,6 @@ class Mission
 										rank="SERGEANT";
 										name="wecho1";
 										description=" @Echo 1";
-										isPlayer=1;
 										isPlayable=1;
 									};
 									id=1404;
@@ -30813,13 +30813,6 @@ class Mission
 			};
 			id=2860;
 			atlOffset=-0.0024414063;
-		};
-		class Item5
-		{
-			dataType="Layer";
-			name="Team Map Intel";
-			id=3043;
-			atlOffset=-5;
 		};
 	};
 	class Connections
