@@ -49,6 +49,7 @@ if (true) then {
 	_Android = "ItemAndroid";
 	_microDAGR = "ItemMicroDAGR";
 	_HelmetCam = "ItemcTabHCam";
+	_UAVTerminal = "B_UavTerminal";
 
 	if (_isPlayer) then {
 		_gps = "";

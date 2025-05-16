@@ -449,19 +449,19 @@ switch (toLower(_role)) do {
 		};
 	};
 
-	case "uav": {
+	case "drone": {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
-		[_rifle, _rifle_mag, ""] call _addPrimary;
+		[_rifleC, _rifleC_mag, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
 //		[[_mortarRangeCard,1]] call _addToUniform;
 		[[_gps,1],[_pistol_mag,2],[_grenade,2]] call _addToUniform;
-		[[_rifle_mag,4],[_smokegrenadeY,6],[_smokegrenadeB,6],[_smokegrenadeB,2],[_smokegrenadeP,2]] call _addToVest;
-		[[_smokegrenadeB,5],[_rifle_mag_tr,3]] call _addToBackpack;
+		[[_rifleC_mag_tr,3],[_rifleC_mag,3],[_smokegrenadeY,3],[_smokegrenadeB,3]] call _addToVest;
+		[["GOL_Packed_Drone_AT",5],["GOL_Packed_Drone_AP",5],["GOL_Packed_Drone_Recon",1]] call _addToBackpack;
 		if (call EFUNC(Common,isNight)) then {
 			[[_chemG,5],[_chemR,5],[_handFlareG,2],[_IRStrobe,3]] call _addToBackpack;
 		};
-		[_map, "", "", _compass, _watch, _nvg] call _addLinkedItems;
+		[_map, _UAVTerminal, "", _compass, _watch, _nvg] call _addLinkedItems;
 	};
 
 	case "jetp": {

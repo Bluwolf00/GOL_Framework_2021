@@ -63,7 +63,7 @@ private [
 	"_HAT","_HAT_mag","_HAT_mag_HE",
 	"_AA","_AA_Mag",
 	"_pistol","_pistol_mag","_pistol_mag_tr",
-	"_useFactionRadio","_roleUseRadio","_useMineDetector","_mortarRangeCard","_ATrag","_Kestrel","_wirecutter"
+	"_useFactionRadio","_roleUseRadio","_useMineDetector","_mortarRangeCard","_ATrag","_Kestrel","_wirecutter","_UAVTerminal"
 ];
 
 params [
@@ -96,6 +96,7 @@ if (_isMan) then {
 	switch (_role) do {
 		case "pl": { _DisplayName = "Platoon Leader"; _roleArray pushBack _DisplayName};
 		case "pm": { _DisplayName = "Platoon Medic"; _roleArray pushBack _DisplayName};
+		case "drone": { _DisplayName = "Drone Operator"; _roleArray pushBack _DisplayName};
 		case "fac": { _DisplayName = "Forward Air Controller"; _roleArray pushBack _DisplayName};
 		case "sl": { _DisplayName = "Squad Leader"; _roleArray pushBack _DisplayName};
 		case "sm": { _DisplayName = "Squad Medic"; _roleArray pushBack _DisplayName};
@@ -168,6 +169,10 @@ if (_isMan) then {
 	#include "..\Scripts\Common.sqf"
 	#include "..\Scripts\factions.sqf"
 	#include "isNilCheck.hpp"
+
+	if(OKS_FRIENDLY_SIDE == EAST) then {
+		_UAVTerminal = "O_UavTerminal"
+	};
 
 	if (_isCivilian) then {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
@@ -274,6 +279,25 @@ if (_isMan) then {
 		};
 	};
 
+	if (_forceFaction isEqualTo "") then {
+		switch (GETSIDE(_unit)) do {
+			case 0: {
+				_side = toUpper(GVAR(Opfor));
+			};
+			case 1: {
+				_side = toUpper(GVAR(Blufor));
+			};
+			case 2: {
+				_side = toUpper(GVAR(Independent));
+			};
+			case 3: {
+				_side = toUpper(GVAR(Civilian));
+			};
+		};
+	} else {
+		_side = _forceFaction;
+	};	
+
 	#include "..\Scripts\Common.sqf"
 	#include "..\Scripts\factions.sqf"
 	#include "isNilCheck.hpp"
@@ -312,6 +336,8 @@ if (_isMan) then {
 				[_unit, "GOL_Packed_AT", 6] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_Drone_AP", 30] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_Drone_AT", 30] call _fnc_AddObjectsCargo;				
+				[_unit, "GOL_Packed_Drone_Recon", 15] call _fnc_AddObjectsCargo;				
+				[_unit, "GOL_Packed_Drone_Supply", 10] call _fnc_AddObjectsCargo;				
 				[_unit, _MAT_mag_HE, 10] call _fnc_AddObjectsCargo;
 				[_unit, (_LAT select 0), 30] call _fnc_AddObjectsCargo;
 				if (true) then {
@@ -503,6 +529,44 @@ if (_isMan) then {
 					[_unit, "ACRE_PRC117F", 10] call _fnc_AddObjectsCargo;
 				};
 			};
+
+			case "drone_box": {		
+				[_unit, _glHEDP, 10] call _fnc_AddObjectsCargo;
+				[_unit, _glsmokeR, 4] call _fnc_AddObjectsCargo;
+				[_unit, _grenade, 5] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeY, 5] call _fnc_AddObjectsCargo;
+				[_unit, _smokegrenadeB, 2] call _fnc_AddObjectsCargo;
+				[_unit, _bandage, 15] call _fnc_AddObjectsCargo;
+				[_unit, _morph, 5] call _fnc_AddObjectsCargo;
+				if (true) then {
+					[_unit, _epi, 5] call _fnc_AddObjectsCargo;
+					[_unit, "ACE_salineIV", 5] call _fnc_AddObjectsCargo;
+					[_unit, _flashBang, 2] call _fnc_AddObjectsCargo;
+					[_unit, true, [0, 1.5, 0], 0, true] call ace_dragging_fnc_setDraggable;
+					[_unit, true, [0,1,1], 0, true] call ace_dragging_fnc_setCarryable;
+				};
+
+				[_unit, _pistol_mag, 3] call _fnc_AddObjectsCargo;
+				[_unit, _rifle_mag_tr, 5] call _fnc_AddObjectsCargo;
+				[_unit, _rifleC_mag_tr, 5] call _fnc_AddObjectsCargo;
+				[_unit, _rifleGL_mag_tr, 5] call _fnc_AddObjectsCargo;
+				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 0.5)] call _fnc_AddObjectsCargo;
+				[_unit, _MAT_mag, 2] call _fnc_AddObjectsCargo;
+				[_unit, _MAT_mag_HE, 1] call _fnc_AddObjectsCargo;
+				[_unit, (_LAT select 0), 2] call _fnc_AddObjectsCargo;
+				[_unit, _demoCharge, 2] call _fnc_AddObjectsCargo;
+
+				if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
+					[_unit, _glflareW, 4] call _fnc_AddObjectsCargo;
+					[_unit, _glflareR, 4] call _fnc_AddObjectsCargo;
+					[_unit, _handFlareG, 3] call _fnc_AddObjectsCargo;
+					[_unit, _handFlareW, 3] call _fnc_AddObjectsCargo;
+					[_unit, _handFlareR, 3] call _fnc_AddObjectsCargo;
+					[_unit, _chemB, 3] call _fnc_AddObjectsCargo;
+					[_unit, _chemR, 3] call _fnc_AddObjectsCargo;
+					[_unit, _chemG, 3] call _fnc_AddObjectsCargo;						
+				};		
+			};			
 
 			case "tiny_box": {		
 				[_unit, _glHEDP, 16] call _fnc_AddObjectsCargo;

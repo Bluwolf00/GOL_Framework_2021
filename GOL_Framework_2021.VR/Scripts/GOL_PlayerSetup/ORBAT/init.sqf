@@ -17,10 +17,8 @@ OKS_Orbat_Echo1 = compile preprocessFileLineNumbers "Scripts\GOL_PlayerSetup\ORB
 OKS_Orbat_Echo2 = compile preprocessFileLineNumbers "Scripts\GOL_PlayerSetup\ORBAT\Units\OKS_Orbat_Echo2.sqf";
 OKS_Orbat_Echo3 = compile preprocessFileLineNumbers "Scripts\GOL_PlayerSetup\ORBAT\Units\OKS_Orbat_Echo3.sqf";
 
-if(isServer) then {
-	while {!isNil "ORBAT_GROUP"} do
-	{
-		[GOL_Composition] spawn OKS_Orbat_Setup;
-		sleep 5;
-	};
+while {!isNil "ORBAT_GROUP"} do
+{
+	[GOL_Composition] spawn OKS_Orbat_Setup;
+	sleep 10;
 };

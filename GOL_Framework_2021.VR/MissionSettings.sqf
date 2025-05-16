@@ -15,7 +15,11 @@ GOL_PACKED_AT = "RHS_TOW_TriPod_USMC_D";
 GOL_PACKED_GMG = "RHS_MK19_TriPod_USMC_WD";
 GOL_PACKED_DRONE_AP = "B_UAFPV_RKG_AP"; // "B_UAFPV_AP" (IED) || "B_UAFPV_RKG_AP" (HE) || "B_Crocus_AP" (TGV-7)
 GOL_PACKED_DRONE_AT = "B_UAFPV_AT"; // "B_UAFPV_AT" (PG-7VL) || "B_Crocus_AT" (PG-7VL)
+GOL_PACKED_DRONE_Recon = "B_UAV_01_F";
+GOL_PACKED_DRONE_Supply = "B_UAV_06_F";
+
 GOL_PACKED_STATIC_WEAPONS = [GOL_PACKED_HMG,GOL_PACKED_MORTAR,GOL_PACKED_AT,GOL_PACKED_GMG];
+OKS_DroneClassnames = [GOL_PACKED_DRONE_Recon,GOL_PACKED_DRONE_Supply,GOL_PACKED_DRONE_AP,GOL_PACKED_DRONE_AT];
 GOL_ForceNVG = 0; // Forces addition of NVGs
 //GOL_ForceNVGClassname = "G_Armband_NVG_red_alt_F"; // Forces the classname to be used as NVG.
 
@@ -29,8 +33,8 @@ GOL_AIForceNVG = 0; // Forces addition of NVGs
 
 /* AI Static Settings */
 // 0 = 0%, 1 = 100%
-GOL_Static_Enable_Chance = 0.3; // Chance per loop to enable a Static AI to move.
-GOL_Static_Enable_Refresh = 90; // Delay per loop to enable movement.
+GOL_Static_Enable_Chance = 0.4; // Chance per loop to enable a Static AI to move.
+GOL_Static_Enable_Refresh = 60; // Delay per loop to enable movement.
 OKS_Suppression = 1; // Adds suppression sensitivty to AI.
 OKS_Suppressed_Threshold = 0.75; // Minimum value for Suppression.
 OKS_Suppressed_MinimumTime = 6; // Minimum time for Suppressed state.
