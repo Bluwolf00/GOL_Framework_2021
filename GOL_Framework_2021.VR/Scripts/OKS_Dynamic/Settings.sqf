@@ -363,6 +363,7 @@ _CivilianUnits = ["C_man_polo_1_F","C_man_polo_2_F","C_man_polo_3_F","C_man_polo
 /* Settings for Dynamic Civilian Module */
 _CivilianTriggerSize = 200;
 _CivilianCount = 8;
+_StaticCivilianCount = 8;
 _HouseWaypoints = 15;
 _RandomWaypoints = 5;
 _ShouldBeAgent = false;
@@ -380,7 +381,7 @@ _Ethnicity = "middleeast";
 */
 
 // DO NOT EDIT ANYTHING BELOW \\
-_DynamicCivilianArray = [_CivilianTriggerSize,_CivilianCount,_HouseWaypoints,_RandomWaypoints,_ShouldBeAgent,_ShouldPanic,_Ethnicity];
+_DynamicCivilianArray = [_CivilianTriggerSize,_CivilianCount,_StaticCivilianCount,_HouseWaypoints,_RandomWaypoints,_ShouldBeAgent,_ShouldPanic,_Ethnicity];
 _Civilian = [_CivilianUnits,_Officer,_DynamicCivilianArray];
 _Configuration = [_CompoundSize,_EnableEnemyMarkers,_EnableZoneMarker,_EnableZoneTypeMarker,_RoadblockVehicleType,_EnableObjectiveTasks,_MarkerColor,_PatrolSize,_TaskNotification];
 [_UnitArray,_SideMarker,_SideColor,_Vehicles,_Civilian,_ObjectiveTypes,_Configuration]
