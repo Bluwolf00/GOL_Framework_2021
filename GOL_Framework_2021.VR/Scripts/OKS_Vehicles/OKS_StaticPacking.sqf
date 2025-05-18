@@ -253,7 +253,7 @@ if (hasInterface) then {
 					_unit connectTerminalToUAV _object;					
 					_object setPosATL _pos;
 					_object setDir _dir;
-					[_object, "drone_box"] call GW_Gear_Fnc_Handler;
+					[_object, "drone_box", toLower str (side _caller)] call GW_Gear_Fnc_Handler;
 				}
 			},{},[_target, _caller, _actionId,_item,_type]] call CBA_fnc_progressBar;	
 		}

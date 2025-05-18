@@ -68,11 +68,12 @@ Private _CreateStaticCivilian = {
 				_Animations = ["ApanPercMstpSnonWnonDnon_G01","ApanPercMstpSnonWnonDnon_G02","ApanPercMstpSnonWnonDnon_G03"];
 			};
 			default { 
-
+				_Animations = ["ApanPknlMstpSnonWnonDnon_G01","ApanPknlMstpSnonWnonDnon_G02","ApanPknlMstpSnonWnonDnon_G03"];
+				[_Unit,"middle"] remoteExec ["setUnitPos",0];
 			};
 		};
 
-		waitUntil{sleep 10; behaviour _unit == "COMBAT"}
+		waitUntil{sleep 10; behaviour _unit == "COMBAT"};
 		_Animation = selectRandom _Animations;
 		_Unit switchMove _Animation;
 		_Unit setVariable ["Loop_Animation", _Animation, true];

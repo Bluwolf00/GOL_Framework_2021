@@ -69,7 +69,7 @@ private [
 params [
 	["_unit", objNull, [objNull]],
 	["_role", "", ["",[]]],
-	["_forceFaction", "", ["",[]]]
+	["_forceFaction", nil, ["",[]]]
 ];
 
 if !(_unit isEqualType objNull) exitWith {false};
@@ -147,7 +147,7 @@ if (_isMan) then {
 		};
 	};
 
-	if (_forceFaction isEqualTo "") then {
+	if (isNil "_forceFaction") then {
 		switch (GETSIDE(_unit)) do {
 			case 0: {
 				_side = toUpper(GVAR(Opfor));
@@ -279,24 +279,22 @@ if (_isMan) then {
 		};
 	};
 
-	if (_forceFaction isEqualTo "") then {
-		switch (GETSIDE(_unit)) do {
-			case 0: {
-				_side = toUpper(GVAR(Opfor));
-			};
-			case 1: {
+	if (!isNil "_forceFaction") then {
+		switch (toLower _forceFaction) do {
+			case "west": {
 				_side = toUpper(GVAR(Blufor));
 			};
-			case 2: {
+			case "east": {
+				_side = toUpper(GVAR(Opfor));
+			};
+			case "independent": {
 				_side = toUpper(GVAR(Independent));
 			};
-			case 3: {
+			case "civilian": {
 				_side = toUpper(GVAR(Civilian));
 			};
 		};
-	} else {
-		_side = _forceFaction;
-	};	
+	};
 
 	#include "..\Scripts\Common.sqf"
 	#include "..\Scripts\factions.sqf"
@@ -654,15 +652,6 @@ if (_isMan) then {
 					[_unit, "ACE_salineIV", 25] call _fnc_AddObjectsCargo;
 					[_unit, _epi, 10] call _fnc_AddObjectsCargo;
 					[_unit, _flashBang, 10	] call _fnc_AddObjectsCargo;
-					if ((EGVAR(Settings_ACE,medical_level) isEqualTo 2) || (ace_medical_level isEqualTo 2)) then {
-						[_unit, "ACE_elasticBandage", 100] call _fnc_AddObjectsCargo;
-						[_unit, "ACE_tourniquet", 50] call _fnc_AddObjectsCargo;
-						[_unit, "ACE_quikclot", 50] call _fnc_AddObjectsCargo;
-						[_unit, "ACE_atropine", 50] call _fnc_AddObjectsCargo;
-						[_unit, "ACE_salineIV", 50] call _fnc_AddObjectsCargo;
-						[_unit, "ACE_personalAidKit", 50] call _fnc_AddObjectsCargo;
-						[_unit, "ACE_surgicalKit", 50] call _fnc_AddObjectsCargo;
-					};
 				};
 
 				[_unit, _pistol_mag, 12] call _fnc_AddObjectsCargo;
