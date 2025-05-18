@@ -17,7 +17,7 @@ ammg		- Asst. Medium Machine Gunner
 marksman	- Marksman
 */
 
-if(!isNil "GOL_ForceNVGClassname") then {
+if(!isNil "GOL_ForceNVGClassname" && !(_role in ["p","jetp"])) then {
 	_nvg = GOL_ForceNVGClassname;
 };
 
