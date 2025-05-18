@@ -635,6 +635,9 @@ if (_isMan) then {
 				[_unit, "GOL_Packed_60mm_HEAB", 5] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_60mm_Smoke", 5] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_60mm_Flare", 5] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_Drone_AT", 4] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_Drone_AP", 4] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_Drone_Recon", 1] call _fnc_AddObjectsCargo;				
 
 				if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 					[_unit, _glflareW, 16] call _fnc_AddObjectsCargo;
@@ -676,7 +679,9 @@ if (_isMan) then {
 				[_unit, "GOL_Packed_60mm_HEAB", 8] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_60mm_Smoke", 5] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_60mm_Flare", 5] call _fnc_AddObjectsCargo;				
-
+				[_unit, "GOL_Packed_Drone_AT", 8] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_Drone_AP", 8] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_Drone_Recon", 2] call _fnc_AddObjectsCargo;
 				if (_LAT_ReUsable) then {
 					[_unit, _LAT_mag, 6] call _fnc_AddObjectsCargo;
 				} else {
