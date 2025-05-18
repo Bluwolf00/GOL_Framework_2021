@@ -314,6 +314,10 @@ if (_isMan) then {
 				[_unit, _Earplugs, 20] call _fnc_AddObjectsCargo;
 				[_unit, "Toolkit", 10] call _fnc_AddObjectsCargo;						
 				[_unit, "UK3CB_BAF_M6", 5] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_60mm_HE", 15] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_60mm_HEAB", 15] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_60mm_Smoke", 15] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_60mm_Flare", 15] call _fnc_AddObjectsCargo;
 				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_Shells", 30] call _fnc_AddObjectsCargo;
 				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_AB_Shells", 30] call _fnc_AddObjectsCargo;
 				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_Flare_White", 20] call _fnc_AddObjectsCargo;
@@ -627,6 +631,10 @@ if (_isMan) then {
 				[_unit, _HAT_mag, 3] call _fnc_AddObjectsCargo;
 				[_unit, _AA_mag, 4] call _fnc_AddObjectsCargo;
 				[_unit, _demoCharge, 4] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_60mm_HE", 5] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_60mm_HEAB", 5] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_60mm_Smoke", 5] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_60mm_Flare", 5] call _fnc_AddObjectsCargo;
 
 				if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 					[_unit, _glflareW, 16] call _fnc_AddObjectsCargo;
@@ -663,6 +671,11 @@ if (_isMan) then {
 				[_unit, _rifleGL_mag_tr, 9] call _fnc_AddObjectsCargo;
 				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 3)] call _fnc_AddObjectsCargo;
 				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 1)] call _fnc_AddObjectsCargo;
+
+				[_unit, "GOL_Packed_60mm_HE", 8] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_60mm_HEAB", 8] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_60mm_Smoke", 5] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_60mm_Flare", 5] call _fnc_AddObjectsCargo;				
 
 				if (_LAT_ReUsable) then {
 					[_unit, _LAT_mag, 6] call _fnc_AddObjectsCargo;

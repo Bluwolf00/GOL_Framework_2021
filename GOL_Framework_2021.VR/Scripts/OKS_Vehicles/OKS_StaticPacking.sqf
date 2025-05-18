@@ -22,6 +22,10 @@ if (hasInterface) then {
 	_conditionDroneAP = {("GOL_Packed_Drone_AP" in (itemsWithMagazines player))}; //<only works MP
 	_conditionDroneRecon = {("GOL_Packed_Drone_Recon" in (itemsWithMagazines player))}; //<only works MP
 	_conditionDroneSupply = {("GOL_Packed_Drone_Supply" in (itemsWithMagazines player))}; //<only works MP
+	_conditionMortarHE = {("GOL_Packed_60mm_HE" in (itemsWithMagazines player))}; //<only works MP
+	_conditionMortarHEAB = {("GOL_Packed_60mm_HEAB" in (itemsWithMagazines player))}; //<only works MP
+	_conditionMortarSmoke = {("GOL_Packed_60mm_Smoke" in (itemsWithMagazines player))}; //<only works MP
+	_conditionMortarFlare = {("GOL_Packed_60mm_Flare" in (itemsWithMagazines player))}; //<only works MP
 
 	_codeDeployHMG = {	
 		params ["_target", "_caller", "_actionId"];	
@@ -259,6 +263,94 @@ if (hasInterface) then {
 		}
 	};	
 
+	_UnpackMortarHE = {
+		private _actionName = "Unpacking HE Rounds...";	
+		if (primaryWeapon player != "") then {
+			player playMoveNow "AmovPknlMstpSlowWrflDnon";
+		};
+		[_actionName, 3, {true}, {
+			(_this select 0) params ["_target", "_player", "_actionId"];
+			_item = "UK3CB_BAF_1Rnd_60mm_Mo_Shells";
+			_Position = _player getPos [1.4,(getDir _player)];
+			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
+			for "_i" from 0 to 4 do {
+				if (_player canAdd _item) then {
+					_player addMagazineGlobal _item;
+				} else {
+					_GroundWeaponHolder addMagazineCargoGlobal [_item,1];
+					systemChat "Your inventory is full. Unpacked on ground."
+				};
+			};
+		},
+		{
+		},_this] call CBA_fnc_progressBar;
+	};
+	_UnpackMortarHEAB = {
+		private _actionName = "Unpacking HE Airburst Rounds...";	
+		if (primaryWeapon player != "") then {
+			player playMoveNow "AmovPknlMstpSlowWrflDnon";
+		};
+		[_actionName, 3, {true}, {
+			(_this select 0) params ["_target", "_player", "_actionId"];
+			_item = "UK3CB_BAF_1Rnd_60mm_Mo_AB_Shells";
+			_Position = _player getPos [1.4,(getDir _player)];
+			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
+			for "_i" from 0 to 4 do {
+				if (_player canAdd _item) then {
+					_player addMagazineGlobal _item;
+				} else {
+					_GroundWeaponHolder addMagazineCargoGlobal [_item,1];
+					systemChat "Your inventory is full. Unpacked on ground."
+				};
+			};
+		},
+		{
+		},_this] call CBA_fnc_progressBar;
+	};
+	_UnpackMortarSmoke = {
+		private _actionName = "Unpacking Smoke Rounds...";	
+		if (primaryWeapon player != "") then {
+			player playMoveNow "AmovPknlMstpSlowWrflDnon";
+		};
+		[_actionName, 3, {true}, {
+			(_this select 0) params ["_target", "_player", "_actionId"];
+			_item = "UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White";
+			_Position = _player getPos [1.4,(getDir _player)];
+			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
+			for "_i" from 0 to 4 do {
+				if (_player canAdd _item) then {
+					_player addMagazineGlobal _item;
+				} else {
+					_GroundWeaponHolder addMagazineCargoGlobal [_item,1];
+					systemChat "Your inventory is full. Unpacked on ground."
+				};
+			};
+		},
+		{
+		},_this] call CBA_fnc_progressBar;
+	};	
+	_UnpackMortarFlare = {
+		private _actionName = "Unpacking Flare Rounds...";	
+		if (primaryWeapon player != "") then {
+			player playMoveNow "AmovPknlMstpSlowWrflDnon";
+		};
+		[_actionName, 3, {true}, {
+			(_this select 0) params ["_target", "_player", "_actionId"];
+			_item = "UK3CB_BAF_1Rnd_60mm_Mo_Flare_White";
+			_Position = _player getPos [1.4,(getDir _player)];
+			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
+			for "_i" from 0 to 4 do {
+				if (_player canAdd _item) then {
+					_player addMagazineGlobal _item;
+				} else {
+					_GroundWeaponHolder addMagazineCargoGlobal [_item,1];
+					systemChat "Your inventory is full. Unpacked on ground."
+				};
+			};
+		},
+		{
+		},_this] call CBA_fnc_progressBar;
+	};	
 	_PackCode = {
 		private _actionName = "Packing...";	
 		if (primaryWeapon player != "") then {
@@ -332,6 +424,18 @@ if (hasInterface) then {
 
     _actionDroneSupplyDeploy = ["Deploy Drone", "Deploy Drone (Supply)","\OKS_GOL_Misc\Data\UI\GOL_Drone_Packed.paa", _codeDeployDrone_Supply, _conditionDroneSupply] call ace_interact_menu_fnc_createAction;
 	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _actionDroneSupplyDeploy] call ace_interact_menu_fnc_addActionToClass;
+
+    _actionUnpackHE = ["Unpack 60mm HE", "Unpack 60mm HE","\OKS_GOL_Misc\Data\UI\60mm_HE.paa", _UnpackMortarHE, _conditionMortarHE] call ace_interact_menu_fnc_createAction;
+	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _actionUnpackHE] call ace_interact_menu_fnc_addActionToClass;
+
+    _actionUnpackHEAB = ["Unpack 60mm HEAB Airburst", "Unpack 60mm HEAB Airburst","\OKS_GOL_Misc\Data\UI\60mm_HEABAB.paa", _UnpackMortarHEAB, _conditionMortarHEAB] call ace_interact_menu_fnc_createAction;
+	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _actionUnpackHEAB] call ace_interact_menu_fnc_addActionToClass;
+
+    _actionUnpackSmoke = ["Unpack 60mm Smoke", "Unpack 60mm Smoke","\OKS_GOL_Misc\Data\UI\60mm_Smoke.paa", _UnpackMortarSmoke, _conditionMortarSmoke] call ace_interact_menu_fnc_createAction;
+	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _actionUnpackSmoke] call ace_interact_menu_fnc_addActionToClass;
+
+    _actionUnpackFlare = ["Unpack 60mm Flare", "Unpack 60mm Flare","\OKS_GOL_Misc\Data\UI\60mm_Flare.paa", _UnpackMortarFlare, _conditionMortarFlare] call ace_interact_menu_fnc_createAction;
+	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _actionUnpackFlare] call ace_interact_menu_fnc_addActionToClass;
 
 	player addEventHandler ["Put", {
 		params ["_unit", "_container", "_item"];
