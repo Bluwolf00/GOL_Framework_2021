@@ -274,7 +274,7 @@ if (hasInterface) then {
 			_Position = _player getPos [1.4,(getDir _player)];
 			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
 			for "_i" from 1 to 4 do {
-				if (_player canAdd _item) then {
+				if (_player canAdd [_item, 1, true]) then {
 					_player addMagazineGlobal _item;
 				} else {
 					_GroundWeaponHolder addMagazineCargoGlobal [_item,1];
@@ -296,7 +296,7 @@ if (hasInterface) then {
 			_Position = _player getPos [1.4,(getDir _player)];
 			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
 			for "_i" from 1 to 4 do {
-				if (_player canAdd _item) then {
+				if (_player canAdd [_item, 1, true]) then {
 					_player addMagazineGlobal _item;
 				} else {
 					_GroundWeaponHolder addMagazineCargoGlobal [_item,1];
@@ -318,7 +318,7 @@ if (hasInterface) then {
 			_Position = _player getPos [1.4,(getDir _player)];
 			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
 			for "_i" from 1 to 4 do {
-				if (_player canAdd _item) then {
+				if (_player canAdd [_item, 1, true]) then {
 					_player addMagazineGlobal _item;
 				} else {
 					_GroundWeaponHolder addMagazineCargoGlobal [_item,1];
@@ -340,7 +340,7 @@ if (hasInterface) then {
 			_Position = _player getPos [1.4,(getDir _player)];
 			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
 			for "_i" from 1 to 4 do {
-				if (_player canAdd _item) then {
+				if (_player canAdd [_item, 1, true]) then {
 					_player addMagazineGlobal _item;
 				} else {
 					_GroundWeaponHolder addMagazineCargoGlobal [_item,1];
@@ -360,7 +360,7 @@ if (hasInterface) then {
 			(_this select 0) params ["_target", "_player", "_actionId"];
 			private _item = _target getVariable ["GOL_ItemPacked",""];
 			if(isNil "_item") exitWith { systemChat "Unable to find ItemPacked classname"};	
-			if (_player canAdd _item) then {
+			if (_player canAdd [_item, 1, true]) then {
 				_player additem _item;
 				deleteVehicle _target;
 			} else {
