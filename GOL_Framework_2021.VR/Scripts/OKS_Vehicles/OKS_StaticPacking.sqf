@@ -273,7 +273,7 @@ if (hasInterface) then {
 			_item = "UK3CB_BAF_1Rnd_60mm_Mo_Shells";
 			_Position = _player getPos [1.4,(getDir _player)];
 			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
-			for "_i" from 0 to 4 do {
+			for "_i" from 1 to 4 do {
 				if (_player canAdd _item) then {
 					_player addMagazineGlobal _item;
 				} else {
@@ -295,7 +295,7 @@ if (hasInterface) then {
 			_item = "UK3CB_BAF_1Rnd_60mm_Mo_AB_Shells";
 			_Position = _player getPos [1.4,(getDir _player)];
 			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
-			for "_i" from 0 to 4 do {
+			for "_i" from 1 to 4 do {
 				if (_player canAdd _item) then {
 					_player addMagazineGlobal _item;
 				} else {
@@ -317,7 +317,7 @@ if (hasInterface) then {
 			_item = "UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White";
 			_Position = _player getPos [1.4,(getDir _player)];
 			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
-			for "_i" from 0 to 4 do {
+			for "_i" from 1 to 4 do {
 				if (_player canAdd _item) then {
 					_player addMagazineGlobal _item;
 				} else {
@@ -339,7 +339,7 @@ if (hasInterface) then {
 			_item = "UK3CB_BAF_1Rnd_60mm_Mo_Flare_White";
 			_Position = _player getPos [1.4,(getDir _player)];
 			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
-			for "_i" from 0 to 4 do {
+			for "_i" from 1 to 4 do {
 				if (_player canAdd _item) then {
 					_player addMagazineGlobal _item;
 				} else {
@@ -428,7 +428,7 @@ if (hasInterface) then {
     _actionUnpackHE = ["Unpack 60mm HE", "Unpack 60mm HE","\OKS_GOL_Misc\Data\UI\60mm_HE.paa", _UnpackMortarHE, _conditionMortarHE] call ace_interact_menu_fnc_createAction;
 	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _actionUnpackHE] call ace_interact_menu_fnc_addActionToClass;
 
-    _actionUnpackHEAB = ["Unpack 60mm HEAB Airburst", "Unpack 60mm HEAB Airburst","\OKS_GOL_Misc\Data\UI\60mm_HEABAB.paa", _UnpackMortarHEAB, _conditionMortarHEAB] call ace_interact_menu_fnc_createAction;
+    _actionUnpackHEAB = ["Unpack 60mm HEAB Airburst", "Unpack 60mm HEAB Airburst","\OKS_GOL_Misc\Data\UI\60mm_HEAB.paa", _UnpackMortarHEAB, _conditionMortarHEAB] call ace_interact_menu_fnc_createAction;
 	[typeOf player, 1, ["ACE_SelfActions","ACE_Equipment"], _actionUnpackHEAB] call ace_interact_menu_fnc_addActionToClass;
 
     _actionUnpackSmoke = ["Unpack 60mm Smoke", "Unpack 60mm Smoke","\OKS_GOL_Misc\Data\UI\60mm_Smoke.paa", _UnpackMortarSmoke, _conditionMortarSmoke] call ace_interact_menu_fnc_createAction;
