@@ -12,6 +12,10 @@ Params
 	["_shouldDisableNVG", false, [true]]
 ];
 
+_Vehicle enableSimulationGlobal false;
+_Vehicle hideObjectGlobal true;
+_Vehicle allowDamage false;
+
 _Vehicle setFuelConsumptionCoef 1.5;
 
 OKS_isWhiteList = {
@@ -128,3 +132,6 @@ if(isNull _Vehicle) then {
 };
 
 
+_Vehicle enableSimulationGlobal true;
+_Vehicle hideObjectGlobal false;
+_Vehicle allowDamage true;
