@@ -74,6 +74,10 @@
 	sleep 1;
 	{[_x] remoteExec ["GW_SetDifficulty_fnc_setSkill",0]} foreach units _Group;
 	if(isNil "_Group") exitWith {false};
+	if(isNil "_TargetWaypoint") exitWith { 			
+		waitUntil {sleep 1; !(isNil "lambs_wp_fnc_taskHunt")};
+		[_Group, _Range, 30, [], [], true,false,false] remoteExec ["lambs_wp_fnc_taskHunt",0];
+	};
 	
 	/// Give Attack SAD Waypoint
 	if(_StepWaypoint && typeName _TargetWaypoint == "OBJECT") then {

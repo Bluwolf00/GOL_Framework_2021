@@ -51,7 +51,7 @@ if (true) then {
 	_HelmetCam = "ItemcTabHCam";
 	_UAVTerminal = "B_UavTerminal";
 	_gps = "";
-	if(_role in ["pm","ab"]) then {
+	if(_role in ["pm","ab","mortar","drone"]) then {
 		_gps = _microDAGR;
 	};
 	if (_role in ["pl","fac","crew","sl","ftl"]) then {

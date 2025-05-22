@@ -567,7 +567,10 @@ if (_isMan) then {
 					[_unit, _handFlareR, 3] call _fnc_AddObjectsCargo;
 					[_unit, _chemB, 3] call _fnc_AddObjectsCargo;
 					[_unit, _chemR, 3] call _fnc_AddObjectsCargo;
-					[_unit, _chemG, 3] call _fnc_AddObjectsCargo;						
+					[_unit, _chemG, 3] call _fnc_AddObjectsCargo;	
+					[_unit, "ACE_Chemlight_HiGreen", 3] call _fnc_AddObjectsCargo;
+					[_unit, "ACE_Chemlight_HiBlue", 3] call _fnc_AddObjectsCargo;
+					[_unit, "B_IR_Grenade", 3] call _fnc_AddObjectsCargo;											
 				};		
 			};			
 
@@ -605,7 +608,10 @@ if (_isMan) then {
 					[_unit, _handFlareR, 8] call _fnc_AddObjectsCargo;
 					[_unit, _chemB, 6] call _fnc_AddObjectsCargo;
 					[_unit, _chemR, 6] call _fnc_AddObjectsCargo;
-					[_unit, _chemG, 3] call _fnc_AddObjectsCargo;						
+					[_unit, _chemG, 3] call _fnc_AddObjectsCargo;		
+					[_unit, "ACE_Chemlight_HiGreen", 6] call _fnc_AddObjectsCargo;
+					[_unit, "ACE_Chemlight_HiBlue", 6] call _fnc_AddObjectsCargo;
+					[_unit, "B_IR_Grenade", 8] call _fnc_AddObjectsCargo;				
 				};		
 			};
 
@@ -648,7 +654,10 @@ if (_isMan) then {
 					[_unit, _handFlareR, 8] call _fnc_AddObjectsCargo;
 					[_unit, _chemB, 6] call _fnc_AddObjectsCargo;
 					[_unit, _chemR, 6] call _fnc_AddObjectsCargo;
-					[_unit, _chemG, 3] call _fnc_AddObjectsCargo;						
+					[_unit, _chemG, 3] call _fnc_AddObjectsCargo;	
+					[_unit, "ACE_Chemlight_HiGreen", 6] call _fnc_AddObjectsCargo;
+					[_unit, "ACE_Chemlight_HiBlue", 6] call _fnc_AddObjectsCargo;
+					[_unit, "B_IR_Grenade", 8] call _fnc_AddObjectsCargo;												
 				};				
 			};
 
@@ -703,7 +712,10 @@ if (_isMan) then {
 					[_unit, _handFlareR, 10] call _fnc_AddObjectsCargo;
 					[_unit, _chemB, 12] call _fnc_AddObjectsCargo;
 					[_unit, _chemR, 12] call _fnc_AddObjectsCargo;
-					[_unit, _chemG, 6] call _fnc_AddObjectsCargo;					
+					[_unit, _chemG, 6] call _fnc_AddObjectsCargo;
+					[_unit, "ACE_Chemlight_HiGreen", 12] call _fnc_AddObjectsCargo;
+					[_unit, "ACE_Chemlight_HiBlue", 12] call _fnc_AddObjectsCargo;
+					[_unit, "B_IR_Grenade", 12] call _fnc_AddObjectsCargo;										
 				};
 			};
 
