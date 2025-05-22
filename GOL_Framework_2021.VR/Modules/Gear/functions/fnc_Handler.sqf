@@ -97,6 +97,7 @@ if (_isMan) then {
 		case "pl": { _DisplayName = "Platoon Leader"; _roleArray pushBack _DisplayName};
 		case "pm": { _DisplayName = "Platoon Medic"; _roleArray pushBack _DisplayName};
 		case "drone": { _DisplayName = "Drone Operator"; _roleArray pushBack _DisplayName};
+		case "mortar": { _DisplayName = "Mortar Operator"; _roleArray pushBack _DisplayName};
 		case "fac": { _DisplayName = "Forward Air Controller"; _roleArray pushBack _DisplayName};
 		case "sl": { _DisplayName = "Squad Leader"; _roleArray pushBack _DisplayName};
 		case "sm": { _DisplayName = "Squad Medic"; _roleArray pushBack _DisplayName};

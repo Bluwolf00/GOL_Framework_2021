@@ -133,6 +133,8 @@ if (hasInterface) then {
 
 				if (_HasItem && !(_type isEqualTo "")) then {
 					private _object = createVehicle [_type, [0,0,0], [], 0, "NONE"];
+					_object disableTIEquipment true;
+					_object setVariable ["A3TI_Disable", true,true];
 					_object setVariable ["GOL_ItemPacked",_item];
 					_unit removeItem _item;
 					//_DroneCrew = createVehicleCrew _object;
@@ -162,6 +164,8 @@ if (hasInterface) then {
 
 				if (_HasItem && !(_type isEqualTo "")) then {
 					private _object = createVehicle [_type, [0,0,0], [], 0, "NONE"];
+					_object disableTIEquipment true;
+					_object setVariable ["A3TI_Disable", true,true];
 					_object setVariable ["GOL_ItemPacked",_item];
 					_unit removeItem _item;
 					_DroneCrew = createVehicleCrew _object;
@@ -191,6 +195,8 @@ if (hasInterface) then {
 
 				if (_HasItem && !(_type isEqualTo "")) then {
 					private _object = createVehicle [_type, [0,0,0], [], 0, "NONE"];
+					_object disableTIEquipment true;
+					_object setVariable ["A3TI_Disable", true,true];
 					_object setVariable ["GOL_ItemPacked",_item];
 					_unit removeItem _item;
 					_DroneCrew = createVehicleCrew _object;
@@ -221,6 +227,8 @@ if (hasInterface) then {
 
 				if (_HasItem && !(_type isEqualTo "")) then {
 					private _object = createVehicle [_type, [0,0,0], [], 0, "NONE"];
+					_object disableTIEquipment true;
+					_object setVariable ["A3TI_Disable", true,true];
 					_object setVariable ["GOL_ItemPacked",_item];
 					_unit removeItem _item;
 					_DroneCrew = createVehicleCrew _object;

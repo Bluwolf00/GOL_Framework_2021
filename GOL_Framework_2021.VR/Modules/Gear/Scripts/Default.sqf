@@ -480,12 +480,13 @@ switch (toLower(_role)) do {
 		[["UK3CB_BAF_M6","","","",""], "UK3CB_BAF_1Rnd_60mm_Mo_Shells", ""] call _addLaunchers;
 		_IFAK call _addToUniform;
 		[[_gps,1],["acex_intelitems_notepad",1],[_mapTools,1]] call _addToUniform;
-		[[_flashBang,3],[_pistol_mag,2],[_grenade,2]] call _addToUniform;
+		[[_smokegrenadeB,5],[_rifleC_mag_tr,3],[_flashBang,3],[_pistol_mag,2],[_grenade,2]] call _addToUniform;
 		[[_rifleC_mag,4],[_smokegrenadeY,8],[_smokegrenadeB,6]] call _addToVest;
-		[[_smokegrenadeB,5],[_rifleC_mag_tr,3],["GOL_Packed_60mm_HE",4],["GOL_Packed_60mm_HEAB",2],["GOL_Packed_60mm_Smoke",2]] call _addToBackpack;
+		[["GOL_Packed_60mm_HE",4],["GOL_Packed_60mm_HEAB",2],["GOL_Packed_60mm_Smoke",2]] call _addToBackpack;
 		_FAKSmall call _addToBackpack;
 		if (call EFUNC(Common,isNight)) then {
-			[[_chemG,5],[_chemR,5],[_handFlareG,2],[_IRStrobe,3],["GOL_Packed_60mm_Flare",4]] call _addToBackpack;
+			[[_chemG,5],[_chemR,5],[_handFlareG,2],[_IRStrobe,3]] call _addToVest;
+			[["GOL_Packed_60mm_Flare",3]] call _addToBackpack;
 		};
 		[_map, "", "", _compass, _watch, _nvg] call _addLinkedItems;
 		_rangefinder call _addBino;
