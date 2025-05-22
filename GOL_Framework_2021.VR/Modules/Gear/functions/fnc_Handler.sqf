@@ -641,7 +641,7 @@ if (_isMan) then {
 				[_unit, "GOL_Packed_60mm_HE", 5] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_60mm_HEAB", 5] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_60mm_Smoke", 5] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_60mm_Flare", 5] call _fnc_AddObjectsCargo;
+				
 				[_unit, "GOL_Packed_Drone_AT", 4] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_Drone_AP", 4] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_Drone_Recon", 1] call _fnc_AddObjectsCargo;				
@@ -657,7 +657,8 @@ if (_isMan) then {
 					[_unit, _chemG, 3] call _fnc_AddObjectsCargo;	
 					[_unit, "ACE_Chemlight_HiGreen", 6] call _fnc_AddObjectsCargo;
 					[_unit, "ACE_Chemlight_HiBlue", 6] call _fnc_AddObjectsCargo;
-					[_unit, "B_IR_Grenade", 8] call _fnc_AddObjectsCargo;												
+					[_unit, "B_IR_Grenade", 8] call _fnc_AddObjectsCargo;	
+					[_unit, "GOL_Packed_60mm_Flare", 5] call _fnc_AddObjectsCargo;											
 				};				
 			};
 
