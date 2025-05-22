@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=11102;
+		nextID=11133;
 	};
 	class Camera
 	{
-		pos[]={108.84234,80.612617,-45.214401};
-		dir[]={0.0026579509,-0.59450924,0.80409759};
-		up[]={0.0019654129,0.80408227,0.59451354};
-		aside[]={1.0000032,7.7485311e-08,-0.0033052641};
+		pos[]={94.59169,80.612617,-47.061718};
+		dir[]={0.076649427,-0.60182339,0.79494333};
+		up[]={0.05776073,0.79862863,0.59904563};
+		aside[]={0.99538434,-8.9639798e-09,-0.095976204};
 	};
 };
 binarizationWanted=0;
@@ -18706,7 +18706,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={24.725515,5,105.75766};
-						angles[]={-0,3.9513838,0};
+						angles[]={0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
 					description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -19774,7 +19774,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={24.762678,5,93.429749};
-						angles[]={-0,3.9513838,0};
+						angles[]={0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
 					description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -19786,7 +19786,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={24.559019,5,81.086761};
-						angles[]={-0,3.9513838,0};
+						angles[]={0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
 					description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -19798,7 +19798,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={24.504572,5,68.268303};
-						angles[]={-0,3.9513838,0};
+						angles[]={0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
 					description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
@@ -19827,7 +19827,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12.68182,5,106.51221};
-								angles[]={-0,0.06816864,0};
+								angles[]={0,0.06816864,0};
 							};
 							title="MHQ 1";
 							description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
@@ -19839,7 +19839,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12.525661,7.6292419,106.50645};
-								angles[]={-0,6.2772336,0};
+								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20060,7 +20060,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12.247192,5,94.779716};
-								angles[]={-0,0.06816864,0};
+								angles[]={0,0.06816864,0};
 							};
 							title="MHQ 1";
 							description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
@@ -20072,7 +20072,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12.091034,7.6292419,94.773949};
-								angles[]={-0,6.2772336,0};
+								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20293,7 +20293,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12.37093,5,81.533562};
-								angles[]={-0,0.06816864,0};
+								angles[]={0,0.06816864,0};
 							};
 							title="MHQ 1";
 							description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
@@ -20305,7 +20305,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12.214771,7.6292419,81.527794};
-								angles[]={-0,6.2772336,0};
+								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20526,7 +20526,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12.889766,7.6292419,68.046959};
-								angles[]={-0,6.2772336,0};
+								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20757,7 +20757,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={24.720167,7.5393777,106.88416};
-								angles[]={-0,0.00064577186,0};
+								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;
@@ -20953,7 +20953,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={24.75733,7.5393777,94.556244};
-								angles[]={-0,0.00064577186,0};
+								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;
@@ -21149,7 +21149,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={24.553671,7.5393777,82.213257};
-								angles[]={-0,0.00064577186,0};
+								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;
@@ -21345,7 +21345,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={24.499224,7.5393777,69.394798};
-								angles[]={-0,0.00064577186,0};
+								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;

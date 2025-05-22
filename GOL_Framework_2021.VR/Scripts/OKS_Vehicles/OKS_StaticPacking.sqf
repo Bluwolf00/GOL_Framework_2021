@@ -36,7 +36,7 @@ if (hasInterface) then {
 			if (primaryWeapon player != "") then {
 				player playMoveNow "AmovPknlMstpSlowWrflDnon";
 			};
-			private _actionName = "Deploying HMG Weapon...";
+			private _actionName = "Deploying Static HMG...";
 			[_actionName, 3, {true}, {
 				(_this select 0) params ["_target", "_unit", "_actionId","_item","_type"];
 				private _dir = (getDir _unit);
@@ -65,7 +65,7 @@ if (hasInterface) then {
 			if (primaryWeapon player != "") then {
 				player playMoveNow "AmovPknlMstpSlowWrflDnon";
 			};
-			private _actionName = "Deploying GMG Weapon...";
+			private _actionName = "Deploying Static GMG...";
 			[_actionName, 3, {true}, {
 				(_this select 0) params ["_target", "_unit", "_actionId","_item","_type"];
 				private _dir = (getDir _unit);
@@ -94,7 +94,7 @@ if (hasInterface) then {
 			if (primaryWeapon player != "") then {
 				player playMoveNow "AmovPknlMstpSlowWrflDnon";
 			};
-			private _actionName = "Deploying Mortar Weapon...";
+			private _actionName = "Deploying Static Mortar...";
 			[_actionName, 3, {true}, {
 				(_this select 0) params ["_target", "_unit", "_actionId","_item","_type"];
 				private _dir = (getDir _unit);
@@ -123,7 +123,7 @@ if (hasInterface) then {
 			if (primaryWeapon player != "") then {
 				player playMoveNow "AmovPknlMstpSlowWrflDnon";
 			};
-			private _actionName = "Deploying AT Weapon...";
+			private _actionName = "Deploying Static AT...";
 			[_actionName, 3, {true}, {
 				(_this select 0) params ["_target", "_unit", "_actionId","_item","_type"];
 				private _dir = (getDir _unit);
@@ -281,13 +281,21 @@ if (hasInterface) then {
 			_item = "UK3CB_BAF_1Rnd_60mm_Mo_Shells";
 			_Position = _player getPos [1.4,(getDir _player)];
 			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
+			private _FailedUnpack = false;
+			private _UnpackedRounds = 0;
 			for "_i" from 1 to 4 do {
 				if (_player canAdd [_item, 1, true]) then {
 					_player addMagazineGlobal _item;
+					_UnpackedRounds = _UnpackedRounds + 1;	
 				} else {
 					_GroundWeaponHolder addMagazineCargoGlobal [_item,1];
-					systemChat "Your inventory is full. Unpacked on ground."
+					_FailedUnpack = true;			
 				};
+			};
+			if(_FailedUnpack) then {
+				systemChat format["Your inventory is full. Unpacked %1 HE rounds on ground.",(4 - _UnpackedRounds)];
+			} else {
+				systemChat format["You unpacked %1 HE rounds.",_UnpackedRounds];
 			};
 		},
 		{
@@ -303,13 +311,21 @@ if (hasInterface) then {
 			_item = "UK3CB_BAF_1Rnd_60mm_Mo_AB_Shells";
 			_Position = _player getPos [1.4,(getDir _player)];
 			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
+			private _FailedUnpack = false;
+			private _UnpackedRounds = 0;
 			for "_i" from 1 to 4 do {
 				if (_player canAdd [_item, 1, true]) then {
 					_player addMagazineGlobal _item;
+					_UnpackedRounds = _UnpackedRounds + 1;	
 				} else {
 					_GroundWeaponHolder addMagazineCargoGlobal [_item,1];
-					systemChat "Your inventory is full. Unpacked on ground."
+					_FailedUnpack = true;			
 				};
+			};
+			if(_FailedUnpack) then {
+				systemChat format["Your inventory is full. Unpacked %1 HE Airburst rounds on ground.",(4 - _UnpackedRounds)];
+			} else {
+				systemChat format["You unpacked %1 HE Airburst rounds.",_UnpackedRounds];
 			};
 		},
 		{
@@ -325,13 +341,21 @@ if (hasInterface) then {
 			_item = "UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White";
 			_Position = _player getPos [1.4,(getDir _player)];
 			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
+			private _FailedUnpack = false;
+			private _UnpackedRounds = 0;
 			for "_i" from 1 to 4 do {
 				if (_player canAdd [_item, 1, true]) then {
 					_player addMagazineGlobal _item;
+					_UnpackedRounds = _UnpackedRounds + 1;	
 				} else {
 					_GroundWeaponHolder addMagazineCargoGlobal [_item,1];
-					systemChat "Your inventory is full. Unpacked on ground."
+					_FailedUnpack = true;			
 				};
+			};
+			if(_FailedUnpack) then {
+				systemChat format["Your inventory is full. Unpacked %1 smoke rounds on ground.",(4 - _UnpackedRounds)];
+			} else {
+				systemChat format["You unpacked %1 smoke rounds.",_UnpackedRounds];
 			};
 		},
 		{
@@ -347,13 +371,21 @@ if (hasInterface) then {
 			_item = "UK3CB_BAF_1Rnd_60mm_Mo_Flare_White";
 			_Position = _player getPos [1.4,(getDir _player)];
 			_GroundWeaponHolder = createVehicle  ["GroundWeaponHolder", _Position, [], 0, "CAN_COLLIDE"];
+			private _FailedUnpack = false;
+			private _UnpackedRounds = 0;
 			for "_i" from 1 to 4 do {
 				if (_player canAdd [_item, 1, true]) then {
 					_player addMagazineGlobal _item;
+					_UnpackedRounds = _UnpackedRounds + 1;	
 				} else {
 					_GroundWeaponHolder addMagazineCargoGlobal [_item,1];
-					systemChat "Your inventory is full. Unpacked on ground."
+					_FailedUnpack = true;			
 				};
+			};
+			if(_FailedUnpack) then {
+				systemChat format["Your inventory is full. Unpacked %1 Flare rounds on ground.",(4 - _UnpackedRounds)];
+			} else {
+				systemChat format["You unpacked %1 flare rounds.",_UnpackedRounds];
 			};
 		},
 		{
@@ -382,14 +414,14 @@ if (hasInterface) then {
 	_PackConditionStatic = {
 		alive _target &&
 		(count crew _target == 0 || ((typeOf _target) in OKS_DroneClassnames)) && 
-		vehicle _player != _target && 
-		_player canAdd (_target getVariable ["GOL_ItemPacked","GOL_Packed_Drone_AT"]) &&
+		vehicle _player != _target && 	
+		_player canAdd [(_target getVariable ["GOL_ItemPacked","GOL_Packed_Drone_AT"]), 1, true] &&
 		(typeOf _target) in GOL_PACKED_STATIC_WEAPONS
 	};
 	_PackConditionDrone = {
 		alive _target &&
 		vehicle _player != _target && 
-		_player canAdd (_target getVariable ["GOL_ItemPacked","GOL_Packed_Drone_AT"]) &&
+		_player canAdd [(_target getVariable ["GOL_ItemPacked","GOL_Packed_Drone_AT"]), 1, true] &&
 		_target isKindOf "helicopter" && 
 		(typeOf _target) in OKS_DroneClassnames
 	};
