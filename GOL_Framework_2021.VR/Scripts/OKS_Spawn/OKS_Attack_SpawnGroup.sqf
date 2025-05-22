@@ -1,17 +1,18 @@
 /*
 	OKS_Attack_SpawnGroup
-	[SpawnPosOrObject,ArrayOrObject,UnitOrClassname,Side,ShouldAddStepWaypoint] spawn OKS_Attack_SpawnGroup;
-	[SpawnPosOrObject,ArrayOrObject,UnitOrClassname,Side,ShouldAddStepWaypoint] execVM "Scripts\OKS_Spawn\OKS_Attack_SpawnGroup.sqf";
+	[SpawnPosOrObject,ArrayOrObject,UnitOrClassname,Side,ShouldAddStepWaypoint,RangeOfFallbackHuntScript] spawn OKS_Attack_SpawnGroup;
+	[SpawnPosOrObject,ArrayOrObject,UnitOrClassname,Side,ShouldAddStepWaypoint,RangeOfFallbackHuntScript] execVM "Scripts\OKS_Spawn\OKS_Attack_SpawnGroup.sqf";
 */
 
  	if(!isServer) exitWith {};
 
 	Params [
 		["_Spawn",objNull,[objNull,[]]],
-		["_TargetWaypoint",objNull,[[],objNull]],
+		["_TargetWaypoint",nil,[[],objNull]],
 		["_ClassnameOrNumber",5,[0,""]],
 		["_Side",east,[sideUnknown]],
-		["_StepWaypoint",false,[false]]
+		["_StepWaypoint",false,[false]],
+		["_RangeOfFallbackHunt",1000,[0]]
 	];
 	Private ["_Dir"];
 	
@@ -21,8 +22,11 @@
 	} else {
 		_Dir = random 360;
 	};
-	if(typeName _TargetWaypoint == "OBJECT") then {
-		_TargetWaypoint = getPos _TargetWaypoint;
+
+	if(!isNil "_TargetWaypoint") then {
+		if(typeName _TargetWaypoint == "OBJECT") then {
+			_TargetWaypoint = getPos _TargetWaypoint;
+		};
 	};
 
 	Private ["_Group"];
@@ -76,7 +80,7 @@
 	if(isNil "_Group") exitWith {false};
 	if(isNil "_TargetWaypoint") exitWith { 			
 		waitUntil {sleep 1; !(isNil "lambs_wp_fnc_taskHunt")};
-		[_Group, _Range, 30, [], [], true,false,false] remoteExec ["lambs_wp_fnc_taskHunt",0];
+		[_Group, _RangeOfFallbackHunt, 30, [], [], true,false,false] remoteExec ["lambs_wp_fnc_taskHunt",0];
 	};
 	
 	/// Give Attack SAD Waypoint

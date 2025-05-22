@@ -9,6 +9,14 @@
 	Params ["_SpawnPos","_LambsType",["_NumberInfantry",5,[0]],["_Side",east,[sideUnknown]],["_Range",1500,[0]],["_Array",[],[[]]]];
 	private ["_RandomPos","_Center"];
 
+	private _KnowsAboutTargets = {
+		params ["_Group","_Range"];
+
+		_NearPlayers = AllPlayers select {_X distance (leader _Group) < _Range};
+		_KnowsAboutTarget = (count(_Group targets [true, _Range]) > 0) OR ({(side _Group) knowsAbout _X > 3.5} count _NearPlayers > 0);
+		[_KnowsAboutTarget,_NearPlayers]
+	};
+
 	_Settings = [_Side] call OKS_Dynamic_Setting;
 	_Settings Params ["_UnitArray","_SideMarker","_SideColor","_Vehicles","_Civilian","_Trigger"];
 	_UnitArray Params ["_Leaders","_Units","_Officer"];
@@ -57,7 +65,7 @@
 		};
 		case "creep":{
 			{_X setUnitPos "DOWN"; _X setBehaviour "STEALTH"; _X setCombatMode "GREEN"; } foreach units _Group;
-			waitUntil {sleep 5; count(_Group targets [true, 200]) > 0};
+			waitUntil {sleep 5; ([_Group,_Range] call _KnowsAboutTargets) select 0};
 			/* 
 				* Arguments:
 				* 0: Group performing action, either unit <OBJECT> or group <GROUP>
@@ -71,17 +79,26 @@
 			[_Group, _Range, 30, [], [], true] remoteExec ["lambs_wp_fnc_taskCreep",0];
 			{_X setUnitPos "AUTO"; _X setBehaviour "AWARE"; _X setCombatMode "RED"; } foreach units _Group;
 		};
+		case "ambushattack": {		
+			{_X setBehaviour "STEALTH"; _X setCombatMode "YELLOW"; } foreach units _Group;
+			waitUntil {sleep 1; ([_Group,_Range] call _KnowsAboutTargets) select 0};
+			{_X setBehaviour "AWARE"; _X setCombatMode "RED"; } foreach units _Group;
+			_SADWaypoint = _Group addWaypoint [getPos (([_Group,_Range] call _KnowsAboutTargets) select 1),0];
+			_SADWaypoint setWaypointType "SAD";
+		};
+
 		case "ambushrush": {		
 			{_X setBehaviour "STEALTH"; _X setCombatMode "YELLOW"; } foreach units _Group;
-			waitUntil {sleep 1; count(_Group targets [true, 200]) > 0};
-			{_X setBehaviour "AWARE"; _X setCombatMode "YELLOW"; } foreach units _Group;
-			_SADWaypoint = _Group addWaypoint [getPos (selectRandom (_Group targets [true, 200])),0];
-			_SADWaypoint setWaypointType "SAD";
+			waitUntil {sleep 1; ([_Group,_Range] call _KnowsAboutTargets) select 0};
+			{_X setBehaviour "AWARE"; _X setCombatMode "RED"; } foreach units _Group;
+
+			waitUntil {sleep 1; !isNil "lambs_wp_fnc_moduleRush"};
+			[_Group,_Range,10,[],[],false] remoteExec ["lambs_wp_fnc_taskRush",0];	
 		};
 		case "ambushhunt":{		
 			{_X setBehaviour "STEALTH"; _X setCombatMode "YELLOW"; } foreach units _Group;
-			waitUntil {sleep 1; count(_Group targets [true, 200]) > 0};
-			{_X setBehaviour "AWARE"; _X setCombatMode "YELLOW"; } foreach units _Group;
+			waitUntil {sleep 1; ([_Group,_Range] call _KnowsAboutTargets) select 0};
+			{_X setBehaviour "AWARE"; _X setCombatMode "RED"; } foreach units _Group;
 			waitUntil {sleep 1; !(isNil "lambs_wp_fnc_taskHunt")};
 			[_Group, _Range, 30, [], [], true,false,false] remoteExec ["lambs_wp_fnc_taskHunt",0];
 		};
