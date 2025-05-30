@@ -7,6 +7,18 @@
 	_Complete = call Compile PreProcessFileLineNumbers "MissionSettings.sqf";
 	waitUntil{_Complete};
 
+/*
+    Create NEKY Civilian / Death Count Tasks
+*/
+[] spawn {
+    UISleep 1; // Without this sleep, no tasks will be created in the briefing screen. Do not place ANY more sleeps, just place all the tasks one after the other.
+
+    // YOU CAN EDIT THINGS BELOW THIS LINE \\
+    // Tasks
+    [1,["NEKY_Task1",["Hearts and Minds: Avoid causing civilian casualties as that will turn the civilians against us, bolstering enemy reinforcements.","Avoid Civilian Casualties"],civilian,{}],true] spawn OKS_fnc_TaskRun;
+    [2,["NEKY_Task2",["War Support: Dont die, we will lose war support back home.","Avoid Deaths"],sideEmpty,{}],true] spawn OKS_fnc_TaskRun;
+};
+
 	execVM "Scripts\GOL_PlayerSetup\init.sqf";
 	execVM "Scripts\OKS_Vehicles\Init.sqf";	
 	if(GOL_NEKY_SERVICESTATION isEqualTo 1) then { execVM "Scripts\NEKY_ServiceStation\Init.sqf"};
@@ -29,7 +41,6 @@
 			copyToClipboard _Return;
 		};
 	};
-
 
 	// Run the ORBAT Group - Requires the ORBAT Module to be present on the map.
 	if(!isNil "ORBAT_GROUP") then {
