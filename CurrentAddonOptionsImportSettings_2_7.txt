@@ -882,7 +882,7 @@ OKS_FaceSwap_OPFOR = "middleeast";
 
 // GOL_Gear
 force GOL_AllowSpecialistAirRoles = false;
-force GOL_AllowSpecialistGroundRoles = "None";
+force GOL_AllowSpecialistGroundRoles = false;
 GOL_ARSENAL_ALLOWED = true;
 force GOL_ENTRENCH = false;
 force GOL_ForceNVG = false;
@@ -893,8 +893,8 @@ GOL_WEAPONS = true;
 force GOL_WIRECUTTER = false;
 
 // GOL_Gear_AI
-AIForceNVG = false;
-AIForceNVGClassname = "";
+GOL_AIForceNVG = false;
+GOL_AIForceNVGClassname = "";
 force LAT_Chance = 0.249656;
 MAT_Chance = 0.15;
 Static_Enable_Chance = 0.4;
@@ -984,10 +984,10 @@ grad_trenches_functions_vehicleEnvelopeRemovalTime = -1;
 force grad_trenches_functions_vehicleTrenchBuildSpeed = 1;
 
 // GW_Common
-force GW_Common_autoDelete = true;
+GW_Common_autoDelete = true;
 force GW_Common_AutoLock = false;
-force GW_Common_autoQueue = true;
-force GW_Common_BlockAIGear = true;
+GW_Common_autoQueue = true;
+GW_Common_BlockAIGear = true;
 force GW_Common_disableThermals = 2;
 force GW_Common_Faction = "east";
 GW_Common_radioDistnace = 1.9;
@@ -1003,14 +1003,14 @@ GW_GameLoop_SafeMode_useType = 0;
 GW_UI_allowSpectator = false;
 
 // GW_Gear
-force GW_Gear_Auto_Assign = 1;
+GW_Gear_Auto_Assign = 1;
 force GW_Gear_autoRemoveCargo = true;
 force GW_Gear_Blufor = "NATO-D";
 force GW_Gear_Civilian = "CIVI-TAKISTAN";
-force GW_Gear_extraGear = false;
+GW_Gear_extraGear = false;
 force GW_Gear_Independent = "AAF-W";
 force GW_Gear_Opfor = "CSAT-H";
-force GW_Gear_randomGear = true;
+GW_Gear_randomGear = true;
 
 // GW_Performance
 GW_Performance_autoCaching = 3;
@@ -1029,7 +1029,7 @@ force GW_setDifficulty_unitTraining = 2;
 
 // GW_StartUp
 force GW_StartUp_DistanceLimit = 25;
-force GW_StartUp_TimeLimit = 5;
+GW_StartUp_TimeLimit = 5;
 
 // GW_UI
 GW_UI_nameShadow = 2;
