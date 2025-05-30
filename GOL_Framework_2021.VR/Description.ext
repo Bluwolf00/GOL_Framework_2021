@@ -7,7 +7,7 @@
 #define DOUBLES(var1,var2) ##var1##_##var2
 #define TRIPLES(var1,var2,var3) ##var1##_##var2##_##var3
 #include "script_Component.hpp"
-#include "Scripts\OKS_Dynamic\LARs\compositions\compositions.cfg"
+#include "Modules\OKS_Dynamic\LARs\compositions\compositions.cfg"
 
 class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 	class Core {
@@ -113,7 +113,7 @@ class Params {
 };
 
 class CfgFunctions {
-	#include "Scripts\OKS_Dynamic\LARs\spawnComp\functions\functions.cpp"
+	#include "Modules\OKS_Dynamic\LARs\spawnComp\functions\functions.cpp"
 	#include "Modules\Callsigns\Functions\functions.hpp"
 };
 
