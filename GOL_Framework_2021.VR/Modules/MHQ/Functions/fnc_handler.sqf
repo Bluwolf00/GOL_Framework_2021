@@ -55,7 +55,9 @@ if (!isServer) exitWith {false};
 
 	_mhqMarkerArea = createMarker [_mhqMarkerAreaId, _mhq];
 	_mhqMarkerArea setMarkerShape "ELLIPSE";
-	_mhqMarkerArea setMarkerSize [GOL_OKS_MhqSafeZone,GOL_OKS_MhqSafeZone];
+
+	_SafeZone = missionNamespace getVariable ["GOL_MhqSafeZone",100];
+	_mhqMarkerArea setMarkerSize [_SafeZone,_SafeZone];
 	_mhqMarkerArea setMarkerColor _color;
 	_mhqMarkerArea setMarkerAlpha 0;
 	_mhqMarkerArea setMarkerBrush "Border";

@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=11164;
+		nextID=11195;
 	};
 	class Camera
 	{
-		pos[]={99.802132,95.452309,-47.797821};
-		dir[]={0.04095846,-0.62041873,0.78320825};
-		up[]={0.032401182,0.78427029,0.61957633};
-		aside[]={0.99864221,-1.3904355e-08,-0.052224718};
+		pos[]={109.2197,54.549919,-47.308647};
+		dir[]={-0.0049207718,-0.46621209,0.88465929};
+		up[]={-0.0025931881,0.884673,0.46620488};
+		aside[]={0.99998456,2.3283064e-10,0.0055622496};
 	};
 };
 binarizationWanted=0;
@@ -472,10 +472,10 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 2.6.5";
-	overViewPicture="loadImage.jpg";
-	overViewPictureLocked="loadImage.jpg";
-	loadScreen="loadImage.jpg";
+	overviewText="Framework Version 2.7";
+	overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
+	overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
+	loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	saving=0;
 	respawnDialog=0;
 	disabledAI=1;
@@ -735,7 +735,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=498;
+									items=504;
 									class Item0
 									{
 										class data
@@ -4720,6 +4720,54 @@ class CustomAttributes
 											value="ace_fastroping_autoaddfries";
 										};
 									};
+									class Item498
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_allowspecialistgroundroles";
+										};
+									};
+									class Item499
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_allowspecialistairroles";
+										};
+									};
+									class Item500
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_entrench";
+										};
+									};
+									class Item501
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_wirecutter";
+										};
+									};
+									class Item502
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_forcenvg";
+										};
+									};
+									class Item503
+									{
+										class data
+										{
+											singleType="STRING";
+											value="lat_chance";
+										};
+									};
 								};
 							};
 						};
@@ -4730,7 +4778,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=498;
+									items=504;
 									class Item0
 									{
 										class data
@@ -18519,6 +18567,168 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item498
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="Limited";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item499
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item500
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item501
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item502
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item503
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=0.24965601;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -18597,7 +18807,7 @@ class Mission
 {
 	class Intel
 	{
-		overviewText="Framework Version 2.6.5";
+		overviewText="Framework Version 2.7";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
@@ -19741,7 +19951,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={109.68564,5,182.79489};
+						position[]={109.686,5,182.795};
 					};
 					name="ORBAT_GROUP";
 					id=3105;
@@ -19757,7 +19967,7 @@ class Mission
 								class data
 								{
 									singleType="STRING";
-									value="missionconfigfile >> ""CfgORBAT"" >> ""GuerrillasOfLiberation""";
+									value="Configfile >> ""CfgORBAT"" >> ""GuerrillasOfLiberation""";
 								};
 							};
 						};
@@ -24172,14 +24382,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={71.903824,8.9768047,123.64011};
+								position[]={71.903999,8.9768047,123.64};
 								angles[]={0,3.1401615,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="if(!isNil ""flag_west_2"") then {this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_west_2}]; }; this setFlagTexture ""Images\hellfish.jpg"";";
+								init="if(!isNil ""flag_west_2"") then {this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_west_2}]; }; this setFlagTexture ""\OKS_GOL_Misc\data\images\Hellfish.jpg"";";
 								name="flag_west_1";
 							};
 							id=2546;
@@ -25598,14 +25808,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={78.687462,8.9768047,43.542343};
+								position[]={78.686996,8.9768047,43.542};
 								angles[]={0,0.028832838,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this AddAction [""Teleport to Staging area"",{(_this select 1) setPosATL getPosATL flag_west_1}];  this setFlagTexture ""Images\aac.jpg"";";
+								init="this AddAction [""Teleport to Staging area"",{(_this select 1) setPosATL getPosATL flag_west_1}];  this setFlagTexture ""\OKS_GOL_Misc\data\images\aac.jpg"";";
 								name="flag_west_2";
 							};
 							id=2572;
@@ -28584,14 +28794,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={134.84294,8.9768047,126.79237};
+								position[]={134.843,8.9768047,126.792};
 								angles[]={0,3.1455197,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="if(!isNil ""flag_east_2"") then {this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_east_2}]; }; this setFlagTexture ""Images\hellfish.jpg"";";
+								init="if(!isNil ""flag_east_2"") then {this AddAction [""Teleport to FARP"",{(_this select 1) setPosATL getPosATL flag_east_2}]; }; this setFlagTexture ""\OKS_GOL_Misc\data\images\Hellfish.jpg"";";
 								name="flag_east_1";
 							};
 							id=2670;
@@ -29391,14 +29601,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={139.46394,8.9768047,39.189362};
+								position[]={139.464,8.9768047,39.188999};
 								angles[]={0,4.7083049,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this AddAction [""Teleport to Staging area"",{(_this select 1) setPosATL getPosATL flag_east_1}]; this setFlagTexture ""Images\aac.jpg"";";
+								init="this AddAction [""Teleport to Staging area"",{(_this select 1) setPosATL getPosATL flag_east_1}]; this setFlagTexture ""\OKS_GOL_Misc\data\images\aac.jpg"";";
 								name="flag_east_2";
 							};
 							id=2615;
