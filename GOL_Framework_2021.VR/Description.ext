@@ -115,30 +115,6 @@ class Params {
 class CfgFunctions {
 	#include "Scripts\OKS_Dynamic\LARs\spawnComp\functions\functions.cpp"
 	#include "Modules\Callsigns\Functions\functions.hpp"
-
-    class NEKY
-    {
-        class Tasks
-        {
-			class Tasks_Init
-			{
-				file = "Scripts\NEKY_Tasks\Init.sqf";
-				PreInit = 1;
-			};
-        };
-    };
-
-	class BLUFUNC
-	{
-		class Radios
-		{
-			class Radio_Channel_Init
-			{
-				file = "Scripts\GOL_PlayerSetup\BLU_SetChannel.sqf";
-				preInit = 1;
-			};
-		};
-	};
 };
 
 class GW_Modules_Base {
@@ -176,7 +152,5 @@ class ACE_Settings {
 	#undef LOAD_ACE
 };
 
-#include "Scripts\GOL_PlayerSetup\ORBAT\orbat.cfg"
-#include "Scripts\GOL_PlayerSetup\insignia.cfg"
 #include "Modules\Callsigns\defines.hpp"
 #include "Modules\Callsigns\dialogs.hpp"
