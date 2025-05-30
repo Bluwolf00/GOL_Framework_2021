@@ -22,10 +22,13 @@ if(isNil "_cswTripodBackpack") then {
 	_cswTripodBackpack = "RHS_DShkM_TripodLow_Bag";
 };
 
-_ForceNVGClassname = missionNamespace getVariable ["AIForceNVGClassname",""];
-_ForceNVG = missionNamespace getVariable ["AIForceNVG",false];
+// _ForceNVGClassname = OKS_AIForceNVGClassname;
+// _ForceNVG = OKS_AIForceNVG;
+
+private _ForceNVGClassname = "";
+private _ForceNVG = true;
 if(_ForceNVGClassname != "" && !(_role in ["p","jetp"])) then {
-	_nvg = GOL_AIForceNVGClassname;
+	_nvg = _ForceNVGClassname;
 };
 
 switch (toLower(_role)) do {

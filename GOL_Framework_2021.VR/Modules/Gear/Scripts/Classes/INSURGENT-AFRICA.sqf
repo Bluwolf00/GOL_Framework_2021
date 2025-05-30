@@ -50,38 +50,40 @@ if (_role isEqualTo "jetp") then {
 };
 
 _silencer = "rhs_acc_dtk1983";
-_pointer = "";
+_pointer = "rhs_acc_2dpZenit";
 _sight = "";
 _bipod = "";
 
-_rifle = ["rhs_weap_aks74", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["rhs_weap_aks74_gp25", _silencer, _pointer, _sight, _bipod];
-_rifle_mag = "30Rnd_545x39_Mag_F";
-_rifle_mag_tr = "30Rnd_545x39_Mag_Tracer_F";
-_rifleGL_mag = "30Rnd_545x39_Mag_F";
-_rifleGL_mag_tr = "30Rnd_545x39_Mag_Tracer_F";
+_rifle = [["rhs_weap_akm","rhs_weap_akmn","rhs_weap_akms"], _silencer, _pointer, _sight, _bipod];
+_rifleGL = [["rhs_weap_akmn_gp25","rhs_weap_akms_gp25"], _silencer, _pointer, _sight, _bipod];
+_rifle_mag = "UK3CB_AK47_30Rnd_Magazine_RT";
+_rifle_mag_tr = "UK3CB_AK47_30Rnd_Magazine_RT";
+_rifleGL_mag = "UK3CB_AK47_30Rnd_Magazine_RT";
+_rifleGL_mag_tr = "UK3CB_AK47_30Rnd_Magazine_RT";
 
 
 _silencer = "rhs_acc_dtkakm";
+_pointer = "rhs_acc_2dpZenit";
+_sight = "rhs_acc_pso1m21";
+_bipod = "";
+
+_rifleL = ["UK3CB_SVD_OLD", _silencer, _pointer, _sight, _bipod];
+_rifleL_mag = "UK3CB_SVD_10rnd_762x54_RT";
+
+_silencer = "";
 _pointer = "";
 _sight = "";
 _bipod = "";
 
-_rifleL = ["rhs_weap_akms", _silencer, _pointer, _sight, _bipod];
-_rifleL_mag = "rhs_30Rnd_762x39mm_bakelite_tracer";
+_rifleC = ["rhs_weap_m3a1", _silencer, _pointer, _sight, _bipod];
+_rifleC_mag = "rhsgref_30rnd_1143x23_M1T_2mag_SMG";
 
-_silencer = "rhs_acc_pgs64_74u";
-_pointer = "";
-_sight = "";
-_bipod = "";
 
-_rifleC = ["rhs_weap_aks74u", _silencer, _pointer, _sight, _bipod];
+_LMG = ["rhs_weap_rpk74m", _silencer, "rhs_acc_2dpZenit", _sight, _bipod];
+_LMG_mag = "UK3CB_RPK74_60rnd_545x39_RT";
 
-_LMG = ["rhs_weap_rpk74m", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "UK3CB_RPK74_60rnd_545x39_GT";
-
-_MMG = ["rhs_weap_pkm", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "rhs_100Rnd_762x54mmR_green";
+_MMG = ["LMG_Zafir_F", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "150Rnd_762x54_Box_Tracer_Red";
 
 if(random 1 > 0.5) then {
 	_LAT = ["rhs_weap_rpg75", _silencer, _pointer, _sight, _bipod];
