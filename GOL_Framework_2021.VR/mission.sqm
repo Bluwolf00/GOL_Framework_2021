@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3143;
+		nextID=3161;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=11226;
+		nextID=11246;
 	};
 	class Camera
 	{
-		pos[]={104.88677,80.173676,-35.718117};
-		dir[]={0.00040520696,-0.59648383,0.80262941};
-		up[]={0.0003011247,0.80262446,0.5964877};
-		aside[]={1.0000039,3.1114382e-09,-0.00050479837};
+		pos[]={67.403137,32.479477,2.1706784};
+		dir[]={0.16400629,-0.54656392,0.82121027};
+		up[]={0.10704289,0.83741474,0.53598261};
+		aside[]={0.98064214,4.5401976e-09,-0.19584669};
 	};
 };
 binarizationWanted=0;
@@ -83,7 +83,6 @@ addons[]=
 	"A3_Structures_F_Mil_Flags",
 	"A3_Structures_F_Civ_InfoBoards",
 	"A3_Weapons_F_Ammoboxes",
-	"A3_Supplies_F_Heli_CargoNets",
 	"A3_Structures_F_Mil_Helipads",
 	"RHS_US_A2_AirImport",
 	"ace_cargo",
@@ -93,20 +92,13 @@ addons[]=
 	"A3_Supplies_F_Heli_Fuel",
 	"A3_Missions_F_Oldman",
 	"rhs_c_a2port_air",
-	"rhs_c_a3retex",
-	"A3_Structures_F_Ind_WindPowerPlant",
-	"A3_Weapons_F_Explosives",
-	"A3_Modules_F_Curator_Mines",
-	"A3_Structures_F_Ind_Cargo",
-	"UK3CB_Factions_Objects_Pallets",
-	"rhs_c_2s1",
-	"rhs_c_trucks"
+	"rhs_c_a3retex"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=51;
+		items=46;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -363,36 +355,36 @@ class AddonsMetaData
 		};
 		class Item38
 		{
-			className="A3_Supplies_F_Heli";
-			name="Arma 3 Helicopters - Ammoboxes and Supplies";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item39
-		{
 			className="RHS_US_A2_AirImport";
 			name="RHSUSF A2 Air Ports";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item40
+		class Item39
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item41
+		class Item40
 		{
 			className="rhsusf_c_melb";
 			name="MELB";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item42
+		class Item41
 		{
 			className="Vsqz_melber";
 			name="Vsqz_melber";
+		};
+		class Item42
+		{
+			className="A3_Supplies_F_Heli";
+			name="Arma 3 Helicopters - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 		class Item43
 		{
@@ -415,41 +407,6 @@ class AddonsMetaData
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item46
-		{
-			className="A3_Structures_F_Ind";
-			name="Arma 3 - Industrial Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item47
-		{
-			className="A3_Modules_F_Curator";
-			name="Arma 3 Zeus Update - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item48
-		{
-			className="UK3CB_Factions_Objects_Pallets";
-			name="3CB Factions - Pallets";
-			author="3 Commando Brigade";
-			url="www.3commandobrigade.com";
-		};
-		class Item49
-		{
-			className="rhs_c_2s1";
-			name="2S1 SPG";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
-		};
-		class Item50
-		{
-			className="rhs_c_trucks";
-			name="GAZ-66";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
-		};
 	};
 };
 class DynamicSimulation
@@ -462,11 +419,9 @@ dlcs[]=
 	"SAN_Headlamp",
 	"Mark",
 	"Expansion",
-	"Heli",
 	"RHS_USAF",
-	"RHS_AFRF",
-	"Curator",
-	"UK3CB_Factions"
+	"Heli",
+	"RHS_AFRF"
 };
 randomSeed=15706391;
 class ScenarioData
@@ -18896,7 +18851,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=5;
+		items=4;
 		class Item0
 		{
 			dataType="Layer";
@@ -19016,18 +18971,6 @@ class Mission
 					id=1757;
 				};
 				class Item10
-				{
-					dataType="Comment";
-					class PositionInfo
-					{
-						position[]={24.725515,5,105.75766};
-						angles[]={0,3.9513838,0};
-					};
-					title="Mechanized / Motorized Setup";
-					description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
-					id=1158;
-				};
-				class Item11
 				{
 					dataType="Layer";
 					name="Hunt Base / Dynamic Trigger";
@@ -19455,7 +19398,7 @@ class Mission
 					};
 					id=1661;
 				};
-				class Item12
+				class Item11
 				{
 					dataType="Layer";
 					name="Spawn Triggers";
@@ -19567,7 +19510,7 @@ class Mission
 					};
 					id=434;
 				};
-				class Item13
+				class Item12
 				{
 					dataType="Logic";
 					class PositionInfo
@@ -19578,7 +19521,7 @@ class Mission
 					id=2664;
 					type="Logic";
 				};
-				class Item14
+				class Item13
 				{
 					dataType="Logic";
 					class PositionInfo
@@ -19589,7 +19532,7 @@ class Mission
 					id=2663;
 					type="Logic";
 				};
-				class Item15
+				class Item14
 				{
 					dataType="Logic";
 					class PositionInfo
@@ -19616,7 +19559,7 @@ class Mission
 						nAttributes=1;
 					};
 				};
-				class Item16
+				class Item15
 				{
 					dataType="Logic";
 					class PositionInfo
@@ -19721,7 +19664,7 @@ class Mission
 						nAttributes=7;
 					};
 				};
-				class Item17
+				class Item16
 				{
 					dataType="Logic";
 					class PositionInfo
@@ -19839,7 +19782,7 @@ class Mission
 						nAttributes=8;
 					};
 				};
-				class Item18
+				class Item17
 				{
 					dataType="Comment";
 					class PositionInfo
@@ -19850,7 +19793,7 @@ class Mission
 					description="Certain vehicles may not have Active protection system enabled, if you want a specific vehicle to have it, create a dummy of the vehicle you want it to apply to and then synchronize this module with the dummy vehicle. That vehicle class will now have the type of APS assigned to it." \n "" \n "Do note this dummy vehicle should be hidden from view on some corner of the map.";
 					id=2543;
 				};
-				class Item19
+				class Item18
 				{
 					dataType="Comment";
 					class PositionInfo
@@ -19861,19 +19804,7 @@ class Mission
 					description="This is the module for Active protection system. It sets the mission to clear all assigned Active protection systems on default vehicles. If you want to enable DAPS remove this module.";
 					id=2542;
 				};
-				class Item20
-				{
-					dataType="Comment";
-					class PositionInfo
-					{
-						position[]={18.611053,5,83.292236};
-						angles[]={0.72793221,0.11193988,0.29150274};
-					};
-					title="Tent MHQ";
-					description="This is a tent MHQ, you can use this MHQ for small scale missions that you don't want to use the other scripted solutions for respawn. This tent can be moved by leaders with self-interaction, the missionSetting ""GOL_OKS_TentMHQ"" must be set to 1 to be used.";
-					id=2666;
-				};
-				class Item21
+				class Item19
 				{
 					dataType="Logic";
 					class PositionInfo
@@ -19939,7 +19870,7 @@ class Mission
 						nAttributes=4;
 					};
 				};
-				class Item22
+				class Item20
 				{
 					dataType="Logic";
 					class PositionInfo
@@ -20005,7 +19936,7 @@ class Mission
 						nAttributes=4;
 					};
 				};
-				class Item23
+				class Item21
 				{
 					dataType="Comment";
 					class PositionInfo
@@ -20016,7 +19947,7 @@ class Mission
 					description="This module should be placed near our staging area. Don't place it right on top as the icon is fairly big. Offset it north of it by 50m - 100m";
 					id=3118;
 				};
-				class Item24
+				class Item22
 				{
 					dataType="Logic";
 					class PositionInfo
@@ -20083,41 +20014,65 @@ class Mission
 						nAttributes=4;
 					};
 				};
+				class Item23
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={18.975454,5,121.99954};
+						angles[]={0,3.9513838,0};
+					};
+					title="Mechanized / Motorized Setup";
+					description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
+					id=3143;
+				};
+				class Item24
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={12.998478,5,101.42746};
+						angles[]={0.72793221,0.11193988,0.29150274};
+					};
+					title="Tent MHQ";
+					description="This is a tent MHQ, you can use this MHQ for small scale missions that you don't want to use the other scripted solutions for respawn. This tent can be moved by leaders with self-interaction, the missionSetting ""GOL_OKS_TentMHQ"" must be set to 1 to be used.";
+					id=3144;
+				};
 				class Item25
 				{
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={24.762678,5,93.429749};
+						position[]={19.012617,5,109.67163};
 						angles[]={0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
 					description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
-					id=3131;
+					id=3145;
 				};
 				class Item26
 				{
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={24.559019,5,81.086761};
+						position[]={18.808958,5,97.328644};
 						angles[]={0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
 					description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
-					id=3133;
+					id=3146;
 				};
 				class Item27
 				{
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={24.504572,5,68.268303};
+						position[]={18.754511,5,84.510185};
 						angles[]={0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
 					description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
-					id=3135;
+					id=3147;
 				};
 			};
 			id=2584;
@@ -20135,25 +20090,25 @@ class Mission
 					name="MHQ";
 					class Entities
 					{
-						items=7;
+						items=8;
 						class Item0
 						{
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={12.68182,5,106.51221};
+								position[]={7.0692444,5,124.64743};
 								angles[]={0,0.06816864,0};
 							};
 							title="MHQ 1";
 							description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
-							id=848;
+							id=3148;
 						};
 						class Item1
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12.525661,7.6292419,106.50645};
+								position[]={6.9130859,7.6292419,124.64166};
 								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
@@ -20162,11 +20117,11 @@ class Mission
 							{
 								health=0.89999998;
 								lock="UNLOCKED";
-								init="[this, ""medium""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf""; [this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
+								init="" \n "this spawn {" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; null = [_this,25,true] spawn OKS_fnc_MobileSS; [_this] spawn OKS_fnc_Mechanized;" \n "};" \n "";
 								name="mhq_1";
 								textures="Sand";
 							};
-							id=2675;
+							id=3149;
 							type="B_APC_Tracked_01_CRV_F";
 							class CustomAttributes
 							{
@@ -20374,19 +20329,19 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={12.247192,5,94.779716};
+								position[]={6.6347399,5,112.91536};
 								angles[]={0,0.06816864,0};
 							};
-							title="MHQ 1";
+							title="MHQ 2";
 							description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
-							id=3137;
+							id=3150;
 						};
 						class Item3
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12.091034,7.6292419,94.773949};
+								position[]={6.4784584,7.6292419,112.90917};
 								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
@@ -20395,11 +20350,11 @@ class Mission
 							{
 								health=0.89999998;
 								lock="UNLOCKED";
-								init="[this, ""medium""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf""; [this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
+								init="" \n "this spawn {" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; null = [_this,25,true] spawn OKS_fnc_MobileSS; [_this] spawn OKS_fnc_Mechanized;" \n "};" \n "";
 								name="mhq_2";
 								textures="Sand";
 							};
-							id=3138;
+							id=3151;
 							type="B_APC_Tracked_01_CRV_F";
 							class CustomAttributes
 							{
@@ -20607,19 +20562,19 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={12.37093,5,81.533562};
+								position[]={6.7587395,5,99.668358};
 								angles[]={0,0.06816864,0};
 							};
-							title="MHQ 1";
+							title="MHQ 3";
 							description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
-							id=3139;
+							id=3152;
 						};
 						class Item5
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12.214771,7.6292419,81.527794};
+								position[]={6.6021957,7.6292419,99.663017};
 								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
@@ -20628,11 +20583,11 @@ class Mission
 							{
 								health=0.89999998;
 								lock="UNLOCKED";
-								init="[this, ""medium""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf""; [this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
+								init="" \n "this spawn {" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; null = [_this,25,true] spawn OKS_fnc_MobileSS; [_this] spawn OKS_fnc_Mechanized;" \n "};" \n "";
 								name="mhq_3";
 								textures="Sand";
 							};
-							id=3140;
+							id=3153;
 							type="B_APC_Tracked_01_CRV_F";
 							class CustomAttributes
 							{
@@ -20840,7 +20795,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12.889766,7.6292419,68.046959};
+								position[]={7.2771912,7.6292419,86.182182};
 								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
@@ -20849,11 +20804,11 @@ class Mission
 							{
 								health=0.89999998;
 								lock="UNLOCKED";
-								init="[this, ""medium""] call GW_MHQ_Fnc_Handler; null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf""; [this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
+								init="" \n "this spawn {" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; null = [_this,25,true] spawn OKS_fnc_MobileSS; [_this] spawn OKS_fnc_Mechanized;" \n "};" \n "";
 								name="mhq_4";
 								textures="Sand";
 							};
-							id=3141;
+							id=3154;
 							type="B_APC_Tracked_01_CRV_F";
 							class CustomAttributes
 							{
@@ -21056,6 +21011,18 @@ class Mission
 								nAttributes=7;
 							};
 						};
+						class Item7
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={7.0297403,5,85.908356};
+								angles[]={0,0.06816864,0};
+							};
+							title="MHQ 4";
+							description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
+							id=3160;
+						};
 					};
 					id=411;
 				};
@@ -21071,18 +21038,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={24.720167,7.5393777,106.88416};
+								position[]={18.970106,7.5393777,123.12604};
 								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Mechanized""};" \n "[_this] spawn OKS_fnc_Mechanized;" \n "};";
 								name="Vehicle_1";
 								textures="Sand";
 							};
-							id=986;
+							id=3155;
 							type="B_APC_Wheeled_01_cannon_F";
 							class CustomAttributes
 							{
@@ -21242,7 +21209,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""arifle_MX_F"",""FirstAidKit""],[2,10]],[[""30Rnd_65x39_caseless_mag"",""100Rnd_65x39_caseless_mag"",""HandGrenade"",""MiniGrenade"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""SmokeShell"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellBlue"",""NLAW_F"",""Titan_AT"",""Titan_AP"",""Titan_AA""],[12,6,6,6,6,3,3,3,3,8,8,8,8,5,2,2,2]],[[],[]],[[],[]]],false]";
+											value="[[[[""arifle_MX_F""],[2]],[[""30Rnd_65x39_caseless_mag"",""100Rnd_65x39_caseless_mag"",""HandGrenade"",""MiniGrenade"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""SmokeShell"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellBlue"",""NLAW_F"",""Titan_AT"",""Titan_AP"",""Titan_AA""],[12,6,6,6,6,3,3,3,3,8,8,8,8,5,2,2,2]],[[""FirstAidKit""],[10]],[[],[]]],false]";
 										};
 									};
 								};
@@ -21267,18 +21234,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={24.75733,7.5393777,94.556244};
+								position[]={19.007269,7.5393777,110.79813};
 								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Mechanized""};" \n "[_this] spawn OKS_fnc_Mechanized;" \n "};";
 								name="Vehicle_2";
 								textures="Sand";
 							};
-							id=3132;
+							id=3156;
 							type="B_APC_Wheeled_01_cannon_F";
 							class CustomAttributes
 							{
@@ -21438,7 +21405,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""arifle_MX_F"",""FirstAidKit""],[2,10]],[[""30Rnd_65x39_caseless_mag"",""100Rnd_65x39_caseless_mag"",""HandGrenade"",""MiniGrenade"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""SmokeShell"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellBlue"",""NLAW_F"",""Titan_AT"",""Titan_AP"",""Titan_AA""],[12,6,6,6,6,3,3,3,3,8,8,8,8,5,2,2,2]],[[],[]],[[],[]]],false]";
+											value="[[[[""arifle_MX_F""],[2]],[[""30Rnd_65x39_caseless_mag"",""100Rnd_65x39_caseless_mag"",""HandGrenade"",""MiniGrenade"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""SmokeShell"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellBlue"",""NLAW_F"",""Titan_AT"",""Titan_AP"",""Titan_AA""],[12,6,6,6,6,3,3,3,3,8,8,8,8,5,2,2,2]],[[""FirstAidKit""],[10]],[[],[]]],false]";
 										};
 									};
 								};
@@ -21463,18 +21430,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={24.553671,7.5393777,82.213257};
+								position[]={18.80361,7.5393777,98.455139};
 								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Mechanized""};" \n "[_this] spawn OKS_fnc_Mechanized;" \n "};";
 								name="Vehicle_3";
 								textures="Sand";
 							};
-							id=3134;
+							id=3157;
 							type="B_APC_Wheeled_01_cannon_F";
 							class CustomAttributes
 							{
@@ -21634,7 +21601,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""arifle_MX_F"",""FirstAidKit""],[2,10]],[[""30Rnd_65x39_caseless_mag"",""100Rnd_65x39_caseless_mag"",""HandGrenade"",""MiniGrenade"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""SmokeShell"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellBlue"",""NLAW_F"",""Titan_AT"",""Titan_AP"",""Titan_AA""],[12,6,6,6,6,3,3,3,3,8,8,8,8,5,2,2,2]],[[],[]],[[],[]]],false]";
+											value="[[[[""arifle_MX_F""],[2]],[[""30Rnd_65x39_caseless_mag"",""100Rnd_65x39_caseless_mag"",""HandGrenade"",""MiniGrenade"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""SmokeShell"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellBlue"",""NLAW_F"",""Titan_AT"",""Titan_AP"",""Titan_AA""],[12,6,6,6,6,3,3,3,3,8,8,8,8,5,2,2,2]],[[""FirstAidKit""],[10]],[[],[]]],false]";
 										};
 									};
 								};
@@ -21659,18 +21626,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={24.499224,7.5393777,69.394798};
+								position[]={18.749163,7.5393777,85.636681};
 								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this] execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf"";";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Mechanized""};" \n "[_this] spawn OKS_fnc_Mechanized;" \n "};";
 								name="Vehicle_4";
 								textures="Sand";
 							};
-							id=3136;
+							id=3158;
 							type="B_APC_Wheeled_01_cannon_F";
 							class CustomAttributes
 							{
@@ -21830,7 +21797,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""arifle_MX_F"",""FirstAidKit""],[2,10]],[[""30Rnd_65x39_caseless_mag"",""100Rnd_65x39_caseless_mag"",""HandGrenade"",""MiniGrenade"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""SmokeShell"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellBlue"",""NLAW_F"",""Titan_AT"",""Titan_AP"",""Titan_AA""],[12,6,6,6,6,3,3,3,3,8,8,8,8,5,2,2,2]],[[],[]],[[],[]]],false]";
+											value="[[[[""arifle_MX_F""],[2]],[[""30Rnd_65x39_caseless_mag"",""100Rnd_65x39_caseless_mag"",""HandGrenade"",""MiniGrenade"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""SmokeShell"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellBlue"",""NLAW_F"",""Titan_AT"",""Titan_AP"",""Titan_AA""],[12,6,6,6,6,3,3,3,3,8,8,8,8,5,2,2,2]],[[""FirstAidKit""],[10]],[[],[]]],false]";
 										};
 									};
 								};
@@ -21858,7 +21825,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={18.985825,5.2668285,82.971588};
+						position[]={13.373249,5.2668285,101.10681};
 						angles[]={0,6.2083454,0};
 					};
 					side="Empty";
@@ -21868,7 +21835,7 @@ class Mission
 						init="[this, ""small""] call GW_MHQ_Fnc_Handler;";
 						name="Tent_MHQ";
 					};
-					id=2679;
+					id=3159;
 					type="Misc_Backpackheap";
 					class CustomAttributes
 					{
@@ -24375,7 +24342,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="call{[this, [""gearbox"",""west""]] call GW_Gear_Fnc_Init;}";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""gearbox"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "" \n "";
 								name="gearbox";
 								description="Gearbox";
 							};
@@ -24416,14 +24383,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={80.000763,5,123.08424};
-								angles[]={0,3.1239059,0};
+								position[]={80,5,123.084};
+								angles[]={0,3.1239123,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, [""med_box"",""west""]] call GW_Gear_Fnc_Init;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""med_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								name="medical_box_west";
 								description="Medical box";
 							};
@@ -24539,7 +24506,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="call{[this, [""gearbox"",""west""]] call GW_Gear_Fnc_Init;}";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""gearbox"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "" \n "";
 								name="gearbox_1";
 								description="Gearbox";
 							};
@@ -24572,7 +24539,7 @@ class Mission
 					name="BLUFOR FARP";
 					class Entities
 					{
-						items=62;
+						items=60;
 						class Item0
 						{
 							dataType="Object";
@@ -24770,40 +24737,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={78.742584,5.6349964,45.259224};
-								angles[]={0,6.2662187,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="call{null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf""; this setVariable [""ace_rearm_isSupplyVehicle"", true]}";
-							};
-							id=268;
-							type="CargoNet_01_box_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item5
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={62.090996,5,56.137024};
 								angles[]={0,6.246429,0};
 							};
@@ -24858,7 +24791,7 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item6
+						class Item5
 						{
 							dataType="Object";
 							class PositionInfo
@@ -24917,7 +24850,7 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item7
+						class Item6
 						{
 							dataType="Object";
 							class PositionInfo
@@ -24976,7 +24909,7 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item8
+						class Item7
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25035,19 +24968,7 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item9
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={78.793716,5,45.120422};
-								angles[]={0,6.2662187,0};
-							};
-							title="Mobile Service Station";
-							description="This also adds pylon configuration options";
-							id=270;
-						};
-						class Item10
+						class Item8
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -25059,7 +24980,7 @@ class Mission
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
 							id=269;
 						};
-						class Item11
+						class Item9
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -25071,7 +24992,7 @@ class Mission
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
 							id=1953;
 						};
-						class Item12
+						class Item10
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -25083,7 +25004,7 @@ class Mission
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
 							id=2039;
 						};
-						class Item13
+						class Item11
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -25095,7 +25016,7 @@ class Mission
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
 							id=2041;
 						};
-						class Item14
+						class Item12
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25106,7 +25027,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Helicopter""};" \n "[_this, false,false] spawn OKS_fnc_Helicopter;" \n "};";
 								reportOwnPosition=1;
 							};
 							id=2586;
@@ -25142,7 +25063,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item15
+						class Item13
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25153,7 +25074,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Helicopter""};" \n "[_this, false,false] spawn OKS_fnc_Helicopter;" \n "};";
 								reportOwnPosition=1;
 							};
 							id=2588;
@@ -25189,25 +25110,42 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item16
+						class Item14
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={78.783585,5.8924227,36.362808};
-								angles[]={0,0.0051803077,0};
+								position[]={78.783997,5.8924227,36.362999};
+								angles[]={0,0.0051836278,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""small_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""small_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=261;
 							type="B_supplyCrate_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs"",""ACE_EHP""],[1,10,2,1,12,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
-						class Item17
+						class Item15
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25219,7 +25157,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box_special"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=1992;
@@ -25235,14 +25173,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item18
+						class Item16
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25254,7 +25192,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box_special"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=1993;
@@ -25270,14 +25208,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item19
+						class Item17
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25289,7 +25227,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box_special"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=1994;
@@ -25305,14 +25243,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item20
+						class Item18
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25324,7 +25262,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box_special"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=1995;
@@ -25340,14 +25278,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item21
+						class Item19
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25359,7 +25297,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box_special"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2017;
@@ -25375,14 +25313,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item22
+						class Item20
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25394,7 +25332,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box_special"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2018;
@@ -25410,14 +25348,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item23
+						class Item21
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25429,7 +25367,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box_special"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2019;
@@ -25445,14 +25383,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item24
+						class Item22
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25464,13 +25402,13 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""small_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""small_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2030;
 							type="B_supplyCrate_F";
 						};
-						class Item25
+						class Item23
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25482,13 +25420,13 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""small_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""small_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2031;
 							type="B_supplyCrate_F";
 						};
-						class Item26
+						class Item24
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25500,7 +25438,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""small_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""small_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2032;
@@ -25523,7 +25461,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item27
+						class Item25
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25535,7 +25473,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2549;
@@ -25551,14 +25489,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item28
+						class Item26
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25570,7 +25508,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2550;
@@ -25586,14 +25524,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item29
+						class Item27
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25605,7 +25543,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2551;
@@ -25621,14 +25559,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item30
+						class Item28
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25640,7 +25578,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2552;
@@ -25656,14 +25594,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item31
+						class Item29
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25675,7 +25613,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2553;
@@ -25691,14 +25629,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item32
+						class Item30
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25710,7 +25648,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2554;
@@ -25726,14 +25664,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item33
+						class Item31
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25745,7 +25683,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2555;
@@ -25761,14 +25699,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item34
+						class Item32
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25780,7 +25718,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2556;
@@ -25796,14 +25734,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item35
+						class Item33
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25815,7 +25753,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2557;
@@ -25831,14 +25769,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item36
+						class Item34
 						{
 							dataType="Object";
 							class PositionInfo
@@ -25850,7 +25788,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2558;
@@ -25866,20 +25804,20 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item37
+						class Item35
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={78.686996,8.9768047,43.542};
-								angles[]={0,0.028832838,0};
+								position[]={78.784454,8.9768047,44.882252};
+								angles[]={-0,0.028832838,0};
 							};
 							side="Empty";
 							flags=4;
@@ -25908,7 +25846,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item38
+						class Item36
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -25920,7 +25858,7 @@ class Mission
 							description="We're trying to shift away from large resupplies to increase the flow of supplies having to be brought to the front. So we prefer that you use the small crates next to the flag. This exists still if the terrain does not allow for continueous  resupply from AAC.";
 							id=1960;
 						};
-						class Item39
+						class Item37
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -25932,7 +25870,7 @@ class Mission
 							description="Small resupply crates meant only for a fire-teams resupply. The Ammo Boxes have the standard ammunition for the Squad, the Special Weapons Crate has the secondary ammunitions such as for the roles of MAT, AMAT, AMMG, MMG, Light Rifleman, Marksman.";
 							id=1961;
 						};
-						class Item40
+						class Item38
 						{
 							dataType="Marker";
 							position[]={77.847466,5,63.307339};
@@ -25944,7 +25882,7 @@ class Mission
 							b=0.69999999;
 							id=2659;
 						};
-						class Item41
+						class Item39
 						{
 							dataType="Logic";
 							class PositionInfo
@@ -26089,7 +26027,7 @@ class Mission
 								nAttributes=10;
 							};
 						};
-						class Item42
+						class Item40
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26101,7 +26039,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2773;
@@ -26117,14 +26055,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item43
+						class Item41
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26136,7 +26074,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2774;
@@ -26152,14 +26090,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item44
+						class Item42
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26171,7 +26109,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box_special"", ""west""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""west""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2775;
@@ -26187,14 +26125,14 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""FirstAidKit"",""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[10,1,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item45
+						class Item43
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26205,7 +26143,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Helicopter""};" \n "[_this, false,false] spawn OKS_fnc_Helicopter;" \n "};";
 								reportOwnPosition=1;
 								pylons="1500Rnd_gau1950cal_tracer_red_shells;rhs_mag_M229_19;rhs_mag_M229_19;1500Rnd_gau1950cal_tracer_red_shells;";
 							};
@@ -26242,7 +26180,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item46
+						class Item44
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26260,7 +26198,7 @@ class Mission
 							id=2800;
 							type="Land_HelipadSquare_F";
 						};
-						class Item47
+						class Item45
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26306,7 +26244,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item48
+						class Item46
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -26317,7 +26255,7 @@ class Mission
 							description="This helipad is for refuel/rearm and repair.";
 							id=2808;
 						};
-						class Item49
+						class Item47
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26363,7 +26301,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item50
+						class Item48
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26397,7 +26335,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item51
+						class Item49
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26443,7 +26381,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item52
+						class Item50
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26489,7 +26427,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item53
+						class Item51
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26535,7 +26473,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item54
+						class Item52
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26581,7 +26519,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item55
+						class Item53
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26597,7 +26535,7 @@ class Mission
 							id=3004;
 							type="Box_NATO_Wps_F";
 						};
-						class Item56
+						class Item54
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26613,7 +26551,7 @@ class Mission
 							id=3005;
 							type="Box_NATO_Wps_F";
 						};
-						class Item57
+						class Item55
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26629,7 +26567,7 @@ class Mission
 							id=3006;
 							type="Box_NATO_Wps_F";
 						};
-						class Item58
+						class Item56
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26645,7 +26583,7 @@ class Mission
 							id=3007;
 							type="Box_NATO_Wps_F";
 						};
-						class Item59
+						class Item57
 						{
 							dataType="Object";
 							class PositionInfo
@@ -26656,7 +26594,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Helicopter""};" \n "[_this, false,false] spawn OKS_fnc_Helicopter;" \n "};";
 								reportOwnPosition=1;
 							};
 							id=3020;
@@ -26679,7 +26617,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item60
+						class Item58
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -26689,7 +26627,7 @@ class Mission
 							title="Vehicle Fuel Resupply";
 							id=3017;
 						};
-						class Item61
+						class Item59
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -28776,7 +28714,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="call{[this, [""gearbox"",""east""]] call GW_Gear_Fnc_Init;}";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""gearbox"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								name="gearbox_3";
 								description="Gearbox";
 							};
@@ -28828,14 +28766,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={141.10059,5,126.03003};
-								angles[]={0,3.1115339,0};
+								position[]={141.101,5,126.03};
+								angles[]={0,3.1115382,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, [""med_box"",""east""]] call GW_Gear_Fnc_Init;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""med_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								name="medical_box_east";
 								description="Medical box";
 							};
@@ -28940,7 +28878,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="call{[this, [""gearbox"",""east""]] call GW_Gear_Fnc_Init;}";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""gearbox"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								name="gearbox_4";
 								description="Gearbox";
 							};
@@ -29109,54 +29047,8 @@ class Mission
 					name="OPFOR FARP";
 					class Entities
 					{
-						items=60;
+						items=58;
 						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={139.52586,5.6349964,41.04567};
-								angles[]={0,6.2662187,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="call{null = [This,25,true] ExecVM ""Scripts\NEKY_ServiceStation\MobileSS.sqf""; this setVariable [""ace_rearm_isSupplyVehicle"", true]}";
-							};
-							id=2590;
-							type="CargoNet_01_box_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item1
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={139.57701,5,40.906876};
-								angles[]={0,6.2662187,0};
-							};
-							title="Mobile Service Station";
-							description="This also adds pylon configuration options";
-							id=2591;
-						};
-						class Item2
 						{
 							dataType="Object";
 							class PositionInfo
@@ -29204,7 +29096,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item3
+						class Item1
 						{
 							dataType="Object";
 							class PositionInfo
@@ -29252,7 +29144,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item4
+						class Item2
 						{
 							dataType="Object";
 							class PositionInfo
@@ -29300,7 +29192,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item5
+						class Item3
 						{
 							dataType="Object";
 							class PositionInfo
@@ -29348,7 +29240,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item6
+						class Item4
 						{
 							dataType="Object";
 							class PositionInfo
@@ -29407,7 +29299,7 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item7
+						class Item5
 						{
 							dataType="Object";
 							class PositionInfo
@@ -29466,7 +29358,7 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item8
+						class Item6
 						{
 							dataType="Object";
 							class PositionInfo
@@ -29525,7 +29417,7 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item9
+						class Item7
 						{
 							dataType="Object";
 							class PositionInfo
@@ -29584,7 +29476,7 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item10
+						class Item8
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -29596,7 +29488,7 @@ class Mission
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
 							id=2601;
 						};
-						class Item11
+						class Item9
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -29608,7 +29500,7 @@ class Mission
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
 							id=2602;
 						};
-						class Item12
+						class Item10
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -29620,7 +29512,7 @@ class Mission
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
 							id=2603;
 						};
-						class Item13
+						class Item11
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -29632,7 +29524,7 @@ class Mission
 							description="This service station allows pilots to configure their pylons in-case of issues with loadouts set by the editor. Place more than just the 1, as wrecks and such could block if accidents happen at base.";
 							id=2604;
 						};
-						class Item14
+						class Item12
 						{
 							dataType="Object";
 							class PositionInfo
@@ -29643,7 +29535,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Helicopter""};" \n "[_this, false,false] spawn OKS_fnc_Helicopter;" \n "};";
 								reportOwnPosition=1;
 							};
 							id=2610;
@@ -29663,16 +29555,29 @@ class Mission
 										};
 									};
 								};
-								nAttributes=1;
+								class Attribute1
+								{
+									property="rhs_decalNumber_type";
+									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHSAIRMI8NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NoChange";
+										};
+									};
+								};
+								nAttributes=2;
 							};
 						};
-						class Item15
+						class Item13
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={139.464,8.9768047,39.188999};
-								angles[]={0,4.7083049,0};
+								position[]={139.89659,8.9768047,41.393162};
+								angles[]={-0,4.7083049,0};
 							};
 							side="Empty";
 							flags=4;
@@ -29701,7 +29606,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item16
+						class Item14
 						{
 							dataType="Object";
 							class PositionInfo
@@ -29713,10 +29618,80 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""small_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""small_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=335;
+							type="B_supplyCrate_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs"",""ACE_EHP""],[1,10,2,1,12,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item15
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={139.35704,5.8924227,33.293976};
+								angles[]={0,3.1556425,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""small_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
+								description="Resupplie Small";
+							};
+							id=2033;
+							type="B_supplyCrate_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs"",""ACE_EHP""],[1,10,2,1,12,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item16
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={139.41768,5.8924227,35.488724};
+								angles[]={0,3.1556425,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""small_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
+								description="Resupplie Small";
+							};
+							id=2034;
 							type="B_supplyCrate_F";
 							class CustomAttributes
 							{
@@ -29741,76 +29716,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={139.35704,5.8924227,33.293976};
-								angles[]={0,3.1556425,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="[this, ""small_box"", ""east""] call GW_Gear_Fnc_Handler;";
-								description="Resupplie Small";
-							};
-							id=2033;
-							type="B_supplyCrate_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs"",""ACE_EHP""],[1,10,2,1,12,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item18
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={139.41768,5.8924227,35.488724};
-								angles[]={0,3.1556425,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="[this, ""small_box"", ""east""] call GW_Gear_Fnc_Handler;";
-								description="Resupplie Small";
-							};
-							id=2034;
-							type="B_supplyCrate_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs"",""ACE_EHP""],[1,10,2,1,12,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item19
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={139.46529,5.8924227,37.807556};
 								angles[]={0,3.1556425,0};
 							};
@@ -29818,7 +29723,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""small_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""small_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2035;
@@ -29841,7 +29746,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item20
+						class Item18
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -29853,7 +29758,7 @@ class Mission
 							description="Small resupply crates meant only for a fire-teams resupply. The Ammo Boxes have the standard ammunition for the Squad, the Basic Weapons Crate has the secondary ammunitions such as for the roles of MAT, AMAT, AMMG, MMG, Light Rifleman, Marksman. Medical box is for medical resupply.";
 							id=1963;
 						};
-						class Item21
+						class Item19
 						{
 							dataType="Object";
 							class PositionInfo
@@ -29865,10 +29770,80 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2559;
+							type="Box_Syndicate_Ammo_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item20
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={138.15028,5.2100425,45.588318};
+								angles[]={0,3.1692562,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
+								description="Resupplie Small";
+							};
+							id=2560;
+							type="Box_Syndicate_Ammo_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item21
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={139.25551,5.2100425,26.920029};
+								angles[]={0,3.1369805,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
+								description="Resupplie Small";
+							};
+							id=2561;
 							type="Box_Syndicate_Ammo_F";
 							class CustomAttributes
 							{
@@ -29893,17 +29868,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={138.15028,5.2100425,45.588318};
-								angles[]={0,3.1692562,0};
+								position[]={141.02892,5.2100425,26.943756};
+								angles[]={0,3.1491137,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
-							id=2560;
+							id=2562;
 							type="Box_Syndicate_Ammo_F";
 							class CustomAttributes
 							{
@@ -29928,17 +29903,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={139.25551,5.2100425,26.920029};
-								angles[]={0,3.1369805,0};
+								position[]={137.68913,5.2100425,27.814514};
+								angles[]={0,3.1547937,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
-							id=2561;
+							id=2563;
 							type="Box_Syndicate_Ammo_F";
 							class CustomAttributes
 							{
@@ -29963,17 +29938,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={141.02892,5.2100425,26.943756};
-								angles[]={0,3.1491137,0};
+								position[]={138.15401,5.2100425,46.47953};
+								angles[]={0,3.1692638,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
-							id=2562;
+							id=2564;
 							type="Box_Syndicate_Ammo_F";
 							class CustomAttributes
 							{
@@ -29998,17 +29973,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={137.68913,5.2100425,27.814514};
-								angles[]={0,3.1547937,0};
+								position[]={139.2592,5.2100425,27.811249};
+								angles[]={0,3.1369805,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
-							id=2563;
+							id=2565;
 							type="Box_Syndicate_Ammo_F";
 							class CustomAttributes
 							{
@@ -30033,17 +30008,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={138.15401,5.2100425,46.47953};
-								angles[]={0,3.1692638,0};
+								position[]={141.03261,5.2100425,27.834976};
+								angles[]={0,3.1491137,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
-							id=2564;
+							id=2566;
 							type="Box_Syndicate_Ammo_F";
 							class CustomAttributes
 							{
@@ -30068,17 +30043,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={139.2592,5.2100425,27.811249};
-								angles[]={0,3.1369805,0};
+								position[]={139.75362,5.2100425,45.617889};
+								angles[]={0,3.1692562,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
-							id=2565;
+							id=2567;
 							type="Box_Syndicate_Ammo_F";
 							class CustomAttributes
 							{
@@ -30103,17 +30078,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={141.03261,5.2100425,27.834976};
-								angles[]={0,3.1491137,0};
+								position[]={139.75731,5.2100425,46.509125};
+								angles[]={0,3.1692638,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
-							id=2566;
+							id=2568;
 							type="Box_Syndicate_Ammo_F";
 							class CustomAttributes
 							{
@@ -30138,18 +30113,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={139.75362,5.2100425,45.617889};
-								angles[]={0,3.1692562,0};
+								position[]={137.71423,5.069725,44.398884};
+								angles[]={0,3.1306319,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
-							id=2567;
-							type="Box_Syndicate_Ammo_F";
+							id=1975;
+							type="Box_Syndicate_Wps_F";
 							class CustomAttributes
 							{
 								class Attribute0
@@ -30173,18 +30148,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={139.75731,5.2100425,46.509125};
-								angles[]={0,3.1692638,0};
+								position[]={140.04794,5.069725,44.412327};
+								angles[]={0,3.1306319,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
-							id=2568;
-							type="Box_Syndicate_Ammo_F";
+							id=1976;
+							type="Box_Syndicate_Wps_F";
 							class CustomAttributes
 							{
 								class Attribute0
@@ -30208,17 +30183,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={137.71423,5.069725,44.398884};
+								position[]={139.07658,5.069725,26.096909};
 								angles[]={0,3.1306319,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_special_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
-							id=1975;
+							id=1977;
 							type="Box_Syndicate_Wps_F";
 							class CustomAttributes
 							{
@@ -30243,17 +30218,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={140.04794,5.069725,44.412327};
+								position[]={140.20045,5.069725,26.092804};
 								angles[]={0,3.1306319,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_special_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
-							id=1976;
+							id=1978;
 							type="Box_Syndicate_Wps_F";
 							class CustomAttributes
 							{
@@ -30278,17 +30253,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={139.07658,5.069725,26.096909};
+								position[]={138.85611,5.069725,44.407177};
 								angles[]={0,3.1306319,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_special_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
-							id=1977;
+							id=2008;
 							type="Box_Syndicate_Wps_F";
 							class CustomAttributes
 							{
@@ -30313,17 +30288,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={140.20045,5.069725,26.092804};
+								position[]={137.94099,5.069725,26.072876};
 								angles[]={0,3.1306319,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_special_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
-							id=1978;
+							id=2009;
 							type="Box_Syndicate_Wps_F";
 							class CustomAttributes
 							{
@@ -30348,76 +30323,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={138.85611,5.069725,44.407177};
-								angles[]={0,3.1306319,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="[this, ""tiny_special_box"", ""east""] call GW_Gear_Fnc_Handler;";
-								description="Resupplie Small";
-							};
-							id=2008;
-							type="Box_Syndicate_Wps_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item36
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={137.94099,5.069725,26.072876};
-								angles[]={0,3.1306319,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="[this, ""tiny_special_box"", ""east""] call GW_Gear_Fnc_Handler;";
-								description="Resupplie Small";
-							};
-							id=2009;
-							type="Box_Syndicate_Wps_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_20Rnd_65x47_Scenar_mag"",""ACE_30Rnd_65x47_Scenar_mag"",""ACE_20Rnd_65_Creedmor_mag"",""ACE_30Rnd_65_Creedmor_mag"",""ACE_10Rnd_762x51_M118LR_Mag"",""ACE_20Rnd_762x51_M118LR_Mag"",""ACE_10Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk316_Mod_0_Mag"",""ACE_10Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mk319_Mod_0_Mag"",""ACE_20Rnd_762x51_Mag_Tracer"",""ACE_20Rnd_762x51_Mag_Tracer_Dim""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,10,2,1,12,12]],[[""B_Kitbag_mcamo""],[2]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item37
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={141.33095,5.069725,26.104523};
 								angles[]={0,3.1306319,0};
 							};
@@ -30425,7 +30330,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_special_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2011;
@@ -30448,7 +30353,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item38
+						class Item36
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -30459,7 +30364,7 @@ class Mission
 							description="We're trying to shift away from large resupplies to increase the flow of supplies having to be brought to the front. So we prefer that you use the small crates next to the flag. This exists still if the terrain does not allow for continueous  resupply from AAC.";
 							id=1962;
 						};
-						class Item39
+						class Item37
 						{
 							dataType="Marker";
 							position[]={138.67393,5,61.330368};
@@ -30471,7 +30376,7 @@ class Mission
 							b=0.69999999;
 							id=2660;
 						};
-						class Item40
+						class Item38
 						{
 							dataType="Logic";
 							class PositionInfo
@@ -30616,7 +30521,7 @@ class Mission
 								nAttributes=10;
 							};
 						};
-						class Item41
+						class Item39
 						{
 							dataType="Object";
 							class PositionInfo
@@ -30628,7 +30533,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2776;
@@ -30651,7 +30556,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item42
+						class Item40
 						{
 							dataType="Object";
 							class PositionInfo
@@ -30663,7 +30568,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=2777;
@@ -30686,7 +30591,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item43
+						class Item41
 						{
 							dataType="Object";
 							class PositionInfo
@@ -30704,7 +30609,7 @@ class Mission
 							id=2803;
 							type="Land_HelipadSquare_F";
 						};
-						class Item44
+						class Item42
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -30715,7 +30620,7 @@ class Mission
 							description="This helipad is for refuel/rearm and repair.";
 							id=2807;
 						};
-						class Item45
+						class Item43
 						{
 							dataType="Object";
 							class PositionInfo
@@ -30749,7 +30654,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item46
+						class Item44
 						{
 							dataType="Object";
 							class PositionInfo
@@ -30795,7 +30700,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item47
+						class Item45
 						{
 							dataType="Object";
 							class PositionInfo
@@ -30841,7 +30746,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item48
+						class Item46
 						{
 							dataType="Object";
 							class PositionInfo
@@ -30887,7 +30792,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item49
+						class Item47
 						{
 							dataType="Object";
 							class PositionInfo
@@ -30933,7 +30838,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item50
+						class Item48
 						{
 							dataType="Object";
 							class PositionInfo
@@ -30949,7 +30854,7 @@ class Mission
 							id=3012;
 							type="Box_East_Wps_F";
 						};
-						class Item51
+						class Item49
 						{
 							dataType="Object";
 							class PositionInfo
@@ -30965,7 +30870,7 @@ class Mission
 							id=3013;
 							type="Box_East_Wps_F";
 						};
-						class Item52
+						class Item50
 						{
 							dataType="Object";
 							class PositionInfo
@@ -30981,7 +30886,7 @@ class Mission
 							id=3014;
 							type="Box_East_Wps_F";
 						};
-						class Item53
+						class Item51
 						{
 							dataType="Object";
 							class PositionInfo
@@ -30997,7 +30902,7 @@ class Mission
 							id=3015;
 							type="Box_East_Wps_F";
 						};
-						class Item54
+						class Item52
 						{
 							dataType="Object";
 							class PositionInfo
@@ -31009,7 +30914,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Helicopter""};" \n "[_this, false,false] spawn OKS_fnc_Helicopter;" \n "};";
 							};
 							id=3022;
 							type="RHS_Mi24P_vvs";
@@ -31044,7 +30949,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item55
+						class Item53
 						{
 							dataType="Object";
 							class PositionInfo
@@ -31055,7 +30960,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Helicopter""};" \n "[_this, false,false] spawn OKS_fnc_Helicopter;" \n "};";
 								reportOwnPosition=1;
 							};
 							id=3023;
@@ -31078,7 +30983,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item56
+						class Item54
 						{
 							dataType="Object";
 							class PositionInfo
@@ -31090,7 +30995,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Helicopter""};" \n "[_this, false,false] spawn OKS_fnc_Helicopter;" \n "};";
 							};
 							id=3025;
 							type="RHS_Ka52_vvs";
@@ -31125,7 +31030,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item57
+						class Item55
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -31136,7 +31041,7 @@ class Mission
 							title="Vehicle Ammo Resupply";
 							id=3019;
 						};
-						class Item58
+						class Item56
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -31146,7 +31051,7 @@ class Mission
 							title="Vehicle Fuel Resupply";
 							id=3016;
 						};
-						class Item59
+						class Item57
 						{
 							dataType="Object";
 							class PositionInfo
@@ -31158,7 +31063,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""tiny_special_box"", ""east""] call GW_Gear_Fnc_Handler;";
+								init="this spawn {" \n "waitUntil{sleep 1; !isNil ""GW_Gear_Fnc_Init""};" \n "[_this, [""tiny_box_special"",""east""]] call GW_Gear_Fnc_Init" \n "};" \n "";
 								description="Resupplie Small";
 							};
 							id=3128;
@@ -31188,1395 +31093,6 @@ class Mission
 			};
 			id=404;
 			atlOffset=0.013310909;
-		};
-		class Item4
-		{
-			dataType="Layer";
-			name="Script Examples (Hidden) - Delete if not used!";
-			state=1;
-			class Entities
-			{
-				items=11;
-				class Item0
-				{
-					dataType="Layer";
-					name="Destroy House Example";
-					class Entities
-					{
-						items=4;
-						class Item0
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={110.91838,5,788.94196};
-							};
-							title="Destroy Houses Trigger";
-							description="Param 1: Trigger" \n "Param 2: Random damage (True/False)" \n "Param 3: Random Damage (1-10)" \n "" \n "This is a trigger to destroy buildings inside an area to create ruins. Avoid placement of units in buildings that are turned to ruins as they may stand ""inside"" the ruined building if they spawn after it's destruction. This  trigger can be adjusted to fit an entire village or just a portion. Try not to overlap different triggers.";
-							id=2835;
-						};
-						class Item1
-						{
-							dataType="Trigger";
-							position[]={111.014,5,790.31299};
-							class Attributes
-							{
-								name="DestroyHouseTrigger_1";
-								condition="time > 30";
-								onActivation="[thisTrigger,false,[8,10]] spawn OKS_Destroy_Houses;";
-								sizeA=15;
-								sizeB=15;
-								isServerOnly=1;
-							};
-							id=2832;
-							type="EmptyDetectorAreaR250";
-						};
-						class Item2
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={110.958,5,783.96698};
-							};
-							init="(nearestObject [getPos this,""HOUSE""]) setVariable [""OKS_Destroy_Blacklist"",true,true];" \n "(nearestBuilding this) setVariable [""OKS_Destroy_Blacklist"",true,true];";
-							id=2833;
-							type="Logic";
-						};
-						class Item3
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={110.93584,5,784.05872};
-							};
-							title="Blacklist - Do not destroy Building";
-							description="Use this gamelogic and place it as near to the center of the buildings as possible on the X/Y axis. It will be blacklisted from the house destruction script.";
-							id=2836;
-						};
-					};
-					id=2834;
-				};
-				class Item1
-				{
-					dataType="Layer";
-					name="Power Generator Script";
-					class Entities
-					{
-						items=2;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={150.661,5.795527,784.01398};
-								angles[]={0,1.5381936,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="Generator_1";
-								presenceCondition="false";
-							};
-							id=2837;
-							type="Land_PowerGenerator_F";
-						};
-						class Item1
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={150.645,5,783.61298};
-							};
-							title="Disable Power Generator";
-							description="Param 1: Object to add action" \n "Param 2: Should add action (True/False)" \n "Param 3: Should turn off nearby lights (True/False)" \n "Param 4: Range of effect to nearby lights (distance in meters)" \n "" \n "Example: [_this,true,true,1000] spawn OKS_PowerGenerator ;" \n "" \n "Use this power generator to enable us to disable lights in the area. This does not add a task.";
-							id=2838;
-						};
-					};
-					id=2861;
-				};
-				class Item2
-				{
-					dataType="Layer";
-					name="Hostage/HVT Task Example";
-					class Entities
-					{
-						items=4;
-						class Item0
-						{
-							dataType="Group";
-							side="West";
-							class Entities
-							{
-								items=1;
-								class Item0
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={134.16299,5.0014391,763.08899};
-										angles[]={0,3.086004,0};
-									};
-									side="West";
-									flags=7;
-									class Attributes
-									{
-										init="this disableAI ""MOVE""; this setUnitPos ""UP"";";
-										name="HVT_1";
-										presenceCondition="false";
-									};
-									id=2851;
-									type="B_G_officer_F";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="GW_TeamColor";
-											expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
-											class Value
-											{
-												class data
-												{
-													singleType="STRING";
-													value="main";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="GW_LoadoutSelector";
-											expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
-											class Value
-											{
-												class data
-												{
-													singleType="STRING";
-													value="";
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-							};
-							class Attributes
-							{
-							};
-							id=2850;
-							atlOffset=-5;
-						};
-						class Item1
-						{
-							dataType="Group";
-							side="East";
-							class Entities
-							{
-								items=1;
-								class Item0
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={128.217,5.0014391,763.14496};
-										angles[]={0,3.1522043,0};
-									};
-									side="East";
-									flags=7;
-									class Attributes
-									{
-										init="this disableAI ""MOVE""; this setUnitPos ""UP"";";
-										name="officer_1";
-										presenceCondition="false";
-									};
-									id=2849;
-									type="O_G_officer_F";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="GW_TeamColor";
-											expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
-											class Value
-											{
-												class data
-												{
-													singleType="STRING";
-													value="main";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="GW_LoadoutSelector";
-											expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
-											class Value
-											{
-												class data
-												{
-													singleType="STRING";
-													value="";
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-							};
-							class Attributes
-							{
-							};
-							id=2848;
-							atlOffset=-5;
-						};
-						class Item2
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={128.42033,5,763.01099};
-							};
-							title="HVT Objective: Enemy Officer";
-							description="The code is added to the HVT upon start, however the task will only show up once the HVT is ""captive"". This code allows the HVT to be a combatant until wounded or flashbanged to make him surrender." \n "" \n "Example Code:" \n "[Group Officer_1,getMarkerPos ""respawn_west"",west,false,nil,false] spawn OKS_Evacuate_HVT;" \n "" \n "Param 1: Group of Target" \n "Param 2: Exfil location (Bring HVT to this position to complete)" \n "Param 3: Faction of pickup helicopter is enabled" \n "Param 4: Should call AI extraction" \n "Param 5: Parent Task" \n "Param 6: IsCaptive (True for Hostages, False for combatant)" \n "" \n "To add more Officers in the same task, add more officers to the group of the target officer.";
-							id=2852;
-						};
-						class Item3
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={134.22099,5,763.11798};
-							};
-							title="HVT Objective: Friendly Captive";
-							description="The code is added to the HVT upon start, however the task will only show up once the HVT is ""captive"". This code allows the HVT to be a hostage without weapons and tied/blindfolded." \n "" \n "Example Code:" \n "[Group HVT_1,getMarkerPos ""respawn_west"",west,false,nil,true] spawn OKS_Evacuate_HVT;" \n "" \n "Param 1: Group of Target" \n "Param 2: Exfil location (Bring HVT to this position to complete)" \n "Param 3: Faction of pickup helicopter is enabled" \n "Param 4: Should call AI extraction" \n "Param 5: Parent Task" \n "Param 6: IsCaptive (True for Hostages, False for combatant)" \n "" \n "To add more hostages/captives in the same task, add more units to the group of the target.";
-							id=2853;
-						};
-					};
-					id=2862;
-					atlOffset=-1.25;
-				};
-				class Item3
-				{
-					dataType="Layer";
-					name="Defuse Bomb Example";
-					class Entities
-					{
-						items=2;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={110.15947,5,763.1947};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="bomb_1";
-								presenceCondition="false";
-							};
-							id=2839;
-							type="SatchelCharge_F";
-						};
-						class Item1
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={110.14043,5,763.03369};
-							};
-							title="Defuse Bomb Tasks";
-							description="Add this code in the spawnList case where you wish the task to activate. Changed the params based on your needs." \n "" \n "[bomb_1,60] spawn OKS_Defuse_Explosive;" \n "If you use more than one bomb make sure to change the code!" \n "" \n "Param 1: Name of bomb or XYZ Position" \n "Param 2: Seconds until explosion";
-							id=2840;
-						};
-					};
-					id=2863;
-				};
-				class Item4
-				{
-					dataType="Layer";
-					name="Destroy Barricade Example";
-					class Entities
-					{
-						items=3;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={106.81877,6.3243098,746.93506};
-								angles[]={0,0.0023911009,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="barricade_1";
-								presenceCondition="false";
-							};
-							id=2841;
-							type="Land_Cargo20_military_green_F";
-						};
-						class Item1
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={113.81035,6.3243098,746.71008};
-								angles[]={0,0.0023911009,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="barricade_2";
-								presenceCondition="false";
-							};
-							id=2842;
-							type="Land_Cargo20_military_green_F";
-						};
-						class Item2
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={110.345,5,747.03601};
-							};
-							title="Destroy Barricade Task";
-							description="Add this code in the spawnList case where you wish the task to activate. Changed the params based on your needs." \n "" \n "[[barricade_1,barricade_2]] spawn OKS_Destroy_Barricade;" \n "If you use more than one barricade make sure to change the code!" \n "" \n "Param 1: Array with Barricade names";
-							id=2843;
-						};
-					};
-					id=2864;
-				};
-				class Item5
-				{
-					dataType="Layer";
-					name="Destroy Object Example";
-					class Entities
-					{
-						items=2;
-						class Item0
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={132.26091,5,746.82397};
-							};
-							title="Destroy Task";
-							description="Use this task to add mission objectives to destroy an objective. When the code is run the task will be created either use in init as the example or move the code to spawnList." \n "" \n "Param 1: Target" \n "Param 2: Custom Task Title" \n "Param 3: Custom Display Name" \n "Param 4: Custom Description" \n "Param 5: Custom Icon" \n "Param 6: Task Parent" \n "Param 7: Should show location" \n "Param 8: Should popup notification" \n "" \n "Example Code:" \n "[officer_1,""Kill the Officer"",""Enemy Officer"",""You need to kill this %1 because it needs to happen"",true,true,nil] spawn OKS_Destroy_Task;";
-							id=2845;
-						};
-						class Item1
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={132.161,5.5748615,746.534};
-								angles[]={0,0.0023911009,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="_this spawn { sleep 25; [_this] spawn OKS_Destroy_Task; }";
-								name="Destroy_1";
-								presenceCondition="false";
-							};
-							id=2847;
-							type="UK3CB_Cocaine_Pallet_Wrapped_Green";
-						};
-					};
-					id=2865;
-				};
-				class Item6
-				{
-					dataType="Layer";
-					name="Scripted Ambient Artillery Example";
-					class Entities
-					{
-						items=4;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={151.46899,6.8568587,750.63397};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="arty_1";
-								presenceCondition="false";
-							};
-							id=2856;
-							type="rhs_2s1_tv";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="rhs_decalPlatoonHullRight";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1HullRightSymbol],  _this getVariable ['rhs_decalPlatoonHullRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="rhs_ammoslot_4_type";
-									expression="_this setVariable ['rhs_ammoslot_4_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="rhs_mag_bk6m";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="rhs_decalNumber_type2";
-									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type2', _value];[_this,[['Number', cRHS2S1BackSmallNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="NoChange";
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="rhs_decalNumber_type3";
-									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type3', _value];[_this,[['Number', cRHS2S1BackLargeNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="NoChange";
-										};
-									};
-								};
-								class Attribute4
-								{
-									property="rhs_decalNumber_type4";
-									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type4', _value];[_this,[['Number', cRHS2S1BackTurretNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="NoChange";
-										};
-									};
-								};
-								class Attribute5
-								{
-									property="rhs_decalNumber_type5";
-									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type5', _value];[_this,[['Number', cRHS2S1FrontTurretNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="NoChange";
-										};
-									};
-								};
-								class Attribute6
-								{
-									property="rhs_decalNumber_type6";
-									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type6', _value];[_this,[['Number', cRHS2S1SerbianNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="NoChange";
-										};
-									};
-								};
-								class Attribute7
-								{
-									property="rhs_decalNumber_type";
-									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHS2S1NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="NoChange";
-										};
-									};
-								};
-								class Attribute8
-								{
-									property="rhs_decalPlatoonTurretFrontRight";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretFrontRightSymbol],  _this getVariable ['rhs_decalPlatoonTurretFrontRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute9
-								{
-									property="rhs_decalPlatoonTurretBackRight";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretBackRightSymbol],  _this getVariable ['rhs_decalPlatoonTurretBackRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute10
-								{
-									property="rhs_decalPlatoonTurretBackLeft";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretBackLeftSymbol],  _this getVariable ['rhs_decalPlatoonTurretBackLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute11
-								{
-									property="rhs_decalPlatoonTurretFrontRight_type";
-									expression="_this setVariable ['rhs_decalPlatoonTurretFrontRight_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute12
-								{
-									property="rhs_ammoslot_3_type";
-									expression="_this setVariable ['rhs_ammoslot_3_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="rhs_mag_s463";
-										};
-									};
-								};
-								class Attribute13
-								{
-									property="rhs_decalPlatoon";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1BackSymbol],  _this getVariable ['rhs_decalPlatoonBack_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute14
-								{
-									property="rhs_decalPlatoonTurretFrontLeft_type";
-									expression="_this setVariable ['rhs_decalPlatoonTurretFrontLeft_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute15
-								{
-									property="rhs_ammoslot_2_type";
-									expression="_this setVariable ['rhs_ammoslot_2_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="rhs_mag_d462";
-										};
-									};
-								};
-								class Attribute16
-								{
-									property="rhs_decalPlatoonTurretFrontLeft";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretFrontLeftSymbol],  _this getVariable ['rhs_decalPlatoonTurretFrontLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute17
-								{
-									property="rhs_decalPlatoonBack_type";
-									expression="_this setVariable ['rhs_decalPlatoonBack_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute18
-								{
-									property="rhs_ammoslot_1_type";
-									expression="_this setVariable ['rhs_ammoslot_1_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="rhs_mag_of462";
-										};
-									};
-								};
-								class Attribute19
-								{
-									property="rhs_decalPlatoonHullRight_type";
-									expression="_this setVariable ['rhs_decalPlatoonHullRight_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute20
-								{
-									property="rhs_decalPlatoonHullLeft_type";
-									expression="_this setVariable ['rhs_decalPlatoonHullLeft_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute21
-								{
-									property="rhs_decalPlatoonTurretBackLeft_type";
-									expression="_this setVariable ['rhs_decalPlatoonTurretBackLeft_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute22
-								{
-									property="rhs_decalPlatoonHullLeft";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1HullLeftSymbol],  _this getVariable ['rhs_decalPlatoonHullLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute23
-								{
-									property="rhs_decalPlatoonTurretBackRight_type";
-									expression="_this setVariable ['rhs_decalPlatoonTurretBackRight_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute24
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[4]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red""],[10,10,10]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=25;
-							};
-						};
-						class Item1
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={151.7343,5,750.26697};
-							};
-							title="Scripted Ambient Artillery";
-							description="The code is added to the Artillery upon start. If you wish it to start from spawn use the code in the spawnList script. " \n "" \n "Example Code:" \n "[east,arty_1,ArtyTarget_1,7,300,300] spawn OKS_ArtyFire;" \n "" \n "Param 1: Side of Artillery Crew" \n "Param 2: Artillery Vehicle Name" \n "Param 3: Target Location (Does not impact, sometimes it does so not near friendly base)" \n "Param 4: Rounds per salvo" \n "Param 5: Rearm Time (When out of ammo)" \n "Param 6: Reload Time (Between Salvos)";
-							id=2857;
-						};
-						class Item2
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={148.07585,5,750.53156};
-							};
-							side="Empty";
-							class Attributes
-							{
-								name="ArtyTarget_1";
-								presenceCondition="false";
-							};
-							id=2858;
-							type="Land_HelipadEmpty_F";
-						};
-						class Item3
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={148.14101,5,750.46301};
-							};
-							title="Scripted Artillery Target";
-							description="This is the designated target for the artillery. The artillery will aim at this, however the script should delete the rounds upon exit, to avoid impacting performance. Sometimes breaks so don't place it on friendly positions!";
-							id=2859;
-						};
-					};
-					id=2866;
-				};
-				class Item7
-				{
-					dataType="Layer";
-					name="Scripted AAA Example";
-					class Entities
-					{
-						items=2;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={150.968,6.6393785,763.68982};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="AAA_1";
-								presenceCondition="false";
-							};
-							id=2854;
-							type="rhs_gaz66_zu23_vv";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="rhs_decalArmy_type";
-									expression="_this setVariable ['rhs_decalArmy_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Army";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="rhs_decalNumber_type";
-									expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cTrucksGaz4NumberPlaces, _value]]] call rhs_fnc_decalsInit";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Default";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="rhs_decalArmy";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cTrucksGazRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="rhs_decalPlatoon_type";
-									expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Army";
-										};
-									};
-								};
-								class Attribute4
-								{
-									property="rhs_decalPlatoon";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cTrucksGazRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute5
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[10]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=6;
-							};
-						};
-						class Item1
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={150.87944,5,764.76782};
-							};
-							title="Scripted AAA";
-							description="The code is added to the AAA upon start. You can also add the script in spawnList if you use names. In this case AAA_1;" \n "Example Code:" \n "[this,east,false,1500,true] spawn GW_Ambient_AAA;" \n "" \n "Param 1: Target AAA" \n "Param 2: AAA Side" \n "Param 3: isHMG (true/false)" \n "Param 4: Range of AAA" \n "Param 5: Should use radar for better awareness (true/false)";
-							id=2855;
-						};
-					};
-					id=2867;
-				};
-				class Item8
-				{
-					dataType="Layer";
-					name="Scripted Live Artillery Example";
-					class Entities
-					{
-						items=6;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={169.114,6.8568587,750.71802};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="livearty_1";
-								presenceCondition="false";
-							};
-							id=2868;
-							type="rhs_2s1_tv";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="rhs_decalPlatoonHullRight";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1HullRightSymbol],  _this getVariable ['rhs_decalPlatoonHullRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="rhs_ammoslot_4_type";
-									expression="_this setVariable ['rhs_ammoslot_4_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="rhs_mag_bk6m";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="rhs_decalNumber_type2";
-									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type2', _value];[_this,[['Number', cRHS2S1BackSmallNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="NoChange";
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="rhs_decalNumber_type3";
-									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type3', _value];[_this,[['Number', cRHS2S1BackLargeNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="NoChange";
-										};
-									};
-								};
-								class Attribute4
-								{
-									property="rhs_decalNumber_type4";
-									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type4', _value];[_this,[['Number', cRHS2S1BackTurretNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="NoChange";
-										};
-									};
-								};
-								class Attribute5
-								{
-									property="rhs_decalNumber_type5";
-									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type5', _value];[_this,[['Number', cRHS2S1FrontTurretNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="NoChange";
-										};
-									};
-								};
-								class Attribute6
-								{
-									property="rhs_decalNumber_type6";
-									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type6', _value];[_this,[['Number', cRHS2S1SerbianNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="NoChange";
-										};
-									};
-								};
-								class Attribute7
-								{
-									property="rhs_decalNumber_type";
-									expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cRHS2S1NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="NoChange";
-										};
-									};
-								};
-								class Attribute8
-								{
-									property="rhs_decalPlatoonTurretFrontRight";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretFrontRightSymbol],  _this getVariable ['rhs_decalPlatoonTurretFrontRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute9
-								{
-									property="rhs_decalPlatoonTurretBackRight";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretBackRightSymbol],  _this getVariable ['rhs_decalPlatoonTurretBackRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute10
-								{
-									property="rhs_decalPlatoonTurretBackLeft";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretBackLeftSymbol],  _this getVariable ['rhs_decalPlatoonTurretBackLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute11
-								{
-									property="rhs_decalPlatoonTurretFrontRight_type";
-									expression="_this setVariable ['rhs_decalPlatoonTurretFrontRight_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute12
-								{
-									property="rhs_ammoslot_3_type";
-									expression="_this setVariable ['rhs_ammoslot_3_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="rhs_mag_s463";
-										};
-									};
-								};
-								class Attribute13
-								{
-									property="rhs_decalPlatoon";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1BackSymbol],  _this getVariable ['rhs_decalPlatoonBack_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute14
-								{
-									property="rhs_decalPlatoonTurretFrontLeft_type";
-									expression="_this setVariable ['rhs_decalPlatoonTurretFrontLeft_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute15
-								{
-									property="rhs_ammoslot_2_type";
-									expression="_this setVariable ['rhs_ammoslot_2_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="rhs_mag_d462";
-										};
-									};
-								};
-								class Attribute16
-								{
-									property="rhs_decalPlatoonTurretFrontLeft";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretFrontLeftSymbol],  _this getVariable ['rhs_decalPlatoonTurretFrontLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute17
-								{
-									property="rhs_decalPlatoonBack_type";
-									expression="_this setVariable ['rhs_decalPlatoonBack_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute18
-								{
-									property="rhs_ammoslot_1_type";
-									expression="_this setVariable ['rhs_ammoslot_1_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="rhs_mag_of462";
-										};
-									};
-								};
-								class Attribute19
-								{
-									property="rhs_decalPlatoonHullRight_type";
-									expression="_this setVariable ['rhs_decalPlatoonHullRight_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute20
-								{
-									property="rhs_decalPlatoonHullLeft_type";
-									expression="_this setVariable ['rhs_decalPlatoonHullLeft_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute21
-								{
-									property="rhs_decalPlatoonTurretBackLeft_type";
-									expression="_this setVariable ['rhs_decalPlatoonTurretBackLeft_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute22
-								{
-									property="rhs_decalPlatoonHullLeft";
-									expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1HullLeftSymbol],  _this getVariable ['rhs_decalPlatoonHullLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="-1";
-										};
-									};
-								};
-								class Attribute23
-								{
-									property="rhs_decalPlatoonTurretBackRight_type";
-									expression="_this setVariable ['rhs_decalPlatoonTurretBackRight_type', _value];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Platoon";
-										};
-									};
-								};
-								class Attribute24
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[4]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red""],[10,10,10]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=25;
-							};
-						};
-						class Item1
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={169.37932,5,750.35095};
-							};
-							title="Scripted Live Artillery";
-							description="The code is added to the Artillery upon start. If you wish it to start from spawn use the code in the spawnList script. " \n "" \n "Example Code:" \n "[livearty_1,[getPos ArtySuppress_1,getPos ArtySuppress_2,getPos ArtySuppress_3],east,1,1,true,true,30,true] spawn OKS_ArtySupression;" \n "" \n "Param 1: Artillery Vehicle Name" \n "Param 2: Array of Target Positions" \n "Param 3: Side of Artillery Crew" \n "Param 4: Rounds per target" \n "Param 5: Seconds between target" \n "Param 6: Unlimited Ammo (true/false)" \n "Param 7: Should Loop until destroyed/out of ammo (true/false)" \n "Param 8: Delay between Loops (Seconds)" \n "Param 9: Should mark with smoke on target (true/false)";
-							id=2869;
-						};
-						class Item2
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={170.62138,5,757.90979};
-							};
-							side="Empty";
-							class Attributes
-							{
-								name="ArtySuppress_1";
-								presenceCondition="false";
-							};
-							id=2870;
-							type="Land_HelipadEmpty_F";
-						};
-						class Item3
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={169.38908,5,757.90265};
-							};
-							title="Scripted Artillery Targets";
-							description="This is the designated target for the artillery. The artillery will aim at this, different to the other ambient artillery script, this script will actually impact the target area. Do note it has to be further than minimum distance and within maximum distance of the artillery.";
-							id=2871;
-						};
-						class Item4
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={169.55913,5,757.93127};
-							};
-							side="Empty";
-							class Attributes
-							{
-								name="ArtySuppress_2";
-								presenceCondition="false";
-							};
-							id=2872;
-							type="Land_HelipadEmpty_F";
-						};
-						class Item5
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={168.70427,5,757.91406};
-							};
-							side="Empty";
-							class Attributes
-							{
-								name="ArtySuppress_3";
-								presenceCondition="false";
-							};
-							id=2873;
-							type="Land_HelipadEmpty_F";
-						};
-					};
-					id=2874;
-				};
-				class Item9
-				{
-					dataType="Comment";
-					class PositionInfo
-					{
-						position[]={140.437,5,844.69501};
-					};
-					title="GOL Script Examples!";
-					description="These are best put inside spawnList. If you use code elsewhere make sure to remove the init of the units/script examples. If you use these MAKE SURE to enable the property ""Presence"" and change the false value to true.";
-					id=2875;
-				};
-				class Item10
-				{
-					dataType="Layer";
-					name="Delete Corpses, Vehicles & Objects";
-					class Entities
-					{
-						items=2;
-						class Item0
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={189.33594,5,783.31396};
-							};
-							title="OKS_DeleteDeadAndObjects";
-							description="    Use this code to delete corpses and objects as well as vehicles from the trigger area. " \n " " \n "    Example: " \n "    [DeleteTrigger_1] spawn OKS_DeleteDeadAndObjects;";
-							id=3002;
-						};
-						class Item1
-						{
-							dataType="Trigger";
-							position[]={189.43207,5,783.52533};
-							class Attributes
-							{
-								name="DeleteTrigger_1";
-								sizeA=250;
-								sizeB=250;
-							};
-							id=3001;
-							type="EmptyDetectorAreaR250";
-						};
-					};
-					id=3003;
-				};
-			};
-			id=2860;
-			atlOffset=-0.0024414063;
 		};
 	};
 	class Connections
