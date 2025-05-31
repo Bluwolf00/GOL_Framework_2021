@@ -24,7 +24,7 @@ class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 		#define MISSION_VERSION 1								// Version of mission
 		#define SELECT_PICTURE ""								// Path to loading screen
 		//#define SELECT_PICTURE RANDOM_PICTURES				// Random loading screen
-
+		// picture path: "\OKS_GOL_Misc\data\images\loadImage.jpg"
 		Author = "Editor";				// Author
 		AuthorUID[] = {"_SP_PLAYER_"};			// UIDs with admin access
 

@@ -189,8 +189,8 @@ if !(_waypointArray isEqualTo []) then {
 		if(!isNil "OKS_Enemy_Talk") then {
 			[_group] spawn OKS_Enemy_Talk;
 		};
-		if(!isNil "OKS_Tracker" && GOL_OKS_Tracker isEqualTo 1) then {
-			[_group] remoteExec ["OKS_Tracker",2];
+		if(!isNil "OKS_fnc_Tracker") then {
+			[_group] remoteExec ["OKS_fnc_Tracker",2];
 		};
 	};
 	{
@@ -233,10 +233,6 @@ if !(_waypointArray isEqualTo []) then {
 } else {
 	_group setVariable ["lambs_danger_disableGroupAI", true];
 	_group setVariable ["GOL_IsStatic",true,true];
-	if(!isNil "OKS_fnc_EnablePath") then {
-		[_group] spawn OKS_fnc_EnablePath;
-	};	
-	//_group setVariable ["acex_headless_blacklist",true];
 };
 
 if (GVAR(autoQueue) && !_skipQueue) then {

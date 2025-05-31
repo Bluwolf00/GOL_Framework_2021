@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=11286;
+		nextID=11306;
 	};
 	class Camera
 	{
-		pos[]={103.10184,101.75761,-46.558086};
-		dir[]={-0.0039602024,-0.59465742,0.80397427};
-		up[]={-0.0029291138,0.80397648,0.5946542};
-		aside[]={0.99999207,-7.723429e-09,0.0049257395};
+		pos[]={100.03336,57.491531,-24.82543};
+		dir[]={0.038265012,-0.53719676,0.84261048};
+		up[]={0.024371222,0.84345543,0.53664595};
+		aside[]={0.99898541,4.1562453e-07,-0.045367971};
 	};
 };
 binarizationWanted=0;
@@ -690,7 +690,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=506;
+									items=507;
 									class Item0
 									{
 										class data
@@ -4739,6 +4739,14 @@ class CustomAttributes
 											value="oks_faceswap_independent";
 										};
 									};
+									class Item506
+									{
+										class data
+										{
+											singleType="STRING";
+											value="oks_core_enabled";
+										};
+									};
 								};
 							};
 						};
@@ -4749,7 +4757,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=506;
+									items=507;
 									class Item0
 									{
 										class data
@@ -18754,6 +18762,33 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item506
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -26137,7 +26172,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={95.654457,6.9401751,55.66534};
+								position[]={95.653999,6.9401751,55.665001};
 							};
 							side="Empty";
 							flags=4;
@@ -26145,7 +26180,7 @@ class Mission
 							{
 								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Helicopter""};" \n "[_this, false,false] spawn OKS_fnc_Helicopter;" \n "};";
 								reportOwnPosition=1;
-								pylons="1500Rnd_gau1950cal_tracer_red_shells;rhs_mag_M229_19;rhs_mag_M229_19;1500Rnd_gau1950cal_tracer_red_shells;";
+								pylons="rhsusf_mag_gau19_melb_left;rhs_mag_M229_19;rhs_mag_M229_19;rhsusf_mag_gau19_melb_right;";
 							};
 							id=2793;
 							type="RHS_MELB_AH6M";
@@ -26153,14 +26188,14 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									property="ExtLongL";
+									expression="_this animateSource ['ExtLongL',_value,true]";
 									class Value
 									{
 										class data
 										{
-											singleType="STRING";
-											value="[[[[""rhs_weap_m4_carryhandle"",""FirstAidKit"",""Medikit""],[2,10,2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[],[]],[[""B_Parachute""],[4]]],false]";
+											singleType="SCALAR";
+											value=1;
 										};
 									};
 								};
@@ -26177,7 +26212,33 @@ class Mission
 										};
 									};
 								};
-								nAttributes=2;
+								class Attribute2
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""rhs_weap_m4_carryhandle""],[2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[""FirstAidKit"",""Medikit""],[10,2]],[[""B_Parachute""],[4]]],false]";
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="ExtLongR";
+									expression="_this animateSource ['ExtLongR',_value,true]";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=4;
 							};
 						};
 						class Item44
