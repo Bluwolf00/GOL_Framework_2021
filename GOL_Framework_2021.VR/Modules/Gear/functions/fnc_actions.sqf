@@ -19,7 +19,11 @@
 #define	LMG nil,1,false,false,"","(((_this getVariable ['GOL_SelectedRole',['']]) select 0) in ['ar','mmg'])"
 params [["_unit", objNull, [objNull]]];
 
-if(OKS_Arsenal isEqualTo true) then {
+_ArsenalAllowed = missionNamespace getVariable ["ARSENAL_ALLOW",true];
+_GroundRolesAllowed = missionNamespace getVariable ["GroundRoles_ALLOW",true];
+_AirRolesAllowed = missionNamespace getVariable ["AirRoles_ALLOW",true];
+
+if(_ArsenalAllowed isEqualTo true) then {
 	_unit addAction ["<t color='#00EAFF'>Attachment Menu</t>", {[_this select 0, player] call ace_arsenal_fnc_openBox},ALL,5];
 	_unit addAction ["<t color='#00EAFF'>Attachment Menu (GL)</t>", {[GOL_Arsenal_GL, player] call ace_arsenal_fnc_openBox},GL,5];
 	_unit addAction ["<t color='#00EAFF'>Attachment Menu (LMG)</t>", {[GOL_Arsenal_LMG, player] call ace_arsenal_fnc_openBox},LMG,5];
@@ -59,7 +63,7 @@ _unit addAction ["<t color='#6a9fff'>Special > Asst. Medium Machine Gunner</t>",
 _unit addAction ["<t color='#6a9fff'>Special > Medium Machine Gunner</t>","[player,'mmg'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#FDF916'>Squad > Vehicle Crew</t>","[player,'crew'] call GW_Gear_Fnc_Handler;",bullShit,4];
 
-if(OKS_GroundRoles isEqualTo true) then {
+if(OKS_GroundRolesAllowed isEqualTo true) then {
 	_unit addAction ["<t color='#FDF916'>Special > Dragon</t>","[player,'dragon'] call GW_Gear_Fnc_Handler;",bullShit,4];
 	_unit addAction ["<t color='#FDF916'>Special > Light Rifleman</t>","[player,'lr'] call GW_Gear_Fnc_Handler;",bullShit,4];
 	_unit addAction ["<t color='#FDF916'>Special > Ammo Bearer</t>","[player,'ab'] call GW_Gear_Fnc_Handler;",bullShit,4];
@@ -73,7 +77,7 @@ if(OKS_GroundRoles isEqualTo true) then {
 
 _unit addAction ["<t color='#22B9FF'>Echo > Chopper Pilot</t>","[player,'p'] call GW_Gear_Fnc_Handler;",bullShit,4];
 
-if(OKS_AirRoles isEqualTo true) then {
+if(OKS_AirRolesAllowed isEqualTo true) then {
 	_unit addAction ["<t color='#22B9FF'>Echo > Para-Rescueman</t>","[player,'pj'] call GW_Gear_Fnc_Handler;",bullShit,4];
 	_unit addAction ["<t color='#22B9FF'>Echo Special > Jet Pilot</t>","[player,'jetp'] call GW_Gear_Fnc_Handler;",bullShit,4];
 	_unit addAction ["<t color='#22B9FF'>Echo Special > Marksman</t>","[player,'marksman'] call GW_Gear_Fnc_Handler;",bullShit,4];

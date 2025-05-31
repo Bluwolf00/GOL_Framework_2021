@@ -80,6 +80,11 @@ _isCar = _unit isKindOf "Car";
 _isTank = _unit isKindOf "Tank";
 _errorCode = false;
 
+_OpticsAllowed = missionNamespace getVariable ["OPTICS_ALLOW",false];
+_MagnifiedOpticsAllowed = missionNamespace getVariable ["MAGNIFIED_OPTICS_ALLOW",false];
+_WeaponsAllowed = missionNamespace getVariable ["WEAPONS_ALLOW",false];
+_ArsenalAllowed = missionNamespace getVariable ["ARSENAL_ALLOW",false];
+
 if (_isMan) then {
 	_loadout = [[],[],[],[],[],[],"","",[],[]];
 	_loadoutFile = "Default";
@@ -312,6 +317,7 @@ if (_isMan) then {
 				[_unit] remoteExecCall [QFUNC(actions), 0, true];	// Enables gear actions for all players
 				[_unit, _Earplugs, 20] call _fnc_AddObjectsCargo;
 				[_unit, "Toolkit", 10] call _fnc_AddObjectsCargo;						
+				[_unit, _mapTools, 10] call _fnc_AddObjectsCargo;						
 				[_unit, "UK3CB_BAF_M6", 5] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_60mm_HE", 15] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_60mm_HEAB", 15] call _fnc_AddObjectsCargo;
@@ -346,8 +352,7 @@ if (_isMan) then {
 					[_unit, _mortarRangeCard, 10] call _fnc_AddObjectsCargo;			
 				};
 
-				if(OKS_Arsenal isEqualTo true) then {
-
+				if(_ArsenalAllowed isEqualTo true) then {
 					_compatibleItems = [];
 
 					if(typeName _uniform == "ARRAY") then {
@@ -389,8 +394,8 @@ if (_isMan) then {
 					_blackList = ["rhsusf_acc_SpecterDR_pvs27","JCA_optic_IHO_black_magnifier","JCA_optic_IHO_olive_magnifier","JCA_optic_IHO_sand_magnifier","JCA_optic_MROS_sand_magnifier","JCA_optic_MROS_olive_magnifier","JCA_optic_MROS_black_magnifier","rhsusf_acc_su230","rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","ACE_acc_pointer_green","ACE_acc_pointer_green_ir","ACE_acc_pointer_red","acc_pointer_ir","acc_pointer_ir_broken","rhsusf_acc_anpeq15_top_h","rhsusf_acc_anpeq15_top_sc","rhsusf_acc_anpeq15_wmx_sc","rhsusf_acc_anpeq15_wmx_h","rhsusf_acc_anpeq15_wmx_light_sc","rhsusf_acc_anpeq15_wmx_light_h","rhsusf_acc_anpeq15_bk_top_h","rhsusf_acc_anpeq15_bk_top_sc","rhsusf_acc_anpeq15_h","rhsusf_acc_anpeq15_sc","rhsusf_acc_anpeq15_light_sc","rhsusf_acc_anpeq15_light_h","rhsusf_acc_anpeq15_bk_h","rhsusf_acc_anpeq15_bk_sc","rhsusf_acc_anpeq15_bk_light_sc","rhsusf_acc_anpeq15_bk_light_h","rhsusf_acc_anpeq16a_top_sc","rhsusf_acc_anpeq16a_top_h","rhsusf_acc_anpeq16a_light_top_sc","rhsusf_acc_anpeq16a_light_top_h","rhsusf_acc_anpas13gv1"];
 					_whiteList = ["rhs_weap_optic_smaw"];							
 
-					if(OKS_Optics isEqualTo true) then {
-						if(OKS_MagnifiedOptics isEqualTo true) then {
+					if(_OpticsAllowed isEqualTo true) then {
+						if(_MagnifiedOpticsAllowed isEqualTo true) then {
 							_opticValues = ["1.0x"]
 						} else {
 							_opticValues = ["1.0x","1.0x-2.0x"]
