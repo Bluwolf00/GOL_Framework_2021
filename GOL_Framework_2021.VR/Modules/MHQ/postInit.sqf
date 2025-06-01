@@ -131,7 +131,8 @@
 			_mhqName = format["%1 MHQ",[configFile >> "CfgVehicles" >> typeOf _mhq] call BIS_fnc_displayName];
 		};
 		_id = (([_mhq] call FUNC(getFlag))) addAction[format ["Teleport to %1", _mhqName],{
-			_EnemyNearUnits = ((_this select 3) nearEntities ["Man", GOL_OKS_MhqSafeZone]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
+			_MhqSafeZone = missionNamespace getVariable ["MHQSAFEZONE",50];
+			_EnemyNearUnits = ((_this select 3) nearEntities ["Man", _MhqSafeZone]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
 			if(count _EnemyNearUnits == 0) then {	
 				private _height = 5;
 				private _sleep = 3.5;	
@@ -166,12 +167,13 @@
 				cutText ["", "BLACK IN",1];
 				
 			} else {
-				if(count crew (_this select 3) > 0) then {
-					systemChat format["Enemies are near the MHQ. You cannot move to the MHQ until the immediate area is secure (%1m). The crew has been notified.",GOL_OKS_MhqSafeZone];
+				_MhqSafeZone = missionNamespace getVariable ["MHQSAFEZONE",50];
+				if(count crew (_this select 3) > 0) then {			
+					systemChat format["Enemies are near the MHQ. You cannot move to the MHQ until the immediate area is secure (%1m). The crew has been notified.",_MhqSafeZone];
 					(format["Reinsert: %1 attempted to move to the MHQ.",name player]) remoteExec ["SystemChat",crew (_this select 3)];
 				} else {
 					private ["_GroupLeaders"];
-					systemChat format["Enemies are near the MHQ. You cannot move to the MHQ until the immediate area is secure (%1m). Group leaders have been notified",GOL_OKS_MhqSafeZone];
+					systemChat format["Enemies are near the MHQ. You cannot move to the MHQ until the immediate area is secure (%1m). Group leaders have been notified",_MhqSafeZone];
 					if(!isNil "flag_west_1") then {
 						_GroupLeaders = allPlayers select {leader (group _X) == _X && (_X distance flag_west_1 > 100)};
 					};
@@ -205,8 +207,8 @@
 		_add pushback [([_mhq] call FUNC(getFlag)), _id];
 	} else {
 		_id = _mhq addAction ["Activate MHQ",{
-			
-			_EnemyNearUnits = ((_this select 3) nearEntities ["Man", GOL_OKS_MhqSafeZone]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
+			_MhqSafeZone = missionNamespace getVariable ["MHQSAFEZONE",50];
+			_EnemyNearUnits = ((_this select 3) nearEntities ["Man", _MhqSafeZone]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
 			if(count _EnemyNearUnits == 0) then {			
 				if(objectParent player != (_this select 3)) then {
 					player PlayMove "Acts_carFixingWheel";
@@ -253,7 +255,7 @@
 					};
 				}, [(_this select 0)]] call CBA_fnc_progressBar;
 			} else {
-				systemChat format["Enemies are near the MHQ. You cannot activate the MHQ until the immediate area is secure (%1m).",GOL_OKS_MhqSafeZone];
+				systemChat format["Enemies are near the MHQ. You cannot activate the MHQ until the immediate area is secure (%1m).",_MhqSafeZone];
 			};
 
 		},ARGUMENT(_mhq),(CONDITION_4 + "&&" + CONDITION_3),7];
