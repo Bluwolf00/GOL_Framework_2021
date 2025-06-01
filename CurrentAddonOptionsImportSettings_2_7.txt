@@ -869,32 +869,35 @@ FPV_DefaultText = "CROCUS";
 force FPV_isUavCaptive = false;
 FPV_MaxFlightDistance = 1500;
 
+// GOL_CORE
+force GOL_CORE_Enabled = true;
+
 // GOL_Dynamic
 GOL_Dynamic_Faction = "CSAT";
 
 // GOL_FaceSwap
-OKS_FaceSwap_BLUFOR = "american";
-OKS_FaceSwap_CIVILIAN = "middleeast";
-OKS_FaceSwap_Debug = false;
-OKS_FaceSwap_Enabled = true;
-force OKS_FaceSwap_INDEPENDENT = "african";
-OKS_FaceSwap_OPFOR = "middleeast";
+GOL_FaceSwap_BLUFOR = "american";
+GOL_FaceSwap_CIVILIAN = "middleeast";
+GOL_FaceSwap_Debug = false;
+GOL_FaceSwap_Enabled = true;
+GOL_FaceSwap_INDEPENDENT = "middleeast";
+GOL_FaceSwap_OPFOR = "middleeast";
 
 // GOL_Gear
-force GOL_AllowSpecialistAirRoles = false;
-force GOL_AllowSpecialistGroundRoles = false;
-GOL_ARSENAL_ALLOWED = true;
-force GOL_ENTRENCH = false;
-force GOL_ForceNVG = false;
-GOL_ForceNVGClassname = "";
-force GOL_MAGNIFIED_OPTICS = false;
-GOL_OPTICS = true;
-GOL_WEAPONS = true;
-force GOL_WIRECUTTER = false;
+AirRoles_ALLOW = false;
+ARSENAL_ALLOW = true;
+ENTRENCH_ALLOW = false;
+ForceNVG = false;
+ForceNVGClassname = "";
+force GroundRoles_ALLOW = true;
+MAGNIFIED_OPTICS_ALLOW = true;
+OPTICS_ALLOW = true;
+WEAPONS_ALLOW = true;
+WIRECUTTER_ALLOW = false;
 
 // GOL_Gear_AI
-GOL_AIForceNVG = false;
-GOL_AIForceNVGClassname = "";
+AIForceNVG = false;
+AIForceNVGClassname = "";
 force LAT_Chance = 0.249656;
 MAT_Chance = 0.15;
 Static_Enable_Chance = 0.4;
@@ -902,45 +905,45 @@ Static_Enable_Refresh = 60;
 UGL_Chance = 0.25;
 
 // GOL_Hunt
-OKS_Hunt_MaxCount = 40;
+GOL_Hunt_MaxCount = 40;
 
 // GOL_MHQ
-GOL_MhqSafeZone = 100;
+MHQSAFEZONE = 100;
 
 // GOL_ORBAT
-GOL_Composition = 0;
+GOL_SelectedComposition = 0;
 
 // GOL_Packing
-OKS_PackedATClass = "RHS_TOW_TriPod_USMC_D";
-OKS_PackedDroneAPClass = "B_UAFPV_RKG_AP";
-OKS_PackedDroneATClass = "B_UAFPV_AT";
-OKS_PackedDroneReconClass = "B_UAV_01_F";
-OKS_PackedDroneSupplyClass = "B_UAV_06_F";
-OKS_PackedGMGClass = "RHS_MK19_TriPod_USMC_WD";
-OKS_PackedHMGClass = "RHS_M2StaticMG_USMC_D";
-OKS_PackedMortarClass = "B_G_Mortar_01_F";
+GOL_PackedATClass = "RHS_TOW_TriPod_USMC_D";
+GOL_PackedDroneAPClass = "B_UAFPV_RKG_AP";
+GOL_PackedDroneATClass = "B_UAFPV_AT";
+GOL_PackedDroneReconClass = "B_UAV_01_F";
+GOL_PackedDroneSupplyClass = "B_UAV_06_F";
+GOL_PackedGMGClass = "RHS_MK19_TriPod_USMC_WD";
+GOL_PackedHMGClass = "RHS_M2StaticMG_USMC_D";
+GOL_PackedMortarClass = "B_G_Mortar_01_F";
 
 // GOL_RemoveVehicleHE
-OKS_RemoveVehicleATGM_Enabled = true;
-OKS_RemoveVehicleHE_Enabled = true;
+GOL_RemoveVehicleATGM_Enabled = true;
+GOL_RemoveVehicleHE_Enabled = true;
 
 // GOL_Suppression
-OKS_Suppressed_MaximumTime = 10;
-OKS_Suppressed_MinimumTime = 6;
-OKS_Suppressed_Threshold = 0.75;
-OKS_Suppression_Debug = false;
-OKS_Suppression_Enabled = true;
+GOL_Suppressed_MaximumTime = 10;
+GOL_Suppressed_MinimumTime = 6;
+GOL_Suppressed_Threshold = 0.75;
+GOL_Suppression_Debug = false;
+GOL_Suppression_Enabled = true;
 
 // GOL_Surrender
-OKS_Surrender_Chance = 0.05;
-OKS_Surrender_ChanceWeaponAim = 0.05;
-OKS_Surrender_Debug = false;
-OKS_Surrender_Distance = 200;
-OKS_Surrender_DistanceWeaponAim = 50;
-OKS_Surrender_Enabled = true;
-OKS_Surrender_Flashbang = true;
-OKS_Surrender_FriendlyDistance = 200;
-OKS_Surrender_Shot = true;
+GOL_Surrender_Chance = 0.05;
+GOL_Surrender_ChanceWeaponAim = 0.05;
+GOL_Surrender_Debug = false;
+GOL_Surrender_Distance = 200;
+GOL_Surrender_DistanceWeaponAim = 50;
+GOL_Surrender_Enabled = true;
+GOL_Surrender_Flashbang = true;
+GOL_Surrender_FriendlyDistance = 200;
+GOL_Surrender_Shot = true;
 
 // GRAD Trenches
 grad_trenches_functions_allowBigEnvelope = true;
@@ -984,10 +987,10 @@ grad_trenches_functions_vehicleEnvelopeRemovalTime = -1;
 force grad_trenches_functions_vehicleTrenchBuildSpeed = 1;
 
 // GW_Common
-GW_Common_autoDelete = true;
+force GW_Common_autoDelete = true;
 force GW_Common_AutoLock = false;
-GW_Common_autoQueue = true;
-GW_Common_BlockAIGear = true;
+force GW_Common_autoQueue = true;
+force GW_Common_BlockAIGear = true;
 force GW_Common_disableThermals = 2;
 GW_Common_radioDistnace = 1.9;
 GW_Common_slingloadEnabled = true;
@@ -1002,10 +1005,10 @@ GW_GameLoop_SafeMode_useType = 0;
 GW_UI_allowSpectator = false;
 
 // GW_Gear
-GW_Gear_Auto_Assign = 1;
+force GW_Gear_Auto_Assign = 1;
 force GW_Gear_autoRemoveCargo = true;
-GW_Gear_extraGear = false;
-GW_Gear_randomGear = true;
+force GW_Gear_extraGear = false;
+force GW_Gear_randomGear = true;
 
 // GW_Performance
 GW_Performance_autoCaching = 3;
@@ -1024,7 +1027,7 @@ force GW_setDifficulty_unitTraining = 2;
 
 // GW_StartUp
 force GW_StartUp_DistanceLimit = 25;
-GW_StartUp_TimeLimit = 5;
+force GW_StartUp_TimeLimit = 5;
 
 // GW_UI
 GW_UI_nameShadow = 2;
