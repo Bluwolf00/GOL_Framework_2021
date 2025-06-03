@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=11366;
+		nextID=11386;
 	};
 	class Camera
 	{
-		pos[]={105.89758,80.812881,-47.719437};
-		dir[]={0.023671495,-0.50829715,0.86085808};
-		up[]={0.013971684,0.86118162,0.50810629};
-		aside[]={0.99962372,4.3291948e-10,-0.027487211};
+		pos[]={78.825119,37.150349,58.86335};
+		dir[]={0.013918423,-0.57316542,0.81932223};
+		up[]={0.0097353868,0.81943923,0.57308346};
+		aside[]={0.99985653,-8.4764906e-10,-0.016985301};
 	};
 };
 binarizationWanted=0;
@@ -20222,7 +20222,7 @@ class Mission
 							{
 								health=0.89999998;
 								lock="UNLOCKED";
-								init="this spawn {" \n "" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; " \n "[_this,25,true] spawn OKS_fnc_MobileSS; " \n "[_this] spawn OKS_fnc_Mechanized;" \n "" \n "};" \n "";
+								init="this spawn {" \n "" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler;  " \n "[_this] spawn OKS_fnc_Mechanized;" \n "" \n "};" \n "";
 								name="mhq_1";
 								textures="Sand";
 							};
@@ -20455,7 +20455,7 @@ class Mission
 							{
 								health=0.89999998;
 								lock="UNLOCKED";
-								init="this spawn {" \n "" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; " \n "[_this,25,true] spawn OKS_fnc_MobileSS; " \n "[_this] spawn OKS_fnc_Mechanized;" \n "" \n "};" \n "";
+								init="this spawn {" \n "" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler;  " \n "[_this] spawn OKS_fnc_Mechanized;" \n "" \n "};" \n "";
 								name="mhq_2";
 								textures="Sand";
 							};
@@ -20688,7 +20688,7 @@ class Mission
 							{
 								health=0.89999998;
 								lock="UNLOCKED";
-								init="this spawn {" \n "" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; " \n "[_this,25,true] spawn OKS_fnc_MobileSS; " \n "[_this] spawn OKS_fnc_Mechanized;" \n "" \n "};" \n "";
+								init="this spawn {" \n "" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler;  " \n "[_this] spawn OKS_fnc_Mechanized;" \n "" \n "};" \n "";
 								name="mhq_3";
 								textures="Sand";
 							};
@@ -20909,7 +20909,7 @@ class Mission
 							{
 								health=0.89999998;
 								lock="UNLOCKED";
-								init="this spawn {" \n "" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; " \n "[_this,25,true] spawn OKS_fnc_MobileSS; " \n "[_this] spawn OKS_fnc_Mechanized;" \n "" \n "};" \n "";
+								init="this spawn {" \n "" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler;  " \n "[_this] spawn OKS_fnc_Mechanized;" \n "" \n "};" \n "";
 								name="mhq_4";
 								textures="Sand";
 							};

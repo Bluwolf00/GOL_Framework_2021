@@ -109,6 +109,14 @@ class Params {
 		texts[] = { "No", "Yes" };
 		values[] = { 0, 1 };
 		default = 0;
+	};	
+
+	class ShouldGiveServiceStationToVehicle
+	{
+		title = "Should non-MHQ vehicles have service station?";
+		texts[] = { "Yes", "No" };
+		values[] = { 1, 0 };
+		default = 1;
 	};		
 };
 
