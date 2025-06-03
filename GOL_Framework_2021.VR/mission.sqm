@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=11326;
+		nextID=11366;
 	};
 	class Camera
 	{
-		pos[]={100.03336,57.491531,-24.82543};
-		dir[]={0.015330528,-0.53125399,0.84709638};
-		up[]={0.0096137784,0.847211,0.53116947};
-		aside[]={0.99985158,4.0416853e-07,-0.018096656};
+		pos[]={105.89758,80.812881,-47.719437};
+		dir[]={0.023671495,-0.50829715,0.86085808};
+		up[]={0.013971684,0.86118162,0.50810629};
+		aside[]={0.99962372,4.3291948e-10,-0.027487211};
 	};
 };
 binarizationWanted=0;
@@ -20124,7 +20124,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={18.975454,5,121.99954};
+						position[]={37.964851,5,108.3831};
 						angles[]={0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
@@ -20136,7 +20136,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={12.998478,5,101.42746};
+						position[]={87.391914,5,123.93491};
 						angles[]={0.72793221,0.11193988,0.29150274};
 					};
 					title="Tent MHQ";
@@ -20148,7 +20148,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={19.012617,5,109.67163};
+						position[]={43.589664,5,108.39679};
 						angles[]={0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
@@ -20160,7 +20160,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={18.808958,5,97.328644};
+						position[]={38.134228,5,98.461166};
 						angles[]={0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
@@ -20172,7 +20172,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={18.754511,5,84.510185};
+						position[]={43.879433,5,97.621094};
 						angles[]={0,3.9513838,0};
 					};
 					title="Mechanized / Motorized Setup";
@@ -20201,7 +20201,7 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={7.0692444,5,124.64743};
+								position[]={23.919592,5,109.84703};
 								angles[]={0,0.06816864,0};
 							};
 							title="MHQ 1";
@@ -20213,7 +20213,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={6.9130859,7.6292419,124.64166};
+								position[]={23.763433,7.6292419,109.84126};
 								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
@@ -20222,7 +20222,7 @@ class Mission
 							{
 								health=0.89999998;
 								lock="UNLOCKED";
-								init="" \n "this spawn {" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; null = [_this,25,true] spawn OKS_fnc_MobileSS; [_this] spawn OKS_fnc_Mechanized;" \n "};" \n "";
+								init="this spawn {" \n "" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; " \n "[_this,25,true] spawn OKS_fnc_MobileSS; " \n "[_this] spawn OKS_fnc_Mechanized;" \n "" \n "};" \n "";
 								name="mhq_1";
 								textures="Sand";
 							};
@@ -20434,7 +20434,7 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={6.6347399,5,112.91536};
+								position[]={30.116571,5,109.80921};
 								angles[]={0,0.06816864,0};
 							};
 							title="MHQ 2";
@@ -20446,7 +20446,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={6.4784584,7.6292419,112.90917};
+								position[]={29.960291,7.6292419,109.80302};
 								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
@@ -20455,7 +20455,7 @@ class Mission
 							{
 								health=0.89999998;
 								lock="UNLOCKED";
-								init="" \n "this spawn {" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; null = [_this,25,true] spawn OKS_fnc_MobileSS; [_this] spawn OKS_fnc_Mechanized;" \n "};" \n "";
+								init="this spawn {" \n "" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; " \n "[_this,25,true] spawn OKS_fnc_MobileSS; " \n "[_this] spawn OKS_fnc_Mechanized;" \n "" \n "};" \n "";
 								name="mhq_2";
 								textures="Sand";
 							};
@@ -20667,7 +20667,7 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={6.7587395,5,99.668358};
+								position[]={23.924656,5,98.78231};
 								angles[]={0,0.06816864,0};
 							};
 							title="MHQ 3";
@@ -20679,7 +20679,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={6.6021957,7.6292419,99.663017};
+								position[]={23.768112,7.6292419,98.77697};
 								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
@@ -20688,7 +20688,7 @@ class Mission
 							{
 								health=0.89999998;
 								lock="UNLOCKED";
-								init="" \n "this spawn {" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; null = [_this,25,true] spawn OKS_fnc_MobileSS; [_this] spawn OKS_fnc_Mechanized;" \n "};" \n "";
+								init="this spawn {" \n "" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; " \n "[_this,25,true] spawn OKS_fnc_MobileSS; " \n "[_this] spawn OKS_fnc_Mechanized;" \n "" \n "};" \n "";
 								name="mhq_3";
 								textures="Sand";
 							};
@@ -20900,7 +20900,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={7.2771912,7.6292419,86.182182};
+								position[]={29.916319,7.6292419,98.31501};
 								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
@@ -20909,7 +20909,7 @@ class Mission
 							{
 								health=0.89999998;
 								lock="UNLOCKED";
-								init="" \n "this spawn {" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; null = [_this,25,true] spawn OKS_fnc_MobileSS; [_this] spawn OKS_fnc_Mechanized;" \n "};" \n "";
+								init="this spawn {" \n "" \n "waitUntil {!isNil ""GW_MHQ_Fnc_Handler"" && !isNil ""OKS_fnc_MobileSS"" && !isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this, ""medium""] call GW_MHQ_Fnc_Handler; " \n "[_this,25,true] spawn OKS_fnc_MobileSS; " \n "[_this] spawn OKS_fnc_Mechanized;" \n "" \n "};" \n "";
 								name="mhq_4";
 								textures="Sand";
 							};
@@ -21121,7 +21121,7 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={7.0297403,5,85.908356};
+								position[]={29.668867,5,98.041183};
 								angles[]={0,0.06816864,0};
 							};
 							title="MHQ 4";
@@ -21143,14 +21143,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18.970106,7.5393777,123.12604};
+								position[]={37.959396,7.5393777,109.50956};
 								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Mechanized""};" \n "[_this] spawn OKS_fnc_Mechanized;" \n "};";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this] spawn OKS_fnc_Mechanized;" \n "};";
 								name="Vehicle_1";
 								textures="Sand";
 							};
@@ -21339,14 +21339,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={19.007269,7.5393777,110.79813};
+								position[]={43.584316,7.5393777,109.52328};
 								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Mechanized""};" \n "[_this] spawn OKS_fnc_Mechanized;" \n "};";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this] spawn OKS_fnc_Mechanized;" \n "};";
 								name="Vehicle_2";
 								textures="Sand";
 							};
@@ -21535,14 +21535,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18.80361,7.5393777,98.455139};
+								position[]={38.069023,7.5393777,98.406807};
 								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Mechanized""};" \n "[_this] spawn OKS_fnc_Mechanized;" \n "};";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this] spawn OKS_fnc_Mechanized;" \n "};";
 								name="Vehicle_3";
 								textures="Sand";
 							};
@@ -21731,14 +21731,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18.749163,7.5393777,85.636681};
+								position[]={43.874084,7.5393777,98.747589};
 								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Mechanized""};" \n "[_this] spawn OKS_fnc_Mechanized;" \n "};";
+								init="this spawn {" \n "waitUntil {!isNil ""OKS_fnc_Mechanized""};" \n "sleep 1;" \n "[_this] spawn OKS_fnc_Mechanized;" \n "};";
 								name="Vehicle_4";
 								textures="Sand";
 							};
@@ -21930,7 +21930,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={13.373249,5.2668285,101.10681};
+						position[]={87.766685,5.2668285,123.61427};
 						angles[]={0,6.2083454,0};
 					};
 					side="Empty";

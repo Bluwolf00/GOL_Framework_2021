@@ -74,13 +74,6 @@ if (!isServer) exitWith {false};
 		["ACE_Wheel", _mhq,true] call ace_cargo_fnc_loadItem;
 		["ACE_Wheel", _mhq,true] call ace_cargo_fnc_loadItem;
 		["ACE_Wheel", _mhq,true] call ace_cargo_fnc_loadItem;
-
-		_fuelCan1 = "Land_CanisterFuel_F" createVehicle [0,0,0];
-		[_fuelCan1,30] call ace_refuel_fnc_makeJerryCan;
-		[_fuelCan1,_mhq,true] call ace_cargo_fnc_loadItem;
-		_fuelCan2 = "Land_CanisterFuel_F" createVehicle [0,0,0];
-		[_fuelCan2,30] call ace_refuel_fnc_makeJerryCan;
-		[_fuelCan2,_mhq,true] call ace_cargo_fnc_loadItem;
 	};
 
 	_mhq addEventHandler ["Killed", {
