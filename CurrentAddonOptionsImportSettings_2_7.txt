@@ -497,19 +497,19 @@ ace_repair_enabled = true;
 force ace_repair_engineerSetting_fullRepair = 0;
 force ace_repair_engineerSetting_repair = 0;
 force ace_repair_engineerSetting_wheel = 0;
-force ace_repair_fullRepairLocation = 0;
+force ace_repair_fullRepairLocation = 3;
 force ace_repair_fullRepairRequiredItems = ["ace_repair_anyToolKit"];
 ace_repair_locationsBoostTraining = false;
 force ace_repair_miscRepairRequiredItems = [];
 force ace_repair_miscRepairTime = 6;
 ace_repair_patchWheelEnabled = 0;
 force ace_repair_patchWheelLocation = ["ground","vehicle"];
-ace_repair_patchWheelMaximumRepair = 0.3;
+force ace_repair_patchWheelMaximumRepair = 0;
 force ace_repair_patchWheelRequiredItems = [];
-ace_repair_patchWheelTime = 5;
+force ace_repair_patchWheelTime = 0.5;
 force ace_repair_repairDamageThreshold = 0.0990013;
 force ace_repair_repairDamageThreshold_engineer = 0;
-force ace_repair_timeCoefficientFullRepair = 0.1;
+force ace_repair_timeCoefficientFullRepair = 0.2;
 force ace_repair_wheelChangeTime = 3;
 force ace_repair_wheelRepairRequiredItems = [];
 
@@ -872,13 +872,21 @@ FPV_MaxFlightDistance = 1500;
 // GOL_CORE
 force GOL_CORE_Enabled = true;
 
+// GOL_DEBUG
+GOL_Ambience_Debug = false;
+GOL_Core_Debug = false;
+GOL_Enemy_Debug = false;
+GOL_FaceSwap_Debug = false;
+GOL_Suppression_Debug = false;
+GOL_Surrender_Debug = false;
+GOL_Unconscious_CameraDebug = false;
+
 // GOL_Dynamic
 GOL_Dynamic_Faction = "CSAT";
 
 // GOL_FaceSwap
 GOL_FaceSwap_BLUFOR = "american";
 GOL_FaceSwap_CIVILIAN = "middleeast";
-GOL_FaceSwap_Debug = false;
 GOL_FaceSwap_Enabled = true;
 GOL_FaceSwap_INDEPENDENT = "middleeast";
 GOL_FaceSwap_OPFOR = "middleeast";
@@ -898,6 +906,9 @@ WIRECUTTER_ALLOW = false;
 // GOL_Gear_AI
 AIForceNVG = false;
 AIForceNVGClassname = "";
+GOL_RemoveVehicleATGM_Enabled = true;
+GOL_RemoveVehicleHE_Enabled = true;
+GOL_VehicleAppearanceAI = true;
 force LAT_Chance = 0.249656;
 MAT_Chance = 0.15;
 Static_Enable_Chance = 0.4;
@@ -923,21 +934,15 @@ GOL_PackedGMGClass = "RHS_MK19_TriPod_USMC_WD";
 GOL_PackedHMGClass = "RHS_M2StaticMG_USMC_D";
 GOL_PackedMortarClass = "B_G_Mortar_01_F";
 
-// GOL_RemoveVehicleHE
-GOL_RemoveVehicleATGM_Enabled = true;
-GOL_RemoveVehicleHE_Enabled = true;
-
 // GOL_Suppression
 GOL_Suppressed_MaximumTime = 10;
 GOL_Suppressed_MinimumTime = 6;
 GOL_Suppressed_Threshold = 0.75;
-GOL_Suppression_Debug = false;
 GOL_Suppression_Enabled = true;
 
 // GOL_Surrender
 GOL_Surrender_Chance = 0.05;
 GOL_Surrender_ChanceWeaponAim = 0.05;
-GOL_Surrender_Debug = false;
 GOL_Surrender_Distance = 200;
 GOL_Surrender_DistanceWeaponAim = 50;
 GOL_Surrender_Enabled = true;

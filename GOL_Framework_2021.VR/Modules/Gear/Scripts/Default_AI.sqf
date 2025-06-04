@@ -21,8 +21,11 @@ if(isNil "_cswGunBackpack") then {
 if(isNil "_cswTripodBackpack") then {
 	_cswTripodBackpack = "RHS_DShkM_TripodLow_Bag";
 };
-if(OKS_AIForceNVGClassname != "") then {
-	_nvg = OKS_AIForceNVGClassname;
+
+_AIForceNVGClassname = missionNamespace getVariable ["AIForceNVGClassname",""];
+_AIForceNVG = missionNamespace getVariable ["AIForceNVG",false];
+if(_AIForceNVGClassname != "") then {
+	_nvg = _AIForceNVGClassname;
 };
 
 switch (toLower(_role)) do {
@@ -47,7 +50,7 @@ switch (toLower(_role)) do {
 		[[_grenademini,1],[_rifle_mag_tr,5]] call _addToVest;
 		[[_rifle_mag,7]] call _addToBackpack;
 		[_map, "", "ItemRadio", _compass, _watch, ""] call _addLinkedItems;
-		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};
 	};
@@ -60,7 +63,7 @@ switch (toLower(_role)) do {
 		[[_grenademini,1],[_rifle_mag_tr,5]] call _addToVest;
 		[[_rifle_mag,7]] call _addToBackpack;
 		[_map, "", "ItemRadio", _compass, _watch, ""] call _addLinkedItems;
-		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};
 	};
@@ -76,7 +79,7 @@ switch (toLower(_role)) do {
 		[[_rifle_mag_tr,2],[_grenademini,1]] call _addToUniform;
 		[[_rifle_mag_tr,13],[_glHE,1]] call _addToVest;
 		[_map, "", "ItemRadio", _compass, _watch, ""] call _addLinkedItems;
-		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};
 	};
@@ -89,7 +92,7 @@ switch (toLower(_role)) do {
 		[[_rifle_mag_tr,2],[_grenademini,1]] call _addToUniform;
 		[[_rifle_mag_tr,13],[_glHE,1]] call _addToVest;
 		[_map, "", "ItemRadio", _compass, _watch, ""] call _addLinkedItems;
-		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};
 	};	
@@ -102,7 +105,7 @@ switch (toLower(_role)) do {
 		[[_rifle_mag_tr,2],[_grenademini,1]] call _addToUniform;
 		[[_rifle_mag_tr,13],[_glHE,1]] call _addToVest;
 		[_map, "", "ItemRadio", _compass, _watch, ""] call _addLinkedItems;
-		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};
 	};		
@@ -118,7 +121,7 @@ switch (toLower(_role)) do {
 		[[_rifle_mag_tr,13]] call _addToVest;
 		[_map, "", "ItemRadio", _compass, _watch, ""] call _addLinkedItems;
 
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};
 
@@ -155,7 +158,7 @@ switch (toLower(_role)) do {
 				[[_LAT_mag,1]] call _addToBackpack;
 			};
 		};
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};
 	};
@@ -168,7 +171,7 @@ switch (toLower(_role)) do {
 		[[_rifle_mag_tr,14]] call _addToVest;
 		["", "", "", "", "", ""] call _addLinkedItems;
 
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};	
 	};
@@ -181,7 +184,7 @@ switch (toLower(_role)) do {
 		[[_LMG_mag,5],[_LMG_mag_tr,5]] call _addToVest;
 		["", "", "", "", "", ""] call _addLinkedItems;
 
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};		
 	};
@@ -200,7 +203,7 @@ switch (toLower(_role)) do {
 			};
 		};	
 		[_map, "", "ItemRadio", _compass, _watch, ""] call _addLinkedItems;
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};
 	};
@@ -212,7 +215,7 @@ switch (toLower(_role)) do {
 		_IFAK call _addToUniform;
 		[[_rifleC_mag,4]] call _addToUniform;
 		[_map, "", "ItemRadio", _compass, _watch, ""] call _addLinkedItems;
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};
 	};
@@ -226,7 +229,7 @@ switch (toLower(_role)) do {
 		[[_pdw_mag_tr,12]] call _addToVest;
 		["", "", "", "", "", ""] call _addLinkedItems;
 
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};		
 	};
@@ -239,7 +242,7 @@ switch (toLower(_role)) do {
 		[[_rifleC_mag_tr,12]] call _addToVest;
 		["", "", "", "", "", ""] call _addLinkedItems;
 
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};		
 	};
@@ -265,7 +268,7 @@ switch (toLower(_role)) do {
 		};	
 		["", "", "", "", "", ""] call _addLinkedItems;
 
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};		
 	};
@@ -278,7 +281,7 @@ switch (toLower(_role)) do {
 		[[_rifle_mag_tr,12]] call _addToVest;
 		["", "", "", "", "", ""] call _addLinkedItems;
 
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};		
 	};
@@ -291,7 +294,7 @@ switch (toLower(_role)) do {
 		[[_rifle_mag_tr,12]] call _addToVest;
 		["", "", "", "", "", ""] call _addLinkedItems;
 
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};		
 	};
@@ -304,7 +307,7 @@ switch (toLower(_role)) do {
 		[[_MMG_mag_tr,6]] call _addToVest;
 		["", "", "", "", "", ""] call _addLinkedItems;
 
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};		
 	};
@@ -317,7 +320,7 @@ switch (toLower(_role)) do {
 		[[_rifleMarksman_mag_tr,6]] call _addToBackpack;
 		[_map, "", "ItemRadio", _compass, _watch, ""] call _addLinkedItems;
 
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};
 	};
@@ -332,7 +335,7 @@ switch (toLower(_role)) do {
 		[[_AA_mag,1]] call _addToBackpack;
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 
-		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || OKS_AIForceNVG isEqualTo true) then {
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _AIForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};
 	};

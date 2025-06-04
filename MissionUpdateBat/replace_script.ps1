@@ -138,7 +138,7 @@ $replacements = @(
     @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_ArtyFire.sqf"";'; To = 'spawn OKS_fnc_ArtyFire;' },
     # ... (all your other replacements as before) ...
     @{ From = 'OKS_Evacuate_HVT'; To = 'OKS_fnc_Evacuate_HVT' },
-    @{ From = 'OKS_ArtyFire'; To = 'OKS_fnc_CreateZone' },
+    @{ From = 'OKS_ArtyFire'; To = 'OKS_fnc_ArtyFire' },
     @{ From = 'OKS_IR_AA'; To = 'OKS_fnc_IR_AA' },
     @{ From = 'OKS_Scout'; To = 'OKS_fnc_Scout' },
     @{ From = 'NEKY_Hunt_HuntBase'; To = 'OKS_fnc_Huntbase' },
