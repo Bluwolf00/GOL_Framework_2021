@@ -74,7 +74,7 @@ if !((count _unitArray) isEqualTo 0) then {
 			[[_unit],{ Params ["_unit"]; _unit disableAI "PATH"; doStop _unit; }] remoteExec ["BIS_FNC_CALL",0];
 
 			if(!isNil "OKS_Enemy_Sentry") then {
-				[_unit] spawn OKS_Enemy_Sentry;
+				[_unit] spawn OKS_fnc_Enemy_Sentry;
 			};
 		};
 
@@ -186,8 +186,8 @@ if ((count _vehicleArray) > 0) then {
 
 if !(_waypointArray isEqualTo []) then {
 	if((count _vehicleArray) == 0) then {
-		if(!isNil "OKS_Enemy_Talk") then {
-			[_group] spawn OKS_Enemy_Talk;
+		if(!isNil "OKS_fnc_Enemy_Talk") then {
+			[_group] spawn OKS_fnc_Enemy_Talk;
 		};
 		if(!isNil "OKS_fnc_Tracker") then {
 			[_group] remoteExec ["OKS_fnc_Tracker",2];
