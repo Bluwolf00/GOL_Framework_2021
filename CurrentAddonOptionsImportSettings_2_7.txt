@@ -867,7 +867,7 @@ force J3FF_FHdig = "4";
 // FPV Settings
 FPV_DefaultText = "CROCUS";
 force FPV_isUavCaptive = false;
-FPV_MaxFlightDistance = 1500;
+force FPV_MaxFlightDistance = 3000;
 
 // GOL_CORE
 force GOL_CORE_Enabled = true;

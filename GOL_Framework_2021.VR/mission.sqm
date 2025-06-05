@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3204;
+		nextID=3206;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=11949;
+		nextID=11970;
 	};
 	class Camera
 	{
-		pos[]={109.5737,63.223679,1.0882039};
-		dir[]={0.021297727,-0.54804963,0.83617854};
-		up[]={0.013954631,0.83644551,0.54787374};
-		aside[]={0.99967897,-3.9100996e-08,-0.025462534};
+		pos[]={109.32374,49.38224,15.968107};
+		dir[]={0.022449579,-0.51553756,0.85658884};
+		up[]={0.013506499,0.85686433,0.51536566};
+		aside[]={0.99966806,-1.3162935e-07,-0.026199169};
 	};
 };
 binarizationWanted=0;
@@ -673,7 +673,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=511;
+									items=512;
 									class Item0
 									{
 										class data
@@ -4762,6 +4762,14 @@ class CustomAttributes
 											value="ace_repair_patchwheelmaximumrepair";
 										};
 									};
+									class Item511
+									{
+										class data
+										{
+											singleType="STRING";
+											value="fpv_maxflightdistance";
+										};
+									};
 								};
 							};
 						};
@@ -4772,7 +4780,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=511;
+									items=512;
 									class Item0
 									{
 										class data
@@ -18899,6 +18907,33 @@ class CustomAttributes
 													{
 														singleType="SCALAR";
 														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item511
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=3000;
 													};
 												};
 												class Item1
