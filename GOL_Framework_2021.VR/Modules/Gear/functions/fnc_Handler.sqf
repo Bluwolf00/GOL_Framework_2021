@@ -184,7 +184,7 @@ if (_isMan) then {
 		["", "", "", "", "", ""] call _addLinkedItems;
 	} else {
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
-			_nvg = "ACE_NVG_Wide_Black_WP";
+			_nvg = "ACE_NVG_Gen4_Black";
 		};
 
 		if !(_isPlayer || (_unit in switchableUnits)) then {

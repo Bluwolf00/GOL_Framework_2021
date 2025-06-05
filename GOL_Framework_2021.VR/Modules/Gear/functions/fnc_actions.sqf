@@ -30,8 +30,8 @@ if(_ArsenalAllowed isEqualTo true) then {
 };
 
 _unit addAction ["<t color='#ff962c'>Remove Night gear</t>", {
-	player unassignItem "ACE_NVG_Wide_Black_WP";
-	player removeItem "ACE_NVG_Wide_Black_WP";
+	player unassignItem "ACE_NVG_Gen4_Black";
+	player removeItem "ACE_NVG_Gen4_Black";
 	if (true) then {
 		player removeItem "ACE_IR_Strobe_Item";
 		player removeItem "ACE_Flashlight_XL50";
