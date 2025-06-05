@@ -136,6 +136,8 @@ $replacements = @(
     @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_fnc_CreateZone.sqf""'; To = 'spawn OKS_fnc_CreateZone' },
     @{ From = 'execVM "Scripts\OKS_Ambience\OKS_ArtyFire.sqf"'; To = 'spawn OKS_fnc_ArtyFire;' },
     @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_ArtyFire.sqf"";'; To = 'spawn OKS_fnc_ArtyFire;' },
+    @{ From = 'execVM "Scripts\OKS_Task\OKS_Defuse_Explosive.sqf"'; To = 'spawn OKS_fnc_Defuse_Explosive;' },
+    @{ From = 'execVM ""Scripts\OKS_Task\OKS_Defuse_Explosive.sqf"";'; To = 'spawn OKS_fnc_Defuse_Explosive;' },	
     # ... (all your other replacements as before) ...
     @{ From = 'OKS_Evacuate_HVT'; To = 'OKS_fnc_Evacuate_HVT' },
     @{ From = 'OKS_ArtyFire'; To = 'OKS_fnc_ArtyFire' },
@@ -160,7 +162,7 @@ $replacements = @(
     @{ From = 'OKS_ClearImmediateArea'; To = 'OKS_fnc_ClearImmediateArea' },
     @{ From = 'OKS_Rush_SpawnGroup'; To = 'OKS_fnc_Rush_SpawnGroup' },
     @{ From = 'OKS_AddVehicleCrew'; To = 'OKS_fnc_AddVehicleCrew' },
-    @{ From = 'OKS_Defuse_Explosive'; To = 'OKS_fnc_DefuseExplosive' },
+    @{ From = 'OKS_Defuse_Explosive'; To = 'OKS_fnc_Defuse_Explosive' },
     @{ From = 'OKS_Convoy_Spawn'; To = 'OKS_fnc_Convoy_Spawn' },
     @{ From = 'NEKY_Airbase'; To = 'OKS_fnc_Airbase' }
 )
