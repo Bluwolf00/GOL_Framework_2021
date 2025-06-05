@@ -140,7 +140,7 @@
 				cutText ["", "BLACK OUT",1]; sleep 1;
 				1 fadeSound 0;
 				cutText ["", "BLACK IN",1];
-				if(vehicleVarName (_this select 3) == "Tent_MHQ") then {
+				if(vehicleVarName (_this select 3) == "Mobile_HQ") then {
 					[player, (_this select 3)] call bis_fnc_moveToRespawnPosition;
 					_camera camSetTarget player;
 					_height = 2;
@@ -160,7 +160,7 @@
 				waitUntil { sleep 1; camCommitted _camera; };				
 				_camera cameraEffect ["terminate", "back"];			
 				camDestroy _camera;
-				if(vehicleVarName (_this select 3) != "Tent_MHQ") then {
+				if(vehicleVarName (_this select 3) != "Mobile_HQ") then {
 					[player, (_this select 3)] call bis_fnc_moveToRespawnPosition;
 				};	
 				sleep 1.1;	

@@ -281,13 +281,13 @@ ace_markers_timestampUTCOffset = 0;
 ace_map_gestures_allowCurator = true;
 ace_map_gestures_allowSpectator = true;
 ace_map_gestures_briefingMode = 0;
-force ace_map_gestures_defaultColor = [1,0.88,0,0.7];
-force ace_map_gestures_defaultLeadColor = [1,0.88,0,0.95];
+force ace_map_gestures_defaultColor = [1,0.88,0,1];
+force ace_map_gestures_defaultLeadColor = [0.120523,0.733902,0,1];
 force ace_map_gestures_enabled = true;
 force ace_map_gestures_interval = 0.05;
 force ace_map_gestures_maxRange = 10;
 ace_map_gestures_maxRangeCamera = 14;
-force ace_map_gestures_nameTextColor = [0.2,0.2,0.2,0.3];
+force ace_map_gestures_nameTextColor = [0,0,0,1];
 ace_map_gestures_onlyShowFriendlys = false;
 
 // ACE Map Tools
@@ -440,12 +440,12 @@ ace_nametags_showVehicleCrewInfo = true;
 ace_nametags_tagSize = 2;
 
 // ACE Nightvision
-force ace_nightvision_aimDownSightsBlur = 0.111914;
+force ace_nightvision_aimDownSightsBlur = 0;
 force ace_nightvision_disableNVGsWithSights = false;
-force ace_nightvision_effectScaling = 0.144197;
+force ace_nightvision_effectScaling = 0;
 force ace_nightvision_fogScaling = 0;
-force ace_nightvision_noiseScaling = 0.111914;
-force ace_nightvision_shutterEffects = false;
+force ace_nightvision_noiseScaling = 0;
+force ace_nightvision_shutterEffects = true;
 
 // ACE Overheating
 force ace_overheating_cookoffCoef = 0;
