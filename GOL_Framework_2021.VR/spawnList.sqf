@@ -52,10 +52,9 @@ switch (_case) do {
 
 	=======================================
 
-	OKS_Createobjectives - Creates an objective based on OKS_Dynamic settings with task creation/completion.
+	OKS_fnc_Createobjectives - Creates an objective based on OKS_fnc_Dynamic settings with task creation/completion.
 
-	[Object_1,"sector",300,EAST,false,false,false] execVM "Scripts\OKS_Dynamic\OKS_CreateObjectives.sqf";
-	[Object_1,"sector",300,EAST,false,false,false] spawn OKS_CreateObjectives;
+	[Object_1,"sector",300,EAST,false,false,false] spawn OKS_fnc_CreateObjectives;
 
 	Params: Position, Type, Range, Side, Patrols?, PlaceObjects?, OverrideTaskNotification?
 
@@ -78,80 +77,80 @@ switch (_case) do {
 	Setup a scripted AAA that fires randomly into the air until it finds a target and locks on. It has less accuracy than standard AAA positions for balance.
 
 	Code:
-	[aaa_1,east,false,1500,true] spawn GW_Ambient_AAA;
+	[aaa_1,east,false,1500,true] spawn OKS_fnc_Ambient_AAA;
 
 	Params:
 	AAA Object, side of crew, Is an HMG, Range of AAA, Should be assisted by nearby radar
 
     =======================================
 
-	OKS_ArtyFire
+	OKS_fnc_ArtyFire
 
 	Setup an artillery to fire into the sky until destroyed. Take note that it is supposed to delete the rounds from landing to save performance.
 	This might fail, so make sure the target is not near friendly positions or bases.
 
 	Code:
-	[east,arty_1,getpos ArtyTarget_1,7,300,180,false] spawn OKS_ArtyFire;
+	[east,arty_1,getpos ArtyTarget_1,7,300,180,false] spawn OKS_fnc_ArtyFire;
 
 	Params:
 	Side of Crew, Artillery Object, Artillery Target, Rounds per Salvo, Rearm Delay, Reload Delay, Should give full crew.
 
     =======================================
 
-	OKS_ArtySupression
+	OKS_fnc_ArtySupression
 
 	Setup an active artillery barrage on specified targets until destroyed.
 
 	Code:
-	[livearty_1,[getPos ArtySuppress_1,getPos ArtySuppress_2,getPos ArtySuppress_3],east,1,1,true,true,300,true] spawn OKS_ArtySupression;
+	[livearty_1,[getPos ArtySuppress_1,getPos ArtySuppress_2,getPos ArtySuppress_3],east,1,1,true,true,300,true] spawn OKS_fnc_ArtySupression;
 
 	Params:
 	Artillery Object, Array with Target positions, Side of Crew, Rounds per target, Delay per target, Unlimited Ammo, Should Loop until Destroyed, Delay per Salvo, Mark with Red Smoke on Target.
 
 	=======================================
 
-	OKS_Destroy_Task
+	OKS_fnc_Destroy_Task
 
 	Setup a destroy/kill objective on a target.
 
 	Code:
-	[officer_1,"Kill the Officer","Enemy Officer","You need to kill this %1 because it needs to happen","kill",nil,true,true] spawn OKS_Destroy_Task;
+	[officer_1,"Kill the Officer","Enemy Officer","You need to kill this %1 because it needs to happen","kill",nil,true,true] spawn OKS_fnc_Destroy_Task;
 
 	Params:
 	Target Object, Task Title, Target Type, Task Description, Task Icon, Task Parent, Should Mark Position on Map, Should Show Popup when created/completed
 
 	=======================================
 
-	OKS_Evacuate_HVT
+	OKS_fnc_Evacuate_HVT
 
 	Setup a HVT Capture Objective. The last variable sets true/false if they target should be set to captive (tied hands). False for enemy officers, true for friendly captives.
 
 	Code:
-	[Group HVT_1,getMarkerPos "respawn_west",west,false,nil,true] spawn OKS_Evacuate_HVT;
+	[Group HVT_1,getMarkerPos "respawn_west",west,false,nil,true] spawn OKS_fnc_Evacuate_HVT;
 
 	Params:
 	Group of HVT, Exfil Position (Either pickup (Extract On) or dropoff (Extract off)), Side of Extract Helicopter, Should Send AI Helicopter Evac, Parent Task, Is Captive
 
 	=======================================
 
-	OKS_Destroy_Barricade
+	OKS_fnc_Destroy_Barricade
 
 	Setup Barricade Objective. Objective to destroy objects lined up as a blockade on a road. Make sure the object is destructible by testing it.
 
 	Code:
-	[[barricade_1,barricade_2]] spawn OKS_Destroy_Barricade;
+	[[barricade_1,barricade_2]] spawn OKS_fnc_Destroy_Barricade;
 
 	Params:
 	Array with Barricade Objects
 
 	=======================================
 
-	OKS_Convoy_Spawn
+	OKS_fnc_Convoy_Spawn
 
 	Spawn a convoy that moves until engaged, they will dismount, armed vehicles will hunt and dismounts will rush.
 
 	Code:
-	[spawn_1,waypoint_1,end_1,west,[4,["rhs_btr60_msv"], 6, 25],[true,6],[], false, false] spawn OKS_Convoy_Spawn;
+	[spawn_1,waypoint_1,end_1,west,[4,["rhs_btr60_msv"], 6, 25],[true,6],[], false, false] spawn OKS_fnc_Convoy_Spawn;
 
 	Params:
 	Spawn Position, First Waypoint, End Waypoint (Scattered formation), Side of Convoy, Convoy Array [](Number, [TypeArray]), Speed meters/second, dispersion]
@@ -159,12 +158,12 @@ switch (_case) do {
 
 	=======================================
 
-	OKS_Lambs_SpawnGroup
+	OKS_fnc_Lambs_SpawnGroup
 
 	Spawns a team that either creep/rush/hunt based on LAMBS. Used for quick and intense counter-attacks by enemy infantry.
 
 	Code:
-	[SpawnPos,"rush",UnitsPerBase,Side,Range,[]] spawn OKS_Lambs_SpawnGroup;
+	[SpawnPos,"rush",UnitsPerBase,Side,Range,[]] spawn OKS_fnc_Lambs_SpawnGroup;
 
 	Params:
 	Position, Type of Waypoint (rush,creep,hunt), Units to spawn, Side of units, Range of waypoint (around the spawn), unit array that gets populated with the units.
@@ -172,26 +171,26 @@ switch (_case) do {
 
 	=======================================
 
-	OKS_Defuse_Explosive
+	OKS_fnc_Defuse_Explosive
 
 	Creates a defuse explosive objective with 600 (10 minutes) seconds to complete on the "SatchelCharge" object with the name bomb_1.
 	This can be replaced with a position to create an explosive on the position using getPos bomb_1.
 
 	Code:
-	[bomb_1,600] spawn OKS_Defuse_Explosive;
+	[bomb_1,600] spawn OKS_fnc_Defuse_Explosive;
 
 	Params:
-	[bomb_1,600,bombtarget_1,"BombDetonated","BombDefused"] spawn OKS_Defuse_Explosive;
+	[bomb_1,600,bombtarget_1,"BombDetonated","BombDefused"] spawn OKS_fnc_Defuse_Explosive;
 	Bomb Object or Position, Time Delay (Seconds), Target Object (Destroyed upon detonation), VariableName to set to true if failed, VariableName to set to true if succeeded.
 
 	=======================================
 
-	OKS_PowerGenerator
+	OKS_fnc_PowerGenerator
 
 	Sets up a generator to be disabled by action to turn off light sources in the area around it. 
 
 	Code:
-	[Generator_1,true,true,1000] spawn OKS_PowerGenerator;
+	[Generator_1,true,true,1000] spawn OKS_fnc_PowerGenerator;
 
 	Params:
 	Generator Object, Should Add Action to disable, Turn Off Lights when disabled, Range of disabled lights from Generator
@@ -230,13 +229,13 @@ switch (_case) do {
 		   All Locations are not required, the script will find its own locations, however for the best experience and best result, help the dynamic script by placing these logics.
 
 		   Example:
-		   [Trigger_1,false,[0,0,false,false],east,0,0,0,[0,true,false,0],[0,false],[0,false],[0,0,0,0,0],false] spawn OKS_CreateZone;
+		   [Trigger_1,false,[0,0,false,false],east,0,0,0,[0,true,false,0],[0,false],[0,false],[0,0,0,0,0],false] spawn OKS_fnc_CreateZone;
 		*/
 
 		/* Example of Dynamic Scripts */
 		/*
 		if(isServer) then {
-			waitUntil{sleep 5; !(isNil "OKS_CreateZone")};
+			waitUntil{sleep 5; !(isNil "OKS_fnc_CreateZone")};
 
 			//// START OF ZONE /////
 			[	Trigger_1,  // Name of Trigger used as Spawn Area
@@ -266,7 +265,7 @@ switch (_case) do {
 				],
 				[0,0,0,0,0] // Infantry, Wheeled, APCs, Tanks, Air Assault - Hunt Bases - Preferred Game Logic Location 'Respawn Point'"
 				,false      // Should Enable Civilian Presence - Required Game Logic Location 'Village'"
-			] spawn OKS_CreateZone;
+			] spawn OKS_fnc_CreateZone;
 			//// END OF ZONE ////
 
 		};
@@ -284,15 +283,15 @@ switch (_case) do {
 		   	6 - Unit Selection - (Integer/String/Array with Strings)
 		   	7 - Refresh Rate in Seconds (Integer/Number)
 
-			[Base_1, Spawn_1, NEKY_Hunt_Trigger_1, 5,30,independent,6,30] spawn NEKY_Hunt_HuntBase;
-			[Base_2, Spawn_2, NEKY_Hunt_Trigger_1, 5,30,independent,"CUP_I_LR_MG_AAF",30] spawn NEKY_Hunt_HuntBase;
-			[Base_2, Spawn_2, NEKY_Hunt_Trigger_1, 5,30,independent,["CUP_I_LR_MG_AAF","CUP_I_LR_MG_AAF"],30] spawn NEKY_Hunt_HuntBase;
+			[Base_1, Spawn_1, NEKY_Hunt_Trigger_1, 5,30,east,6,30] spawn OKS_fnc_HuntBase;
+			[Base_2, Spawn_2, NEKY_Hunt_Trigger_1, 5,30,east,"O_APC_Tracked_02_cannon_F",30] spawn OKS_fnc_HuntBase;
+			[Base_2, Spawn_2, NEKY_Hunt_Trigger_1, 5,30,east,"O_APC_Tracked_02_cannon_F","O_Truck_03_transport_F"],30] OKS_fnc_HuntBase;
 		*/
 		/* Example of Hunt Bases */
 		/*
-		if(isServer && GOL_NEKY_HUNT isEqualTo 1) then {
-			waitUntil{sleep 5; !(isNil "NEKY_Hunt_HuntBase")};
-			[Base_1, Spawn_1, NEKY_Hunt_Trigger_1, 5,600+(random 300),east,6,120+(120)] spawn NEKY_Hunt_HuntBase;
+		if(isServer) then {
+			waitUntil{sleep 5; !(isNil "OKS_fnc_HuntBase")};
+			[Base_1, Spawn_1, NEKY_Hunt_Trigger_1, 5,600+(random 300),east,6,120+(120)] spawn OKS_fnc_HuntBase;
 		};
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -308,12 +307,12 @@ switch (_case) do {
 		   5 - Type of Insert (Unload ONLY) (String)
 		   6 - Cargo Split - [How many teams,Procent of Cargo] (Array)
 
-		   [Base_3,Spawn_3, NEKY_Hunt_Trigger_1,independent,"I_Heli_Transport_02_F","Random",[2,1]] spawn NEKY_Airbase;
+		   [Base_3,Spawn_3, NEKY_Hunt_Trigger_1,independent,"I_Heli_Transport_02_F","Random",[2,1]] spawn OKS_fnc_Airbase;
 		*/
 		/* Example of Air Bases */
 		/*
-		if(isServer && GOL_NEKY_AIRDROP isEqualTo 1) then {
-			waitUntil{sleep 5; !(isNil "NEKY_Airbase")};
-			[Base_3,Spawn_3, NEKY_Hunt_Trigger_1,independent,"I_Heli_Transport_02_F","Random",[2,1]] spawn NEKY_Airbase;
+		if(isServer) then {
+			waitUntil{sleep 5; !(isNil "OKS_fnc_Airbase")};
+			[Base_3,Spawn_3, NEKY_Hunt_Trigger_1,independent,"I_Heli_Transport_02_F","Random",[2,1]] spawn OKS_fnc_Airbase;
 		};
 

@@ -7,7 +7,7 @@
 #define DOUBLES(var1,var2) ##var1##_##var2
 #define TRIPLES(var1,var2,var3) ##var1##_##var2##_##var3
 #include "script_Component.hpp"
-#include "Scripts\OKS_Dynamic\LARs\compositions\compositions.cfg"
+#include "Modules\OKS_Dynamic\LARs\compositions\compositions.cfg"
 
 class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 	class Core {
@@ -24,7 +24,7 @@ class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 		#define MISSION_VERSION 1								// Version of mission
 		#define SELECT_PICTURE ""								// Path to loading screen
 		//#define SELECT_PICTURE RANDOM_PICTURES				// Random loading screen
-
+		// picture path: "\OKS_GOL_Misc\data\images\loadImage.jpg"
 		Author = "Editor";				// Author
 		AuthorUID[] = {"_SP_PLAYER_"};			// UIDs with admin access
 
@@ -67,14 +67,14 @@ scriptedPlayer = 1;
 corpseManagerMode = 3;
 corpseLimit = 25; // Default: 15
 corpseRemovalMinTime = 120; // seconds. Default: 10
-corpseRemovalMaxTime = 600; // seconds. Default: 3600
+corpseRemovalMaxTime = 3600; // seconds. Default: 3600
 disposalCheckPeriod = 30; // seconds. Default: 10
-minPlayerDistance[] = {250, 1000, 0}; // meters. Default: {0, 0, 0}
+minPlayerDistance[] = {400, 1200, 0}; // meters. Default: {0, 0, 0}
 weaponholderManagerMode = 0; // Default: 0
 wreckManagerMode = 1;
 wreckLimit = 10; // seconds. Default: 15
-wreckRemovalMinTime = 180; // seconds. Default: 10
-wreckRemovalMaxTime = 900; // seconds. Default: 36000 (10 hours)
+wreckRemovalMinTime = 600; // seconds. Default: 10
+wreckRemovalMaxTime = 3600; // seconds. Default: 36000 (10 hours)
 
 
 respawn = "BASE";
@@ -109,36 +109,20 @@ class Params {
 		texts[] = { "No", "Yes" };
 		values[] = { 0, 1 };
 		default = 0;
+	};	
+
+	class ShouldGiveServiceStationToVehicle
+	{
+		title = "Should non-MHQ vehicles have service station?";
+		texts[] = { "Yes", "No" };
+		values[] = { 1, 0 };
+		default = 1;
 	};		
 };
 
 class CfgFunctions {
-	#include "Scripts\OKS_Dynamic\LARs\spawnComp\functions\functions.cpp"
+	#include "Modules\OKS_Dynamic\LARs\spawnComp\functions\functions.cpp"
 	#include "Modules\Callsigns\Functions\functions.hpp"
-
-    class NEKY
-    {
-        class Tasks
-        {
-			class Tasks_Init
-			{
-				file = "Scripts\NEKY_Tasks\Init.sqf";
-				PreInit = 1;
-			};
-        };
-    };
-
-	class BLUFUNC
-	{
-		class Radios
-		{
-			class Radio_Channel_Init
-			{
-				file = "Scripts\GOL_PlayerSetup\BLU_SetChannel.sqf";
-				preInit = 1;
-			};
-		};
-	};
 };
 
 class GW_Modules_Base {
@@ -176,7 +160,5 @@ class ACE_Settings {
 	#undef LOAD_ACE
 };
 
-#include "Scripts\GOL_PlayerSetup\ORBAT\orbat.cfg"
-#include "Scripts\GOL_PlayerSetup\insignia.cfg"
 #include "Modules\Callsigns\defines.hpp"
 #include "Modules\Callsigns\dialogs.hpp"

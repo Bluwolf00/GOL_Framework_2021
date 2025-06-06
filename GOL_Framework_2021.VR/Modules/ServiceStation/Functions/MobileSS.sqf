@@ -1,4 +1,4 @@
-//	null = [This, Radius, (is a Mobile Service Station), ["NearestObjects"]] execVM "Scripts\NEKY_ServiceStation\MobileSS.sqf";
+//	null = [This, Radius, (is a Mobile Service Station), ["NearestObjects"]] spawn OKS_fnc_MobileSS;
 ///////////////////////////////////////////
 //
 //	1. Object or Vehicle name, the name of the Object or Vehicle that will be the Mobile Service Station.
@@ -28,10 +28,10 @@
 ///////////////
 //	Examples:
 ///////////////
-//	null = [This, nil, True, ["LandVehicle","AIR"]] ExecVM "Scripts\NEKY_ServiceStation\MobileSS.sqf";
-//	null = [RepairTruck, 15, True, ["LandVehicle"]] ExecVM "Scripts\NEKY_ServiceStation\MobileSS.sqf";
-//	null = [This, nil] ExecVM "Scripts\NEKY_ServiceStation\MobileSS.sqf";
-//	null = [This] ExecVM "Scripts\NEKY_ServiceStation\MobileSS.sqf";
+//	null = [This, nil, True, ["LandVehicle","AIR"]] spawn OKS_fnc_MobileSS;
+//	null = [RepairTruck, 15, True, ["LandVehicle"]] spawn OKS_fnc_MobileSS;
+//	null = [This, nil] spawn OKS_fnc_MobileSS;
+//	null = [This] spawn OKS_fnc_MobileSS;
 ///////////////
 ///////////////
 //	Made by NeKo-ArroW with help from GuzzenVonLidl

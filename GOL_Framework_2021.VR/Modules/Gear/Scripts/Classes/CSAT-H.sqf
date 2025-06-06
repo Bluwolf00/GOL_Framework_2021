@@ -58,7 +58,7 @@ if (_role isEqualTo "jetp") then {
 // Attachments
 _silencer = "rhs_acc_uuk";
 _pointer = "acc_flashlight";
-_sight = "JCA_optic_ARO_black";
+_sight = "rhsusf_acc_su230";
 _bipod = "rhs_acc_grip_rk2";
 
 _rifle = ["rhs_weap_ak74mr", _silencer, _pointer, _sight, _bipod];
@@ -107,6 +107,6 @@ _pointer = "";
 _sight = "optic_LRPS";
 _bipod = "bipod_02_F_hex";
 
-_rifleMarksman = ["srifle_DMR_05_hex_F", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "10Rnd_93x64_DMR_05_Mag";
-_rifleMarksman_mag_tr = "10Rnd_93x64_DMR_05_Mag";
+_rifleMarksman = ["rhs_weap_svdp_wd_npz", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman_mag = "UK3CB_SVD_10rnd_762x54_GT";
+_rifleMarksman_mag_tr = "UK3CB_SVD_10rnd_762x54_GT";

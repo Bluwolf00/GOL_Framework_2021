@@ -2,29 +2,30 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
-_insignia = "";
-_goggles = ["rhs_balaclava1_olive"];
-_OfficerHelmet = "UK3CB_AAF_B_H_Beret_Army_Off";
-_helmet =  ["UK3CB_AAF_I_H_MKVI_Helmet_B_GRN","UK3CB_AAF_I_H_MKVI_Helmet_A_GRN"];
+_insignia = "insignia_block35";
+_goggles = ["UK3CB_G_KLR_GRN","G_Headband_grn_F","G_Armband_aaf_alt_F","rhsusf_shemagh2_grn","rhsusf_shemagh_grn","rhsusf_shemagh_gogg_grn","rhsusf_shemagh2_gogg_grn","rhsusf_oakley_goggles_blk","rhs_balaclava1_olive","rhs_balaclava"];
+_OfficerHelmet = "H_MilCap_dgtl";
+_helmet =  ["H_HelmetIA"];
 _uniform =  ["UK3CB_AAF_B_U_CombatUniform_DIGI_GRN","UK3CB_AAF_B_U_CombatUniform_Shortsleeve_DIGI_GRN","UK3CB_AAF_B_U_JumperUniform_DIGI_GRN"];
-_vest =  ["UK3CB_V_Falcon_6","UK3CB_AAF_I_V_Falcon_7_DIGI_GRN","UK3CB_V_Falcon_5"];
+_vest =  ["V_PlateCarrierIAGL_dgtl"];
 _backpack = ["UK3CB_AAF_B_B_FIELDPACK_DIGI_GRN"];
-_backpackRadio = _backpack;
-if (true) then {
-	_backpackRadio = ["TFAR_anprc155"];
-};
+_backpackRadio = ["TFAR_anprc155"];
+
 if (_role in ["ag","ammg","lr","ab"]) then {
 	_backpack = "UK3CB_AAF_B_B_CARRYALL_DIGI_GRN";
-	_vest = "UK3CB_V_Falcon_9";
+	_vest = "V_PlateCarrierIAGL_dgtl";
+};
+if(_role in ["ab","drone"]) then {
+	_backpack = "B_Bergen_dgtl_F";
 };
 if (_role isEqualTo "crew") then {
 	_helmet = "H_HelmetCrew_I";
-	_vest = "UK3CB_AAF_I_V_Falcon_1_DIGI_GRN";
+	_vest = "V_PlateCarrierIA2_dgtl";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "H_PilotHelmetHeli_I";
-	_uniform = "U_I_HeliPilotCoveralls";
-	_vest = "UK3CB_AAF_I_V_Falcon_1_DIGI_GRN";
+	_uniform = "UK3CB_AAF_I_U_H_Pilot_DIGI_GRN";
+	_vest = "V_PlateCarrierIA1_dgtl";
 
 };
 if (_role isEqualTo "uav") then {
@@ -34,15 +35,15 @@ if (_role isEqualTo "uav") then {
 };
 if (_role isEqualTo "jetp") then {
 	_goggles = "G_Aviator";
-	_helmet = "H_PilotHelmetFighter_B";
-	_uniform = "U_B_PilotCoveralls";
-	_vest = "V_Rangemaster_belt";
+	_helmet = "H_PilotHelmetFighter_I";
+	_uniform = "UK3CB_AAF_I_U_J_Pilot_DIGI_GRN";
+	_vest = "V_RebreatherIA";
 	_backpack = "B_Parachute";
 };
 
-_silencer = "";
+_silencer = "rhsusf_acc_SFMB556";
 _pointer = "";
-_sight = "";
+_sight = "optic_MRCO";
 _bipod = "";
 
 _rifle = ["arifle_Mk20_F", _silencer, _pointer, _sight, _bipod];
@@ -60,13 +61,13 @@ _LMG_mag = "200Rnd_65x39_cased_Box_Tracer";
 _MMG = ["LMG_Mk200_F", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "200Rnd_65x39_cased_Box_Tracer";
 
-_LAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "RPG7_F";
-_LAT_ReUsable = true;
+_LAT = ["UK3CB_BAF_NLAW_Launcher", _silencer, _pointer, _sight, _bipod];
+_LAT_mag = "";
+_LAT_ReUsable = false;
 
-_MAT = ["launch_RPG32_green_F", _silencer, _pointer, _sight, _bipod];
-_MAT_mag = "RPG32_F";
-_MAT_mag_HE = "RPG32_HE_F";
+_MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
+_MAT_mag = "MRAWS_HEAT_F";
+_MAT_mag_HE = "MRAWS_HE_F";
 
 _HAT = ["launch_O_Vorona_green_F", _silencer, _pointer, _sight, _bipod];
 _HAT_mag = "Vorona_HEAT";

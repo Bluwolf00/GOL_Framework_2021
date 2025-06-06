@@ -56,9 +56,6 @@ if !((count _unitArray) isEqualTo 0) then {
 		_unit setRank "PRIVATE";
 		_unit setPosATL _pos;
 		_unit setVariable [QGVAR(isSpawned), true];
-		if(OKS_Suppression isEqualTo 1) then {
-			[_unit] remoteExec ["OKS_Suppressed",0];
-		};
 		TRACE_1("Created", _unit);
 
 		if (_unitPos isEqualType "") then {
@@ -76,11 +73,9 @@ if !((count _unitArray) isEqualTo 0) then {
 			};
 			[[_unit],{ Params ["_unit"]; _unit disableAI "PATH"; doStop _unit; }] remoteExec ["BIS_FNC_CALL",0];
 
-			if(GOL_OKS_Stealth_Mission isEqualTo 1 && !isNil "OKS_Enemy_Sentry") then {
-				[_unit] spawn OKS_Enemy_Sentry;
+			if(!isNil "OKS_Enemy_Sentry") then {
+				[_unit] spawn OKS_fnc_Enemy_Sentry;
 			};
-			//[_unit] remoteExec ["doStop",0];
-			//[_unit,"PATH"] remoteExec ["disableAI",0];
 		};
 
 		_unit setPosATL _pos;
@@ -104,9 +99,6 @@ if ((count _vehicleArray) > 0) then {
 			_collision = "FLY";
 		};
 		_vehicle = createVehicle [_class, _pos, [], 0, _collision];
-		if(GOL_Remove_HE_From_StaticAndVehicle) then {
-			[_vehicle] spawn OKS_RemoveVehicleHE;	
-		};	
 		_vehicle setDir _dir;
 		_vehicle setPosATL _pos;
 		_vehicle setVectorUp surfaceNormal (position _vehicle);
@@ -125,20 +117,7 @@ if ((count _vehicleArray) > 0) then {
 		if (_collision isEqualTo "FLY") then {
 			_vehicle engineOn true;
 			_vehicle flyInHeight (_pos select 2);
-		};	
-		if(["T55", typeOf _vehicle] call BIS_fnc_inString && ["UK3CB", typeOf _vehicle] call BIS_fnc_inString) then {
-			[_vehicle] spawn OKS_AdjustDamage;
-		};
-		if(["T34", typeOf _vehicle] call BIS_fnc_inString && ["UK3CB", typeOf _vehicle] call BIS_fnc_inString) then {
-			[_vehicle] spawn OKS_AdjustDamage;
-		};
-		if(["T72", typeOf _vehicle] call BIS_fnc_inString && ["UK3CB", typeOf _vehicle] call BIS_fnc_inString) then {
-			[_vehicle] spawn OKS_AdjustDamage;
-		};
-		// if(["T80", typeOf _vehicle] call BIS_fnc_inString && ["UK3CB", typeOf _vehicle] call BIS_fnc_inString) then {
-		// 	[_vehicle] spawn OKS_AdjustDamage;
-		// };			
-
+		};		
 		_vehicle setVariable [QEGVAR(gear,side), GVAR(Faction)];
 
 		[_vehicle, _specials] call FUNC(setAttributes);
@@ -183,16 +162,10 @@ if ((count _vehicleArray) > 0) then {
 					_unit moveInGunner _vehicle;
 				};
 				case "turret": {
-					_unit moveInTurret [_vehicle, (_x select 2)];
-					if(OKS_Suppression isEqualTo 1) then {
-						[_unit] remoteExec ["OKS_Suppressed",0];
-					};						
+					_unit moveInTurret [_vehicle, (_x select 2)];					
 				};
 				case "cargo": {
 					_unit moveInCargo [_vehicle, (_x select 1)];
-					if(OKS_Suppression isEqualTo 1) then {
-						[_unit] remoteExec ["OKS_Suppressed",0];
-					};	
 				};
 			};
 			_unit enableSimulationGlobal true;
@@ -202,9 +175,7 @@ if ((count _vehicleArray) > 0) then {
 			};
 		} forEach _crewList;
 
-		[_vehicle] spawn OKS_AbandonVehicle;
 		_vehicle enableSimulationGlobal true;
-		[_vehicle] spawn OKS_ForceVehicleSpeed;  
 		TRACE_1("Units added to vehicle", _groupNew);
 		if (((count _vehicleArray) > 1) && !_skipDelays) then {
 			sleep 5;
@@ -215,15 +186,12 @@ if ((count _vehicleArray) > 0) then {
 
 if !(_waypointArray isEqualTo []) then {
 	if((count _vehicleArray) == 0) then {
-		if(!isNil "OKS_Enemy_Talk") then {
-			[_group] spawn OKS_Enemy_Talk;
+		if(!isNil "OKS_fnc_Enemy_Talk") then {
+			[_group] spawn OKS_fnc_Enemy_Talk;
 		};
-		if(!isNil "OKS_Tracker" && GOL_OKS_Tracker isEqualTo 1) then {
-			[_group] remoteExec ["OKS_Tracker",2];
+		if(!isNil "OKS_fnc_Tracker") then {
+			[_group] remoteExec ["OKS_fnc_Tracker",2];
 		};
-		if(OKS_Suppression isEqualTo 1) then {
-			{[_X] remoteExec ["OKS_Suppressed",0]} foreach units _group;
-		};			
 	};
 	{
 		_x params [["_position",[0,0,0]], ["_attributes",[]]];
@@ -265,10 +233,6 @@ if !(_waypointArray isEqualTo []) then {
 } else {
 	_group setVariable ["lambs_danger_disableGroupAI", true];
 	_group setVariable ["GOL_IsStatic",true,true];
-	if(!isNil "OKS_EnablePath") then {
-		[_group,GOL_Static_Enable_Chance,GOL_Static_Enable_Refresh] spawn OKS_EnablePath;
-	};	
-	//_group setVariable ["acex_headless_blacklist",true];
 };
 
 if (GVAR(autoQueue) && !_skipQueue) then {

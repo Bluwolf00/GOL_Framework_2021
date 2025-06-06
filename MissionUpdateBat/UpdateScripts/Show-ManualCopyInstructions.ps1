@@ -1,0 +1,12 @@
+Write-Host ""
+Write-Host "Please COPY and PASTE the following files and folders from your framework folder into this folder:"
+Write-Host " - script_Compontent.hpp"
+Write-Host " - onPlayerRespawn.sqf"
+Write-Host " - initPlayerLocal.sqf"
+Write-Host " - init.sqf"
+Write-Host " - Description.ext"
+Write-Host " - Modules (folder)"
+Write-Host " - Core (folder)"
+Write-Host ""
+Write-Host "Press ENTER when done."
+[void][System.Console]::ReadLine()

@@ -90,7 +90,7 @@
 	_mhq setVariable [QGVAR(ActiveActions), []];
 
 	if (_mhq getVariable QGVAR(Active)) then {
-		_id = _mhq addAction ["Deactivate MHQ",{ player PlayMove "Acts_carFixingWheel";
+		_id = _mhq addAction ["<t color='#ec2b14'>Deactivate MHQ</t>",{ player PlayMove "Acts_carFixingWheel";
 			["Deactivating MHQ", 5, {(((_this select 0) select 0) getVariable "GW_MHQ_Active")}, {
 				([QGVAR(Enabled), [((_this select 0) select 0), false, str([player] call EFUNC(Common,getSide))]] call CBA_fnc_serverEvent);
 				if(objectParent player != ((_this select 0) select 0)) then {
@@ -110,28 +110,29 @@
 		},ARGUMENT(_mhq),(CONDITION_4 +" && "+ CONDITION_3 + "&& !" + CONDITION_2),7];
 		_add pushback [_mhq, _id];
 
-		_id = _mhq addAction ["Assemble MHQ",{
+		_id = _mhq addAction ["<t color='#0fdf29'>Assemble MHQ</t>",{
 			player PlayMove "Acts_carFixingWheel"; ["Assembling MHQ", 10, {!(((_this select 0) select 0) getVariable "GW_MHQ_Assembled")}, {
 				([QGVAR(Assembled), [((_this select 0) select 0), true]] call CBA_fnc_serverEvent); player SwitchMove "";
 			}, {hint "Aborted"; player SwitchMove "";}, [(_this select 0)]] call CBA_fnc_progressBar;
 		},ARGUMENT(_mhq),(CONDITION_1 + "&& !" + CONDITION_2),7];
 		_add pushback [_mhq, _id];
 
-		_id = _mhq addAction ["Disassemble MHQ",{ player PlayMove "Acts_carFixingWheel";
+		_id = _mhq addAction ["<t color='#ec2b14'>Disassemble MHQ</t>",{ player PlayMove "Acts_carFixingWheel";
 			["Disassemble MHQ", 10, {(((_this select 0) select 0) getVariable "GW_MHQ_Assembled")}, {
 				([QGVAR(Assembled), [((_this select 0) select 0), false]] call CBA_fnc_serverEvent); player SwitchMove "";
 			}, {hint "Aborted"; player SwitchMove "";}, [(_this select 0)]] call CBA_fnc_progressBar;
 		},ARGUMENT(_mhq),(CONDITION_1 + "&& " + CONDITION_2),7];
 		_add pushback [_mhq, _id];
 
-		_id = _mhq addAction ["Teleport to Base",{[player, ([(_this select 0)] call FUNC(getFlag))] call bis_fnc_moveToRespawnPosition},ARGUMENT(_mhq),(CONDITION_1),7];
+		_id = _mhq addAction ["<t color='#eeb20e'>Teleport to Base</t>",{[player, ([(_this select 0)] call FUNC(getFlag))] call bis_fnc_moveToRespawnPosition},ARGUMENT(_mhq),(CONDITION_1),7];
 		_add pushback [_mhq, _id];
 		private _mhqName = _mhq;
 		if(["p3d", str _mhq] call BIS_fnc_inString) then {
 			_mhqName = format["%1 MHQ",[configFile >> "CfgVehicles" >> typeOf _mhq] call BIS_fnc_displayName];
 		};
-		_id = (([_mhq] call FUNC(getFlag))) addAction[format ["Teleport to %1", _mhqName],{
-			_EnemyNearUnits = ((_this select 3) nearEntities ["Man", GOL_OKS_MhqSafeZone]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
+		_id = (([_mhq] call FUNC(getFlag))) addAction[format ["<t color='#eeb20e'>Teleport to %1</t>", _mhqName],{
+			_MhqSafeZone = missionNamespace getVariable ["MHQSAFEZONE",50];
+			_EnemyNearUnits = ((_this select 3) nearEntities ["Man", _MhqSafeZone]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
 			if(count _EnemyNearUnits == 0) then {	
 				private _height = 5;
 				private _sleep = 3.5;	
@@ -139,7 +140,7 @@
 				cutText ["", "BLACK OUT",1]; sleep 1;
 				1 fadeSound 0;
 				cutText ["", "BLACK IN",1];
-				if(vehicleVarName (_this select 3) == "Tent_MHQ") then {
+				if(vehicleVarName (_this select 3) == "Mobile_HQ") then {
 					[player, (_this select 3)] call bis_fnc_moveToRespawnPosition;
 					_camera camSetTarget player;
 					_height = 2;
@@ -159,19 +160,20 @@
 				waitUntil { sleep 1; camCommitted _camera; };				
 				_camera cameraEffect ["terminate", "back"];			
 				camDestroy _camera;
-				if(vehicleVarName (_this select 3) != "Tent_MHQ") then {
+				if(vehicleVarName (_this select 3) != "Mobile_HQ") then {
 					[player, (_this select 3)] call bis_fnc_moveToRespawnPosition;
 				};	
 				sleep 1.1;	
 				cutText ["", "BLACK IN",1];
 				
 			} else {
-				if(count crew (_this select 3) > 0) then {
-					systemChat format["Enemies are near the MHQ. You cannot move to the MHQ until the immediate area is secure (%1m). The crew has been notified.",GOL_OKS_MhqSafeZone];
+				_MhqSafeZone = missionNamespace getVariable ["MHQSAFEZONE",50];
+				if(count crew (_this select 3) > 0) then {			
+					systemChat format["Enemies are near the MHQ. You cannot move to the MHQ until the immediate area is secure (%1m). The crew has been notified.",_MhqSafeZone];
 					(format["Reinsert: %1 attempted to move to the MHQ.",name player]) remoteExec ["SystemChat",crew (_this select 3)];
 				} else {
 					private ["_GroupLeaders"];
-					systemChat format["Enemies are near the MHQ. You cannot move to the MHQ until the immediate area is secure (%1m). Group leaders have been notified",GOL_OKS_MhqSafeZone];
+					systemChat format["Enemies are near the MHQ. You cannot move to the MHQ until the immediate area is secure (%1m). Group leaders have been notified",_MhqSafeZone];
 					if(!isNil "flag_west_1") then {
 						_GroupLeaders = allPlayers select {leader (group _X) == _X && (_X distance flag_west_1 > 100)};
 					};
@@ -204,9 +206,9 @@
 		},ARGUMENT(_mhq),(CONDITION_1),7];
 		_add pushback [([_mhq] call FUNC(getFlag)), _id];
 	} else {
-		_id = _mhq addAction ["Activate MHQ",{
-			
-			_EnemyNearUnits = ((_this select 3) nearEntities ["Man", GOL_OKS_MhqSafeZone]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
+		_id = _mhq addAction ["<t color='#0fdf29'>Activate MHQ</t>",{
+			_MhqSafeZone = missionNamespace getVariable ["MHQSAFEZONE",50];
+			_EnemyNearUnits = ((_this select 3) nearEntities ["Man", _MhqSafeZone]) select {(side _X) getFriend (side player) < 0.6 && side _X != civilian};
 			if(count _EnemyNearUnits == 0) then {			
 				if(objectParent player != (_this select 3)) then {
 					player PlayMove "Acts_carFixingWheel";
@@ -253,7 +255,7 @@
 					};
 				}, [(_this select 0)]] call CBA_fnc_progressBar;
 			} else {
-				systemChat format["Enemies are near the MHQ. You cannot activate the MHQ until the immediate area is secure (%1m).",GOL_OKS_MhqSafeZone];
+				systemChat format["Enemies are near the MHQ. You cannot activate the MHQ until the immediate area is secure (%1m).",_MhqSafeZone];
 			};
 
 		},ARGUMENT(_mhq),(CONDITION_4 + "&&" + CONDITION_3),7];

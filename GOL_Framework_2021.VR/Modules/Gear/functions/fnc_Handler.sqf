@@ -74,12 +74,16 @@ params [
 
 if !(_unit isEqualType objNull) exitWith {false};
 if !(local _unit) exitWith {false};
-//if (getNumber(configfile >> "CfgVehicles" >> (typeOf _unit) >> "side") isEqualTo 3) exitWith {false};	// Civilians
 
 _isMan = _unit isKindOf "CAManBase";
 _isCar = _unit isKindOf "Car";
 _isTank = _unit isKindOf "Tank";
 _errorCode = false;
+
+_OpticsAllowed = missionNamespace getVariable ["OPTICS_ALLOW",false];
+_MagnifiedOpticsAllowed = missionNamespace getVariable ["MAGNIFIED_OPTICS_ALLOW",false];
+_WeaponsAllowed = missionNamespace getVariable ["WEAPONS_ALLOW",false];
+_ArsenalAllowed = missionNamespace getVariable ["ARSENAL_ALLOW",false];
 
 if (_isMan) then {
 	_loadout = [[],[],[],[],[],[],"","",[],[]];
@@ -128,23 +132,23 @@ if (_isMan) then {
 		format["%1 has selected the %2 kit.",name _unit,_roleArray select 1] remoteExec ["systemChat",0];
 	};
 
-
 	_unit setVariable ["BIS_enableRandomization", false];
 	if (_isPlayer) then {
 		_unit setVariable [QEGVAR(Common,isPlayer), true, true];
 		_unit setUnitTrait ["engineer", true];
 		_unit setUnitTrait ["explosiveSpecialist", true];
 		_unit setUnitTrait ["uavhacker", true];
-		if (true) then {
-			_unit setVariable ["ACE_Medical_MedicClass", 1, true];
-			_unit setVariable ["ACE_IsEngineer", 1, true];
-			
-
-			if(_unit getVariable ["GOL_SelectedRole",""] in ["jetp","p","crew"]) then {
-				_unit setVariable ["ACE_IsEngineer", 2, true];
-				_unit setVariable ["ACE_Medical_MedicClass", 2, true];
-				_unit setVariable ["ACE_GForceCoef", 0.5];			// IsPilot
-			};
+		_unit setVariable ["ACE_Medical_MedicClass", 1, true];
+		_unit setVariable ["ACE_IsEngineer", 1, true];
+		_unit setVariable ["ACE_GForceCoef", 1, true];
+		
+		if(_unit getVariable ["GOL_SelectedRole",""] in ["crew"]) then {
+			_unit setVariable ["ACE_IsEngineer", 2, true];
+		};
+		if(_unit getVariable ["GOL_SelectedRole",""] in ["jetp","p","crew"]) then {
+			_unit setVariable ["ACE_IsEngineer", 2, true];
+			_unit setVariable ["ACE_Medical_MedicClass", 2, true];
+			_unit setVariable ["ACE_GForceCoef", 0.5, true];			// IsPilot
 		};
 	};
 
@@ -171,7 +175,7 @@ if (_isMan) then {
 	#include "..\Scripts\factions.sqf"
 	#include "isNilCheck.hpp"
 
-	if(OKS_FRIENDLY_SIDE == EAST) then {
+	if(side group _unit == EAST) then {
 		_UAVTerminal = "O_UavTerminal"
 	};
 
@@ -180,7 +184,7 @@ if (_isMan) then {
 		["", "", "", "", "", ""] call _addLinkedItems;
 	} else {
 		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
-			_nvg = "NVGoggles_Opfor";
+			_nvg = "ACE_NVG_Gen4_Black";
 		};
 
 		if !(_isPlayer || (_unit in switchableUnits)) then {
@@ -314,6 +318,7 @@ if (_isMan) then {
 				[_unit] remoteExecCall [QFUNC(actions), 0, true];	// Enables gear actions for all players
 				[_unit, _Earplugs, 20] call _fnc_AddObjectsCargo;
 				[_unit, "Toolkit", 10] call _fnc_AddObjectsCargo;						
+				[_unit, _mapTools, 10] call _fnc_AddObjectsCargo;						
 				[_unit, "UK3CB_BAF_M6", 5] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_60mm_HE", 15] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_60mm_HEAB", 15] call _fnc_AddObjectsCargo;
@@ -337,10 +342,10 @@ if (_isMan) then {
 				[_unit, "GOL_Packed_GMG", 6] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_Mortar", 6] call _fnc_AddObjectsCargo;
 				[_unit, "GOL_Packed_AT", 6] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_Drone_AP", 30] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_Drone_AT", 30] call _fnc_AddObjectsCargo;				
-				[_unit, "GOL_Packed_Drone_Recon", 15] call _fnc_AddObjectsCargo;				
-				[_unit, "GOL_Packed_Drone_Supply", 10] call _fnc_AddObjectsCargo;				
+				[_unit, "GOL_Packed_Drone_AP", 10] call _fnc_AddObjectsCargo;
+				[_unit, "GOL_Packed_Drone_AT", 10] call _fnc_AddObjectsCargo;				
+				[_unit, "GOL_Packed_Drone_Recon", 4] call _fnc_AddObjectsCargo;				
+				[_unit, "GOL_Packed_Drone_Supply", 4] call _fnc_AddObjectsCargo;				
 				[_unit, _MAT_mag_HE, 10] call _fnc_AddObjectsCargo;
 				[_unit, (_LAT select 0), 30] call _fnc_AddObjectsCargo;
 				if (true) then {
@@ -348,8 +353,7 @@ if (_isMan) then {
 					[_unit, _mortarRangeCard, 10] call _fnc_AddObjectsCargo;			
 				};
 
-				if(true && (isNil "GOL_ARSENAL_ALLOWED" || GOL_ARSENAL_ALLOWED isEqualTo 1)) then {
-
+				if(_ArsenalAllowed isEqualTo true) then {
 					_compatibleItems = [];
 
 					if(typeName _uniform == "ARRAY") then {
@@ -388,12 +392,11 @@ if (_isMan) then {
 						 if !(_X in _compatibleItems) then {_compatibleItems pushBack _backpackRadio}
 					};		
 
-					_blackList = ["rhsusf_acc_SpecterDR_pvs27","rhsusf_acc_su230","rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","ACE_acc_pointer_green","ACE_acc_pointer_green_ir","ACE_acc_pointer_red","acc_pointer_ir","acc_pointer_ir_broken","rhsusf_acc_anpeq15_top_h","rhsusf_acc_anpeq15_top_sc","rhsusf_acc_anpeq15_wmx_sc","rhsusf_acc_anpeq15_wmx_h","rhsusf_acc_anpeq15_wmx_light_sc","rhsusf_acc_anpeq15_wmx_light_h","rhsusf_acc_anpeq15_bk_top_h","rhsusf_acc_anpeq15_bk_top_sc","rhsusf_acc_anpeq15_h","rhsusf_acc_anpeq15_sc","rhsusf_acc_anpeq15_light_sc","rhsusf_acc_anpeq15_light_h","rhsusf_acc_anpeq15_bk_h","rhsusf_acc_anpeq15_bk_sc","rhsusf_acc_anpeq15_bk_light_sc","rhsusf_acc_anpeq15_bk_light_h","rhsusf_acc_anpeq16a_top_sc","rhsusf_acc_anpeq16a_top_h","rhsusf_acc_anpeq16a_light_top_sc","rhsusf_acc_anpeq16a_light_top_h","rhsusf_acc_anpas13gv1"];
+					_blackList = ["rhsusf_acc_SpecterDR_pvs27","JCA_optic_IHO_black_magnifier","JCA_optic_IHO_olive_magnifier","JCA_optic_IHO_sand_magnifier","JCA_optic_MROS_sand_magnifier","JCA_optic_MROS_olive_magnifier","JCA_optic_MROS_black_magnifier","rhsusf_acc_su230","rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","ACE_acc_pointer_green","ACE_acc_pointer_green_ir","ACE_acc_pointer_red","acc_pointer_ir","acc_pointer_ir_broken","rhsusf_acc_anpeq15_top_h","rhsusf_acc_anpeq15_top_sc","rhsusf_acc_anpeq15_wmx_sc","rhsusf_acc_anpeq15_wmx_h","rhsusf_acc_anpeq15_wmx_light_sc","rhsusf_acc_anpeq15_wmx_light_h","rhsusf_acc_anpeq15_bk_top_h","rhsusf_acc_anpeq15_bk_top_sc","rhsusf_acc_anpeq15_h","rhsusf_acc_anpeq15_sc","rhsusf_acc_anpeq15_light_sc","rhsusf_acc_anpeq15_light_h","rhsusf_acc_anpeq15_bk_h","rhsusf_acc_anpeq15_bk_sc","rhsusf_acc_anpeq15_bk_light_sc","rhsusf_acc_anpeq15_bk_light_h","rhsusf_acc_anpeq16a_top_sc","rhsusf_acc_anpeq16a_top_h","rhsusf_acc_anpeq16a_light_top_sc","rhsusf_acc_anpeq16a_light_top_h","rhsusf_acc_anpas13gv1"];
 					_whiteList = ["rhs_weap_optic_smaw"];							
-						
-					if(GOL_OPTICS == 1) then {
-		
-						if(GOL_MAGNIFIED_OPTICS isEqualTo 0 || isNil "GOL_MAGNIFIED_OPTICS") then {
+
+					if(_OpticsAllowed isEqualTo true) then {
+						if(_MagnifiedOpticsAllowed isEqualTo true) then {
 							_opticValues = ["1.0x"]
 						} else {
 							_opticValues = ["1.0x","1.0x-2.0x"]
@@ -492,8 +495,7 @@ if (_isMan) then {
 
 					//systemChat str _compatibleItems;
 				 	//copyToClipboard str _compatibleItems;
-
-					if(GOL_WEAPONS == 1) then {
+					if(OKS_Weapons isEqualTo true) then {
 						if(TYPENAME (_rifle select 0) == "ARRAY") then {
 							{
 								if !(_X in _compatibleItems) then {_compatibleItems pushBack _X};

@@ -1,0 +1,5 @@
+Place both files in the root folder of your missions. It will search and replace old scripts and replace with new. May fail, testing required after, backup your mission folder. If it fails, or you notice something wasn't updated. Report it to be immediately and I will update the script to ensure that one gets updated could be anything, if its old name of codes or whatever you find.
+
+The more feedback the script gets, the better it will update our missions. Thanks! /Oksman
+
+Once this is updated and done its thing, go into your root folder of the template and copy the import settings, import them into your addon options when you have loaded your mission.
