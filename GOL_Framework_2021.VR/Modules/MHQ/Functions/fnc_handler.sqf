@@ -21,6 +21,10 @@ if (!isServer) exitWith {false};
 [{
 	params ["_mhq",["_type","",[""]],["_side","west",[""]]];
 
+	if(isNil "_mhq") exitWith {
+		"[DEBUG] MHQ Handler - MHQ was undefined." spawn OKS_fnc_LogDebug;
+	};
+
 	[QGVAR(Enabled), [_mhq, false]] call CBA_fnc_LocalEvent;
 	_jipID = [QGVAR(Actions), [_mhq], format ["GW_MHQ_JIP_%1", _mhq]] call CBA_fnc_globalEventJIP;
 	_mhq setVariable [QGVAR(Info), [(typeOf _mhq), (getPosATL _mhq), floor(getdir _mhq), (vehicleVarName _mhq), _type, _jipID], true];	// Store for respawn
@@ -29,26 +33,27 @@ if (!isServer) exitWith {false};
 	_mhq setPlateNumber (vehicleVarName _mhq);
 
 	// MHQ Marking Code
-	_mhqMarkerId = format["GOL_MHQ_Marker_%1",round(random 9999)];
-	_mhqMarkerAreaId = format["%1_Area",_mhqMarkerId];
-	_mhq setVariable ["MHQ_MarkerId",_mhqMarkerId,true];
+	private _mhqMarkerId = format["GOL_MHQ_Marker_%1",round(random 9999)];
+	private _mhqMarkerAreaId = format["%1_Area",_mhqMarkerId];
 	private _type = "respawn_inf";
 	private _color = "colorBlufor";
+	_mhq setVariable ["MHQ_MarkerId",_mhqMarkerId,true];
 	if(_mhq isKindOf "Tank") then {
 		_type = "respawn_armor";
 	};
 	if(_mhq isKindOf "Car") then {
 		_type = "respawn_motor";
 	};
-	switch (_side) do {
+	private _side = missionNamespace getVariable ["GOL_Friendly_Side",west];
+	switch (toLower (str _side)) do {
 		case "west": { _color = "colorBlufor"};
 		case "east": { _color = "colorOpfor"};
-		default { _color = "colorBlufor"};
+		default {};
 	};
 	_mhqMarker = createMarker [_mhqMarkerId, _mhq];
 	_mhqMarker setMarkerShape "ICON";
 	_mhqMarker setMarkerType _type;
-	_mhqMarker setMarkerText " MHQ";
+	_mhqMarker setMarkerText " Mobile HQ";
 	_mhqMarker setMarkerColor _color;
 	_mhqMarker setMarkerSize [0.8,0.8];
 	_mhqMarker setMarkerAlpha 0;
