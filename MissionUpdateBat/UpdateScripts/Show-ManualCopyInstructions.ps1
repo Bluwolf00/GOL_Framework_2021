@@ -1,6 +1,6 @@
 Write-Host ""
 Write-Host "Please COPY and PASTE the following files and folders from your framework folder into this folder:"
-Write-Host " - script_Compontent.hpp"
+Write-Host " - script_component.hpp"
 Write-Host " - onPlayerRespawn.sqf"
 Write-Host " - initPlayerLocal.sqf"
 Write-Host " - init.sqf"

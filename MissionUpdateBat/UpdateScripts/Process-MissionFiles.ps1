@@ -190,6 +190,14 @@ $missionContent = [regex]::Replace(
     [System.Text.RegularExpressions.RegexOptions]::Multiline
 )
 
+# === HARD CLEANUP: Remove any legacy/incorrect loadScreen lines globally ===
+$missionContent = [regex]::Replace(
+    $missionContent,
+    '^\s*loadScreen\s*=\s*["''](?!\\OKS_GOL_Misc\\data\\images\\loadImage\.jpg["''];).+["''];\s*$',
+    '',
+    [System.Text.RegularExpressions.RegexOptions]::Multiline
+)
+
 # === Update overviewText in class Intel (Mission) block ===
 $missionContent = [regex]::Replace($missionContent,
     '(class\s+Intel\s*\{)(.*?)(\};)',
