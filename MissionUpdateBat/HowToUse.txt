@@ -1,5 +1,5 @@
-Place both files in the root folder of your missions. It will search and replace old scripts and replace with new. May fail, testing required after, backup your mission folder. If it fails, or you notice something wasn't updated. Report it to be immediately and I will update the script to ensure that one gets updated could be anything, if its old name of codes or whatever you find.
+Place the UpdateScripts folder in the root folder of your missions. In the folder once in place, run the .bat file. Backup your mission folder before you do anything.. If it fails, or you notice something wasn't updated. Report it to me immediately and I will update the script to ensure that issue gets updated, could be anything, if its old name of codes, or whatever you find.
 
 The more feedback the script gets, the better it will update our missions. Thanks! /Oksman
 
-Once this is updated and done its thing, go into your root folder of the template and copy the import settings, import them into your addon options when you have loaded your mission.
+Once this is updated and done its thing, go into your root folder of the template and copy the import settings from the root folder of the framework, import them into your addon options when you have loaded your mission in the addon options menu >> Import.
