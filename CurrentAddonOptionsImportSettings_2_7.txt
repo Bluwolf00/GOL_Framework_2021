@@ -877,9 +877,11 @@ GOL_Ambience_Debug = false;
 GOL_Core_Debug = false;
 GOL_Enemy_Debug = false;
 GOL_FaceSwap_Debug = false;
+GOL_RotorProtection_Debug = false;
 GOL_Suppression_Debug = false;
 GOL_Surrender_Debug = false;
 GOL_Unconscious_CameraDebug = false;
+MHQ_Debug = false;
 
 // GOL_Dynamic
 GOL_Dynamic_Faction = "CSAT";
@@ -919,7 +921,8 @@ UGL_Chance = 0.25;
 GOL_Hunt_MaxCount = 40;
 
 // GOL_MHQ
-MHQSAFEZONE = 100;
+force MHQ_ShouldBe_ServiceStation = false;
+force MHQSAFEZONE = 100;
 
 // GOL_ORBAT
 GOL_SelectedComposition = 0;
@@ -934,6 +937,12 @@ GOL_PackedGMGClass = "RHS_MK19_TriPod_USMC_WD";
 GOL_PackedHMGClass = "RHS_M2StaticMG_USMC_D";
 GOL_PackedMortarClass = "B_G_Mortar_01_F";
 
+// GOL_Supply
+NEKY_Supply_Enabled = true;
+force NEKY_SupplyHelicopter = "";
+NEKY_SupplyMHQ_Enabled = true;
+NEKY_SupplyVehicle_Enabled = true;
+
 // GOL_Suppression
 GOL_Suppressed_MaximumTime = 10;
 GOL_Suppressed_MinimumTime = 6;
@@ -942,12 +951,12 @@ GOL_Suppression_Enabled = true;
 
 // GOL_Surrender
 GOL_Surrender_Chance = 0.05;
-GOL_Surrender_ChanceWeaponAim = 0.05;
-GOL_Surrender_Distance = 200;
-GOL_Surrender_DistanceWeaponAim = 50;
+force GOL_Surrender_ChanceWeaponAim = 0.03;
+force GOL_Surrender_Distance = 150;
+force GOL_Surrender_DistanceWeaponAim = 30;
 GOL_Surrender_Enabled = true;
 GOL_Surrender_Flashbang = true;
-GOL_Surrender_FriendlyDistance = 200;
+force GOL_Surrender_FriendlyDistance = 300;
 GOL_Surrender_Shot = true;
 
 // GRAD Trenches
