@@ -51,11 +51,11 @@ switch (toLower(_role)) do {
 
 	case "pl": {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
-		[_rifle, _rifle_mag, ""] call _addPrimary;
+		[_rifleGL, _rifleGL_mag, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
 		[[_mapTools,1],["acex_intelitems_notepad",1],[_cables,2],[_gps,1],[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
-		[[_flashBang,3],[_smokegrenadeB,5],[_grenade,2],[_rifle_mag_tr,5]] call _addToVest;
+		[[_flashBang,3],[_smokegrenadeB,5],[_grenade,2],[_rifleGL_mag_tr,5]] call _addToVest;
 		[[_smokegrenadeB,5]] call _addToBackpack;
 		_rangefinder call _addBino;
 		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;

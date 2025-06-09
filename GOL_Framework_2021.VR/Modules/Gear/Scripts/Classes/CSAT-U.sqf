@@ -82,9 +82,9 @@ _MMG_mag = "UK3CB_M60_100rnd_762x51_YT";
 
 _sight = "";
 
-_LAT = ["UK3CB_BAF_AT4_CS_AT_Launcher", _silencer, _pointer, _sight, _bipod];
-_LAT_mag = "UK3CB_BAF_AT4_CS_AT_Mag";
-_LAT_ReUsable = true;
+_LAT = ["rhs_weap_rpg26", _silencer, _pointer, _sight, _bipod];
+_LAT_mag = "rhs_rpg26_mag";
+_LAT_ReUsable = false;
 
 _MAT = ["rhs_weap_maaws", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "MRAWS_HEAT_F";
