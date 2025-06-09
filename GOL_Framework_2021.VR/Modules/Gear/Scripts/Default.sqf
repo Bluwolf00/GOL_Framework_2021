@@ -54,9 +54,9 @@ switch (toLower(_role)) do {
 		[_rifleGL, _rifleGL_mag, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_mapTools,1],["acex_intelitems_notepad",1],[_cables,2],[_gps,1],[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
-		[[_flashBang,3],[_smokegrenadeB,5],[_grenade,2],[_rifleGL_mag_tr,5]] call _addToVest;
-		[[_smokegrenadeB,5]] call _addToBackpack;
+		[[_mapTools,1],["acex_intelitems_notepad",1],[_cables,2],[_gps,1],[_grenade,2],[_flashBang,2],[_pistol_mag,2]] call _addToUniform;
+		[[_grenade,2],[_rifleGL_mag_tr,5],[_glHEDP,7],[_glsmokeR,5],[_smokegrenadeY,4],[_smokegrenadeB,3]] call _addToVest;
+		[[_rifleGL_mag,4]] call _addToBackpack;
 		_rangefinder call _addBino;
 		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
 		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || _ForceNVG isEqualTo true) then {
