@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=11773;
+		nextID=11857;
 	};
 	class Camera
 	{
-		pos[]={110.67572,74.453659,16.887417};
-		dir[]={0.0075108479,-0.70060635,0.71351391};
-		up[]={0.0073746056,0.7135461,0.70056999};
-		aside[]={0.99994826,6.3027983e-09,-0.010526014};
+		pos[]={111.53017,63.824223,10.529872};
+		dir[]={0.0072348728,-0.63451809,0.77292264};
+		up[]={0.005939371,0.77290332,0.63449502};
+		aside[]={0.99998856,-3.4132518e-07,-0.0093592405};
 	};
 };
 binarizationWanted=0;
@@ -19245,7 +19245,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={35.238197,5,112.02182};
-						angles[]={-0,1.6311014,0};
+						angles[]={0,1.6311014,0};
 					};
 					name="HC2";
 					isPlayable=1;
@@ -19259,7 +19259,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={34.998695,5,108.02896};
-						angles[]={-0,1.6311014,0};
+						angles[]={0,1.6311014,0};
 					};
 					name="HC3";
 					isPlayable=1;
@@ -19273,7 +19273,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={35.125252,5,112.59308};
-						angles[]={-0,1.6311014,0};
+						angles[]={0,1.6311014,0};
 					};
 					title="Headless Clients";
 					id=272;
@@ -19284,7 +19284,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={35.48069,5,116.01485};
-						angles[]={-0,1.6310974,0};
+						angles[]={0,1.6310974,0};
 					};
 					name="HC";
 					isPlayable=1;
@@ -23409,7 +23409,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={63.797348,7.715806,83.168327};
+								position[]={63.797001,7.715806,83.168327};
 							};
 							side="Empty";
 							flags=4;
@@ -23417,7 +23417,7 @@ class Mission
 							{
 								name="helicopter_1";
 								reportOwnPosition=1;
-								pylons="FIR_Hydra_M247_P_19rnd_M;FIR_Hydra_M282_P_19rnd_M;FIR_Hydra_M282_P_19rnd_M;FIR_Hydra_M247_P_19rnd_M;rhsusf_M130_CMFlare_Chaff_Magazine_x2;";
+								pylons="FIR_Hydra_M247_P_19rnd_M;PylonWeapon_150Rnd_30mm_shells_HE;FIR_Hydra_M282_P_19rnd_M;FIR_Hydra_M247_P_19rnd_M;rhsusf_M130_CMFlare_Chaff_Magazine_x2;";
 							};
 							id=3020;
 							type="RHS_UH60M_ESSS_d";
@@ -26097,7 +26097,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={156.99619,8.1747437,80.799118};
+								position[]={156.996,8.1747437,80.799004};
 								angles[]={0,6.2686467,0};
 							};
 							side="Empty";
@@ -26105,7 +26105,7 @@ class Mission
 							class Attributes
 							{
 								name="helicopter_6";
-								pylons="rhs_mag_b13l1_s13t;rhs_mag_b13l1_s13t;rhs_mag_b8v20a_s8kom;rhs_mag_b8v20a_s8kom;rhs_mag_9M120M_Mi24_2x[0];rhs_mag_9M120M_Mi24_2x[0];rhs_ASO2_CMFlare_Chaff_Magazine_x4;";
+								pylons="rhs_mag_b13l1_s13t;rhs_mag_b13l1_s13t;rhs_mag_b8v20a_s8kom;rhs_mag_b8v20a_s8kom;rhs_mag_mi24_empty;rhs_mag_mi24_empty;rhs_ASO2_CMFlare_Chaff_Magazine_x4;";
 							};
 							id=3022;
 							type="RHS_Mi24P_vvs";
