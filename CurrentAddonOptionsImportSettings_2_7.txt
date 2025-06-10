@@ -950,10 +950,10 @@ GOL_Suppressed_Threshold = 0.75;
 GOL_Suppression_Enabled = true;
 
 // GOL_Surrender
-GOL_Surrender_Chance = 0.05;
-force GOL_Surrender_ChanceWeaponAim = 0.03;
+force GOL_Surrender_Chance = 0.03;
+force GOL_Surrender_ChanceWeaponAim = 0.02;
 force GOL_Surrender_Distance = 150;
-force GOL_Surrender_DistanceWeaponAim = 30;
+force GOL_Surrender_DistanceWeaponAim = 20.3628;
 GOL_Surrender_Enabled = true;
 GOL_Surrender_Flashbang = true;
 force GOL_Surrender_FriendlyDistance = 300;
