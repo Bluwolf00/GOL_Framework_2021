@@ -100,9 +100,22 @@ GVARMAIN(postLoad) = nil;
 			GVARMAIN(ZeuzModuleAdminLogged) setVariable ["Owner", "#adminLogged", true];
 			GVARMAIN(ZeuzModuleAdminLogged) setVariable ["Name", "AdminZeus", true];
 			GVARMAIN(ZeuzModuleAdminLogged) setVariable ["Addons", 3, true];
+
+			if (!isMultiplayer) then {
+				_temp = "true" configClasses (configFile >> "CfgPatches");
+				_addonsList = [];
+				{
+					_addonsList pushBack (configName _x)
+				} forEach _temp;
+				
+				activateAddons _addonsList;
+				GVARMAIN(ZeuzModuleAdminLogged) addCuratorAddons _addonsList;
+			};
+
 			GVARMAIN(ZeuzModuleAdminLogged) setVariable ["Forced", 0, true];
 			GVARMAIN(ZeuzModuleAdminLogged) setVariable ["birdType", "", true];
 			GVARMAIN(ZeuzModuleAdminLogged) setVariable ["showNotification", false, true];
+			player assignCurator GVARMAIN(ZeuzModuleAdminLogged);
 			publicVariable QGVARMAIN(ZeuzModuleAdminLogged);
 
 			[QGVARMAIN(serverReady), []] call CBA_fnc_localEvent;
