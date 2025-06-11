@@ -50,9 +50,8 @@ if (true) then {
 	_microDAGR = "ItemMicroDAGR";
 	_HelmetCam = "ItemcTabHCam";
 	_UAVTerminal = "B_UavTerminal";
-
-	if (_isPlayer) then {
-		_gps = "";
+	_gps = "";
+	if(hasInterface) then {
 		if(_role in ["pm","ab"]) then {
 			_gps = _microDAGR;
 		};
