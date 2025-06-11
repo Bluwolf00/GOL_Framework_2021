@@ -97,12 +97,12 @@ switch (_case) do {
 
     =======================================
 
-	OKS_fnc_ArtySupression
+	OKS_fnc_ArtySuppression
 
 	Setup an active artillery barrage on specified targets until destroyed.
 
 	Code:
-	[livearty_1,[getPos ArtySuppress_1,getPos ArtySuppress_2,getPos ArtySuppress_3],east,1,1,true,true,300,true] spawn OKS_fnc_ArtySupression;
+	[livearty_1,[getPos ArtySuppress_1,getPos ArtySuppress_2,getPos ArtySuppress_3],east,1,1,true,true,300,true] spawn OKS_fnc_ArtySuppression;
 
 	Params:
 	Artillery Object, Array with Target positions, Side of Crew, Rounds per target, Delay per target, Unlimited Ammo, Should Loop until Destroyed, Delay per Salvo, Mark with Red Smoke on Target.
@@ -138,10 +138,10 @@ switch (_case) do {
 	Setup Barricade Objective. Objective to destroy objects lined up as a blockade on a road. Make sure the object is destructible by testing it.
 
 	Code:
-	[[barricade_1,barricade_2]] spawn OKS_fnc_Destroy_Barricade;
+	[[barricade_1,barricade_2],nil,false] spawn OKS_fnc_Destroy_Barricade;
 
 	Params:
-	Array with Barricade Objects
+	Array with Barricade Objects, Taks Parent, Should Add Action (To single barriacade that can't be destroyed)
 
 	=======================================
 
@@ -178,10 +178,10 @@ switch (_case) do {
 
 	Code:
 	[bomb_1,600] spawn OKS_fnc_Defuse_Explosive;
+	[bomb_1,60,bombtarget_1,"parentTask",true,false,"VariableOnSuccess","VariableOnFail"] spawn OKS_fnc_Defuse_Explosive;
 
 	Params:
-	[bomb_1,600,bombtarget_1,"BombDetonated","BombDefused"] spawn OKS_fnc_Defuse_Explosive;
-	Bomb Object or Position, Time Delay (Seconds), Target Object (Destroyed upon detonation), VariableName to set to true if failed, VariableName to set to true if succeeded.
+	Bomb Object or Position, Time Delay (Seconds), Target Object (Destroyed upon detonation), Task Parent, Should Notification, Should Show Task Position, VariableName to set to true if failed, VariableName to set to true if succeeded.
 
 	=======================================
 
