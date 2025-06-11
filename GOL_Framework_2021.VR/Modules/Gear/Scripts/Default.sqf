@@ -36,10 +36,10 @@ switch (toLower(_role)) do {
 			[_goggles,_OfficerHelmet,_uniform,_vest,_backpackRadio] call _addEquipment;
 		};
 
-		[_rifle, _rifle_mag, ""] call _addPrimary;
+		[_rifleC, _rifleC_mag, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_mapTools,1],["acex_intelitems_notepad",1],[_cables,2],[_gps,1],[_pistol_mag,2],[_smokegrenadeY,3],[_rifle_mag,3]] call _addToUniform;
+		[[_mapTools,1],["acex_intelitems_notepad",1],[_cables,2],[_gps,1],[_pistol_mag,2],[_smokegrenadeY,3],[_rifleC_mag,3]] call _addToUniform;
 		[[_smokegrenadeB,5]] call _addToBackpack;
 		_rangefinder call _addBino;
 		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
@@ -51,7 +51,7 @@ switch (toLower(_role)) do {
 
 	case "pl": {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
-		[_rifleGL, _rifleGL_mag, ""] call _addPrimary;
+		[_rifleGL, _rifleGL_mag, _glHEDP] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
 		[[_mapTools,1],["acex_intelitems_notepad",1],[_cables,2],[_gps,1],[_grenade,2],[_flashBang,2],[_pistol_mag,2]] call _addToUniform;
@@ -423,8 +423,9 @@ switch (toLower(_role)) do {
 		_FAKPlatoon call _addToBackpack;
 		if (call EFUNC(Common,isNight)) then {
 			[[_chemG,5],[_chemR,5],[_handFlareG,2],[_IRStrobe,3]] call _addToBackpack;
+			_nvg call _addNVG;
 		};
-		[_map, "", "", _compass, _watch, _nvg] call _addLinkedItems;
+		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
 	};
 
 	case "diver": {
@@ -447,7 +448,7 @@ switch (toLower(_role)) do {
 		[[_cables,1],[_defusalKit,1],[_clacker,1],[_demoCharge,2],[_satchelCharge,1]] call _addToBackpack;
 		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
 		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || _ForceNVG isEqualTo true) then {
-			["", "", "", "", "", _nvg] call _addLinkedItems;
+			_nvg call _addNVG;
 			[[_mapFlashLight,1]] call _addToUniform;
 		};
 		if (_useMineDetector) then {
@@ -465,8 +466,9 @@ switch (toLower(_role)) do {
 		[["GOL_Packed_Drone_AT",3],["GOL_Packed_Drone_AP",3]] call _addToBackpack;
 		if (call EFUNC(Common,isNight)) then {
 			[[_chemG,5],[_chemR,5],[_handFlareG,2],[_IRStrobe,3]] call _addToBackpack;
+			_nvg call _addNVG;
 		};
-		[_map, _UAVTerminal, "", _compass, _watch, _nvg] call _addLinkedItems;
+		[_map, _UAVTerminal, "", _compass, _watch, ""] call _addLinkedItems;
 	};
 
 	case "jetp": {
@@ -491,8 +493,9 @@ switch (toLower(_role)) do {
 		_FAKSmall call _addToBackpack;
 		if (call EFUNC(Common,isNight)) then {
 			[[_chemG,5],[_chemR,5],[_handFlareG,2],[_IRStrobe,3]] call _addToBackpack;
+			_nvg call _addNVG;
 		};
-		[_map, "", "", _compass, _watch, _nvg] call _addLinkedItems;
+		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
 		_rangefinder call _addBino;
 	};
 
