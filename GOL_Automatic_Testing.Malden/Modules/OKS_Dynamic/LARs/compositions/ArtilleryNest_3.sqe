@@ -1,0 +1,109 @@
+version=54;
+center[]={944.18573,4.9999995,2383.7573};
+class items
+{
+	items=5;
+	class Item0
+	{
+		dataType="Layer";
+		name="ArtilleryNest";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Layer";
+				name="Triggers (Hide)_1";
+				class Entities
+				{
+					items=1;
+					class Item0
+					{
+						dataType="Trigger";
+						position[]={-0.18011475,4.7683716e-007,0.53613281};
+						angle=1.5659623;
+						class Attributes
+						{
+							text="HideTrigger";
+							condition="true";
+							onActivation="[thisTrigger, true, []] call GW_Common_fnc_setHideTerrainObjects";
+							sizeA=11;
+							sizeB=11;
+							sizeC=15;
+							isServerOnly=1;
+						};
+						id=771;
+						type="EmptyDetector";
+					};
+				};
+				id=199;
+				atlOffset=-4.7683716e-007;
+			};
+		};
+		id=212;
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.12457275,-0.2,-8.6716309};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=767;
+		type="Land_fort_rampart";
+		atlOffset=-4.7683716e-007;
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={7.706665,-0.2,-2.199707};
+			angles[]={0,4.752317,0};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=768;
+		type="Land_fort_rampart";
+	};
+	class Item3
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.0094604492,-0.2,8.3510742};
+			angles[]={0,3.1552863,0};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=769;
+		type="Land_fort_rampart";
+	};
+	class Item4
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-7.6605225,-0.2,1.9836426};
+			angles[]={0,1.6244178,0};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=770;
+		type="Land_fort_rampart";
+	};
+};
