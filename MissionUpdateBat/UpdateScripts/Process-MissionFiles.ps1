@@ -113,7 +113,8 @@ $replacements = @(
     @{ From = 'OKS_AddVehicleCrew'; To = 'OKS_fnc_AddVehicleCrew' },
     @{ From = 'OKS_Defuse_Explosive'; To = 'OKS_fnc_Defuse_Explosive' },
     @{ From = 'OKS_Convoy_Spawn'; To = 'OKS_fnc_Convoy_Spawn' },
-    @{ From = 'NEKY_Airbase'; To = 'OKS_fnc_Airbase' }
+    @{ From = 'NEKY_Airbase'; To = 'OKS_fnc_Airbase' },
+    @{ From = '#include "script_Component.hpp"'; To = '#include "\OKS_GOL_MISC\script_Component.hpp"' }	
 )
 
 function Replace-AllStringsCaseInsensitive($content, $replacements) {
