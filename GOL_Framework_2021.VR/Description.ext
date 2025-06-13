@@ -14,10 +14,25 @@ class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 		Version = QUOTE(VERSION);
 	};
 	class Naming {		
-		GameMode = "COOP";
-		overviewName = "GOL_MISSION_NAME";
-		Author = "GOL_AUTHOR";
-		version = 1;
+		//	NOTE: Changing any of these settings will require mission reload for it to be affected
+		#define GAME_MODE "COOP"								// GameMode
+		#define PLAYER_COUNT "36"								// Player Count - Do not go above 36 - Server Limit 
+		#define BRIEFING_NAME "Mission_Name"					// Mission Name
+		#define LOBBY_DESCRIPTION ""							// Description in mission select
+		#define ON_LOAD_TEXT ""									// Description on loading
+		#define MISSION_VERSION 1								// Version of mission
+		#define SELECT_PICTURE ""								// Path to loading screen
+		//#define SELECT_PICTURE RANDOM_PICTURES				// Random loading screen
+		// picture path: "\OKS_GOL_Misc\data\images\loadImage.jpg"
+		Author = "Editor";				// Author
+		AuthorUID[] = {"_SP_PLAYER_"};			// UIDs with admin access
+
+		Name = __EVAL(GAME_MODE + PLAYER_COUNT + " " + BRIEFING_NAME);
+		Description = LOBBY_DESCRIPTION;
+		onLoad = ON_LOAD_TEXT;
+		Picture = SELECT_PICTURE;
+		version = MISSION_VERSION;
+		GameMode = GAME_MODE;
 	};
 	#define LOAD_Behaviour
 		#include "Modules\Modules.cpp"
