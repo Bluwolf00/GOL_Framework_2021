@@ -1,7 +1,7 @@
 class LARs_spawnComp {
 	tag = "LARs";
 	class Compositions {
-		file = "Modules\OKS_Dynamic\LARs\spawnComp\functions";
+		file = "Modules\LARs\spawnComp\functions";
 		class createComp{};
 		class createLinks{};
 		class customAttributes{};
@@ -22,7 +22,7 @@ class LARs_spawnComp {
 	};
 
 	class Utilitys {
-		file = "Modules\OKS_Dynamic\LARs\spawnComp\functions\utility";
+		file = "Modules\LARs\spawnComp\functions\utility";
 		//Utility funcs
 		class deleteComp{};
 		class getCompObjects{};
@@ -31,7 +31,7 @@ class LARs_spawnComp {
 	};
 
 	class Debug {
-		file = "Modules\OKS_Dynamic\LARs\spawnComp\functions\debug";
+		file = "Modules\LARs\spawnComp\functions\debug";
 		//Debug funcs
 		class drawBounds{};
 	};

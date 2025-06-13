@@ -3,4 +3,4 @@
 	#define CUSTOM_FOLDER Modules\COMPONENT\Functions
 #endif
 
-#include "..\script_Component.hpp"
+#include "\OKS_GOL_Misc\script_Component.hpp"

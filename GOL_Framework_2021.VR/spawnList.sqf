@@ -12,7 +12,7 @@
 
 
 
-#include "script_Component.hpp"
+#include "\OKS_GOL_Misc\script_Component.hpp"
 #define	COMPONENT spawnList
 
 if !(isServer) exitWith {false};

@@ -6,34 +6,18 @@
 #define QUOTE(var1) #var1
 #define DOUBLES(var1,var2) ##var1##_##var2
 #define TRIPLES(var1,var2,var3) ##var1##_##var2##_##var3
-#include "script_Component.hpp"
-#include "Modules\OKS_Dynamic\LARs\compositions\compositions.cfg"
+#include "\OKS_GOL_Misc\script_Component.hpp"
+#include "Modules\LARs\compositions\compositions.cfg"
 
 class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 	class Core {
 		Version = QUOTE(VERSION);
 	};
-
 	class Naming {		
-		//	NOTE: Changing any of these settings will require mission reload for it to be affected
-		#define GAME_MODE "COOP"								// GameMode
-		#define PLAYER_COUNT "36"								// Player Count - Do not go above 36 - Server Limit 
-		#define BRIEFING_NAME "Mission_Name"					// Mission Name
-		#define LOBBY_DESCRIPTION ""							// Description in mission select
-		#define ON_LOAD_TEXT ""									// Description on loading
-		#define MISSION_VERSION 1								// Version of mission
-		#define SELECT_PICTURE ""								// Path to loading screen
-		//#define SELECT_PICTURE RANDOM_PICTURES				// Random loading screen
-		// picture path: "\OKS_GOL_Misc\data\images\loadImage.jpg"
-		Author = "Editor";				// Author
-		AuthorUID[] = {"_SP_PLAYER_"};			// UIDs with admin access
-
-		Name = __EVAL(GAME_MODE + PLAYER_COUNT + " " + BRIEFING_NAME);
-		Description = LOBBY_DESCRIPTION;
-		onLoad = ON_LOAD_TEXT;
-		Picture = SELECT_PICTURE;
-		version = MISSION_VERSION;
-		GameMode = GAME_MODE;
+		GameMode = "COOP";
+		overviewName = "GOL_MISSION_NAME";
+		Author = "GOL_AUTHOR";
+		version = 1;
 	};
 	#define LOAD_Behaviour
 		#include "Modules\Modules.cpp"
@@ -58,8 +42,6 @@ disableChannels[]={{0,true,true},{1,false,true},{2,false,true},{5,false,true}};
 disabledAi = 1;
 ACE_maxWeightcarry = 1800;
 ACE_maxWeightdrag = 2000;
-//disableRandomization[] = {"CAManBase"};	// Disable random gear for units
-//disableRandomization[] = {"AllVehicles"};	// Disable for vehicles and units
 enableDebugConsole = 1;
 joinUnassigned = 1;
 scriptedPlayer = 1;
@@ -76,17 +58,10 @@ wreckLimit = 10; // seconds. Default: 15
 wreckRemovalMinTime = 600; // seconds. Default: 10
 wreckRemovalMaxTime = 3600; // seconds. Default: 36000 (10 hours)
 
-
 respawn = "BASE";
 respawnOnStart = 0;
-
-// Comment this to remove default respawn.
 respawnTemplates[] = {"Counter"};
 respawnDelay = 20;
-
-// Uncomment this for Spectator
-//respawnTemplates[] = {"ACE_Spectator"};
-//respawnDelay = 648000;
 
 class Params {
 	#define LOAD_PARAMS
@@ -121,7 +96,7 @@ class Params {
 };
 
 class CfgFunctions {
-	#include "Modules\OKS_Dynamic\LARs\spawnComp\functions\functions.cpp"
+	#include "Modules\LARs\spawnComp\functions\functions.cpp"
 	#include "Modules\Callsigns\Functions\functions.hpp"
 };
 

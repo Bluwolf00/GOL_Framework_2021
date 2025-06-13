@@ -1,1 +1,0 @@
-execVM "Modules\OKS_Task\Init.sqf";
