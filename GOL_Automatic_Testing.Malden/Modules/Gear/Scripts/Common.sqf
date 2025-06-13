@@ -67,55 +67,53 @@ if (true) then {
 _toolKit = "ToolKit";
 _bandage = "FirstAidKit";
 _blood = "MediKit";
-_epi = "";
-_morph = "";
 _IFAK = [[_bandage,2]];					//	Individual First Aid Kits
 _FAKSmall = [[_bandage,15]];			//	Medic Kit Small
 _FAKMedium = [[_bandage,20],[_blood,1]];	//	Medic Kit Big
 _FAKSquad = [[_bandage,25],[_blood,1]];	//	Medic Kit Big
 _FAKPlatoon = [[_bandage,25],[_blood,1]];	//	Medic Kit Big
-if (true) then {	//	ACE
-	_bandage = "ACE_elasticBandage";
-	_blood = "ACE_bloodIV";
-	_epi = "ACE_epinephrine";
-	_morph = "ACE_morphine";
-	_tourn = "ACE_tourniquet";
-	_pak = "ACE_personalAidKit";
-	_saline = "ACE_salineIV";
-	_salineSm = "ACE_SalineIV_500";
 
-	_IFAK = [[_bandage,17],[_tourn,2],[_morph,5]];
+_bandage = "ACE_elasticBandage";
+_blood = "ACE_bloodIV";
+_epi = "ACE_epinephrine";
+_morph = "ACE_morphine";
+_tourn = "ACE_tourniquet";
+_pak = "ACE_personalAidKit";
+_saline = "ACE_salineIV";
+_salineSm = "ACE_SalineIV_500";
 
-		_FAKSmall = [
-			[_bandage,5],
-			[_tourn,2],
-			[_morph,5]
-		];
-		_FAKMedium = [
-			[_bandage,15],
-			[_tourn,3],
-			[_morph,5],
-			[_epi,5],
-			[_saline,10],
-			[_pak,1]
-		];	
-		_FAKSquad = [
-			[_bandage,25],
-			[_tourn,3],
-			[_morph,10],
-			[_epi,10],
-			[_saline,16],
-			[_pak,1]
-		];				
-		_FAKPlatoon = [
-			[_bandage,30],
-			[_tourn,5],
-			[_morph,15],
-			[_epi,15],
-			[_saline,25],
-			[_pak,1]
-		];
-};
+_IFAK = [[_bandage,17],[_tourn,2],[_morph,5]];
+
+_FAKSmall = [
+	[_bandage,5],
+	[_tourn,2],
+	[_morph,5]
+];
+_FAKMedium = [
+	[_bandage,15],
+	[_tourn,3],
+	[_morph,5],
+	[_epi,5],
+	[_saline,10],
+	[_pak,1]
+];	
+_FAKSquad = [
+	[_bandage,25],
+	[_tourn,3],
+	[_morph,10],
+	[_epi,10],
+	[_saline,16],
+	[_pak,1]
+];				
+_FAKPlatoon = [
+	[_bandage,30],
+	[_tourn,5],
+	[_morph,15],
+	[_epi,15],
+	[_saline,25],
+	[_pak,1]
+];
+
 
 _barrel = "";
 _cables = "";
