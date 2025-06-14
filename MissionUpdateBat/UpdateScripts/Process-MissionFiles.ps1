@@ -141,6 +141,7 @@ function Replace-ImagePaths($content) {
         return $initPrefix + $initCode + $initSuffix
     }, 'Singleline')
     $content = [regex]::Replace($content, '(setFlagTexture\s*)"(\\OKS_GOL_Misc\\data\\images\\[^""]+)"', 'setFlagTexture ""$2""')
+	$content = $content -replace 'setObjectTexture\s*\[\s*0\s*,\s*""PlatoonRoster\.jpg""\s*\]\s*;\s*', ''
     return $content
 }
 
