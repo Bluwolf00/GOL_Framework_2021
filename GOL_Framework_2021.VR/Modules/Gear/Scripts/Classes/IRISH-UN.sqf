@@ -90,8 +90,8 @@ _pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
 
 _silencer = "";
 _pointer = "";
-_sight = "optic_lrps";
+_sight = "rhsusf_acc_su230";
 _bipod = "";
 
 _rifleMarksman = ["rhs_weap_m24sws", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "rhsusf_5Rnd_762x51_m993_Mag";
+_rifleMarksman_mag = "rhsusf_5Rnd_762x51_m62_Mag";

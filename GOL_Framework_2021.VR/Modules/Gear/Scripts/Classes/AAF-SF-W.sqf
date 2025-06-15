@@ -87,9 +87,9 @@ _pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
 
 _silencer = "";
 _pointer = "";
-_sight = "optic_LRPS_tna_F";
+_sight = "rhsusf_acc_ACOG_RMR";
 _bipod = "bipod_03_F_oli";
 
 _rifleMarksman = ["srifle_DMR_03_woodland_F", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "20Rnd_762x51_Mag";
-_rifleMarksman_mag_tr = "20Rnd_762x51_Mag";
+_rifleMarksman_mag = "ACE_20Rnd_762x51_Mag_Tracer";
+_rifleMarksman_mag_tr = "ACE_20Rnd_762x51_Mag_Tracer";

@@ -85,8 +85,9 @@ _pdw = ["JCA_smg_UMP_black_F", _silencer, _pointer, _sight, _bipod];
 _pdw_mag = "JCA_25Rnd_45ACP_UMP_Red_Mag";
 _pdw_mag_tr = "JCA_25Rnd_45ACP_UMP_Tracer_Red_Mag";
 
+
 _silencer = "";
 _pointer = "";
-_rifleMarksman = ["JCA_srifle_AWM_black_F", _silencer, _pointer, "JCA_optic_HPPO_black", "JCA_bipod_AWM_black"];
-_rifleMarksman_mag = "JCA_5Rnd_338LM_AWM_Mag";
-_rifleMarksman_mag_tr = "JCA_5Rnd_338LM_AWM_Tracer_Red_Mag";
+_rifleMarksman = ["UK3CB_M21_Bipod_Railed", _silencer, _pointer, "rhsusf_acc_ACOG2_USMC", ""];
+_rifleMarksman_mag = "UK3CB_M14_20rnd_762x51_RT";
+_rifleMarksman_mag_tr = "UK3CB_M14_20rnd_762x51_RT";

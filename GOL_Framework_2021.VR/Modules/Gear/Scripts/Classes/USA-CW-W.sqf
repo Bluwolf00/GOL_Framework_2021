@@ -88,9 +88,9 @@ _pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
 
 _silencer = "";
 _pointer = "";
-_sight = "rhsusf_acc_m8541_low_wd";
-_bipod = "rhsusf_acc_harris_swivel";
+_sight = "rhsusf_acc_ACOG_USMC";
+_bipod = "rhsusf_acc_harris_bipod";
 
-_rifleMarksman = ["rhs_weap_m24sws_wd", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "rhsusf_5Rnd_762x51_m993_Mag";
-_rifleMarksman_mag_tr = "rhsusf_5Rnd_762x51_m62_Mag";
+_rifleMarksman = ["srifle_DMR_06_olive_F", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman_mag = "UK3CB_M14_20rnd_762x51_RT";
+_rifleMarksman_mag_tr = "UK3CB_M14_20rnd_762x51_RT";

@@ -74,9 +74,9 @@ _pdw_mag = "rhs_mag_9x19mm_7n31_44";
 
 _silencer = "";
 _pointer = "";
-_sight = "optic_LRPS";
+_sight = "rhsusf_acc_ACOG_USMC";
 _bipod = "bipod_03_F_oli";
 
 _rifleMarksman = ["srifle_DMR_06_hunter_F", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "20Rnd_762x51_Mag";
-_rifleMarksman_mag_tr = "20Rnd_762x51_Mag";
+_rifleMarksman_mag = "UK3CB_M14_20rnd_762x51_RT";
+_rifleMarksman_mag_tr = "UK3CB_M14_20rnd_762x51_RT";

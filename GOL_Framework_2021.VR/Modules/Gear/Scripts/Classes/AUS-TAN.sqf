@@ -98,6 +98,6 @@ _pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";
 _pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
 
 // Marksman
-_rifleMarksman = ["UK3CB_PSG1A1_RIS", _silencer, _pointer, "optic_lrps", "JCA_bipod_04_black"];
-_rifleMarksman_mag = "UK3CB_G3_20rnd_762x51_R";
+_rifleMarksman = ["UK3CB_PSG1A1_RIS", _silencer, _pointer, "rhsusf_acc_ACOG_RMR", "JCA_bipod_04_black"];
+_rifleMarksman_mag = "UK3CB_G3_20rnd_762x51_RT";
 _rifleMarksman_mag_tr = "UK3CB_G3_20rnd_762x51_RT";

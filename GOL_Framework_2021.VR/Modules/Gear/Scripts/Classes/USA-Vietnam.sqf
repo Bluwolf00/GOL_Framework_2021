@@ -108,7 +108,7 @@ _pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
 
 _silencer = "";
 _pointer = "";
-_sight = "rhsusf_acc_m8541_low_wd";
+_sight = "rhsusf_acc_ACOG_USMC";
 _bipod = "rhsusf_acc_harris_swivel";
 
 _rifleMarksman = ["rhs_weap_m24sws_wd", _silencer, _pointer, _sight, _bipod];

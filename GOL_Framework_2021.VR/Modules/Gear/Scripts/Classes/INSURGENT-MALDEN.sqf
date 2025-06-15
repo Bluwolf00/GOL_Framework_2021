@@ -125,9 +125,10 @@ _pdw_mag_tr = "rhssaf_30Rnd_762x39_M82_api";
 
 _silencer = "";
 _pointer = "";
-_sight = "optic_LRPS";
+_sight = "uk3cb_optic_STANAGZF2D_G3";
 _bipod = "rhsusf_acc_harris_bipod";
 
-_rifleMarksman = ["srifle_DMR_06_hunter_F", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "20Rnd_762x51_Mag";
+_rifleMarksman = ["UK3CB_PSG1A1", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman_mag = "ACE_20Rnd_762x51_Mag_Tracer";
 _rifleMarksman_mag_tr = "ACE_20Rnd_762x51_Mag_Tracer";
+
