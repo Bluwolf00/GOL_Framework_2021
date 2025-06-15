@@ -115,6 +115,12 @@ $replacements = @(
     @{ From = 'OKS_Convoy_Spawn'; To = 'OKS_fnc_Convoy_Spawn' },
     @{ From = 'NEKY_Airbase'; To = 'OKS_fnc_Airbase' },
     @{ From = '#include "script_Component.hpp"'; To = '#include "\OKS_GOL_MISC\script_Component.hpp"' }	
+    @{ From = 'OKS_SAM'; To = 'OKS_fnc_SAM' }	
+    @{ From = 'OKS_CreateObjectives'; To = 'OKS_fnc_CreateObjectives' }	
+    @{ From = 'OKS_Rescue_Friendly'; To = 'OKS_fnc_Rescue_Friendly' }	
+    @{ From = 'OKS_Convoy_Reinforce'; To = 'OKS_fnc_Convoy_Reinforce' }	
+    @{ From = 'OKS_Surrender'; To = 'OKS_fnc_Surrender' }	
+    @{ From = 'OKS_Retexture'; To = 'OKS_fnc_Retexture' }	
 )
 
 function Replace-AllStringsCaseInsensitive($content, $replacements) {

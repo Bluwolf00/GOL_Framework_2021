@@ -32,7 +32,7 @@ if ($response -notmatch "^[Yy]$") {
 & "$ScriptDir\Clean-Folders.ps1" -FoldersToDelete @("Core", "Modules", "Scripts", "images") -LogFile $LogFile
 
 # 2. Clean files
-& "$ScriptDir\Clean-Files.ps1" -FilesToDelete @("missionSettings.sqf","init.sqf","initPlayerLocal.sqf","script_Component.hpp","PlatoonRoster.jpg") -LogFile $LogFile
+& "$ScriptDir\Clean-Files.ps1" -FilesToDelete @("missionSettings.sqf","init.sqf","initPlayerLocal.sqf","script_Component.hpp","PlatoonRoster.jpg","onPlayerRespawn.sqf") -LogFile $LogFile
 
 # 3. Show manual copy instructions
 & "$ScriptDir\Show-ManualCopyInstructions.ps1"
