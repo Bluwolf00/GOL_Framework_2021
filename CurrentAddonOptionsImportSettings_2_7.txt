@@ -871,6 +871,8 @@ force FPV_MaxFlightDistance = 3000;
 
 // GOL_CORE
 force GOL_CORE_Enabled = true;
+force GOL_DAPS_Enabled = false;
+force GOL_Unconscious_CameraEnabled = true;
 
 // GOL_DEBUG
 GOL_Ambience_Debug = false;
@@ -952,12 +954,15 @@ GOL_Suppression_Enabled = true;
 // GOL_Surrender
 force GOL_Surrender_Chance = 0.03;
 force GOL_Surrender_ChanceWeaponAim = 0.02;
-force GOL_Surrender_Distance = 150;
+force GOL_Surrender_Distance = 100;
 force GOL_Surrender_DistanceWeaponAim = 20.3628;
 GOL_Surrender_Enabled = true;
 GOL_Surrender_Flashbang = true;
-force GOL_Surrender_FriendlyDistance = 300;
+force GOL_Surrender_FriendlyDistance = 150;
 GOL_Surrender_Shot = true;
+
+// GOL_Tasks
+force GOL_Neky_Tasks_Enabled = false;
 
 // GRAD Trenches
 grad_trenches_functions_allowBigEnvelope = true;
@@ -1001,10 +1006,10 @@ grad_trenches_functions_vehicleEnvelopeRemovalTime = -1;
 force grad_trenches_functions_vehicleTrenchBuildSpeed = 1;
 
 // GW_Common
-force GW_Common_autoDelete = true;
+GW_Common_autoDelete = true;
 force GW_Common_AutoLock = false;
-force GW_Common_autoQueue = true;
-force GW_Common_BlockAIGear = true;
+GW_Common_autoQueue = true;
+GW_Common_BlockAIGear = true;
 force GW_Common_disableThermals = 2;
 GW_Common_radioDistnace = 1.9;
 GW_Common_slingloadEnabled = true;
@@ -1019,10 +1024,10 @@ GW_GameLoop_SafeMode_useType = 0;
 GW_UI_allowSpectator = false;
 
 // GW_Gear
-force GW_Gear_Auto_Assign = 1;
+GW_Gear_Auto_Assign = 1;
 force GW_Gear_autoRemoveCargo = true;
-force GW_Gear_extraGear = false;
-force GW_Gear_randomGear = true;
+GW_Gear_extraGear = false;
+GW_Gear_randomGear = true;
 
 // GW_Performance
 GW_Performance_autoCaching = 3;
@@ -1041,7 +1046,7 @@ force GW_setDifficulty_unitTraining = 2;
 
 // GW_StartUp
 force GW_StartUp_DistanceLimit = 25;
-force GW_StartUp_TimeLimit = 5;
+GW_StartUp_TimeLimit = 5;
 
 // GW_UI
 GW_UI_nameShadow = 2;
