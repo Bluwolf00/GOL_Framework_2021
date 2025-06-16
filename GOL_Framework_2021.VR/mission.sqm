@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3238;
+		nextID=3239;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=12361;
+		nextID=12466;
 	};
 	class Camera
 	{
-		pos[]={112.42921,73.358734,14.922287};
-		dir[]={0.017823346,-0.64774722,0.76164687};
-		up[]={0.015153825,0.7618553,0.64756995};
-		aside[]={0.9997263,-9.3132257e-10,-0.023394659};
+		pos[]={110.66767,54.158409,22.346323};
+		dir[]={0.015793785,-0.59300911,0.80504251};
+		up[]={0.011631768,0.80519468,0.59289551};
+		aside[]={0.99980843,1.1496013e-09,-0.019614819};
 	};
 };
 binarizationWanted=0;
@@ -615,7 +615,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=521;
+									items=522;
 									class Item0
 									{
 										class data
@@ -4784,6 +4784,14 @@ class CustomAttributes
 											value="gol_neky_tasks_enabled";
 										};
 									};
+									class Item521
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_unconscious_cameraenabled";
+										};
+									};
 								};
 							};
 						};
@@ -4794,7 +4802,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=521;
+									items=522;
 									class Item0
 									{
 										class data
@@ -19191,6 +19199,33 @@ class CustomAttributes
 													{
 														singleType="BOOL";
 														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item521
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
 													};
 												};
 												class Item1
