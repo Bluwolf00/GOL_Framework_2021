@@ -92,10 +92,10 @@ _pdw = ["rhs_weap_pp2000", _silencer, _pointer, _sight, _bipod];
 _pdw_mag = "rhs_mag_9x19mm_7n31_44";
 
 _silencer = "";
-_pointer = "acc_pointer_IR";
-_sight = "optic_LRPS";
-_bipod = "bipod_02_F_blk";
+_pointer = "";
+_sight = "rhs_acc_pso1m21";
+_bipod = "";
 
-_rifleMarksman = ["srifle_DMR_07_blk_F", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "ACE_20Rnd_65_Creedmor_mag";
-_rifleMarksman_mag_tr = "ACE_20Rnd_65x47_Scenar_mag";
+_rifleMarksman = ["rhs_weap_svdp_wd_npz", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman_mag = "UK3CB_SVD_10rnd_762x54_GT";
+_rifleMarksman_mag_tr = "UK3CB_SVD_10rnd_762x54_GT";

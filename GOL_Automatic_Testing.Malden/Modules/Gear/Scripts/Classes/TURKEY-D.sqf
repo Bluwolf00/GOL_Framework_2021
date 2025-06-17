@@ -91,9 +91,9 @@ _pistol_mag = "16Rnd_9x21_Mag";
 
 _silencer = "";
 _pointer = "";
-_sight = "rhsusf_acc_LEUPOLDMK4_2";
+_sight = "rhsusf_acc_ACOG3";
 _bipod = "rhsusf_acc_harris_bipod";
 
 _rifleMarksman = ["UK3CB_G3SG1_RIS", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "ACE_20Rnd_762x51_Mk316_Mod_0_Mag";
-_rifleMarksman_mag_tr = "ACE_20Rnd_762x51_Mag_Tracer";
+_rifleMarksman_mag = "UK3CB_G3_20rnd_762x51_RT";
+_rifleMarksman_mag_tr = "UK3CB_G3_20rnd_762x51_RT";

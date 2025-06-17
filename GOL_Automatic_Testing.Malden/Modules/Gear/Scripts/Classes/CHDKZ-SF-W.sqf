@@ -94,11 +94,11 @@ if(_role in ["sl","fac","tl","g"]) then {
 _pdw = ["rhs_weap_pp2000", _silencer, _pointer, _sight, _bipod];
 _pdw_mag = "rhs_mag_9x19mm_7n31_44";
 
-_silencer = "rhs_acc_tgpv2";
+_silencer = "";
 _pointer = "";
 _sight = "rhs_acc_pso1m21";
 _bipod = "";
 
 _rifleMarksman = ["rhs_weap_svdp", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "rhs_10Rnd_762x54mmR_7N14";
-_rifleMarksman_mag_tr = "ACE_10Rnd_762x54_Tracer_mag";
+_rifleMarksman_mag = "UK3CB_SVD_10rnd_762x54_GT";
+_rifleMarksman_mag_tr = "UK3CB_SVD_10rnd_762x54_GT";

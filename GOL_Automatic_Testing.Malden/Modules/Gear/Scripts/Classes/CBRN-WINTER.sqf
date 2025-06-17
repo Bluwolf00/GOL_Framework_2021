@@ -91,8 +91,8 @@ _pdw_mag_tr = "rhs_mag_9x19mm_7n21_20";
 
 _silencer = "";
 _pointer = "";
-_sight = "optic_lrps";
+_sight = "rhsusf_acc_ACOG_RMR";
 _bipod = "";
 
 _rifleMarksman = ["rhs_weap_m24sws", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "rhsusf_5Rnd_762x51_m993_Mag";
+_rifleMarksman_mag = "rhsusf_5Rnd_762x51_m62_Mag";
