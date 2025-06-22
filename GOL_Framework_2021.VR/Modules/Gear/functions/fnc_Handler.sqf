@@ -400,9 +400,9 @@ if (_isMan) then {
 
 					if(_OpticsAllowed isEqualTo true) then {
 						if(_MagnifiedOpticsAllowed isEqualTo true) then {
-							_opticValues = ["1.0x"]
-						} else {
 							_opticValues = ["1.0x","1.0x-2.0x"]
+						} else {
+							_opticValues = ["1.0x"]
 						};
 
 						{
