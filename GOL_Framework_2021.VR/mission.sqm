@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=12529;
+		nextID=12550;
 	};
 	class Camera
 	{
@@ -23119,7 +23119,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								name="flag_west_3";
+								name="flag_west_1";
 							};
 							id=2546;
 							type="Flag_Blue_F";
@@ -25803,7 +25803,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								name="flag_east_3";
+								name="flag_east_1";
 							};
 							id=2670;
 							type="Flag_Red_F";

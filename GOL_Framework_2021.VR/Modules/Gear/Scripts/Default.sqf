@@ -65,6 +65,23 @@ switch (toLower(_role)) do {
 		};
 	};
 
+	case "lightdragon": {
+		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
+		[_rifleC, _rifleC_mag, ""] call _addPrimary;
+		[_pistol, _pistol_mag, ""] call _addHandGun;
+		_IFAK call _addToUniform;
+		[["ItemMicroDAGR",1],["acex_intelitems_notepad",1],[_mortarRangeCard,1],[_mapTools,1]] call _addToUniform;
+		[[_pistol_mag,2],[_grenade,2],[_rifleC_mag_tr,3],[_rifleC_mag,4]] call _addToUniform;
+		[["UK3CB_BAF_1Rnd_60mm_Mo_Shells",5],["GOL_Packed_60mm_HEAB",4]] call _addToVest;
+		[["GOL_Packed_60mm_HE",4],["GOL_Packed_60mm_HEAB",4]] call _addToBackpack;
+		if (call EFUNC(Common,isNight)) then {
+			[[_chemG,5],[_chemR,5],[_handFlareG,2],[_IRStrobe,3]] call _addToBackpack;
+			_nvg call _addNVG;
+		};
+		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
+		_rangefinder call _addBino;
+	};
+
 	case "pm": {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		[_rifleC, _rifleC_mag, ""] call _addPrimary;

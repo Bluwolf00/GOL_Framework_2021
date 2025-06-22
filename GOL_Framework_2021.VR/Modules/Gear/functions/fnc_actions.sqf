@@ -51,6 +51,7 @@ _unit addAction ["<t color='#ffb400'>Platoon > Actual</t>","[player,'pl'] call G
 _unit addAction ["<t color='#ffb400'>Platoon > Platoon Medic</t>","[player,'pm'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#ffb400'>Platoon > Forward Air Controller</t>","[player,'fac'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#ffb400'>Platoon > Drone Operator</t>","[player,'drone'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#ffb400'>Platoon > Mortar Operator</t>","[player,'lightdragon'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#2eff2e'>Squad > Squad Leader</t>","[player,'sl'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#2eff2e'>Squad > Squad Medic</t>","[player,'sm'] call GW_Gear_Fnc_Handler;",bullShit,4];
 
