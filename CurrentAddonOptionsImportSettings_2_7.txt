@@ -116,10 +116,10 @@ ace_csw_handleExtraMagazinesType = 0;
 force ace_csw_progressBarTimeCoefficent = 0.3;
 
 // ACE Dragging
-ace_dragging_allowRunWithLightweight = true;
+force ace_dragging_allowRunWithLightweight = true;
 force ace_dragging_dragAndFire = false;
-ace_dragging_skipContainerWeight = false;
-force ace_dragging_weightCoefficient = 0.154958;
+force ace_dragging_skipContainerWeight = true;
+force ace_dragging_weightCoefficient = 0.05;
 
 // ACE Explosives
 force ace_explosives_customTimerDefault = 300;
@@ -242,13 +242,13 @@ force ace_cargo_openAfterUnload = 2;
 force ace_cargo_paradropTimeCoefficent = 0;
 force ace_rearm_distance = 50;
 ace_rearm_enabled = true;
-force ace_rearm_level = 0;
+force ace_rearm_level = 1;
 force ace_rearm_supply = 0;
 force ace_refuel_cargoRate = 250;
 ace_refuel_enabled = true;
 force ace_refuel_hoseLength = 15;
 force ace_refuel_progressDuration = 1;
-force ace_refuel_rate = 25;
+force ace_refuel_rate = 12.5;
 ace_towing_addRopeToVehicleInventory = true;
 
 // ACE Magazine Repack
@@ -479,7 +479,7 @@ force ace_pylons_rearmNewPylons = true;
 force ace_pylons_requireEngineer = false;
 force ace_pylons_requireToolkit = false;
 force ace_pylons_searchDistance = 50;
-force ace_pylons_timePerPylon = 1.84259;
+force ace_pylons_timePerPylon = 2.32683;
 
 // ACE Quick Mount
 force ace_quickmount_distance = 7;
@@ -509,7 +509,7 @@ force ace_repair_patchWheelRequiredItems = [];
 force ace_repair_patchWheelTime = 0.5;
 force ace_repair_repairDamageThreshold = 0.0990013;
 force ace_repair_repairDamageThreshold_engineer = 0;
-force ace_repair_timeCoefficientFullRepair = 0.2;
+force ace_repair_timeCoefficientFullRepair = 0.4;
 force ace_repair_wheelChangeTime = 3;
 force ace_repair_wheelRepairRequiredItems = [];
 
@@ -869,21 +869,44 @@ FPV_DefaultText = "CROCUS";
 force FPV_isUavCaptive = false;
 force FPV_MaxFlightDistance = 3000;
 
+// GOL AirDrop
+GOL_Airdrop_ChuteHeight = 100;
+GOL_Airdrop_Rendevouz = false;
+GOL_Airdrop_WPDistance = 150;
+
+// GOL Hunt
+GOL_ForceRespawnMultiplier = 100;
+GOL_Hunt_MaxCount = 40;
+GOL_Hunt_MinDistance = 100;
+GOL_Leaders_BLUFOR = "B_Soldier_TL_F,B_Soldier_TL_F";
+GOL_Leaders_INDEPENDENT = "I_Soldier_TL_F,I_Soldier_TL_F";
+GOL_Leaders_OPFOR = "O_Soldier_TL_F,O_Soldier_TL_F";
+GOL_MaxCargoSeats = 6;
+GOL_Units_BLUFOR = "B_Soldier_LAT_F,B_Soldier_GL_F,B_medic_F,B_Soldier_AR_F,B_Soldier_A_F";
+GOL_Units_INDEPENDENT = "I_Soldier_LAT_F,I_Soldier_GL_F,I_medic_F,I_Soldier_AR_F,I_Soldier_A_F";
+GOL_Units_OPFOR = "O_Soldier_LAT_F,O_Soldier_GL_F,O_medic_F,O_Soldier_AR_F,O_Soldier_A_F";
+GOL_UpdateFreq = 60;
+
 // GOL_CORE
 force GOL_CORE_Enabled = true;
 force GOL_DAPS_Enabled = false;
 force GOL_Unconscious_CameraEnabled = true;
 
 // GOL_DEBUG
-GOL_Ambience_Debug = false;
-GOL_Core_Debug = false;
-GOL_Enemy_Debug = false;
-GOL_FaceSwap_Debug = false;
-GOL_RotorProtection_Debug = false;
-GOL_Suppression_Debug = false;
-GOL_Surrender_Debug = false;
-GOL_Unconscious_CameraDebug = false;
-MHQ_Debug = false;
+GOL_AA_Debug = true;
+GOL_AirDrop_Debug = true;
+GOL_Ambience_Debug = true;
+GOL_Core_Debug = true;
+GOL_Dynamic_Debug = true;
+GOL_Enemy_Debug = true;
+GOL_FaceSwap_Debug = true;
+GOL_Global_Debug = false;
+GOL_Hunt_Debug = true;
+GOL_RotorProtection_Debug = true;
+GOL_Suppression_Debug = true;
+GOL_Surrender_Debug = true;
+GOL_Unconscious_CameraDebug = true;
+MHQ_Debug = true;
 
 // GOL_Dynamic
 GOL_Dynamic_Faction = "CSAT";
@@ -896,70 +919,67 @@ GOL_FaceSwap_INDEPENDENT = "middleeast";
 GOL_FaceSwap_OPFOR = "middleeast";
 
 // GOL_Gear
-AirRoles_ALLOW = false;
-ARSENAL_ALLOW = true;
-ENTRENCH_ALLOW = false;
-ForceNVG = false;
-ForceNVGClassname = "";
+force AirRoles_ALLOW = false;
+force ARSENAL_ALLOW = true;
+force ENTRENCH_ALLOW = false;
+force ForceNVG = false;
+force ForceNVGClassname = "";
 force GroundRoles_ALLOW = true;
-MAGNIFIED_OPTICS_ALLOW = true;
-OPTICS_ALLOW = true;
-WEAPONS_ALLOW = true;
-WIRECUTTER_ALLOW = false;
+force MAGNIFIED_OPTICS_ALLOW = false;
+force OPTICS_ALLOW = true;
+force WEAPONS_ALLOW = true;
+force WIRECUTTER_ALLOW = false;
 
 // GOL_Gear_AI
-AIForceNVG = false;
-AIForceNVGClassname = "";
-GOL_RemoveVehicleATGM_Enabled = true;
-GOL_RemoveVehicleHE_Enabled = true;
-GOL_VehicleAppearanceAI = true;
+force AIForceNVG = false;
+force AIForceNVGClassname = "";
+force GOL_RemoveVehicleATGM_Enabled = true;
+force GOL_RemoveVehicleHE_Enabled = true;
+force GOL_VehicleAppearanceAI = true;
 force LAT_Chance = 0.249656;
-MAT_Chance = 0.15;
-Static_Enable_Chance = 0.4;
-Static_Enable_Refresh = 60;
-UGL_Chance = 0.25;
-
-// GOL_Hunt
-GOL_Hunt_MaxCount = 40;
+force MAT_Chance = 0.15;
+force Static_Enable_Chance = 0.4;
+force Static_Enable_Refresh = 60;
+force UGL_Chance = 0.25;
 
 // GOL_MHQ
 force MHQ_ShouldBe_ServiceStation = false;
 force MHQSAFEZONE = 100;
 
 // GOL_ORBAT
-GOL_SelectedComposition = 0;
+force GOL_SelectedComposition = 0;
 
 // GOL_Packing
-GOL_PackedATClass = "RHS_TOW_TriPod_USMC_D";
-GOL_PackedDroneAPClass = "B_UAFPV_RKG_AP";
-GOL_PackedDroneATClass = "B_UAFPV_AT";
-GOL_PackedDroneReconClass = "B_UAV_01_F";
-GOL_PackedDroneSupplyClass = "B_UAV_06_F";
-GOL_PackedGMGClass = "RHS_MK19_TriPod_USMC_WD";
-GOL_PackedHMGClass = "RHS_M2StaticMG_USMC_D";
-GOL_PackedMortarClass = "B_G_Mortar_01_F";
+force GOL_PackedATClass = "RHS_TOW_TriPod_USMC_D";
+force GOL_PackedDroneAPClass = "B_UAFPV_RKG_AP";
+force GOL_PackedDroneATClass = "B_UAFPV_AT";
+force GOL_PackedDroneReconClass = "B_UAV_01_F";
+force GOL_PackedDroneSupplyClass = "B_UAV_06_F";
+force GOL_PackedGMGClass = "RHS_MK19_TriPod_USMC_WD";
+force GOL_PackedHMGClass = "RHS_M2StaticMG_USMC_D";
+force GOL_PackedMortarClass = "B_G_Mortar_01_F";
 
 // GOL_Supply
-NEKY_Supply_Enabled = true;
+force NEKY_Supply_Enabled = true;
 force NEKY_SupplyHelicopter = "";
-NEKY_SupplyMHQ_Enabled = true;
-NEKY_SupplyVehicle_Enabled = true;
+force NEKY_SupplyMHQ_Enabled = true;
+force NEKY_SupplyVehicle_Enabled = true;
 
 // GOL_Suppression
-GOL_Suppressed_MaximumTime = 10;
-GOL_Suppressed_MinimumTime = 6;
-GOL_Suppressed_Threshold = 0.75;
-GOL_Suppression_Enabled = true;
+force GOL_Suppressed_MaximumTime = 10;
+force GOL_Suppressed_MinimumTime = 6;
+force GOL_Suppressed_Threshold = 0.75;
+force GOL_Suppression_Enabled = true;
 
 // GOL_Surrender
 force GOL_Surrender_Chance = 0.03;
 force GOL_Surrender_ChanceWeaponAim = 0.02;
 force GOL_Surrender_Distance = 100;
 force GOL_Surrender_DistanceWeaponAim = 20.3628;
-GOL_Surrender_Enabled = true;
-GOL_Surrender_Flashbang = true;
+force GOL_Surrender_Enabled = true;
+force GOL_Surrender_Flashbang = true;
 force GOL_Surrender_FriendlyDistance = 150;
-GOL_Surrender_Shot = true;
+force GOL_Surrender_Shot = true;
 
 // GOL_Tasks
 force GOL_Neky_Tasks_Enabled = false;
