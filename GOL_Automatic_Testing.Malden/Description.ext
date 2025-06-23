@@ -15,7 +15,7 @@ class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 	};
 	class Naming {		
 		//	NOTE: Changing any of these settings will require mission reload for it to be affected
-		#define GAME_MODE "COOP"								// GameMode
+		#define GAME_MODE "GOL"								// GameMode
 		#define PLAYER_COUNT "36"								// Player Count - Do not go above 36 - Server Limit 
 		#define BRIEFING_NAME "Automatic Testing"					// Mission Name
 		#define LOBBY_DESCRIPTION ""							// Description in mission select
