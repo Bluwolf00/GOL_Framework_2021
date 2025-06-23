@@ -124,6 +124,7 @@ if (_isMan) then {
 		case "p": { _DisplayName = "Chopper Pilot"; _roleArray pushBack _DisplayName};
 		case "pj": { _DisplayName = "Para-Rescueman"; _roleArray pushBack _DisplayName};
 		case "jetp": { _DisplayName = "Jet Pilot"; _roleArray pushBack _DisplayName};
+		case "lightdragon": { _DisplayName = "Mortar Operator"; _roleArray pushBack _DisplayName};
 		case "marksman": { _DisplayName = "Marksman"; _roleArray pushBack _DisplayName};		
 	};
 	_unit setVariable ["GOL_SelectedRole",_roleArray,true];
@@ -206,7 +207,9 @@ if (_isMan) then {
 		_unit setUnitLoadout _loadout;
 
 		if (_isPlayer && _useFactionRadio && _roleUseRadio) then {
-
+			if(_role == "lightdragon") then {
+				_unit addWeapon "UK3CB_BAF_M6";
+			};
 			if (isClass ((missionConfigFile >> "GW_Modules" >> "Radios"))) then {
 				[{
 					_this call EFUNC(Radios,add);
@@ -397,9 +400,9 @@ if (_isMan) then {
 
 					if(_OpticsAllowed isEqualTo true) then {
 						if(_MagnifiedOpticsAllowed isEqualTo true) then {
-							_opticValues = ["1.0x"]
-						} else {
 							_opticValues = ["1.0x","1.0x-2.0x"]
+						} else {
+							_opticValues = ["1.0x"]
 						};
 
 						{
