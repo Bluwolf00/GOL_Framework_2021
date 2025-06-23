@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3242;
+		nextID=3261;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=12571;
+		nextID=12676;
 	};
 	class Camera
 	{
-		pos[]={113.27538,58.562107,9.7648067};
-		dir[]={0.017851692,-0.55751443,0.82997638};
-		up[]={0.011988626,0.83016717,0.55738598};
-		aside[]={0.99977005,-2.8121576e-09,-0.02150375};
+		pos[]={108.55276,47.694859,28.190657};
+		dir[]={0.03778965,-0.55942488,0.82802558};
+		up[]={0.025504695,0.82887924,0.55884498};
+		aside[]={0.99896395,-1.3438694e-08,-0.045591094};
 	};
 };
 binarizationWanted=0;
@@ -20166,7 +20166,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -22926,7 +22926,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={77.435486,5.0014391,108.24461};
+										position[]={77.434998,5.0014391,108.245};
 										angles[]={0,0.019477876,0};
 									};
 									side="West";
@@ -22935,7 +22935,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										name="wcrew1";
-										description="Crew Commander@Pig 1";
+										description="Crew Commander@1-1 Foxtrot";
 										isPlayable=1;
 										stance="Up";
 									};
@@ -22977,7 +22977,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={78.759987,5.0014391,108.09238};
+										position[]={78.760002,5.0014391,108.092};
 										angles[]={0,0.019477876,0};
 									};
 									side="West";
@@ -22986,7 +22986,7 @@ class Mission
 									{
 										skill=0.40000001;
 										name="wcrew2";
-										description="Crew@Pig 1";
+										description="Crew@1-1 Foxtrot";
 										isPlayable=1;
 										stance="Up";
 									};
@@ -23028,7 +23028,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={80.064934,5.0014391,108.16395};
+										position[]={80.065002,5.0014391,108.164};
 										angles[]={0,0.019477876,0};
 									};
 									side="West";
@@ -23037,7 +23037,7 @@ class Mission
 									{
 										skill=0.40000001;
 										name="wcrew3";
-										description="Crew@Pig 1";
+										description="Crew@1-1 Foxtrot";
 										isPlayable=1;
 										stance="Up";
 									};
@@ -23797,7 +23797,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={81.339157,5.0014391,107.99895};
+										position[]={81.338997,5.0014391,107.999};
 										angles[]={0,0.019477876,0};
 									};
 									side="West";
@@ -23806,7 +23806,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										name="wcrew4";
-										description="Crew Commander@Foxtrot 2";
+										description="Crew Commander@1-2 Golf";
 										isPlayable=1;
 									};
 									id=2713;
@@ -23847,7 +23847,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={82.5009,5.0014391,108.02995};
+										position[]={82.500999,5.0014391,108.03001};
 										angles[]={0,0.019477876,0};
 									};
 									side="West";
@@ -23856,7 +23856,7 @@ class Mission
 									{
 										skill=0.40000001;
 										name="wcrew5";
-										description="Crew@Foxtrot 2";
+										description="Crew@1-2 Golf";
 										isPlayable=1;
 									};
 									id=2714;
@@ -23897,7 +23897,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={83.613045,5.0014391,108.01868};
+										position[]={83.612999,5.0014391,108.019};
 										angles[]={0,0.019477876,0};
 									};
 									side="West";
@@ -23906,7 +23906,7 @@ class Mission
 									{
 										skill=0.40000001;
 										name="wcrew6";
-										description="Crew@Foxtrot 2";
+										description="Crew@1-2 Golf";
 										isPlayable=1;
 									};
 									id=2715;
@@ -25465,14 +25465,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={138.87044,5.0014391,106.65759};
+										position[]={138.87,5.0014391,106.658};
 									};
 									side="East";
 									flags=7;
 									class Attributes
 									{
 										name="ecrew1";
-										description="Crew Commander@Pig 1";
+										description="Crew Commander@1-1 Foxtrot";
 										isPlayable=1;
 									};
 									id=3072;
@@ -25513,14 +25513,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={139.79388,5.0014391,106.70496};
+										position[]={139.79401,5.0014391,106.705};
 									};
 									side="East";
 									flags=5;
 									class Attributes
 									{
 										name="ecrew2";
-										description="Crew@Pig 1";
+										description="Crew@1-1 Foxtrot";
 										isPlayable=1;
 									};
 									id=3073;
@@ -25561,14 +25561,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={140.83727,5.0014391,106.70833};
+										position[]={140.83701,5.0014391,106.708};
 									};
 									side="East";
 									flags=5;
 									class Attributes
 									{
 										name="ecrew3";
-										description="Crew@Pig 1";
+										description="Crew@1-1 Foxtrot";
 										isPlayable=1;
 									};
 									id=3074;
@@ -26500,14 +26500,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={141.9081,5.0014391,106.57649};
+										position[]={141.908,5.0014391,106.576};
 									};
 									side="East";
 									flags=7;
 									class Attributes
 									{
 										name="ecrew4";
-										description="Crew Commander@Pig 2";
+										description="Crew Commander@1-2 Golf";
 										isPlayable=1;
 									};
 									id=3097;
@@ -26548,14 +26548,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={142.92638,5.0014391,106.54942};
+										position[]={142.92599,5.0014391,106.549};
 									};
 									side="East";
 									flags=5;
 									class Attributes
 									{
 										name="ecrew5";
-										description="Crew@Pig 2";
+										description="Crew@1-2 Golf";
 										isPlayable=1;
 									};
 									id=3098;
@@ -26596,14 +26596,14 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={143.91438,5.0014391,106.57568};
+										position[]={143.914,5.0014391,106.576};
 									};
 									side="East";
 									flags=5;
 									class Attributes
 									{
 										name="ecrew6";
-										description="Crew@Pig 2";
+										description="Crew@1-2 Golf";
 										isPlayable=1;
 									};
 									id=3099;
