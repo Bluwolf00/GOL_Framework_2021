@@ -896,6 +896,7 @@ force GOL_Unconscious_CameraEnabled = true;
 GOL_AA_Debug = true;
 GOL_AirDrop_Debug = true;
 GOL_Ambience_Debug = true;
+GOL_Convoy_Debug = true;
 GOL_Core_Debug = true;
 GOL_Dynamic_Debug = true;
 GOL_Enemy_Debug = true;
@@ -947,12 +948,12 @@ force MHQ_ShouldBe_ServiceStation = false;
 force MHQSAFEZONE = 100;
 
 // GOL_ORBAT
-force GOL_SelectedComposition = 0;
+force GOL_SelectedComposition = 1;
 
 // GOL_Packing
 force GOL_PackedATClass = "RHS_TOW_TriPod_USMC_D";
 force GOL_PackedDroneAPClass = "B_UAFPV_RKG_AP";
-force GOL_PackedDroneATClass = "B_UAFPV_AT";
+force GOL_PackedDroneATClass = "B_UAFPV_PG7VL_AT";
 force GOL_PackedDroneReconClass = "B_UAV_01_F";
 force GOL_PackedDroneSupplyClass = "B_UAV_06_F";
 force GOL_PackedGMGClass = "RHS_MK19_TriPod_USMC_WD";
@@ -1026,10 +1027,10 @@ grad_trenches_functions_vehicleEnvelopeRemovalTime = -1;
 force grad_trenches_functions_vehicleTrenchBuildSpeed = 1;
 
 // GW_Common
-GW_Common_autoDelete = true;
+force GW_Common_autoDelete = true;
 force GW_Common_AutoLock = false;
-GW_Common_autoQueue = true;
-GW_Common_BlockAIGear = true;
+force GW_Common_autoQueue = true;
+force GW_Common_BlockAIGear = true;
 force GW_Common_disableThermals = 2;
 GW_Common_radioDistnace = 1.9;
 GW_Common_slingloadEnabled = true;
@@ -1044,10 +1045,10 @@ GW_GameLoop_SafeMode_useType = 0;
 GW_UI_allowSpectator = false;
 
 // GW_Gear
-GW_Gear_Auto_Assign = 1;
+force GW_Gear_Auto_Assign = 1;
 force GW_Gear_autoRemoveCargo = true;
-GW_Gear_extraGear = false;
-GW_Gear_randomGear = true;
+force GW_Gear_extraGear = false;
+force GW_Gear_randomGear = true;
 
 // GW_Performance
 GW_Performance_autoCaching = 3;
@@ -1066,7 +1067,7 @@ force GW_setDifficulty_unitTraining = 2;
 
 // GW_StartUp
 force GW_StartUp_DistanceLimit = 25;
-GW_StartUp_TimeLimit = 5;
+force GW_StartUp_TimeLimit = 5;
 
 // GW_UI
 GW_UI_nameShadow = 2;
