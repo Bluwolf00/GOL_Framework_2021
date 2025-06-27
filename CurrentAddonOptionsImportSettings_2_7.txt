@@ -874,25 +874,12 @@ GOL_Airdrop_ChuteHeight = 100;
 GOL_Airdrop_Rendevouz = false;
 GOL_Airdrop_WPDistance = 150;
 
-// GOL Hunt
-GOL_ForceRespawnMultiplier = 100;
-GOL_Hunt_MaxCount = 40;
-GOL_Hunt_MinDistance = 100;
-GOL_Leaders_BLUFOR = "B_Soldier_TL_F,B_Soldier_TL_F";
-GOL_Leaders_INDEPENDENT = "I_Soldier_TL_F,I_Soldier_TL_F";
-GOL_Leaders_OPFOR = "O_Soldier_TL_F,O_Soldier_TL_F";
-GOL_MaxCargoSeats = 6;
-GOL_Units_BLUFOR = "B_Soldier_LAT_F,B_Soldier_GL_F,B_medic_F,B_Soldier_AR_F,B_Soldier_A_F";
-GOL_Units_INDEPENDENT = "I_Soldier_LAT_F,I_Soldier_GL_F,I_medic_F,I_Soldier_AR_F,I_Soldier_A_F";
-GOL_Units_OPFOR = "O_Soldier_LAT_F,O_Soldier_GL_F,O_medic_F,O_Soldier_AR_F,O_Soldier_A_F";
-GOL_UpdateFreq = 60;
-
-// GOL_CORE
+// GOL CORE
 force GOL_CORE_Enabled = true;
 force GOL_DAPS_Enabled = false;
 force GOL_Unconscious_CameraEnabled = true;
 
-// GOL_DEBUG
+// GOL DEBUG
 GOL_AA_Debug = true;
 GOL_AirDrop_Debug = true;
 GOL_Ambience_Debug = true;
@@ -909,17 +896,43 @@ GOL_Surrender_Debug = true;
 GOL_Unconscious_CameraDebug = true;
 MHQ_Debug = true;
 
-// GOL_Dynamic
+// GOL Dynamic
+GOL_Dynamic_CivilianCount = 8;
+GOL_Dynamic_CivilianTriggerSize = 200;
+GOL_Dynamic_CivilianUnits = "C_man_polo_1_F,C_man_polo_2_F,C_man_polo_3_F,C_man_polo_4_F,C_man_polo_5_F,C_man_polo_6_F";
+GOL_Dynamic_CompoundSize = 25;
+GOL_Dynamic_Custom_AntiAir = "";
+GOL_Dynamic_Custom_APC = "";
+GOL_Dynamic_Custom_Artillery = "";
+GOL_Dynamic_Custom_Helicopter = "";
+GOL_Dynamic_Custom_Supply = "";
+GOL_Dynamic_Custom_Tank = "";
+GOL_Dynamic_Custom_Transport = "";
+GOL_Dynamic_Custom_Wheeled = "";
+GOL_Dynamic_EnableEnemyMarkers = false;
+GOL_Dynamic_EnableObjectiveTasks = true;
+GOL_Dynamic_EnableZoneMarker = false;
+GOL_Dynamic_EnableZoneTypeMarker = false;
 GOL_Dynamic_Faction = "CSAT";
+GOL_Dynamic_HouseWaypoints = 10;
+GOL_Dynamic_MarkerColor = false;
+GOL_Dynamic_ObjectiveTypes = "cache,artillery,hostage,hvttruck,ammotruck,radiotower,motorpool,antiair";
+GOL_Dynamic_PatrolSize = 4;
+GOL_Dynamic_RandomWaypoints = 10;
+GOL_Dynamic_RoadblockVehicleType = "APC";
+GOL_Dynamic_ShouldBeAgent = false;
+GOL_Dynamic_ShouldPanic = false;
+GOL_Dynamic_StaticCivilianCount = 6;
+GOL_Dynamic_TaskNotification = false;
 
-// GOL_FaceSwap
+// GOL FaceSwap
 GOL_FaceSwap_BLUFOR = "american";
 GOL_FaceSwap_CIVILIAN = "middleeast";
 GOL_FaceSwap_Enabled = true;
 GOL_FaceSwap_INDEPENDENT = "middleeast";
 GOL_FaceSwap_OPFOR = "middleeast";
 
-// GOL_Gear
+// GOL Gear
 force AirRoles_ALLOW = false;
 force ARSENAL_ALLOW = true;
 force ENTRENCH_ALLOW = false;
@@ -931,7 +944,7 @@ force OPTICS_ALLOW = true;
 force WEAPONS_ALLOW = true;
 force WIRECUTTER_ALLOW = false;
 
-// GOL_Gear_AI
+// GOL Gear AI
 force AIForceNVG = false;
 force AIForceNVGClassname = "";
 force GOL_RemoveVehicleATGM_Enabled = true;
@@ -943,14 +956,27 @@ force Static_Enable_Chance = 0.4;
 force Static_Enable_Refresh = 60;
 force UGL_Chance = 0.25;
 
-// GOL_MHQ
+// GOL Hunt
+GOL_ForceRespawnMultiplier = 100;
+GOL_Hunt_MaxCount = 40;
+GOL_Hunt_MinDistance = 100;
+GOL_Leaders_BLUFOR = "B_Soldier_TL_F,B_Soldier_TL_F";
+GOL_Leaders_INDEPENDENT = "I_Soldier_TL_F,I_Soldier_TL_F";
+GOL_Leaders_OPFOR = "O_Soldier_TL_F,O_Soldier_TL_F";
+GOL_MaxCargoSeats = 6;
+GOL_Units_BLUFOR = "B_Soldier_LAT_F,B_Soldier_GL_F,B_medic_F,B_Soldier_AR_F,B_Soldier_A_F";
+GOL_Units_INDEPENDENT = "I_Soldier_LAT_F,I_Soldier_GL_F,I_medic_F,I_Soldier_AR_F,I_Soldier_A_F";
+GOL_Units_OPFOR = "O_Soldier_LAT_F,O_Soldier_GL_F,O_medic_F,O_Soldier_AR_F,O_Soldier_A_F";
+GOL_UpdateFreq = 60;
+
+// GOL MHQ
 force MHQ_ShouldBe_ServiceStation = false;
 force MHQSAFEZONE = 100;
 
-// GOL_ORBAT
+// GOL ORBAT
 force GOL_SelectedComposition = 1;
 
-// GOL_Packing
+// GOL Packing
 force GOL_PackedATClass = "RHS_TOW_TriPod_USMC_D";
 force GOL_PackedDroneAPClass = "B_UAFPV_RKG_AP";
 force GOL_PackedDroneATClass = "B_UAFPV_PG7VL_AT";
@@ -960,19 +986,19 @@ force GOL_PackedGMGClass = "RHS_MK19_TriPod_USMC_WD";
 force GOL_PackedHMGClass = "RHS_M2StaticMG_USMC_D";
 force GOL_PackedMortarClass = "B_G_Mortar_01_F";
 
-// GOL_Supply
+// GOL Supply
 force NEKY_Supply_Enabled = true;
 force NEKY_SupplyHelicopter = "";
 force NEKY_SupplyMHQ_Enabled = true;
 force NEKY_SupplyVehicle_Enabled = true;
 
-// GOL_Suppression
+// GOL Suppression
 force GOL_Suppressed_MaximumTime = 10;
 force GOL_Suppressed_MinimumTime = 6;
 force GOL_Suppressed_Threshold = 0.75;
 force GOL_Suppression_Enabled = true;
 
-// GOL_Surrender
+// GOL Surrender
 force GOL_Surrender_Chance = 0.03;
 force GOL_Surrender_ChanceWeaponAim = 0.02;
 force GOL_Surrender_Distance = 100;
@@ -982,7 +1008,7 @@ force GOL_Surrender_Flashbang = true;
 force GOL_Surrender_FriendlyDistance = 150;
 force GOL_Surrender_Shot = true;
 
-// GOL_Tasks
+// GOL Tasks
 force GOL_Neky_Tasks_Enabled = false;
 
 // GRAD Trenches
@@ -1230,7 +1256,7 @@ tsp_cba_radio_preference_acre_prc148 = "Model";
 tsp_cba_radio_preference_acre_prc152 = "Vest";
 tsp_cba_radio_preference_acre_prc343 = "Vest";
 tsp_cba_radio_preference_ACRE_PRC77 = "Handset";
-tsp_cba_radio_preference_acre_sem52SL = "Vest";
+tsp_cba_radio_preference_acre_sem52sl = "Vest";
 tsp_cba_radio_preference_ACRE_SEM70 = "Handset";
 tsp_cba_radio_preference_JLTS_clone_comlink = "Wrist";
 tsp_cba_radio_preference_JLTS_droid_comlink = "Ear";
@@ -1250,7 +1276,7 @@ tsp_cba_angle = -0.1;
 tsp_cba_compat = false;
 tsp_cba_core_chvd = false;
 tsp_cba_core_pause = false;
-tsp_cba_hint = "None";
+tsp_cba_hint = "Subtitle (Top)";
 tsp_cba_hint_distance = 20;
 tsp_param_faction = false;
 
