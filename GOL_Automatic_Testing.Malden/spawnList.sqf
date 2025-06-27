@@ -33,7 +33,7 @@ switch (_case) do {
 		[Base_1, Spawn_1, NEKY_Hunt_Trigger_1, 5,30,east,6,30] spawn OKS_fnc_HuntBase;
 		[Base_2, Spawn_2, NEKY_Hunt_Trigger_1, 5,30,east,"O_APC_Tracked_02_cannon_F",30] spawn OKS_fnc_HuntBase;
 		[Base_3, Spawn_3, NEKY_Hunt_Trigger_1, 5,30,east,["O_APC_Tracked_02_cannon_F","O_Truck_03_transport_F"],30] spawn OKS_fnc_HuntBase;
-		[Base_4,Spawn_4, NEKY_Hunt_Trigger_1,east,"O_Heli_Light_02_dynamicLoadout_F","unload",[2,1]] spawn OKS_fnc_Airbase;
+		[Base_4, Spawn_4, NEKY_Hunt_Trigger_1,east,"O_Heli_Light_02_dynamicLoadout_F","unload",[2,1],300, 60, 30, 5] spawn OKS_fnc_Airbase;
 
 		[east,arty_1,[7635.51,11268.9,0],7,300,180,false] spawn OKS_fnc_ArtyFire;
 		[arty_2,[getPos ArtySuppress_1,getPos ArtySuppress_2,getPos ArtySuppress_3],east,1,1,true,true,300,true] spawn OKS_fnc_ArtySuppression;
