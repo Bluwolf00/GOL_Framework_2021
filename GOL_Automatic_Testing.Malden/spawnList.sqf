@@ -29,6 +29,7 @@ switch (_case) do {
 		[convoy_1,convoy_2,convoy_3,east,[4,["rhs_btr60_msv"], 6, 25],[true,6],[], false, false] spawn OKS_fnc_Convoy_Spawn;
 		[reinforce_1,reinforce_2,reinforce_3,west,[4,["rhs_btr60_msv"], 6, 25],[true,6], false, "variable", "small", true, true] spawn OKS_fnc_Convoy_Reinforce;
 		[[barricade_1],nil,true] spawn OKS_fnc_Destroy_Barricade;
+		[[barricade_2],nil,true] spawn OKS_fnc_Destroy_Barricade;
 
 		[Base_1, Spawn_1, NEKY_Hunt_Trigger_1, 5,30,east,6,30] spawn OKS_fnc_HuntBase;
 		[Base_2, Spawn_2, NEKY_Hunt_Trigger_1, 5,30,east,"O_APC_Tracked_02_cannon_F",30] spawn OKS_fnc_HuntBase;

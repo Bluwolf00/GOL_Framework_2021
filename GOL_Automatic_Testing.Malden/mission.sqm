@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3462;
+		nextID=3465;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=12392;
+		nextID=12436;
 	};
 	class Camera
 	{
-		pos[]={8099.6787,118.45486,9752.5215};
-		dir[]={-0.74150771,-0.67041934,0.026742686};
-		up[]={-0.66998762,0.74197924,0.024163224};
-		aside[]={0.036041997,-1.1059456e-09,0.99935335};
+		pos[]={8114.7207,139.60712,9736.9043};
+		dir[]={-0.75308299,-0.65772766,0.016268179};
+		up[]={-0.65757424,0.75325441,0.014204906};
+		aside[]={0.021596961,-6.731716e-08,0.99976873};
 	};
 };
 binarizationWanted=0;
@@ -21670,7 +21670,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=44;
+		items=47;
 		class Item0
 		{
 			dataType="Layer";
@@ -30869,6 +30869,55 @@ class Mission
 			id=3422;
 			type="Land_TripodScreen_01_large_black_F";
 			atlOffset=7.6293945e-06;
+		};
+		class Item44
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8053.6611,30.161339,9796.2617};
+				angles[]={0,1.5134045,-0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				name="barricade_2";
+			};
+			id=3462;
+			type="Land_Barricade_01_10m_F";
+		};
+		class Item45
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8040.8823,30.197309,9796.5996};
+				angles[]={0.00077204045,0,6.2816033};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=3463;
+			type="SatchelCharge_F";
+		};
+		class Item46
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8040.8047,30.198191,9795.6523};
+				angles[]={0.00077204045,0,6.2816033};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=3464;
+			type="SatchelCharge_F";
 		};
 	};
 	class Connections
