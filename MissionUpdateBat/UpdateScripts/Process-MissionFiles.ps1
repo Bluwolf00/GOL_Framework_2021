@@ -121,6 +121,7 @@ $replacements = @(
     @{ From = 'OKS_Convoy_Reinforce'; To = 'OKS_fnc_Convoy_Reinforce' }	
     @{ From = 'OKS_Surrender'; To = 'OKS_fnc_Surrender' }	
     @{ From = 'OKS_Retexture'; To = 'OKS_fnc_Retexture' }	
+    @{ From = 'OKS_Rush_Spawner'; To = 'OKS_fnc_Lambs_Spawner' }	
 )
 
 function Replace-AllStringsCaseInsensitive($content, $replacements) {
