@@ -10,7 +10,7 @@ A3TI_HD_VISION_UAV = true;
 A3TI_REMOVE_FILMGRAIN_RHS = true;
 
 // Aaren's Blast Effect
-tracer_illuminate_list = "_30";
+tracer_illuminate_list = "_20";
 tracer_illuminate_sim = true;
 tracer_SUB_sim = false;
 
@@ -44,7 +44,7 @@ ace_vehicle_damage_enableCarDamage = false;
 ace_vehicle_damage_enabled = false;
 
 // ACE AI
-ace_ai_assignNVG = false;
+ace_ai_assignNVG = true;
 
 // ACE Arsenal
 ace_arsenal_allowDefaultLoadouts = true;
@@ -124,7 +124,7 @@ ace_dragging_weightCoefficient = 0.05;
 // ACE Explosives
 ace_explosives_customTimerDefault = 300;
 ace_explosives_customTimerMax = 900;
-ace_explosives_customTimerMin = 5;
+ace_explosives_customTimerMin = 15;
 ace_explosives_explodeOnDefuse = true;
 ace_explosives_punishNonSpecialists = false;
 ace_explosives_requireSpecialist = false;
@@ -160,14 +160,14 @@ acex_fortify_settingHint = 1;
 ace_frag_enabled = true;
 ace_frag_reflectionsEnabled = true;
 ace_frag_spallEnabled = true;
-ace_frag_spallIntensity = 0.339217;
+ace_frag_spallIntensity = 0.2;
 
 // ACE G-Forces
 ace_gforces_coef = 0.497159;
 ace_gforces_enabledFor = 1;
 
 // ACE Goggles
-ace_goggles_drawOverlay = true;
+ace_goggles_drawOverlay = false;
 ace_goggles_effects = 2;
 ace_goggles_showClearGlasses = true;
 ace_goggles_showInThirdPerson = false;
@@ -267,7 +267,7 @@ ace_map_DefaultChannel = 1;
 ace_map_mapGlow = true;
 ace_map_mapIllumination = true;
 ace_map_mapLimitZoom = false;
-ace_map_mapShake = true;
+ace_map_mapShake = false;
 ace_map_mapShowCursorCoordinates = true;
 ace_markers_moveRestriction = 0;
 ace_markers_timestampEnabled = true;
@@ -859,15 +859,15 @@ PDT_ENVG_Blacklist = "";
 PDT_ENVG_Effect = "mwEffect";
 
 // FoxHole
-J3FF_FHcover = "4";
+J3FF_FHcover = "10";
 J3FF_FHcustomItem = false;
 J3FF_FHdepth = "1.3";
-J3FF_FHdig = "4";
+J3FF_FHdig = "15";
 
 // FPV Settings
 FPV_DefaultText = "CROCUS";
 FPV_isUavCaptive = false;
-FPV_MaxFlightDistance = 3000;
+FPV_MaxFlightDistance = 5000;
 
 // GOL AirDrop
 GOL_Airdrop_ChuteHeight = 100;
@@ -1007,23 +1007,27 @@ GOL_Surrender_Enabled = true;
 GOL_Surrender_Flashbang = true;
 GOL_Surrender_FriendlyDistance = 150;
 GOL_Surrender_Shot = true;
+GOL_Surrender_Threat = false;
 
 // GOL Tasks
 GOL_Neky_Tasks_Enabled = false;
 
+// GOL Vehicle
+GOL_Vehicle_Flag = "";
+
 // GRAD Trenches
-grad_trenches_functions_allowBigEnvelope = true;
+grad_trenches_functions_allowBigEnvelope = false;
 grad_trenches_functions_allowCamouflage = true;
 grad_trenches_functions_allowDigging = true;
 grad_trenches_functions_allowEffects = true;
-grad_trenches_functions_allowGiantEnvelope = true;
+grad_trenches_functions_allowGiantEnvelope = false;
 grad_trenches_functions_allowHitDecay = true;
-grad_trenches_functions_allowLongEnvelope = true;
+grad_trenches_functions_allowLongEnvelope = false;
 grad_trenches_functions_allowShortEnvelope = true;
 grad_trenches_functions_allowSmallEnvelope = true;
 grad_trenches_functions_allowTextureLock = true;
 grad_trenches_functions_allowTrenchDecay = false;
-grad_trenches_functions_allowVehicleEnvelope = true;
+grad_trenches_functions_allowVehicleEnvelope = false;
 grad_trenches_functions_bigEnvelopeDamageMultiplier = 2;
 grad_trenches_functions_bigEnvelopeDigTime = 30;
 grad_trenches_functions_bigEnvelopeRemovalTime = -1;
@@ -1039,10 +1043,10 @@ grad_trenches_functions_LongEnvelopeDigTime = 40;
 grad_trenches_functions_LongEnvelopeRemovalTime = -1;
 grad_trenches_functions_playersInAreaRadius = 0;
 grad_trenches_functions_shortEnvelopeDamageMultiplier = 2;
-grad_trenches_functions_shortEnvelopeDigTime = 10;
+grad_trenches_functions_shortEnvelopeDigTime = 60;
 grad_trenches_functions_shortEnvelopeRemovalTime = -1;
 grad_trenches_functions_smallEnvelopeDamageMultiplier = 3;
-grad_trenches_functions_smallEnvelopeDigTime = 20;
+grad_trenches_functions_smallEnvelopeDigTime = 60;
 grad_trenches_functions_smallEnvelopeRemovalTime = -1;
 grad_trenches_functions_stopBuildingAtFatigueMax = true;
 grad_trenches_functions_textureLockDistance = 5;
@@ -1155,9 +1159,9 @@ simplesuppress_suppress_shooterMinDistance = 20;
 
 // TFAR - Clientside settings
 TFAR_curatorCamEars = true;
-TFAR_default_radioVolume = 5.06336;
+TFAR_default_radioVolume = 5;
 TFAR_intercomDucking = 0.2;
-TFAR_intercomVolume = 0.0599455;
+TFAR_intercomVolume = 0.03;
 TFAR_moveWhileTabbedOut = false;
 TFAR_noAutomoveSpectator = false;
 TFAR_oldVolumeHint = false;
@@ -1267,7 +1271,7 @@ tsp_cba_radio_preference_TFAR_anprc154 = "Vest";
 tsp_cba_radio_preference_TFAR_fadak = "Model";
 tsp_cba_radio_preference_TFAR_pnr1000a = "Model";
 tsp_cba_radio_preference_TFAR_rf7800str = "Vest";
-tsp_cba_radio_vehicle = true;
+tsp_cba_radio_vehicle = false;
 tsp_cba_radio_vest_armor = true;
 tsp_cba_radio_vests = "[]";
 
