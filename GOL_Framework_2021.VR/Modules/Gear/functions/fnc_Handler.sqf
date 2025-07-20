@@ -205,7 +205,7 @@ if (_isMan) then {
 
 	if !(_errorCode) then {
 		_unit setUnitLoadout _loadout;
-
+		_unit setVariable ["GW_Gear_Applied",true,true];
 		if (_isPlayer && _useFactionRadio && _roleUseRadio) then {
 			if(_role == "lightdragon") then {
 				_unit addWeapon "UK3CB_BAF_M6";
