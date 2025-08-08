@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3261;
+		nextID=3262;
 	};
 	class MarkerIDProvider
 	{
@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=12781;
+		nextID=12844;
 	};
 	class Camera
 	{
-		pos[]={111.58985,39.174458,10.621408};
-		dir[]={0.038846113,-0.47663569,0.87825578};
-		up[]={0.021061923,0.87909424,0.47618079};
-		aside[]={0.9990353,-8.038478e-08,-0.044187859};
+		pos[]={112.27415,65.341469,5.7382751};
+		dir[]={0.013081579,-0.5520947,0.83367997};
+		up[]={0.0086620739,0.83378112,0.55202776};
+		aside[]={0.99987811,2.4938345e-09,-0.015689457};
 	};
 };
 binarizationWanted=0;
-sourceName="GOL_Framework_2021";
+sourceName="gol_framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
@@ -14410,7 +14410,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=0.99431759;
 													};
 												};
 												class Item1
@@ -14437,7 +14437,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=0.23028518;
 													};
 												};
 												class Item1
@@ -14464,7 +14464,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=0.27333054;
 													};
 												};
 												class Item1
@@ -14491,7 +14491,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=1.0266016;
 													};
 												};
 												class Item1
@@ -14518,7 +14518,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -33888,6 +33888,8 @@ class Mission
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
 		year=2035;
 		day=11;
 		hour=12;
