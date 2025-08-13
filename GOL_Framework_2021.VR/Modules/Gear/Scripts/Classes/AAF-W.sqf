@@ -11,11 +11,11 @@ _vest =  ["V_PlateCarrierIAGL_dgtl"];
 _backpack = ["UK3CB_AAF_B_B_FIELDPACK_DIGI_GRN"];
 _backpackRadio = ["TFAR_anprc155"];
 
-if (_role in ["ag","ammg","lr","ab"]) then {
+if (_role in ["ag","ammg","lr","ab","atab"]) then {
 	_backpack = "UK3CB_AAF_B_B_CARRYALL_DIGI_GRN";
 	_vest = "V_PlateCarrierIAGL_dgtl";
 };
-if(_role in ["ab","drone"]) then {
+if(_role in ["ab","atab"]) then {
 	_backpack = "B_Bergen_dgtl_F";
 };
 if (_role isEqualTo "crew") then {

@@ -115,7 +115,8 @@ if (_isMan) then {
 		case "crew": { _DisplayName = "Vehicle Crew"; _roleArray pushBack _DisplayName};
 		case "dragon": { _DisplayName = "Dragon"; _roleArray pushBack _DisplayName};
 		case "lr": { _DisplayName = "Light Rifleman"; _roleArray pushBack _DisplayName};
-		case "ab": { _DisplayName = "Ammo Bearer"; _roleArray pushBack _DisplayName};
+		case "ab": { _DisplayName = "AR Ammo Bearer"; _roleArray pushBack _DisplayName};
+		case "atab": { _DisplayName = "AT Ammo Bearer"; _roleArray pushBack _DisplayName};
 		case "aa": { _DisplayName = "Anti-Air"; _roleArray pushBack _DisplayName};
 		case "ahat": { _DisplayName = "Asst. Heavy AT"; _roleArray pushBack _DisplayName};
 		case "hat": { _DisplayName = "Heavy AT"; _roleArray pushBack _DisplayName};

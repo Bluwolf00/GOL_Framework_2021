@@ -28,7 +28,7 @@ if (true) then {
 	_backpackRadio = "UK3CB_B_B_Alice_Radio_Backpack";
 };
 
-if(_role in ["ag","ammg"]) then {
+if(_role in ["ag","atab","ammg"]) then {
 	_backpack = "UK3CB_B_Alice_Bedroll_K";
 };
 if (_role isEqualTo "p") then {

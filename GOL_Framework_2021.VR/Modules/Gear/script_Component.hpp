@@ -12,6 +12,8 @@
 #define COUNT_MAGS(Class, Amount) [Class, Amount, MAGCOUNT(Class)]
 
 #define COUNT_AG_MAGS(Class) (400 / (getNumber (configfile >> "CfgMagazines" >> Class >> "count")))
+#define COUNT_AB_MAGS(Class) (1200 / (getNumber (configfile >> "CfgMagazines" >> Class >> "count")))
+#define COUNT_ATAB_MAGS(Class) (400 / (getNumber (configfile >> "CfgMagazines" >> Class >> "count")))
 #define COUNT_AR_MAGS(Class) (800 / (getNumber (configfile >> "CfgMagazines" >> Class >> "count")))
 
 #define COUNT_AMMG_MAGS(Class) (500 / (getNumber (configfile >> "CfgMagazines" >> Class >> "count")))

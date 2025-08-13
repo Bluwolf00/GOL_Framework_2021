@@ -27,11 +27,11 @@ if (true) then {
 	_backpackRadio = "UK3CB_CSAT_B_O_B_RadioBag";
 };
 
-if(_role in ["sl","ftl","ag"]) then {
+if(_role in ["sl","ftl","ag","atab"]) then {
 	_goggles = "rhs_facewear_6m2_1";
 };
 
-if (_role in ["ag","ammg","lr","ab"]) then {
+if (_role in ["ag","atab","ammg","lr","ab"]) then {
 	_backpack = "UK3CB_CSAT_B_O_B_ENG";
 };
 if (_role isEqualTo "crew") then {

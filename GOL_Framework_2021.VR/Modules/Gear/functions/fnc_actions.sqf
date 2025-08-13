@@ -54,20 +54,20 @@ _unit addAction ["<t color='#ffb400'>Platoon > Drone Operator</t>","[player,'dro
 _unit addAction ["<t color='#ffb400'>Platoon > Mortar Operator</t>","[player,'lightdragon'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#2eff2e'>Squad > Squad Leader</t>","[player,'sl'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#2eff2e'>Squad > Squad Medic</t>","[player,'sm'] call GW_Gear_Fnc_Handler;",bullShit,4];
-
 _unit addAction ["<t color='#2eff2e'>Squad > Fire Team Leader</t>","[player,'ftl'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#ff3737'>Squad > Rifleman</t>","[player,'r'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#ff3737'>Squad > Grenadier</t>","[player,'g'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#6a9fff'>Squad > Asst. Gunner</t>","[player,'ag'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#6a9fff'>Squad > Automatic Rifleman</t>","[player,'ar'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["<t color='#6a9fff'>Special > Asst. Medium Machine Gunner</t>","[player,'ammg'] call GW_Gear_Fnc_Handler;",bullShit,4];
-_unit addAction ["<t color='#6a9fff'>Special > Medium Machine Gunner</t>","[player,'mmg'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#6a9fff'>Special > AR Ammo Bearer</t>","[player,'ab'] call GW_Gear_Fnc_Handler;",bullShit,4];
+_unit addAction ["<t color='#6a9fff'>Special > AT Ammo Bearer</t>","[player,'atab'] call GW_Gear_Fnc_Handler;",bullShit,4];
 _unit addAction ["<t color='#FDF916'>Squad > Vehicle Crew</t>","[player,'crew'] call GW_Gear_Fnc_Handler;",bullShit,4];
 
 if(_GroundRolesAllowed isEqualTo true) then {
+	_unit addAction ["<t color='#FDF916'>Special > Asst. Medium Machine Gunner</t>","[player,'ammg'] call GW_Gear_Fnc_Handler;",bullShit,4];
+	_unit addAction ["<t color='#FDF916'>Special > Medium Machine Gunner</t>","[player,'mmg'] call GW_Gear_Fnc_Handler;",bullShit,4];	
 	_unit addAction ["<t color='#FDF916'>Special > Dragon</t>","[player,'dragon'] call GW_Gear_Fnc_Handler;",bullShit,4];
 	_unit addAction ["<t color='#FDF916'>Special > Light Rifleman</t>","[player,'lr'] call GW_Gear_Fnc_Handler;",bullShit,4];
-	_unit addAction ["<t color='#FDF916'>Special > Ammo Bearer</t>","[player,'ab'] call GW_Gear_Fnc_Handler;",bullShit,4];
 	_unit addAction ["<t color='#FDF916'>Special > Anti-Air</t>","[player,'aa'] call GW_Gear_Fnc_Handler;",bullShit,4];
 	_unit addAction ["<t color='#FDF916'>Special > Asst. Heavy AT</t>","[player,'amat'] call GW_Gear_Fnc_Handler;",bullShit,4];
 	_unit addAction ["<t color='#FDF916'>Special > Heavy AT</t>","[player,'mat'] call GW_Gear_Fnc_Handler;",bullShit,4];

@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=13159;
+		nextID=13222;
 	};
 	class Camera
 	{
-		pos[]={108.3363,69.781631,20.496984};
-		dir[]={-0.0040701665,-0.69115615,0.72271293};
-		up[]={-0.0038924685,0.7227031,0.69115126};
-		aside[]={0.99999696,1.5099545e-07,0.0056313528};
+		pos[]={108.84249,66.155678,14.60006};
+		dir[]={0.029776106,-0.5992524,0.80000931};
+		up[]={0.022288626,0.80055904,0.59883916};
+		aside[]={0.99930996,1.1168595e-09,-0.037194025};
 	};
 };
 binarizationWanted=0;
@@ -352,7 +352,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 2.7";
+	overviewText="Framework Version 2.8";
 	overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
@@ -33878,7 +33878,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Mission Name";
-		overviewText="Framework Version 2.7";
+		overviewText="Framework Version 2.8";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;

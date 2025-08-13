@@ -335,22 +335,47 @@ switch (toLower(_role)) do {
 
 	case "ab": {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
-		[_rifleC, _rifleC_mag, ""] call _addPrimary;
-		[[_cables,6],[_flashBang,2],[_gps,1],[_rifleGL_mag_tr,4],[_pistol_mag,2],[_smokegrenadeY,3]] call _addToUniform;
-		[[_grenade,2],[_rifleC_mag,3],[_rifleC_mag_tr,3],[_rifle_mag_tr,2]] call _addToVest;
+		[_rifle, _rifle_mag, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_rifle_mag_tr,4],[_LMG_mag_tr,3],[_rifleL_mag_tr,4]] call _addToBackpack;
+		[[_cables,6],[_rifle_mag,2],[_pistol_mag,2],[_smokegrenadeY,4],[_grenade,2],[_flashBang,2]] call _addToUniform;
+		[[_rifle_mag,2],[_rifle_mag_tr,2],[_clacker,1],[_demoCharge,3]] call _addToVest;
+		[[_LMG_mag,COUNT_AB_MAGS(_LMG_mag)]] call _addToBackpack;		
 		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
 		if (((call EFUNC(Common,isNight)) && _allowedNightStuff)) then {
 			_nvg call _addNVG;
 			[[_mapFlashLight,1],[_handFlareG,1]] call _addToUniform;
+		};
+		_rangefinder call _addBino;
+		if(_EntrenchAllow isEqualTo true) then {
+			[["ACE_EntrenchingTool",1]] call _addToVest;
 		};
 		if(_ForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
 		};		
 	};
 
+	case "atab": {
+		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
+		[_rifle, _rifle_mag, ""] call _addPrimary;
+		[_pistol, _pistol_mag, ""] call _addHandGun;
+		_IFAK call _addToUniform;
+		[[_cables,6],[_rifle_mag,2],[_pistol_mag,2],[_smokegrenadeY,4],[_grenade,2],[_flashBang,2]] call _addToUniform;
+		[[_rifle_mag,2],[_rifle_mag_tr,2],[_clacker,1],[_demoCharge,3]] call _addToVest;
+		[[_LMG_mag,COUNT_ATAB_MAGS(_LMG_mag)],[_MAT_mag,3]] call _addToBackpack;		
+		[_map, _gps, "", _compass, _watch, ""] call _addLinkedItems;
+		if (((call EFUNC(Common,isNight)) && _allowedNightStuff)) then {
+			_nvg call _addNVG;
+			[[_mapFlashLight,1],[_handFlareG,1]] call _addToUniform;
+		};
+		_rangefinder call _addBino;
+		if(_EntrenchAllow isEqualTo true) then {
+			[["ACE_EntrenchingTool",1]] call _addToVest;
+		};
+		if(_ForceNVG isEqualTo true) then {
+			_nvg call _addNVG;
+		};		
+	};
 
 	case "p": {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;

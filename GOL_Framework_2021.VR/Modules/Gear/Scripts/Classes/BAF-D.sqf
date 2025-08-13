@@ -14,7 +14,7 @@ if (true) then {
 	_backpackRadio = ["acp_gol_GB_DDPM_B_RadioBag_01_GB_DDPM_F"];
 };
 
-if (_role in ["ag","ammg","lr","ab"]) then {
+if (_role in ["ag","ammg","lr","ab","atab"]) then {
 	_backpack = "acp_gol_GB_DDPM_B_TacticalPack_GB_DDPM";
 };
 if (_role isEqualTo "crew") then {

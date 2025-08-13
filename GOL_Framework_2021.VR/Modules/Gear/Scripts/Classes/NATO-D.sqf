@@ -13,7 +13,7 @@ if (true) then {
 	_backpackRadio = "B_RadioBag_01_mtp_F";
 };
 
-if (_role in ["ag","ammg","lr","ab"]) then {
+if (_role in ["ag","ammg","lr","ab","atab"]) then {
 	_backpack = "B_Carryall_mcamo";
 };
 if (_role isEqualTo "crew") then {
