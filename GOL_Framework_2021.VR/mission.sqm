@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3261;
+		nextID=3264;
 	};
 	class MarkerIDProvider
 	{
@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=12781;
+		nextID=13159;
 	};
 	class Camera
 	{
-		pos[]={111.58985,39.174458,10.621408};
-		dir[]={0.038846113,-0.47663569,0.87825578};
-		up[]={0.021061923,0.87909424,0.47618079};
-		aside[]={0.9990353,-8.038478e-08,-0.044187859};
+		pos[]={108.3363,69.781631,20.496984};
+		dir[]={-0.0040701665,-0.69115615,0.72271293};
+		up[]={-0.0038924685,0.7227031,0.69115126};
+		aside[]={0.99999696,1.5099545e-07,0.0056313528};
 	};
 };
 binarizationWanted=0;
-sourceName="GOL_Framework_2021";
+sourceName="gol_framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
@@ -14410,7 +14410,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=2;
 													};
 												};
 												class Item1
@@ -14437,7 +14437,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=1.5;
 													};
 												};
 												class Item1
@@ -14464,7 +14464,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=1.6;
 													};
 												};
 												class Item1
@@ -14491,7 +14491,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=2;
 													};
 												};
 												class Item1
@@ -33888,6 +33888,8 @@ class Mission
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
 		year=2035;
 		day=11;
 		hour=12;
