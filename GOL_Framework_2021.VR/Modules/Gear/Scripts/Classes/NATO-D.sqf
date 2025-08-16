@@ -18,12 +18,12 @@ if (_role in ["ag","ammg","lr","ab","atab"]) then {
 };
 if (_role isEqualTo "crew") then {
 	_helmet = "H_HelmetCrew_B";
-	_vest = "V_BandollierB_khk";
+	_vest = "V_PlateCarrier2_rgr";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "H_PilotHelmetHeli_B";
 	_uniform = "U_B_PilotCoveralls";
-	_vest = "V_TacVest_blk";
+	_vest = "V_PlateCarrier2_rgr";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
