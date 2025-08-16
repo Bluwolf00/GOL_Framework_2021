@@ -208,6 +208,12 @@ if (_isMan) then {
 		_unit setUnitLoadout _loadout;
 
 		if (_isPlayer && _useFactionRadio && _roleUseRadio) then {
+			if(!isNIl "zade_boc_fnc_removeChestpack" && !isNil "zade_boc_fnc_chestpack") then {
+				_chestBackpack = [_unit] call zade_boc_fnc_chestpack;
+				if(_chestBackpack != "") then {
+					[_unit] call zade_boc_fnc_removeChestpack;
+				};
+			};
 			if(_role == "lightdragon") then {
 				_unit addWeapon "UK3CB_BAF_M6";
 			};
