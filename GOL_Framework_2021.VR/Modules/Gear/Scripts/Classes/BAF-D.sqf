@@ -23,7 +23,7 @@ if (_role isEqualTo "crew") then {
 };
 if (_role isEqualTo "p") then {
 	_helmet = "rhsusf_hgu56p_visor_black";
-	_uniform = "UK3CB_ADM_B_U_CombatUniform_01_WDL";
+	_uniform = "acp_gol_GB_DDPM_U_I_E_Uniform_sweater_GB_DDPM_01_F";
 	_vest = "acp_gol_GB_DDPM_V_PlateCarrier1_GB_DDPM";
 };
 if (_role isEqualTo "uav") then {
