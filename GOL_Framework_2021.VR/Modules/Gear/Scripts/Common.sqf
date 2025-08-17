@@ -32,7 +32,7 @@ _glflareR = "ACE_40mm_Flare_red";
 _glflareW = "ACE_40mm_Flare_white";
 
 _IRFlaresEnabled = missionNamespace getVariable ["GOL_IRFlaresEnabled",false];
-if(_IRFlaresEnabled isEqualTo true && _glFlareW = "ACE_40mm_Flare_white") then {
+if(_IRFlaresEnabled isEqualTo true && _glFlareW == "ACE_40mm_Flare_white") then {
 	_glflareW = "ACE_40mm_Flare_ir";
 };
 
