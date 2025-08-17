@@ -23,7 +23,10 @@ _EntrenchAllow = missionNamespace getVariable ["ENTRENCH_ALLOW",true];
 _WirecutterAllow = missionNamespace getVariable ["WIRECUTTER_ALLOW",true];
 _ForceNightStuff = missionNamespace getVariable ["GOL_ForceNightStuff",false];
 _MedicalAsstGunner = ["ShouldGiveMedicalToAsstGunner", 0] call BIS_fnc_getParamValue;
-
+_IRFlaresEnabled = missionNamespace getVariable ["GOL_IRFlaresEnabled",false];
+if(_IRFlaresEnabled isEqualTo true && _glFlareW == "ACE_40mm_Flare_white") then {
+	_glflareW = "ACE_40mm_Flare_ir";
+};
 if(_ForceNVGClassname != "") then {
 	_nvg = _ForceNVGClassname;
 };

@@ -206,6 +206,7 @@ if (_isMan) then {
 
 	if !(_errorCode) then {
 		_unit setUnitLoadout _loadout;
+		(_unit) setVariable ['GW_Gear_appliedGear', true, true];
 
 		if (_isPlayer && _useFactionRadio && _roleUseRadio) then {
 			if(!isNIl "zade_boc_fnc_removeChestpack" && !isNil "zade_boc_fnc_chestpack") then {
