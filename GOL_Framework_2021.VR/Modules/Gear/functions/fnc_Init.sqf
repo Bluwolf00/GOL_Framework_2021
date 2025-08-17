@@ -75,14 +75,29 @@ if (_unit isKindOf "CAManBase") then {
 		// if Auto-Gear is being applied, add an event handler to query if the gear has been applied after a locality switch
 		// This is to prevent the gear from not being applied if the unit is switched to a different locality (e.g. HC)
 		_handler = _unit addEventHandler ["Local", {
-			if !((_this select 0) getVariable ['GW_Gear_appliedGear', false]) then {
-				private _role = (_this select 0) getVariable [QGVAR(Loadout), "r"];
-				[{[_this select 0, _role] call FUNC(Handler);
-				(_this select 0) setVariable ['GW_Gear_appliedGear', true, true];
-				}, [_this, _role], 0.5] call CBA_fnc_waitAndExecute;
-				(_this select 0) removeEventHandler _thisEventHandler;
-			};
-		}];
+            if(typeName (_this select 0) == "OBJECT") then {
+                if !((_this select 0) getVariable ['GW_Gear_appliedGear', false]) then {
+
+                    private _role = (_this select 0) getVariable [QGVAR(Loadout), "r"];
+                    [
+                        {
+                            Params ["_Entity","_Role"];
+                            if(typeName _Entity == "OBJECT" && typeName _Role == "STRING") then {
+                                [_Entity, _role] call FUNC(Handler);
+                                (_Entity) setVariable ['GW_Gear_appliedGear', true, true];
+                            } else {
+                                format ["[AUTOGEAR] Local EventHandler Param was incorrect. Values: %1",_this] spawn OKS_fnc_LogDebug;
+                            };
+                        },
+                        [(_this select 0), _role],
+                        0.5
+                    ] call CBA_fnc_waitAndExecute;
+                    (_this select 0) removeEventHandler ["Local",_thisEventHandler];
+                };
+            } else {
+                format ["[AUTOGEAR] Local Handler was not an entity. Values: %1",_this] spawn OKS_fnc_LogDebug;
+            };
+        }];
 
 		if (_mainScope) then {
 			[{
