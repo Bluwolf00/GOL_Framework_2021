@@ -52,10 +52,10 @@ if (true) then {
 	_UAVTerminal = "B_UavTerminal";
 	_gps = "";
 	if(hasInterface) then {
-		if(_role in ["pm","ab"]) then {
+		if(_role in ["sm","lightdragon"]) then {
 			_gps = _microDAGR;
 		};
-		if (_role in ["pl","fac","crew","sl","ftl"]) then {
+		if (_role in ["pl","fac","crew","sl","ftl","pm"]) then {
 			_gps = _Android;
 		};
 		if (_role in ["p","pj","dragon","marksman"]) then {
