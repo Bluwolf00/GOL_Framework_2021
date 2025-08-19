@@ -17,7 +17,7 @@
 
 params ["_unit","_role"];
 
-private _radioSmall = ["sl","sm","ftl","r","g","ag","ar","mat","amat","ammg","mmg","lr","ab","aa"];
+private _radioSmall = ["sl","sm","ftl","r","g","ag","ar","mat","amat","ammg","mmg","lr","ab","aa","atab"];
 private _radioMedium = ["pl","fac","ftl","p","crew","marksman","pj","jetp","dragon","uav","pm","mortar","drone","lightdragon"];
 
 if (true) then {

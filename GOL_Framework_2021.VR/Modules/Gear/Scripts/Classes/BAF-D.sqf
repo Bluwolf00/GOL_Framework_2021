@@ -29,7 +29,6 @@ if (_role isEqualTo "p") then {
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
 	_gps = "B_UAVTerminal";
-
 };
 if (_role isEqualTo "jetp") then {
 	_goggles = "G_Aviator";
