@@ -418,11 +418,11 @@ force force ace_nametags_showVehicleCrewInfo = true;
 force force ace_nametags_tagSize = 2;
 
 // ACE Nightvision
-force force ace_nightvision_aimDownSightsBlur = 0;
+force force ace_nightvision_aimDownSightsBlur = 2;
 force force ace_nightvision_disableNVGsWithSights = false;
-force force ace_nightvision_effectScaling = 0;
-force force ace_nightvision_fogScaling = 0;
-force force ace_nightvision_noiseScaling = 0;
+force force ace_nightvision_effectScaling = 2;
+force force ace_nightvision_fogScaling = 1.5;
+force force ace_nightvision_noiseScaling = 1.6;
 force force ace_nightvision_shutterEffects = true;
 
 // ACE Overheating
@@ -476,7 +476,7 @@ force force ace_repair_engineerSetting_fullRepair = 0;
 force force ace_repair_engineerSetting_repair = 0;
 force force ace_repair_engineerSetting_wheel = 0;
 force force ace_repair_fullRepairLocation = 3;
-force force ace_repair_fullRepairRequiredItems = ["ace_repair_anyToolKit"];
+force force ace_repair_fullRepairRequiredItems = [];
 force force ace_repair_locationsBoostTraining = false;
 force force ace_repair_miscRepairRequiredItems = [];
 force force ace_repair_miscRepairTime = 6;
@@ -487,7 +487,7 @@ force force ace_repair_patchWheelRequiredItems = [];
 force force ace_repair_patchWheelTime = 0.5;
 force force ace_repair_repairDamageThreshold = 0.0990013;
 force force ace_repair_repairDamageThreshold_engineer = 0;
-force force ace_repair_timeCoefficientFullRepair = 0.4;
+force force ace_repair_timeCoefficientFullRepair = 0.7;
 force force ace_repair_wheelChangeTime = 3;
 force force ace_repair_wheelRepairRequiredItems = [];
 

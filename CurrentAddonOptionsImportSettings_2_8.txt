@@ -903,6 +903,7 @@ GOL_RotorProtection_Debug = true;
 GOL_Suppression_Debug = true;
 GOL_Surrender_Debug = true;
 GOL_Unconscious_CameraDebug = true;
+GOL_UndercoverAI_Debug = true;
 MHQ_Debug = true;
 
 // GOL Dynamic
@@ -939,6 +940,8 @@ GOL_Enemy_MaxSpeed_Cars = 15;
 GOL_Enemy_MaxSpeed_Tanks = 8;
 GOL_Enemy_MaxSpeed_TrackedAPCs = 8;
 GOL_Enemy_MaxSpeed_WheeledAPCs = 12;
+GOL_UndercoverAI_ChanceForArms = 0.5;
+GOL_UndercoverAI_WeaponsArray = "[[""arifle_AKS_F"",""30Rnd_545x39_Mag_Green_F""],[""rhs_weap_M590_5RD"",""rhsusf_5Rnd_00Buck""],[""uk3cb_port_said_m45"",""uk3cb_carlg_m45_36rnd_magazine_G""]]";
 
 // GOL FaceSwap
 GOL_FaceSwap_BLUFOR = "american";
@@ -953,6 +956,8 @@ force ARSENAL_ALLOW = true;
 force ENTRENCH_ALLOW = false;
 force ForceNVG = false;
 force ForceNVGClassname = "";
+GOL_ForceNightStuff = false;
+GOL_IRFlaresEnabled = false;
 force GroundRoles_ALLOW = true;
 force MAGNIFIED_OPTICS_ALLOW = false;
 force OPTICS_ALLOW = true;
