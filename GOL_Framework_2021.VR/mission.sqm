@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3280;
+		nextID=3298;
 	};
 	class MarkerIDProvider
 	{
@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=13243;
+		nextID=13285;
 	};
 	class Camera
 	{
-		pos[]={111.49706,76.406868,17.783863};
-		dir[]={0.0085963598,-0.60968417,0.79259908};
-		up[]={0.0066121193,0.79264355,0.60964864};
-		aside[]={0.9999423,-3.0195224e-09,-0.01084514};
+		pos[]={111.58597,57.934971,11.618455};
+		dir[]={0.013275867,-0.52300698,0.85222709};
+		up[]={0.0081463577,0.852328,0.52294463};
+		aside[]={0.99988151,1.033186e-09,-0.015576019};
 	};
 };
 binarizationWanted=0;
-sourceName="gol_framework_2021";
+sourceName="GOL_Framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
@@ -10342,7 +10342,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=-0.76971501;
+														value=-0.89884555;
 													};
 												};
 												class Item1
@@ -11368,7 +11368,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -11395,7 +11395,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=1500;
 													};
 												};
 												class Item1
@@ -11422,7 +11422,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=3000;
 													};
 												};
 												class Item1
@@ -11449,7 +11449,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=5000;
 													};
 												};
 												class Item1
@@ -14410,7 +14410,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=2;
+														value=1.4893245;
 													};
 												};
 												class Item1
@@ -14437,7 +14437,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.5;
+														value=1.3063871;
 													};
 												};
 												class Item1
@@ -14464,7 +14464,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.6;
+														value=1.4785645;
 													};
 												};
 												class Item1
@@ -14869,7 +14869,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -19522,7 +19522,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.40000001;
+														value=0.69999999;
 													};
 												};
 												class Item1
@@ -21241,7 +21241,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.497159;
+														value=0.30346069;
 													};
 												};
 												class Item1
@@ -23131,7 +23131,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -23725,7 +23725,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="STRING";
-														value="Subtitle (Top)";
+														value="None";
 													};
 												};
 												class Item1
@@ -38233,11 +38233,11 @@ class Mission
 						};
 					};
 					id=2721;
-					atlOffset=39.700283;
+					atlOffset=0.066569328;
 				};
 			};
 			id=403;
-			atlOffset=19.850142;
+			atlOffset=0.033284664;
 		};
 		class Item3
 		{
