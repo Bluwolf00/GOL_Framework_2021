@@ -90,7 +90,6 @@ $replacements = @(
     @{ From = 'execVM ""Scripts\OKS_Task\OKS_Destroy_Task.sqf"";'; To = 'spawn OKS_fnc_Destroy_Task;' },		
     @{ From = 'OKS_Evacuate_HVT'; To = 'OKS_fnc_Evacuate_HVT' },
     @{ From = 'OKS_ArtyFire'; To = 'OKS_fnc_ArtyFire' },
-    @{ From = 'OKS_IR_AA'; To = 'OKS_fnc_IR_AA' },
     @{ From = 'OKS_Scout'; To = 'OKS_fnc_Scout' },
     @{ From = 'NEKY_Hunt_HuntBase'; To = 'OKS_fnc_Huntbase' },
     @{ From = 'OKS_Populate_StaticWeapons'; To = 'OKS_fnc_Populate_StaticWeapons' },
@@ -120,8 +119,8 @@ $replacements = @(
     @{ From = 'OKS_Rescue_Friendly'; To = 'OKS_fnc_Rescue_Friendly' }	
     @{ From = 'OKS_Convoy_Reinforce'; To = 'OKS_fnc_Convoy_Reinforce' }	
     @{ From = 'OKS_Surrender'; To = 'OKS_fnc_Surrender' }	
+    @{ From = 'OKS_Civilians'; To = 'OKS_fnc_Civilians' }	
     @{ From = 'OKS_Retexture'; To = 'OKS_fnc_Retexture' }	
-    @{ From = 'OKS_Rush_Spawner'; To = 'OKS_fnc_Lambs_Spawner' }	
 )
 
 function Replace-AllStringsCaseInsensitive($content, $replacements) {
