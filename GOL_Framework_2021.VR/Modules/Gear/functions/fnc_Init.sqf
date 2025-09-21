@@ -75,28 +75,37 @@ if (_unit isKindOf "CAManBase") then {
 		// if Auto-Gear is being applied, add an event handler to query if the gear has been applied after a locality switch
 		// This is to prevent the gear from not being applied if the unit is switched to a different locality (e.g. HC)
 		_handler = _unit addEventHandler ["Local", {
-			if !((_this select 0) getVariable ['GW_Gear_appliedGear', false]) then {
-
-				private _role = (_this select 0) getVariable [QGVAR(Loadout), "r"];
-				[
-					{
-						Params ["_EntityArray","_Role"];
-						if(typeName _EntityArray == "ARRAY") then {
-							_EntityArray Params ["_Entity","_isLocal"];
-						} else {
-							_Entity = _EntityArray;
-							format ["[AUTOGEAR] _EntityArray was not an array. Value: %1",_EntityArray] spawn OKS_fnc_LogDebug;
-						};
-						if(typeName _Entity == "OBJECT" && typeName _Role == "STRING") then {
-							[_Entity, _role] call FUNC(Handler);
-						} else {
-							format ["[AUTOGEAR] Local EventHandler Param was incorrect. Values: %1",_this] spawn OKS_fnc_LogDebug;
-						};
-					},
-					[(_this select 0), _role],
-					0.5
-				] call CBA_fnc_waitAndExecute;
-				(_this select 0) removeEventHandler [_thisEvent,_thisEventHandler];
+			private _unit = _this select 0;
+			[format ["[HC-GEAR][LocalEH] Locality changed for unit %1 (%2). Gear applied: %3", _unit, name _unit, _unit getVariable ['GW_Gear_appliedGear', false]]] spawn OKS_fnc_LogDebug;
+			if (!isServer && !hasInterface) then {
+				if !(_unit getVariable ['GW_Gear_appliedGear', false]) then {
+					[format ["[HC-GEAR][LocalEH] Gear not applied for %1 (%2), attempting to re-apply.", _unit, name _unit]] spawn OKS_fnc_LogDebug;
+					private _role = _unit getVariable [QGVAR(Loadout), "r"];
+					[
+						{
+							Params ["_EntityArray","_Role"];
+							if(typeName _EntityArray == "ARRAY") then {
+								_EntityArray Params ["_Entity","_isLocal"];
+							} else {
+								_Entity = _EntityArray;
+								[format ["[HC-GEAR] _EntityArray was not an array. Value: %1",_EntityArray]] spawn OKS_fnc_LogDebug;
+							};
+							if(typeName _Entity == "OBJECT" && typeName _Role == "STRING") then {
+								[format ["[HC-GEAR][LocalEH] Calling Handler for %1 (%2) with role %3", _Entity, name _Entity, _Role]] spawn OKS_fnc_LogDebug;
+								[_Entity, _role] call FUNC(Handler);
+							} else {
+								[format ["[HC-GEAR] Local EventHandler Param was incorrect. Values: %1",_this]] spawn OKS_fnc_LogDebug;
+								[format ["[HC-GEAR][LocalEH] Handler param incorrect for %1 (%2). _Entity: %3, _Role: %4", _unit, name _unit, _Entity, _Role]] spawn OKS_fnc_LogDebug;
+							};
+						},
+						[_unit, _role],
+						0.5
+					] call CBA_fnc_waitAndExecute;
+					[format ["[HC-GEAR][LocalEH] Removing Local EH for %1 (%2)", _unit, name _unit]] spawn OKS_fnc_LogDebug;
+					_unit removeEventHandler ["Local", _thisEventHandler];
+				} else {
+					[format ["[HC-GEAR][LocalEH] Gear already applied for %1 (%2), no action taken.", _unit, name _unit]] spawn OKS_fnc_LogDebug;
+				};
 			};
 		}];
 
