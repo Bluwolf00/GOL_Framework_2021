@@ -24,76 +24,48 @@ params [
 private _role = "r";
 private _displayName = getText (configfile >> "CfgVehicles" >> (typeOf _unit) >> "displayName");
 
-switch (true) do {
-	case (_displayName in ["Officer","Commander"]): {
-		_role = "officer";
-	};
-	case (_displayName isEqualTo "Squad Leader"): {
-		_role = "sl";
-	};
-	case (_displayName isEqualTo "Team Leader"): {
-		_role = "ftl";
-	};
-	case (_displayName isEqualTo "Rifleman"): {
-		if ((random 1) >= 0.6 && !(isPlayer _unit)) then {
-			_role = "lr";
-		} else {
-			_role = "r";
-			if (_groupType) then {
-				_role = "mat";
-			};
-		};
-	};
-	case (_displayName in ["Engineer","Ammo Bearer"]): {
-		_role = "ab";
-	};
-	case (_displayName in ["Rifleman (AT)","Rifleman (Heavy AT)","Missile Specialist (AT)"]): {
-		_role = "mat";
-		if (_groupType) then {
-			_role = "mat";
-		};
-	};
-	case ((_displayName isEqualTo "Grenadier") || (["Grenadier",_displayName] call BIS_fnc_inString)) : {
-		if (_groupType) then {
-			_role = "amat";
-		} else {
-			_role = "g";
-		};
-	};
-	case (_displayName in ["Asst. Autorifleman","Combat Life Saver","Medic","Corpsman"]): {
-		if (_groupType) then {
-			_role = "ammg";
-		} else {
-			_role = "ag";
-		};
-	};
-	case (_displayName in ["Autorifleman","Machinegunner","Automatic Rifleman","Auto Rifleman"]): {
-		if (_groupType) then {
-			_role = "mmg";
-		} else {
-			_role = "ar";
-		};
-	};
-	case (_displayName in ["Machine Gunner","Machine Gunner Assistant","Heavy Gunner"]): {
-		if (_groupType) then {
-			_role = "mmg";
-		} else {
-			_role = "mmg";
-		};
-	};
-	case ((_displayName in ["Crewman","Crew"]) || (["Crew",_displayName] call BIS_fnc_inString)): {
-		_role = "crew";
-	};
-	case (_displayName in ["Helicopter Pilot","Pilot"]): {
-		_role = "p";
-	};
-	case ((_displayName in ["Marksman","Sniper","Spotter"]) || (["Marksman",_displayName] call BIS_fnc_inString) || (["Sniper",_displayName] call BIS_fnc_inString)): {
-		_role = "marksman";
-	};
-	case ((_displayName in ["Missile Specialist (AA)","AA Specialist","Anti-Air Specialist"]) || (["Anti Aircraft",_displayName] call BIS_fnc_inString)): {
-		_role = "aa";
-	};
+_ResolveRoleByDisplayName = {
+    params ["_displayName","_ArrayOfMatches","_ExpectedRole"];
+    
+	// Default role returned is rifleman.
+	_ReturnedRole = "r";
 
+	// If match is found in the Array of Matches - Return the role set by _ReturnedRole
+    {
+        if ([_x, _displayName] call BIS_fnc_inString) exitWith {
+			_ReturnedRole = _ExpectedRole;
+		};
+    } forEach _ArrayOfMatches;
+    
+	_ReturnedRole
 };
+
+private _rolePatterns = [
+    [["Officer","Commander"], "officer"],
+	[["Platoon Leader"], "pl"],
+    [["Squad Leader"], "sl"],
+    [["JTAC"], "fac"],
+    [["Team Leader"], "ftl"],
+    [["Engineer","Ammo Bearer"], "ab"],
+    [["Rifleman (AT)","Rifleman (Heavy AT)","Missile Specialist (AT)"], "mat"],
+    [["Grenadier"], "g"],
+    [["Asst. Autorifleman","Combat Life Saver","Medic","Corpsman"], "ag"],
+    [["Autorifleman","Automatic Rifleman","Auto Rifleman"], "ar"],
+    [["Machinegunner","Machine Gunner","Machine Gunner Assistant","Heavy Gunner"], "mmg"],
+    [["Crewman","Crew"], "crew"],
+    [["Helicopter Pilot","Pilot"], "p"],
+    [["Sniper"], "marksman"],
+    [["Marksman","Spotter"], "lr"],
+    [["Missile Specialist (AA)","AA Specialist","Anti-Air Specialist","Anti Aircraft"], "aa"]
+];
+
+// Try to resolve role by display name using the patterns
+{
+	_x params ["_ArrayOfMatches", "_ReturnedRole"];
+    private _result = [_displayName, _ArrayOfMatches, _ReturnedRole] call _ResolveRoleByDisplayName;
+    if (_result != "r") exitWith {
+		_role = _result;
+	};
+} forEach _rolePatterns;
 
 _role

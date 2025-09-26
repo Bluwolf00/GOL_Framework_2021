@@ -25,7 +25,8 @@ params [
 	["_waypointArray", []],
 	["_skipQueue", false],
 	["_skipDelays", false],
-	["_group", grpNull]
+	["_group", grpNull],
+	["_side", GVAR(Faction), [sideUnknown]]
 ];
 
 if (GVAR(spawnActive) && !_skipQueue) exitWith {
@@ -37,7 +38,7 @@ if (GVAR(autoQueue) && !_skipQueue) then {
 	GVAR(spawnActive) = true;
 };
 
-([GVAR(Faction)] call FUNC(getGroupType)) params ["_side", "_leader","_unitList"];
+([str _side] call FUNC(getGroupType)) params ["_side", "_leader","_unitList"];
 
 if (_group isEqualTo grpNull) then {
 	_group = CreateGroup _side;
@@ -45,11 +46,22 @@ if (_group isEqualTo grpNull) then {
 };
 
 if !((count _unitArray) isEqualTo 0) then {
-	private _unitClass = (selectRandom _leader);
 	{
-		_x params ["_pos","_dir",["_unitPos", [], [[],""]],["_specials", []]];
-		if !(_forEachIndex isEqualTo 0) then {
-			_unitClass = (selectRandom _unitList);
+
+		_x params [
+			"_pos",
+			"_dir",
+			["_unitPos", [], [[],""]],
+			["_specials", []],
+			["_unitClass", nil, [""]]
+		];
+
+		if(isNil "_unitClass") then {
+			if !(_forEachIndex isEqualTo 0) then {
+				_unitClass = (selectRandom _unitList);
+			} else {
+				_unitClass = (selectRandom _leader);
+			}
 		};
 		_unit = _group createUnit [_unitClass, [0,0,0], [], 10, "CAN_COLLIDE"];
 		_unit enableSimulationGlobal false;
@@ -130,7 +142,7 @@ if ((count _vehicleArray) > 0) then {
 			} forEach ((fullCrew [_vehicle,"",true]) select {((_x select 1) in ["commander","gunner","turret"])});
 		};
 
-		_unitClass =  (selectRandom _leader);
+		private _unitClass = (selectRandom _leader);
 		Private ["_Driver"];
 		{
 			if !(count (units _group) isEqualTo 0) then {

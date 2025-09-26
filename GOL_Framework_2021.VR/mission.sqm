@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3298;
+		nextID=3394;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=13285;
+		nextID=13306;
 	};
 	class Camera
 	{
-		pos[]={111.58597,57.934971,11.618455};
-		dir[]={0.013275867,-0.52300698,0.85222709};
-		up[]={0.0081463577,0.852328,0.52294463};
-		aside[]={0.99988151,1.033186e-09,-0.015576019};
+		pos[]={110.4024,108.11774,-29.912151};
+		dir[]={0.00074136216,-0.60529304,0.79604393};
+		up[]={0.00056328462,0.79599071,0.60530543};
+		aside[]={1.0000318,-2.1173787e-07,-0.00093049393};
 	};
 };
 binarizationWanted=0;
@@ -615,7 +615,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=936;
+									items=937;
 									class Item0
 									{
 										class data
@@ -8104,6 +8104,14 @@ class CustomAttributes
 											value="usaf_afterburner_setting_allow_ai";
 										};
 									};
+									class Item936
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gw_gear_randomgear";
+										};
+									};
 								};
 							};
 						};
@@ -8114,7 +8122,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=936;
+									items=937;
 									class Item0
 									{
 										class data
@@ -33799,6 +33807,33 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item936
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -35349,8 +35384,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={81.214615,5.0014391,112.46439};
-										angles[]={0,0.0015358897,0};
+										position[]={81.241547,5.0014391,112.68006};
+										angles[]={-0,0.0015358897,0};
 									};
 									side="West";
 									flags=4;
@@ -35362,8 +35397,8 @@ class Mission
 										isPlayable=1;
 										stance="Up";
 									};
-									id=3048;
-									type="B_soldier_UAV_F";
+									id=3338;
+									type="B_recon_JTAC_F";
 									class CustomAttributes
 									{
 										class Attribute0
@@ -40459,7 +40494,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={141.94687,5.0014391,111.35464};
+										position[]={141.94701,5.0014391,111.355};
 									};
 									side="East";
 									flags=4;
@@ -40469,8 +40504,8 @@ class Mission
 										description="FAC@1-Actual";
 										isPlayable=1;
 									};
-									id=3049;
-									type="O_soldier_UAV_F";
+									id=3339;
+									type="O_recon_JTAC_F";
 									class CustomAttributes
 									{
 										class Attribute0

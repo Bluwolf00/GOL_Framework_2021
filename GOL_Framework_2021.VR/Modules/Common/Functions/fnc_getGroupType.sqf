@@ -29,8 +29,16 @@
 
 params ["_faction"];
 
+if((toUpper _faction) in ["GUER","RESISTANCE","INDEPENDENT"]) then {
+	_faction = "independent";
+} else {
+	_faction = _faction;
+};
+
 private _configs = (missionConfigFile >> "GW_FRAMEWORK" >> "SpawnUnits" >> toUpper(_faction));
 private _side = ([east,west,resistance,civilian] select (getNumber(_configs >> "Side")));
+
+systemChat str ["getGroupType - post", _side];
 private _leader = getArray(_configs >> "Leader");
 private _unitList = getArray(_configs >> "Units");
 
