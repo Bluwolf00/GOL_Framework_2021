@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3298;
+		nextID=3302;
 	};
 	class MarkerIDProvider
 	{
@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=13285;
+		nextID=13348;
 	};
 	class Camera
 	{
-		pos[]={111.58597,57.934971,11.618455};
-		dir[]={0.013275867,-0.52300698,0.85222709};
-		up[]={0.0081463577,0.852328,0.52294463};
-		aside[]={0.99988151,1.033186e-09,-0.015576019};
+		pos[]={110.31876,59.940029,4.5287967};
+		dir[]={0.00029616046,-0.54703575,0.83713585};
+		up[]={0.0001932647,0.83709532,0.54704762};
+		aside[]={1.000023,-7.5948726e-08,-0.00035243647};
 	};
 };
 binarizationWanted=0;
-sourceName="GOL_Framework_2021";
+sourceName="gol_framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
@@ -77,15 +77,19 @@ addons[]=
 	"A3_Modules_F_Multiplayer",
 	"rhsusf_c_melb",
 	"Vsqz_melber",
+	"FIR_AirWeaponSystem_US",
+	"A3_Air_F_Jets_Plane_Fighter_01",
+	"GW_lockalerts",
 	"rhs_c_a2port_air",
 	"rhs_c_a3retex",
-	"rhs_c_mi28"
+	"rhs_c_mi28",
+	"A3_Air_F_Jets_Plane_Fighter_02"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=37;
+		items=40;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -314,19 +318,38 @@ class AddonsMetaData
 		};
 		class Item34
 		{
+			className="FIR_AirWeaponSystem_US";
+			name="FIR_AirWeaponSystem_US";
+		};
+		class Item35
+		{
+			className="A3_Air_F_Jets";
+			name="Arma 3 Jets - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item36
+		{
+			className="GW_lockalerts";
+			name="GW - Lock Sounds Component";
+			author="Blu";
+			url="https://github.com/GuzzenVonLidl/";
+		};
+		class Item37
+		{
 			className="rhs_c_a2port_air";
 			name="A2 ported air";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item35
+		class Item38
 		{
 			className="rhs_c_a3retex";
 			name="A3 Retextures";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item36
+		class Item39
 		{
 			className="rhs_c_mi28";
 			name="Mi-28";
@@ -346,6 +369,7 @@ dlcs[]=
 	"Mark",
 	"Heli",
 	"RHS_USAF",
+	"Jets",
 	"RHS_AFRF"
 };
 randomSeed=15706391;
@@ -615,7 +639,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=936;
+									items=941;
 									class Item0
 									{
 										class data
@@ -8104,6 +8128,46 @@ class CustomAttributes
 											value="usaf_afterburner_setting_allow_ai";
 										};
 									};
+									class Item936
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_server_debug";
+										};
+									};
+									class Item937
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_jetsuppression_radius";
+										};
+									};
+									class Item938
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_jetsuppression_minagl";
+										};
+									};
+									class Item939
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_jetsuppression_minspeed";
+										};
+									};
+									class Item940
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_jetsuppression_multiplier";
+										};
+									};
 								};
 							};
 						};
@@ -8114,7 +8178,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=936;
+									items=941;
 									class Item0
 									{
 										class data
@@ -33799,6 +33863,141 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item936
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item937
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=300;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item938
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=250;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item939
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=600;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item940
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=3;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -37725,7 +37924,7 @@ class Mission
 					name="BLUFOR FARP";
 					class Entities
 					{
-						items=15;
+						items=16;
 						class Item0
 						{
 							dataType="Object";
@@ -37872,7 +38071,7 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={80.176201,5,68.901237};
+								position[]={80.176003,5,68.901001};
 							};
 							id=2727;
 							type="ModuleRespawnVehicle_F";
@@ -37900,7 +38099,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[(_this select 0), false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
+											value="[(_this select 0)] spawn OKS_fnc_Helicopter;";
 										};
 									};
 								};
@@ -38231,13 +38430,30 @@ class Mission
 							description="Used to teleport to the staging area flag, named flag_west_1 for example.";
 							id=3217;
 						};
+						class Item15
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={37.439442,7.4950514,73.156914};
+								angles[]={0,6.2687602,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="Jet_1";
+							};
+							id=3298;
+							type="B_Plane_Fighter_01_F";
+						};
 					};
 					id=2721;
-					atlOffset=0.066569328;
+					atlOffset=0.033284664;
 				};
 			};
 			id=403;
-			atlOffset=0.033284664;
+			atlOffset=0.01664257;
 		};
 		class Item3
 		{
@@ -40534,7 +40750,7 @@ class Mission
 					name="OPFOR FARP";
 					class Entities
 					{
-						items=13;
+						items=16;
 						class Item0
 						{
 							dataType="Object";
@@ -40634,7 +40850,7 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={144.44339,5,67.823227};
+								position[]={144.44299,5,67.822998};
 							};
 							id=2728;
 							type="ModuleRespawnVehicle_F";
@@ -40662,7 +40878,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[(_this select 0), false,false] execVM ""Scripts\OKS_Vehicles\OKS_Helicopter.sqf"";";
+											value="[(_this select 0)] spawn OKS_fnc_Helicopter;";
 										};
 									};
 								};
@@ -40993,24 +41209,328 @@ class Mission
 							description="Used to teleport to the staging area flag, named flag_east_1 for example.";
 							id=3218;
 						};
+						class Item13
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={175.02696,5,73.520096};
+							};
+							id=3300;
+							type="ModuleRespawnVehicle_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ModuleRespawnVehicle_F_ForcedRespawn";
+									expression="_this setVariable ['ForcedRespawn',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="ModuleRespawnVehicle_F_Init";
+									expression="_this setVariable ['Init',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[(_this select 0)] spawn OKS_fnc_Jet;";
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
+									expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="ModuleRespawnVehicle_F_DesertedDistance";
+									expression="_this setVariable ['DesertedDistance',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								class Attribute4
+								{
+									property="ModuleRespawnVehicle_F_PositionType";
+									expression="_this setVariable ['PositionType',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								class Attribute5
+								{
+									property="ModuleRespawnVehicle_F_RespawnCount";
+									expression="_this setVariable ['RespawnCount',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="8";
+										};
+									};
+								};
+								class Attribute6
+								{
+									property="ModuleRespawnVehicle_F_Position";
+									expression="_this setVariable ['Position',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								class Attribute7
+								{
+									property="ModuleRespawnVehicle_F_Wreck";
+									expression="_this setVariable ['Wreck',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="2";
+										};
+									};
+								};
+								class Attribute8
+								{
+									property="ModuleRespawnVehicle_F_Delay";
+									expression="_this setVariable ['Delay',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="60";
+										};
+									};
+								};
+								class Attribute9
+								{
+									property="ModuleRespawnVehicle_F_ShowNotification";
+									expression="_this setVariable ['ShowNotification',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								nAttributes=10;
+							};
+						};
+						class Item14
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={47.67104,5,71.712059};
+							};
+							id=3301;
+							type="ModuleRespawnVehicle_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ModuleRespawnVehicle_F_ForcedRespawn";
+									expression="_this setVariable ['ForcedRespawn',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="ModuleRespawnVehicle_F_Init";
+									expression="_this setVariable ['Init',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[(_this select 0)] spawn OKS_fnc_Jet;";
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
+									expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="ModuleRespawnVehicle_F_DesertedDistance";
+									expression="_this setVariable ['DesertedDistance',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								class Attribute4
+								{
+									property="ModuleRespawnVehicle_F_PositionType";
+									expression="_this setVariable ['PositionType',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								class Attribute5
+								{
+									property="ModuleRespawnVehicle_F_RespawnCount";
+									expression="_this setVariable ['RespawnCount',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="8";
+										};
+									};
+								};
+								class Attribute6
+								{
+									property="ModuleRespawnVehicle_F_Position";
+									expression="_this setVariable ['Position',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								class Attribute7
+								{
+									property="ModuleRespawnVehicle_F_Wreck";
+									expression="_this setVariable ['Wreck',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="2";
+										};
+									};
+								};
+								class Attribute8
+								{
+									property="ModuleRespawnVehicle_F_Delay";
+									expression="_this setVariable ['Delay',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="60";
+										};
+									};
+								};
+								class Attribute9
+								{
+									property="ModuleRespawnVehicle_F_ShowNotification";
+									expression="_this setVariable ['ShowNotification',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								nAttributes=10;
+							};
+						};
+						class Item15
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={186.30714,7.4732513,75.039818};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="Jet_2";
+							};
+							id=3299;
+							type="O_Plane_Fighter_02_F";
+						};
 					};
 					id=2720;
-					atlOffset=0.066569328;
+					atlOffset=0.0083212852;
 				};
 			};
 			id=404;
-			atlOffset=0.033284664;
+			atlOffset=0.004160881;
 		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=8;
+			nextID=10;
 		};
 		class Links
 		{
-			items=8;
+			items=10;
 			class Item0
 			{
 				linkID=0;
@@ -41086,6 +41606,26 @@ class Mission
 				linkID=7;
 				item0=2588;
 				item1=2727;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item8
+			{
+				linkID=8;
+				item0=3301;
+				item1=3298;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item9
+			{
+				linkID=9;
+				item0=3299;
+				item1=3300;
 				class CustomData
 				{
 					type="Sync";
