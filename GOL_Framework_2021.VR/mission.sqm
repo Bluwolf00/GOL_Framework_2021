@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3307;
+		nextID=3325;
 	};
 	class MarkerIDProvider
 	{
@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=13579;
+		nextID=13705;
 	};
 	class Camera
 	{
-		pos[]={112.12128,61.60495,7.2529778};
-		dir[]={0.01460675,-0.51416272,0.85758626};
-		up[]={0.0087563498,0.857683,0.51409525};
-		aside[]={0.99986863,1.0958522e-07,-0.017029753};
+		pos[]={113.70064,76.092087,1.1621946};
+		dir[]={0.0035491723,-0.63704795,0.77082556};
+		up[]={0.0029333609,0.77082115,0.63704461};
+		aside[]={0.99999464,2.1186834e-07,-0.0046051424};
 	};
 };
 binarizationWanted=0;
-sourceName="gol_framework_2021";
+sourceName="GOL_Framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
@@ -14690,7 +14690,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.4893245;
+														value=1.4;
 													};
 												};
 												class Item1
@@ -14717,7 +14717,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.3063871;
+														value=1.35;
 													};
 												};
 												class Item1
@@ -14744,7 +14744,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.4785645;
+														value=1.535;
 													};
 												};
 												class Item1
@@ -14771,7 +14771,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=2;
+														value=1.6;
 													};
 												};
 												class Item1
@@ -34254,7 +34254,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -34281,7 +34281,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -34821,7 +34821,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -34929,7 +34929,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -35698,7 +35698,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={111.77383,5,131.55678};
+						position[]={112.09171,5,127.48766};
 					};
 					title="ORBAT GROUP";
 					description="This module should be placed near our staging area. Don't place it right on top as the icon is fairly big. Offset it north of it by 50m - 100m";
@@ -35709,7 +35709,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={111.55997,5,131.59848};
+						position[]={111.87785,5,127.52937};
 					};
 					name="ORBAT_GROUP";
 					id=3105;
@@ -35776,7 +35776,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={115.5803,5,109.96542};
+						position[]={115.89819,5,105.89631};
 						angles[]={0,3.9513838,0};
 					};
 					title="Vehicle 1";
@@ -35788,7 +35788,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={111.49621,5,121.12225};
+						position[]={111.81409,5,117.05314};
 						angles[]={0,0.11193988,0};
 					};
 					title="Tent MHQ";
@@ -35817,7 +35817,7 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={106.99448,5,111.44634};
+								position[]={107.31236,5,107.37723};
 								angles[]={0,0.06816864,0};
 							};
 							title="MHQ 2";
@@ -35829,7 +35829,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={106.838,7.2059455,111.43844};
+								position[]={107.15588,7.2059455,107.36932};
 								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
@@ -36059,7 +36059,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={115.57469,7.5393777,111.09197};
+								position[]={115.89258,7.5393777,107.02286};
 								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
@@ -36264,7 +36264,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={111.541,5.8306355,121.099};
+								position[]={111.85889,5.8306355,117.02988};
 							};
 							side="Empty";
 							flags=5;
@@ -39016,7 +39016,7 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={80.176003,5,68.901001};
+								position[]={79.727173,5,72.109299};
 							};
 							id=2727;
 							type="ModuleRespawnVehicle_F";
@@ -41793,7 +41793,7 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={144.44299,5,67.822998};
+								position[]={144.04001,5,71.662476};
 							};
 							id=2728;
 							type="ModuleRespawnVehicle_F";
@@ -42142,7 +42142,7 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={175.02696,5,73.520096};
+								position[]={179.02557,5,74.431694};
 							};
 							id=3300;
 							type="ModuleRespawnVehicle_F";
@@ -42286,7 +42286,7 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={47.67104,5,71.712059};
+								position[]={43.678787,5,72.723244};
 							};
 							id=3301;
 							type="ModuleRespawnVehicle_F";

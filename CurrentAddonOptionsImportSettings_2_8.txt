@@ -447,11 +447,11 @@ force ace_nametags_showVehicleCrewInfo = true;
 force ace_nametags_tagSize = 2;
 
 // ACE Nightvision
-force ace_nightvision_aimDownSightsBlur = 2;
+force ace_nightvision_aimDownSightsBlur = 1.6;
 force ace_nightvision_disableNVGsWithSights = false;
-force ace_nightvision_effectScaling = 1.48932;
-force ace_nightvision_fogScaling = 1.30639;
-force ace_nightvision_noiseScaling = 1.47856;
+force ace_nightvision_effectScaling = 1.4;
+force ace_nightvision_fogScaling = 1.35;
+force ace_nightvision_noiseScaling = 1.535;
 force ace_nightvision_shutterEffects = true;
 
 // ACE Overheating
@@ -881,31 +881,46 @@ GOL_Airdrop_ChuteHeight = 100;
 GOL_Airdrop_Rendevouz = false;
 GOL_Airdrop_WPDistance = 150;
 
+// GOL Convoy
+OKS_Convoy_HelicopterDetectionRange = 1500;
+OKS_Convoy_PlaneDetectionRange = 2500;
+
 // GOL CORE
 force GOL_CORE_Enabled = true;
 force GOL_DAPS_Enabled = false;
 force GOL_Unconscious_CameraEnabled = true;
 
 // GOL DEBUG
-GOL_AA_Debug = true;
-GOL_AirDrop_Debug = true;
-GOL_Ambience_Debug = true;
-GOL_Convoy_Debug = true;
+force GOL_AA_Debug = false;
+force GOL_AirDrop_Debug = false;
+force GOL_Ambience_Debug = false;
+force GOL_Convoy_AA_Debug = false;
+force GOL_Convoy_Debug = false;
+force GOL_Convoy_Dispersion_Debug = false;
+force GOL_Convoy_Markers_Debug = false;
+force GOL_Convoy_Speed_Debug = false;
 GOL_Core_Debug = true;
-GOL_Dynamic_Debug = true;
-GOL_Enemy_Debug = true;
-GOL_FaceSwap_Debug = true;
+force GOL_Dynamic_Debug = false;
+force GOL_Enemy_Debug = false;
+force GOL_FaceSwap_Debug = false;
 GOL_Global_Debug = false;
-GOL_Hunt_Debug = true;
-GOL_MissileDeflect_Debug = true;
-GOL_MissileWarning_Debug = true;
-GOL_Paradrop_Debug = true;
-GOL_RotorProtection_Debug = true;
-GOL_Suppression_Debug = true;
-GOL_Surrender_Debug = true;
-GOL_Unconscious_CameraDebug = true;
-GOL_UndercoverAI_Debug = true;
-MHQ_Debug = true;
+force GOL_GroundVehicles_Debug = false;
+force GOL_HC_Debug = false;
+force GOL_Hunt_Debug = false;
+force GOL_HVT_Debug = false;
+force GOL_Kills_Debug = false;
+force GOL_MissileDeflect_Debug = false;
+force GOL_MissileWarning_Debug = false;
+force GOL_Paradrop_Debug = false;
+force GOL_PlayerVehicleDamage_Debug = false;
+force GOL_RotorProtection_Debug = false;
+force GOL_Server_Debug = true;
+force GOL_SignalFlare_Debug = false;
+force GOL_Suppression_Debug = false;
+force GOL_Surrender_Debug = false;
+force GOL_Unconscious_CameraDebug = false;
+force GOL_UndercoverAI_Debug = false;
+force MHQ_Debug = false;
 
 // GOL Dynamic
 GOL_Dynamic_CivilianCount = 8;
@@ -962,7 +977,6 @@ GOL_IRFlaresEnabled = false;
 force GroundRoles_ALLOW = true;
 force MAGNIFIED_OPTICS_ALLOW = false;
 force OPTICS_ALLOW = true;
-STATIC_PARACHUTE_ENABLED = false;
 force WEAPONS_ALLOW = true;
 force WIRECUTTER_ALLOW = false;
 
@@ -995,6 +1009,12 @@ GOL_Units_BLUFOR = "B_Soldier_LAT_F,B_Soldier_GL_F,B_medic_F,B_Soldier_AR_F,B_So
 GOL_Units_INDEPENDENT = "I_Soldier_LAT_F,I_Soldier_GL_F,I_medic_F,I_Soldier_AR_F,I_Soldier_A_F";
 GOL_Units_OPFOR = "O_Soldier_LAT_F,O_Soldier_GL_F,O_medic_F,O_Soldier_AR_F,O_Soldier_A_F";
 GOL_UpdateFreq = 60;
+
+// GOL Jets
+force GOL_JetSuppression_MinAGL = 250;
+force GOL_JetSuppression_MinSpeed = 600;
+force GOL_JetSuppression_Multiplier = 3;
+force GOL_JetSuppression_Radius = 300;
 
 // GOL MHQ
 force MHQ_ShouldBe_ServiceStation = false;
@@ -1086,10 +1106,10 @@ force grad_trenches_functions_vehicleEnvelopeRemovalTime = -1;
 force grad_trenches_functions_vehicleTrenchBuildSpeed = 1;
 
 // GW_Common
-GW_Common_autoDelete = true;
+force GW_Common_autoDelete = true;
 force GW_Common_AutoLock = false;
-GW_Common_autoQueue = true;
-GW_Common_BlockAIGear = true;
+force GW_Common_autoQueue = true;
+force GW_Common_BlockAIGear = true;
 force GW_Common_disableThermals = 2;
 force GW_Common_radioDistnace = 1.9;
 force GW_Common_slingloadEnabled = true;
@@ -1104,10 +1124,10 @@ force GW_GameLoop_SafeMode_useType = 0;
 force GW_UI_allowSpectator = false;
 
 // GW_Gear
-GW_Gear_Auto_Assign = 1;
+force GW_Gear_Auto_Assign = 1;
 force GW_Gear_autoRemoveCargo = true;
-GW_Gear_extraGear = false;
-GW_Gear_randomGear = true;
+force GW_Gear_extraGear = false;
+force GW_Gear_randomGear = true;
 
 // GW_Performance
 force GW_Performance_autoCaching = 3;
@@ -1126,7 +1146,7 @@ force GW_setDifficulty_unitTraining = 2;
 
 // GW_StartUp
 force GW_StartUp_DistanceLimit = 25;
-GW_StartUp_TimeLimit = 5;
+force GW_StartUp_TimeLimit = 5;
 
 // GW_UI
 GW_UI_nameShadow = 2;
