@@ -51,7 +51,7 @@ if !((count _unitArray) isEqualTo 0) then {
 		if !(_forEachIndex isEqualTo 0) then {
 			_unitClass = (selectRandom _unitList);
 		};
-		_unit = _group createUnit [_unitClass, [0,0,0], [], 10, "CAN_COLLIDE"];
+		_unit = _group createUnit [_unitClass, _pos, [], 10, "CAN_COLLIDE"];
 		_unit enableSimulationGlobal false;
 		_unit setRank "PRIVATE";
 		_unit setPosATL _pos;
@@ -137,7 +137,7 @@ if ((count _vehicleArray) > 0) then {
 				_unitClass = (selectRandom _unitList);
 			};
 			
-			_unit = _group createUnit [_unitClass, [0,0,0], [], 10, "CAN_COLLIDE"];
+			_unit = _group createUnit [_unitClass, _pos, [], 10, "CAN_COLLIDE"];
 			_unit enableSimulationGlobal false;
 			_unit setRank "PRIVATE";
 			_unit setVariable [QGVAR(isSpawned), true];
@@ -193,11 +193,16 @@ if !(_waypointArray isEqualTo []) then {
 			[_group] remoteExec ["OKS_fnc_Tracker",2];
 		};
 	};
+
+	_InitialWaypoint = (waypoints _group) select 0;
+	if (!isNil "_InitialWaypoint") then {
+		_InitialWaypoint setWaypointPosition [(getPos leader _group), 0];
+	};
+
 	{
 		_x params [["_position",[0,0,0]], ["_attributes",[]]];
 		private _waypoint = _group addWaypoint [_position, 0];
 		_waypoint setWaypointCompletionRadius 10;	// Sets default
-
 		{
 			_x params ["_type","_setting"];
 			switch (_type) do {
