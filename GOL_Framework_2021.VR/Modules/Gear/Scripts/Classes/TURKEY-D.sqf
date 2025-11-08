@@ -60,8 +60,8 @@ _rifleGL_mag_tr = "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
 _rifleC_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
 _rifleC_mag_tr = "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
 
-_LMG = ["rhs_weap_m249_light_L", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "rhsusf_200rnd_556x45_mixed_box";
+_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 
 _MMG = ["UK3CB_M60", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhsusf_100Rnd_762x51_m62_tracer";

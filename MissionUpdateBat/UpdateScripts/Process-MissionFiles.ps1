@@ -179,7 +179,7 @@ $missionContent = [regex]::Replace($missionContent,
         )
         # Insert correct lines at the start
         $insert = @"
-    overviewText="Framework Version 2.7";
+    overviewText="Framework Version 2.8";
     overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
     overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
     loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
@@ -215,7 +215,7 @@ $missionContent = [regex]::Replace($missionContent,
         # Remove any existing overviewText (single or double quotes)
         $block = [regex]::Replace($block, '(?im)^\s*overviewText\s*=\s*["'']{1,2}.*?["'']{1,2};\s*', '')
         # Insert correct overviewText at the start (single quotes only)
-        $insert = '    overviewText="Framework Version 2.7";' + "`n"
+        $insert = '    overviewText="Framework Version 2.8";' + "`n"
         return $m.Groups[1].Value + "`n" + $insert + $block + $m.Groups[3].Value
     },
     'Singleline'
