@@ -343,6 +343,7 @@ if (_isMan) then {
 				[_unit, "42cdo_vs17_item", 15] call _fnc_AddObjectsCargo;
 				[_unit, _glsmokeY, 20] call _fnc_AddObjectsCargo;
 				[_unit, _glflareW, 20] call _fnc_AddObjectsCargo;
+				[_unit, _glHEDP, 10] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 20] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 10] call _fnc_AddObjectsCargo;
 
@@ -584,12 +585,10 @@ if (_isMan) then {
 					[_unit, _handFlareG, 3] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareW, 3] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareR, 3] call _fnc_AddObjectsCargo;
-					[_unit, _chemB, 3] call _fnc_AddObjectsCargo;
+					[_unit, _chemB, 6] call _fnc_AddObjectsCargo;
 					[_unit, _chemR, 3] call _fnc_AddObjectsCargo;
-					[_unit, _chemG, 3] call _fnc_AddObjectsCargo;	
-					[_unit, "ACE_Chemlight_HiGreen", 3] call _fnc_AddObjectsCargo;
-					[_unit, "ACE_Chemlight_HiBlue", 3] call _fnc_AddObjectsCargo;
-					[_unit, "B_IR_Grenade", 3] call _fnc_AddObjectsCargo;											
+					[_unit, _chemG, 6] call _fnc_AddObjectsCargo;	
+					[_unit, _grenadeIR, 3] call _fnc_AddObjectsCargo;											
 				};		
 			};			
 
@@ -622,12 +621,10 @@ if (_isMan) then {
 					[_unit, _handFlareG, 8] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareW, 8] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareR, 8] call _fnc_AddObjectsCargo;
-					[_unit, _chemB, 6] call _fnc_AddObjectsCargo;
+					[_unit, _chemB, 12] call _fnc_AddObjectsCargo;
 					[_unit, _chemR, 6] call _fnc_AddObjectsCargo;
-					[_unit, _chemG, 3] call _fnc_AddObjectsCargo;		
-					[_unit, "ACE_Chemlight_HiGreen", 6] call _fnc_AddObjectsCargo;
-					[_unit, "ACE_Chemlight_HiBlue", 6] call _fnc_AddObjectsCargo;
-					[_unit, "B_IR_Grenade", 8] call _fnc_AddObjectsCargo;				
+					[_unit, _chemG, 9] call _fnc_AddObjectsCargo;		
+					[_unit, _grenadeIR, 8] call _fnc_AddObjectsCargo;				
 				};		
 			};
 
@@ -665,12 +662,10 @@ if (_isMan) then {
 					[_unit, _handFlareG, 8] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareW, 8] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareR, 8] call _fnc_AddObjectsCargo;
-					[_unit, _chemB, 6] call _fnc_AddObjectsCargo;
+					[_unit, _chemB, 12] call _fnc_AddObjectsCargo;
 					[_unit, _chemR, 6] call _fnc_AddObjectsCargo;
-					[_unit, _chemG, 3] call _fnc_AddObjectsCargo;	
-					[_unit, "ACE_Chemlight_HiGreen", 6] call _fnc_AddObjectsCargo;
-					[_unit, "ACE_Chemlight_HiBlue", 6] call _fnc_AddObjectsCargo;
-					[_unit, "B_IR_Grenade", 8] call _fnc_AddObjectsCargo;	
+					[_unit, _chemG, 9] call _fnc_AddObjectsCargo;	
+					[_unit, _grenadeIR, 8] call _fnc_AddObjectsCargo;	
 					[_unit, "GOL_Packed_60mm_Flare", 5] call _fnc_AddObjectsCargo;											
 				};				
 			};
@@ -723,12 +718,10 @@ if (_isMan) then {
 					[_unit, _handFlareG, 10] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareW, 10] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareR, 10] call _fnc_AddObjectsCargo;
-					[_unit, _chemB, 12] call _fnc_AddObjectsCargo;
+					[_unit, _chemB, 24] call _fnc_AddObjectsCargo;
 					[_unit, _chemR, 12] call _fnc_AddObjectsCargo;
-					[_unit, _chemG, 6] call _fnc_AddObjectsCargo;
-					[_unit, "ACE_Chemlight_HiGreen", 12] call _fnc_AddObjectsCargo;
-					[_unit, "ACE_Chemlight_HiBlue", 12] call _fnc_AddObjectsCargo;
-					[_unit, "B_IR_Grenade", 12] call _fnc_AddObjectsCargo;										
+					[_unit, _chemG, 18] call _fnc_AddObjectsCargo;
+					[_unit, _grenadeIR, 12] call _fnc_AddObjectsCargo;										
 				};
 			};
 

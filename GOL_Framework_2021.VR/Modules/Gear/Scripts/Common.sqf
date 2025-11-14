@@ -4,6 +4,7 @@
 // GRENADE
 _grenade = "HandGrenade";
 _grenademini = "MiniGrenade";
+_grenadeIR = "B_IR_Grenade";
 _smokegrenadeW = "SmokeShell";
 _smokegrenadeB = "SmokeShellBlue";
 _smokegrenadeG = "SmokeShellGreen";
@@ -12,10 +13,11 @@ _smokegrenadeP = "SmokeShellPurple";
 _smokegrenadeR = "SmokeShellRed";
 _smokegrenadeY = "SmokeShellYellow";
 
-_chemB = "Chemlight_blue";
-_chemG =  "Chemlight_green";
-_chemR = "Chemlight_red";
-_chemY =  "Chemlight_yellow";
+_chemB = "ACE_Chemlight_HiBlue";
+_chemG =  "ACE_Chemlight_HiGreen";
+_chemR = "ACE_Chemlight_HiRed";
+_chemY =  "ACE_Chemlight_HiYellow";
+_chemIR = "ACE_Chemlight_IR";
 
 // GRENADE LAUNCHER ITEMS
 _glHE = "1Rnd_HE_Grenade_shell";
