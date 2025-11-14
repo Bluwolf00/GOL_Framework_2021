@@ -17,7 +17,6 @@ _chemB = "ACE_Chemlight_HiBlue";
 _chemG =  "ACE_Chemlight_HiGreen";
 _chemR = "ACE_Chemlight_HiRed";
 _chemY =  "ACE_Chemlight_HiYellow";
-_chemIR = "ACE_Chemlight_IR";
 
 // GRENADE LAUNCHER ITEMS
 _glHE = "1Rnd_HE_Grenade_shell";
