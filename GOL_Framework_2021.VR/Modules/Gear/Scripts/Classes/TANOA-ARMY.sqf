@@ -70,8 +70,8 @@ _rifleGL_mag_tr = "UK3CB_G3_20rnd_762x51_RT";
 _rifleL_mag = "UK3CB_G3_20rnd_762x51_R";
 _rifleL_mag_tr = "UK3CB_G3_20rnd_762x51_RT";
 
-_LMG = ["rhs_weap_m249_light_L", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "rhsusf_200rnd_556x45_mixed_box";
+_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 
 _MMG = ["UK3CB_MG3_KWS_B", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "UK3CB_MG3_250rnd_762x51_RT";

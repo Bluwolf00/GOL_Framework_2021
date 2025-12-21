@@ -95,8 +95,8 @@ _rifleGL_mag_tr = "rhsgref_30rnd_556x45_m21_t";
 _rifleL_mag = "rhsgref_10Rnd_792x57_m76";
 _rifleL_mag_tr = "rhssaf_10Rnd_792x57_m76_tracer";
 
-_LMG = ["rhs_weap_m249_pip", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "rhsusf_200rnd_556x45_mixed_box";
+_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
 
 _MMG = ["rhs_weap_m84", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhssaf_250Rnd_762x54R";
