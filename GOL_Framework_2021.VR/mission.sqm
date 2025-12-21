@@ -34943,6 +34943,33 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item936
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -36493,8 +36520,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={81.214615,5.0014391,112.46439};
-										angles[]={0,0.0015358897,0};
+										position[]={81.241547,5.0014391,112.68006};
+										angles[]={-0,0.0015358897,0};
 									};
 									side="West";
 									flags=4;
@@ -36506,8 +36533,8 @@ class Mission
 										isPlayable=1;
 										stance="Up";
 									};
-									id=3048;
-									type="B_soldier_UAV_F";
+									id=3338;
+									type="B_recon_JTAC_F";
 									class CustomAttributes
 									{
 										class Attribute0
@@ -41618,7 +41645,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={141.94687,5.0014391,111.35464};
+										position[]={141.94701,5.0014391,111.355};
 									};
 									side="East";
 									flags=4;
@@ -41628,8 +41655,8 @@ class Mission
 										description="FAC@1-Actual";
 										isPlayable=1;
 									};
-									id=3049;
-									type="O_soldier_UAV_F";
+									id=3339;
+									type="O_recon_JTAC_F";
 									class CustomAttributes
 									{
 										class Attribute0
