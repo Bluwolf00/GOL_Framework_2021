@@ -2,6 +2,7 @@
 
 PREP(buildingPop);
 PREP(empty);
+PREP(getClassnameByRole);
 PREP(getGroupType);
 PREP(setAttributes);
 PREP(setGroupAction);
