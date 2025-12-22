@@ -24,6 +24,7 @@ params [
 	["_unitArray", []],
 	["_vehicleArray", []],
 	["_waypointArray", []],
+	["_side", GVAR(Faction), [sideUnknown]],
 	["_skipQueue", false],
 	["_skipDelays", false]
 ];

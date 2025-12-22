@@ -22,7 +22,8 @@ if(!isNil "GOL_OKS_Stealth_Mission") then {
 			["_unit", objNull, [objNull]]
 		];
 
-		_skill = (missionConfigFile >> "GW_FRAMEWORK" >> "Behaviour" >> (GVAR(names) select GVAR(unitTraining)) >> "playerCamoCoef");
+		private _difficulty = [_unit] call FUNC(getDifficultyForSide);
+		_skill = (missionConfigFile >> "GW_FRAMEWORK" >> "Behaviour" >> (GVAR(names) select _difficulty) >> "playerCamoCoef");
 
 		(getArray(_skill)) params ["_min","_mid","_max"];
 		private _value = _mid;

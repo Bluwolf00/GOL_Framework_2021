@@ -7,12 +7,13 @@
 
 	Arguments:
 	0: Unit <OBJECT>
-	1: BehaviorTree <NUMBER>	(OPTIONAL)
+	1: BehaviorTree <NUMBER>	(OPTIONAL) - Use -1 for auto-detect from side settings
 		0: Testing
 		1: Specialforces
 		2: Military
 		3: Insurgents
 		4: Dummy
+		-1: Auto-detect from side (uses per-side or global settings) [DEFAULT]
 
 	Return Value: NO
 
@@ -22,9 +23,14 @@
 
 params [
 	["_unit", objNull, [objNull]],
-	["_behaviorTree", GVAR(unitTraining)]
+	["_behaviorTree", -1]
 ];
 if (isPlayer _unit) exitWith {false};
+
+// Get difficulty based on unit's side if not explicitly specified
+if (_behaviorTree == -1) then {
+	_behaviorTree = [_unit] call FUNC(getDifficultyForSide);
+};
 
 if ((side _unit) isEqualTo "CIV") then {
 	_unit setskill 0;
