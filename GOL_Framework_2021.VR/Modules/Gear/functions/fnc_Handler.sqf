@@ -181,6 +181,10 @@ if (_isMan) then {
 		_UAVTerminal = "O_UavTerminal"
 	};
 
+	if(side group _unit == independent) then {
+		_UAVTerminal = "I_UavTerminal"
+	};
+
 	if (_isCivilian) then {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		["", "", "", "", "", ""] call _addLinkedItems;
