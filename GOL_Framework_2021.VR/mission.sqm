@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3325;
+		nextID=3532;
 	};
 	class MarkerIDProvider
 	{
@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=13705;
+		nextID=13768;
 	};
 	class Camera
 	{
-		pos[]={113.70064,76.092087,1.1621946};
-		dir[]={0.0035493746,-0.63704324,0.7708199};
-		up[]={0.0029333457,0.77082813,0.6370365};
-		aside[]={0.99998951,0,-0.0046046255};
+		pos[]={241.69696,17.559862,95.725319};
+		dir[]={-0.13180347,-0.46009195,0.87812907};
+		up[]={-0.06830328,0.88783741,0.45506197};
+		aside[]={0.98900229,1.5052501e-07,0.14844429};
 	};
 };
 binarizationWanted=0;
-sourceName="GOL_Framework_2021";
+sourceName="Framework2025Dec";
 addons[]=
 {
 	"A3_Characters_F",
@@ -83,13 +83,19 @@ addons[]=
 	"rhs_c_a2port_air",
 	"rhs_c_a3retex",
 	"rhs_c_mi28",
-	"A3_Air_F_Jets_Plane_Fighter_02"
+	"A3_Air_F_Jets_Plane_Fighter_02",
+	"A3_Air_F_EPB_Heli_Light_03",
+	"Kimi_HMDs_Helos",
+	"Kimi_Weapons_Helos",
+	"A3_Air_F_Beta_Heli_Transport_02",
+	"ace_repair",
+	"A3_Air_F_Jets_Plane_Fighter_04"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=40;
+		items=45;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -355,6 +361,37 @@ class AddonsMetaData
 			name="Mi-28";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
+		};
+		class Item40
+		{
+			className="A3_Air_F_EPB";
+			name="Arma 3 Adapt Episode - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item41
+		{
+			className="Kimi_HMDs_Helos";
+			name="Kimi_HMDs_Helos";
+		};
+		class Item42
+		{
+			className="Kimi_Weapons_Helos";
+			name="Kimi_Weapons_Helos";
+		};
+		class Item43
+		{
+			className="A3_Air_F_Beta";
+			name="Arma 3 Beta - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item44
+		{
+			className="ace_repair";
+			name="ACE3 - Repair";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
 		};
 	};
 };
@@ -35043,7 +35080,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=4;
+		items=20;
 		class Item0
 		{
 			dataType="Layer";
@@ -35698,7 +35735,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={112.09171,5,127.48766};
+						position[]={166.24475,5,165.81213};
 					};
 					title="ORBAT GROUP";
 					description="This module should be placed near our staging area. Don't place it right on top as the icon is fairly big. Offset it north of it by 50m - 100m";
@@ -35709,7 +35746,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={111.87785,5,127.52937};
+						position[]={166.0309,5,165.85384};
 					};
 					name="ORBAT_GROUP";
 					id=3105;
@@ -35776,7 +35813,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={115.89819,5,105.89631};
+						position[]={170.05124,5,144.22076};
 						angles[]={0,3.9513838,0};
 					};
 					title="Vehicle 1";
@@ -35788,7 +35825,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={111.81409,5,117.05314};
+						position[]={165.96713,5,155.37759};
 						angles[]={0,0.11193988,0};
 					};
 					title="Tent MHQ";
@@ -35817,7 +35854,7 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={107.31236,5,107.37723};
+								position[]={161.46541,5,145.70169};
 								angles[]={0,0.06816864,0};
 							};
 							title="MHQ 2";
@@ -35829,7 +35866,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={107.15588,7.2059455,107.36932};
+								position[]={161.30893,7.2059455,145.69379};
 								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
@@ -36059,7 +36096,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={115.89258,7.5393777,107.02286};
+								position[]={170.04562,7.5393777,145.34732};
 								angles[]={0,0.00064577186,0};
 							};
 							side="Empty";
@@ -36264,7 +36301,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={111.85889,5.8306355,117.02988};
+								position[]={166.01193,5.8306355,155.35434};
 							};
 							side="Empty";
 							flags=5;
@@ -38294,7 +38331,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={77.677353,5.0014391,106.2796};
-										angles[]={0,6.279747,0};
+										angles[]={0,6.2797465,0};
 									};
 									side="West";
 									flags=7;
@@ -38374,7 +38411,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={78.804298,5.0014391,106.27898};
-										angles[]={0,6.279747,0};
+										angles[]={0,6.2797465,0};
 									};
 									side="West";
 									flags=7;
@@ -38453,7 +38490,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={80.067963,5.0014391,106.42451};
-										angles[]={0,6.279747,0};
+										angles[]={0,6.2797465,0};
 									};
 									side="West";
 									flags=7;
@@ -38532,7 +38569,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={81.343124,5.0014391,106.33161};
-										angles[]={0,6.279747,0};
+										angles[]={0,6.2797465,0};
 									};
 									side="West";
 									flags=7;
@@ -38611,7 +38648,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={82.489738,5.0014391,106.39483};
-										angles[]={0,6.279747,0};
+										angles[]={0,6.2797465,0};
 									};
 									side="West";
 									flags=7;
@@ -38690,7 +38727,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={83.526924,5.0014391,106.39622};
-										angles[]={0,6.279747,0};
+										angles[]={0,6.2797465,0};
 									};
 									side="West";
 									flags=7;
@@ -38765,7 +38802,7 @@ class Mission
 					name="Misc";
 					class Entities
 					{
-						items=6;
+						items=11;
 						class Item0
 						{
 							dataType="Marker";
@@ -38860,6 +38897,102 @@ class Mission
 							description="Used to teleport to the FARP flag, named flag_west_2 for example.";
 							id=3220;
 						};
+						class Item6
+						{
+							dataType="Marker";
+							position[]={239.98875,5,116.00694};
+							name="respawn_independent_1";
+							text="Staging Area";
+							type="n_hq";
+							colorName="ColorGUER";
+							a=0.69999999;
+							b=0.69999999;
+							id=3378;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ENH_markerShape";
+									expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NONE";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item7
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={239.98892,5,112.00081};
+							};
+							init="this setVariable [""GW_isRespawnPos"", ""independent""];";
+							id=3380;
+							type="LocationRespawnPoint_F";
+						};
+						class Item8
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={242.04965,5,117.99683};
+							};
+							title="Gearbox";
+							description="This box allows us to pick our preset kits and attachments.";
+							id=3382;
+						};
+						class Item9
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={237.99736,5,118.18438};
+							};
+							title="Staging Area Flag";
+							description="Used to teleport to the FARP flag, named flag_west_2 for example.";
+							id=3383;
+						};
+						class Item10
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={237.98178,8.9768047,117.99725};
+								angles[]={0,3.1401615,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="flag_independent_1";
+							};
+							id=3458;
+							type="Flag_Green_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
 					};
 					id=413;
 				};
@@ -38869,7 +39002,7 @@ class Mission
 					name="BLUFOR FARP";
 					class Entities
 					{
-						items=16;
+						items=18;
 						class Item0
 						{
 							dataType="Object";
@@ -39391,6 +39524,52 @@ class Mission
 							};
 							id=3305;
 							type="GOL_ResupplyStation_WEST_Small";
+						};
+						class Item16
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={239.16693,8.9768047,73.767532};
+								angles[]={0,6.2664647,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="flag_independent_2";
+							};
+							id=3457;
+							type="Flag_Green_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="allowDamage";
+									expression="_this allowdamage _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=1;
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item17
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={239.16707,5,70.298904};
+								angles[]={0,6.2464318,0};
+							};
+							title="Resupply Station";
+							description="This station allows pilots to create any resupply box and service stations.";
+							id=3509;
 						};
 					};
 					id=2721;
@@ -41693,7 +41872,7 @@ class Mission
 					name="OPFOR FARP";
 					class Entities
 					{
-						items=16;
+						items=30;
 						class Item0
 						{
 							dataType="Object";
@@ -42456,22 +42635,2618 @@ class Mission
 							id=3306;
 							type="GOL_ResupplyStation_EAST_Small";
 						};
+						class Item16
+						{
+							dataType="Marker";
+							position[]={239.36,5,74.517998};
+							name="farp_independent_1";
+							text="FARP";
+							type="n_hq";
+							colorName="ColorGUER";
+							a=0.69999999;
+							b=0.69999999;
+							id=3512;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ENH_markerShape";
+									expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="NONE";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item17
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={239.57948,5,69.483566};
+							};
+							id=3513;
+							type="ModuleRespawnVehicle_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ModuleRespawnVehicle_F_ForcedRespawn";
+									expression="_this setVariable ['ForcedRespawn',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="ModuleRespawnVehicle_F_Init";
+									expression="_this setVariable ['Init',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[(_this select 0)] spawn OKS_fnc_Helicopter;";
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
+									expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="ModuleRespawnVehicle_F_DesertedDistance";
+									expression="_this setVariable ['DesertedDistance',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								class Attribute4
+								{
+									property="ModuleRespawnVehicle_F_PositionType";
+									expression="_this setVariable ['PositionType',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								class Attribute5
+								{
+									property="ModuleRespawnVehicle_F_RespawnCount";
+									expression="_this setVariable ['RespawnCount',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="8";
+										};
+									};
+								};
+								class Attribute6
+								{
+									property="ModuleRespawnVehicle_F_Position";
+									expression="_this setVariable ['Position',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								class Attribute7
+								{
+									property="ModuleRespawnVehicle_F_Wreck";
+									expression="_this setVariable ['Wreck',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="2";
+										};
+									};
+								};
+								class Attribute8
+								{
+									property="ModuleRespawnVehicle_F_Delay";
+									expression="_this setVariable ['Delay',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="60";
+										};
+									};
+								};
+								class Attribute9
+								{
+									property="ModuleRespawnVehicle_F_ShowNotification";
+									expression="_this setVariable ['ShowNotification',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								nAttributes=10;
+							};
+						};
+						class Item18
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={253.36522,5,81.480896};
+								angles[]={0,6.27355,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=3516;
+							type="GOL_Helipad";
+						};
+						class Item19
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={253.36339,5,59.981983};
+								angles[]={0,0.00076159841,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=3517;
+							type="GOL_Helipad";
+						};
+						class Item20
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={225.69092,5,60.087318};
+								angles[]={0,0.0058119027,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=3518;
+							type="GOL_Helipad";
+						};
+						class Item21
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={225.87572,5,81.849686};
+								angles[]={0,0.013998638,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=3519;
+							type="GOL_Helipad";
+						};
+						class Item22
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={239.355,5,74.115997};
+							};
+							title="FARP Flag";
+							description="Used to teleport to the staging area flag, named flag_independent_1 for example.";
+							id=3521;
+						};
+						class Item23
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={225.68781,6.5310755,80.110786};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="helicopter_11";
+								reportOwnPosition=1;
+							};
+							id=3523;
+							type="I_Heli_light_03_dynamicLoadout_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""rhs_weap_m4_carryhandle""],[2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[""FirstAidKit"",""Medikit""],[10,2]],[[""B_Parachute""],[4]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item24
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={225.81941,8.610199,57.642929};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="helicopter_9";
+								reportOwnPosition=1;
+								pylons="rhs_mag_upk23_btz;rhs_mag_upk23_ofzt;rhs_mag_b8v20a_s8t;rhs_mag_b8v20a_s8t;;;rhs_ASO2_CMFlare_Chaff_Magazine_x6;";
+							};
+							id=3524;
+							type="I_Heli_Transport_02_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""rhs_weap_m4_carryhandle""],[2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[""FirstAidKit"",""Medikit""],[10,2]],[[""B_Parachute""],[4]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item25
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={253.47308,6.8630314,57.870762};
+								angles[]={0,6.2790489,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="helicopter_12";
+								pylons="rhs_mag_b8v20a_s8kom;rhs_mag_b8v20a_s8kom;rhs_mag_b8v20a_s8df;rhs_mag_b8v20a_s8df;rhs_UV26_CMFlare_Chaff_Magazine_x4;";
+							};
+							id=3525;
+							type="I_Heli_light_03_unarmed_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[],[]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red"",""rhs_mag_rdg2_white""],[30,10,10,4]],[[""FirstAidKit"",""Medikit"",""ToolKit""],[8,1,1]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item26
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={253.18903,6.5310755,79.871498};
+								angles[]={0,6.2686467,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="helicopter_10";
+								pylons="rhs_mag_b13l1_s13t;rhs_mag_b13l1_s13t;rhs_mag_b8v20a_s8kom;rhs_mag_b8v20a_s8kom;rhs_mag_mi24_empty;rhs_mag_mi24_empty;rhs_ASO2_CMFlare_Chaff_Magazine_x4;";
+							};
+							id=3526;
+							type="I_Heli_light_03_dynamicLoadout_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[],[]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red"",""rhs_mag_rdg2_white""],[30,10,10,4]],[[""FirstAidKit"",""Medikit"",""ToolKit""],[8,1,1]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item27
+						{
+							dataType="Logic";
+							class PositionInfo
+							{
+								position[]={268.86194,5,76.741455};
+							};
+							id=3527;
+							type="ModuleRespawnVehicle_F";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ModuleRespawnVehicle_F_ForcedRespawn";
+									expression="_this setVariable ['ForcedRespawn',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="ModuleRespawnVehicle_F_Init";
+									expression="_this setVariable ['Init',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[(_this select 0)] spawn OKS_fnc_Jet;";
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
+									expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								class Attribute3
+								{
+									property="ModuleRespawnVehicle_F_DesertedDistance";
+									expression="_this setVariable ['DesertedDistance',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="";
+										};
+									};
+								};
+								class Attribute4
+								{
+									property="ModuleRespawnVehicle_F_PositionType";
+									expression="_this setVariable ['PositionType',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								class Attribute5
+								{
+									property="ModuleRespawnVehicle_F_RespawnCount";
+									expression="_this setVariable ['RespawnCount',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="8";
+										};
+									};
+								};
+								class Attribute6
+								{
+									property="ModuleRespawnVehicle_F_Position";
+									expression="_this setVariable ['Position',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								class Attribute7
+								{
+									property="ModuleRespawnVehicle_F_Wreck";
+									expression="_this setVariable ['Wreck',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="2";
+										};
+									};
+								};
+								class Attribute8
+								{
+									property="ModuleRespawnVehicle_F_Delay";
+									expression="_this setVariable ['Delay',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="60";
+										};
+									};
+								};
+								class Attribute9
+								{
+									property="ModuleRespawnVehicle_F_ShowNotification";
+									expression="_this setVariable ['ShowNotification',_value,true];";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="0";
+										};
+									};
+								};
+								nAttributes=10;
+							};
+						};
+						class Item28
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={276.14301,7.3041077,77.336899};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="Jet_3";
+							};
+							id=3529;
+							type="I_Plane_Fighter_04_F";
+						};
+						class Item29
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={239.29401,6.9301548,70.110001};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=3531;
+							type="GOL_ResupplyStation_GUER_Small";
+						};
 					};
 					id=2720;
 				};
 			};
 			id=404;
 		};
+		class Item4
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={239.004,5.0014391,110.07439};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="ipl";
+						description="Platoon Leader@1-Actual";
+						isPlayable=1;
+					};
+					id=3440;
+					type="I_Soldier_SL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={241.02983,5.0014391,110.07133};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="ifac";
+						description="FAC@1-Actual";
+						isPlayable=1;
+					};
+					id=3441;
+					type="I_soldier_UAV_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3439;
+		};
+		class Item5
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={233.99382,5.0014391,108.06024};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="i1a";
+						description="Squad Leader@1-1 Actual";
+						isPlayable=1;
+					};
+					id=3442;
+					type="I_Soldier_SL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={235.98267,5.0014391,108.04166};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i1m";
+						description="Squad Medic@1-1 Actual";
+						isPlayable=1;
+					};
+					id=3444;
+					type="I_medic_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3443;
+		};
+		class Item6
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=5;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={230.95857,5.0014391,106.03961};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="i1a1";
+						description="Fire Team Leader@1-1 Alpha";
+						isPlayable=1;
+					};
+					id=3451;
+					type="I_Soldier_TL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={232.98497,5.0014391,106.07968};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i1a2";
+						description="Rifleman@1-1 Alpha";
+						isPlayable=1;
+					};
+					id=3452;
+					type="I_soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={234.972,5.0014391,106.06296};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i1a3";
+						description="Grenadier@1-1 Alpha";
+						isPlayable=1;
+					};
+					id=3453;
+					type="I_Soldier_GL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={236.96346,5.0014391,106.06357};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i1a4";
+						description="Asst. Gunner@1-1 Alpha";
+						isPlayable=1;
+					};
+					id=3454;
+					type="I_Soldier_AAR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={238.96852,5.0014391,106.06345};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i1a5";
+						description="Automatic Rifleman@1-1 Alpha";
+						isPlayable=1;
+					};
+					id=3455;
+					type="I_Soldier_AR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3450;
+		};
+		class Item7
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=5;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={230.95808,5.0014391,104.06931};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="i1b1";
+						description="Fire Team Leader@1-1 Bravo";
+						isPlayable=1;
+					};
+					id=3460;
+					type="I_Soldier_TL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={232.98509,5.0014391,104.1093};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i1b2";
+						description="Rifleman@1-1 Bravo";
+						isPlayable=1;
+					};
+					id=3461;
+					type="I_soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={234.97209,5.0014391,104.0923};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i1b3";
+						description="Grenadier@1-1 Bravo";
+						isPlayable=1;
+					};
+					id=3462;
+					type="I_Soldier_GL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={236.96309,5.0014391,104.09331};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i1b4";
+						description="Asst. Gunner@1-1 Bravo";
+						isPlayable=1;
+					};
+					id=3463;
+					type="I_Soldier_AAR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={238.96809,5.0014391,104.09331};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i1b5";
+						description="Automatic Rifleman@1-1 Bravo";
+						isPlayable=1;
+					};
+					id=3464;
+					type="I_Soldier_AR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3459;
+		};
+		class Item8
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={244.03679,5.0014391,108.0603};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="i2a";
+						description="Squad Leader@1-2 Actual";
+						isPlayable=1;
+					};
+					id=3466;
+					type="I_Soldier_SL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={246.0258,5.0014391,108.04131};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i2m";
+						description="Squad Medic@1-2 Actual";
+						isPlayable=1;
+					};
+					id=3467;
+					type="I_medic_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3465;
+		};
+		class Item9
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=5;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={240.93678,5.0014391,106.03931};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="i2a1";
+						description="Fire Team Leader@1-2 Alpha";
+						isPlayable=1;
+					};
+					id=3469;
+					type="I_Soldier_TL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={242.96379,5.0014391,106.0793};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i2a2";
+						description="Rifleman@1-2 Alpha";
+						isPlayable=1;
+					};
+					id=3470;
+					type="I_soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={244.95079,5.0014391,106.06331};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i2a3";
+						description="Grenadier@1-2 Alpha";
+						isPlayable=1;
+					};
+					id=3471;
+					type="I_Soldier_GL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={246.94179,5.0014391,106.06331};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i2a4";
+						description="Asst. Gunner@1-2 Alpha";
+						isPlayable=1;
+					};
+					id=3472;
+					type="I_Soldier_AAR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={248.94679,5.0014391,106.06331};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i2a5";
+						description="Automatic Rifleman@1-2 Alpha";
+						isPlayable=1;
+					};
+					id=3473;
+					type="I_Soldier_AR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3468;
+		};
+		class Item10
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=5;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={240.93678,5.0014391,104.06931};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="i2b1";
+						description="Fire Team Leader@1-2 Bravo";
+						isPlayable=1;
+					};
+					id=3475;
+					type="I_Soldier_TL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={242.96379,5.0014391,104.1093};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i2b2";
+						description="Rifleman@1-2 Bravo";
+						isPlayable=1;
+					};
+					id=3476;
+					type="I_soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={244.95079,5.0014391,104.0923};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i2b3";
+						description="Grenadier@1-2 Bravo";
+						isPlayable=1;
+					};
+					id=3477;
+					type="I_Soldier_GL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={246.94179,5.0014391,104.09331};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i2b4";
+						description="Asst. Gunner@1-2 Bravo";
+						isPlayable=1;
+					};
+					id=3478;
+					type="I_Soldier_AAR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={248.94679,5.0014391,104.09331};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="i2b5";
+						description="Automatic Rifleman@1-2 Bravo";
+						isPlayable=1;
+					};
+					id=3479;
+					type="I_Soldier_AR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3474;
+		};
+		class Item11
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=3;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={234.97264,5.0014391,94.10231};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="icrew1";
+						description="Crew Commander@1-1 Foxtrot";
+						isPlayable=1;
+					};
+					id=3481;
+					type="I_crew_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={236.91264,5.0014391,94.10231};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="icrew2";
+						description="Crewman@1-1 Foxtrot";
+						isPlayable=1;
+					};
+					id=3483;
+					type="I_crew_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={238.95164,5.0014391,94.10231};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="icrew3";
+						description="Crewman@1-1 Foxtrot";
+						isPlayable=1;
+					};
+					id=3485;
+					type="I_crew_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3480;
+		};
+		class Item12
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=3;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={240.98079,5.0014391,94.10231};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="icrew4";
+						description="Crew Commander@1-2 Golf";
+						isPlayable=1;
+					};
+					id=3487;
+					type="I_crew_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={242.92079,5.0014391,94.10231};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="icrew5";
+						description="Crewman@1-2 Golf";
+						isPlayable=1;
+					};
+					id=3489;
+					type="I_crew_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={244.95979,5.0014391,94.10231};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						name="icrew6";
+						description="Crewman@1-2 Golf";
+						isPlayable=1;
+					};
+					id=3491;
+					type="I_crew_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3486;
+		};
+		class Item13
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={234.99379,5.0014391,92.075302};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="iecho1";
+						description="Pilot@Echo 1";
+						isPlayable=1;
+					};
+					id=3493;
+					type="I_pilot_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3492;
+		};
+		class Item14
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={236.96579,5.0014391,92.075302};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="iecho2";
+						description="Pilot@Echo 2";
+						isPlayable=1;
+					};
+					id=3495;
+					type="I_pilot_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3494;
+		};
+		class Item15
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={238.89079,5.0014391,92.075302};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="iecho3";
+						description="Pilot@Echo 3";
+						isPlayable=1;
+					};
+					id=3497;
+					type="I_pilot_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3496;
+		};
+		class Item16
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={240.86279,5.0014391,92.075302};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="iecho4";
+						description="Pilot@Echo 4";
+						isPlayable=1;
+					};
+					id=3499;
+					type="I_pilot_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3498;
+		};
+		class Item17
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={242.94978,5.0014391,92.075302};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="iecho5";
+						description="Pilot@Echo 5";
+						isPlayable=1;
+					};
+					id=3501;
+					type="I_pilot_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3500;
+		};
+		class Item18
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={244.9218,5.0014391,92.075302};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						name="iecho6";
+						description="Pilot@Echo 6";
+						isPlayable=1;
+					};
+					id=3503;
+					type="I_pilot_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="GW_TeamColor";
+							expression="_this setVariable ['GW_Common_GroupColor', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="main";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="GW_LoadoutSelector";
+							expression="_this setVariable ['GW_Gear_Loadout', _value, true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3502;
+		};
+		class Item19
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={241.97807,5.8253026,118.0995};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=3530;
+			type="GOL_GearBox_GUER";
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=10;
+			nextID=15;
 		};
 		class Links
 		{
-			items=10;
+			items=15;
 			class Item0
 			{
 				linkID=0;
@@ -42567,6 +45342,56 @@ class Mission
 				linkID=9;
 				item0=3299;
 				item1=3300;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item10
+			{
+				linkID=10;
+				item0=3523;
+				item1=3513;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item11
+			{
+				linkID=11;
+				item0=3524;
+				item1=3513;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item12
+			{
+				linkID=12;
+				item0=3525;
+				item1=3513;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item13
+			{
+				linkID=13;
+				item0=3526;
+				item1=3513;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item14
+			{
+				linkID=14;
+				item0=3529;
+				item1=3527;
 				class CustomData
 				{
 					type="Sync";
