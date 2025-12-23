@@ -28,10 +28,27 @@ params [
 	["_skipQueue", false],
 	["_skipDelays", false]
 ];
-//systemChat str ["spawnGroup - pre", _side];
-([str _side] call FUNC(getGroupType)) params ["_side"];
 
-//systemChat str ["spawnGroup - post", _side];
+if(_side isEqualType "") then {
+	switch (toLower(_side)) do {
+		case "west": { 
+			_side = WEST;
+		};
+		case "east": { 
+			_side = EAST;
+		};
+		case "independent": { 
+			_side = INDEPENDENT;
+		};
+		case "civilian": { 
+			_side = civilian;
+		};					
+		default { 
+			_side = EAST;
+		};
+	};
+};
+
 _group = CreateGroup _side;
 _group setVariable [QEGVAR(Performance,autoDelete), false];
 

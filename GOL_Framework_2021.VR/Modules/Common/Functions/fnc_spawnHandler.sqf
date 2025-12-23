@@ -65,7 +65,6 @@ if !((count _unitArray) isEqualTo 0) then {
 			_unitClass = [_role, _side] call FUNC(getClassnameByRole);
 		};
 
-		systemChat str _unitClass;
 		_unit = _group createUnit [_unitClass, _pos, [], 10, "CAN_COLLIDE"];
 		_unit enableSimulationGlobal false;
 		_unit setRank "PRIVATE";

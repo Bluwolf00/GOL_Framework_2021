@@ -177,12 +177,11 @@ if (_isMan) then {
 	#include "..\Scripts\factions.sqf"
 	#include "isNilCheck.hpp"
 
-	if(side group _unit == EAST) then {
-		_UAVTerminal = "O_UavTerminal"
+	if (side group _unit == EAST) then {
+		_UAVTerminal = "O_UavTerminal";
 	};
-
-	if(side group _unit == independent) then {
-		_UAVTerminal = "I_UavTerminal"
+	if (side group _unit == independent) then {
+		_UAVTerminal = "I_UavTerminal";
 	};
 
 	if (_isCivilian) then {
