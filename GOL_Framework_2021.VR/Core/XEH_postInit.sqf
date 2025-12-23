@@ -115,6 +115,10 @@ GVARMAIN(postLoad) = nil;
 			GVARMAIN(ZeuzModuleAdminLogged) setVariable ["Forced", 0, true];
 			GVARMAIN(ZeuzModuleAdminLogged) setVariable ["birdType", "", true];
 			GVARMAIN(ZeuzModuleAdminLogged) setVariable ["showNotification", false, true];
+			GVARMAIN(ZeuzModuleAdminLogged) setVariable ["bis_fnc_moduleexecute_activate", true];
+			GVARMAIN(ZeuzModuleAdminLogged) setVariable ["bis_fnc_moduleinit_status", true];
+			GVARMAIN(ZeuzModuleAdminLogged) setVariable ["bis_fnc_initmodules_activate", true];
+			
 			player assignCurator GVARMAIN(ZeuzModuleAdminLogged);
 			publicVariable QGVARMAIN(ZeuzModuleAdminLogged);
 
