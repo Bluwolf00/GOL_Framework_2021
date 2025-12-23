@@ -51,7 +51,7 @@ private _rolePatterns = [
     [["Grenadier"], "g"],
     [["Asst. Autorifleman","Combat Life Saver","Medic","Corpsman"], "ag"],
     [["Autorifleman","Automatic Rifleman","Auto Rifleman"], "ar"],
-    [["Machinegunner","Machine Gunner","Machine Gunner Assistant","Heavy Gunner"], "mmg"],
+    [["Machinegunner","Machine Gunner","Machine Gunner Assistant","Heavy Gunner","Gunner (HMG)"], "mmg"],
     [["Crewman","Crew"], "crew"],
     [["Helicopter Pilot","Pilot"], "p"],
     [["Sniper"], "marksman"],

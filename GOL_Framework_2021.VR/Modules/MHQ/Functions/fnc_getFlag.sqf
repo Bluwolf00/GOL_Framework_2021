@@ -25,7 +25,9 @@ switch (_mhq getVariable [QGVAR(Side), "west"]) do {
 	case "east": {
 		_return = flag_east_1;
 	};
-	case "independent": {
+	case "independent";
+	case "guer";
+	case "resistance": {
 		_return = flag_independent_1;
 	};
 };
