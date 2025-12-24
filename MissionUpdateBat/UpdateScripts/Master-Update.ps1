@@ -13,7 +13,6 @@ Write-Host "WARNING: This script will DELETE the following folders and files fro
 Write-Host " - Core"
 Write-Host " - Modules"
 Write-Host " - Scripts"
-Write-Host " - images"
 Write-Host " - missionSettings.sqf"
 Write-Host " - script_component.hpp"
 Write-Host " - onPlayerRespawn.sqf"
@@ -29,7 +28,7 @@ if ($response -notmatch "^[Yy]$") {
 }
 
 # 1. Clean folders
-& "$ScriptDir\Clean-Folders.ps1" -FoldersToDelete @("Core", "Modules", "Scripts", "images") -LogFile $LogFile
+& "$ScriptDir\Clean-Folders.ps1" -FoldersToDelete @("Core", "Modules", "Scripts") -LogFile $LogFile
 
 # 2. Clean files
 & "$ScriptDir\Clean-Files.ps1" -FilesToDelete @("missionSettings.sqf","init.sqf","initPlayerLocal.sqf","script_Component.hpp","PlatoonRoster.jpg","onPlayerRespawn.sqf") -LogFile $LogFile

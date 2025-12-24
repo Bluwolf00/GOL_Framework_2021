@@ -41,27 +41,32 @@ foreach ($file in $extraFiles) {
     }
 }
 
-# === Extract briefingName and author from mission.sqm ===
+# === Extract mission name from parent folder name ===
+$folderName = Split-Path -Leaf $MissionDir
 $briefingName = ""
-$author = ""
 
-if ($missionContent -match 'briefingName\s*=\s*"([^"]+)"') {
-    $briefingName = $matches[1]
+# Regex: Matches CO@38_Mission_Name.map or COOP-10 Mission%20Name.map etc.
+if ($folderName -match '^(CO|COOP|TVT|PVP|ATG)[@-](\d+)[\s_](.+?)\.([^.]+)$') {
+    $gameMode = $matches[1]
+    $playerCount = $matches[2]
+    $missionName = $matches[3]
+    $mapName = $matches[4]
+    
+    # Decode URL-encoded spaces and normalize delimiters
+    $missionName = $missionName -replace '%2520', ' '  # Double-encoded space
+    $missionName = $missionName -replace '%20', ' '    # URL-encoded space
+    $missionName = $missionName -replace '_', ' '      # Underscore to space
+    $missionName = $missionName -replace '\s+', ' '    # Normalize multiple spaces
+    $missionName = $missionName.Trim()
+    
+    # Reconstruct full briefing name
+    $briefingName = "$gameMode@$playerCount $missionName"
+    Log-Message "Parsed folder name: $folderName"
     Log-Message "Extracted briefingName: $briefingName"
+    Log-Message "Map: $mapName"
 } else {
-    Log-Message "Warning: briefingName not found in mission.sqm"
-}
-
-if ($missionContent -match 'class\s+ScenarioData\s*\{([^}]*)\}') {
-    $scenarioBlock = $matches[1]
-    if ($scenarioBlock -match 'author\s*=\s*"([^"]+)"') {
-        $author = $matches[1]
-        Log-Message "Extracted author: $author"
-    } else {
-        Log-Message "Warning: author not found in ScenarioData"
-    }
-} else {
-    Log-Message "Warning: ScenarioData not found in mission.sqm"
+    Log-Message "Warning: Could not parse mission folder name: $folderName"
+    Log-Message "Expected format: GAMEMODE@NN_Mission_Name.mapname"
 }
 
 # === Replacements to perform (case-insensitive, both single and double quotes) ===
@@ -164,75 +169,18 @@ foreach ($file in $extraFileContents.Keys) {
     Log-Message "$file updated successfully"
 }
 
-# === Clean up ScenarioData: Remove ALL duplicate image/config lines, insert correct ones at top ===
-$missionContent = [regex]::Replace($missionContent,
-    '(class\s+ScenarioData\s*\{)(.*?)(\};)',
-    {
-        param($m)
-        $block = $m.Groups[2].Value
-        # Remove any overviewText, overViewPicture, overViewPictureLocked, loadScreen (anywhere in block, any path, any quote style)
-        $block = [regex]::Replace(
-            $block,
-            '(?im)^\s*(overviewText|overViewPicture|overViewPictureLocked|loadScreen)\s*=\s*["'']{1,2}.*?["'']{1,2};\s*',
-            '',
-            'Multiline'
-        )
-        # Insert correct lines at the start
-        $insert = @"
-    overviewText="Framework Version 2.8";
-    overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
-    overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
-    loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
-"@
-        return $m.Groups[1].Value + "`n" + $insert + $block + $m.Groups[3].Value
-    },
-    'Singleline'
-)
-Log-Message "ScenarioData block cleaned and updated."
-
-# === HARD CLEANUP: Remove any legacy/incorrect overViewPicture lines globally ===
-$missionContent = [regex]::Replace(
-    $missionContent,
-    '^\s*overViewPicture\s*=\s*["''](?!\\OKS_GOL_Misc\\data\\images\\loadImage\.jpg["''];).+["''];\s*$',
-    '',
-    [System.Text.RegularExpressions.RegexOptions]::Multiline
-)
-
-# === HARD CLEANUP: Remove any legacy/incorrect loadScreen lines globally ===
-$missionContent = [regex]::Replace(
-    $missionContent,
-    '^\s*loadScreen\s*=\s*["''](?!\\OKS_GOL_Misc\\data\\images\\loadImage\.jpg["''];).+["''];\s*$',
-    '',
-    [System.Text.RegularExpressions.RegexOptions]::Multiline
-)
-
-# === Update overviewText in class Intel (Mission) block ===
-$missionContent = [regex]::Replace($missionContent,
-    '(class\s+Intel\s*\{)(.*?)(\};)',
-    {
-        param($m)
-        $block = $m.Groups[2].Value
-        # Remove any existing overviewText (single or double quotes)
-        $block = [regex]::Replace($block, '(?im)^\s*overviewText\s*=\s*["'']{1,2}.*?["'']{1,2};\s*', '')
-        # Insert correct overviewText at the start (single quotes only)
-        $insert = '    overviewText="Framework Version 2.8";' + "`n"
-        return $m.Groups[1].Value + "`n" + $insert + $block + $m.Groups[3].Value
-    },
-    'Singleline'
-)
-Log-Message "Intel block cleaned and updated."
+# === Apply replacements and image path fixes to mission.sqm ===
+$missionContent = Replace-AllStringsCaseInsensitive $missionContent $replacements
+$missionContent = Replace-ImagePaths $missionContent
 
 # === Description.ext updates ===
 if ($descContent) {
-    # Update BRIEFING_NAME with extracted briefingName
+    # Update BRIEFING_NAME with extracted briefingName from folder
     if ($briefingName -and ($descContent -match '#define\s+BRIEFING_NAME\s+"[^"]+"')) {
         $descContent = $descContent -replace '(#define\s+BRIEFING_NAME\s+")[^"]+(")' , "`$1$briefingName`$2"
         Log-Message "Updated BRIEFING_NAME to '$briefingName' in Description.ext"
-    }
-    # Update Author with extracted author
-    if ($author -and ($descContent -match 'Author\s*=\s*"[^"]*"')) {
-        $descContent = $descContent -replace '(Author\s*=\s*")[^"]*(")' , "`$1$author`$2"
-        Log-Message "Updated Author to '$author' in Description.ext"
+    } elseif ($briefingName) {
+        Log-Message "Warning: BRIEFING_NAME not found in Description.ext to update"
     }
     $descReplacements = @{
         "NEKY_Hunt_HuntBase" = "OKS_fnc_Huntbase"
