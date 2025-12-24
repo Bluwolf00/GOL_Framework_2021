@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=3577;
+		nextID=3589;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=14132;
+		nextID=14160;
 	};
 	class Camera
 	{
-		pos[]={141.39653,65.372841,-15.046147};
-		dir[]={0.01856198,-0.51671344,0.85596377};
-		up[]={0.011202583,0.85615259,0.51659501};
-		aside[]={0.99977005,-8.119514e-09,-0.02168024};
+		pos[]={136.81375,127.12874,-30.418379};
+		dir[]={0.6504004,-0.45509002,0.60822952};
+		up[]={0.33242637,0.89041787,0.31086984};
+		aside[]={0.68305242,-4.991889e-07,-0.73041624};
 	};
 };
 binarizationWanted=0;
@@ -463,7 +463,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category2
+	class Category3
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -646,7 +646,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category3
+	class Category4
 	{
 		name="Scenario";
 		class Attribute0
@@ -36495,6 +36495,7 @@ class Mission
 										rank="LIEUTENANT";
 										name="wpl";
 										description="Platoon Leader@1-Actual ";
+										isPlayer=1;
 										isPlayable=1;
 										receiveRemoteTargets=1;
 										stance="Up";

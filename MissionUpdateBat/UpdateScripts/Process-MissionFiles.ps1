@@ -59,8 +59,8 @@ if ($folderName -match '^(CO|COOP|TVT|PVP|ATG)[@-](\d+)[\s_](.+?)\.([^.]+)$') {
     $missionName = $missionName -replace '\s+', ' '    # Normalize multiple spaces
     $missionName = $missionName.Trim()
     
-    # Reconstruct full briefing name
-    $briefingName = "$gameMode@$playerCount $missionName"
+    # Use only the mission name for briefingName
+    $briefingName = "$missionName"
     Log-Message "Parsed folder name: $folderName"
     Log-Message "Extracted briefingName: $briefingName"
     Log-Message "Map: $mapName"
