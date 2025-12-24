@@ -1,5 +1,4 @@
 #define	COMPONENT CORE
-#define VERSION 1
 #define CUSTOM_FOLDER Core\Framework\Functions
 #include "script_Component.hpp"
 
