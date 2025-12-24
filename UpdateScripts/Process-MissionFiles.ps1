@@ -136,23 +136,28 @@ function Replace-AllStringsCaseInsensitive($content, $replacements) {
 }
 
 function Replace-ImagePaths($content) {
-    $pattern = '(?i)(["'']?)images\\([^""''\s]+)(["'']?)'
-    $content = [regex]::Replace($content, $pattern, {'$1\OKS_GOL_Misc\data\images\' + $args[0].Groups[2].Value + '$3'})
-    $flagPattern = '(?i)(setFlagTexture\s*)(["'']{1,2})\s*images\\([^""'']+)(["'']{1,2})'
-    $content = [regex]::Replace($content, $flagPattern, {'$1""\OKS_GOL_Misc\data\images\' + $args[0].Groups[3].Value + '""'})
+    # Only process init= lines in mission.sqm, don't touch Description.ext image paths
     $content = [regex]::Replace($content, '(init\s*=\s*["'']{1,2})(.*?)(["'']{1,2};)', {
         param($m)
         $initPrefix = $m.Groups[1].Value
         $initCode = $m.Groups[2].Value
         $initSuffix = $m.Groups[3].Value
-        $initCode = $initCode -replace '\\\$1', '' -replace '\$1', ''
-        $initCode = $initCode -replace '\\\$3', '' -replace '\$3', ''
+        
+        # Replace images\\ with full path in init code
+        $initCode = $initCode -replace '(?i)images\\\\', '\OKS_GOL_Misc\data\images\'
+        
+        # Fix setFlagTexture to use double quotes
         $initCode = [regex]::Replace($initCode, '(setFlagTexture\s*)["''](\\OKS_GOL_Misc\\data\\images\\[^""'']+)["'']', 'setFlagTexture ""$2""')
+        
+        # Apply other replacements
         $initCode = Replace-AllStringsCaseInsensitive $initCode $replacements
+        
         return $initPrefix + $initCode + $initSuffix
     }, 'Singleline')
-    $content = [regex]::Replace($content, '(setFlagTexture\s*)"(\\OKS_GOL_Misc\\data\\images\\[^""]+)"', 'setFlagTexture ""$2""')
-	$content = $content -replace 'setObjectTexture\s*\[\s*0\s*,\s*""PlatoonRoster\.jpg""\s*\]\s*;\s*', ''
+    
+    # Remove PlatoonRoster setObjectTexture lines
+    $content = $content -replace 'setObjectTexture\s*\[\s*0\s*,\s*""PlatoonRoster\.jpg""\s*\]\s*;\s*', ''
+    
     return $content
 }
 
@@ -173,6 +178,24 @@ foreach ($file in $extraFileContents.Keys) {
 $missionContent = Replace-AllStringsCaseInsensitive $missionContent $replacements
 $missionContent = Replace-ImagePaths $missionContent
 
+# === Reset GW_isConfigured to trigger first-time setup ===
+# Look for the pattern: property="GW_isConfigured"; ... value=1; and change value to 0
+if ($missionContent -match 'property="GW_isConfigured"') {
+    $missionContent = $missionContent -replace '(property="GW_isConfigured"[\s\S]*?value=)\d+;', '${1}0;'
+    Log-Message "Reset GW_isConfigured to 0 (false) to trigger first-time setup"
+} else {
+    Log-Message "Warning: GW_isConfigured not found in mission.sqm"
+}
+
+# === Extract author from mission.sqm ===
+$author = ""
+if ($missionContent -match 'class\s+ScenarioData\s*\{[^}]*?author\s*=\s*"([^"]+)"') {
+    $author = $matches[1]
+    Log-Message "Extracted author from mission.sqm: $author"
+} else {
+    Log-Message "Warning: Could not find author in mission.sqm ScenarioData class"
+}
+
 # === Description.ext updates ===
 if ($descContent) {
     # Update BRIEFING_NAME with extracted briefingName from folder
@@ -181,6 +204,14 @@ if ($descContent) {
         Log-Message "Updated BRIEFING_NAME to '$briefingName' in Description.ext"
     } elseif ($briefingName) {
         Log-Message "Warning: BRIEFING_NAME not found in Description.ext to update"
+    }
+    
+    # Update author with extracted value from mission.sqm
+    if ($author -and ($descContent -match 'author\s*=\s*"[^"]*"')) {
+        $descContent = $descContent -replace '(author\s*=\s*")[^"]*(")' , "`$1$author`$2"
+        Log-Message "Updated author to '$author' in Description.ext"
+    } elseif ($author) {
+        Log-Message "Warning: author field not found in Description.ext to update"
     }
     $descReplacements = @{
         "NEKY_Hunt_HuntBase" = "OKS_fnc_Huntbase"

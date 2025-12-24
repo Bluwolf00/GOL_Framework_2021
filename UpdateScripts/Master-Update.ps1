@@ -3,7 +3,7 @@ $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $MissionDir = Split-Path -Parent $ScriptDir
 Set-Location $MissionDir
 
-$LogFile = Join-Path $MissionDir "undo_log.txt"
+$LogFile = Join-Path $ScriptDir "undo_log.txt"
 if (Test-Path $LogFile) { Remove-Item $LogFile -Force }
 "=== Script started at $(Get-Date) ===" | Out-File -FilePath $LogFile
 

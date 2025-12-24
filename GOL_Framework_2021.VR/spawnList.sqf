@@ -10,8 +10,6 @@
 		None
 */
 
-
-
 #include "\OKS_GOL_Misc\script_Component.hpp"
 #define	COMPONENT spawnList
 
@@ -50,4 +48,4 @@ switch (_case) do {
 /*
 	GOL SCRIPT EXAMPLES:
 	Link to README: https://github.com/oksmantv/Guerrillas-of-Liberations-Misc-Addon?tab=readme-ov-file#readme 
-*/ 
+*/
