@@ -18,6 +18,7 @@ _time = [((date select 3) * 3600) + ((date select 4) * 60), "H:MM:SS"] call CBA_
 	[
 		["TITLE", format ["%1", briefingName]],
 		["TEXT", format ["By: %1", getText(missionConfigFile >> "GW_FRAMEWORK" >> "Naming" >> "Author")]],
-		["TEXT", format ["Version: %1", getNumber(missionConfigFile >> "GW_FRAMEWORK" >> "Naming" >> "Version")]]
+		["TEXT", format ["Mission Version: %1", getNumber(missionConfigFile >> "GW_FRAMEWORK" >> "Naming" >> "Version")]],
+		["TEXT", format ["Framework Version: %1", getText(missionConfigFile >> "GW_FRAMEWORK" >> "Core" >> "Version")]]
 	] call FUNC(startText);
 }, [], 8] call CBA_fnc_waitAndExecute;

@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=13908;
+		nextID=13992;
 	};
 	class Camera
 	{
-		pos[]={142.35901,60.150009,-17.361301};
-		dir[]={0.0071825879,-0.54147899,0.84080851};
-		up[]={0.0046263072,0.84064072,0.541565};
-		aside[]={1.000056,7.7579921e-07,-0.0085425023};
+		pos[]={145.40671,77.79763,-23.476469};
+		dir[]={-0.0075764498,-0.54697782,0.83712327};
+		up[]={-0.0049502752,0.83714086,0.54696095};
+		aside[]={0.99996859,1.5862383e-08,0.0090503618};
 	};
 };
 binarizationWanted=0;
@@ -413,9 +413,10 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 3.0";
+	overviewText="Framework Version 3.0.241225";
 	overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
+	loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	saving=0;
 	respawnDialog=0;
 	disabledAI=1;
@@ -675,7 +676,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=968;
+									items=971;
 									class Item0
 									{
 										class data
@@ -8420,6 +8421,30 @@ class CustomAttributes
 											value="gol_hc_debug";
 										};
 									};
+									class Item968
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_surrender_enabled";
+										};
+									};
+									class Item969
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_surrender_shot";
+										};
+									};
+									class Item970
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_surrender_flashbang";
+										};
+									};
 								};
 							};
 						};
@@ -8430,7 +8455,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=968;
+									items=971;
 									class Item0
 									{
 										class data
@@ -34979,6 +35004,87 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item968
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item969
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item970
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -35057,8 +35163,8 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="COOP@36 Mission_Name";
-		overviewText="Framework Version 2.8";
+		briefingName="Mission_Name";
+		overviewText="Framework Version 3.0.241225";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;

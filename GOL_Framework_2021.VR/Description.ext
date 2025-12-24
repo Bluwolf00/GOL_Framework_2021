@@ -22,11 +22,9 @@ class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 		#define PLAYER_COUNT "36"								// Player Count - Do not go above 36 - Server Limit 
 		#define BRIEFING_NAME "Mission_Name"					// Mission Name
 		#define LOBBY_DESCRIPTION ""							// Description in mission select
-		#define ON_LOAD_TEXT ""									// Description on loading
+		#define ON_LOAD_TEXT __EVAL("Framework Version " + QUOTE(VERSION))	// Description on loading
 		#define MISSION_VERSION 1								// Version of mission
 		#define SELECT_PICTURE ""								// Path to loading screen
-		//#define SELECT_PICTURE RANDOM_PICTURES				// Random loading screen
-		// picture path: "\OKS_GOL_Misc\data\images\loadImage.jpg"
 		Author = "Editor";				// Author
 		AuthorUID[] = {"_SP_PLAYER_"};			// UIDs with admin access
 
