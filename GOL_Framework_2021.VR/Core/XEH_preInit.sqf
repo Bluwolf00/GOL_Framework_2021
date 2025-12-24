@@ -4,6 +4,7 @@ LOG("Prepping all main functions");
 PREPMAIN(changeSetting);
 PREPMAIN(Log);
 PREPMAIN(LogAdmin);
+PREPMAIN(paramDaytime);
 PREPMAIN(remoteCommand);
 PREPMAIN(settingsInit);
 PREPMAINFOLDER(spawnList);

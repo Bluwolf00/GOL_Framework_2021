@@ -25,8 +25,8 @@ _AirRolesAllowed = missionNamespace getVariable ["AirRoles_ALLOW",true];
 
 if(_ArsenalAllowed isEqualTo true) then {
 	_unit addAction ["<t color='#00EAFF'>Attachment Menu</t>", {[_this select 0, player] call ace_arsenal_fnc_openBox},ALL,5];
-	_unit addAction ["<t color='#00EAFF'>Attachment Menu (GL)</t>", {_ArsenalGL =  missionNamespace getVariable [format["GOL_ArsenalGL_%1",(side group player)], objNull]; [_ArsenalGL, player] call ace_arsenal_fnc_openBox},GL,5];
-	_unit addAction ["<t color='#00EAFF'>Attachment Menu (LMG)</t>", {_ArsenalLMG = missionNamespace getVariable [format["GOL_ArsenalLMG_%1",(side group player)], objNull]; [_ArsenalLMG, player] call ace_arsenal_fnc_openBox},LMG,5];
+	_unit addAction ["<t color='#00EAFF'>Attachment Menu (GL)</t>", {_playerSide = switch (side group player) do { case west: {"west"}; case east: {"east"}; case independent: {"independent"}; default {"west"}; }; _ArsenalGL =  missionNamespace getVariable [format["GOL_ArsenalGL_%1",_playerSide], objNull]; [_ArsenalGL, player] call ace_arsenal_fnc_openBox},GL,5];
+	_unit addAction ["<t color='#00EAFF'>Attachment Menu (LMG)</t>", {_playerSide = switch (side group player) do { case west: {"west"}; case east: {"east"}; case independent: {"independent"}; default {"west"}; }; _ArsenalLMG = missionNamespace getVariable [format["GOL_ArsenalLMG_%1",_playerSide], objNull]; [_ArsenalLMG, player] call ace_arsenal_fnc_openBox},LMG,5];
 };
 
 _unit addAction ["<t color='#ff962c'>Remove Night gear</t>", {

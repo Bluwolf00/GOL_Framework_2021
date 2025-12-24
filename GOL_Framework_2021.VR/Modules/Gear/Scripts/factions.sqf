@@ -6,7 +6,7 @@ switch (_side) do {
 	case "AAF-SF-W": {
 		#include "Classes\AAF-SF-W.sqf"
 	};
-		case "IRISH-UN": {
+	case "IRISH-UN": {
 		#include "Classes\IRISH-UN.sqf"
 	};
 	case "CBRN-WINTER": {
