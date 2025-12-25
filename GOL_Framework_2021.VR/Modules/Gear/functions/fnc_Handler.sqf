@@ -362,6 +362,8 @@ if (_isMan) then {
 				[_unit, "GOL_Packed_Drone_Recon", 4] call _fnc_AddObjectsCargo;				
 				[_unit, "GOL_Packed_Drone_Supply", 4] call _fnc_AddObjectsCargo;				
 				[_unit, _MAT_mag_HE, 10] call _fnc_AddObjectsCargo;
+				[_unit, _AA_mag, 30] call _fnc_AddObjectsCargo;
+				[_unit, (_AA select 0), 6] call _fnc_AddObjectsCargo;
 				[_unit, (_LAT select 0), 30] call _fnc_AddObjectsCargo;
 				if (true) then {
 					[_unit, "ACE_EarPlugs", 50] call _fnc_AddObjectsCargo;
@@ -728,42 +730,6 @@ if (_isMan) then {
 				};
 			};
 
-			case "big_box": {
-				[_unit, _glHEDP, 50] call _fnc_AddObjectsCargo;
-				[_unit, _glsmokeR, 40] call _fnc_AddObjectsCargo;
-				[_unit, _glflareR, 40] call _fnc_AddObjectsCargo;
-				[_unit, _glflareG, 40] call _fnc_AddObjectsCargo;
-				[_unit, _glflareW, 40] call _fnc_AddObjectsCargo;
-				[_unit, _grenade, 60] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeY, 60] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeG, 15] call _fnc_AddObjectsCargo;
-
-				[_unit, _bandage, 40] call _fnc_AddObjectsCargo;
-				[_unit, _morph, 20] call _fnc_AddObjectsCargo;
-				[_unit, _saline, 40] call _fnc_AddObjectsCargo;
-				[_unit, _flashBang, 15] call _fnc_AddObjectsCargo;
-
-				[_unit, _pistol_mag, 10] call _fnc_AddObjectsCargo;
-				[_unit, _rifle_mag_tr, 20] call _fnc_AddObjectsCargo;
-				[_unit, _rifleC_mag_tr, 6] call _fnc_AddObjectsCargo;
-				[_unit, _rifleGL_mag_tr, 20] call _fnc_AddObjectsCargo;
-				[_unit, _LMG_mag, ((COUNT_AR_MAGS(_LMG_mag)) * 3)] call _fnc_AddObjectsCargo;
-				[_unit, _MMG_mag, ((COUNT_AR_MAGS(_MMG_mag)) * 2)] call _fnc_AddObjectsCargo;
-
-				if (_LAT_ReUsable) then {
-					[_unit, _LAT_mag, 4] call _fnc_AddObjectsCargo;
-					[_unit, _LAT_mag_HE, 2] call _fnc_AddObjectsCargo;
-				} else {
-					[_unit, (_LAT select 0), 4] call _fnc_AddObjectsCargo;
-				};
-
-				[_unit, _MAT_mag, 4] call _fnc_AddObjectsCargo;
-				[_unit, _MAT_mag_HE, 2] call _fnc_AddObjectsCargo;
-
-				[_unit, _demoCharge, 6] call _fnc_AddObjectsCargo;
-				[_unit, _satchelCharge, 2] call _fnc_AddObjectsCargo;
-			};
-
 			case "med_box": {
 				[_unit, _bandage, 100] call _fnc_AddObjectsCargo;
 				[_unit, _morph, 50] call _fnc_AddObjectsCargo;
@@ -777,62 +743,6 @@ if (_isMan) then {
 				[_unit, _bandage, 60] call _fnc_AddObjectsCargo;
 				[_unit, _tourn, 8] call _fnc_AddObjectsCargo;
 				[_unit, _saline, 40] call _fnc_AddObjectsCargo;
-			};
-
-			case "car": {
-
-				[_unit, _bandage, 5] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeY, 6] call _fnc_AddObjectsCargo;
-
-				[_unit, _pistol_mag, 10] call _fnc_AddObjectsCargo;
-				[_unit, _rifle_mag, 10] call _fnc_AddObjectsCargo;
-				[_unit, _LMG_mag_tr, 3] call _fnc_AddObjectsCargo;
-
-				[_unit, _demoCharge, 1] call _fnc_AddObjectsCargo;
-				if (_LAT_ReUsable) then {
-					[_unit, (_LAT select 0), 1] call _fnc_AddObjectsCargo;
-					[_unit, _LAT_mag, 4] call _fnc_AddObjectsCargo;
-				} else {
-					[_unit, (_LAT select 0), 4] call _fnc_AddObjectsCargo;
-				};
-				if (true) then {
-					[_unit, 15] call ace_cargo_fnc_setSpace;
-					[_unit, 8, "ACE_Wheel", true] call ace_repair_fnc_addSpareParts;
-				};
-			};
-
-			case "tank": {
-				[_unit, _bandage, 5] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeY, 2] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeP, 2] call _fnc_AddObjectsCargo;
-				[_unit, _pistol_mag, 3] call _fnc_AddObjectsCargo;
-				[_unit, _rifle_mag, 4] call _fnc_AddObjectsCargo;
-				if (true) then {
-					[_unit, 15] call ace_cargo_fnc_setSpace;
-					[_unit, 6, "ACE_Track", true] call ace_repair_fnc_addSpareParts;
-				};
-			};
-
-			case "heli": {
-				[_unit, "B_Parachute", (count fullCrew [_unit,"",true])] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeP, 2] call _fnc_AddObjectsCargo;
-				[_unit, _bandage, 10] call _fnc_AddObjectsCargo;
-				if (true) then {
-					[_unit, _morph, 5] call _fnc_AddObjectsCargo;
-					[_unit, _epi, 5] call _fnc_AddObjectsCargo;
-					[_unit, _blood, 5] call _fnc_AddObjectsCargo;
-				};
-			};
-
-			case "plane": {
-				[_unit, "B_Parachute", (count fullCrew [_unit,"",true])] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeP, 2] call _fnc_AddObjectsCargo;
-				[_unit, _bandage, 10] call _fnc_AddObjectsCargo;
-				if (true) then {
-					[_unit, _morph, 5] call _fnc_AddObjectsCargo;
-					[_unit, _epi, 5] call _fnc_AddObjectsCargo;
-					[_unit, _blood, 5] call _fnc_AddObjectsCargo;
-				};
 			};
 
 			case "locked": {
