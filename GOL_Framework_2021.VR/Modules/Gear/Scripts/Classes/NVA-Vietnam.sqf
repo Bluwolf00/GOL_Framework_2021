@@ -92,6 +92,7 @@ _HAT_mag = "rhs_rpg7_PG7V_mag";
 
 _MAT = ["launch_RPG7_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "rhs_rpg7_PG7V_mag";
+_MAT_mag_HE = "rhs_rpg7_TBG7V_mag";
 
 _AA = ["rhs_weap_igla", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "rhs_mag_9k38_rocket";

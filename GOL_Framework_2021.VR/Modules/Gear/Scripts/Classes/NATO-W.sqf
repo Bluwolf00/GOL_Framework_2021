@@ -28,7 +28,6 @@ if (_role isEqualTo "p") then {
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
 	_gps = "B_UAVTerminal";
-
 };
 if (_role isEqualTo "jetp") then {
 	_goggles = "G_Aviator";
@@ -68,6 +67,7 @@ _LAT_ReUsable = false;
 
 _MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "MRAWS_HEAT_F";
+_MAT_mag_HE = "MRAWS_HE_F";
 
 _HAT = ["launch_I_Titan_short_F", _silencer, _pointer, _sight, _bipod];
 _HAT_mag = "Titan_AT";

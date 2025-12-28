@@ -32,6 +32,18 @@ _glflareG = "ACE_40mm_Flare_green";
 _glflareR = "ACE_40mm_Flare_red";
 _glflareW = "ACE_40mm_Flare_white";
 
+// Mortar Items.
+_1rndMortarHE = "UK3CB_BAF_1Rnd_60mm_Mo_Shells";
+_1rndMortarAB = "UK3CB_BAF_1Rnd_60mm_Mo_AB_Shells";
+_1rndMortarFlareW = "UK3CB_BAF_1Rnd_60mm_Mo_Flare_White";
+_1rndMortarWPSmokeW = "UK3CB_BAF_1Rnd_60mm_Mo_WPSmoke_White";
+_1rndMortarSmokeW = "UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White";
+
+_mortarWeapon = "UK3CB_BAF_M6";
+_packedHEround = "GOL_Packed_60mm_HE";
+_packedHEABround = "GOL_Packed_60mm_HEAB";
+_packedSmokeRound = "GOL_Packed_60mm_Smoke";
+_packedFlareRound = "GOL_Packed_60mm_Flare";
 // ===========================
 // Item
 
@@ -49,8 +61,12 @@ if (true) then {
 	_cTab = "ItemcTab";
 	_Android = "ItemAndroid";
 	_microDAGR = "ItemMicroDAGR";
+	_microDAGRGps = "ItemMicroDAGR";
 	_HelmetCam = "ItemcTabHCam";
 	_UAVTerminal = "B_UavTerminal";
+	_UAVTerminalB = "B_UavTerminal";
+	_UAVTerminalO = "O_UavTerminal";
+	_UAVTerminalI = "I_UavTerminal";
 	_gps = "";
 	if(hasInterface) then {
 		if(_role in ["sm","lightdragon"]) then {
@@ -66,6 +82,13 @@ if (true) then {
 };
 
 _toolKit = "ToolKit";
+
+// Radios (for cargo boxes)
+_tfarPersonalRadio = "TFAR_pnr1000a";
+_tfarHandheldRadio = "TFAR_anprc152";
+_acrePRC343 = "ACRE_PRC343";
+_acrePRC148 = "ACRE_PRC148";
+_acrePRC117F = "ACRE_PRC117F";
 _bandage = "FirstAidKit";
 _blood = "MediKit";
 _IFAK = [[_bandage,2]];					//	Individual First Aid Kits
@@ -128,6 +151,30 @@ _laserDesignator = "Laserdesignator";
 _battery = "Laserbatteries";
 _rangecard = "";
 _mortarRangeCard = "";
+_minedetector = "ACE_MineDetector";
+_mineDetectorVMM3 = "ACE_VMM3";
+_mineDetectorVMH3 = "ACE_VMH3";
+_mineDetectorVMM3Weapon = [_mineDetectorVMM3, "", "", "", ""];
+_mineDetectorVMH3Weapon = [_mineDetectorVMH3, "", "", "", ""];
+_markerFlagGreen = "ace_marker_flags_green";
+_markerFlagRed = "ace_marker_flags_red";
+
+_mineAperMineDispenserMag = "APERSMineDispenser_Mag";
+_mineClaymoreMag = "ClaymoreDirectionalMine_Remote_Mag";
+_mineSlamMag = "SLAMDirectionalMine_Wire_Mag";
+_mineAperBoundingMag = "APERSBoundingMine_Range_Mag";
+_spraypaintRed = "ACE_SpraypaintRed";
+_spraypaintGreen = "ACE_SpraypaintGreen";
+_fortifyTool = "ACE_Fortify";
+_incendiaryGrenade = "ACE_M14";
+_packedMortar = "GOL_Packed_Mortar";
+_packedHMG = "GOL_Packed_HMG";
+_packedGMG = "GOL_Packed_GMG";
+_packedAT = "GOL_Packed_AT";
+_packedDroneAP = "GOL_Packed_Drone_AP";
+_packedDroneAT = "GOL_Packed_Drone_AT";
+_packedDroneRecon = "GOL_Packed_Drone_Recon";
+_packedDroneSupply = "GOL_Packed_Drone_Supply";
 
 _flashBang = "";
 _handFlareG = "";
@@ -156,6 +203,9 @@ if (true) then {
 	_handFlareR = "ACE_HandFlare_Red";
 	_handFlareW = "ACE_HandFlare_White";
 	_handFlareY = "ACE_HandFlare_Yellow";
+	_entrenchingTool = "ACE_EntrenchingTool";
+	_notepad = "acex_intelitems_notepad";
+	_FacPanels = "42cdo_vs17_item";
 };
 
 /*

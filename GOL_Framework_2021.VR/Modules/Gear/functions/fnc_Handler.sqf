@@ -43,7 +43,7 @@ private [
 	"_chemB","_chemG","_chemR","_chemY",
 	"_glHE","_glHEDP","_glsmokeW","_glsmokeB","_glsmokeG","_glsmokeO","_glsmokeP","_glsmokeR","_glsmokeY","_glflareG","_glflareR","_glflareW",
 	"_map","_gps","_compass","_watch","_nvg","_parachute","_demoCharge","_satchelCharge","_toolKit",
-	"_cTab","_Android","_microDAGR","_HelmetCam",
+	"_cTab","_Android","_microDAGR","_microDAGRGps","_HelmetCam",
 	"_bandage","_blood","_epi","_morph","_IFAK","_FAKSmall","_FAKMedium","_FAKSquad","_FAKPlatoon","_pak","_saline","_salineSm",
 	"_barrel","_cables","_clacker","_defusalKit","_IRStrobe","_mapFlashLight","_mapTools","_rangefinder","_laserDesignator","_battery","_rangecard",
 	"_flashBang","_handFlareG","_handFlareR","_handFlareW","_handFlareY",
@@ -63,7 +63,16 @@ private [
 	"_HAT","_HAT_mag","_HAT_mag_HE",
 	"_AA","_AA_Mag",
 	"_pistol","_pistol_mag","_pistol_mag_tr",
-	"_useFactionRadio","_roleUseRadio","_useMineDetector","_mortarRangeCard","_ATrag","_Kestrel","_wirecutter","_UAVTerminal"
+	"_useFactionRadio","_roleUseRadio","_useMineDetector","_mortarRangeCard","_ATrag",
+	"_Kestrel","_wirecutter","_UAVTerminal","_UAVTerminalB","_UAVTerminalO","_UAVTerminalI","_entrenchingTool","_notepad","_minedetector","_FacPanels",
+	"_mineDetectorVMM3","_mineDetectorVMH3","_mineDetectorVMM3Weapon","_mineDetectorVMH3Weapon",
+	"_mineAperMineDispenserMag","_mineClaymoreMag","_mineSlamMag","_mineAperBoundingMag",
+	"_markerFlagGreen","_markerFlagRed","_spraypaintRed","_spraypaintGreen","_fortifyTool","_incendiaryGrenade",
+	"_packedMortar","_packedHMG","_packedGMG","_packedAT","_packedDroneAP","_packedDroneAT","_packedDroneRecon","_packedDroneSupply",
+	"_1rndMortarHE","_1rndMortarAB","_1rndMortarFlareW","_1rndMortarWPSmokeW","_1rndMortarSmokeW",
+	"_packedHEround","_packedHEABround","_packedSmokeRound","_packedFlareRound",
+	"_mortarWeapon","_Earplugs",
+	"_tfarPersonalRadio","_tfarHandheldRadio","_acrePRC343","_acrePRC148","_acrePRC117F"
 ];
 
 params [
@@ -80,10 +89,11 @@ _isCar = _unit isKindOf "Car";
 _isTank = _unit isKindOf "Tank";
 _errorCode = false;
 
-_OpticsAllowed = missionNamespace getVariable ["OPTICS_ALLOW",false];
-_MagnifiedOpticsAllowed = missionNamespace getVariable ["MAGNIFIED_OPTICS_ALLOW",false];
-_WeaponsAllowed = missionNamespace getVariable ["WEAPONS_ALLOW",false];
-_ArsenalAllowed = missionNamespace getVariable ["ARSENAL_ALLOW",false];
+private _OpticsAllowed = missionNamespace getVariable ["OPTICS_ALLOW",false];
+private _MagnifiedOpticsAllowed = missionNamespace getVariable ["MAGNIFIED_OPTICS_ALLOW",false];
+private _WeaponsAllowed = missionNamespace getVariable ["WEAPONS_ALLOW",false];
+private _ArsenalAllowed = missionNamespace getVariable ["ARSENAL_ALLOW",false];
+private _aceCombatDeafnessEnabled = missionNamespace getVariable ["ace_hearing_enableCombatDeafness", false];
 
 if (_isMan) then {
 	_loadout = [[],[],[],[],[],[],"","",[],[]];
@@ -108,6 +118,7 @@ if (_isMan) then {
 		case "ftl": { _DisplayName = "Fireteam Leader"; _roleArray pushBack _DisplayName};
 		case "r": { _DisplayName = "Rifleman"; _roleArray pushBack _DisplayName};
 		case "g": { _DisplayName = "Grenadier"; _roleArray pushBack _DisplayName};
+		case "engineer": { _DisplayName = "Engineer"; _roleArray pushBack _DisplayName};
 		case "ag": { _DisplayName = "Asst. Gunner"; _roleArray pushBack _DisplayName};
 		case "ar": { _DisplayName = "Automatic Rifleman"; _roleArray pushBack _DisplayName};
 		case "ammg": { _DisplayName = "Asst. Medium Machine Gunner"; _roleArray pushBack _DisplayName};
@@ -330,44 +341,25 @@ if (_isMan) then {
 		switch (_class) do {
 			case "gearbox": {
 				[_unit] remoteExecCall [QFUNC(actions), 0, true];	// Enables gear actions for all players
-				[_unit, _Earplugs, 20] call _fnc_AddObjectsCargo;
-				[_unit, "Toolkit", 10] call _fnc_AddObjectsCargo;						
-				[_unit, _mapTools, 10] call _fnc_AddObjectsCargo;						
-				[_unit, "UK3CB_BAF_M6", 5] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_60mm_HE", 15] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_60mm_HEAB", 15] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_60mm_Smoke", 15] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_60mm_Flare", 15] call _fnc_AddObjectsCargo;
-				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_Shells", 30] call _fnc_AddObjectsCargo;
-				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_AB_Shells", 30] call _fnc_AddObjectsCargo;
-				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_Flare_White", 20] call _fnc_AddObjectsCargo;
-				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_WPSmoke_White", 20] call _fnc_AddObjectsCargo;
-				[_unit, "UK3CB_BAF_1Rnd_60mm_Mo_Smoke_White", 20] call _fnc_AddObjectsCargo;
-				[_unit, "42cdo_vs17_item", 15] call _fnc_AddObjectsCargo;
-				[_unit, _glsmokeY, 20] call _fnc_AddObjectsCargo;
-				[_unit, _glflareW, 20] call _fnc_AddObjectsCargo;
-				[_unit, _glHEDP, 10] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeY, 20] call _fnc_AddObjectsCargo;
-				[_unit, _smokegrenadeB, 10] call _fnc_AddObjectsCargo;
+				if (true) then {
+					[_unit, _tfarPersonalRadio, 10] call _fnc_AddObjectsCargo;
+					[_unit, _tfarHandheldRadio, 10] call _fnc_AddObjectsCargo;
+				};
+				if (false) then {
+					[_unit, _acrePRC343, 10] call _fnc_AddObjectsCargo;
+					[_unit, _acrePRC148, 10] call _fnc_AddObjectsCargo;
+					[_unit, _acrePRC117F, 10] call _fnc_AddObjectsCargo;
+				};
 
-				[_unit, "B_UavTerminal", 10] call _fnc_AddObjectsCargo;
-				[_unit, "O_UavTerminal", 10] call _fnc_AddObjectsCargo;
-				[_unit, "I_UavTerminal", 10] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_HMG", 6] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_GMG", 6] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_Mortar", 6] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_AT", 6] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_Drone_AP", 10] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_Drone_AT", 10] call _fnc_AddObjectsCargo;				
-				[_unit, "GOL_Packed_Drone_Recon", 4] call _fnc_AddObjectsCargo;				
-				[_unit, "GOL_Packed_Drone_Supply", 4] call _fnc_AddObjectsCargo;				
+				if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
+					[_unit, _glflareW, 20] call _fnc_AddObjectsCargo;
+				};
 				[_unit, _MAT_mag_HE, 10] call _fnc_AddObjectsCargo;
 				[_unit, _AA_mag, 30] call _fnc_AddObjectsCargo;
 				[_unit, (_AA select 0), 6] call _fnc_AddObjectsCargo;
 				[_unit, (_LAT select 0), 30] call _fnc_AddObjectsCargo;
-				if (true) then {
-					[_unit, "ACE_EarPlugs", 50] call _fnc_AddObjectsCargo;
-					[_unit, _mortarRangeCard, 10] call _fnc_AddObjectsCargo;			
+				if (_aceCombatDeafnessEnabled) then {
+					[_unit, _Earplugs, 50] call _fnc_AddObjectsCargo;
 				};
 
 				if(_ArsenalAllowed isEqualTo true) then {
@@ -410,7 +402,7 @@ if (_isMan) then {
 					};		
 
 					_blackList = ["rhsusf_acc_SpecterDR_pvs27","JCA_optic_IHO_black_magnifier","JCA_optic_IHO_olive_magnifier","JCA_optic_IHO_sand_magnifier","JCA_optic_MROS_sand_magnifier","JCA_optic_MROS_olive_magnifier","JCA_optic_MROS_black_magnifier","rhsusf_acc_su230","rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","ACE_acc_pointer_green","ACE_acc_pointer_green_ir","ACE_acc_pointer_red","acc_pointer_ir","acc_pointer_ir_broken","rhsusf_acc_anpeq15_top_h","rhsusf_acc_anpeq15_top_sc","rhsusf_acc_anpeq15_wmx_sc","rhsusf_acc_anpeq15_wmx_h","rhsusf_acc_anpeq15_wmx_light_sc","rhsusf_acc_anpeq15_wmx_light_h","rhsusf_acc_anpeq15_bk_top_h","rhsusf_acc_anpeq15_bk_top_sc","rhsusf_acc_anpeq15_h","rhsusf_acc_anpeq15_sc","rhsusf_acc_anpeq15_light_sc","rhsusf_acc_anpeq15_light_h","rhsusf_acc_anpeq15_bk_h","rhsusf_acc_anpeq15_bk_sc","rhsusf_acc_anpeq15_bk_light_sc","rhsusf_acc_anpeq15_bk_light_h","rhsusf_acc_anpeq16a_top_sc","rhsusf_acc_anpeq16a_top_h","rhsusf_acc_anpeq16a_light_top_sc","rhsusf_acc_anpeq16a_light_top_h","rhsusf_acc_anpas13gv1"];
-					_whiteList = ["rhs_weap_optic_smaw"];							
+					_whiteList = ["rhs_weap_optic_smaw"];                            
 
 					if(_OpticsAllowed isEqualTo true) then {
 						if(_MagnifiedOpticsAllowed isEqualTo true) then {
@@ -551,14 +543,52 @@ if (_isMan) then {
 					missionNamespace setVariable [format["GOL_ArsenalGL_%1",_realSide], _ArsenalGL, true];
 					missionNamespace setVariable [format["GOL_ArsenalLMG_%1",_realSide], _ArsenalLMG, true];
 				};
-				if (true) then {
-					[_unit, "TFAR_pnr1000a", 10] call _fnc_AddObjectsCargo;
-					[_unit, "TFAR_anprc152", 10] call _fnc_AddObjectsCargo;
-				};
-				if (false) then {
-					[_unit, "ACRE_PRC343", 10] call _fnc_AddObjectsCargo;
-					[_unit, "ACRE_PRC148", 10] call _fnc_AddObjectsCargo;
-					[_unit, "ACRE_PRC117F", 10] call _fnc_AddObjectsCargo;
+			};
+
+			case "support_box": {
+				[_unit, _toolKit, 10] call _fnc_AddObjectsCargo;
+				[_unit, _mapTools, 10] call _fnc_AddObjectsCargo;
+				[_unit, _mortarRangeCard, 10] call _fnc_AddObjectsCargo;
+				[_unit, _mineDetectorVMM3, 5] call _fnc_AddObjectsCargo;
+				[_unit, _mineDetectorVMH3, 5] call _fnc_AddObjectsCargo;
+				[_unit, _mineAperMineDispenserMag, 10] call _fnc_AddObjectsCargo;
+				[_unit, _mineClaymoreMag, 20] call _fnc_AddObjectsCargo;
+				[_unit, _mineSlamMag, 20] call _fnc_AddObjectsCargo;
+				[_unit, _mineAperBoundingMag, 20] call _fnc_AddObjectsCargo;
+				[_unit, _satchelCharge, 10] call _fnc_AddObjectsCargo;
+				[_unit, _markerFlagGreen, 20] call _fnc_AddObjectsCargo;
+				[_unit, _markerFlagRed, 20] call _fnc_AddObjectsCargo;
+				[_unit, _spraypaintRed, 10] call _fnc_AddObjectsCargo;
+				[_unit, _spraypaintGreen, 10] call _fnc_AddObjectsCargo;
+				[_unit, _fortifyTool, 10] call _fnc_AddObjectsCargo;
+				[_unit, _UAVTerminalB, 10] call _fnc_AddObjectsCargo;
+				[_unit, _UAVTerminalO, 10] call _fnc_AddObjectsCargo;
+				[_unit, _UAVTerminalI, 10] call _fnc_AddObjectsCargo;
+
+				[_unit, _mortarWeapon, 5] call _fnc_AddObjectsCargo;
+				[_unit, _packedHEround, 15] call _fnc_AddObjectsCargo;
+				[_unit, _packedHEABround, 15] call _fnc_AddObjectsCargo;
+				[_unit, _packedSmokeRound, 15] call _fnc_AddObjectsCargo;
+				[_unit, _packedFlareRound, 15] call _fnc_AddObjectsCargo;
+				[_unit, _1rndMortarHE, 30] call _fnc_AddObjectsCargo;
+				[_unit, _1rndMortarAB, 30] call _fnc_AddObjectsCargo;
+				[_unit, _1rndMortarFlareW, 20] call _fnc_AddObjectsCargo;
+				[_unit, _1rndMortarWPSmokeW, 20] call _fnc_AddObjectsCargo;
+				[_unit, _1rndMortarSmokeW, 20] call _fnc_AddObjectsCargo;
+
+				[_unit, _packedHMG, 6] call _fnc_AddObjectsCargo;
+				[_unit, _packedGMG, 6] call _fnc_AddObjectsCargo;
+				[_unit, _packedMortar, 6] call _fnc_AddObjectsCargo;
+				[_unit, _packedAT, 6] call _fnc_AddObjectsCargo;
+				[_unit, _packedDroneAP, 10] call _fnc_AddObjectsCargo;
+				[_unit, _packedDroneAT, 10] call _fnc_AddObjectsCargo;
+				[_unit, _packedDroneRecon, 4] call _fnc_AddObjectsCargo;
+				[_unit, _packedDroneSupply, 4] call _fnc_AddObjectsCargo;
+				[_unit, _FacPanels, 15] call _fnc_AddObjectsCargo;
+
+				if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
+					[_unit, _chemG, 3] call _fnc_AddObjectsCargo;
+					[_unit, _chemR, 3] call _fnc_AddObjectsCargo;
 				};
 			};
 
@@ -601,6 +631,7 @@ if (_isMan) then {
 				[_unit, _glHEDP, 16] call _fnc_AddObjectsCargo;
 				[_unit, _glsmokeR, 8] call _fnc_AddObjectsCargo;
 				[_unit, _grenade, 8] call _fnc_AddObjectsCargo;
+				[_unit, _incendiaryGrenade, 8] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 10] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 4] call _fnc_AddObjectsCargo;
 				[_unit, _bandage, 30] call _fnc_AddObjectsCargo;
@@ -637,6 +668,7 @@ if (_isMan) then {
 				[_unit, _glHEDP, 16] call _fnc_AddObjectsCargo;
 				[_unit, _glsmokeR, 8] call _fnc_AddObjectsCargo;
 				[_unit, _grenade, 8] call _fnc_AddObjectsCargo;				
+				[_unit, _incendiaryGrenade, 8] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 8] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 6] call _fnc_AddObjectsCargo;
 				[_unit, _bandage, 20] call _fnc_AddObjectsCargo;
@@ -653,13 +685,13 @@ if (_isMan) then {
 				[_unit, _HAT_mag, 3] call _fnc_AddObjectsCargo;
 				[_unit, _AA_mag, 4] call _fnc_AddObjectsCargo;
 				[_unit, _demoCharge, 4] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_60mm_HE", 5] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_60mm_HEAB", 5] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_60mm_Smoke", 5] call _fnc_AddObjectsCargo;
+				[_unit, _packedHEround, 5] call _fnc_AddObjectsCargo;
+				[_unit, _packedHEABround, 5] call _fnc_AddObjectsCargo;
+				[_unit, _packedSmokeRound, 5] call _fnc_AddObjectsCargo;
 				
-				[_unit, "GOL_Packed_Drone_AT", 4] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_Drone_AP", 4] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_Drone_Recon", 1] call _fnc_AddObjectsCargo;				
+				[_unit, _packedDroneAT, 4] call _fnc_AddObjectsCargo;
+				[_unit, _packedDroneAP, 4] call _fnc_AddObjectsCargo;
+				[_unit, _packedDroneRecon, 1] call _fnc_AddObjectsCargo;				
 
 				if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
 					[_unit, _glflareW, 16] call _fnc_AddObjectsCargo;
@@ -671,7 +703,7 @@ if (_isMan) then {
 					[_unit, _chemR, 6] call _fnc_AddObjectsCargo;
 					[_unit, _chemG, 9] call _fnc_AddObjectsCargo;	
 					[_unit, _grenadeIR, 8] call _fnc_AddObjectsCargo;	
-					[_unit, "GOL_Packed_60mm_Flare", 5] call _fnc_AddObjectsCargo;											
+					[_unit, _packedFlareRound, 5] call _fnc_AddObjectsCargo;									
 				};				
 			};
 
@@ -679,6 +711,7 @@ if (_isMan) then {
 				[_unit, _glHEDP, 24] call _fnc_AddObjectsCargo;
 				[_unit, _glsmokeR, 20] call _fnc_AddObjectsCargo;
 				[_unit, _grenade, 16] call _fnc_AddObjectsCargo;
+				[_unit, _incendiaryGrenade, 16] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeY, 15] call _fnc_AddObjectsCargo;
 				[_unit, _smokegrenadeB, 5] call _fnc_AddObjectsCargo;
 				[_unit, _bandage, 50] call _fnc_AddObjectsCargo;
@@ -698,13 +731,13 @@ if (_isMan) then {
 				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 3)] call _fnc_AddObjectsCargo;
 				[_unit, _MMG_mag, (COUNT_AR_MAGS(_MMG_mag) * 1)] call _fnc_AddObjectsCargo;
 
-				[_unit, "GOL_Packed_60mm_HE", 8] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_60mm_HEAB", 8] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_60mm_Smoke", 5] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_60mm_Flare", 5] call _fnc_AddObjectsCargo;				
-				[_unit, "GOL_Packed_Drone_AT", 8] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_Drone_AP", 8] call _fnc_AddObjectsCargo;
-				[_unit, "GOL_Packed_Drone_Recon", 2] call _fnc_AddObjectsCargo;
+				[_unit, _packedHEround, 8] call _fnc_AddObjectsCargo;
+				[_unit, _packedHEABround, 8] call _fnc_AddObjectsCargo;
+				[_unit, _packedSmokeRound, 5] call _fnc_AddObjectsCargo;
+				[_unit, _packedFlareRound, 5] call _fnc_AddObjectsCargo;				
+				[_unit, _packedDroneAT, 8] call _fnc_AddObjectsCargo;
+				[_unit, _packedDroneAP, 8] call _fnc_AddObjectsCargo;
+				[_unit, _packedDroneRecon, 2] call _fnc_AddObjectsCargo;
 				if (_LAT_ReUsable) then {
 					[_unit, _LAT_mag, 6] call _fnc_AddObjectsCargo;
 				} else {
