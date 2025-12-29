@@ -292,7 +292,7 @@ switch (toLower(_role)) do {
 			[[_handFlareG,1]] call _addToBackpack;
 		};
 		[[_MAT_mag_HE,2],[_entrenchingTool,1],[_wirecutter,1]] call _addToBackpack;
-		[_MAT, _MAT_mag, ""] call _addLaunchers;
+		[_MAT, _MAT_mag_HE, ""] call _addLaunchers;
 		if(_MAT select 0 == "") then {
 			if (_LAT_ReUsable) then {
 				[[_LAT_mag,1]] call _addToBackpack;
