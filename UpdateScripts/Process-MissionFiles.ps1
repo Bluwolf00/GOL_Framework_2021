@@ -108,6 +108,8 @@ $replacements = @(
     @{ From = '"OKS_PowerGenerator"'; To = '"OKS_fnc_PowerGenerator"' },
     @{ From = 'OKS_PowerGenerator'; To = 'OKS_fnc_PowerGenerator' },
     @{ From = 'GW_Ambient_AAA'; To = 'OKS_fnc_Ambient_AAA' },
+    @{ From = 'OKS_IR_AA'; To = 'OKS_fnc_IR_AA' },
+    @{ From = 'OKS_DeleteDeadAndObjects'; To = 'OKS_fnc_DeleteDeadAndObjects' },
     @{ From = 'OKS_Destroy_Task'; To = 'OKS_fnc_Destroy_Task' },
     @{ From = 'OKS_Lambs_Spawner'; To = 'OKS_fnc_Lambs_Spawner' },
     @{ From = 'OKS_ArtySupression'; To = 'OKS_fnc_ArtySuppression' },
@@ -133,6 +135,17 @@ function Replace-AllStringsCaseInsensitive($content, $replacements) {
     foreach ($rep in $replacements) {
         $content = [regex]::Replace($content, [regex]::Escape($rep.From), [System.Text.RegularExpressions.MatchEvaluator]{ $rep.To }, "IgnoreCase")
     }
+    return $content
+}
+
+function Remove-LegacyLines($content) {
+    # Remove full lines containing legacy calls that should no longer exist
+    # Example: [... ] spawn OKS_Inactive_VehicleSpawn;
+    $content = [regex]::Replace(
+        $content,
+        '(?im)^.*\bspawn\s+OKS_Inactive_VehicleSpawn\b\s*;\s*(?:\r?\n|$)',
+        ''
+    )
     return $content
 }
 
@@ -165,11 +178,13 @@ function Replace-ImagePaths($content) {
 # === Apply replacements and image path fixes to all files ===
 $missionContent = Replace-AllStringsCaseInsensitive $missionContent $replacements
 $missionContent = Replace-ImagePaths $missionContent
+$missionContent = Remove-LegacyLines $missionContent
 
 foreach ($file in $extraFileContents.Keys) {
     $content = $extraFileContents[$file]
     $content = Replace-AllStringsCaseInsensitive $content $replacements
     $content = Replace-ImagePaths $content
+    $content = Remove-LegacyLines $content
     $filePath = Join-Path $MissionDir $file
     $content | Set-Content -Path $filePath -Encoding UTF8
     Log-Message "$file updated successfully"
@@ -178,6 +193,7 @@ foreach ($file in $extraFileContents.Keys) {
 # === Apply replacements and image path fixes to mission.sqm ===
 $missionContent = Replace-AllStringsCaseInsensitive $missionContent $replacements
 $missionContent = Replace-ImagePaths $missionContent
+$missionContent = Remove-LegacyLines $missionContent
 
 # === Reset GW_isConfigured to trigger first-time setup ===
 # Look for the pattern: property="GW_isConfigured"; ... value=1; and change value to 0
@@ -223,6 +239,7 @@ if ($descContent) {
             Log-Message "Replaced '$key' with '$($descReplacements[$key])' in Description.ext"
         }
     }
+    $descContent = Remove-LegacyLines $descContent
     $descContent | Set-Content -Path $descExtPath -Encoding UTF8
     Log-Message "Description.ext updated"
 }

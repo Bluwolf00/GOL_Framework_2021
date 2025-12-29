@@ -13,12 +13,15 @@ Write-Host "WARNING: This script will DELETE the following folders and files fro
 Write-Host " - Core"
 Write-Host " - Modules"
 Write-Host " - Scripts"
+Write-Host " - Description.ext"
 Write-Host " - missionSettings.sqf"
 Write-Host " - script_component.hpp"
 Write-Host " - onPlayerRespawn.sqf"
 Write-Host " - InitPlayerLocal.sqf"
 Write-Host " - Init.sqf"
 Write-Host " - All loadimage.jpg files (recursively)"
+Write-Host ""
+Write-Host "Note: Description.ext is deleted so you can paste the latest template version without overwrite prompts."
 Write-Host ""
 Write-Host "Have you made a backup of your mission folder? (Y/N): "
 $response = Read-Host
@@ -31,7 +34,7 @@ if ($response -notmatch "^[Yy]$") {
 & "$ScriptDir\Clean-Folders.ps1" -FoldersToDelete @("Core", "Modules", "Scripts") -LogFile $LogFile
 
 # 2. Clean files
-& "$ScriptDir\Clean-Files.ps1" -FilesToDelete @("missionSettings.sqf","init.sqf","initPlayerLocal.sqf","script_Component.hpp","PlatoonRoster.jpg","onPlayerRespawn.sqf") -LogFile $LogFile
+& "$ScriptDir\Clean-Files.ps1" -FilesToDelete @("Description.ext","missionSettings.sqf","init.sqf","initPlayerLocal.sqf","script_Component.hpp","PlatoonRoster.jpg","onPlayerRespawn.sqf") -LogFile $LogFile
 
 # 3. Show manual copy instructions
 & "$ScriptDir\Show-ManualCopyInstructions.ps1"

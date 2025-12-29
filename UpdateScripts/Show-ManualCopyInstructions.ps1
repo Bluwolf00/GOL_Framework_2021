@@ -1,5 +1,6 @@
 Write-Host ""
-Write-Host "Please COPY and PASTE the following files and folders from your framework folder into this folder:"
+Write-Host "Please COPY and PASTE the following files and folders from your framework template folder into this folder:"
+Write-Host "(Note: The updater deleted these, so you should NOT get overwrite prompts)"
 Write-Host " - Description.ext"
 Write-Host " - Init.sqf"
 Write-Host " - CurrentAddonOptionsImportSettings.txt"
