@@ -1,21 +1,42 @@
 param(
-    [string]$LogFile
+    [string]$LogFile,
+    [string]$MissionDir
 )
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$MissionDir = Split-Path -Parent $ScriptDir
+$MissionDir = if ($MissionDir) { (Resolve-Path -LiteralPath $MissionDir).Path } else { Split-Path -Parent $ScriptDir }
 Set-Location $MissionDir
+
+if (-not $LogFile) {
+    $LogFile = Join-Path $MissionDir "undo_log.txt"
+} elseif (-not [System.IO.Path]::IsPathRooted($LogFile)) {
+    $LogFile = Join-Path $MissionDir $LogFile
+}
 
 function Log-Message {
     param([string]$msg)
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    "$timestamp - $msg" | Tee-Object -FilePath $LogFile -Append
+    $line = "$timestamp - $msg"
+    Write-Host $line
+    if ($LogFile) {
+        try {
+            Add-Content -Path $LogFile -Value $line -Encoding UTF8 -ErrorAction Stop
+        } catch {
+            Write-Warning "Failed to write log file: $($_.Exception.Message)"
+        }
+    }
 }
+
+Log-Message "Starting mission processing in: $MissionDir"
+Log-Message "Log file: $LogFile"
 
 # === Files to process ===
 $missionSqmPath = Join-Path $MissionDir "mission.sqm"
 $descExtPath = Join-Path $MissionDir "Description.ext"
-$extraFiles = @("spawnlist.sqf") # Add more .sqf files here if needed
+$extraFiles = @(
+    "spawnList.sqf",
+    "spawnlist.sqf"
+) # Add more .sqf files here if needed
 
 # === Load files ===
 if (-not (Test-Path $missionSqmPath)) {
@@ -23,10 +44,12 @@ if (-not (Test-Path $missionSqmPath)) {
     exit 1
 }
 $missionContent = Get-Content $missionSqmPath -Raw
+Log-Message "Loaded mission.sqm"
 
 $descContent = ""
 if (Test-Path $descExtPath) {
     $descContent = Get-Content $descExtPath -Raw
+    Log-Message "Loaded Description.ext"
 } else {
     Log-Message "Warning: Description.ext not found."
 }
@@ -87,6 +110,17 @@ $replacements = @(
     @{ From = 'execVM "Scripts\OKS_Ambience\OKS_ArtySuppression.sqf";'; To = 'spawn OKS_fnc_ArtySuppression;' },
     @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_ArtySuppression.sqf""'; To = 'spawn OKS_fnc_ArtySuppression' },
     @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_ArtySuppression.sqf"";'; To = 'spawn OKS_fnc_ArtySuppression;' },
+
+    # ArtySuppression: legacy missions may reference function-file from OKS_Spawn
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_fnc_ArtySuppression.sqf"'; To = 'spawn OKS_fnc_ArtySuppression' },
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_fnc_ArtySuppression.sqf";'; To = 'spawn OKS_fnc_ArtySuppression;' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_fnc_ArtySuppression.sqf""'; To = 'spawn OKS_fnc_ArtySuppression' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_fnc_ArtySuppression.sqf"";'; To = 'spawn OKS_fnc_ArtySuppression;' },
+
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_ArtySuppression.sqf"'; To = 'spawn OKS_fnc_ArtySuppression' },
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_ArtySuppression.sqf";'; To = 'spawn OKS_fnc_ArtySuppression;' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_ArtySuppression.sqf""'; To = 'spawn OKS_fnc_ArtySuppression' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_ArtySuppression.sqf"";'; To = 'spawn OKS_fnc_ArtySuppression;' },
 
     @{ From = 'execVM "Scripts\OKS_Ambience\OKS_fnc_CreateZone.sqf"'; To = 'spawn OKS_fnc_CreateZone' },
     @{ From = 'execVM "Scripts\OKS_Ambience\OKS_fnc_CreateZone.sqf";'; To = 'spawn OKS_fnc_CreateZone;' },
@@ -196,6 +230,168 @@ function Remove-LegacyLines($content) {
     return $content
 }
 
+function Apply-StructuredLegacyRewrites($content) {
+    # Handle legacy function calls where the new function requires a different parameter order/count.
+    # These rewrites run BEFORE the simple literal replacement table.
+
+    $ordinalIgnoreCase = [System.StringComparison]::OrdinalIgnoreCase
+
+    # OKS_Rush_Wavespawn -> OKS_fnc_Lambs_Wavespawn (inserts "rush" before side)
+    # Legacy: [[pos1,pos2],UnitsPerWave,AmountOfWaves,DelayPerWave,Side,Range,"Var"] spawn OKS_Rush_Wavespawn;
+    # New:    [[pos1,pos2],UnitsPerWave,AmountOfWaves,DelayPerWave,"rush",Side,Range,"Var"] spawn OKS_fnc_Lambs_Wavespawn;
+    if ($content.IndexOf('OKS_Rush_Wavespawn', $ordinalIgnoreCase) -ge 0) {
+        $content = [regex]::Replace(
+            $content,
+            '(?is)\[\s*(\[[^\]]*\])\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*([^\]]+?)\s*\]\s*(spawn|call)\s+OKS_Rush_Wavespawn\b',
+            {
+                param($m)
+                [string]::Format(
+                    '[{0},{1},{2},{3},"rush",{4},{5},{6}] {7} OKS_fnc_Lambs_Wavespawn',
+                    $m.Groups[1].Value,
+                    $m.Groups[2].Value,
+                    $m.Groups[3].Value,
+                    $m.Groups[4].Value,
+                    $m.Groups[5].Value,
+                    $m.Groups[6].Value,
+                    $m.Groups[7].Value,
+                    $m.Groups[8].Value
+                )
+            }
+        )
+    }
+
+    # OKS_Rush_Spawner -> OKS_fnc_Lambs_Spawner (inserts "rush" as 2nd arg)
+    # Legacy: [SpawnPos,UnitsPerBase,Side,Range,[],Trigger] spawn OKS_Rush_Spawner;
+    # New:    [SpawnPos,"rush",UnitsPerBase,Side,Range,[],Trigger] spawn OKS_fnc_Lambs_Spawner;
+    if ($content.IndexOf('OKS_Rush_Spawner', $ordinalIgnoreCase) -ge 0) {
+        $content = [regex]::Replace(
+            $content,
+            '(?is)\[\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*(\[[^\]]*\])\s*,\s*([^\]]+?)\s*\]\s*(spawn|call)\s+OKS_Rush_Spawner\b',
+            {
+                param($m)
+                [string]::Format(
+                    '[{0},"rush",{1},{2},{3},{4},{5}] {6} OKS_fnc_Lambs_Spawner',
+                    $m.Groups[1].Value,
+                    $m.Groups[2].Value,
+                    $m.Groups[3].Value,
+                    $m.Groups[4].Value,
+                    $m.Groups[5].Value,
+                    $m.Groups[6].Value,
+                    $m.Groups[7].Value
+                )
+            }
+        )
+    }
+
+    # OKS_fnc_Rush_SpawnGroup -> OKS_fnc_Lambs_SpawnGroup (inserts "rush" as 2nd arg)
+    # Legacy: [SpawnPos,InfantryCountOrVehicleArray,Side,Range,[]] spawn OKS_fnc_Rush_SpawnGroup;
+    # New:    [SpawnPos,"rush",InfantryCountOrVehicleArray,Side,Range,[]] spawn OKS_fnc_Lambs_SpawnGroup;
+    if ($content.IndexOf('OKS_fnc_Rush_SpawnGroup', $ordinalIgnoreCase) -ge 0) {
+        $content = [regex]::Replace(
+            $content,
+            '(?is)\[\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*(\[[^\]]*\])\s*\]\s*(spawn|call)\s+OKS_fnc_Rush_SpawnGroup\b',
+            {
+                param($m)
+                [string]::Format(
+                    '[{0},"rush",{1},{2},{3},{4}] {5} OKS_fnc_Lambs_SpawnGroup',
+                    $m.Groups[1].Value,
+                    $m.Groups[2].Value,
+                    $m.Groups[3].Value,
+                    $m.Groups[4].Value,
+                    $m.Groups[5].Value,
+                    $m.Groups[6].Value
+                )
+            }
+        )
+    }
+
+    # OKS_PlayerWaypoint_SpawnGroup -> OKS_fnc_Lambs_SpawnGroup (Lambs type "attack")
+    # Legacy commonly: [SpawnPos,UnitOrClassname,Side,Range,TargetWaypoint,StepWaypoint,<legacyFlag>] (spawn/call)
+    # New:             [SpawnPos,"attack",UnitOrClassname,Side,Range,[]] (target/step/flag are not used by Lambs SpawnGroup)
+    if ($content.IndexOf('OKS_PlayerWaypoint_SpawnGroup', $ordinalIgnoreCase) -ge 0) {
+        # Keep this pattern intentionally simple for performance and reliability.
+        # Assumes: 1st arg is scalar or simple array; 2nd arg is scalar or selectRandom[...] or simple array.
+        $spawnArg = '(?:\[[^\]]*\]|[^,\]]+)'
+        $unitArg = '(?:selectRandom\[[^\]]*\]|\[[^\]]*\]|[^,\]]+)'
+        $pattern = "(?is)\[\s*($spawnArg)\s*,\s*($unitArg)\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*[^\]]*\]\s*(spawn|call)\s+OKS_PlayerWaypoint_SpawnGroup\b"
+        $content = [regex]::Replace(
+            $content,
+            $pattern,
+            {
+                param($m)
+                $spawn = $m.Groups[1].Value
+                $classnameOrNumber = $m.Groups[2].Value
+                $side = $m.Groups[3].Value
+                $range = $m.Groups[4].Value
+                $mode = $m.Groups[5].Value
+                "[$spawn,""attack"",$classnameOrNumber,$side,$range,[]] $mode OKS_fnc_Lambs_SpawnGroup"
+            }
+        )
+    }
+
+    # OKS_fnc_Lambs_SpawnGroup vehicle argument normalization
+    # fn_Lambs_SpawnGroup expects the 3rd parameter to be either:
+    # - SCALAR (infantry count)
+    # - ARRAY  (vehicle mode): [_VehicleTypesArray, _CargoCount]
+    # Some legacy spawnLists pass a vehicle classname string or selectRandom[...] (string) as param #3.
+    # This rewrite converts those into: [["classname"],0] or [["a","b"],0]
+    if ($content.IndexOf('OKS_fnc_Lambs_SpawnGroup', $ordinalIgnoreCase) -ge 0) {
+        $spawnArg = '(?:\[[^\]]*\]|[^,\]]+)'
+        $typeArg = '"[^"]+"'
+        $vehicleArg = '(?:selectRandom\[[^\]]+\]|"[^"]+")'
+        $tailArg = '(?:\[[^\]]*\]|[^,\]]+)'
+
+        $pattern = "(?is)\[\s*($spawnArg)\s*,\s*($typeArg)\s*,\s*($vehicleArg)\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*($tailArg)\s*\]\s*(spawn|call)\s+OKS_fnc_Lambs_SpawnGroup\b"
+
+        $content = [regex]::Replace(
+            $content,
+            $pattern,
+            {
+                param($m)
+                $spawn = $m.Groups[1].Value
+                $lambsType = $m.Groups[2].Value
+                $vehicleSpec = $m.Groups[3].Value
+                $side = $m.Groups[4].Value
+                $range = $m.Groups[5].Value
+                $arr = $m.Groups[6].Value
+                $mode = $m.Groups[7].Value
+
+                $vehicleTypesArray = $null
+                if ($vehicleSpec -match '^selectRandom\[(?<arr>[^\]]+)\]$') {
+                    # $Matches['arr'] is the inner list (e.g. "a","b") so wrap it back into an array literal.
+                    $vehicleTypesArray = "[$($Matches['arr'])]"
+                } else {
+                    # quoted classname string
+                    $vehicleTypesArray = "[$vehicleSpec]"
+                }
+
+                "[$spawn,$lambsType,[$vehicleTypesArray,0],$side,$range,$arr] $mode OKS_fnc_Lambs_SpawnGroup"
+            }
+        )
+
+        # Fix malformed vehicle arrays like ["a","b",0] -> [["a","b"],0]
+        # (Only targets cases where the 3rd argument is an array of 2+ strings ending with 0.)
+        $patternFix = '(?is)\[\s*(' + $spawnArg + ')\s*,\s*(' + $typeArg + ')\s*,\s*\[(\s*"[^"]+"(?:\s*,\s*"[^"]+")+\s*),\s*0\s*\]\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*(' + $tailArg + ')\s*\]\s*(spawn|call)\s+OKS_fnc_Lambs_SpawnGroup\b'
+        $content = [regex]::Replace(
+            $content,
+            $patternFix,
+            {
+                param($m)
+                $spawn = $m.Groups[1].Value
+                $lambsType = $m.Groups[2].Value
+                $vehicleList = $m.Groups[3].Value
+                $side = $m.Groups[4].Value
+                $range = $m.Groups[5].Value
+                $arr = $m.Groups[6].Value
+                $mode = $m.Groups[7].Value
+                "[$spawn,$lambsType,[[$vehicleList],0],$side,$range,$arr] $mode OKS_fnc_Lambs_SpawnGroup"
+            }
+        )
+    }
+
+    return $content
+}
+
 function Replace-ImagePaths($content) {
     # Only process init= lines in mission.sqm, don't touch Description.ext image paths
     $content = [regex]::Replace($content, '(init\s*=\s*["'']{1,2})(.*?)(["'']{1,2};)', {
@@ -222,25 +418,30 @@ function Replace-ImagePaths($content) {
     return $content
 }
 
-# === Apply replacements and image path fixes to all files ===
-$missionContent = Replace-AllStringsCaseInsensitive $missionContent $replacements
-$missionContent = Replace-ImagePaths $missionContent
-$missionContent = Remove-LegacyLines $missionContent
-
 foreach ($file in $extraFileContents.Keys) {
     $content = $extraFileContents[$file]
+    $content = Apply-StructuredLegacyRewrites $content
     $content = Replace-AllStringsCaseInsensitive $content $replacements
-    $content = Replace-ImagePaths $content
     $content = Remove-LegacyLines $content
     $filePath = Join-Path $MissionDir $file
-    $content | Set-Content -Path $filePath -Encoding UTF8
-    Log-Message "$file updated successfully"
+    try {
+        $content | Set-Content -Path $filePath -Encoding UTF8 -ErrorAction Stop
+        Log-Message "$file updated successfully"
+    } catch {
+        Log-Message "Failed to save ${file}: $($_.Exception.Message)"
+    }
 }
 
 # === Apply replacements and image path fixes to mission.sqm ===
+Log-Message "Processing mission.sqm rewrites..."
+$missionContent = Apply-StructuredLegacyRewrites $missionContent
+Log-Message "mission.sqm: structured rewrites done"
 $missionContent = Replace-AllStringsCaseInsensitive $missionContent $replacements
+Log-Message "mission.sqm: string replacements done"
 $missionContent = Replace-ImagePaths $missionContent
+Log-Message "mission.sqm: image path fixes done"
 $missionContent = Remove-LegacyLines $missionContent
+Log-Message "mission.sqm: legacy line removal done"
 
 # === Reset GW_isConfigured to trigger first-time setup ===
 # Look for the pattern: property="GW_isConfigured"; ... value=1; and change value to 0
@@ -287,13 +488,18 @@ if ($descContent) {
         }
     }
     $descContent = Remove-LegacyLines $descContent
-    $descContent | Set-Content -Path $descExtPath -Encoding UTF8
-    Log-Message "Description.ext updated"
+    try {
+        $descContent | Set-Content -Path $descExtPath -Encoding UTF8 -ErrorAction Stop
+        Log-Message "Description.ext updated"
+    } catch {
+        Log-Message "Failed to save Description.ext: $($_.Exception.Message)"
+    }
 }
 
 # === Save mission.sqm ===
 try {
-    $missionContent | Set-Content -Path $missionSqmPath -Encoding UTF8
+    Log-Message "Saving mission.sqm..."
+    $missionContent | Set-Content -Path $missionSqmPath -Encoding UTF8 -ErrorAction Stop
     Log-Message "mission.sqm updated successfully"
 } catch {
     Log-Message "Failed to save mission.sqm: $($_.Exception.Message)"

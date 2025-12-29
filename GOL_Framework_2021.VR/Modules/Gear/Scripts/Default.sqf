@@ -118,7 +118,7 @@ switch (toLower(_role)) do {
 
 	case "fac": {
 		[_goggles,_helmet,_uniform,_vest,_backpackRadio] call _addEquipment;
-		[_rifleGL, _rifle_mag_tr, _glsmokeR] call _addPrimary;
+		[_rifleGL, _rifleGL_mag_tr, _glsmokeR] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
 		[[_mapTools,1],[_notepad,1],[_cables,6],[_gps,1],[_pistol_mag,2],[_grenade,2],[_smokegrenadeY,5]] call _addToUniform;
