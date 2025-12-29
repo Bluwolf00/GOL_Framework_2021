@@ -83,12 +83,47 @@ $replacements = @(
     @{ From = 'execVM ""Scripts\NEKY_Mortars\NEKY_Mortars.sqf""'; To = 'spawn OKS_fnc_Mortars' },
     @{ From = 'execVM "Scripts\OKS_Task\OKS_Evacuate_HVT.sqf"'; To = 'spawn OKS_fnc_Evacuate_HVT' },
     @{ From = 'execVM ""Scripts\OKS_Task\OKS_Evacuate_HVT.sqf""'; To = 'spawn OKS_fnc_Evacuate_HVT' },
+    @{ From = 'execVM "Scripts\OKS_Ambience\OKS_ArtySuppression.sqf"'; To = 'spawn OKS_fnc_ArtySuppression' },
     @{ From = 'execVM "Scripts\OKS_Ambience\OKS_ArtySuppression.sqf";'; To = 'spawn OKS_fnc_ArtySuppression;' },
+    @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_ArtySuppression.sqf""'; To = 'spawn OKS_fnc_ArtySuppression' },
     @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_ArtySuppression.sqf"";'; To = 'spawn OKS_fnc_ArtySuppression;' },
+
     @{ From = 'execVM "Scripts\OKS_Ambience\OKS_fnc_CreateZone.sqf"'; To = 'spawn OKS_fnc_CreateZone' },
-    @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_fnc_CreateZone.sq""'; To = 'spawn OKS_fnc_CreateZone' },
-    @{ From = 'execVM "Scripts\OKS_Ambience\OKS_ArtyFire.sqf"'; To = 'spawn OKS_fnc_ArtyFire;' },
-    @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_ArtyFire.sqf"";'; To = 'spawn OKS_fnc_ArtyFire;' },
+    @{ From = 'execVM "Scripts\OKS_Ambience\OKS_fnc_CreateZone.sqf";'; To = 'spawn OKS_fnc_CreateZone;' },
+    @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_fnc_CreateZone.sqf""'; To = 'spawn OKS_fnc_CreateZone' },
+    @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_fnc_CreateZone.sqf"";'; To = 'spawn OKS_fnc_CreateZone;' },
+
+    # ArtyFire: legacy missions often use the function-file name via execVM
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_fnc_ArtyFire.sqf"'; To = 'spawn OKS_fnc_ArtyFire' },
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_fnc_ArtyFire.sqf";'; To = 'spawn OKS_fnc_ArtyFire;' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_fnc_ArtyFire.sqf""'; To = 'spawn OKS_fnc_ArtyFire' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_fnc_ArtyFire.sqf"";'; To = 'spawn OKS_fnc_ArtyFire;' },
+
+    # AirSpawn/AirStrike/AirCargoDrop/Helicopter_Attack: legacy script paths
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_AirSpawn.sqf"'; To = 'spawn OKS_fnc_AirSpawn' },
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_AirSpawn.sqf";'; To = 'spawn OKS_fnc_AirSpawn;' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_AirSpawn.sqf""'; To = 'spawn OKS_fnc_AirSpawn' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_AirSpawn.sqf"";'; To = 'spawn OKS_fnc_AirSpawn;' },
+
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_AirStrike.sqf"'; To = 'spawn OKS_fnc_AirStrike' },
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_AirStrike.sqf";'; To = 'spawn OKS_fnc_AirStrike;' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_AirStrike.sqf""'; To = 'spawn OKS_fnc_AirStrike' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_AirStrike.sqf"";'; To = 'spawn OKS_fnc_AirStrike;' },
+
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_AirCargoDrop.sqf"'; To = 'spawn OKS_fnc_AirCargoDrop' },
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_AirCargoDrop.sqf";'; To = 'spawn OKS_fnc_AirCargoDrop;' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_AirCargoDrop.sqf""'; To = 'spawn OKS_fnc_AirCargoDrop' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_AirCargoDrop.sqf"";'; To = 'spawn OKS_fnc_AirCargoDrop;' },
+
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_Helicopter_Attack.sqf"'; To = 'spawn OKS_fnc_Helicopter_Attack' },
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_Helicopter_Attack.sqf";'; To = 'spawn OKS_fnc_Helicopter_Attack;' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_Helicopter_Attack.sqf""'; To = 'spawn OKS_fnc_Helicopter_Attack' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_Helicopter_Attack.sqf"";'; To = 'spawn OKS_fnc_Helicopter_Attack;' },
+
+    @{ From = 'execVM "Scripts\OKS_Ambience\OKS_AlarmSound.sqf"'; To = 'spawn OKS_fnc_AlarmSound' },
+    @{ From = 'execVM "Scripts\OKS_Ambience\OKS_AlarmSound.sqf";'; To = 'spawn OKS_fnc_AlarmSound;' },
+    @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_AlarmSound.sqf""'; To = 'spawn OKS_fnc_AlarmSound' },
+    @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_AlarmSound.sqf"";'; To = 'spawn OKS_fnc_AlarmSound;' },
     @{ From = 'execVM "Scripts\OKS_Task\OKS_Defuse_Explosive.sqf"'; To = 'spawn OKS_fnc_Defuse_Explosive;' },
     @{ From = 'execVM ""Scripts\OKS_Task\OKS_Defuse_Explosive.sqf"";'; To = 'spawn OKS_fnc_Defuse_Explosive;' },	
     @{ From = 'execVM "Scripts\OKS_Task\OKS_Destroy_Task.sqf"'; To = 'spawn OKS_fnc_Destroy_Task;' },
@@ -101,6 +136,11 @@ $replacements = @(
         @{ From = 'execVM ""Scripts\OKS_Task\OKS_Request_Intel\OKS_Request_Intel.sqf"";'; To = 'spawn OKS_fnc_Request_Intel;' },
     @{ From = 'OKS_Evacuate_HVT'; To = 'OKS_fnc_Evacuate_HVT' },
     @{ From = 'OKS_ArtyFire'; To = 'OKS_fnc_ArtyFire' },
+    @{ From = 'OKS_AI_Battle'; To = 'OKS_fnc_AI_Battle' },
+    @{ From = 'OKS_AirSpawn'; To = 'OKS_fnc_AirSpawn' },
+    @{ From = 'OKS_AirStrike'; To = 'OKS_fnc_AirStrike' },
+    @{ From = 'OKS_AirCargoDrop'; To = 'OKS_fnc_AirCargoDrop' },
+    @{ From = 'OKS_Helicopter_Attack'; To = 'OKS_fnc_Helicopter_Attack' },
     @{ From = 'OKS_Scout'; To = 'OKS_fnc_AirScout' },
     @{ From = 'OKS_fnc_Scout'; To = 'OKS_fnc_AirScout' },
     @{ From = 'NEKY_Hunt_HuntBase'; To = 'OKS_fnc_Huntbase' },
@@ -128,14 +168,14 @@ $replacements = @(
     @{ From = 'OKS_Defuse_Explosive'; To = 'OKS_fnc_Defuse_Explosive' },
     @{ From = 'OKS_Convoy_Spawn'; To = 'OKS_fnc_Convoy_Spawn' },
     @{ From = 'NEKY_Airbase'; To = 'OKS_fnc_Airbase' },
-    @{ From = '#include "script_Component.hpp"'; To = '#include "\OKS_GOL_MISC\script_Component.hpp"' }	
-    @{ From = 'OKS_SAM'; To = 'OKS_fnc_SAM' }	
-    @{ From = 'OKS_CreateObjectives'; To = 'OKS_fnc_CreateObjectives' }	
-    @{ From = 'OKS_Rescue_Friendly'; To = 'OKS_fnc_Rescue_Friendly' }	
-    @{ From = 'OKS_Convoy_Reinforce'; To = 'OKS_fnc_Convoy_Reinforce' }	
-    @{ From = 'OKS_Surrender'; To = 'OKS_fnc_Surrender' }	
-    @{ From = 'OKS_Civilians'; To = 'OKS_fnc_Civilians' }	
-    @{ From = 'OKS_Retexture'; To = 'OKS_fnc_Retexture' }	
+    @{ From = '#include "script_Component.hpp"'; To = '#include "\OKS_GOL_MISC\script_Component.hpp"' },
+    @{ From = 'OKS_SAM'; To = 'OKS_fnc_SAM' },
+    @{ From = 'OKS_CreateObjectives'; To = 'OKS_fnc_CreateObjectives' },
+    @{ From = 'OKS_Rescue_Friendly'; To = 'OKS_fnc_Rescue_Friendly' },
+    @{ From = 'OKS_Convoy_Reinforce'; To = 'OKS_fnc_Convoy_Reinforce' },
+    @{ From = 'OKS_Surrender'; To = 'OKS_fnc_Surrender' },
+    @{ From = 'OKS_Civilians'; To = 'OKS_fnc_Civilians' },
+    @{ From = 'OKS_Retexture'; To = 'OKS_fnc_Retexture' }
 )
 
 function Replace-AllStringsCaseInsensitive($content, $replacements) {
