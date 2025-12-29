@@ -158,6 +158,12 @@ $replacements = @(
     @{ From = 'execVM "Scripts\OKS_Ambience\OKS_AlarmSound.sqf";'; To = 'spawn OKS_fnc_AlarmSound;' },
     @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_AlarmSound.sqf""'; To = 'spawn OKS_fnc_AlarmSound' },
     @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_AlarmSound.sqf"";'; To = 'spawn OKS_fnc_AlarmSound;' },
+
+    # Lambs charge spawner: legacy script path and legacy function name
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_Lambs_ChargeSpawn.sqf"'; To = 'spawn OKS_fnc_LambsChargeSpawn' },
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_Lambs_ChargeSpawn.sqf";'; To = 'spawn OKS_fnc_LambsChargeSpawn;' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_Lambs_ChargeSpawn.sqf""'; To = 'spawn OKS_fnc_LambsChargeSpawn' },
+    @{ From = 'execVM ""Scripts\OKS_Spawn\OKS_Lambs_ChargeSpawn.sqf"";'; To = 'spawn OKS_fnc_LambsChargeSpawn;' },
     @{ From = 'execVM "Scripts\OKS_Task\OKS_Defuse_Explosive.sqf"'; To = 'spawn OKS_fnc_Defuse_Explosive;' },
     @{ From = 'execVM ""Scripts\OKS_Task\OKS_Defuse_Explosive.sqf"";'; To = 'spawn OKS_fnc_Defuse_Explosive;' },	
     @{ From = 'execVM "Scripts\OKS_Task\OKS_Destroy_Task.sqf"'; To = 'spawn OKS_fnc_Destroy_Task;' },
@@ -182,6 +188,7 @@ $replacements = @(
     @{ From = '["OKS_Chat",0]'; To = '["OKS_fnc_Chat",0]' },
     @{ From = 'OKS_Lambs_SpawnGroup'; To = 'OKS_fnc_Lambs_SpawnGroup' },
     @{ From = 'OKS_fnc_Lambs_SpawnGroup'; To = 'OKS_fnc_Lambs_SpawnGroup' },
+	@{ From = 'OKS_Lambs_ChargeSpawn'; To = 'OKS_fnc_LambsChargeSpawn' },
     @{ From = 'OKS_Mechanized_Spawn'; To = 'OKS_fnc_Mechanized_Spawn' },
     @{ From = 'OKS_Radar'; To = 'OKS_fnc_Radar' },
     @{ From = 'OKS_Destroy_Barricade'; To = 'OKS_fnc_Destroy_Barricade' },
