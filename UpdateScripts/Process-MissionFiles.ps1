@@ -127,6 +127,8 @@ $replacements = @(
     @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_fnc_CreateZone.sqf""'; To = 'spawn OKS_fnc_CreateZone' },
     @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_fnc_CreateZone.sqf"";'; To = 'spawn OKS_fnc_CreateZone;' },
 
+    # Rush SpawnGroup is rewritten structurally (execVM -> OKS_fnc_Lambs_SpawnGroup) in Apply-StructuredLegacyRewrites.
+
     # ArtyFire: legacy missions often use the function-file name via execVM
     @{ From = 'execVM "Scripts\OKS_Spawn\OKS_fnc_ArtyFire.sqf"'; To = 'spawn OKS_fnc_ArtyFire' },
     @{ From = 'execVM "Scripts\OKS_Spawn\OKS_fnc_ArtyFire.sqf";'; To = 'spawn OKS_fnc_ArtyFire;' },
@@ -204,7 +206,6 @@ $replacements = @(
     @{ From = 'OKS_CreateZone'; To = 'OKS_fnc_CreateZone' },
     @{ From = 'OKS_Patrol_Spawn'; To = 'OKS_fnc_Patrol_Spawn' },
     @{ From = 'OKS_ClearImmediateArea'; To = 'OKS_fnc_ClearImmediateArea' },
-    @{ From = 'OKS_Rush_SpawnGroup'; To = 'OKS_fnc_Rush_SpawnGroup' },
     @{ From = 'OKS_AddVehicleCrew'; To = 'OKS_fnc_AddVehicleCrew' },
     @{ From = 'OKS_Defuse_Explosive'; To = 'OKS_fnc_Defuse_Explosive' },
     @{ From = 'OKS_Convoy_Spawn'; To = 'OKS_fnc_Convoy_Spawn' },
@@ -247,6 +248,46 @@ function Apply-StructuredLegacyRewrites($content) {
     # These rewrites run BEFORE the simple literal replacement table.
 
     $ordinalIgnoreCase = [System.StringComparison]::OrdinalIgnoreCase
+
+    function Split-TopLevelCsv([string]$text) {
+        $parts = New-Object System.Collections.Generic.List[string]
+        $depth = 0
+        $inString = $false
+        $start = 0
+
+        for ($i = 0; $i -lt $text.Length; $i++) {
+            $ch = $text[$i]
+
+            if ($ch -eq '"') {
+                $inString = -not $inString
+                continue
+            }
+
+            if ($inString) {
+                continue
+            }
+
+            if ($ch -eq '[') {
+                $depth++
+                continue
+            }
+            if ($ch -eq ']') {
+                if ($depth -gt 0) { $depth-- }
+                continue
+            }
+
+            if ($ch -eq ',' -and $depth -eq 0) {
+                $parts.Add($text.Substring($start, $i - $start).Trim())
+                $start = $i + 1
+            }
+        }
+
+        if ($start -le $text.Length) {
+            $parts.Add($text.Substring($start).Trim())
+        }
+
+        return $parts
+    }
 
     # OKS_Rush_Wavespawn -> OKS_fnc_Lambs_Wavespawn (inserts "rush" before side)
     # Legacy: [[pos1,pos2],UnitsPerWave,AmountOfWaves,DelayPerWave,Side,Range,"Var"] spawn OKS_Rush_Wavespawn;
@@ -295,24 +336,85 @@ function Apply-StructuredLegacyRewrites($content) {
         )
     }
 
-    # OKS_fnc_Rush_SpawnGroup -> OKS_fnc_Lambs_SpawnGroup (inserts "rush" as 2nd arg)
-    # Legacy: [SpawnPos,InfantryCountOrVehicleArray,Side,Range,[]] spawn OKS_fnc_Rush_SpawnGroup;
-    # New:    [SpawnPos,"rush",InfantryCountOrVehicleArray,Side,Range,[]] spawn OKS_fnc_Lambs_SpawnGroup;
-    if ($content.IndexOf('OKS_fnc_Rush_SpawnGroup', $ordinalIgnoreCase) -ge 0) {
+    # Rush SpawnGroup (legacy script/symbol) -> OKS_fnc_Lambs_SpawnGroup (inserts "rush" as 2nd arg)
+    # Legacy execVM: [SpawnPos,InfantryCountOrVehicleArray,Side,Range] execVM "Scripts\OKS_Ambience\OKS_Rush_SpawnGroup.sqf";
+    # Legacy spawn:  [SpawnPos,InfantryCountOrVehicleArray,Side,Range] spawn OKS_Rush_SpawnGroup;
+    # New:          [SpawnPos,"rush",InfantryCountOrVehicleArray,Side,Range,[]] spawn OKS_fnc_Lambs_SpawnGroup;
+    # Supports both OKS_Rush_SpawnGroup.sqf and OKS_fnc_Rush_SpawnGroup.sqf in the path.
+    if ($content.IndexOf('Rush_SpawnGroup', $ordinalIgnoreCase) -ge 0) {
+        $rushArg = '(?:selectRandom\s*\[[^\]]*\]|\[[^\]]*\]|[^,\]]+)'
+        $rushTailArray = '(\[[^\]]*\])'
+        $rushScript = 'Scripts\\OKS_Ambience\\OKS_(?:fnc_)?Rush_SpawnGroup\.sqf'
+        $rushQuote = '"{1,2}'
+
+        # execVM: rewrite directly to OKS_fnc_Lambs_SpawnGroup (never emit OKS_fnc_Rush_SpawnGroup).
+        $patternExecVm = '(?is)\[\s*(?<p1>' + $rushArg + ')\s*,\s*(?<p2>' + $rushArg + ')\s*,\s*(?<p3>' + $rushArg + ')\s*,\s*(?<p4>' + $rushArg + ')\s*\]\s*execVM\s*' + $rushQuote + $rushScript + $rushQuote + '\s*;'
         $content = [regex]::Replace(
             $content,
-            '(?is)\[\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*(\[[^\]]*\])\s*\]\s*(spawn|call)\s+OKS_fnc_Rush_SpawnGroup\b',
+            $patternExecVm,
             {
                 param($m)
-                [string]::Format(
-                    '[{0},"rush",{1},{2},{3},{4}] {5} OKS_fnc_Lambs_SpawnGroup',
-                    $m.Groups[1].Value,
-                    $m.Groups[2].Value,
-                    $m.Groups[3].Value,
-                    $m.Groups[4].Value,
-                    $m.Groups[5].Value,
-                    $m.Groups[6].Value
-                )
+                '[' + $m.Groups['p1'].Value + ',"rush",' + $m.Groups['p2'].Value + ',' + $m.Groups['p3'].Value + ',' + $m.Groups['p4'].Value + ',[]] spawn OKS_fnc_Lambs_SpawnGroup;'
+            }
+        )
+
+        # Also handle missing semicolon (rare)
+        $patternExecVmNoSemi = '(?is)\[\s*(?<p1>' + $rushArg + ')\s*,\s*(?<p2>' + $rushArg + ')\s*,\s*(?<p3>' + $rushArg + ')\s*,\s*(?<p4>' + $rushArg + ')\s*\]\s*execVM\s*' + $rushQuote + $rushScript + $rushQuote
+        $content = [regex]::Replace(
+            $content,
+            $patternExecVmNoSemi,
+            {
+                param($m)
+                '[' + $m.Groups['p1'].Value + ',"rush",' + $m.Groups['p2'].Value + ',' + $m.Groups['p3'].Value + ',' + $m.Groups['p4'].Value + ',[]] spawn OKS_fnc_Lambs_SpawnGroup'
+            }
+        )
+
+        # spawn/call with explicit trailing array argument
+        $patternSpawnWithArr = '(?is)\[\s*(?<p1>' + $rushArg + ')\s*,\s*(?<p2>' + $rushArg + ')\s*,\s*(?<p3>' + $rushArg + ')\s*,\s*(?<p4>' + $rushArg + ')\s*,\s*(?<p5>' + $rushTailArray + ')\s*\]\s*(?<mode>spawn|call)\s+OKS_Rush_SpawnGroup\b'
+        $content = [regex]::Replace(
+            $content,
+            $patternSpawnWithArr,
+            {
+                param($m)
+                '[' + $m.Groups['p1'].Value + ',"rush",' + $m.Groups['p2'].Value + ',' + $m.Groups['p3'].Value + ',' + $m.Groups['p4'].Value + ',' + $m.Groups['p5'].Value + '] ' + $m.Groups['mode'].Value + ' OKS_fnc_Lambs_SpawnGroup'
+            }
+        )
+
+        # spawn/call without trailing array argument
+        $patternSpawnNoArr = '(?is)\[\s*(?<p1>' + $rushArg + ')\s*,\s*(?<p2>' + $rushArg + ')\s*,\s*(?<p3>' + $rushArg + ')\s*,\s*(?<p4>' + $rushArg + ')\s*\]\s*(?<mode>spawn|call)\s+OKS_Rush_SpawnGroup\b'
+        $content = [regex]::Replace(
+            $content,
+            $patternSpawnNoArr,
+            {
+                param($m)
+                '[' + $m.Groups['p1'].Value + ',"rush",' + $m.Groups['p2'].Value + ',' + $m.Groups['p3'].Value + ',' + $m.Groups['p4'].Value + ',[]] ' + $m.Groups['mode'].Value + ' OKS_fnc_Lambs_SpawnGroup'
+            }
+        )
+    }
+
+    # OKS_fnc_Rush_SpawnGroup -> OKS_fnc_Lambs_SpawnGroup (inserts "rush" as 2nd arg)
+    # Legacy: [SpawnPos,InfantryCountOrVehicleArray,Side,Range] (spawn/call) OKS_fnc_Rush_SpawnGroup;
+    # Legacy: [SpawnPos,InfantryCountOrVehicleArray,Side,Range,[]] (spawn/call) OKS_fnc_Rush_SpawnGroup;
+    # New:    [SpawnPos,"rush",InfantryCountOrVehicleArray,Side,Range,[]] (spawn/call) OKS_fnc_Lambs_SpawnGroup;
+    if ($content.IndexOf('OKS_fnc_Rush_SpawnGroup', $ordinalIgnoreCase) -ge 0) {
+        $rushArg = '(?:selectRandom\s*\[[^\]]*\]|\[[^\]]*\]|[^,\]]+)'
+        $rushTailArray = '(\[[^\]]*\])'
+
+        $content = [regex]::Replace(
+            $content,
+            '(?is)\[\s*(?<p1>' + $rushArg + ')\s*,\s*(?<p2>' + $rushArg + ')\s*,\s*(?<p3>' + $rushArg + ')\s*,\s*(?<p4>' + $rushArg + ')\s*,\s*(?<p5>' + $rushTailArray + ')\s*\]\s*(?<mode>spawn|call)\s+OKS_fnc_Rush_SpawnGroup\b',
+            {
+                param($m)
+                '[' + $m.Groups['p1'].Value + ',"rush",' + $m.Groups['p2'].Value + ',' + $m.Groups['p3'].Value + ',' + $m.Groups['p4'].Value + ',' + $m.Groups['p5'].Value + '] ' + $m.Groups['mode'].Value + ' OKS_fnc_Lambs_SpawnGroup'
+            }
+        )
+
+        $content = [regex]::Replace(
+            $content,
+            '(?is)\[\s*(?<p1>' + $rushArg + ')\s*,\s*(?<p2>' + $rushArg + ')\s*,\s*(?<p3>' + $rushArg + ')\s*,\s*(?<p4>' + $rushArg + ')\s*\]\s*(?<mode>spawn|call)\s+OKS_fnc_Rush_SpawnGroup\b',
+            {
+                param($m)
+                '[' + $m.Groups['p1'].Value + ',"rush",' + $m.Groups['p2'].Value + ',' + $m.Groups['p3'].Value + ',' + $m.Groups['p4'].Value + ',[]] ' + $m.Groups['mode'].Value + ' OKS_fnc_Lambs_SpawnGroup'
             }
         )
     }
@@ -434,6 +536,7 @@ foreach ($file in $extraFileContents.Keys) {
     $content = $extraFileContents[$file]
     $content = Apply-StructuredLegacyRewrites $content
     $content = Replace-AllStringsCaseInsensitive $content $replacements
+    $content = Apply-StructuredLegacyRewrites $content
     $content = Remove-LegacyLines $content
     $filePath = Join-Path $MissionDir $file
     try {
@@ -450,6 +553,8 @@ $missionContent = Apply-StructuredLegacyRewrites $missionContent
 Log-Message "mission.sqm: structured rewrites done"
 $missionContent = Replace-AllStringsCaseInsensitive $missionContent $replacements
 Log-Message "mission.sqm: string replacements done"
+$missionContent = Apply-StructuredLegacyRewrites $missionContent
+Log-Message "mission.sqm: structured rewrites (post-replacements) done"
 $missionContent = Replace-ImagePaths $missionContent
 Log-Message "mission.sqm: image path fixes done"
 $missionContent = Remove-LegacyLines $missionContent
