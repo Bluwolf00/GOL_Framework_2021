@@ -693,43 +693,11 @@ force ace_zeus_revealMines = 0;
 force ace_zeus_zeusAscension = false;
 force ace_zeus_zeusBird = false;
 
-// AE3 armaOS
-AE3_armaos_uiOnTexUpdateInterval = 1;
-AE3_KeyboardLayout = "US";
-AE3_ShutdownTime = 15;
-AE3_StartupTime = 15;
-AE3_TerminalBiosVersion = "SHITEâ„¢ BIOS v1.0.0";
-AE3_TerminalBootMessage = "Initializing kernel... please wait...";
-AE3_TerminalCopyright = "Â© 2025 System Hardware Integration & Technology Enterprises";
-AE3_TerminalDefaultSize = 0.75;
-AE3_TerminalDesign = 9;
-AE3_TerminalDialogTitle = "SHITEâ„¢ COMPUTING";
-AE3_TerminalScrollSpeed = 1;
-AE3_TerminalShowAsciiArt = true;
-AE3_TerminalTagline = "Powered by SHITEâ„¢ Technologies â€“ Excellence, from the ground up.";
-AE3_TerminalTipMessage = "> Tip: SHITEâ„¢ laptops perform better when plugged in.";
-AE3_UiEnableChangeDetection = true;
-AE3_UiKeystrokeSyncInterval = 0.1;
-AE3_UiMaxConcurrentViewers = 3;
-AE3_UiMaxTransmitLines = 64;
-AE3_UiOnTexture = false;
-AE3_UiPlayerRange = 2;
-
-// AE3 Filesystem
-AE3_Filesystem_SyncMode = 0;
-
-// AE3 main
-AE3_DebugMode = false;
-AE3_DeploymentType = 0;
-AE3_NetworkDebug = false;
-
-// AE3 Power
-AE3_Power_ChangeThreshold = 1;
-AE3_Power_EnableStateSync = true;
-AE3_Power_UpdateInterval = 1;
-
 // BettIR
 force BettIR_ViewDistance = 2000;
+
+// CMC Missiles intercept
+cmc_intercept_enabled = true;
 
 // Community Base Addons
 cba_diagnostic_ConsoleIndentType = -1;
@@ -959,28 +927,20 @@ force grad_trenches_functions_vehicleEnvelopeRemovalTime = -1;
 force grad_trenches_functions_vehicleTrenchBuildSpeed = 1;
 
 // GW_Common
-force GW_Common_autoDelete = true;
+GW_Common_autoDelete = true;
 force GW_Common_AutoLock = false;
-force GW_Common_autoQueue = true;
-force GW_Common_BlockAIGear = true;
+GW_Common_autoQueue = true;
+GW_Common_BlockAIGear = true;
 force GW_Common_disableThermals = 2;
 force GW_Common_radioDistnace = 1.9;
 force GW_Common_slingloadEnabled = true;
 force GW_HeadlessController_Enable = false;
 
-// GW_GameLoop
-force GW_GameLoop_civiKillTracker = false;
-force GW_GameLoop_event = 1;
-force GW_GameLoop_SafeMode_blockVeh = false;
-force GW_GameLoop_SafeMode_Timer = 5;
-force GW_GameLoop_SafeMode_useType = 0;
-force GW_UI_allowSpectator = false;
-
 // GW_Gear
-force GW_Gear_Auto_Assign = 1;
+GW_Gear_Auto_Assign = 1;
 force GW_Gear_autoRemoveCargo = true;
-force GW_Gear_extraGear = false;
-force GW_Gear_randomGear = true;
+GW_Gear_extraGear = false;
+GW_Gear_randomGear = true;
 
 // GW_Performance
 force GW_Performance_autoCaching = 3;
@@ -996,10 +956,14 @@ force GW_Performance_UnitEnabled = true;
 force GW_setDifficulty_damageResistance = true;
 force GW_setDifficulty_randomSkill = true;
 force GW_setDifficulty_unitTraining = 2;
+GW_setDifficulty_unitTraining_CIVILIAN = -1;
+GW_setDifficulty_unitTraining_EAST = -1;
+GW_setDifficulty_unitTraining_INDEPENDENT = -1;
+GW_setDifficulty_unitTraining_WEST = -1;
 
 // GW_StartUp
 force GW_StartUp_DistanceLimit = 25;
-force GW_StartUp_TimeLimit = 5;
+GW_StartUp_TimeLimit = 5;
 
 // GW_UI
 GW_UI_nameShadow = 2;
@@ -1126,6 +1090,8 @@ force TFAR_setting_externalIntercomWirelessHeadgear = "";
 force TFAR_spectatorCanHearEnemyUnits = true;
 force TFAR_spectatorCanHearFriendlies = true;
 force TFAR_takingRadio = 2;
+TFAR_Teamspeak_Channel_Name = "TaskForceRadio";
+TFAR_Teamspeak_Channel_Password = "123";
 force tfar_terrain_interception_coefficient = 7;
 force TFAR_voiceCone = false;
 
@@ -1365,7 +1331,6 @@ zen_faction_filter_0_UK3CB_TPD_O = true;
 zen_faction_filter_0_UK3CB_WEI_O = true;
 zen_faction_filter_0_UK3CB_WEI_O_groups = true;
 zen_faction_filter_0_vtf_kf_O_KS = true;
-zen_faction_filter_1_AE3_Assets = true;
 zen_faction_filter_1_BLU_CTRG_F = true;
 zen_faction_filter_1_BLU_F = true;
 zen_faction_filter_1_BLU_G_F = true;
@@ -1375,7 +1340,6 @@ zen_faction_filter_1_BLU_W_F = true;
 zen_faction_filter_1_EdCat_GO_NATO_Arctic = true;
 zen_faction_filter_1_FIR_AWS_FRND_F = true;
 zen_faction_filter_1_GOL = true;
-zen_faction_filter_1_JK_B_US_F = true;
 zen_faction_filter_1_rhs_faction_socom = true;
 zen_faction_filter_1_rhs_faction_usaf = true;
 zen_faction_filter_1_rhs_faction_usarmy_d = true;
@@ -1443,6 +1407,7 @@ zen_faction_filter_1_UK3CB_WEI_B_groups = true;
 zen_faction_filter_1_USAF = true;
 zen_faction_filter_1_vtf_kf_B_KDF = true;
 zen_faction_filter_1_vtf_kf_B_KFL = true;
+zen_faction_filter_1_vve_vehicles = true;
 zen_faction_filter_2_IND_C_F = true;
 zen_faction_filter_2_IND_E_F = true;
 zen_faction_filter_2_IND_F = true;
