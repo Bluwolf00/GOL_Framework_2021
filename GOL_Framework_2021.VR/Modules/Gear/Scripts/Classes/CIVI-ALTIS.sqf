@@ -14,8 +14,8 @@ _uniform = [
 	"U_C_Man_casual_4_F",
 	"U_C_Man_casual_5_F"
 ];
-_vest = [""];
-_backpack = [""];
+_vest = "";
+_backpack = "";
 
 if ((random 1) > 0.7) then {
 	_goggles = "";

@@ -39,6 +39,18 @@ switch (_case) do {
 	case 6: {
 	};
 
+	case 7: {
+	};
+
+	case 8: {
+	};
+
+	case 9: {
+	};
+
+	case 10: {
+	};
+
 	default {
 		ERROR(FORMAT_1("Case missing: %1", _case));
 	};
