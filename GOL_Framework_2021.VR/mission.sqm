@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=4546;
+		nextID=4592;
 	};
 	class MarkerIDProvider
 	{
@@ -20,24 +20,23 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=15420;
+		nextID=15477;
 	};
 	class Camera
 	{
-		pos[]={136.15167,96.994011,-32.44381};
-		dir[]={0.0068646902,-0.64079624,0.7677319};
-		up[]={0.0057289666,0.76769096,0.64078671};
-		aside[]={1.0000029,-5.2857013e-07,-0.0089383535};
+		pos[]={141.73758,68.011551,-22.120152};
+		dir[]={-0.0084012002,-0.5298391,0.84813714};
+		up[]={-0.0052485764,0.84805781,0.52985388};
+		aside[]={1.0000231,2.973627e-08,0.0099094557};
 	};
 };
 binarizationWanted=0;
-sourceName="GOL_Framework_2021";
+sourceName="gol_framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
 	"Desert",
 	"A3_Ui_F",
-	"A3_Modules_F",
 	"A3_Modules_F_StrategicMap",
 	"A3_Soft_F_MRAP_01",
 	"ace_realisticnames",
@@ -69,6 +68,7 @@ addons[]=
 	"ace_gforces",
 	"ace_parachute",
 	"A3_Structures_F_Mil_Flags",
+	"A3_Modules_F",
 	"GOL_MISC_ADDON",
 	"RHS_US_A2_AirImport",
 	"A3_Modules_F_Multiplayer",
@@ -35735,7 +35735,7 @@ class Mission
 			name="Template Modules";
 			class Entities
 			{
-				items=14;
+				items=12;
 				class Item0
 				{
 					dataType="Logic";
@@ -35829,227 +35829,6 @@ class Mission
 				};
 				class Item8
 				{
-					dataType="Layer";
-					name="Hunt Base / Dynamic Trigger";
-					class Entities
-					{
-						items=19;
-						class Item0
-						{
-							dataType="Trigger";
-							position[]={146.11888,5,504.12201};
-							angle=3.0554259;
-							class Attributes
-							{
-								name="Trigger_1";
-								sizeA=250;
-								sizeB=250;
-								repeatable=1;
-								activationBy="ANYPLAYER";
-							};
-							id=1657;
-							type="EmptyDetectorAreaR250";
-						};
-						class Item1
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={19.8853,5,545.57147};
-							};
-							id=1776;
-							type="LocationArea_F";
-						};
-						class Item2
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={19.8853,5,446.23114};
-							};
-							id=1775;
-							type="LocationBase_F";
-						};
-						class Item3
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={222.11369,5,502.72089};
-							};
-							id=1773;
-							type="LocationCamp_F";
-						};
-						class Item4
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={20.606888,5,560.62512};
-							};
-							id=1774;
-							type="LocationCityCapital_F";
-						};
-						class Item5
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={21.803879,5,603.30316};
-							};
-							id=1777;
-							type="LocationEvacPoint_F";
-						};
-						class Item6
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={218.86491,5,305.63763};
-							};
-							id=1772;
-							type="LocationFOB_F";
-						};
-						class Item7
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={219.17754,5,404.38022};
-							};
-							id=1771;
-							type="LocationOutpost_F";
-						};
-						class Item8
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={223.73759,5,606.45313};
-							};
-							id=1769;
-							type="LocationRespawnPoint_F";
-						};
-						class Item9
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={20.627182,5,580.49042};
-							};
-							id=1778;
-							type="LocationCity_F";
-						};
-						class Item10
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={231.21123,5,680.24933};
-							};
-							id=1770;
-							type="LocationVillage_F";
-						};
-						class Item11
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={236.76897,5,680.44971};
-							};
-							title="Civilian Presence Location";
-							description="This logic, defines the areas which should be populated by the dynamic scripts, if enabled in the array. Settings for the amount of waypoints and civilians can be found in Addon Options in the Eden editor.";
-							id=1780;
-						};
-						class Item12
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={226.53801,5,405.40771};
-							};
-							title="Compound Strongpoints";
-							description="This is the second type of strongpoints used by static infantry contacts. This will fill out a compound (size defined in settings) evenly. Wheras the other strongpoints types will populate a few buidings with more enemies instead.";
-							id=1783;
-						};
-						class Item13
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={231.09502,5,607.60071};
-							};
-							title="HuntBase Locations";
-							description="This logic defines the huntbase locations for a zone, the direction of this logic will also point out where the spawn will be. The spawn positions for huntbases will be located about 20-30m towards the direction of the logic.";
-							id=1781;
-						};
-						class Item14
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={228.64799,5,503.61169};
-							};
-							title="Objective Locations";
-							description="Defines locations for Static Objectives such as Ammo cache, Artillery & Motor pool";
-							id=1782;
-						};
-						class Item15
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={226.88396,5,310.20071};
-							};
-							title="Roadblock Locations";
-							description="This logic is used for defining roadblock locations, the direction of the logic is also the direction of which the roadblock will be facing, including the static vehicle if present.";
-							id=1784;
-						};
-						class Item16
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={21.461319,5,572.81586};
-							};
-							title="Strongpoints Locations";
-							description="All these location logics are strongpoint definitions for dynamic scripts. If you have static infantry contacts in the array, they will spread among the strongpoints defined. If not defined they will automatically find towns.";
-							id=1779;
-						};
-						class Item17
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={146.11296,5,505.4317};
-								angles[]={-0,3.0554278,0};
-							};
-							title="This is a dynamic spawn trigger";
-							description="This zone defines the area in which the dynamic scripts will generate content. Check the init.sqf for more information on how it is used. The location markers surrounding this trigger need to be inside the trigger for them to be used by the zone";
-							id=1658;
-						};
-						class Item18
-						{
-							dataType="Comment";
-							class PositionInfo
-							{
-								position[]={18.85762,5,451.7121};
-							};
-							title="Stronghold Locations";
-							description="The base location gives a stronghold marker that spawns a large amount of units in the nearest building to the position. Creating a clear house objective, essentially a specified strong one-building garrison.";
-							id=2730;
-						};
-					};
-					id=1661;
-				};
-				class Item9
-				{
-					dataType="Layer";
-					name="Spawn Triggers";
-					id=434;
-				};
-				class Item10
-				{
 					dataType="Comment";
 					class PositionInfo
 					{
@@ -36059,7 +35838,7 @@ class Mission
 					description="This module should be placed near our staging area. Don't place it right on top as the icon is fairly big. Offset it north of it by 50m - 100m";
 					id=3118;
 				};
-				class Item11
+				class Item9
 				{
 					dataType="Logic";
 					class PositionInfo
@@ -36126,7 +35905,7 @@ class Mission
 						nAttributes=4;
 					};
 				};
-				class Item12
+				class Item10
 				{
 					dataType="Comment";
 					class PositionInfo
@@ -36138,7 +35917,7 @@ class Mission
 					description="This vehicle is setup with Oks Vehicles, meaning it has Toolkits and MSS available inside the cargo. Tracks & Wheels are also loaded depending on the vehicle type. Thermals are also disabled and driver has a smokegenerator. 3CB Requires this to get their magazines preloaded into the vehicles";
 					id=3143;
 				};
-				class Item13
+				class Item11
 				{
 					dataType="Comment";
 					class PositionInfo
@@ -36152,6 +35931,7 @@ class Mission
 				};
 			};
 			id=2584;
+			atlOffset=-0.15625;
 		};
 		class Item1
 		{
@@ -36172,10 +35952,10 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={138.37459,5,147.99037};
+								position[]={138.375,5,147.99001};
 								angles[]={0,0.06816864,0};
 							};
-							title="MHQ 2";
+							title="MHQ 1";
 							description="This is a mobile headquarters, it also doubles as a mobile service station in this template." \n "Medium";
 							id=3150;
 						};
