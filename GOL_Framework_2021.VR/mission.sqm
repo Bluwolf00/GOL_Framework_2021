@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=15869;
+		nextID=15895;
 	};
 	class Camera
 	{
-		pos[]={140.84604,101.38245,-39.386349};
-		dir[]={-0.0066906661,-0.57829201,0.81581038};
-		up[]={-0.0047425963,0.81582719,0.57827955};
-		aside[]={0.99997526,1.4356374e-09,0.0082010571};
+		pos[]={144.84644,101.38245,-39.528469};
+		dir[]={-0.0044691702,-0.59316266,0.80507576};
+		up[]={-0.0032927515,0.80508161,0.59315521};
+		aside[]={0.99998844,-5.6161298e-09,0.0055511398};
 	};
 };
 binarizationWanted=0;
@@ -396,7 +396,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 3.0.0.241225";
+	overviewText="Framework Version 3.0.2.120126";
 	overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
@@ -440,13 +440,13 @@ class CustomAttributes
 				class data
 				{
 					singleType="BOOL";
-					value=0;
+					value=1;
 				};
 			};
 		};
 		nAttributes=2;
 	};
-	class Category2
+	class Category3
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -629,7 +629,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category3
+	class Category4
 	{
 		name="Scenario";
 		class Attribute0
@@ -10748,7 +10748,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=-0.89884555;
+														value=-0.89884597;
 													};
 												};
 												class Item1
@@ -21647,7 +21647,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.0099999998;
+														value=0.30346099;
 													};
 												};
 												class Item1
@@ -35742,7 +35742,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Mission_Name";
-		overviewText="Framework Version 3.0.0.241225";
+		overviewText="Framework Version 3.0.2.120126";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
