@@ -72,7 +72,9 @@ private [
 	"_1rndMortarHE","_1rndMortarAB","_1rndMortarFlareW","_1rndMortarWPSmokeW","_1rndMortarSmokeW",
 	"_packedHEround","_packedHEABround","_packedSmokeRound","_packedFlareRound",
 	"_mortarWeapon","_Earplugs",
-	"_tfarPersonalRadio","_tfarHandheldRadio","_acrePRC343","_acrePRC148","_acrePRC117F"
+	"_tfarPersonalRadio","_tfarHandheldRadio","_acrePRC343","_acrePRC148","_acrePRC117F",
+	"_Disruptor_Pistol","_Disruptor_Antenna","_Disruptor_Mag",
+	"_DroneJammer","_DroneDetector"
 ];
 
 params [
@@ -402,7 +404,7 @@ if (_isMan) then {
 					};		
 
 					_blackList = ["rhsusf_acc_SpecterDR_pvs27","JCA_optic_IHO_black_magnifier","JCA_optic_IHO_olive_magnifier","JCA_optic_IHO_sand_magnifier","JCA_optic_MROS_sand_magnifier","JCA_optic_MROS_olive_magnifier","JCA_optic_MROS_black_magnifier","rhsusf_acc_su230","rhsusf_acc_g33_T1","rhsusf_acc_g33_T1_flip","rhsusf_acc_g33_xps3","rhsusf_acc_g33_xps3_flip","rhsusf_acc_g33_xps3_tan","rhsusf_acc_g33_xps3_tan_flip","ACE_acc_pointer_green","ACE_acc_pointer_green_ir","ACE_acc_pointer_red","acc_pointer_ir","acc_pointer_ir_broken","rhsusf_acc_anpeq15_top_h","rhsusf_acc_anpeq15_top_sc","rhsusf_acc_anpeq15_wmx_sc","rhsusf_acc_anpeq15_wmx_h","rhsusf_acc_anpeq15_wmx_light_sc","rhsusf_acc_anpeq15_wmx_light_h","rhsusf_acc_anpeq15_bk_top_h","rhsusf_acc_anpeq15_bk_top_sc","rhsusf_acc_anpeq15_h","rhsusf_acc_anpeq15_sc","rhsusf_acc_anpeq15_light_sc","rhsusf_acc_anpeq15_light_h","rhsusf_acc_anpeq15_bk_h","rhsusf_acc_anpeq15_bk_sc","rhsusf_acc_anpeq15_bk_light_sc","rhsusf_acc_anpeq15_bk_light_h","rhsusf_acc_anpeq16a_top_sc","rhsusf_acc_anpeq16a_top_h","rhsusf_acc_anpeq16a_light_top_sc","rhsusf_acc_anpeq16a_light_top_h","rhsusf_acc_anpas13gv1"];
-					_whiteList = ["rhs_weap_optic_smaw"];                            
+					_whiteList = ["rhs_weap_optic_smaw","OKS_Disruptor_Antenna"];                            
 
 					if(_OpticsAllowed isEqualTo true) then {
 						if(_MagnifiedOpticsAllowed isEqualTo true) then {
@@ -584,6 +586,12 @@ if (_isMan) then {
 				[_unit, _packedDroneAT, 10] call _fnc_AddObjectsCargo;
 				[_unit, _packedDroneRecon, 4] call _fnc_AddObjectsCargo;
 				[_unit, _packedDroneSupply, 4] call _fnc_AddObjectsCargo;
+				[_unit, (_Disruptor_Pistol select 0), 10] call _fnc_AddObjectsCargo;
+				[_unit, _Disruptor_Antenna, 10] call _fnc_AddObjectsCargo;				
+				[_unit, _Disruptor_Mag, 30] call _fnc_AddObjectsCargo;
+				[_unit, _DroneJammer, 10] call _fnc_AddObjectsCargo;				
+				[_unit, _DroneDetector, 10] call _fnc_AddObjectsCargo;				
+
 				[_unit, _FacPanels, 15] call _fnc_AddObjectsCargo;
 
 				if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {

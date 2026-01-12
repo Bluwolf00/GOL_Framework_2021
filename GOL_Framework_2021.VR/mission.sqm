@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=1.5707964;
 	scaleGridStep=10;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=1537;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=4605;
+		nextID=4611;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=15561;
+		nextID=15869;
 	};
 	class Camera
 	{
-		pos[]={141.33676,97.915932,-24.531855};
-		dir[]={0.028966904,-0.62520903,0.77992791};
-		up[]={0.023204796,0.78045553,0.62478024};
-		aside[]={0.99931717,1.0895064e-08,-0.037115715};
+		pos[]={140.84604,101.38245,-39.386349};
+		dir[]={-0.0066906661,-0.57829201,0.81581038};
+		up[]={-0.0047425963,0.81582719,0.57827955};
+		aside[]={0.99997526,1.4356374e-09,0.0082010571};
 	};
 };
 binarizationWanted=0;
@@ -36476,7 +36476,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={80.015999,5.0014391,112.678};
+										position[]={79.89817,5.0014391,112.46085};
 										angles[]={0,0.001553343,0};
 									};
 									side="West";
@@ -36663,7 +36663,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={81.241547,5.0014391,112.68006};
+										position[]={81.123718,5.0014391,112.46291};
 										angles[]={0,0.0015358897,0};
 									};
 									side="West";

@@ -607,9 +607,9 @@ switch (toLower(_role)) do {
 	case "drone": {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		[_rifleC, _rifleC_mag, ""] call _addPrimary;
-		[_pistol, _pistol_mag, ""] call _addHandGun;
+		[_Disruptor_Pistol, _Disruptor_Mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_Android,1],[_gps,1],[_pistol_mag,2],[_grenade,2]] call _addToUniform;
+		[[_Android,1],[_gps,1],[_Disruptor_Mag,6],[_grenade,2],[_DroneJammer,1],[_DroneDetector,1]] call _addToUniform;
 		[[_rifleC_mag_tr,3],[_rifleC_mag,3],[_smokegrenadeY,3],[_smokegrenadeB,3]] call _addToVest;
 		[[_packedDroneAT,2],[_packedDroneAP,3],["GOL_Mag_FPV_AT_Throw",1]] call _addToBackpack;
 		if (call EFUNC(Common,isNight) || _ForceNightStuff) then {

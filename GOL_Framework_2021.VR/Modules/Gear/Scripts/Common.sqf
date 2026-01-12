@@ -175,6 +175,11 @@ _packedDroneAP = "GOL_Packed_Drone_AP";
 _packedDroneAT = "GOL_Packed_Drone_AT";
 _packedDroneRecon = "GOL_Packed_Drone_Recon";
 _packedDroneSupply = "GOL_Packed_Drone_Supply";
+_Disruptor_Antenna = "OKS_Disruptor_Antenna";
+_Disruptor_Pistol = ["OKS_DroneDisruptor_Pistol",_Disruptor_Antenna,"",""];
+_Disruptor_Mag = "OKS_Mag_DroneDisruptor";
+_DroneJammer = "OKS_DroneJammer";
+_DroneDetector = "OKS_DroneDetector";
 
 _flashBang = "";
 _handFlareG = "";
