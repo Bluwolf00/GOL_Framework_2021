@@ -194,6 +194,7 @@ $replacements = @(
     @{ From = 'OKS_Mechanized_Spawn'; To = 'OKS_fnc_Mechanized_Spawn' },
     @{ From = 'OKS_Radar'; To = 'OKS_fnc_Radar' },
     @{ From = 'OKS_Destroy_Barricade'; To = 'OKS_fnc_Destroy_Barricade' },
+    @{ From = 'OKS_Destroy_Houses'; To = 'OKS_fnc_Destroy_Houses' },
     @{ From = '"OKS_PowerGenerator"'; To = '"OKS_fnc_PowerGenerator"' },
     @{ From = 'OKS_PowerGenerator'; To = 'OKS_fnc_PowerGenerator' },
     @{ From = 'GW_Ambient_AAA'; To = 'OKS_fnc_Ambient_AAA' },

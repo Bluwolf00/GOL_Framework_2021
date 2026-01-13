@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=15895;
+		nextID=15921;
 	};
 	class Camera
 	{
 		pos[]={144.84644,101.38245,-39.528469};
-		dir[]={-0.0044691702,-0.59316266,0.80507576};
-		up[]={-0.0032927515,0.80508161,0.59315521};
-		aside[]={0.99998844,-5.6161298e-09,0.0055511398};
+		dir[]={0.033485804,-0.59688431,0.80163562};
+		up[]={0.024911283,0.80232638,0.59636611};
+		aside[]={0.99913448,-2.5618192e-09,-0.041735735};
 	};
 };
 binarizationWanted=0;
@@ -446,7 +446,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category3
+	class Category2
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -629,7 +629,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category4
+	class Category3
 	{
 		name="Scenario";
 		class Attribute0
