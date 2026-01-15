@@ -281,7 +281,7 @@ switch (toLower(_role)) do {
 		// Mine detector is a handgun: replace the pistol
 		[_mineDetectorVMH3Weapon, "", ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_minedetector,1],[_cables,6],[_grenade,2],[_flashBang,1],[_pistol_mag,2],[_smokegrenadeY,2],[_defusalKit,1]] call _addToUniform;
+		[[_minedetector,1],[_cables,6],[_grenade,4],[_smokegrenadeY,2],[_defusalKit,1]] call _addToUniform;
 		[[_markerFlagGreen,3],[_markerFlagRed,3],[_spraypaintRed,1],[_spraypaintGreen,1],[_fortifyTool,1]] call _addToUniform;
 		[[_grenade,2],[_rifleC_mag,4],[_rifleC_mag_tr,2]] call _addToVest;
 		[[_clacker,1],[_demoCharge,3],[_rifleC_mag_tr,2]] call _addToBackpack;
@@ -291,7 +291,7 @@ switch (toLower(_role)) do {
 			[[_mapFlashLight,1],[_IRStrobe,1],[_chemG,3],[_chemR,3]] call _addToUniform;
 			[[_handFlareG,1]] call _addToBackpack;
 		};
-		[[_MAT_mag_HE,2],[_entrenchingTool,1],[_wirecutter,1]] call _addToBackpack;
+		[[_MAT_mag_HE,1],[_entrenchingTool,1],[_wirecutter,1]] call _addToBackpack;
 		[_MAT, _MAT_mag_HE, ""] call _addLaunchers;
 		if(_MAT select 0 == "") then {
 			if (_LAT_ReUsable) then {
