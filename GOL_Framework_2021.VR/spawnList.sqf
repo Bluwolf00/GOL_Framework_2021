@@ -19,6 +19,8 @@ params [
 	"_case"
 ];
 
+SystemChat format ["GW_Fnc_spawnList Executed - Case: %1", _case];
+
 switch (_case) do {
 
 	case 1: {
