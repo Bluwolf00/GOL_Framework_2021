@@ -192,6 +192,7 @@ $replacements = @(
     @{ From = 'OKS_fnc_Lambs_SpawnGroup'; To = 'OKS_fnc_Lambs_SpawnGroup' },
 	@{ From = 'OKS_Lambs_ChargeSpawn'; To = 'OKS_fnc_LambsChargeSpawn' },
     @{ From = 'OKS_Mechanized_Spawn'; To = 'OKS_fnc_Mechanized_Spawn' },
+    @{ From = 'OKS_Attack_SpawnGroup'; To = 'OKS_fnc_Attack_SpawnGroup' },
     @{ From = 'OKS_Radar'; To = 'OKS_fnc_Radar' },
     @{ From = 'OKS_Destroy_Barricade'; To = 'OKS_fnc_Destroy_Barricade' },
     @{ From = 'OKS_Destroy_Houses'; To = 'OKS_fnc_Destroy_Houses' },

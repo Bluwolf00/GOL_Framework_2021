@@ -506,7 +506,7 @@ if (_isMan) then {
 
 					//systemChat str _compatibleItems;
 				 	//copyToClipboard str _compatibleItems;
-					if(OKS_Weapons isEqualTo true) then {
+					if(_WeaponsAllowed isEqualTo true) then {
 						if(TYPENAME (_rifle select 0) == "ARRAY") then {
 							{
 								if !(_X in _compatibleItems) then {_compatibleItems pushBack _X};

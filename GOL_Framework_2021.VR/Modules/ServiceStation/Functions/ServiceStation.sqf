@@ -92,6 +92,12 @@ if (isServer) then  // To avoid having all players loop the scanners
 
 		While {_SS in NEKY_ServiceStations} do
 		{
+			// Skip scanning if service station is loaded into ACE cargo
+			if (!isNull (attachedTo _SS)) then {
+				sleep 15;
+				continue;
+			};
+			
 			_Vehicles = NearestObjects [(getPos _SS), _Filter, _Radius];
 			{
 				if (!(_x in NEKY_ServiceStationArray) && (Alive _x)) then
