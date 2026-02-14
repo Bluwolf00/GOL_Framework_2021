@@ -90,10 +90,10 @@ switch (toLower _role) do {
 	};
 	case "marksman": {
 		// Marksman / Sniper
-		_classname = _sidePrefix + "soldier_M_F";
+		_classname = _sidePrefix + "sniper_F";
 	};
 	case "lr": {
-		// Long Range / Marksman / Spotter
+		// Long Range / Spotter
 		_classname = _sidePrefix + "soldier_M_F";
 	};
 	case "aa": {

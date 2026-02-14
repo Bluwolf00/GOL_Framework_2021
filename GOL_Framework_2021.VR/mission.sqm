@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=16077;
+		nextID=16129;
 	};
 	class Camera
 	{
-		pos[]={143.63127,67.631096,-30.635809};
-		dir[]={0.019370323,-0.52872211,0.84859544};
-		up[]={0.012065781,0.84879154,0.52859324};
-		aside[]={0.99975705,1.6760396e-08,-0.022820735};
+		pos[]={144.06934,66.699554,-21.371166};
+		dir[]={0.0017466202,-0.57332003,0.81932968};
+		up[]={0.0012221821,0.81933147,0.57331872};
+		aside[]={0.99999774,0,-0.0021317622};
 	};
 };
 binarizationWanted=0;
-sourceName="gol_framework_2021";
+sourceName="GOL_Framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
@@ -388,7 +388,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 3.0.2.120126";
+	overviewText="Framework Version 3.0.6.140226";
 	overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
@@ -432,13 +432,13 @@ class CustomAttributes
 				class data
 				{
 					singleType="BOOL";
-					value=1;
+					value=0;
 				};
 			};
 		};
 		nAttributes=2;
 	};
-	class Category2
+	class Category3
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -621,7 +621,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category3
+	class Category4
 	{
 		name="Scenario";
 		class Attribute0
@@ -21639,7 +21639,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.30346099;
+														value=0.0099999998;
 													};
 												};
 												class Item1
@@ -26472,7 +26472,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -26499,7 +26499,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=9.5259609;
+														value=10;
 													};
 												};
 												class Item1
@@ -35734,7 +35734,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Mission_Name";
-		overviewText="Framework Version 3.0.2.120126";
+		overviewText="Framework Version 3.0.6.140226";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
@@ -39466,7 +39466,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={80.061234,7.4950514,35.965786};
-								angles[]={-0,0.0021068417,0};
+								angles[]={0,0.0021068417,0};
 							};
 							side="Empty";
 							flags=4;
@@ -39499,7 +39499,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={78.615761,5,34.16375};
-								angles[]={-0,0.016531944,0};
+								angles[]={0,0.016531944,0};
 							};
 							id=3301;
 							type="ModuleRespawnVehicle_F";
@@ -42451,7 +42451,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={143.39685,5,35.382977};
-								angles[]={-0,6.2809501,0};
+								angles[]={0,6.2809501,0};
 							};
 							id=3300;
 							type="ModuleRespawnVehicle_F";
@@ -42596,7 +42596,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={143.53421,7.4732513,37.342926};
-								angles[]={-0,6.2809501,0};
+								angles[]={0,6.2809501,0};
 							};
 							side="Empty";
 							flags=4;
@@ -45097,7 +45097,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={201.25931,7.3041077,38.645939};
-								angles[]={-0,0.00031136922,0};
+								angles[]={0,0.00031136922,0};
 							};
 							side="Empty";
 							flags=4;
@@ -45258,7 +45258,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={201.30426,5,38.677216};
-								angles[]={-0,0.00031136922,0};
+								angles[]={0,0.00031136922,0};
 							};
 							id=3527;
 							type="ModuleRespawnVehicle_F";

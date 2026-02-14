@@ -54,8 +54,8 @@ private _rolePatterns = [
     [["Machinegunner","Machine Gunner","Machine Gunner Assistant","Heavy Gunner","Gunner (HMG)"], "mmg"],
     [["Crewman","Crew"], "crew"],
     [["Helicopter Pilot","Pilot"], "p"],
+    [["Spotter","Marksman"], "lr"],
     [["Sniper"], "marksman"],
-    [["Marksman","Spotter"], "lr"],
     [["Missile Specialist (AA)","AA Specialist","Anti-Air Specialist","Anti Aircraft"], "aa"]
 ];
 
