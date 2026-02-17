@@ -426,7 +426,7 @@ switch (toLower(_role)) do {
 		[[_mapTools,1],[_gps,1],[_notepad,1],[_smokegrenadeY,2],[_smokegrenadeP,3],[_grenade,1]] call _addToUniform;
 		[[_toolkit,1],[_pdw_mag_tr,4]] call _addToVest;
 		_FAKSquad call _addToBackpack;
-		[_map, "", "", _compass, _watch, _nvg] call _addLinkedItems;
+		[_map, "", "", _compass, _watch, _nvgPilot] call _addLinkedItems;
 		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || _ForceNightStuff) then {		
 			[[_mapFlashLight,1],[_handFlareG,5],[_handFlareR,3]] call _addToUniform;
 		};
@@ -626,7 +626,7 @@ switch (toLower(_role)) do {
 		[[_mapTools,1],[_gps,1],[_notepad,1],[_pistol_mag,2],[_smokegrenadeY,2]] call _addToUniform;
 		[[_smokegrenadeP,3],[_grenade,1]] call _addToVest;
 		[[_toolkit,1]] call _addToBackpack;
-		[_map, "", "", _compass, _watch, _nvg] call _addLinkedItems;
+		[_map, "", "", _compass, _watch, _nvgPilot] call _addLinkedItems;
 	};
 
 	case "dragon": {

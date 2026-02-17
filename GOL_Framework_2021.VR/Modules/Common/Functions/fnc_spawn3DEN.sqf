@@ -17,27 +17,37 @@
 */
 #include "script_Component.hpp"
 
-params ["_units","_vehicles","_waypoints", "_side"];
+params [
+	["_units", []],
+	["_vehicles", []],
+	["_waypoints", []],
+	["_side", nil]
+];
 
 collect3DENHistory {
-	if(_side isEqualType "") then {
-		_fallbackSide = GVAR(Faction);
-		switch (toLower str(_fallbackSide)) do {
-			case "west": { 
-				_side = WEST;
-			};
-			case "east": { 
-				_side = EAST;
-			};
-			case "independent": { 
-				_side = INDEPENDENT;
-			};
-			case "civilian": { 
-				_side = civilian;
-			};					
-			default { 
-				_side = EAST;
-			};
+	// Resolve side: if nil or string, fall back to mission Faction setting (default EAST)
+	if (isNil "_side") then {
+		_side = GVAR(Faction);
+	};
+
+	if (_side isEqualType "") then {
+		switch (toLower _side) do {
+			case "west":          { _side = WEST; };
+			case "east":          { _side = EAST; };
+			case "independent":   { _side = INDEPENDENT; };
+			case "civilian":      { _side = civilian; };
+			default               { _side = EAST; };
+		};
+	};
+
+	if (_side isEqualType sideUnknown) then {
+		// GVAR(Faction) is stored as a string from CBA settings, convert it
+		switch (toLower str _side) do {
+			case "west":          { _side = WEST; };
+			case "east":          { _side = EAST; };
+			case "independent":   { _side = INDEPENDENT; };
+			case "civilian":      { _side = civilian; };
+			default               { _side = EAST; };
 		};
 	};
 	([_side] call FUNC(getGroupType)) params ["_side", "_leader","_unitList"];

@@ -56,3 +56,21 @@
 		}, _this, 0.1] call CBA_fnc_waitAndExecute;
 	}, true, [], true] call CBA_fnc_addClassEventHandler;
 }] call CBA_fnc_addEventHandler;
+
+// TFAR wireless intercom — prevent auto-connect on vehicle exit.
+// TFAR auto-connects wireless intercom when a crew member exits a
+// vehicle with TFAR_hasIntercom. We undo that so players must
+// manually connect via the ACE self-action menu.
+if (!isNil "TFAR_fnc_setIntercomChannel") then {
+	["AllVehicles", "GetOut", {
+		params ["_vehicle", "_role", "_unit"];
+		if (isPlayer _unit && {local _unit} && {_role != "cargo"}) then {
+			[{
+				params ["_vehicle", "_unit"];
+				if (!isNil "TFAR_external_intercom_fnc_disconnect") then {
+					[_vehicle, _unit] call TFAR_external_intercom_fnc_disconnect;
+				};
+			}, [_vehicle, _unit], 0.1] call CBA_fnc_waitAndExecute;
+		};
+	}, true, [], true] call CBA_fnc_addClassEventHandler;
+};
