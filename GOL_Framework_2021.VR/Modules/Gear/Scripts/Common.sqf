@@ -51,7 +51,7 @@ _map = "ItemMap";
 _gps = "ItemGPS";
 _compass = "ItemCompass";
 _watch = "ItemWatch";
-_nvg = "ACE_NVG_Gen4_Black";
+_nvg = "ACE_NVG_Wide_Black_WP";
 _nvgPilot = "ACE_NVG_Wide_Black_WP";
 _parachute = "B_Parachute";
 

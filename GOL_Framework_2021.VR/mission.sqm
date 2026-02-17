@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=16181;
+		nextID=16207;
 	};
 	class Camera
 	{
@@ -444,7 +444,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category3
+	class Category2
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -627,7 +627,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category4
+	class Category3
 	{
 		name="Scenario";
 		class Attribute0

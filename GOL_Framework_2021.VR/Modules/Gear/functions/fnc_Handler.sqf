@@ -201,8 +201,8 @@ if (_isMan) then {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		["", "", "", "", "", ""] call _addLinkedItems;
 	} else {
-		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
-			_nvg = "ACE_NVG_Gen4_Black";
+		if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {	
+			if(!isNil "_nvg") then {_nvg = "ACE_NVG_Wide_Black_WP"};
 		};
 
 		if !(_isPlayer || (_unit in switchableUnits)) then {
@@ -545,47 +545,9 @@ if (_isMan) then {
 					missionNamespace setVariable [format["GOL_ArsenalGL_%1",_realSide], _ArsenalGL, true];
 					missionNamespace setVariable [format["GOL_ArsenalLMG_%1",_realSide], _ArsenalLMG, true];
 
-					// TFAR wireless intercom — collect all headgear from the
-					// arsenal item list and set them as allowed wireless
-					// intercom headgear so crew/passengers can use intercom
-					// without being hard-wired.
-					// Accumulates across factions (Blufor/Opfor/Independent)
-					// so each gearbox init appends rather than overwrites.
-					// Sets the runtime array TFAR_externalIntercomWirelessHeadgear
-					// directly (the parsed form TFAR actually checks at runtime).
-					if (!isNil "TFAR_fnc_setIntercomChannel") then {
-						private _existingVal = missionNamespace getVariable ["TFAR_externalIntercomWirelessHeadgear", []];
-						private _intercomHeadgear = if (_existingVal isEqualType []) then { _existingVal } else { [] };
-
-						// Collect base helmet pool
-						if (_helmet isEqualType []) then {
-							{ _intercomHeadgear pushBackUnique _x } forEach _helmet;
-						} else {
-							if (_helmet != "") then { _intercomHeadgear pushBackUnique _helmet };
-						};
-
-						// Collect officer helmet
-						if (!isNil "_OfficerHelmet" && {_OfficerHelmet != ""}) then {
-							if (_OfficerHelmet isEqualType []) then {
-								{ _intercomHeadgear pushBackUnique _x } forEach _OfficerHelmet;
-							} else {
-								_intercomHeadgear pushBackUnique _OfficerHelmet;
-							};
-						};
-
-						// Scan compatibleItems for any headgear we may have
-						// missed (ItemInfo type 605 = headgear in CfgWeapons)
-						{
-							private _cfg = configFile >> "CfgWeapons" >> _x >> "ItemInfo";
-							if (isClass _cfg && {getNumber (_cfg >> "type") == 605}) then {
-								_intercomHeadgear pushBackUnique _x;
-							};
-						} forEach _compatibleItems;
-
-						if (count _intercomHeadgear > 0) then {
-							TFAR_externalIntercomWirelessHeadgear = _intercomHeadgear;
-							publicVariable "TFAR_externalIntercomWirelessHeadgear";
-						};
+					// TFAR wireless intercom headgear — delegate to addon
+					if (!isNil "OKS_fnc_CollectIntercomHeadgear") then {
+						[_helmet, _OfficerHelmet, _compatibleItems] call OKS_fnc_CollectIntercomHeadgear;
 					};
 				};
 			};
