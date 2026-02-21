@@ -57,28 +57,25 @@ _parachute = "B_Parachute";
 
 _demoCharge = "DemoCharge_Remote_Mag";			// Small
 _satchelCharge = "SatchelCharge_Remote_Mag";	// Big
-
-if (true) then {
-	_cTab = "ItemcTab";
-	_Android = "ItemAndroid";
-	_microDAGR = "ItemMicroDAGR";
-	_microDAGRGps = "ItemMicroDAGR";
-	_HelmetCam = "ItemcTabHCam";
-	_UAVTerminal = "B_UavTerminal";
-	_UAVTerminalB = "B_UavTerminal";
-	_UAVTerminalO = "O_UavTerminal";
-	_UAVTerminalI = "I_UavTerminal";
-	_gps = "";
-	if(hasInterface) then {
-		if(_role in ["sm","lightdragon"]) then {
-			_gps = _microDAGR;
-		};
-		if (_role in ["pl","fac","crew","sl","ftl","pm"]) then {
-			_gps = _Android;
-		};
-		if (_role in ["p","pj","dragon","marksman"]) then {
-			_gps = _cTab;
-		};
+_cTab = "ItemcTab";
+_Android = "ItemAndroid";
+_microDAGR = "ItemMicroDAGR";
+_microDAGRGps = "ItemMicroDAGR";
+_HelmetCam = "ItemcTabHCam";
+_UAVTerminal = "B_UavTerminal";
+_UAVTerminalB = "B_UavTerminal";
+_UAVTerminalO = "O_UavTerminal";
+_UAVTerminalI = "I_UavTerminal";
+_gps = "";
+if(hasInterface) then {
+	if(_role in ["sm","lightdragon"]) then {
+		_gps = _microDAGR;
+	};
+	if (_role in ["pl","fac","crew","sl","ftl","pm"]) then {
+		_gps = _Android;
+	};
+	if (_role in ["p","pj","dragon","marksman"]) then {
+		_gps = _cTab;
 	};
 };
 
@@ -104,8 +101,8 @@ _epi = "ACE_epinephrine";
 _morph = "ACE_morphine";
 _tourn = "ACE_tourniquet";
 _pak = "ACE_personalAidKit";
-_saline = "ACE_salineIV";
-_salineSm = "ACE_SalineIV_500";
+_saline = "ACE_plasmaIV";
+_salineSm = "ACE_plasmaIV_500";
 
 _IFAK = [[_bandage,17],[_tourn,2],[_morph,5]];
 

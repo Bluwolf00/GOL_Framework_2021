@@ -359,7 +359,12 @@ if (_isMan) then {
 				[_unit, _MAT_mag_HE, 10] call _fnc_AddObjectsCargo;
 				[_unit, _AA_mag, 30] call _fnc_AddObjectsCargo;
 				[_unit, (_AA select 0), 6] call _fnc_AddObjectsCargo;
-				[_unit, (_LAT select 0), 30] call _fnc_AddObjectsCargo;
+
+				if (_LAT_ReUsable) then {
+					[_unit, _LAT_mag_HE, 10] call _fnc_AddObjectsCargo;
+				} else {
+					[_unit, (_LAT select 0), 30] call _fnc_AddObjectsCargo;
+				};
 				if (_aceCombatDeafnessEnabled) then {
 					[_unit, _Earplugs, 50] call _fnc_AddObjectsCargo;
 				};
@@ -660,7 +665,11 @@ if (_isMan) then {
 				[_unit, _LMG_mag, (COUNT_AR_MAGS(_LMG_mag) * 1.5)] call _fnc_AddObjectsCargo;
 				[_unit, _MAT_mag, 4] call _fnc_AddObjectsCargo;
 				[_unit, _MAT_mag_HE, 4] call _fnc_AddObjectsCargo;
-				[_unit, (_LAT select 0), 3] call _fnc_AddObjectsCargo;
+				if (_LAT_ReUsable) then {
+					[_unit, _LAT_mag_HE, 4] call _fnc_AddObjectsCargo;
+				} else {
+					[_unit, (_LAT select 0), 4] call _fnc_AddObjectsCargo;
+				};
 				[_unit, _demoCharge, 4] call _fnc_AddObjectsCargo;
 				[_unit, _cables, 15] call _fnc_AddObjectsCargo;
 
@@ -753,6 +762,7 @@ if (_isMan) then {
 				[_unit, _packedDroneRecon, 2] call _fnc_AddObjectsCargo;
 				if (_LAT_ReUsable) then {
 					[_unit, _LAT_mag, 6] call _fnc_AddObjectsCargo;
+					[_unit, _LAT_mag_HE, 4] call _fnc_AddObjectsCargo;
 				} else {
 					[_unit, (_LAT select 0), 6] call _fnc_AddObjectsCargo;
 				};

@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=1.5707964;
 	scaleGridStep=10;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=521;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=16207;
+		nextID=16363;
 	};
 	class Camera
 	{
-		pos[]={140.75807,59.7593,-19.083517};
-		dir[]={-0.01082053,-0.51527745,0.85695511};
-		up[]={-0.0065057445,0.85702342,0.51523632};
-		aside[]={0.99992025,9.3132257e-10,0.012625711};
+		pos[]={141.91646,66.519836,-13.68427};
+		dir[]={-0.010567968,-0.55951452,0.82877254};
+		up[]={-0.0071341386,0.82881033,0.5594759};
+		aside[]={0.99993199,-9.3114068e-09,0.012750478};
 	};
 };
 binarizationWanted=0;
@@ -394,7 +394,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 3.0.6.140226";
+	overviewText="Framework Version 3.0.8.210226";
 	overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
@@ -444,7 +444,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category2
+	class Category3
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -627,7 +627,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category3
+	class Category4
 	{
 		name="Scenario";
 		class Attribute0
@@ -35740,7 +35740,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Mission_Name";
-		overviewText="Framework Version 3.0.6.140226";
+		overviewText="Framework Version 3.0.8.210226";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
