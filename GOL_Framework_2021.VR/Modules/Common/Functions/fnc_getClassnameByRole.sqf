@@ -25,12 +25,23 @@ params [
 private _classname = "";
 private _sidePrefix = "";
 
+// Civilians do not follow military naming conventions - return a valid Altis civilian classname
+if (_side isEqualTo civilian) exitWith {
+	private _civUnits = [
+		"C_man_1",
+		"C_Man_casual_1_F","C_Man_casual_2_F","C_Man_casual_3_F",
+		"C_Man_casual_4_F","C_Man_casual_5_F","C_Man_casual_6_F",
+		"C_Man_polo_1_F","C_Man_polo_2_F","C_Man_polo_3_F",
+		"C_Man_polo_4_F","C_Man_polo_5_F","C_Man_polo_6_F"
+	];
+	selectRandom _civUnits
+};
+
 // Determine side prefix
 switch (_side) do {
 	case west: { _sidePrefix = "B_"; };
 	case east: { _sidePrefix = "O_"; };
 	case independent: { _sidePrefix = "I_"; };
-	case civilian: { _sidePrefix = "C_"; };
 	default { _sidePrefix = "B_"; };
 };
 

@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=4615;
+		nextID=4621;
 	};
 	class MarkerIDProvider
 	{
@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=16363;
+		nextID=16571;
 	};
 	class Camera
 	{
-		pos[]={141.91646,66.519836,-13.68427};
-		dir[]={-0.010567968,-0.55951452,0.82877254};
-		up[]={-0.0071341386,0.82881033,0.5594759};
-		aside[]={0.99993199,-9.3114068e-09,0.012750478};
+		pos[]={142.09274,54.356243,-20.952774};
+		dir[]={0.0051413141,-0.43015906,0.90277421};
+		up[]={0.0024499758,0.90274572,0.43017429};
+		aside[]={1.00002,1.3746744e-07,-0.0056961663};
 	};
 };
 binarizationWanted=0;
-sourceName="GOL_Framework_2021";
+sourceName="gol_framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
@@ -444,7 +444,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category3
+	class Category2
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -627,7 +627,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category4
+	class Category3
 	{
 		name="Scenario";
 		class Attribute0

@@ -82,7 +82,12 @@
 		class Civilian {
 			Side = 3;
 			Leaders[] = {"C_man_1"};
-			Units[] = {"C_Man_casual_1_F","C_Man_casual_2_F","C_Man_casual_3_F"};
+			Units[] = {
+				"C_Man_casual_1_F","C_Man_casual_2_F","C_Man_casual_3_F",
+				"C_Man_casual_4_F","C_Man_casual_5_F","C_Man_casual_6_F",
+				"C_Man_polo_1_F","C_Man_polo_2_F","C_Man_polo_3_F",
+				"C_Man_polo_4_F","C_Man_polo_5_F","C_Man_polo_6_F"
+			};
 		};
 	};
 #endif
