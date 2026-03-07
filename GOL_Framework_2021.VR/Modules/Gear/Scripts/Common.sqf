@@ -3,7 +3,7 @@
 
 // GRENADE
 _grenade = "HandGrenade";
-_grenademini = "MiniGrenade";
+_grenademini = if (isClass (configFile >> "CfgMagazines" >> "GOL_HandGrenade_Mini")) then {"GOL_HandGrenade_Mini"} else {"MiniGrenade"};
 _grenadeIR = "B_IR_Grenade";
 _smokegrenadeW = "SmokeShell";
 _smokegrenadeB = "SmokeShellBlue";
