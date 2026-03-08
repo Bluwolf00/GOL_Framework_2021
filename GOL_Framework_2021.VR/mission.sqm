@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=16831;
+		nextID=16857;
 	};
 	class Camera
 	{
-		pos[]={146.37518,72.113655,-20.901943};
-		dir[]={-0.0069172885,-0.5930444,0.80523515};
-		up[]={-0.0050945273,0.80513144,0.5930618};
-		aside[]={1.0000458,5.7231375e-08,0.0085884621};
+		pos[]={146.39355,72.113655,-19.615309};
+		dir[]={0.00073344656,-0.5160358,0.8566584};
+		up[]={0.00044187839,0.85652417,0.51608884};
+		aside[]={1.0000838,-1.1197649e-07,-0.00085838075};
 	};
 };
 binarizationWanted=0;
-sourceName="GOL_Framework_2021";
+sourceName="gol_framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
@@ -444,7 +444,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category3
+	class Category2
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -627,7 +627,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category4
+	class Category3
 	{
 		name="Scenario";
 		class Attribute0

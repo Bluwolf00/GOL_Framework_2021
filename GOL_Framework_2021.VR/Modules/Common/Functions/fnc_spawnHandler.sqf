@@ -93,7 +93,7 @@ if !((count _unitArray) isEqualTo 0) then {
 		[_unit, ([_unitPos, _specials] select (_unitPos isEqualType ""))] call FUNC(setAttributes);
 
 		if !(_skipDelays) then {
-			sleep 0.9;
+			sleep 0.45;
 		};
 		[_unit] remoteExec ["GW_SetDifficulty_fnc_setSkill",0];
 		_unit enableSimulationGlobal true;
@@ -188,14 +188,14 @@ if ((count _vehicleArray) > 0) then {
 			_unit enableSimulationGlobal true;
 			TRACE_2("Unit Moved to", _vehicle, _x);
 			if !(_skipDelays) then {
-				sleep 1;
+				sleep 0.5;
 			};
 		} forEach _crewList;
 
 		_vehicle enableSimulationGlobal true;
 		TRACE_1("Units added to vehicle", _groupNew);
 		if (((count _vehicleArray) > 1) && !_skipDelays) then {
-			sleep 5;
+			sleep 1.5;
 		};
 		TRACE_1("Created Finished", _vehicle);
 	} forEach _vehicleArray;
