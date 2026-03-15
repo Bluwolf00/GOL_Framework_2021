@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=4660;
+		nextID=4673;
 	};
 	class MarkerIDProvider
 	{
@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=16857;
+		nextID=16884;
 	};
 	class Camera
 	{
-		pos[]={146.39355,72.113655,-19.615309};
-		dir[]={0.00073344656,-0.5160358,0.8566584};
-		up[]={0.00044187839,0.85652417,0.51608884};
-		aside[]={1.0000838,-1.1197649e-07,-0.00085838075};
+		pos[]={144.06703,75.013,-23.343452};
+		dir[]={-0.018373249,-0.57794589,0.81589812};
+		up[]={-0.013011848,0.81606185,0.57781351};
+		aside[]={0.99977177,-1.9344043e-08,0.022514004};
 	};
 };
 binarizationWanted=0;
-sourceName="gol_framework_2021";
+sourceName="GOL_Framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
@@ -394,7 +394,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 3.1.0.070326";
+	overviewText="Framework Version 3.1.1.080326";
 	overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
@@ -444,7 +444,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category2
+	class Category3
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -627,7 +627,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category3
+	class Category4
 	{
 		name="Scenario";
 		class Attribute0
@@ -35740,7 +35740,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Mission_Name";
-		overviewText="Framework Version 3.1.0.070326";
+		overviewText="Framework Version 3.1.1.080326";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
@@ -35761,14 +35761,14 @@ class Mission
 	};
 	class Entities
 	{
-		items=5;
+		items=6;
 		class Item0
 		{
 			dataType="Layer";
 			name="Template Modules";
 			class Entities
 			{
-				items=12;
+				items=13;
 				class Item0
 				{
 					dataType="Logic";
@@ -35825,7 +35825,7 @@ class Mission
 				class Item4
 				{
 					dataType="Marker";
-					position[]={80.071304,5,1004.6013};
+					position[]={24.5002,5,1001.744};
 					name="helicopter_despawn";
 					type="Empty";
 					id=1756;
@@ -35833,7 +35833,7 @@ class Mission
 				class Item5
 				{
 					dataType="Marker";
-					position[]={1180.0541,5,50.846863};
+					position[]={996.63977,5,26.230469};
 					name="helicopter_spawn";
 					type="Empty";
 					id=1755;
@@ -35843,7 +35843,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={80.439034,5,1004.248};
+						position[]={24.867929,5,1001.3906};
 					};
 					title="NEKY Resupply / Pick up DESPAWN";
 					description="Despawn Position for Resupply & Pickup helicopters. IMPORTANT! Make sure the spawn & despawn are set apart! Minimum 300m apart!";
@@ -35854,7 +35854,7 @@ class Mission
 					dataType="Comment";
 					class PositionInfo
 					{
-						position[]={1180.1693,5,50.940918};
+						position[]={996.755,5,26.324524};
 					};
 					title="NEKY Resupply / Pick up SPAWN";
 					description="Spawn Position for Resupply & Pickup helicopters. IMPORTANT! Make sure the spawn & despawn are set apart! Minimum 300m apart!";
@@ -35961,6 +35961,196 @@ class Mission
 					title="Tent MHQ";
 					description="This is a tent MHQ, you can use this MHQ for small scale missions that you don't want to use the other scripted solutions for respawn. This tent can be moved by leaders with self-interaction, the missionSetting ""GOL_OKS_TentMHQ"" must be set to 1 to be used.";
 					id=3144;
+				};
+				class Item12
+				{
+					dataType="Layer";
+					name="Spawn Lists";
+					class Entities
+					{
+						items=10;
+						class Item0
+						{
+							dataType="Trigger";
+							position[]={43.271729,5,316.7139};
+							class Attributes
+							{
+								name="SpawnTrigger_1";
+								text="Spawn Trigger 1";
+								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								onActivation="call{null = [1] spawn GW_Fnc_spawnList;}";
+								timeout[]={5,5,5};
+								interuptable=1;
+								activationBy="ANYPLAYER";
+								isServerOnly=1;
+							};
+							id=4660;
+							type="EmptyDetector";
+						};
+						class Item1
+						{
+							dataType="Trigger";
+							position[]={143.79388,5,316.12311};
+							class Attributes
+							{
+								name="SpawnTrigger_2";
+								text="Spawn Trigger 2";
+								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								onActivation="call{null = [2] spawn GW_Fnc_spawnList;}";
+								timeout[]={5,5,5};
+								interuptable=1;
+								activationBy="ANYPLAYER";
+								isServerOnly=1;
+							};
+							id=4662;
+							type="EmptyDetector";
+						};
+						class Item2
+						{
+							dataType="Trigger";
+							position[]={243.0997,5,317.91266};
+							class Attributes
+							{
+								name="SpawnTrigger_3";
+								text="Spawn Trigger 3";
+								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								onActivation="call{null = [3] spawn GW_Fnc_spawnList;}";
+								timeout[]={5,5,5};
+								interuptable=1;
+								activationBy="ANYPLAYER";
+								isServerOnly=1;
+							};
+							id=4663;
+							type="EmptyDetector";
+						};
+						class Item3
+						{
+							dataType="Trigger";
+							position[]={343.30014,5,317.01813};
+							class Attributes
+							{
+								name="SpawnTrigger_4";
+								text="Spawn Trigger 4";
+								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								onActivation="call{null = [4] spawn GW_Fnc_spawnList;}";
+								timeout[]={5,5,5};
+								interuptable=1;
+								activationBy="ANYPLAYER";
+								isServerOnly=1;
+							};
+							id=4664;
+							type="EmptyDetector";
+						};
+						class Item4
+						{
+							dataType="Trigger";
+							position[]={445.28979,5,317.01813};
+							class Attributes
+							{
+								name="SpawnTrigger_5";
+								text="Spawn Trigger 5";
+								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								onActivation="call{null = [5] spawn GW_Fnc_spawnList;}";
+								timeout[]={5,5,5};
+								interuptable=1;
+								activationBy="ANYPLAYER";
+								isServerOnly=1;
+							};
+							id=4665;
+							type="EmptyDetector";
+						};
+						class Item5
+						{
+							dataType="Trigger";
+							position[]={45.382751,5,417.21783};
+							class Attributes
+							{
+								name="SpawnTrigger_6";
+								text="Spawn Trigger 6";
+								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								onActivation="call{null = [6] spawn GW_Fnc_spawnList;}";
+								timeout[]={5,5,5};
+								interuptable=1;
+								activationBy="ANYPLAYER";
+								isServerOnly=1;
+							};
+							id=4666;
+							type="EmptyDetector";
+						};
+						class Item6
+						{
+							dataType="Trigger";
+							position[]={145.58318,5,416.3233};
+							class Attributes
+							{
+								name="SpawnTrigger_7";
+								text="Spawn Trigger 7";
+								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								onActivation="call{null = [7] spawn GW_Fnc_spawnList;}";
+								timeout[]={5,5,5};
+								interuptable=1;
+								activationBy="ANYPLAYER";
+								isServerOnly=1;
+							};
+							id=4667;
+							type="EmptyDetector";
+						};
+						class Item7
+						{
+							dataType="Trigger";
+							position[]={246.67822,5,419.00739};
+							class Attributes
+							{
+								name="SpawnTrigger_8";
+								text="Spawn Trigger 8";
+								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								onActivation="call{null = [8] spawn GW_Fnc_spawnList;}";
+								timeout[]={5,5,5};
+								interuptable=1;
+								activationBy="ANYPLAYER";
+								isServerOnly=1;
+							};
+							id=4668;
+							type="EmptyDetector";
+						};
+						class Item8
+						{
+							dataType="Trigger";
+							position[]={345.08936,5,418.11285};
+							class Attributes
+							{
+								name="SpawnTrigger_9";
+								text="Spawn Trigger 9";
+								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								onActivation="call{null = [9] spawn GW_Fnc_spawnList;}";
+								timeout[]={5,5,5};
+								interuptable=1;
+								activationBy="ANYPLAYER";
+								isServerOnly=1;
+							};
+							id=4669;
+							type="EmptyDetector";
+						};
+						class Item9
+						{
+							dataType="Trigger";
+							position[]={446.18442,5,418.11285};
+							class Attributes
+							{
+								name="SpawnTrigger_10";
+								text="Spawn Trigger 10";
+								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								onActivation="call{null = [10] spawn GW_Fnc_spawnList;}";
+								timeout[]={5,5,5};
+								interuptable=1;
+								activationBy="ANYPLAYER";
+								isServerOnly=1;
+							};
+							id=4670;
+							type="EmptyDetector";
+						};
+					};
+					id=4661;
 				};
 			};
 			id=2584;
@@ -45482,6 +45672,17 @@ class Mission
 				};
 			};
 			id=3532;
+		};
+		class Item5
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={251.60999,5,368.61035};
+			};
+			title="SpawnList Triggers";
+			description="These triggers relates to each code case in the spawnlist.sqf in the root of your mission folder. Once a player enters these triggers, the case in spawnlist.sqf activates and the code in those blocks will start running.";
+			id=4671;
 		};
 	};
 	class Connections
