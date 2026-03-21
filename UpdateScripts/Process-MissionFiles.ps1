@@ -110,6 +110,8 @@ $replacements = @(
     @{ From = 'execVM "Scripts\OKS_Ambience\OKS_ArtySuppression.sqf";'; To = 'spawn OKS_fnc_ArtySuppression;' },
     @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_ArtySuppression.sqf""'; To = 'spawn OKS_fnc_ArtySuppression' },
     @{ From = 'execVM ""Scripts\OKS_Ambience\OKS_ArtySuppression.sqf"";'; To = 'spawn OKS_fnc_ArtySuppression;' },
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_fnc_Ambient_AAA.sqf"'; To = 'spawn OKS_fnc_Ambient_AAA' },
+    @{ From = 'execVM "Scripts\OKS_Spawn\OKS_fnc_ArtySuppression.sqf"'; To = 'spawn OKS_fnc_ArtySuppression' },
 
     # ArtySuppression: legacy missions may reference function-file from OKS_Spawn
     @{ From = 'execVM "Scripts\OKS_Spawn\OKS_fnc_ArtySuppression.sqf"'; To = 'spawn OKS_fnc_ArtySuppression' },
