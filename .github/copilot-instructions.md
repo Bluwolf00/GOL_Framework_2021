@@ -1,17 +1,17 @@
-# Copilot Instructions — Commit Messages (GOL_FRAMEWORK_2021)
+# Copilot Instructions — Commit Messages
 When generating commit messages, use this exact template:
 
-Title (Example: Updated Gear and Roles)
-+ Added something new
-~ Changed something existing
-- Removed something
+Title
++ [Medical] Added something new
+~ [CfgWeapons] Changed something existing
+- [Core] Removed something
 
 Rules:
 - Title is a short, human-readable summary of the functional intent (no trailing period).
 - Use `+` only for newly introduced functionality/content.
 - Use `~` for modifications to existing functionality/content.
 - Use `-` for removals/deprecations.
-- Include **all functional changes** in the message (anything that changes gameplay/behavior):
+- Include **all functional changes** in the message anything that changes gameplay/behavior:
     scripts, configs, Eden settings, modules,
     AI behavior, loadouts/roles, UI behavior,
     networking/state, performance-impacting logic.
@@ -21,6 +21,6 @@ Rules:
 Example:
 
 Updated Gear and Roles
-+ Added automatic medic loadout fallback [Medical]
-~ Adjusted squad lead role radios and magazines [CfgWeapons]
-- Removed legacy ACE incompat workaround [Core]
++ [Medical] Added automatic medic loadout fallback 
+~ [CfgWeapons] Adjusted squad lead role radios and magazines 
+- [Core] Removed legacy ACE incompat workaround 
