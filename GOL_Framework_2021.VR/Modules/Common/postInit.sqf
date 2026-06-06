@@ -1,5 +1,13 @@
 #include "script_Component.hpp"
 
+// Cache spawn multiplier from mission params (paramsArray index found dynamically)
+GOL_SpawnMultiplier = 100;
+{
+	if (configName _x isEqualTo "SpawnMultiplier") exitWith {
+		GOL_SpawnMultiplier = paramsArray select _forEachIndex;
+	};
+} forEach (configProperties [missionConfigFile >> "Params", "isClass _x", true]);
+
 [QGVARMAIN(serverReady), {
 	if (GVAR(autoDelete)) then {
 		["CAManBase", "init", {

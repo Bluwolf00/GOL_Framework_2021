@@ -26,7 +26,8 @@ params [
 	["_skipQueue", false],
 	["_skipDelays", false],
 	["_group", grpNull],
-	["_side", GVAR(Faction), [sideUnknown]]
+	["_side", GVAR(Faction), [sideUnknown]],
+	["_blacklistMultiplier", false]
 ];
 
 if (GVAR(spawnActive) && !_skipQueue) exitWith {
@@ -43,6 +44,20 @@ if (GVAR(autoQueue) && !_skipQueue) then {
 if (_group isEqualTo grpNull) then {
 	_group = CreateGroup _side;
 	_group setVariable [QEGVAR(Performance,autoDelete), false];
+};
+
+private _multiplier = missionNamespace getVariable ["GOL_SpawnMultiplier", 100];
+if (_multiplier < 100 && {!_blacklistMultiplier}) then {
+	if ((count _unitArray) > 0) then {
+		private _keepCount = ceil ((count _unitArray) * (_multiplier / 100));
+		_unitArray = _unitArray call BIS_fnc_arrayShuffle;
+		_unitArray = _unitArray select [0, _keepCount];
+	};
+	if ((count _vehicleArray) > 0) then {
+		private _keepCount = ceil ((count _vehicleArray) * (_multiplier / 100));
+		_vehicleArray = _vehicleArray call BIS_fnc_arrayShuffle;
+		_vehicleArray = _vehicleArray select [0, _keepCount];
+	};
 };
 
 if !((count _unitArray) isEqualTo 0) then {

@@ -25,8 +25,7 @@ params [
 	["_vehicleArray", []],
 	["_waypointArray", []],
 	["_side",GVAR(Faction),[sideUnknown]],
-	["_skipQueue", false],
-	["_skipDelays", false]
+	["_blacklistMultiplier", false]
 ];
 
 if(_side isEqualType "") then {
@@ -52,6 +51,6 @@ if(_side isEqualType "") then {
 _group = CreateGroup _side;
 _group setVariable [QEGVAR(Performance,autoDelete), false];
 
-[_unitArray,_vehicleArray,_waypointArray,_skipQueue,_skipDelays,_group,_side] spawn FUNC(spawnHandler);
+[_unitArray,_vehicleArray,_waypointArray,false,false,_group,_side,_blacklistMultiplier] spawn FUNC(spawnHandler);
 
 _group

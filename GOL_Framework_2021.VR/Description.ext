@@ -107,7 +107,15 @@ class Params {
 		texts[] = { "Yes", "No" };
 		values[] = { 1, 0 };
 		default = 1;
-	};		
+	};
+
+	class SpawnMultiplier
+	{
+		title = "Spawn Multiplier";
+		texts[] = { "100%", "90%", "80%", "70%", "60%", "50%", "40%", "30%", "20%", "10%" };
+		values[] = { 100, 90, 80, 70, 60, 50, 40, 30, 20, 10 };
+		default = 100;
+	};
 };
 
 class CfgFunctions {
