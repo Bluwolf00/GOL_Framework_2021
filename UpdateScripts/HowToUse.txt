@@ -1,13 +1,28 @@
-BACKUP YOUR FOLDER..
+HOW TO USE THE UPDATE SCRIPTS
+==============================
 
-Place the UpdateScripts folder in the root folder of your missions. In the folder once in place, backup your mission folder before you do anything.. run the .bat file.
+Pick the folder matching your current framework version and copy it into
+the ROOT of the mission you want to update. Then run run_update.bat.
 
-NOTE: The updater will delete some mission files (including Description.ext) so you can paste the latest template versions without overwrite prompts.
+  v4/   Framework 4 (current)
+  v3/   Framework 3 (legacy)
 
-If it fails, or you notice something wasn't updated. Report it to me immediately and I will update the script to ensure that issue gets updated, could be anything, if its old name of codes, or whatever you find.
+Example:
+  Copy v4/ into COOP10_MyMission.Altis/
+  Run   COOP10_MyMission.Altis\v4\run_update.bat
+  Delete v4/ from the mission folder when done.
 
-The more feedback the script gets, the better it will update our missions. Thanks! /Oksman
+BACKUP YOUR MISSION FOLDER BEFORE RUNNING.
 
-Once this is updated and done its thing, go into your root folder of the framework template and copy/paste the files it asks for (including Description.ext).
+What the v4 script does:
+  DELETES and replaces: Gear\, Description.ext, version.hpp, Init.sqf
+  Also cleans up: Core\, Modules\, Scripts\ (FW3 leftovers, if present)
+  NOT touched: CustomGear\, spawnList.sqf, mission.sqm (updated in-place)
 
-Then copy the import settings from the root folder of the framework template, import them into your addon options when you have loaded your mission in the addon options menu >> Import.
+After the script finishes, paste from the FW4 template:
+  Gear\, Description.ext, version.hpp, Init.sqf,
+  CurrentAddonOptionsImportSettings.txt
+
+Then import CurrentAddonOptionsImportSettings.txt in your Addon Options.
+
+Report any issues to Oksman.

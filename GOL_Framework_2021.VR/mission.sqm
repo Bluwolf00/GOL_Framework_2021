@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=16884;
+		nextID=17046;
 	};
 	class Camera
 	{
-		pos[]={144.06703,75.013,-23.343452};
-		dir[]={-0.018373249,-0.57794589,0.81589812};
-		up[]={-0.013011848,0.81606185,0.57781351};
-		aside[]={0.99977177,-1.9344043e-08,0.022514004};
+		pos[]={142.29323,75.013,-37.925056};
+		dir[]={0.039813705,-0.44900858,0.89263999};
+		up[]={0.02000688,0.89352745,0.44856265};
+		aside[]={0.99900687,0,-0.044557899};
 	};
 };
 binarizationWanted=0;
-sourceName="GOL_Framework_2021";
+sourceName="gol_framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
@@ -84,6 +84,7 @@ addons[]=
 	"A3_Air_F_Beta_Heli_Transport_02",
 	"Kimi_HMDs_Helos",
 	"Kimi_Weapons_Helos",
+	"GatlingSoundOverhaul_Helo",
 	"ace_repair",
 	"A3_Air_F_EPB_Heli_Light_03",
 	"A3_Air_F_Jets_Plane_Fighter_04"
@@ -444,7 +445,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category3
+	class Category2
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -627,7 +628,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category4
+	class Category3
 	{
 		name="Scenario";
 		class Attribute0
@@ -657,7 +658,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=988;
+									items=991;
 									class Item0
 									{
 										class data
@@ -8562,6 +8563,30 @@ class CustomAttributes
 											value="tfar_setting_externalintercomwirelessheadgear";
 										};
 									};
+									class Item988
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gw_gear_uselocaldefault";
+										};
+									};
+									class Item989
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gw_gear_uselocaldefaultai";
+										};
+									};
+									class Item990
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gw_gear_uselocalhandler";
+										};
+									};
 								};
 							};
 						};
@@ -8572,7 +8597,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=988;
+									items=991;
 									class Item0
 									{
 										class data
@@ -17037,7 +17062,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="STRING";
-														value="NATO-D";
+														value="CUSTOM-W";
 													};
 												};
 												class Item1
@@ -17064,7 +17089,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="STRING";
-														value="CSAT-H";
+														value="CUSTOM-E";
 													};
 												};
 												class Item1
@@ -17091,7 +17116,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="STRING";
-														value="AAF-W";
+														value="CUSTOM-I";
 													};
 												};
 												class Item1
@@ -31462,7 +31487,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -31489,7 +31514,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=5;
+														value=3;
 													};
 												};
 												class Item1
@@ -35661,6 +35686,87 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item988
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item989
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item990
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -35761,7 +35867,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=6;
+		items=5;
 		class Item0
 		{
 			dataType="Layer";
@@ -35968,7 +36074,7 @@ class Mission
 					name="Spawn Lists";
 					class Entities
 					{
-						items=10;
+						items=11;
 						class Item0
 						{
 							dataType="Trigger";
@@ -36148,6 +36254,17 @@ class Mission
 							};
 							id=4670;
 							type="EmptyDetector";
+						};
+						class Item10
+						{
+							dataType="Comment";
+							class PositionInfo
+							{
+								position[]={251.60999,5,368.61035};
+							};
+							title="SpawnList Triggers";
+							description="These triggers relates to each code case in the spawnlist.sqf in the root of your mission folder. Once a player enters these triggers, the case in spawnlist.sqf activates and the code in those blocks will start running.";
+							id=4671;
 						};
 					};
 					id=4661;
@@ -45672,17 +45789,6 @@ class Mission
 				};
 			};
 			id=3532;
-		};
-		class Item5
-		{
-			dataType="Comment";
-			class PositionInfo
-			{
-				position[]={251.60999,5,368.61035};
-			};
-			title="SpawnList Triggers";
-			description="These triggers relates to each code case in the spawnlist.sqf in the root of your mission folder. Once a player enters these triggers, the case in spawnlist.sqf activates and the code in those blocks will start running.";
-			id=4671;
 		};
 	};
 	class Connections

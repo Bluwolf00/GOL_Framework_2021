@@ -934,7 +934,6 @@ GW_Common_BlockAIGear = true;
 force GW_Common_disableThermals = 2;
 force GW_Common_radioDistnace = 1.9;
 force GW_Common_slingloadEnabled = true;
-force GW_HeadlessController_Enable = false;
 
 // GW_Gear
 GW_Gear_Auto_Assign = 1;

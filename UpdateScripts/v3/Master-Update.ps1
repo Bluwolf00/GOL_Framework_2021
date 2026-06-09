@@ -1,4 +1,4 @@
-# Master-Update.ps1  (Framework 4)
+# Master-Update.ps1
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $MissionDir = Split-Path -Parent $ScriptDir
 Set-Location $MissionDir
@@ -10,12 +10,10 @@ if (Test-Path $LogFile) { Remove-Item $LogFile -Force }
 # === PROMPT USER BEFORE DELETION ===
 Write-Host ""
 Write-Host "WARNING: This script will DELETE the following folders and files from your mission folder:"
-Write-Host " - Core   (FW3 and earlier)"
-Write-Host " - Modules (FW3 and earlier - Old kits)"
-Write-Host " - Gear   (FW4 — will be replaced by fresh template)"
+Write-Host " - Core"
+Write-Host " - Modules"
 Write-Host " - Scripts"
 Write-Host " - Description.ext"
-Write-Host " - version.hpp"
 Write-Host " - missionSettings.sqf"
 Write-Host " - script_component.hpp"
 Write-Host " - onPlayerRespawn.sqf"
@@ -23,8 +21,7 @@ Write-Host " - InitPlayerLocal.sqf"
 Write-Host " - Init.sqf"
 Write-Host " - All loadimage.jpg files (recursively)"
 Write-Host ""
-Write-Host "NOTE: CustomGear\ is NOT deleted — your custom loadouts are preserved."
-Write-Host "NOTE: Description.ext is deleted so you can paste the latest template without overwrite prompts."
+Write-Host "Note: Description.ext is deleted so you can paste the latest template version without overwrite prompts."
 Write-Host ""
 Write-Host "Have you made a backup of your mission folder? (Y/N): "
 $response = Read-Host
@@ -34,10 +31,10 @@ if ($response -notmatch "^[Yy]$") {
 }
 
 # 1. Clean folders
-& "$ScriptDir\Clean-Folders.ps1" -FoldersToDelete @("Core", "Modules", "Gear", "Scripts") -LogFile $LogFile
+& "$ScriptDir\Clean-Folders.ps1" -FoldersToDelete @("Core", "Modules", "Scripts") -LogFile $LogFile
 
 # 2. Clean files
-& "$ScriptDir\Clean-Files.ps1" -FilesToDelete @("Description.ext","missionSettings.sqf","init.sqf","initPlayerLocal.sqf","script_Component.hpp","PlatoonRoster.jpg","onPlayerRespawn.sqf","version.hpp") -LogFile $LogFile
+& "$ScriptDir\Clean-Files.ps1" -FilesToDelete @("Description.ext","missionSettings.sqf","init.sqf","initPlayerLocal.sqf","script_Component.hpp","PlatoonRoster.jpg","onPlayerRespawn.sqf") -LogFile $LogFile
 
 # 3. Show manual copy instructions
 & "$ScriptDir\Show-ManualCopyInstructions.ps1"

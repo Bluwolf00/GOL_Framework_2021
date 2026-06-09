@@ -8,9 +8,8 @@
 #define TRIPLES(var1,var2,var3) ##var1##_##var2##_##var3
 #include "\OKS_GOL_Misc\script_Component.hpp"
 #undef VERSION
-#include "Core\version.hpp"
+#include "version.hpp"
 #define VERSION FRAMEWORK_VERSION
-#include "Modules\LARs\compositions\compositions.cfg"
 
 class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 	class Core {
@@ -35,17 +34,7 @@ class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 		version = MISSION_VERSION;
 		GameMode = GAME_MODE;
 	};
-	#define LOAD_Behaviour
-		#include "Modules\Modules.cpp"
-	#undef LOAD_Behaviour
 
-	#define LOAD_SpawnUnits
-		#include "Modules\Modules.cpp"
-	#undef LOAD_SpawnUnits
-
-	#define LOAD_Loadout
-		#include "Modules\Modules.cpp"
-	#undef LOAD_Loadout
 };
 
 // *	DO NOT EDIT BELOW
@@ -81,7 +70,7 @@ respawnDelay = 20;
 
 class Params {
 	#define LOAD_PARAMS
-		#include "Modules\Modules.cpp"
+		#include "Gear\Module.hpp"
 	#undef LOAD_PARAMS
 
 	class Daytime
@@ -119,44 +108,19 @@ class Params {
 };
 
 class CfgFunctions {
-	#include "Modules\LARs\spawnComp\functions\functions.cpp"
-	#include "Modules\Callsigns\Functions\functions.hpp"
-};
-
-class GW_Modules_Base {
-	name = "GW Modules Base";
-	Authors[] = {};
-	version = 1;
-	description = "Dummy for each module";
-	preInit = "preInit.sqf";
-	postInit = "postInit.sqf";
-	requiredModules[] = {};
-	requiredAddons[] = {};
 };
 
 class GW_Modules {
 	#define LOAD_MODULES
-		#include "Modules\Modules.cpp"
+		#include "Gear\Module.hpp"
 	#undef LOAD_MODULES
 };
 
-class Extended_PreInit_EventHandlers {
-	class preInit {
-		Init = QUOTE(call compile preprocessFileLineNumbers 'core\XEH_preInit.sqf');
-	};
-};
-
-class Extended_PostInit_EventHandlers {
-	class postInit {
-		Init = QUOTE(call compile preprocessFileLineNumbers 'core\XEH_postInit.sqf');
-	};
-};
 
 class ACE_Settings {
 	#define LOAD_ACE
-		#include "Modules\Modules.cpp"
+		#include "Gear\Module.hpp"
 	#undef LOAD_ACE
 };
 
-#include "Modules\Callsigns\defines.hpp"
-#include "Modules\Callsigns\dialogs.hpp"
+
