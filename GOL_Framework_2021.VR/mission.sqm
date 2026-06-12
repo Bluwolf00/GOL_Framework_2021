@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=17046;
+		nextID=17100;
 	};
 	class Camera
 	{
-		pos[]={142.29323,75.013,-37.925056};
-		dir[]={0.039813705,-0.44900858,0.89263999};
-		up[]={0.02000688,0.89352745,0.44856265};
-		aside[]={0.99900687,0,-0.044557899};
+		pos[]={139.388,115.97749,-27.079952};
+		dir[]={0.0080677336,-0.63233477,0.77466011};
+		up[]={0.0065851011,0.77469414,0.63230479};
+		aside[]={0.99995208,-4.4774424e-09,-0.010414097};
 	};
 };
 binarizationWanted=0;
@@ -395,7 +395,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 3.1.1.080326";
+	overviewText="Framework Version 4.0.0.090626";
 	overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
@@ -445,7 +445,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category2
+	class Category3
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -628,7 +628,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category3
+	class Category4
 	{
 		name="Scenario";
 		class Attribute0
@@ -14839,7 +14839,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.2;
+														value=0.1;
 													};
 												};
 												class Item1
@@ -14866,7 +14866,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.69999999;
+														value=0.30000001;
 													};
 												};
 												class Item1
@@ -14893,7 +14893,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.69999999;
+														value=0.30000001;
 													};
 												};
 												class Item1
@@ -14920,7 +14920,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.4;
+														value=0.2;
 													};
 												};
 												class Item1
@@ -17062,7 +17062,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="STRING";
-														value="CUSTOM-W";
+														value="NATO-D";
 													};
 												};
 												class Item1
@@ -17089,7 +17089,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="STRING";
-														value="CUSTOM-E";
+														value="CSAT-H";
 													};
 												};
 												class Item1
@@ -17116,7 +17116,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="STRING";
-														value="CUSTOM-I";
+														value="AAF-W";
 													};
 												};
 												class Item1
@@ -35699,7 +35699,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -35726,7 +35726,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -35753,7 +35753,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -35846,7 +35846,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Mission_Name";
-		overviewText="Framework Version 3.1.1.080326";
+		overviewText="Framework Version 4.0.0.090626";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
@@ -36096,7 +36096,7 @@ class Mission
 						class Item1
 						{
 							dataType="Trigger";
-							position[]={143.79388,5,316.12311};
+							position[]={142.78546,5,20.926826};
 							class Attributes
 							{
 								name="SpawnTrigger_2";
