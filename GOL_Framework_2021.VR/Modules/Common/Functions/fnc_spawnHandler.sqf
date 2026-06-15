@@ -123,6 +123,7 @@ if ((count _vehicleArray) > 0) then {
 
 		if (_waypointArray isEqualTo []) then {
 			_vehicle allowCrewInImmobile true;
+			_vehicle setVariable ["GOL_IsStatic", true, true];
 		};
 
 		if (_collision isEqualTo "FLY") then {
