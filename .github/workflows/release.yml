@@ -1,0 +1,94 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - release
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read framework version
+        id: version
+        run: |
+          VERSION_FILE="GOL_Framework_2021.VR/Core/version.hpp"
+          MAJOR=$(grep -oP '#define FRAMEWORK_MAJOR \K\d+' "$VERSION_FILE")
+          MINOR=$(grep -oP '#define FRAMEWORK_MINOR \K\d+' "$VERSION_FILE")
+          PATCHLVL=$(grep -oP '#define FRAMEWORK_PATCHLVL \K\d+' "$VERSION_FILE")
+          BUILD=$(grep -oP '#define FRAMEWORK_BUILD \K\d+' "$VERSION_FILE")
+
+          TAG="v${MAJOR}.${MINOR}.${PATCHLVL}"
+
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
+
+      - name: Ensure version was bumped
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git rev-parse "${{ steps.version.outputs.tag }}" >/dev/null 2>&1; then
+            echo "::error::Tag ${{ steps.version.outputs.tag }} already exists. Bump FRAMEWORK_MAJOR/MINOR/PATCHLVL in GOL_Framework_2021.VR/Core/version.hpp before pushing to release."
+            exit 1
+          fi
+
+      - name: Build zip artifact
+        run: |
+          zip -r "GOL_Framework_${{ steps.version.outputs.tag }}.zip" "GOL_Framework_2021.VR"
+
+      - name: Create tag
+        run: |
+          git tag "${{ steps.version.outputs.tag }}"
+          git push origin "${{ steps.version.outputs.tag }}"
+
+      - name: Generate GitHub release notes
+        id: notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BODY=$(gh api "repos/${{ github.repository }}/releases/generate-notes" \
+            -f tag_name="${{ steps.version.outputs.tag }}" \
+            --jq .body)
+
+          {
+            echo "Framework build ${{ steps.version.outputs.build }}"
+            echo ""
+            echo "## Installation"
+            echo ""
+            echo "1. Download \`GOL_Framework_${{ steps.version.outputs.tag }}.zip\` from this release (do not clone or download the repo as a zip)."
+            echo "2. Extract the archive."
+            echo "3. Copy the \`GOL_Framework_2021.VR\` mission folder into your Arma 3 \`MPMissions\` directory (locally: \`Documents\\Arma 3\\MPMissions\`, or your \`mpmissions\` folder on a dedicated server)."
+            echo "4. Rename the folder's \`.VR\` suffix to match your target terrain's world name (e.g. \`GOL_Framework_2021.Altis\`, \`GOL_Framework_2021.Tanoa\`)."
+            echo "5. Launch Arma 3, open the mission in Eden Editor (or host it on your server) to configure and play."
+            echo ""
+            echo "## Getting Started"
+            echo ""
+            echo "1. In Eden Editor, open **3den Addon Options** and set your BLUFOR/OPFOR/INDFOR/Civilian factions, difficulty tree, and any MiscSettings for the mission."
+            echo "2. Place/sync the framework modules you need from the **Modules** folder onto your mission (Common is required and should not be modified; Gear, MHQ, Radios, SetDifficulty, Startup etc. are configured per-mission)."
+            echo "3. Use **OKS_Dynamic** Game Logics + trigger areas to populate enemy checkpoints, mortar pits, patrols and vehicle pools across the map."
+            echo "4. In-game, players use the **gearbox** action to pick a role/kit, and the ACE Self-Interaction **Request Support** menu for CAS, resupply, reinforcements and paradrop/pickup reinsertion."
+            echo "5. Full module and script documentation: https://github.com/${{ github.repository }}/blob/release/README.md"
+            echo "6. Video setup guides: https://www.youtube.com/playlist?list=PLdTW1xaImQYUvXiP5KYoTlrf0XG6qixZ5"
+            echo "7. Questions/support: https://discord.gg/k9BfvVjtYv"
+            echo ""
+            echo "## What's Changed"
+            echo ""
+            echo "$BODY"
+          } > release_notes.md
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ steps.version.outputs.tag }}" \
+            "GOL_Framework_${{ steps.version.outputs.tag }}.zip" \
+            --title "${{ steps.version.outputs.tag }}" \
+            --notes-file release_notes.md
