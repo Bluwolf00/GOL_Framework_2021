@@ -453,7 +453,7 @@ force ace_nametags_tagSize = 2;
 force ace_nightvision_aimDownSightsBlur = 0;
 force ace_nightvision_disableNVGsWithSights = false;
 force ace_nightvision_effectScaling = 1.5;
-force ace_nightvision_fogScaling = 0.3;
+force ace_nightvision_fogScaling = 0;
 force ace_nightvision_noiseScaling = 1.3;
 force ace_nightvision_shutterEffects = true;
 
