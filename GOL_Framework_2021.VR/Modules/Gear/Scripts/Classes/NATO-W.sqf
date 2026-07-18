@@ -9,7 +9,7 @@ _uniform = "U_B_T_Soldier_F";
 _vest = "V_PlateCarrier2_tna_F";
 _backpack = "B_FieldPack_oli";
 _backpackRadio = _backpack;
-if (true) then {
+if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "UK3CB_LDF_B_B_RadioBag_OLI";
 };
 

@@ -10,7 +10,7 @@ _vest = "V_PlateCarrier2_blk";
 _backpack = "B_ViperLightHarness_blk_F";
 _backpackRadio = _backpack;
 
-if (true) then {
+if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "B_RadioBag_01_black_F";
 };
 

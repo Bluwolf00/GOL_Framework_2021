@@ -343,11 +343,11 @@ if (_isMan) then {
 		switch (_class) do {
 			case "gearbox": {
 				[_unit] remoteExecCall [QFUNC(actions), 0, true];	// Enables gear actions for all players
-				if (true) then {
+				if (GVARMAIN(mod_TFAR)) then {
 					[_unit, _tfarPersonalRadio, 10] call _fnc_AddObjectsCargo;
 					[_unit, _tfarHandheldRadio, 10] call _fnc_AddObjectsCargo;
 				};
-				if (false) then {
+				if (GVARMAIN(mod_ACRE)) then {
 					[_unit, _acrePRC343, 10] call _fnc_AddObjectsCargo;
 					[_unit, _acrePRC148, 10] call _fnc_AddObjectsCargo;
 					[_unit, _acrePRC117F, 10] call _fnc_AddObjectsCargo;

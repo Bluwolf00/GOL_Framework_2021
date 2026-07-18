@@ -77,6 +77,6 @@ GVAR(unitTraining_CIVILIAN_Backup) = GVAR(unitTraining_CIVILIAN);
 
 [QGVAR(randomSkill), "CHECKBOX", ["Use Skill Variation", "Makes each unit have slightly diffrent skill levels within a defined %"], QUOTE(ADDON), true, CBA_SERVEROVERWRITE] call FUNCMAIN(settingsInit);
 
-if (true) then {
+if (GVARMAIN(mod_ACE3_MEDICAL)) then {
 	[QGVAR(damageResistance), "CHECKBOX", ["Damage Resistance in Vehicles", "Players recive less direct damage when in a light vehicle example: prowler, reverts back to normal on exit"], QUOTE(ADDON), false, CBA_SERVEROVERWRITE] call FUNCMAIN(settingsInit);
 };

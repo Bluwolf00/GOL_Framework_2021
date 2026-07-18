@@ -3,7 +3,7 @@
 if (false) then {
 };
 
-if (true) then {
+if (GVARMAIN(mod_TFAR)) then {
 	[QGVARMAIN(missionLoaded), {
 		private _group = (group player);
 		_group setVariable ["TF_sw_frequency", TF_freq_west];

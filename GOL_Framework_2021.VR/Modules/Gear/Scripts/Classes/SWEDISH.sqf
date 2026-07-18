@@ -8,7 +8,7 @@ _uniform = ["acp_gol_SE_M90_U_I_CombatUniform_SE_M90_insignia","acp_gol_SE_M90_U
 _vest = ["acp_gol_SE_M90_V_PlateCarrierSpec_SE_M90_insignia","acp_gol_SE_M90_V_PlateCarrier2_SE_M90_insignia"];
 _backpack = "UK3CB_B_I_Backpack_Radio_Chem_OLI";
 _backpackRadio = _backpack;
-if (true) then {
+if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "UK3CB_B_B_Backpack_Radio_Chem_OLI";
 };
 

@@ -29,7 +29,7 @@ _unit addAction ["<t color='#00EAFF'>Attachment Menu (LMG)</t>", {_playerSide = 
 _unit addAction ["<t color='#ff962c'>Remove Night gear</t>", {
 	player unassignItem "ACE_NVG_Gen4_Black";
 	player removeItem "ACE_NVG_Gen4_Black";
-	if (true) then {
+	if (GVARMAIN(mod_ACE3)) then {
 		player removeItem "ACE_IR_Strobe_Item";
 		player removeItem "ACE_Flashlight_XL50";
 		player removeMagazines  "ACE_40mm_Flare_green";

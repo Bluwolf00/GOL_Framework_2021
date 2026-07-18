@@ -15,7 +15,7 @@ _OfficerHelmet = "";
 _uniform = ["","",""];
 _vest = [""];
 _backpack = [""];
-if (true) then {
+if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "";
 };
 

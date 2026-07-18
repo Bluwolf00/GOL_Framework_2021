@@ -20,7 +20,7 @@ _backpack = [
 	"B_simc_pack_frem_flak_2","B_simc_pack_frem_flak_3_a",
 	"B_simc_pack_frem_flak_3_b"
 ];
-if (true) then {
+if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = [
 		"B_simc_rajio_flak_1","B_simc_rajio_flak_2","B_simc_rajio_flak_2_a",
 		"B_simc_rajio_flak_4","B_simc_rajio_flak_base","B_simc_rajio_flak_3_alt"

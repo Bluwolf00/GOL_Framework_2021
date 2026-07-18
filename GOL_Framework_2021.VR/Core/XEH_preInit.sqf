@@ -29,8 +29,8 @@ GVARMAIN(DLC_Tanks) 		= (isDLCAvailable 798390);
 GVARMAIN(DLC_Contact) 		= (isDLCAvailable 1021790);
 
 GVARMAIN(mod_ACE3) 			= isClass (configFile >> "CfgPatches" >> "ACE_Common");
-GVARMAIN(mod_ACE3_Medical)	= isClass (configFile >> "CfgPatches" >> "ACE_Medical");
-GVARMAIN(mod_ACE3_Med_New)	= isClass (configFile >> "CfgPatches" >> "ACE_medical_engine");
+GVARMAIN(mod_ACE3_MEDICAL)	= isClass (configFile >> "CfgPatches" >> "ACE_Medical");
+GVARMAIN(mod_ACE3_MED_NEW)	= isClass (configFile >> "CfgPatches" >> "ACE_medical_engine");
 GVARMAIN(mod_ACRE) 			= isClass (configFile >> "CfgPatches" >> "ACRE_Main");
 GVARMAIN(mod_AIA)	 		= isClass (configFile >> "CfgPatches" >> "AiA_Core");
 GVARMAIN(mod_GW)			= isClass (configFile >> "CfgPatches" >> "GW_Main");
@@ -40,8 +40,8 @@ GVARMAIN(mod_CUP_VEHICLES)	= isClass (configFile >> "CfgPatches" >> "CUP_Tracked
 GVARMAIN(mod_CBA) 			= isClass (configFile >> "CfgPatches" >> "CBA_Main");
 GVARMAIN(mod_CTAB) 			= isClass (configFile >> "CfgPatches" >> "cTab");
 GVARMAIN(mod_RHS)	 		= isClass (configFile >> "CfgPatches" >> "rhsusf_main");
-GVARMAIN(mod_TFAR) 			= isClass (configFile >> "CfgPatches" >> "task_force_radio");
-GVARMAIN(mod_TFAR_CORE) 	= isClass (configFile >> "CfgPatches" >> "tfar_core");
+GVARMAIN(mod_TFAR_LEGACY)   = isClass (configFile >> "CfgPatches" >> "task_force_radio");
+GVARMAIN(mod_TFAR) 			= isClass (configFile >> "CfgPatches" >> "tfar_core");
 GVARMAIN(mod_DUI)			= isClass (configFile >> "CfgPatches" >> "diwako_dui_main");
 
 GVARMAIN(settings3denArray) = [];

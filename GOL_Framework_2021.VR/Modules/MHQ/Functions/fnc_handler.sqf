@@ -68,7 +68,7 @@ if (!isServer) exitWith {false};
 	_mhqMarkerArea setMarkerBrush "Border";
 	// End MHQ Marking Code
 
-	if (true) then {
+	if (GVARMAIN(mod_ACE3)) then {
 		_mhq setVariable ["ACE_isrepairVehicle", true, true];
 		_mhq setVariable ["GOL_isMHQ",true, true];
 		_mhq setVariable ["ace_repair_canRepair", 1, true];

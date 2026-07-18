@@ -23,7 +23,7 @@ _uniform = ["UK3CB_MEE_O_U_07"];
 _vest = ["V_PlateCarrier2_blk","UK3CB_V_Carrier_Rig_CREW_BLK","UK3CB_V_Carrier_Rig_RECON_BLK","UK3CB_V_Carrier_Rig_CQB_BLK","UK3CB_V_Carrier_Rig_Compact_BLK"];
 _backpack = "UK3CB_ION_B_B_ASS_BLK_01";
 _backpackRadio = _backpack;
-if (true) then {
+if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "FRXA_tf_rt1523g_big_Black";
 };
 if (_role in ["ag","ammg","lr","ab"]) then {

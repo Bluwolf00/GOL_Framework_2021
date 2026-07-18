@@ -10,7 +10,7 @@ _vest = ["acp_gol_GB_DPM95_V_PlateCarrierSpec_GB_DPM95_insignia","acp_gol_GB_DPM
 _backpack = "acp_gol_GB_DPM95_B_Kitbag_rgr_GB_DPM95";
 _backpackRadio = _backpack;
 
-if (true) then {
+if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "acp_gol_GB_DPM95_B_RadioBag_01_GB_DPM95_F";
 };
 

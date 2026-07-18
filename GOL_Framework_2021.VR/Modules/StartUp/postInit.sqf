@@ -46,7 +46,7 @@
 	[QGVAR(setSafetyMode), GVAR(Enabled)] call CBA_fnc_localEvent;
 	["AllVehicles", "Fired", {
 		if (GVAR(Enabled)) then {
-			if (true) then {
+			if (GVARMAIN(mod_ACE3)) then {
 				[_this select 6] call ACE_FRAG_Fnc_addBlackList;
 			};
 			deleteVehicle (_this select 6);

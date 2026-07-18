@@ -36,7 +36,7 @@ _vest = [
 // Uniform "UK3CB_CW_SOV_O_Late_U_CombatUniform_02_KHK", Helmet ["H_Simc_jaza_pith_up","H_Simc_jaza_pith"]
 _backpack = "UK3CB_B_Invisible";
 _backpackRadio = _backpack;
-if (true) then {
+if (GVARMAIN(mod_TFAR)) then {
 	_backpackRadio = "rhs_r148";
 };
 

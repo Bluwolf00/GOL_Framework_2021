@@ -184,7 +184,7 @@ _handFlareG = "";
 _handFlareR = "";
 _handFlareW = "";
 _handFlareY = "";
-if (true) then {
+if (GVARMAIN(mod_ACE3)) then {
 	_barrel = "ACE_SpareBarrel";
 	_wirecutter = "ACE_wirecutter";
 	_cables = "ACE_CableTie";
