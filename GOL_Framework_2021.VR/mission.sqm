@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=16995;
+		nextID=17025;
 	};
 	class Camera
 	{
@@ -31,7 +31,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="gol_framework_2021";
+sourceName="GOL_Framework_2021";
 addons[]=
 {
 	"Desert",
@@ -395,7 +395,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 3.1.2.170726";
+	overviewText="Framework Version 3.1.2.180726";
 	overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
@@ -14839,7 +14839,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.5;
+														value=1.3;
 													};
 												};
 												class Item1
@@ -14866,7 +14866,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.30000001;
+														value=0;
 													};
 												};
 												class Item1
@@ -14893,7 +14893,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.3;
+														value=1.4;
 													};
 												};
 												class Item1
@@ -35846,7 +35846,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Mission_Name";
-		overviewText="Framework Version 3.1.2.170726";
+		overviewText="Framework Version 3.1.2.180726";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
