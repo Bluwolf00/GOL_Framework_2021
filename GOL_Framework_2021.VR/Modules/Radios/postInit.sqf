@@ -1,6 +1,6 @@
 #include "script_Component.hpp"
 
-if (false) then {
+if (GVARMAIN(mod_ACRE)) then {
 };
 
 if (GVARMAIN(mod_TFAR)) then {
