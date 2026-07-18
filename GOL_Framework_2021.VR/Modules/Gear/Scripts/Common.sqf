@@ -30,7 +30,7 @@ _glsmokeY = "1Rnd_SmokeYellow_Grenade_shell";
 
 _glflareG = "ACE_40mm_Flare_green";
 _glflareR = "ACE_40mm_Flare_red";
-_glflareW = "GOL_40mm_Flare_White_UGL";
+_glflareW = "GOL_1Rnd_UGL_FlareWhite";
 
 // Mortar Items.
 _1rndMortarHE = "UK3CB_BAF_1Rnd_60mm_Mo_Shells";
