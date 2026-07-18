@@ -354,7 +354,7 @@ if (_isMan) then {
 				};
 
 				if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
-					[_unit, _glflareW, 20] call _fnc_AddObjectsCargo;
+					[_unit, _glflareW, 50] call _fnc_AddObjectsCargo;
 				};
 				[_unit, _MAT_mag_HE, 10] call _fnc_AddObjectsCargo;
 				[_unit, _AA_mag, 30] call _fnc_AddObjectsCargo;
@@ -674,7 +674,7 @@ if (_isMan) then {
 				[_unit, _cables, 15] call _fnc_AddObjectsCargo;
 
 				if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
-					[_unit, _glflareW, 16] call _fnc_AddObjectsCargo;
+					[_unit, _glflareW, 24] call _fnc_AddObjectsCargo;
 					[_unit, _glflareR, 8] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareG, 8] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareW, 8] call _fnc_AddObjectsCargo;
@@ -716,7 +716,7 @@ if (_isMan) then {
 				[_unit, _packedDroneRecon, 1] call _fnc_AddObjectsCargo;				
 
 				if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
-					[_unit, _glflareW, 16] call _fnc_AddObjectsCargo;
+					[_unit, _glflareW, 24] call _fnc_AddObjectsCargo;
 					[_unit, _glflareR, 8] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareG, 8] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareW, 8] call _fnc_AddObjectsCargo;
@@ -773,8 +773,8 @@ if (_isMan) then {
 				[_unit, _demoCharge, 4] call _fnc_AddObjectsCargo;
 
 				if ((call EFUNC(Common,isNight)) && _allowedNightStuff) then {
-					[_unit, _glflareW, 24] call _fnc_AddObjectsCargo;
-					[_unit, _glflareR, 10] call _fnc_AddObjectsCargo;
+					[_unit, _glflareW, 40] call _fnc_AddObjectsCargo;
+					[_unit, _glflareR, 20] call _fnc_AddObjectsCargo;
 					[_unit, _glflareG, 10] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareG, 10] call _fnc_AddObjectsCargo;
 					[_unit, _handFlareW, 10] call _fnc_AddObjectsCargo;

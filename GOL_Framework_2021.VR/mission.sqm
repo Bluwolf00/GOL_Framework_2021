@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=16884;
+		nextID=16911;
 	};
 	class Camera
 	{
-		pos[]={144.06703,75.013,-23.343452};
-		dir[]={-0.018373249,-0.57794589,0.81589812};
-		up[]={-0.013011848,0.81606185,0.57781351};
-		aside[]={0.99977177,-1.9344043e-08,0.022514004};
+		pos[]={144.66479,75.013,-22.932924};
+		dir[]={0.0025859897,-0.55612379,0.83113992};
+		up[]={0.0017304354,0.83107871,0.55614036};
+		aside[]={1.00003,-2.7029955e-08,-0.0031113422};
 	};
 };
 binarizationWanted=0;
-sourceName="GOL_Framework_2021";
+sourceName="gol_framework_2021";
 addons[]=
 {
 	"A3_Characters_F",
@@ -84,6 +84,7 @@ addons[]=
 	"A3_Air_F_Beta_Heli_Transport_02",
 	"Kimi_HMDs_Helos",
 	"Kimi_Weapons_Helos",
+	"GatlingSoundOverhaul_Helo",
 	"ace_repair",
 	"A3_Air_F_EPB_Heli_Light_03",
 	"A3_Air_F_Jets_Plane_Fighter_04"
@@ -657,7 +658,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=988;
+									items=990;
 									class Item0
 									{
 										class data
@@ -8562,6 +8563,22 @@ class CustomAttributes
 											value="tfar_setting_externalintercomwirelessheadgear";
 										};
 									};
+									class Item988
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_stealth_language_blufor";
+										};
+									};
+									class Item989
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_stealth_language_independent";
+										};
+									};
 								};
 							};
 						};
@@ -8572,7 +8589,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=988;
+									items=990;
 									class Item0
 									{
 										class data
@@ -14814,7 +14831,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.2;
+														value=1.5;
 													};
 												};
 												class Item1
@@ -14841,7 +14858,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.69999999;
+														value=0.30000001;
 													};
 												};
 												class Item1
@@ -14868,7 +14885,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.69999999;
+														value=1.3;
 													};
 												};
 												class Item1
@@ -14895,7 +14912,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.4;
+														value=0;
 													};
 												};
 												class Item1
@@ -17820,7 +17837,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.029999999;
+														value=0.039999999;
 													};
 												};
 												class Item1
@@ -35648,6 +35665,60 @@ class CustomAttributes
 													{
 														singleType="STRING";
 														value="";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item988
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="VIETNAMESE";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item989
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="STRING";
+														value="ARAB";
 													};
 												};
 												class Item1

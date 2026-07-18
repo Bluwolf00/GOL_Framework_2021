@@ -64,6 +64,36 @@ if ((side _unit) isEqualTo "CIV") then {
 		};
 		_unit allowFleeing _value;
 	};
+
+	private _stealthEnabled = missionNamespace getVariable ["GOL_Stealth_Enabled", false];
+	private _group = group _unit;
+
+	if (_stealthEnabled) then {
+		// Stealth mode: cap AI spotting/coordination to reduce long-range instant visual detection.
+		_unit setSkill ["spotDistance", ((_unit skill "spotDistance") min 0.15)];
+		_unit setSkill ["spotTime", ((_unit skill "spotTime") min 0.15)];
+		_unit setSkill ["commanding", ((_unit skill "commanding") min 0.15)];
+
+		// Dampen LAMBS danger behavior/info propagation while stealth is active.
+		_unit setVariable ["lambs_danger_disableAI", true, true];
+		_unit setVariable [QGVAR(stealthLambsAppliedUnit), true, false];
+
+		_group setVariable ["lambs_danger_disableAI", true, true];
+		_group setVariable ["lambs_danger_disableGroupAI", true, true];
+		_group setVariable [QGVAR(stealthLambsAppliedGroup), true, false];
+	} else {
+		if (_unit getVariable [QGVAR(stealthLambsAppliedUnit), false]) then {
+			_unit setVariable ["lambs_danger_disableAI", false, true];
+			_unit setVariable [QGVAR(stealthLambsAppliedUnit), false, false];
+		};
+
+		if (_group getVariable [QGVAR(stealthLambsAppliedGroup), false]) then {
+			_group setVariable ["lambs_danger_disableAI", false, true];
+			_group setVariable ["lambs_danger_disableGroupAI", false, true];
+			_group setVariable [QGVAR(stealthLambsAppliedGroup), false, false];
+		};
+	};
+
 	TRACE_3("Init", _unit, (_unit skill "aimingAccuracy"), (_unit skill "general"));
 };
 
