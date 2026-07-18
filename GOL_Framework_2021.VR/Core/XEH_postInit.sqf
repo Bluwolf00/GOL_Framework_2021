@@ -16,7 +16,7 @@ if (isServer) then {
 	} else {
 		{
 			_x disableAI "All";
-		} forEach switchableUnits;
+		} forEach (switchableUnits - [player]);
 	};
 };
 
