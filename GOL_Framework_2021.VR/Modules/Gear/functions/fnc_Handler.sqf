@@ -34,6 +34,25 @@
 #include "script_Component.hpp"
 #include "functions.sqf"
 
+_fnc_RefreshRoleUIs = {
+	params ["_unit", "_role"];
+	_enabledPlayers = [];
+	{
+		if( !hasInterface ) exitWith {false};
+		_roleCalloutsEnabled = [QGVAR(unitRoleDUI), "client"] call CBA_settings_fnc_get;
+
+		if ( local _x && _roleCalloutsEnabled isEqualTo true ) then {
+			_enabledPlayers pushBack (owner _x);
+		} else {
+			_unit setVariable ["diwako_dui_nametags_customInfo", "", false];
+		};
+	} forEach allPlayers;
+
+	_DisplayName = ([_role] call FUNC(getRoleByPrefix));
+
+	_unit setVariable ["diwako_dui_nametags_customInfo", _DisplayName, _enabledPlayers];
+};
+
 private [
 	"_compatibleItems","_opticValues",
 	"_isMan","_isCar","_isTank","_type","_allowedNightStuff","_isCivilian","_isPlayer","_side","_errorCode","_loadout","_loadoutFile","_insignia",
@@ -84,12 +103,18 @@ params [
 ];
 
 if !(_unit isEqualType objNull) exitWith {false};
-if !(local _unit) exitWith {false};
 
 _isMan = _unit isKindOf "CAManBase";
 _isCar = _unit isKindOf "Car";
 _isTank = _unit isKindOf "Tank";
 _errorCode = false;
+
+/* Role Callouts */
+if( _isMan && !(_role isEqualTo "") ) then {
+	[_unit, _role] spawn _fnc_RefreshRoleUIs;
+};
+
+if !(local _unit) exitWith {false};
 
 private _OpticsAllowed = missionNamespace getVariable ["OPTICS_ALLOW",false];
 private _MagnifiedOpticsAllowed = missionNamespace getVariable ["MAGNIFIED_OPTICS_ALLOW",false];
@@ -109,38 +134,8 @@ if (_isMan) then {
 	_unit setVariable [QGVAR(Loadout), _role, _isPlayer];
 
 	_roleArray = [_role];
-	switch (_role) do {
-		case "pl": { _DisplayName = "Platoon Leader"; _roleArray pushBack _DisplayName};
-		case "pm": { _DisplayName = "Platoon Medic"; _roleArray pushBack _DisplayName};
-		case "drone": { _DisplayName = "Drone Operator"; _roleArray pushBack _DisplayName};
-		case "mortar": { _DisplayName = "Mortar Operator"; _roleArray pushBack _DisplayName};
-		case "fac": { _DisplayName = "Forward Air Controller"; _roleArray pushBack _DisplayName};
-		case "sl": { _DisplayName = "Squad Leader"; _roleArray pushBack _DisplayName};
-		case "sm": { _DisplayName = "Squad Medic"; _roleArray pushBack _DisplayName};
-		case "ftl": { _DisplayName = "Fireteam Leader"; _roleArray pushBack _DisplayName};
-		case "r": { _DisplayName = "Rifleman"; _roleArray pushBack _DisplayName};
-		case "g": { _DisplayName = "Grenadier"; _roleArray pushBack _DisplayName};
-		case "engineer": { _DisplayName = "Engineer"; _roleArray pushBack _DisplayName};
-		case "ag": { _DisplayName = "Asst. Gunner"; _roleArray pushBack _DisplayName};
-		case "ar": { _DisplayName = "Automatic Rifleman"; _roleArray pushBack _DisplayName};
-		case "ammg": { _DisplayName = "Asst. Medium Machine Gunner"; _roleArray pushBack _DisplayName};
-		case "mmg": { _DisplayName = "Medium Machine Gunner"; _roleArray pushBack _DisplayName};
-		case "crew": { _DisplayName = "Vehicle Crew"; _roleArray pushBack _DisplayName};
-		case "dragon": { _DisplayName = "Dragon"; _roleArray pushBack _DisplayName};
-		case "lr": { _DisplayName = "Light Rifleman"; _roleArray pushBack _DisplayName};
-		case "ab": { _DisplayName = "AR Ammo Bearer"; _roleArray pushBack _DisplayName};
-		case "atab": { _DisplayName = "AT Ammo Bearer"; _roleArray pushBack _DisplayName};
-		case "aa": { _DisplayName = "Anti-Air"; _roleArray pushBack _DisplayName};
-		case "ahat": { _DisplayName = "Asst. Heavy AT"; _roleArray pushBack _DisplayName};
-		case "hat": { _DisplayName = "Heavy AT"; _roleArray pushBack _DisplayName};
-		case "amat": { _DisplayName = "Asst. Heavy AT"; _roleArray pushBack _DisplayName};
-		case "mat": { _DisplayName = "Heavy AT"; _roleArray pushBack _DisplayName};		
-		case "p": { _DisplayName = "Chopper Pilot"; _roleArray pushBack _DisplayName};
-		case "pj": { _DisplayName = "Para-Rescueman"; _roleArray pushBack _DisplayName};
-		case "jetp": { _DisplayName = "Jet Pilot"; _roleArray pushBack _DisplayName};
-		case "lightdragon": { _DisplayName = "Mortar Operator"; _roleArray pushBack _DisplayName};
-		case "marksman": { _DisplayName = "Marksman"; _roleArray pushBack _DisplayName};		
-	};
+	_DisplayName = ([_role] call FUNC(getRoleByPrefix));
+	_roleArray pushBack _DisplayName;
 	_unit setVariable ["GOL_SelectedRole",_roleArray,true];
 
 	if(time > 10 && isPlayer _unit) then {

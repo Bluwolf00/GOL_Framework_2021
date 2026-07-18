@@ -6,6 +6,7 @@ PREP(getLoadoutClass);
 PREP(Handler);
 PREP(Init);
 PREP(replaceAttachments);
+PREP(getRoleByPrefix);
 
 GVAR(Enabled_101) = true;
 GVAR(Enabled_201) = true;
@@ -469,6 +470,24 @@ GVAR(StaminaCoef) = 0.5;
 	], CBA_SERVEROVERWRITE
 ] call FUNCMAIN(settingsInit);
 
+_postUnitRoleDUI = {
+	params ["_value"];
+	if( _value isEqualTo false ) then {
+		{
+			_x setVariable ["diwako_dui_nametags_customInfo", "", false];
+		} forEach (allUnits select {_x isKindOf "CAManBase"});
+	} else {
+		{
+			_role = _x getVariable ["GOL_SelectedRole", ""];
+			if( _role isEqualTo "" ) exitWith {};
+
+			_DisplayName = (_role call FUNC(getRoleByPrefix));
+			_x setVariable ["diwako_dui_nametags_customInfo", _DisplayName, false];
+		} forEach (allUnits select {_x isKindOf "CAManBase"});
+	};
+};
+
 [QGVAR(randomGear), "CHECKBOX", ["Random Role", "Should units get random gear"], QUOTE(ADDON), true, CBA_SERVEROVERWRITE] call FUNCMAIN(settingsInit);
 [QGVAR(extraGear), "CHECKBOX", ["Gives units extra loadout", "Medics gets more supplies, AT gets more rockets etc"], QUOTE(ADDON), false, CBA_SERVEROVERWRITE] call FUNCMAIN(settingsInit);
 [QGVAR(autoRemoveCargo), "CHECKBOX", ["Removes cargo for vehicles", "Automaticly removes cargo"], QUOTE(ADDON), true, CBA_SERVEROVERWRITE] call FUNCMAIN(settingsInit);
+[QGVAR(unitRoleDUI), "CHECKBOX", ["Role Nametags", "Shows the role of the unit on the nametag when using DUI"], QUOTE(ADDON), true, CBA_CANOVERWRITE, _postUnitRoleDUI] call FUNCMAIN(settingsInit);
