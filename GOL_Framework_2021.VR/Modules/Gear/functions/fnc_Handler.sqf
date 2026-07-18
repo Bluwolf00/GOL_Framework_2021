@@ -110,7 +110,7 @@ _isTank = _unit isKindOf "Tank";
 _errorCode = false;
 
 /* Role Callouts */
-if( _isMan && !(_role isEqualTo "") ) then {
+if( GVARMAIN(mod_DUI) && _isMan && !(_role isEqualTo "") ) then {
 	[_unit, _role] spawn _fnc_RefreshRoleUIs;
 };
 
