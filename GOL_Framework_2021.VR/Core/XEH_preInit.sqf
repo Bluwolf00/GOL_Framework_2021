@@ -19,6 +19,31 @@ useAISteeringComponent true;
 0 fadeRadio 0;
 //	enableSatNormalOnDetail true;		//	<--------
 
+// Get addon/mod/dlc availability from the A3 config file and store them in easy to use variables
+GVARMAIN(DLC_Bundle) 		= (isDLCAvailable 304400);
+GVARMAIN(DLC_Heli) 			= (isDLCAvailable 304380);
+GVARMAIN(DLC_Apex)	 		= (isDLCAvailable 395180);
+GVARMAIN(DLC_Jets)	 		= (isDLCAvailable 601670);
+GVARMAIN(DLC_Tanks) 		= (isDLCAvailable 798390);
+//GVARMAIN(DLC_GM) 			= (isDLCAvailable 1042220);		//	Arma 3 Creator DLC: Global Mobilization - Cold War Germany
+GVARMAIN(DLC_Contact) 		= (isDLCAvailable 1021790);
+
+GVARMAIN(mod_ACE3) 			= isClass (configFile >> "CfgPatches" >> "ACE_Common");
+GVARMAIN(mod_ACE3_Medical)	= isClass (configFile >> "CfgPatches" >> "ACE_Medical");
+GVARMAIN(mod_ACE3_Med_New)	= isClass (configFile >> "CfgPatches" >> "ACE_medical_engine");
+GVARMAIN(mod_ACRE) 			= isClass (configFile >> "CfgPatches" >> "ACRE_Main");
+GVARMAIN(mod_AIA)	 		= isClass (configFile >> "CfgPatches" >> "AiA_Core");
+GVARMAIN(mod_GW)			= isClass (configFile >> "CfgPatches" >> "GW_Main");
+GVARMAIN(mod_CUP_TERRAINS)	= isClass (configFile >> "CfgPatches" >> "CUP_BaseConfigs");
+GVARMAIN(mod_CUP_WEAPONS)	= isClass (configFile >> "CfgPatches" >> "CUP_BaseConfig_F");
+GVARMAIN(mod_CUP_VEHICLES)	= isClass (configFile >> "CfgPatches" >> "CUP_TrackedVehicles_Core");
+GVARMAIN(mod_CBA) 			= isClass (configFile >> "CfgPatches" >> "CBA_Main");
+GVARMAIN(mod_CTAB) 			= isClass (configFile >> "CfgPatches" >> "cTab");
+GVARMAIN(mod_RHS)	 		= isClass (configFile >> "CfgPatches" >> "rhsusf_main");
+GVARMAIN(mod_TFAR) 			= isClass (configFile >> "CfgPatches" >> "task_force_radio");
+GVARMAIN(mod_TFAR_CORE) 	= isClass (configFile >> "CfgPatches" >> "tfar_core");
+GVARMAIN(mod_DUI)			= isClass (configFile >> "CfgPatches" >> "diwako_dui_main");
+
 GVARMAIN(settings3denArray) = [];
 GVARMAIN(Version) = (getText(missionConfigFile >> "GW_FRAMEWORK" >> "Core" >> "Version"));
 
