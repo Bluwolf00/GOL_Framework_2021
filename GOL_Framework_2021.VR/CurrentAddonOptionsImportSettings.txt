@@ -154,7 +154,7 @@ force acex_field_rations_waterSourceActions = 2;
 
 // ACE Fire
 force ace_fire_dropWeapon = 1;
-force ace_fire_enabled = true;
+force ace_fire_enabled = false;
 force ace_fire_enableFlare = false;
 ace_fire_enableScreams = false;
 
@@ -484,7 +484,6 @@ force ace_finger_sizeCoef = 1;
 
 // ACE Pylons
 force ace_pylons_enabledForZeus = true;
-force ace_pylons_enabledFromAmmoTrucks = true;
 force ace_pylons_rearmNewPylons = true;
 force ace_pylons_requireEngineer = false;
 force ace_pylons_requireToolkit = false;
