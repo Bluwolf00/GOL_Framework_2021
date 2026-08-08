@@ -81,16 +81,17 @@ switch (toLower(_role)) do {
 		[_rifleC, _rifleC_mag, ""] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_microDAGRGps,1],[_notepad,1],[_mortarRangeCard,1],[_mapTools,1]] call _addToUniform;
-		[[_pistol_mag,2],[_grenade,2],[_rifleC_mag_tr,3],[_rifleC_mag,4]] call _addToUniform;
-		[[_1rndMortarHE,5]] call _addToVest;
-		[[_packedHEround,5],[_packedHEABround,5]] call _addToBackpack;
+		[[_gps,1],[_notepad,1],[_m6RangeCard,1],[_mapTools,1],[_rifleC_mag_tr,3],[_rifleC_mag,4]] call _addToUniform;
+		[[_pistol_mag,2],[_grenade,2]] call _addToUniform;
+		[[_1rndMortarHE,6],[_packedHEround,2]] call _addToVest;
+		[[_packedHEround,6]] call _addToBackpack;
 		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
 		_rangefinder call _addBino;
 
 		if (((call EFUNC(Common,isNight)) && _allowedNightStuff) || _ForceNightStuff) then {
 			_nvg call _addNVG;
 			[[_mapFlashLight,1],[_IRStrobe,1]] call _addToUniform;
+			[[_1rndMortarFlareW,6],[_packedFlareRound,4]] call _addToBackpack;
 		};
 		if(_ForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
