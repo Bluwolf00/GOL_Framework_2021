@@ -85,7 +85,7 @@ _AA = ["rhs_weap_fim92", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "Titan_AA";
 
 _pistol = ["JCA_hgun_P226_black_F", _silencer, _pointer, _sight, _bipod];
-_pistol_mag = "JCA_15Rnd_9x21_P226_Red_Mag";
+_pistol_mag = "JCA_15Rnd_9x19_P226_Red_Mag";
 
 _pdw = ["JCA_smg_UMP_black_F", _silencer, _pointer, _sight, _bipod];
 _pdw_mag = "JCA_25Rnd_45ACP_UMP_Red_Mag";

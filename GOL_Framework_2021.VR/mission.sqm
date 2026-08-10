@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=17055;
+		nextID=17085;
 	};
 	class Camera
 	{
-		pos[]={142.35121,85.955017,-31.039869};
-		dir[]={0.012461841,-0.57376754,0.81895596};
-		up[]={0.0087300101,0.8190062,0.57371473};
-		aside[]={0.99990761,4.9606456e-08,-0.015215854};
+		pos[]={142.10573,98.574165,-23.03616};
+		dir[]={0.010367963,-0.66568035,0.74617481};
+		up[]={0.0092486721,0.74623418,0.66562098};
+		aside[]={0.99991292,-1.7887487e-09,-0.013893623};
 	};
 };
 binarizationWanted=0;
-sourceName="gol_framework_2021";
+sourceName="GOL_Framework_2021";
 addons[]=
 {
 	"Desert",
@@ -84,6 +84,7 @@ addons[]=
 	"A3_Air_F_Beta_Heli_Transport_02",
 	"Kimi_HMDs_Helos",
 	"Kimi_Weapons_Helos",
+	"GatlingSoundOverhaul_Helo",
 	"ace_repair",
 	"A3_Air_F_EPB_Heli_Light_03",
 	"A3_Air_F_Jets_Plane_Fighter_04"
@@ -394,7 +395,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 3.1.2.180726";
+	overviewText="Framework Version 4.0.0.100826";
 	overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
@@ -444,7 +445,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category2
+	class Category3
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -627,7 +628,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category3
+	class Category4
 	{
 		name="Scenario";
 		class Attribute0
@@ -657,7 +658,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=991;
+									items=994;
 									class Item0
 									{
 										class data
@@ -8586,6 +8587,30 @@ class CustomAttributes
 											value="gol_irilluminator_enableilluminatormode";
 										};
 									};
+									class Item991
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gw_gear_uselocaldefault";
+										};
+									};
+									class Item992
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gw_gear_uselocaldefaultai";
+										};
+									};
+									class Item993
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gw_gear_uselocalhandler";
+										};
+									};
 								};
 							};
 						};
@@ -8596,7 +8621,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=991;
+									items=994;
 									class Item0
 									{
 										class data
@@ -35766,6 +35791,87 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item991
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item992
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item993
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -35902,7 +36008,7 @@ class Mission
 						class Item1
 						{
 							dataType="Trigger";
-							position[]={142.78546,5,20.926826};
+							position[]={145.68452,5,314.20248};
 							class Attributes
 							{
 								name="SpawnTrigger_2";
