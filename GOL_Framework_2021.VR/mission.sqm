@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=4676;
+		nextID=4684;
 	};
 	class MarkerIDProvider
 	{
@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=17055;
+		nextID=17235;
 	};
 	class Camera
 	{
-		pos[]={142.35121,85.955017,-31.039869};
-		dir[]={0.012461841,-0.57376754,0.81895596};
-		up[]={0.0087300101,0.8190062,0.57371473};
-		aside[]={0.99990761,4.9606456e-08,-0.015215854};
+		pos[]={148.77831,104.63645,-39.160229};
+		dir[]={0.017475065,-0.63084394,0.77574527};
+		up[]={0.014207807,0.77590513,0.63068348};
+		aside[]={0.99976927,6.8010218e-07,-0.022523317};
 	};
 };
 binarizationWanted=0;
-sourceName="GOL_Framework_2021";
+sourceName="gol_framework_2021";
 addons[]=
 {
 	"Desert",
@@ -73,27 +73,20 @@ addons[]=
 	"GOL_MISC_ADDON",
 	"RHS_US_A2_AirImport",
 	"A3_Modules_F_Multiplayer",
-	"FIR_AirWeaponSystem_US",
-	"A3_Air_F_Jets_Plane_Fighter_01",
-	"GW_lockalerts",
 	"GOL_melber",
 	"rhs_c_a2port_air",
-	"rhs_c_a3retex",
 	"rhs_c_mi28",
-	"A3_Air_F_Jets_Plane_Fighter_02",
 	"A3_Air_F_Beta_Heli_Transport_02",
 	"Kimi_HMDs_Helos",
 	"Kimi_Weapons_Helos",
 	"GatlingSoundOverhaul_Helo",
-	"ace_repair",
-	"A3_Air_F_EPB_Heli_Light_03",
-	"A3_Air_F_Jets_Plane_Fighter_04"
+	"ace_repair"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=43;
+		items=38;
 		class Item0
 		{
 			className="Desert";
@@ -301,79 +294,46 @@ class AddonsMetaData
 		};
 		class Item31
 		{
-			className="FIR_AirWeaponSystem_US";
-			name="FIR_AirWeaponSystem_US";
-		};
-		class Item32
-		{
-			className="A3_Air_F_Jets";
-			name="Arma 3 Jets - Aircraft";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item33
-		{
-			className="GW_lockalerts";
-			name="GW - Lock Sounds Component";
-			author="Blu";
-			url="https://github.com/GuzzenVonLidl/";
-		};
-		class Item34
-		{
 			className="GOL_melber";
 			name="GOL_melber";
 		};
-		class Item35
+		class Item32
 		{
 			className="rhs_c_a2port_air";
 			name="A2 ported air";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item36
-		{
-			className="rhs_c_a3retex";
-			name="A3 Retextures";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
-		};
-		class Item37
+		class Item33
 		{
 			className="rhs_c_mi28";
 			name="Mi-28";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item38
+		class Item34
 		{
 			className="A3_Air_F_Beta";
 			name="Arma 3 Beta - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item39
+		class Item35
 		{
 			className="Kimi_HMDs_Helos";
 			name="Kimi_HMDs_Helos";
 		};
-		class Item40
+		class Item36
 		{
 			className="Kimi_Weapons_Helos";
 			name="Kimi_Weapons_Helos";
 		};
-		class Item41
+		class Item37
 		{
 			className="ace_repair";
 			name="ACE3 - Repair";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
-		};
-		class Item42
-		{
-			className="A3_Air_F_EPB";
-			name="Arma 3 Adapt Episode - Aircraft";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
 		};
 	};
 };
@@ -395,7 +355,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 3.1.2.180726";
+	overviewText="Framework Version 3.1.3.290826";
 	overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
@@ -445,7 +405,7 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
-	class Category2
+	class Category3
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -628,7 +588,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category3
+	class Category4
 	{
 		name="Scenario";
 		class Attribute0
@@ -17332,7 +17292,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=4;
+														value=1;
 													};
 												};
 												class Item1
@@ -35846,7 +35806,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Mission_Name";
-		overviewText="Framework Version 3.1.2.180726";
+		overviewText="Framework Version 3.1.3.290826";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
@@ -39452,54 +39412,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={63.436539,7.1871557,59.114365};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="helicopter_4";
-								reportOwnPosition=1;
-								pylons="FIR_Hydra_M282_P_19rnd_M;FIR_Hydra_M247_P_19rnd_M;rhsusf_ANALE39_CMFlare_Chaff_Magazine_x4;";
-							};
-							id=2588;
-							type="RHS_UH1Y_d";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""rhs_weap_m4_carryhandle""],[2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[""FirstAidKit"",""Medikit""],[10,2]],[[""B_Parachute""],[4]]],false]";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="ace_fastroping_equipFRIES";
-									expression="if (_value) then {[_this] call ace_fastroping_fnc_equipFRIES}";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item2
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={79.844139,8.9768047,78.361343};
 								angles[]={0,6.2664599,0};
 							};
@@ -39529,7 +39441,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item3
+						class Item2
 						{
 							dataType="Marker";
 							position[]={80.030434,5,78.390625};
@@ -39541,7 +39453,7 @@ class Mission
 							b=0.69999999;
 							id=2659;
 						};
-						class Item4
+						class Item3
 						{
 							dataType="Logic";
 							class PositionInfo
@@ -39685,12 +39597,12 @@ class Mission
 								nAttributes=10;
 							};
 						};
-						class Item5
+						class Item4
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={63.797001,7.715806,83.168327};
+								position[]={63.558254,7.715806,83.738167};
 							};
 							side="Empty";
 							flags=4;
@@ -39698,7 +39610,7 @@ class Mission
 							{
 								name="helicopter_1";
 								reportOwnPosition=1;
-								pylons="FIR_Hydra_M247_P_19rnd_M;PylonWeapon_150Rnd_30mm_shells_HE;FIR_Hydra_M282_P_19rnd_M;FIR_Hydra_M247_P_19rnd_M;rhsusf_M130_CMFlare_Chaff_Magazine_x2;";
+								pylons="FIR_Hydra_M247_P_19rnd_M;GOL_PylonWeapon_M230_HE_L;GOL_PylonWeapon_M230_HE;FIR_Hydra_M247_P_19rnd_M;rhsusf_M130_CMFlare_Chaff_Magazine_x2;";
 							};
 							id=3020;
 							type="RHS_UH60M_ESSS_d";
@@ -39720,7 +39632,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item6
+						class Item5
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39735,7 +39647,7 @@ class Mission
 							id=3175;
 							type="GOL_Helipad";
 						};
-						class Item7
+						class Item6
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39750,7 +39662,7 @@ class Mission
 							id=3176;
 							type="GOL_Helipad";
 						};
-						class Item8
+						class Item7
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39765,7 +39677,7 @@ class Mission
 							id=3177;
 							type="GOL_Helipad";
 						};
-						class Item9
+						class Item8
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39780,7 +39692,7 @@ class Mission
 							id=3178;
 							type="GOL_Helipad";
 						};
-						class Item10
+						class Item9
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -39792,7 +39704,7 @@ class Mission
 							description="This station allows pilots to create any resupply box and service stations.";
 							id=2603;
 						};
-						class Item11
+						class Item10
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -39803,24 +39715,7 @@ class Mission
 							description="Used to teleport to the staging area flag, named flag_west_1 for example.";
 							id=3217;
 						};
-						class Item12
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={80.061234,7.4950514,35.965786};
-								angles[]={0,0.0021068417,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="Jet_1";
-							};
-							id=3298;
-							type="B_Plane_Fighter_01_F";
-						};
-						class Item13
+						class Item11
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39836,7 +39731,7 @@ class Mission
 							id=3305;
 							type="GOL_ResupplyStation_WEST_Small";
 						};
-						class Item14
+						class Item12
 						{
 							dataType="Logic";
 							class PositionInfo
@@ -39981,7 +39876,7 @@ class Mission
 								nAttributes=10;
 							};
 						};
-						class Item15
+						class Item13
 						{
 							dataType="Object";
 							class PositionInfo
@@ -40015,6 +39910,71 @@ class Mission
 									};
 								};
 								nAttributes=1;
+							};
+						};
+						class Item14
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={80.060997,7.4950514,35.965469};
+								angles[]={0,0.0021118484,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="Jet_1";
+							};
+							id=4677;
+							type="GOL_B_Plane_Fighter_01_F";
+						};
+						class Item15
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={63.756306,7.1392598,60.037895};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="helicopter_4";
+								reportOwnPosition=1;
+								pylons="FIR_Hydra_M282_P_19rnd_M;FIR_Hydra_M247_P_19rnd_M;rhsusf_ANALE39_CMFlare_Chaff_Magazine_x4;";
+							};
+							id=4683;
+							type="GOL_Heli_Transport_01_pylons_laser";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""rhs_weap_m4_carryhandle""],[2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[""FirstAidKit"",""Medikit""],[10,2]],[[""B_Parachute""],[4]]],false]";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="ace_fastroping_equipFRIES";
+									expression="if (_value) then {[_this] call ace_fastroping_fnc_equipFRIES}";
+									class Value
+									{
+										class data
+										{
+											singleType="BOOL";
+											value=0;
+										};
+									};
+								};
+								nAttributes=2;
 							};
 						};
 					};
@@ -42636,40 +42596,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={130.47702,7.1696463,84.1651};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="helicopter_5";
-								reportOwnPosition=1;
-							};
-							id=3023;
-							type="rhs_ka60_grey";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""rhs_weap_m4_carryhandle""],[2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[""FirstAidKit"",""Medikit""],[10,2]],[[""B_Parachute""],[4]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item6
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={157.82574,5,83.659805};
 								angles[]={0,6.27355,0};
 							};
@@ -42681,7 +42607,7 @@ class Mission
 							id=3183;
 							type="GOL_Helipad";
 						};
-						class Item7
+						class Item6
 						{
 							dataType="Object";
 							class PositionInfo
@@ -42697,7 +42623,7 @@ class Mission
 							id=3184;
 							type="GOL_Helipad";
 						};
-						class Item8
+						class Item7
 						{
 							dataType="Object";
 							class PositionInfo
@@ -42713,7 +42639,7 @@ class Mission
 							id=3185;
 							type="GOL_Helipad";
 						};
-						class Item9
+						class Item8
 						{
 							dataType="Object";
 							class PositionInfo
@@ -42729,7 +42655,7 @@ class Mission
 							id=3182;
 							type="GOL_Helipad";
 						};
-						class Item10
+						class Item9
 						{
 							dataType="Object";
 							class PositionInfo
@@ -42777,7 +42703,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item11
+						class Item10
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -42788,7 +42714,7 @@ class Mission
 							description="Used to teleport to the staging area flag, named flag_east_1 for example.";
 							id=3218;
 						};
-						class Item12
+						class Item11
 						{
 							dataType="Logic";
 							class PositionInfo
@@ -42933,24 +42859,7 @@ class Mission
 								nAttributes=10;
 							};
 						};
-						class Item13
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={143.53421,7.4732513,37.342926};
-								angles[]={0,6.2809501,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="Jet_2";
-							};
-							id=3299;
-							type="O_Plane_Fighter_02_F";
-						};
-						class Item14
+						class Item12
 						{
 							dataType="Object";
 							class PositionInfo
@@ -42965,7 +42874,7 @@ class Mission
 							id=3306;
 							type="GOL_ResupplyStation_EAST_Small";
 						};
-						class Item15
+						class Item13
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -42976,6 +42885,108 @@ class Mission
 							title="Resupply Station";
 							description="This station allows pilots to create any resupply box and service stations.";
 							id=3212;
+						};
+						class Item14
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={143.534,7.4732513,37.343132};
+								angles[]={0,6.2809515,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="Jet_2";
+							};
+							id=4676;
+							type="GOL_O_Plane_Fighter_02_F";
+						};
+						class Item15
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={130.47701,7.1696463,84.165314};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="helicopter_5";
+								textures="Black";
+								reportOwnPosition=1;
+							};
+							id=4682;
+							type="GOL_Heli_Light_02_dynamicLoadout_laser";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""rhs_weap_m4_carryhandle""],[2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[""FirstAidKit"",""Medikit""],[10,2]],[[""B_Parachute""],[4]]],false]";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="VehicleCustomization";
+									expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+									class Value
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="ARRAY";
+														class value
+														{
+															items=2;
+															class Item0
+															{
+																class data
+																{
+																	singleType="STRING";
+																	value="Black";
+																};
+															};
+															class Item1
+															{
+																class data
+																{
+																	singleType="SCALAR";
+																	value=1;
+																};
+															};
+														};
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="ARRAY";
+													};
+												};
+											};
+										};
+									};
+								};
+								nAttributes=2;
+							};
 						};
 					};
 					id=2720;
@@ -45256,110 +45267,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={215.14165,6.5310755,82.146912};
-								angles[]={0,6.2686467,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="helicopter_10";
-								pylons="rhs_mag_b13l1_s13t;rhs_mag_b13l1_s13t;rhs_mag_b8v20a_s8kom;rhs_mag_b8v20a_s8kom;rhs_mag_mi24_empty;rhs_mag_mi24_empty;rhs_ASO2_CMFlare_Chaff_Magazine_x4;";
-							};
-							id=3526;
-							type="I_Heli_light_03_dynamicLoadout_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[],[]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red"",""rhs_mag_rdg2_white""],[30,10,10,4]],[[""FirstAidKit"",""Medikit"",""ToolKit""],[8,1,1]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item3
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={187.64043,6.5310755,82.3862};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="helicopter_11";
-								reportOwnPosition=1;
-							};
-							id=3523;
-							type="I_Heli_light_03_dynamicLoadout_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""rhs_weap_m4_carryhandle""],[2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[""FirstAidKit"",""Medikit""],[10,2]],[[""B_Parachute""],[4]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item4
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={215.4257,6.8630314,60.146175};
-								angles[]={0,6.2790489,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="helicopter_12";
-								pylons="rhs_mag_b8v20a_s8kom;rhs_mag_b8v20a_s8kom;rhs_mag_b8v20a_s8df;rhs_mag_b8v20a_s8df;rhs_UV26_CMFlare_Chaff_Magazine_x4;";
-							};
-							id=3525;
-							type="I_Heli_light_03_unarmed_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[],[]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red"",""rhs_mag_rdg2_white""],[30,10,10,4]],[[""FirstAidKit"",""Medikit"",""ToolKit""],[8,1,1]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item5
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={215.31784,5,83.75631};
 								angles[]={0,6.27355,0};
 							};
@@ -45371,7 +45278,7 @@ class Mission
 							id=3516;
 							type="GOL_Helipad";
 						};
-						class Item6
+						class Item3
 						{
 							dataType="Object";
 							class PositionInfo
@@ -45387,7 +45294,7 @@ class Mission
 							id=3517;
 							type="GOL_Helipad";
 						};
-						class Item7
+						class Item4
 						{
 							dataType="Object";
 							class PositionInfo
@@ -45403,7 +45310,7 @@ class Mission
 							id=3518;
 							type="GOL_Helipad";
 						};
-						class Item8
+						class Item5
 						{
 							dataType="Object";
 							class PositionInfo
@@ -45419,7 +45326,7 @@ class Mission
 							id=3519;
 							type="GOL_Helipad";
 						};
-						class Item9
+						class Item6
 						{
 							dataType="Object";
 							class PositionInfo
@@ -45434,24 +45341,7 @@ class Mission
 							id=3531;
 							type="GOL_ResupplyStation_GUER_Small";
 						};
-						class Item10
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={201.25931,7.3041077,38.645939};
-								angles[]={0,0.00031136922,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="Jet_3";
-							};
-							id=3529;
-							type="I_Plane_Fighter_04_F";
-						};
-						class Item11
+						class Item7
 						{
 							dataType="Logic";
 							class PositionInfo
@@ -45595,7 +45485,7 @@ class Mission
 								nAttributes=10;
 							};
 						};
-						class Item12
+						class Item8
 						{
 							dataType="Logic";
 							class PositionInfo
@@ -45740,7 +45630,7 @@ class Mission
 								nAttributes=10;
 							};
 						};
-						class Item13
+						class Item9
 						{
 							dataType="Marker";
 							position[]={201.31262,5,76.793411};
@@ -45769,7 +45659,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item14
+						class Item10
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -45780,7 +45670,7 @@ class Mission
 							description="Used to teleport to the staging area flag, named flag_independent_1 for example.";
 							id=3521;
 						};
-						class Item15
+						class Item11
 						{
 							dataType="Object";
 							class PositionInfo
@@ -45814,6 +45704,127 @@ class Mission
 								nAttributes=1;
 							};
 						};
+						class Item12
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={201.259,7.3041077,38.645897};
+								angles[]={0,0.00031415926,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="Jet_3";
+							};
+							id=4678;
+							type="GOL_I_Plane_Fighter_04_F";
+						};
+						class Item13
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={215.14165,6.5310755,82.146912};
+								angles[]={0,6.2686467,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="helicopter_10";
+								pylons=";;";
+							};
+							id=4679;
+							type="GOL_Heli_Light_03_dynamicLoadout_laser";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[],[]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red"",""rhs_mag_rdg2_white""],[30,10,10,4]],[[""FirstAidKit"",""Medikit"",""ToolKit""],[8,1,1]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item14
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={215.4257,6.5310755,60.145054};
+								angles[]={0,6.2790489,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="helicopter_12";
+								pylons="rhs_mag_b8v20a_s8kom;rhs_mag_b8v20a_s8kom;rhs_mag_b8v20a_s8df;rhs_mag_b8v20a_s8df;rhs_UV26_CMFlare_Chaff_Magazine_x4;";
+							};
+							id=4680;
+							type="GOL_Heli_Light_03_dynamicLoadout_laser";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[],[]],[[""rhs_30Rnd_545x39_7N10_AK"",""rhs_mag_rgd5"",""rhs_mag_nspn_red"",""rhs_mag_rdg2_white""],[30,10,10,4]],[[""FirstAidKit"",""Medikit"",""ToolKit""],[8,1,1]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item15
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={187.64043,6.5310755,82.3862};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="helicopter_11";
+								reportOwnPosition=1;
+							};
+							id=4681;
+							type="GOL_Heli_Light_03_dynamicLoadout_laser";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""rhs_weap_m4_carryhandle""],[2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[""FirstAidKit"",""Medikit""],[10,2]],[[""B_Parachute""],[4]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
 					};
 					id=3538;
 				};
@@ -45833,7 +45844,7 @@ class Mission
 			class Item0
 			{
 				linkID=0;
-				item0=3023;
+				item0=4682;
 				item1=2728;
 				class CustomData
 				{
@@ -45893,7 +45904,7 @@ class Mission
 			class Item6
 			{
 				linkID=6;
-				item0=2588;
+				item0=4683;
 				item1=2727;
 				class CustomData
 				{
@@ -45904,7 +45915,7 @@ class Mission
 			{
 				linkID=7;
 				item0=3301;
-				item1=3298;
+				item1=4677;
 				class CustomData
 				{
 					type="Sync";
@@ -45913,7 +45924,7 @@ class Mission
 			class Item8
 			{
 				linkID=8;
-				item0=3299;
+				item0=4676;
 				item1=3300;
 				class CustomData
 				{
@@ -45923,7 +45934,7 @@ class Mission
 			class Item9
 			{
 				linkID=9;
-				item0=3523;
+				item0=4681;
 				item1=3513;
 				class CustomData
 				{
@@ -45943,7 +45954,7 @@ class Mission
 			class Item11
 			{
 				linkID=11;
-				item0=3525;
+				item0=4680;
 				item1=3513;
 				class CustomData
 				{
@@ -45953,7 +45964,7 @@ class Mission
 			class Item12
 			{
 				linkID=12;
-				item0=3526;
+				item0=4679;
 				item1=3513;
 				class CustomData
 				{
@@ -45963,7 +45974,7 @@ class Mission
 			class Item13
 			{
 				linkID=13;
-				item0=3529;
+				item0=4678;
 				item1=3527;
 				class CustomData
 				{
