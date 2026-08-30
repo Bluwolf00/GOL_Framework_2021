@@ -71,6 +71,19 @@ switch (toLower(_role)) do {
 		};
 	};
 
+	case "sm": {
+		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
+		[_rifleC, _rifleC_mag_tr, ""] call _addPrimary;
+		_IFAK call _addToUniform;
+		[[_rifleC_mag_tr,2],[_grenademini,2]] call _addToUniform;
+		[[_rifleC_mag_tr,14]] call _addToVest;
+		["", "", "", "", "", ""] call _addLinkedItems;
+		(_FAKSquad) call _addToBackpack;
+		if(((call EFUNC(Common,isNight)) && _allowedNightStuff) || _ForceNVG isEqualTo true) then {
+			_nvg call _addNVG;
+		};	
+	};	
+
 	case "ftl": {
 		[_goggles,_helmet,_uniform,_vest,_backpack] call _addEquipment;
 		if ((random 1) <= _UGL_Chance) then {
