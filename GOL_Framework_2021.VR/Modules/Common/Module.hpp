@@ -79,7 +79,7 @@
 				"I_Soldier_LAT_F"
 			};
 		};		
-		class Civilian {
+		class Civ {
 			Side = 3;
 			Leaders[] = {"C_man_1"};
 			Units[] = {
