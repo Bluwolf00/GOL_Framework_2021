@@ -61,7 +61,7 @@ switch (toLower(_role)) do {
 		[_rifleGL, _rifleGL_mag, _glHEDP] call _addPrimary;
 		[_pistol, _pistol_mag, ""] call _addHandGun;
 		_IFAK call _addToUniform;
-		[[_mapTools,1],[_HelmetCam,1],[_notepad,1],[_cables,6],[_gps,1],[_grenade,22],[_flashBang,2],[_pistol_mag,2],[_smokegrenadeY,4],[_smokegrenadeB,3],[_glsmokeR,5]] call _addToUniform;
+		[[_mapTools,1],[_HelmetCam,1],[_notepad,1],[_cables,6],[_gps,1],[_grenade,2],[_flashBang,2],[_pistol_mag,2],[_smokegrenadeY,4],[_smokegrenadeB,3],[_glsmokeR,5]] call _addToUniform;
 		[[_grenade,2],[_rifleGL_mag_tr,5],[_glHEDP,7]] call _addToVest;
 		[[_rifleGL_mag,4]] call _addToBackpack;
 		_rangefinder call _addBino;
