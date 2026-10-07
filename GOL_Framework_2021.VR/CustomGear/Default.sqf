@@ -566,14 +566,14 @@ switch (toLower(_role)) do {
 		[[_rifle_mag_tr,3],[_smokegrenadeY,6],[_smokegrenadeB,6],[_smokegrenadeB,2],[_smokegrenadeP,2]] call _addToVest;
 		[[_smokegrenadeB,5]] call _addToBackpack;
 		_FAKPlatoon call _addToBackpack;
+		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
 		if (call EFUNC(Common,isNight) || _ForceNightStuff) then {
 			[[_chemG,5],[_chemR,5],[_handFlareG,2],[_IRStrobe,3]] call _addToBackpack;
 			_nvg call _addNVG;
 		};
 		if(_ForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
-		};		
-		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
+		};
 
 	};
 
@@ -613,11 +613,14 @@ switch (toLower(_role)) do {
 		[[_Android,1],[_gps,1],[_Disruptor_Mag,6],[_grenade,2],[_DroneJammer,1],[_DroneDetector,1]] call _addToUniform;
 		[[_rifleC_mag_tr,3],[_rifleC_mag,3],[_smokegrenadeY,3],[_smokegrenadeB,3]] call _addToVest;
 		[[_packedDroneAT,2],[_packedDroneAP,3],["GOL_Mag_FPV_AT_Throw",1]] call _addToBackpack;
+		[_map, _UAVTerminal, "", _compass, _watch, ""] call _addLinkedItems;
 		if (call EFUNC(Common,isNight) || _ForceNightStuff) then {
 			[[_chemG,5],[_chemR,5],[_handFlareG,2],[_IRStrobe,3]] call _addToBackpack;
 			_nvg call _addNVG;
 		};
-		[_map, _UAVTerminal, "", _compass, _watch, ""] call _addLinkedItems;
+		if(_ForceNVG isEqualTo true) then {
+			_nvg call _addNVG;
+		};
 	};
 
 	case "jetp": {
@@ -639,11 +642,11 @@ switch (toLower(_role)) do {
 		[[_flashBang,3],[_pistol_mag,2],[_grenade,2]] call _addToUniform;
 		[[_rifleC_mag,4],[_smokegrenadeY,8],[_smokegrenadeB,6]] call _addToVest;
 		[[_smokegrenadeB,5],[_rifleC_mag_tr,3],[_packedMortar,1]] call _addToBackpack;
+		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
 		if (call EFUNC(Common,isNight) || _ForceNightStuff) then {
 			[[_chemG,5],[_chemR,5],[_handFlareG,2],[_IRStrobe,3]] call _addToBackpack;
 			_nvg call _addNVG;
 		};
-		[_map, "", "", _compass, _watch, ""] call _addLinkedItems;
 		_rangefinder call _addBino;
 		if(_ForceNVG isEqualTo true) then {
 			_nvg call _addNVG;
