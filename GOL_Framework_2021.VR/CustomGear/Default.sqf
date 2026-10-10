@@ -673,7 +673,9 @@ switch (toLower(_role)) do {
 	};
 
 	default {
-		ERROR(FORMAT_2("ERROR: Unit: %1 Role does not exist: %2", _unit, _role));
+		if !(missionNamespace getVariable ["GW_Gear_DlcValidationInProgress", false]) then {
+			ERROR(FORMAT_2("ERROR: Unit: %1 Role does not exist: %2", _unit, _role));
+		};
 		[_unit, "r"] call FUNC(Handler);
 	};
 };

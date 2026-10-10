@@ -33,6 +33,26 @@
 */
 #include "\x\gw\addons\gear\scripts\functions.sqf"
 
+// The 3DEN preview can invoke the mission-local handler during the editor's
+// first-save lifecycle. Reject a malformed callback payload before `params`
+// raises an editor error, and normalise the legacy Boolean faction placeholder.
+if !(_this isEqualType []) exitWith {
+	diag_log format ["[GW_Gear][LocalHandler] ignored invalid arguments (%1): %2", typeName _this, _this];
+	false
+};
+
+private _roleArgument = _this param [1, ""];
+if !(_roleArgument isEqualType "" || {_roleArgument isEqualType []}) then {
+	diag_log format ["[GW_Gear][LocalHandler] normalized invalid role argument (%1): %2", typeName _roleArgument, _this];
+	_this set [1, ""];
+};
+
+private _factionArgument = _this param [2, ""];
+if !(_factionArgument isEqualType "" || {_factionArgument isEqualType []}) then {
+	diag_log format ["[GW_Gear][LocalHandler] normalized invalid forceFaction argument (%1): %2", typeName _factionArgument, _this];
+	_this set [2, ""];
+};
+
 private [
 	"_compatibleItems","_opticValues",
 	"_isMan","_isCar","_isTank","_type","_allowedNightStuff","_isCivilian","_isPlayer","_side","_errorCode","_loadout","_loadoutFile","_insignia",
@@ -79,8 +99,14 @@ private [
 params [
 	["_unit", objNull, [objNull]],
 	["_role", "", ["",[]]],
-	["_forceFaction", nil, ["",[]]]
+	["_forceFaction", "", ["",[]]]
 ];
+
+private _dlcValidationWarnings = [];
+private _validateDlcCandidateGroup = {
+	params ["_candidates", "_slot"];
+	_dlcValidationWarnings append ([_candidates, _slot] call GW_Gear_fnc_validateDlcCandidates);
+};
 
 if !(_unit isEqualType objNull) exitWith {false};
 if !(local _unit) exitWith {false};
@@ -120,6 +146,7 @@ if (_isMan) then {
 		case "r": { _DisplayName = "Rifleman"; _roleArray pushBack _DisplayName};
 		case "g": { _DisplayName = "Grenadier"; _roleArray pushBack _DisplayName};
 		case "engineer": { _DisplayName = "Engineer"; _roleArray pushBack _DisplayName};
+		case "diver": { _DisplayName = "Combat Diver"; _roleArray pushBack _DisplayName};
 		case "ag": { _DisplayName = "Asst. Gunner"; _roleArray pushBack _DisplayName};
 		case "ar": { _DisplayName = "Automatic Rifleman"; _roleArray pushBack _DisplayName};
 		case "ammg": { _DisplayName = "Asst. Medium Machine Gunner"; _roleArray pushBack _DisplayName};
@@ -142,7 +169,7 @@ if (_isMan) then {
 	};
 	_unit setVariable ["GOL_SelectedRole",_roleArray,true];
 
-	if(time > 10 && isPlayer _unit) then {
+	if (time > 10 && {isPlayer _unit} && {!(missionNamespace getVariable ["GW_Gear_DlcValidationInProgress", false])}) then {
 		format["%1 has selected the %2 kit.",name _unit,_roleArray select 1] remoteExec ["systemChat",0];
 	};
 
@@ -166,7 +193,14 @@ if (_isMan) then {
 		};
 	};
 
-	if (isNil "_forceFaction") then {
+	if (_forceFaction isEqualType []) then {
+		_forceFaction = if ((count _forceFaction) > 0) then {_forceFaction select 0} else {""};
+	};
+	if !(_forceFaction isEqualType "") then {
+		_forceFaction = "";
+	};
+
+	if (_forceFaction isEqualTo "") then {
 		switch (GETSIDE(_unit)) do {
 			case 0: {
 				_side = toUpper(GVAR(Opfor));
@@ -204,7 +238,7 @@ if (_isMan) then {
 			if(!isNil "_nvg") then {_nvg = "ACE_NVG_Wide_Black_WP"};
 		};
 
-		if !(_isPlayer || (_unit in switchableUnits)) then {
+		if !(_isPlayer || (_unit in switchableUnits) || (missionNamespace getVariable ["GW_Gear_PreviewInProgress", false])) then {
 			_loadoutFile = "Default_AI";
 			_unit enableGunLights "forceOn";
 		};
@@ -228,6 +262,19 @@ if (_isMan) then {
 	};
 
 	if !(_errorCode) then {
+		{
+			_x params ["_slot", "_items"];
+			private _itemText = _items apply {format ["%1 (%2)", _x select 0, _x select 1]};
+			private _message = format ["[GW_Gear] DLC validation: faction %1, role %2, %3 has no approved fallback: %4", _side, _role, _slot, _itemText joinString ", "];
+			diag_log _message;
+			if (_isPlayer && {hasInterface} && {!(missionNamespace getVariable ["GW_Gear_DlcValidationInProgress", false])}) then {
+				systemChat _message;
+			};
+		} forEach (_dlcValidationWarnings arrayIntersect _dlcValidationWarnings);
+		if !(isNil {missionNamespace getVariable "GW_Gear_DlcValidationCapture"}) then {
+			missionNamespace setVariable ["GW_Gear_DlcValidationCapture", _dlcValidationWarnings arrayIntersect _dlcValidationWarnings];
+		};
+
 		_unit setUnitLoadout _loadout;
 		_unit setVariable ["GW_Gear_appliedGear", true, true];
 

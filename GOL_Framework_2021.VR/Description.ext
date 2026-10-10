@@ -105,6 +105,14 @@ class Params {
 		values[] = { 100, 90, 80, 70, 60, 50, 40, 30, 20, 10 };
 		default = 100;
 	};
+
+	class GOL_AISkillOverride
+	{
+		title = "AI Skill Preset Override";
+		texts[] = { "No Override", "Special Forces", "Commando", "Regulars", "Insurgents", "Farmer" };
+		values[] = { -1, 0, 1, 2, 3, 4 };
+		default = -1;
+	};
 };
 
 class CfgFunctions {

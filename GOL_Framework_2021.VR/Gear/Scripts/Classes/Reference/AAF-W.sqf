@@ -2,7 +2,7 @@
 _useMineDetector = false;
 _allowedNightStuff = true;
 
-_insignia = "insignia_block35";
+_insignia = "AAF_1stRegiment";
 _goggles = ["UK3CB_G_KLR_GRN","G_Headband_grn_F","G_Armband_aaf_alt_F","rhsusf_shemagh2_grn","rhsusf_shemagh_grn","rhsusf_shemagh_gogg_grn","rhsusf_shemagh2_gogg_grn","rhsusf_oakley_goggles_blk","rhs_balaclava1_olive","rhs_balaclava"];
 _OfficerHelmet = "H_MilCap_dgtl";
 _helmet =  ["H_HelmetIA"];
