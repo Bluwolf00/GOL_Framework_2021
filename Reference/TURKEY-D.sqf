@@ -9,9 +9,7 @@ _uniform = ["acp_gol_TUR_TLF_U_I_E_Uniform_shortsleeve_TUR_TLF_01_F_flag","acp_g
 _vest = ["acp_gol_TUR_TLF_V_PlateCarrier1_TUR_TLF_insignia","acp_gol_TUR_TLF_V_PlateCarrier2_TUR_TLF_insignia","acp_gol_TUR_TLF_V_CarrierRigKBT_01_light_TUR_TLF_F","acp_gol_TUR_TLF_V_PlateCarrierIA1_TUR_TLF"];
 _backpack = "acp_gol_TUR_TLF_B_FieldPack_TUR_TLF";
 _backpackRadio = _backpack;
-if (true) then {
-	_backpackRadio = "acp_gol_TUR_TLF_B_RadioBag_01_TUR_TLF_F";
-};
+_backpackRadio = ["acp_gol_TUR_TLF_B_RadioBag_01_TUR_TLF_F", "UK3CB_B_B_Alice_Radio_Backpack"];
 
 if (_role in ["sl","tl","pl"]) then {
 	_helmet = "acp_gol_TUR_TLF_H_HelmetSpecB_TUR_TLF_insignia";
@@ -23,7 +21,7 @@ if (_role in ["ag","ammg"]) then {
 
 if (_role isEqualTo "crew") then {
 	_helmet = "H_HelmetCrew_B";
-	_vest = "acp_gol_TUR_TLF_V_CarrierRigKBT_01_TUR_TLF_F";
+	_vest = "acp_gol_TUR_TLF_V_PlateCarrierIA1_TUR_TLF";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "acp_gol_TUR_TLF_H_HelmetSpecter_headset_TUR_TLF_F";
@@ -60,8 +58,8 @@ _rifleGL_mag_tr = "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
 _rifleC_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
 _rifleC_mag_tr = "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
 
-_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
+_LMG = ["GOL_weap_pkp", _silencer, _pointer, _sight, _bipod];
+_LMG_mag = "GOL_100Rnd_762x54mmR_red";
 
 _MMG = ["UK3CB_M60", _silencer, _pointer, _sight, _bipod];
 _MMG_mag = "rhsusf_100Rnd_762x51_m62_tracer";
@@ -72,9 +70,9 @@ _LAT = ["rhs_weap_m72a7", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "rhs_m72a7_mag";
 _LAT_ReUsable = false;
 
-_MAT = ["launch_RPG7_F", _silencer, _pointer, "rhs_acc_pgo7v3", _bipod];
-_MAT_mag = "rhs_rpg7_PG7VM_mag";
-_MAT_mag_HE = "rhs_rpg7_TBG7V_mag";
+_MAT = ["GOL_weap_PSRL1", _silencer, _pointer, "rhs_acc_pgo7v3", _bipod];
+_MAT_mag = "GOL_mag_rpg7_Modern";
+_MAT_mag_HE = "GOL_mag_rpg7_OG7V";
 
 _HAT = ["launch_O_Vorona_brown_F", _silencer, _pointer, _sight, _bipod];
 _HAT_mag = "Vorona_HEAT";

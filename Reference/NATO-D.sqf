@@ -10,7 +10,7 @@ _vest = ["V_PlateCarrier2_rgr","V_PlateCarrierGL_mtp","V_PlateCarrierSpec_mtp","
 _backpack = "B_Kitbag_mcamo";
 _backpackRadio = _backpack;
 if (true) then {
-	_backpackRadio = "B_RadioBag_01_mtp_F";
+	_backpackRadio = ["B_RadioBag_01_mtp_F", "UK3CB_B_B_Backpack_Radio_Chem"];
 };
 
 if (_role in ["ag","ammg","lr","ab","atab"]) then {

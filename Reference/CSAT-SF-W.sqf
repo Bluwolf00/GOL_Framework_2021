@@ -14,11 +14,11 @@ if (true) then {
 };
 
 if (_role in ["sl","tl","fac"]) then {
-	_vest = selectRandom ["rhs_6b3_R148","rhs_6b3_off"];
+	_vest = ["rhs_6b3_R148","rhs_6b3_off"];
 };
 
 if (_role in ["g"]) then {
-	_vest = selectRandom ["rhs_6b3_VOG","rhs_6b3_VOG_2"];
+	_vest = ["rhs_6b3_VOG","rhs_6b3_VOG_2"];
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {

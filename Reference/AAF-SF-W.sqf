@@ -2,7 +2,7 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "";
-_goggles = ["rhssaf_veil_Green"];
+_goggles = ["JCA_G_FaceMask_01_olive_F","JCA_G_balaclava_01_olive_F","rhsusf_shemagh_grn","rhsusf_oakley_goggles_clr"];
 _OfficerHelmet = "UK3CB_AAF_B_H_Beret_SF_Off";
 _helmet = ["UK3CB_AAF_I_H_MKVI_Helmet_B_GRN","H_HelmetHBK_chops_F","H_HelmetHBK_ear_F","H_HelmetHBK_F"];
 _uniform = ["UK3CB_AAF_B_U_CombatUniform_DIGI_GRN","UK3CB_AAF_B_U_CombatUniform_Shortsleeve_DIGI_GRN","U_I_CombatUniform_tshirt"];
@@ -39,30 +39,29 @@ if (_role isEqualTo "jetp") then {
 };
 
 // Attachments
-_silencer = "";
+_silencer = "JCA_muzzle_snds_556_enhanced_olive";
 _pointer = "";
-_sight = "";
-_bipod = "";
+_sight = "JCA_arifle_SCAR_L_short_olive_F";
+_bipod = "JCA_bipod_04_olive";
 
-_rifle = ["rhs_weap_g36kv", _silencer, _pointer, _sight, _bipod];
-_rifleC = ["rhs_weap_g36c", _silencer, _pointer, _sight, _bipod];
-_rifleGL = ["rhs_weap_g36kv_ag36", _silencer, _pointer, _sight, _bipod];
-_rifleL = ["UK3CB_G3SG1_RIS", _silencer, _pointer, _sight, _bipod];
-_rifle_mag = "rhssaf_30rnd_556x45_SOST_G36";
-_rifle_mag_tr = "rhssaf_30rnd_556x45_Tracers_G36";
-_rifleGL_mag = "rhssaf_30rnd_556x45_SOST_G36";
-_rifleGL_mag_tr = "rhssaf_30rnd_556x45_Tracers_G36";
-_rifleC_mag = "rhssaf_30rnd_556x45_SOST_G36";
-_rifleC_mag_tr = "rhssaf_30rnd_556x45_Tracers_G36";
-_rifleL_mag = "UK3CB_G3_50rnd_762x51_R";
-_rifleL_mag_tr = "UK3CB_G3_50rnd_762x51_RT";
+_rifle = ["JCA_arifle_SCAR_L_olive_F", _silencer, _pointer, _sight, _bipod];
+_rifleC = ["JCA_arifle_SCAR_L_short_olive_F", _silencer, _pointer, _sight, _bipod];
+_rifleGL = ["JCA_arifle_SCAR_L_GL_olive_F", _silencer, _pointer, _sight, _bipod];
+_rifleL = ["JCA_arifle_SCAR_H_olive_F", _silencer, _pointer, _sight, _bipod];
+_rifle_mag = "GOL_30Rnd_556x45_AP45_Mixed_Red";
+_rifle_mag_tr = "GOL_30Rnd_556x45_AP45_Tracer_Red";
+_rifleGL_mag = "GOL_30Rnd_556x45_AP45_Mixed_Red";
+_rifleGL_mag_tr = "GOL_30Rnd_556x45_AP45_Tracer_Red";
+_rifleC_mag = "GOL_30Rnd_556x45_AP45_Mixed_Red";
+_rifleC_mag_tr = "GOL_30Rnd_556x45_AP45_Tracer_Red";
+_rifleL_mag = "JCA_20Rnd_762x51_SCAR_Red_Mag";
+_rifleL_mag_tr = "JCA_20Rnd_762x51_SCAR_Tracer_Red_Mag";
 
-_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
+_LMG = ["GOL_LMG_Mk200_F", "muzzle_snds_65_TI_blk_F", _pointer, _sight, "bipod_03_F_blk"];
+_LMG_mag = "GOL_200Rnd_65x39_cased_Box_Tracer_Red";
 
-_MMG = ["UK3CB_MG3_KWS_B", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "UK3CB_MG3_250rnd_762x51_RT";
-
+_MMG = ["GOL_MG3_KWS_B", _silencer, _pointer, _sight, _bipod];
+_MMG_mag = "GOL_MG3_250Rnd_762x51_M993_SLAP_Tracer_Red";
 
 _LAT = ["UK3CB_BAF_AT4_CS_AT_Launcher", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "UK3CB_BAF_AT4_CS_AT_Mag";
@@ -70,7 +69,7 @@ _LAT_ReUsable = false;
 
 _MAT = ["launch_MRAWS_olive_rail_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "MRAWS_HEAT_F";
-_MAT_mag_HE = "MRAWS_HE_F";
+_MAT_mag_HE = "GOL_mag_MRAWS_HEDP_F";
 
 _HAT = ["launch_O_Vorona_green_F", _silencer, _pointer, _sight, _bipod];
 _HAT_mag = "Vorona_HEAT";

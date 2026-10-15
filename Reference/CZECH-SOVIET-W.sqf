@@ -2,10 +2,10 @@ _useMineDetector = false;
 _allowedNightStuff = false;
 
 _insignia = "Roundel_Czech";
-_goggles = selectRandom ["G_Armband_darred_alt_F"];
-_helmet = selectRandom ["rhs_ssh60"];
+_goggles = ["G_Armband_darred_alt_F"];
+_helmet = ["rhs_ssh60"];
 _OfficerHelmet = "rhssaf_beret_red";
-_uniform = selectRandom ["rhs_uniform_afghanka_grey"];
+_uniform = ["rhs_uniform_afghanka_grey"];
 _vest = ["rhs_6b3","rhs_6b3_holster","rhs_6b3_AK"];
 _backpack = "UK3CB_UN_B_B_ASS";
 _backpackRadio = _backpack;

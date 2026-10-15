@@ -10,7 +10,7 @@ _vest = "acp_gol_CN_Type_07_Universal_V_PlateCarrier1_CN_Type_07_Universal";
 _backpack = "acp_gol_CN_Type_07_Universal_B_Kitbag_rgr_CN_Type_07_Universal";
 _backpackRadio = _backpack;
 if (true) then {
-	_backpackRadio = "acp_gol_CN_Type_07_Universal_B_RadioBag_01_CN_Type_07_Universal_F";
+	_backpackRadio = ["acp_gol_CN_Type_07_Universal_B_RadioBag_01_CN_Type_07_Universal_F", "UK3CB_B_B_Backpack_Radio_Chem_OLI"];
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {

@@ -31,7 +31,7 @@ if (true) then {
 
 
 if (_role in ["ag","ammg","lr","ab"]) then {
-	_backpack = selectRandom ["rhs_sidor","UK3CB_CHC_C_B_HIKER","UK3CB_B_Largepack","UK3CB_B_Largepack_Med"];
+	_backpack = ["rhs_sidor","UK3CB_CHC_C_B_HIKER","UK3CB_B_Largepack","UK3CB_B_Largepack_Med"];
 };
 if (_role isEqualTo "p") then {
 	_helmet = "H_Booniehat_khk_hs";

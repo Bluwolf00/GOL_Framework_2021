@@ -1,13 +1,13 @@
 # Process-MissionFiles.ps1  (Framework 4)
 # Processes mission.sqm, spawnList.sqf and other retained files in-place.
-# Description.ext is NOT processed here — it is deleted by Clean-Files and pasted fresh from the FW4 template.
+# Description.ext is NOT processed here - it is deleted by Clean-Files and pasted fresh from the FW4 template.
 param(
     [string]$LogFile,
     [string]$MissionDir
 )
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$MissionDir = if ($MissionDir) { (Resolve-Path -LiteralPath $MissionDir).Path } else { Split-Path -Parent $ScriptDir }
+$MissionDir = if ($MissionDir) { (Resolve-Path -LiteralPath $MissionDir).Path } else { Split-Path -Parent (Split-Path -Parent $ScriptDir) }
 Set-Location $MissionDir
 
 if (-not $LogFile) {
@@ -97,6 +97,8 @@ if ($folderName -match '^(CO|COOP|TVT|PVP|ATG)[@-](\d+)[\s_](.+?)\.([^.]+)$') {
 
 # === Replacements to perform (case-insensitive, both single and double quotes) ===
 $replacements = @(
+    # Use the GOL-namespaced Little Bird variant supplied by OKS_GOL_Misc.
+    @{ From = 'RHS_MELB_AH6M'; To = 'GOL_MELB_AH6M' },
     @{ From = 'execVM "Scripts\OKS_Vehicles\OKS_Mechanized.sqf"'; To = 'spawn OKS_fnc_Mechanized' },
     @{ From = 'execVM ""Scripts\OKS_Vehicles\OKS_Mechanized.sqf""'; To = 'spawn OKS_fnc_Mechanized' },
     @{ From = 'execVM "Scripts\OKS_Vehicles\OKS_Helicopter.sqf"'; To = 'spawn OKS_fnc_Helicopter' },
@@ -257,6 +259,205 @@ function Remove-LegacyLines($content) {
     return $content
 }
 
+function Convert-LegacyServiceHelipads {
+    param([string]$Content)
+
+    # mission.sqm object definitions are nested classes. Replace only the
+    # Land_HelipadCivil_F object blocks so unrelated init fields are untouched.
+    $itemMatches = [regex]::Matches($Content, '(?m)class\s+Item\d+\s*\{')
+    $convertedCount = 0
+
+    for ($matchIndex = $itemMatches.Count - 1; $matchIndex -ge 0; $matchIndex--) {
+        $itemMatch = $itemMatches[$matchIndex]
+        $openingBraceIndex = $Content.IndexOf('{', $itemMatch.Index)
+        if ($openingBraceIndex -lt 0) {
+            continue
+        }
+
+        $depth = 0
+        $inString = $false
+        $closingBraceIndex = -1
+        for ($charIndex = $openingBraceIndex; $charIndex -lt $Content.Length; $charIndex++) {
+            $character = $Content[$charIndex]
+            if ($character -eq '"') {
+                # Doubled quotes are escaped quotes in mission.sqm strings.
+                if ($inString -and $charIndex + 1 -lt $Content.Length -and $Content[$charIndex + 1] -eq '"') {
+                    $charIndex++
+                    continue
+                }
+                $inString = -not $inString
+                continue
+            }
+            if ($inString) {
+                continue
+            }
+            if ($character -eq '{') {
+                $depth++
+            } elseif ($character -eq '}') {
+                $depth--
+                if ($depth -eq 0) {
+                    $closingBraceIndex = $charIndex
+                    break
+                }
+            }
+        }
+
+        if ($closingBraceIndex -lt 0) {
+            continue
+        }
+
+        $blockLength = $closingBraceIndex - $itemMatch.Index + 1
+        $itemBlock = $Content.Substring($itemMatch.Index, $blockLength)
+        if ($itemBlock -notmatch 'type\s*=\s*"Land_HelipadCivil_F"\s*;') {
+            continue
+        }
+
+        $itemBlock = [regex]::Replace($itemBlock, 'type\s*=\s*"Land_HelipadCivil_F"\s*;', 'type="GOL_Helipad";')
+        $itemBlock = [regex]::Replace($itemBlock, '(?is)(\binit\s*=\s*")(?:(?:"")|[^"])*("\s*;)', '${1}${2}')
+        $Content = $Content.Substring(0, $itemMatch.Index) + $itemBlock + $Content.Substring($closingBraceIndex + 1)
+        $convertedCount++
+    }
+
+    return @{ Content = $Content; Count = $convertedCount }
+}
+
+function Remove-ObsoleteEdenModules {
+    param([string]$Content)
+
+    $obsoleteModuleTypes = @("DAPS_AssignAPS", "DAPS_Options")
+    $itemMatches = [regex]::Matches($Content, '(?m)class\s+Item\d+\s*\{')
+    $removedCount = 0
+
+    # Process from the end so removing an item never invalidates earlier offsets.
+    for ($matchIndex = $itemMatches.Count - 1; $matchIndex -ge 0; $matchIndex--) {
+        $itemMatch = $itemMatches[$matchIndex]
+        $openingBraceIndex = $Content.IndexOf('{', $itemMatch.Index)
+        $depth = 0
+        $closingBraceIndex = -1
+        for ($charIndex = $openingBraceIndex; $charIndex -lt $Content.Length; $charIndex++) {
+            if ($Content[$charIndex] -eq '{') { $depth++ }
+            if ($Content[$charIndex] -eq '}') {
+                $depth--
+                if ($depth -eq 0) {
+                    $closingBraceIndex = $charIndex
+                    break
+                }
+            }
+        }
+        if ($closingBraceIndex -lt 0) { continue }
+
+        $itemBlock = $Content.Substring($itemMatch.Index, $closingBraceIndex - $itemMatch.Index + 1)
+        $isObsolete = $obsoleteModuleTypes | Where-Object {
+            $itemBlock -match ('(?m)^\s*type\s*=\s*"' + [regex]::Escape($_) + '"\s*;')
+        }
+        if ($isObsolete) {
+            $Content = $Content.Remove($itemMatch.Index, $itemBlock.Length)
+            $removedCount++
+        }
+    }
+
+    if ($removedCount -eq 0) {
+        return @{ Content = $Content; Count = 0 }
+    }
+
+    # DAPS modules are placed directly in `class Entities` or legacy `class
+    # Items` containers. Recount direct Item children and reindex their headers
+    # to keep mission.sqm valid.
+    $itemsMatches = [regex]::Matches($Content, '(?m)class\s+(?:Entities|Items)\s*\{')
+    for ($matchIndex = $itemsMatches.Count - 1; $matchIndex -ge 0; $matchIndex--) {
+        $itemsMatch = $itemsMatches[$matchIndex]
+        $openingBraceIndex = $Content.IndexOf('{', $itemsMatch.Index)
+        $depth = 0
+        $closingBraceIndex = -1
+        for ($charIndex = $openingBraceIndex; $charIndex -lt $Content.Length; $charIndex++) {
+            if ($Content[$charIndex] -eq '{') { $depth++ }
+            if ($Content[$charIndex] -eq '}') {
+                $depth--
+                if ($depth -eq 0) {
+                    $closingBraceIndex = $charIndex
+                    break
+                }
+            }
+        }
+        if ($closingBraceIndex -lt 0) { continue }
+
+        $itemsBlock = $Content.Substring($itemsMatch.Index, $closingBraceIndex - $itemsMatch.Index + 1)
+        $directItems = New-Object System.Collections.Generic.List[System.Text.RegularExpressions.Match]
+        $itemHeaders = [regex]::Matches($itemsBlock, '(?m)class\s+Item\d+\s*\{')
+        foreach ($header in $itemHeaders) {
+            $depthAtHeader = 0
+            for ($index = $itemsBlock.IndexOf('{') + 1; $index -lt $header.Index; $index++) {
+                if ($itemsBlock[$index] -eq '{') { $depthAtHeader++ }
+                if ($itemsBlock[$index] -eq '}') { $depthAtHeader-- }
+            }
+            if ($depthAtHeader -eq 0) { $directItems.Add($header) }
+        }
+
+        for ($index = $directItems.Count - 1; $index -ge 0; $index--) {
+            $header = $directItems[$index]
+            $itemsBlock = $itemsBlock.Remove($header.Index, $header.Length).Insert($header.Index, "class Item$index`n`t`t{")
+        }
+        $itemsBlock = [regex]::Replace($itemsBlock, '(?m)(^\s*items\s*=\s*)\d+;', ('${1}' + $directItems.Count + ';'), 1)
+        $Content = $Content.Substring(0, $itemsMatch.Index) + $itemsBlock + $Content.Substring($closingBraceIndex + 1)
+    }
+
+    return @{ Content = $Content; Count = $removedCount }
+}
+
+function Remove-ObsoleteAddonDependencies {
+    param([string]$Content)
+
+    # Only remove dependencies which are confirmed unused outside mission
+    # metadata. This does not remove placed units, objects, or standard markers.
+    $obsoleteAddons = @("Markers", "tsp_faction")
+    foreach ($addonName in $obsoleteAddons) {
+        $escapedAddonName = [regex]::Escape($addonName)
+        $Content = [regex]::Replace($Content, '(?m)^\s*"' + $escapedAddonName + '",\s*\r?\n', '')
+    }
+
+    # AddonsMetaData is editor-only, but keep it internally consistent so 3DEN
+    # does not retain a stale dependency or mismatched Item count.
+    $listStart = $Content.IndexOf('class List', [System.StringComparison]::Ordinal)
+    if ($listStart -lt 0) { return $Content }
+    $listOpen = $Content.IndexOf('{', $listStart)
+    if ($listOpen -lt 0) { return $Content }
+
+    $depth = 0
+    $listClose = -1
+    for ($index = $listOpen; $index -lt $Content.Length; $index++) {
+        if ($Content[$index] -eq '{') { $depth++ }
+        if ($Content[$index] -eq '}') {
+            $depth--
+            if ($depth -eq 0) {
+                $listClose = $index
+                break
+            }
+        }
+    }
+    if ($listClose -lt 0) { return $Content }
+
+    $listContent = $Content.Substring($listOpen + 1, $listClose - $listOpen - 1)
+    foreach ($addonName in $obsoleteAddons) {
+        $escapedAddonName = [regex]::Escape($addonName)
+        $metadataItem = [regex]::Match($listContent, '(?s)\s*class Item(?<index>\d+)\s*\{\s*className="' + $escapedAddonName + '";.*?\};')
+        if (-not $metadataItem.Success) { continue }
+
+        $removedIndex = [int]$metadataItem.Groups['index'].Value
+        $listContent = $listContent.Remove($metadataItem.Index, $metadataItem.Length)
+        $listContent = [regex]::Replace($listContent, 'class Item(\d+)', {
+            param($match)
+            $itemIndex = [int]$match.Groups[1].Value
+            if ($itemIndex -gt $removedIndex) { return 'class Item' + ($itemIndex - 1) }
+            return $match.Value
+        })
+    }
+    $itemCount = [regex]::Matches($listContent, 'class Item\d+\s*\{').Count
+    $itemsRegex = [regex]'items=\d+;'
+    $listContent = $itemsRegex.Replace($listContent, "items=$itemCount;", 1)
+
+    return $Content.Substring(0, $listOpen + 1) + $listContent + $Content.Substring($listClose)
+}
+
 function Apply-StructuredLegacyRewrites($content) {
     # Handle legacy function calls where the new function requires a different parameter order/count.
     # These rewrites run BEFORE the simple literal replacement table.
@@ -303,6 +504,43 @@ function Apply-StructuredLegacyRewrites($content) {
         return $parts
     }
 
+    # Surrender has had several incompatible parameter layouts. The FW4 function
+    # only needs the unit, so retain argument zero for function calls and legacy
+    # execVM script paths. The path expression intentionally accepts additional
+    # legacy folders and both OKS_Surrender/OKS_fnc_Surrender filenames.
+    if ($content.IndexOf('Surrender', $ordinalIgnoreCase) -ge 0) {
+        $normalizeSurrender = {
+            param($m)
+
+            $args = Split-TopLevelCsv $m.Groups['args'].Value
+            if ($args.Count -eq 0 -or [string]::IsNullOrWhiteSpace($args[0])) {
+                return $m.Value
+            }
+
+            $semicolon = if ($m.Groups['semicolon'].Value -match ';') {';'} else {''}
+            return "[$($args[0])] $($m.Groups['mode'].Value) OKS_fnc_Surrender$semicolon"
+        }
+
+        $functionPattern = '(?is)\[\s*(?<args>[^\]]+)\s*\]\s*(?<mode>spawn|call)\s+OKS(?:_fnc)?_Surrender\b(?<semicolon>\s*;?)'
+        $content = [regex]::Replace($content, $functionPattern, $normalizeSurrender)
+
+        $scriptPattern = '(?is)\[\s*(?<args>[^\]]+)\s*\]\s*execVM\s*"{1,2}(?:[^"\\]*\\)*OKS_(?:fnc_)?Surrender\.sqf"{1,2}(?<semicolon>\s*;?)'
+        $content = [regex]::Replace(
+            $content,
+            $scriptPattern,
+            {
+                param($m)
+                $args = Split-TopLevelCsv $m.Groups['args'].Value
+                if ($args.Count -eq 0 -or [string]::IsNullOrWhiteSpace($args[0])) {
+                    return $m.Value
+                }
+
+                $semicolon = if ($m.Groups['semicolon'].Value -match ';') {';'} else {''}
+                return "[$($args[0])] spawn OKS_fnc_Surrender$semicolon"
+            }
+        )
+    }
+
     # OKS_Rush_Wavespawn -> OKS_fnc_Lambs_Wavespawn (inserts "rush" before side)
     # Legacy: [[pos1,pos2],UnitsPerWave,AmountOfWaves,DelayPerWave,Side,Range,"Var"] spawn OKS_Rush_Wavespawn;
     # New:    [[pos1,pos2],UnitsPerWave,AmountOfWaves,DelayPerWave,"rush",Side,Range,"Var"] spawn OKS_fnc_Lambs_Wavespawn;
@@ -327,25 +565,24 @@ function Apply-StructuredLegacyRewrites($content) {
         )
     }
 
-    # OKS_Rush_Spawner -> OKS_fnc_Lambs_Spawner (inserts "rush" as 2nd arg)
+    # OKS_Rush_Spawner -> OKS_fnc_Lambs_Spawner (inserts "rush" as arg 1)
     # Legacy: [SpawnPos,UnitsPerBase,Side,Range,[],Trigger] spawn OKS_Rush_Spawner;
     # New:    [SpawnPos,"rush",UnitsPerBase,Side,Range,[],Trigger] spawn OKS_fnc_Lambs_Spawner;
+    # Capture the position array separately. A comma-based expression cannot
+    # capture it because positions themselves contain commas.
     if ($content.IndexOf('OKS_Rush_Spawner', $ordinalIgnoreCase) -ge 0) {
         $content = [regex]::Replace(
             $content,
-            '(?is)\[\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*([^,\]]+)\s*,\s*(\[[^\]]*\])\s*,\s*([^\]]+?)\s*\]\s*(spawn|call)\s+OKS_Rush_Spawner\b',
+            '(?is)\[\s*(?<position>\[[^\[\]]*\])\s*,\s*(?<args>.*?)\s*\]\s*(?<mode>spawn|call)\s+OKS_Rush_Spawner\b(?<semicolon>\s*;?)',
             {
                 param($m)
-                [string]::Format(
-                    '[{0},"rush",{1},{2},{3},{4},{5}] {6} OKS_fnc_Lambs_Spawner',
-                    $m.Groups[1].Value,
-                    $m.Groups[2].Value,
-                    $m.Groups[3].Value,
-                    $m.Groups[4].Value,
-                    $m.Groups[5].Value,
-                    $m.Groups[6].Value,
-                    $m.Groups[7].Value
-                )
+                $args = Split-TopLevelCsv $m.Groups['args'].Value
+                if ($args.Count -eq 0 -or [string]::IsNullOrWhiteSpace($args[0])) {
+                    return $m.Value
+                }
+
+                $semicolon = if ($m.Groups['semicolon'].Value -match ';') {';'} else {''}
+                return '[' + $m.Groups['position'].Value + ',"rush",' + ($args -join ',') + '] ' + $m.Groups['mode'].Value + ' OKS_fnc_Lambs_Spawner' + $semicolon
             }
         )
     }
@@ -563,8 +800,25 @@ foreach ($file in $extraFileContents.Keys) {
 
 # === Apply replacements and image path fixes to mission.sqm ===
 Log-Message "Processing mission.sqm rewrites..."
+$helipadConversion = Convert-LegacyServiceHelipads -Content $missionContent
+$missionContent = $helipadConversion.Content
+if ($helipadConversion.Count -gt 0) {
+    Log-Message "Converted $($helipadConversion.Count) Land_HelipadCivil_F object(s) to GOL_Helipad and cleared their init fields."
+}
+$moduleCleanup = Remove-ObsoleteEdenModules -Content $missionContent
+$missionContent = $moduleCleanup.Content
+if ($moduleCleanup.Count -gt 0) {
+    Log-Message "Removed $($moduleCleanup.Count) obsolete DAPS 3DEN module(s)."
+}
 $missionContent = Apply-StructuredLegacyRewrites $missionContent
 Log-Message "mission.sqm: structured rewrites done"
+
+# MFC Markers is no longer part of the supported modset. Its mission.sqm
+# dependency blocks 3DEN from opening a migrated mission, even though standard
+# editor markers do not need the addon.
+$missionContent = Remove-ObsoleteAddonDependencies $missionContent
+Log-Message "mission.sqm: removed confirmed unused addon references"
+
 $missionContent = Replace-AllStringsCaseInsensitive $missionContent $replacements
 Log-Message "mission.sqm: string replacements done"
 $missionContent = Apply-StructuredLegacyRewrites $missionContent
@@ -638,5 +892,5 @@ try {
 
 Write-Host ""
 Write-Host "mission.sqm and retained files updated successfully!"
-Write-Host "(Description.ext was deleted — paste fresh copy from FW4 template)"
+Write-Host "(Description.ext was deleted - paste fresh copy from FW4 template)"
 Write-Host "Check undo_log.txt for details."

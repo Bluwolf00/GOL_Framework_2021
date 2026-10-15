@@ -2,33 +2,36 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "";
-_goggles = [""];
-_helmet = ["acp_gol_CZ_VZ95_Desert_H_HelmetB_light_CZ_VZ95_Desert_insignia"];
-_OfficerHelmet = "rhsgref_fieldcap_ttsko_digi";
-_uniform = ["acp_gol_CZ_VZ95_Desert_U_I_E_Uniform_shortsleeve_CZ_VZ95_Desert_01_F_flag","acp_gol_CZ_VZ95_Desert_U_I_E_Uniform_CZ_VZ95_Desert_01_F_insignia"];
-_vest = ["acp_gol_CZ_VZ95_Desert_V_PlateCarrierIA2_CZ_VZ95_Desert"];
-_backpack = "acp_gol_CZ_VZ95_Desert_B_AssaultPackEnhanced_CZ_VZ95_Desert_insignia";
-_backpackRadio = _backpack;
+_goggles = ["G_Balaclava_TI_G_tna_F","G_Balaclava_TI_tna_F"];
+_helmet = ["H_HelmetB_TI_tna_F"];
+_OfficerHelmet = "UK3CB_ANA_B_H_Beret_MAR";
+_uniform = ["U_B_CTRG_Soldier_F","U_B_CTRG_Soldier_3_F","U_B_CTRG_Soldier_2_F"];
+_vest = "acp_gol_GB_DPM95_V_PlateCarrier2_GB_DPM95_insignia";
+_backpack = "acp_gol_GB_DPM95_B_Kitbag_rgr_GB_DPM95";
 if (true) then {
-	_backpackRadio = "acp_gol_CZ_VZ95_Desert_B_RadioBag_01_CZ_VZ95_Desert_F";
+	_backpackRadio = ["acp_gol_GB_DPM95_B_RadioBag_01_GB_DPM95_F", "UK3CB_B_B_Backpack_Radio_Chem_OLI"];
 };
 
-if (_role in ["ag","ammg","sm","lr","ab"]) then {
-	_backpack = "acp_gol_CZ_VZ95_Desert_B_Carryall_CZ_VZ95_Desert";
+if (_role isEqualTo "sl") then {
+
 };
 
-if(_role in ["crew"]) then {
-	_helmet = "H_HelmetCrew_I";
-	_goggles = "";
-	_vest = "acp_gol_CZ_VZ95_Desert_V_PlateCarrier1_CZ_VZ95_Desert_insignia";
-	_uniform = "acp_gol_CZ_VZ95_Desert_U_O_officer_noInsignia_CZ_VZ95_Desert_F_insignia";
+if(_role isEqualTo "ftl") then {
+
 };
 
+if (_role in ["ag","ammg","lr","ab"]) then {
+	_backpack = "acp_gol_GB_DPM95_B_TacticalPack_GB_DPM95";
+};
+if (_role in ["ar","mmg"]) then {
+
+};
+
+if (_role isEqualTo "crew") then {
+	_helmet = "H_HelmetCrew_B";
+};
 if (_role isEqualTo "p") then {
-	_helmet = "UK3CB_H_Pilot_Helmet";
-	_vest = "acp_gol_CZ_VZ95_Desert_V_PlateCarrierIA1_CZ_VZ95_Desert";
-	_goggles = "";
-	_uniform = "acp_gol_CZ_VZ95_Desert_U_O_PilotCoveralls_CZ_VZ95_Desert";
+	_helmet = "H_CrewHelmetHeli_B";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";
@@ -63,11 +66,11 @@ _rifleC_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
 _rifleL_mag = "rhs_mag_30Rnd_556x45_Mk262_Stanag";
 _rifleL_mag_tr = "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
 
-_LMG = ["LMG_03_F", _silencer, _pointer, _sight, _bipod];
-_LMG_mag = "200Rnd_556x45_Box_Tracer_Red_F";
+_LMG = ["UK3CB_BAF_L110A3", _silencer, _pointer, _sight, ""];
+_LMG_mag = "UK3CB_BAF_556_200Rnd_T";
 
-_MMG = ["UK3CB_M60", _silencer, _pointer, _sight, _bipod];
-_MMG_mag = "rhsusf_100Rnd_762x51_m62_tracer";
+_MMG = ["UK3CB_BAF_L7A2", _silencer, _pointer, _sight, ""];
+_MMG_mag = "UK3CB_BAF_762_200Rnd_T";
 
 _LAT = ["UK3CB_BAF_AT4_CS_AT_Launcher", _silencer, _pointer, _sight, _bipod];
 _LAT_mag = "UK3CB_BAF_AT4_CS_AT_Mag";
@@ -77,14 +80,14 @@ _MAT = ["launch_MRAWS_green_rail_F", _silencer, _pointer, _sight, _bipod];
 _MAT_mag = "MRAWS_HEAT_F";
 _MAT_mag_HE = "MRAWS_HE_F";
 
-_HAT = ["launch_O_Vorona_green_F", _silencer, _pointer, _sight, _bipod];
-_HAT_mag = "Vorona_HEAT";
+_HAT = ["rhs_weap_fgm148", _silencer, _pointer, _sight, _bipod];
+_HAT_mag = "rhs_fgm148_magazine_AT";
 
 _AA = ["rhs_weap_fim92", _silencer, _pointer, _sight, _bipod];
 _AA_mag = "Titan_AA";
 
-_pistol = ["UK3CB_CZ75", _silencer, _pointer, _sight, _bipod];
-_pistol_mag = "UK3CB_CZ75_9_20Rnd";
+_pistol = ["UK3CB_P320_BLK", _silencer, _pointer, _sight, _bipod];
+_pistol_mag = "UK3CB_P320_9x19_17Rnd";
 
 _pdw = ["UK3CB_MP5A4", _silencer, _pointer, _sight, _bipod];
 _pdw_mag = "UK3CB_MP5_30Rnd_9x19_Magazine_R";
@@ -92,9 +95,10 @@ _pdw_mag_tr = "UK3CB_MP5_30Rnd_9x19_Magazine_RT";
 
 _silencer = "";
 _pointer = "";
-_sight = "rhs_acc_pso1m21";
+_sight = "rhsusf_acc_ACOG_RMR";
 _bipod = "";
 
-_rifleMarksman = ["rhs_weap_svdp_wd", _silencer, _pointer, _sight, _bipod];
-_rifleMarksman_mag = "UK3CB_SVD_10rnd_762x54_RT";
-_rifleMarksman_mag_tr = "UK3CB_SVD_10rnd_762x54_RT";
+_rifleMarksman = ["UK3CB_BAF_L129A1", _silencer, _pointer, _sight, _bipod];
+_rifleMarksman_mag = "UK3CB_BAF_762_L42A1_20Rnd_T";
+_rifleMarksman_mag_tr = "UK3CB_BAF_762_L42A1_20Rnd_T";
+

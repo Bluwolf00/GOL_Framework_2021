@@ -60,9 +60,9 @@ _pointer = "rhs_acc_2dpzenit";
 _sight = "";
 _bipod = "";
 
-_rifle = [selectRandom["rhs_weap_pm63","rhs_weap_akm","rhs_weap_akms"], _silencer, _pointer, _sight, _bipod];
+_rifle = [["rhs_weap_pm63","rhs_weap_akm","rhs_weap_akms"], _silencer, _pointer, _sight, _bipod];
 _rifleC = ["rhs_weap_akms", _silencer, _pointer, _sight, _bipod];
-_rifleGL = [selectRandom["rhs_weap_akm_gp25","rhs_weap_akms_gp25"], _silencer, _pointer, _sight, _bipod];
+_rifleGL = [["rhs_weap_akm_gp25","rhs_weap_akms_gp25"], _silencer, _pointer, _sight, _bipod];
 _rifleL = ["rhs_weap_svdp", _silencer, _pointer, "rhs_acc_pso1m21", _bipod];
 _rifle_mag = "UK3CB_AK47_30Rnd_Magazine_R";
 _rifle_mag_tr = "UK3CB_AK47_30Rnd_Magazine_RT";

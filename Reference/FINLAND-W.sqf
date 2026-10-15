@@ -5,26 +5,26 @@ _insignia = "";
 _goggles = [""];
 _helmet = "acp_gol_FI_M05_Woodland_H_HelmetB_light_FI_M05_Woodland_insignia";
 _OfficerHelmet = "rhssaf_beret_green";
-_uniform = ["acp_gol_FI_M05_Woodland_U_I_E_Uniform_shortsleeve_FI_M05_Woodland_01_F_flag","acp_gol_FI_M05_Woodland_U_I_E_Uniform_FI_M05_Woodland_01_F_insignia"];
+_uniform = ["acp_gol_FI_M05_Woodland_U_I_E_Uniform_shortsleeve_FI_M05_Woodland_01_F_flag","acp_gol_FI_M05_Woodland_U_I_E_Uniform_FI_M05_Woodland_01_F_insignia","acp_gol_FI_M05_Woodland_U_I_CombatUniform_shortsleeve_FI_M05_Woodland_insignia","acp_gol_FI_M05_Woodland_U_I_CombatUniform_FI_M05_Woodland_insignia"];
 _vest = "acp_gol_FI_M05_Woodland_V_PlateCarrier1_FI_M05_Woodland_insignia";
 _backpack = "acp_gol_FI_M05_Woodland_B_AssaultPackEnhanced_FI_M05_Woodland_insignia";
 _backpackRadio = _backpack;
 if (true) then {
-	_backpackRadio = "acp_gol_FI_M05_Woodland_B_RadioBag_01_FI_M05_Woodland_F";
+	_backpackRadio = ["acp_gol_FI_M05_Woodland_B_RadioBag_01_FI_M05_Woodland_F", "UK3CB_B_B_Backpack_Radio_Chem_OLI"];
 };
 if(_role in ["ag","sm","ammg"]) then {
 	_backpack = "acp_gol_FI_M05_Woodland_B_Carryall_FI_M05_Woodland";
 };
 if (_role isEqualTo "crew") then {
 	_helmet = "rhsusf_cvc_green_helmet";
-	_vest = "acp_gol_FI_M05_Woodland_V_CarrierRigKBT_01_FI_M05_Woodland_F";
+	_vest = ["acp_gol_FI_M05_Woodland_V_CarrierRigKBT_01_FI_M05_Woodland_F", "acp_gol_FI_M05_Woodland_V_PlateCarrier1_FI_M05_Woodland_insignia"];
 	_uniform = "acp_gol_FI_M05_Woodland_U_O_officer_noInsignia_FI_M05_Woodland_F_insignia"
 };
 if (_role isEqualTo "p") then {
 	_goggles = "";
 	_uniform = "acp_gol_FI_M05_Woodland_U_O_officer_noInsignia_FI_M05_Woodland_F_insignia";
 	_helmet = "rhsusf_hgu56p_visor_black";
-	_vest = "acp_gol_FI_M05_Woodland_V_CarrierRigKBT_01_FI_M05_Woodland_F";
+	_vest = ["acp_gol_FI_M05_Woodland_V_CarrierRigKBT_01_FI_M05_Woodland_F", "acp_gol_FI_M05_Woodland_V_PlateCarrier1_FI_M05_Woodland_insignia"];
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";

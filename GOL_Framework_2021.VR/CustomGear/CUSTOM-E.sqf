@@ -5,12 +5,12 @@ _insignia = "";
 _goggles = "rhsusf_oakley_goggles_clr";
 _helmet = "acp_gol_CN_Type_07_Universal_H_HelmetB_light_CN_Type_07_Universal_insignia";
 _OfficerHelmet = "acp_gol_CN_Type_07_Universal_H_MilCap_CN_Type_07_Universal";
-_uniform = selectRandom ["acp_gol_CN_Type_07_Universal_U_I_E_Uniform_CN_Type_07_Universal_01_F_insignia","acp_gol_CN_Type_07_Universal_U_I_E_Uniform_shortsleeve_CN_Type_07_Universal_01_F_flag","acp_gol_CN_Type_07_Universal_U_I_CombatUniform_shortsleeve_CN_Type_07_Universal_insignia"];
-_vest = "acp_gol_CN_Type_07_Universal_V_CarrierRigKBT_01_light_CN_Type_07_Universal_F";
+_uniform = ["acp_gol_CN_Type_07_Universal_U_I_E_Uniform_CN_Type_07_Universal_01_F_insignia","acp_gol_CN_Type_07_Universal_U_I_E_Uniform_shortsleeve_CN_Type_07_Universal_01_F_flag","acp_gol_CN_Type_07_Universal_U_I_CombatUniform_shortsleeve_CN_Type_07_Universal_insignia"];
+_vest = ["acp_gol_CN_Type_07_Universal_V_CarrierRigKBT_01_light_CN_Type_07_Universal_F", "acp_gol_CN_Type_07_Universal_V_PlateCarrier1_CN_Type_07_Universal"];
 _backpack = "acp_gol_CN_Type_07_Universal_B_AssaultPackEnhanced_CN_Type_07_Universal_insignia";
 _backpackRadio = _backpack;
 if (true) then {
-	_backpackRadio = "acp_gol_CN_Type_07_Universal_B_RadioBag_01_CN_Type_07_Universal_F";
+	_backpackRadio = ["acp_gol_CN_Type_07_Universal_B_RadioBag_01_CN_Type_07_Universal_F", "UK3CB_B_B_Backpack_Radio_Chem_OLI"];
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
@@ -22,7 +22,7 @@ if (_role isEqualTo "crew") then {
 if (_role isEqualTo "p") then {
 	_helmet = "H_PilotHelmetHeli_B";
 	_uniform = "acp_gol_CN_Type_07_Universal_U_B_HeliPilotCoveralls_CN_Type_07_Universal";
-	_vest = "acp_gol_CN_Type_07_Universal_V_CarrierRigKBT_01_light_CN_Type_07_Universal_F";
+	_vest = ["acp_gol_CN_Type_07_Universal_V_CarrierRigKBT_01_light_CN_Type_07_Universal_F", "acp_gol_CN_Type_07_Universal_V_PlateCarrier1_CN_Type_07_Universal"];
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "O_UAV_01_backpack_F";

@@ -10,7 +10,7 @@ _vest = ["acp_gol_IL_IDF_V_PlateCarrier2_IL_IDF_insignia"];
 _backpack = "acp_gol_IL_IDF_B_AssaultPackEnhanced_IL_IDF_insignia";
 _backpackRadio = _backpack;
 if (true) then {
-	_backpackRadio = "acp_gol_IL_IDF_B_RadioBag_01_IL_IDF_F";
+	_backpackRadio = ["acp_gol_IL_IDF_B_RadioBag_01_IL_IDF_F", "UK3CB_B_B_Backpack_Radio_Chem_OLI"];
 };
 
 if (_role in ["ag","ammg","sm","lr","ab"]) then {

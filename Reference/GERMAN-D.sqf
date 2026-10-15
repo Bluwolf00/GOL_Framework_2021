@@ -5,13 +5,13 @@ _insignia = "";
 _goggles = "";
 _helmet = "acp_gol_DE_Tropentarn_H_HelmetSpecB_DE_Tropentarn_insignia";
 _OfficerHelmet = "UK3CB_LNM_B_H_BoonieHat_FLK_03";
-_uniform = ["acp_gol_DE_Tropentarn_U_I_E_Uniform_shortsleeve_DE_Tropentarn_01_F_flag","acp_gol_DE_Tropentarn_U_I_E_Uniform_DE_Tropentarn_01_F_insignia"];
-_vest = "acp_gol_DE_Tropentarn_V_CarrierRigKBT_01_light_DE_Tropentarn_F";
+_uniform = ["acp_gol_DE_Tropentarn_U_I_E_Uniform_shortsleeve_DE_Tropentarn_01_F_flag","acp_gol_DE_Tropentarn_U_I_E_Uniform_DE_Tropentarn_01_F_insignia","acp_gol_DE_Tropentarn_U_I_CombatUniform_shortsleeve_DE_Tropentarn","acp_gol_DE_Tropentarn_U_I_CombatUniform_DE_Tropentarn"];
+_vest = ["acp_gol_DE_Tropentarn_V_CarrierRigKBT_01_light_DE_Tropentarn_F", "acp_gol_DE_Tropentarn_V_PlateCarrier1_DE_Tropentarn"];
 _backpack = "acp_gol_DE_Tropentarn_B_AssaultPackEnhanced_DE_Tropentarn_insignia";
 _backpackRadio = _backpack;
 
 if (true) then {
-	_backpackRadio = "acp_gol_DE_Tropentarn_B_RadioBag_01_DE_Tropentarn_F";
+	_backpackRadio = ["acp_gol_DE_Tropentarn_B_RadioBag_01_DE_Tropentarn_F", "UK3CB_B_B_Backpack_Radio_Chem"];
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
@@ -19,13 +19,13 @@ if (_role in ["ag","ammg","lr","ab"]) then {
 };
 
 if (_role isEqualTo "crew") then {
-	_vest = "acp_gol_DE_Tropentarn_V_CarrierRigKBT_01_light_DE_Tropentarn_F";
+	_vest = ["acp_gol_DE_Tropentarn_V_CarrierRigKBT_01_light_DE_Tropentarn_F", "acp_gol_DE_Tropentarn_V_PlateCarrier1_DE_Tropentarn"];
 	_backpack = "acp_gol_DE_Tropentarn_B_AssaultPackEnhanced_DE_Tropentarn_insignia";
 	_uniform = "acp_gol_DE_Tropentarn_U_O_officer_noInsignia_DE_Tropentarn_F_insignia";
 };
 if (_role isEqualTo "p") then {
 	_helmet = "rhsusf_hgu56p_visor";
-	_vest = "acp_gol_DE_Tropentarn_V_CarrierRigKBT_01_light_DE_Tropentarn_F";
+	_vest = ["acp_gol_DE_Tropentarn_V_CarrierRigKBT_01_light_DE_Tropentarn_F", "acp_gol_DE_Tropentarn_V_PlateCarrier1_DE_Tropentarn"];
 	_uniform = "acp_gol_DE_Tropentarn_U_O_PilotCoveralls_DE_Tropentarn";
 };
 if (_role isEqualTo "uav") then {

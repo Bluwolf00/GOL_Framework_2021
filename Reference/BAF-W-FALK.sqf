@@ -6,12 +6,12 @@ _goggles = ["rhsusf_shemagh_grn","rhsusf_shemagh2_grn","rhsusf_oakley_goggles_cl
 _helmet = ["acp_gol_GB_DPM95_H_MK7_GB_DPM95_F"];
 _OfficerHelmet = "UK3CB_ANA_B_H_Beret_GRN";
 _uniform = ["acp_gol_GB_DPM95_U_I_CombatUniform_shortsleeve_GB_DPM95_insignia","acp_gol_GB_DPM95_U_I_CombatUniform_GB_DPM95_insignia"];
-_vest = ["acp_gol_GB_DPM95_V_CarrierRigKBT_01_light_GB_DPM95_F"];
+_vest = ["acp_gol_GB_DPM95_V_CarrierRigKBT_01_light_GB_DPM95_F", "acp_gol_GB_DPM95_V_PlateCarrier1_GB_DPM95"];
 _backpack = ["acp_gol_GB_DPM95_B_TacticalPack_GB_DPM95"];
 _backpackRadio = _backpack;
 
 if (true) then {
-	_backpackRadio = ["acp_gol_GB_DPM95_B_RadioBag_01_GB_DPM95_F"];
+	_backpackRadio = ["acp_gol_GB_DPM95_B_RadioBag_01_GB_DPM95_F", "UK3CB_B_B_Backpack_Radio_Chem_OLI"];
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {

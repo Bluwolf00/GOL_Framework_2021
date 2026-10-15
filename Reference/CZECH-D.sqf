@@ -2,33 +2,33 @@ _useMineDetector = false;
 _allowedNightStuff = true;
 
 _insignia = "";
-_goggles = ["acp_gol_CZ_vz95_G_Balaclava_combat_CZ_vz95","acp_gol_CZ_vz95_G_Combat_CZ_vz95","acp_gol_CZ_vz95_G_Balaclava_TI_CZ_vz95_F","acp_gol_CZ_vz95_G_Balaclava_TI_G_CZ_vz95_F","acp_gol_CZ_vz95_G_Balaclava_CZ_vz95"];
-_helmet = ["acp_gol_CZ_vz95_H_HelmetB_light_CZ_vz95_insignia","acp_gol_CZ_vz95_H_HelmetB_light_CZ_vz95_insignia","acp_gol_CZ_vz95_H_HelmetB_light_basic_CZ_vz95","acp_gol_CZ_vz95_H_HelmetB_camo_CZ_vz95","acp_gol_CZ_vz95_H_HelmetSpecB_CZ_vz95","acp_gol_CZ_vz95_H_HelmetSpecB_CZ_vz95_insignia"];
+_goggles = [""];
+_helmet = ["acp_gol_CZ_VZ95_Desert_H_HelmetB_light_CZ_VZ95_Desert_insignia"];
 _OfficerHelmet = "rhsgref_fieldcap_ttsko_digi";
-_uniform = ["acp_gol_CZ_vz95_U_B_CTRG_Soldier_CZ_vz95_F_insignia","acp_gol_CZ_vz95_U_I_CombatUniform_shortsleeve_CZ_vz95_insignia","acp_gol_CZ_vz95_U_I_CombatUniform_CZ_vz95_insignia","acp_gol_CZ_vz95_U_I_E_Uniform_shortsleeve_CZ_vz95_01_F_flag","acp_gol_CZ_vz95_U_I_E_Uniform_CZ_vz95_01_F_insignia","acp_gol_CZ_vz95_U_I_E_Uniform_shortsleeve_CZ_vz95_01_F","acp_gol_CZ_vz95_U_I_E_Uniform_CZ_vz95_01_F"];
-_vest = ["acp_gol_CZ_vz95_V_PlateCarrierSpec_CZ_vz95_insignia","acp_gol_CZ_vz95_V_PlateCarrierSpec_CZ_vz95","acp_gol_CZ_vz95_V_PlateCarrier2_CZ_vz95_insignia","acp_gol_CZ_vz95_V_PlateCarrier2_CZ_vz95","acp_gol_CZ_vz95_V_PlateCarrierIAGL_CZ_vz95"];
-_backpack = "acp_gol_CZ_vz95_B_Kitbag_rgr_CZ_vz95";
+_uniform = ["acp_gol_CZ_VZ95_Desert_U_I_E_Uniform_shortsleeve_CZ_VZ95_Desert_01_F_flag","acp_gol_CZ_VZ95_Desert_U_I_E_Uniform_CZ_VZ95_Desert_01_F_insignia","acp_gol_CZ_VZ95_Desert_U_I_CombatUniform_shortsleeve_CZ_VZ95_Desert_insignia","acp_gol_CZ_VZ95_Desert_U_I_CombatUniform_CZ_VZ95_Desert_insignia"];
+_vest = ["acp_gol_CZ_VZ95_Desert_V_PlateCarrierIA2_CZ_VZ95_Desert"];
+_backpack = "acp_gol_CZ_VZ95_Desert_B_AssaultPackEnhanced_CZ_VZ95_Desert_insignia";
 _backpackRadio = _backpack;
 if (true) then {
-	_backpackRadio = "acp_gol_CZ_vz95_B_RadioBag_01_CZ_vz95_F";
+	_backpackRadio = ["acp_gol_CZ_VZ95_Desert_B_RadioBag_01_CZ_VZ95_Desert_F", "UK3CB_B_B_Backpack_Radio_Chem"];
 };
 
 if (_role in ["ag","ammg","sm","lr","ab"]) then {
-	_backpack = "acp_gol_CZ_vz95_B_Carryall_CZ_vz95";
+	_backpack = "acp_gol_CZ_VZ95_Desert_B_Carryall_CZ_VZ95_Desert";
 };
 
 if(_role in ["crew"]) then {
 	_helmet = "H_HelmetCrew_I";
 	_goggles = "";
-	_vest = "acp_gol_CZ_vz95_V_PlateCarrier1_CZ_vz95_insignia";
-	_uniform = "acp_gol_CZ_vz95_U_O_officer_noInsignia_CZ_vz95_F_insignia";
+	_vest = "acp_gol_CZ_VZ95_Desert_V_PlateCarrier1_CZ_VZ95_Desert_insignia";
+	_uniform = "acp_gol_CZ_VZ95_Desert_U_O_officer_noInsignia_CZ_VZ95_Desert_F_insignia";
 };
 
 if (_role isEqualTo "p") then {
 	_helmet = "UK3CB_H_Pilot_Helmet";
-	_vest = "acp_gol_CZ_vz95_V_PlateCarrierIA1_CZ_vz95";
+	_vest = "acp_gol_CZ_VZ95_Desert_V_PlateCarrierIA1_CZ_VZ95_Desert";
 	_goggles = "";
-	_uniform = "acp_gol_CZ_vz95_U_O_PilotCoveralls_CZ_vz95";
+	_uniform = "acp_gol_CZ_VZ95_Desert_U_O_PilotCoveralls_CZ_VZ95_Desert";
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";

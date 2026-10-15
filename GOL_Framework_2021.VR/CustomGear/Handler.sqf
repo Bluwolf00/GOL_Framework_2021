@@ -107,6 +107,9 @@ private _validateDlcCandidateGroup = {
 	params ["_candidates", "_slot"];
 	_dlcValidationWarnings append ([_candidates, _slot] call GW_Gear_fnc_validateDlcCandidates);
 };
+private _removeUnsupportedGearCandidates = {
+	_this call GW_Gear_fnc_removeUnsupportedGearCandidates
+};
 
 if !(_unit isEqualType objNull) exitWith {false};
 if !(local _unit) exitWith {false};

@@ -10,7 +10,7 @@ _vest = "acp_gol_IE_DPM_V_PlateCarrier2_IE_DPM_insignia";
 _backpack = "acp_gol_IE_DPM_B_AssaultPackEnhanced_IE_DPM_insignia";
 _backpackRadio = _backpack;
 if (true) then {
-	_backpackRadio = "acp_gol_IE_DPM_B_RadioBag_01_IE_DPM_F";
+	_backpackRadio = ["acp_gol_IE_DPM_B_RadioBag_01_IE_DPM_F", "UK3CB_B_B_Backpack_Radio_Chem_OLI"];
 };
 
 if (_role in ["ag","ammg","lr","ab"]) then {
@@ -19,13 +19,13 @@ if (_role in ["ag","ammg","lr","ab"]) then {
 
 if(_role isEqualTo "crew") then {
 	_uniform = "acp_gol_IE_DPM_U_O_officer_noInsignia_IE_DPM_F_insignia";
-	_vest = "acp_gol_IE_DPM_V_CarrierRigKBT_01_IE_DPM_F";
+	_vest = ["acp_gol_IE_DPM_V_CarrierRigKBT_01_IE_DPM_F", "acp_gol_IE_DPM_V_PlateCarrier2_IE_DPM_insignia"];
 };
 
 if (_role isEqualTo "p") then {
 	_helmet = "H_PilotHelmetHeli_B";
 	_uniform = "acp_gol_IE_DPM_U_B_HeliPilotCoveralls_IE_DPM";
-	_vest = "acp_gol_IE_DPM_V_CarrierRigKBT_01_IE_DPM_F";
+	_vest = ["acp_gol_IE_DPM_V_CarrierRigKBT_01_IE_DPM_F", "acp_gol_IE_DPM_V_PlateCarrier2_IE_DPM_insignia"];
 };
 if (_role isEqualTo "uav") then {
 	_backpack = "B_UAV_01_backpack_F";

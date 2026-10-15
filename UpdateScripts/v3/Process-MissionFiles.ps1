@@ -297,6 +297,43 @@ function Apply-StructuredLegacyRewrites($content) {
         return $parts
     }
 
+    # Surrender has had several incompatible parameter layouts. The FW3 function
+    # only needs the unit, so retain argument zero for function calls and legacy
+    # execVM script paths. The path expression intentionally accepts additional
+    # legacy folders and both OKS_Surrender/OKS_fnc_Surrender filenames.
+    if ($content.IndexOf('Surrender', $ordinalIgnoreCase) -ge 0) {
+        $normalizeSurrender = {
+            param($m)
+
+            $args = Split-TopLevelCsv $m.Groups['args'].Value
+            if ($args.Count -eq 0 -or [string]::IsNullOrWhiteSpace($args[0])) {
+                return $m.Value
+            }
+
+            $semicolon = if ($m.Groups['semicolon'].Value -match ';') {';'} else {''}
+            return "[$($args[0])] $($m.Groups['mode'].Value) OKS_fnc_Surrender$semicolon"
+        }
+
+        $functionPattern = '(?is)\[\s*(?<args>[^\]]+)\s*\]\s*(?<mode>spawn|call)\s+OKS(?:_fnc)?_Surrender\b(?<semicolon>\s*;?)'
+        $content = [regex]::Replace($content, $functionPattern, $normalizeSurrender)
+
+        $scriptPattern = '(?is)\[\s*(?<args>[^\]]+)\s*\]\s*execVM\s*"{1,2}(?:[^"\\]*\\)*OKS_(?:fnc_)?Surrender\.sqf"{1,2}(?<semicolon>\s*;?)'
+        $content = [regex]::Replace(
+            $content,
+            $scriptPattern,
+            {
+                param($m)
+                $args = Split-TopLevelCsv $m.Groups['args'].Value
+                if ($args.Count -eq 0 -or [string]::IsNullOrWhiteSpace($args[0])) {
+                    return $m.Value
+                }
+
+                $semicolon = if ($m.Groups['semicolon'].Value -match ';') {';'} else {''}
+                return "[$($args[0])] spawn OKS_fnc_Surrender$semicolon"
+            }
+        )
+    }
+
     # OKS_Rush_Wavespawn -> OKS_fnc_Lambs_Wavespawn (inserts "rush" before side)
     # Legacy: [[pos1,pos2],UnitsPerWave,AmountOfWaves,DelayPerWave,Side,Range,"Var"] spawn OKS_Rush_Wavespawn;
     # New:    [[pos1,pos2],UnitsPerWave,AmountOfWaves,DelayPerWave,"rush",Side,Range,"Var"] spawn OKS_fnc_Lambs_Wavespawn;

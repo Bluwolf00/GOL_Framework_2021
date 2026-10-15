@@ -11,7 +11,7 @@ _backpack = "B_ViperLightHarness_blk_F";
 _backpackRadio = _backpack;
 
 if (true) then {
-	_backpackRadio = "B_RadioBag_01_black_F";
+	_backpackRadio = ["B_RadioBag_01_black_F", "UK3CB_B_B_Backpack_Radio_Chem_OLI"];
 };
 
 if (_role in ["ag","ammg","lr"]) then {

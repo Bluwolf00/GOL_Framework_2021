@@ -4,7 +4,7 @@ param(
 )
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$MissionDir = Split-Path -Parent $ScriptDir
+$MissionDir = Split-Path -Parent (Split-Path -Parent $ScriptDir)
 Set-Location $MissionDir
 
 function Log-Message($msg) {

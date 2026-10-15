@@ -10,7 +10,7 @@ _vest = "acp_gol_FR_Daguet_V_PlateCarrier2_FR_Daguet";
 _backpack = "acp_gol_FR_Daguet_B_Kitbag_rgr_FR_Daguet";
 _backpackRadio = _backpack;
 if (true) then {
-	_backpackRadio = "acp_gol_FR_Daguet_B_RadioBag_01_FR_Daguet_F";
+	_backpackRadio = ["acp_gol_FR_Daguet_B_RadioBag_01_FR_Daguet_F", "UK3CB_B_B_Backpack_Radio_Chem"];
 };
 
 if (_role in ["sl","tl","pl"]) then {
