@@ -869,10 +869,10 @@ PDT_ENVG_Blacklist = "";
 PDT_ENVG_Effect = "mwEffect";
 
 // FoxHole
-force J3FF_FHcover = "10";
+force J3FF_FHcover = "5";
 force J3FF_FHcustomItem = false;
 force J3FF_FHdepth = "1.3";
-force J3FF_FHdig = "15";
+force J3FF_FHdig = "5";
 
 // FPV HUD
 UA_FPV_CrosshairSelection = 1;

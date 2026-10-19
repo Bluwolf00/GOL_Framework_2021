@@ -57,9 +57,3 @@ switch (_case) do {
 		ERROR(FORMAT_1("Case missing: %1", _case));
 	};
 };
-/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-/*
-	GOL SCRIPT EXAMPLES:
-	Link to README: https://github.com/oksmantv/Guerrillas-of-Liberations-Misc-Addon?tab=readme-ov-file#readme 
-*/
