@@ -76,6 +76,8 @@ class Params {
 	#include "\OKS_GOL_Misc\configs\CfgMissionParams.hpp"
 };
 
+#include "\x\gw\addons\admin\CfgDebriefing.hpp"
+
 class CfgFunctions {
 };
 
