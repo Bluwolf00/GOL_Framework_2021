@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=18678;
+		nextID=18888;
 	};
 	class Camera
 	{
-		pos[]={109.29349,76.855766,17.858166};
-		dir[]={-0.0024379955,-0.71299374,0.70123976};
-		up[]={-0.0024800084,0.70117164,0.71298021};
-		aside[]={1.000039,-1.8978062e-07,0.003477128};
+		pos[]={113.95098,74.145111,-0.71533513};
+		dir[]={-0.0027189855,-0.61203372,0.79082704};
+		up[]={-0.002104254,0.79083163,0.61203009};
+		aside[]={0.9999941,0,0.0034381342};
 	};
 };
 binarizationWanted=0;
@@ -39393,7 +39393,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={64.471512,6.9401751,94.978638};
+								position[]={64.472,6.9401751,94.978996};
 							};
 							side="Empty";
 							flags=4;
@@ -39403,6 +39403,7 @@ class Mission
 								reportRemoteTargets=1;
 								receiveRemoteTargets=1;
 								reportOwnPosition=1;
+								pylons="rhs_mag_M151_7;rhs_mag_m134_pylon_3000;rhs_mag_m134_pylon_3000;FIR_APKWS_M282_P_7rnd_M;";
 							};
 							id=4793;
 							type="GOL_MELB_AH6M";
