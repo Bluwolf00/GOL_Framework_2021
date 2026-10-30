@@ -10,8 +10,6 @@
 		None
 */
 
-
-
 #include "\OKS_GOL_Misc\script_Component.hpp"
 #define	COMPONENT spawnList
 
@@ -20,6 +18,8 @@ if !(isServer) exitWith {false};
 params [
 	"_case"
 ];
+
+SystemChat format ["GW_Fnc_spawnList Executed - Case: %1", _case];
 
 switch (_case) do {
 
@@ -41,13 +41,19 @@ switch (_case) do {
 	case 6: {
 	};
 
+	case 7: {
+	};
+
+	case 8: {
+	};
+
+	case 9: {
+	};
+
+	case 10: {
+	};
+
 	default {
 		ERROR(FORMAT_1("Case missing: %1", _case));
 	};
 };
-/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-/*
-	GOL SCRIPT EXAMPLES:
-	Link to README: https://github.com/oksmantv/Guerrillas-of-Liberations-Misc-Addon?tab=readme-ov-file#readme 
-*/ 

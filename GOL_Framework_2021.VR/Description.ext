@@ -7,7 +7,9 @@
 #define DOUBLES(var1,var2) ##var1##_##var2
 #define TRIPLES(var1,var2,var3) ##var1##_##var2##_##var3
 #include "\OKS_GOL_Misc\script_Component.hpp"
-#include "Modules\LARs\compositions\compositions.cfg"
+#undef VERSION
+#include "version.hpp"
+#define VERSION FRAMEWORK_VERSION
 
 class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 	class Core {
@@ -19,11 +21,9 @@ class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 		#define PLAYER_COUNT "36"								// Player Count - Do not go above 36 - Server Limit 
 		#define BRIEFING_NAME "Mission_Name"					// Mission Name
 		#define LOBBY_DESCRIPTION ""							// Description in mission select
-		#define ON_LOAD_TEXT ""									// Description on loading
+		#define ON_LOAD_TEXT __EVAL("Framework Version " + QUOTE(VERSION))	// Description on loading
 		#define MISSION_VERSION 1								// Version of mission
 		#define SELECT_PICTURE ""								// Path to loading screen
-		//#define SELECT_PICTURE RANDOM_PICTURES				// Random loading screen
-		// picture path: "\OKS_GOL_Misc\data\images\loadImage.jpg"
 		Author = "Editor";				// Author
 		AuthorUID[] = {"_SP_PLAYER_"};			// UIDs with admin access
 
@@ -34,17 +34,7 @@ class GW_FRAMEWORK {	// NOTE: SENSETIVE, UPPERCASE ONLY FOR BOOL
 		version = MISSION_VERSION;
 		GameMode = GAME_MODE;
 	};
-	#define LOAD_Behaviour
-		#include "Modules\Modules.cpp"
-	#undef LOAD_Behaviour
 
-	#define LOAD_SpawnUnits
-		#include "Modules\Modules.cpp"
-	#undef LOAD_SpawnUnits
-
-	#define LOAD_Loadout
-		#include "Modules\Modules.cpp"
-	#undef LOAD_Loadout
 };
 
 // *	DO NOT EDIT BELOW
@@ -55,8 +45,8 @@ allowFunctionsRecompile = 0;
 briefingName = __EVAL(GAME_MODE + "@" + PLAYER_COUNT + " " + BRIEFING_NAME);
 disableChannels[]={{0,true,true},{1,false,true},{2,false,true},{5,false,true}};
 disabledAi = 1;
-ACE_maxWeightcarry = 1800;
-ACE_maxWeightdrag = 2000;
+ACE_maxWeightcarry = 3500;
+ACE_maxWeightdrag = 4500;
 enableDebugConsole = 1;
 joinUnassigned = 1;
 scriptedPlayer = 1;
@@ -80,75 +70,28 @@ respawnDelay = 20;
 
 class Params {
 	#define LOAD_PARAMS
-		#include "Modules\Modules.cpp"
+		#include "Gear\Module.hpp"
 	#undef LOAD_PARAMS
 
-	// If you want to enable dynamic time selection at mission setup.
-	// class Daytime
-	// {
-	// 	title = "Time";
-	// 	texts[] = { "Dawn", "Noon", "Afternoon", "Evening", "Night" };
-	// 	values[] = { 5.6, 12, 16, 19, 23 };
-	// 	default = 23;
-	// 	function = "BIS_fnc_paramDaytime";
-	// };	
-
-	class ShouldGiveMedicalToAsstGunner
-	{
-		title = "Should Asst. Gunner have medical supplies?";
-		texts[] = { "No", "Yes" };
-		values[] = { 0, 1 };
-		default = 0;
-	};	
-
-	class ShouldGiveServiceStationToVehicle
-	{
-		title = "Should non-MHQ vehicles have service station?";
-		texts[] = { "Yes", "No" };
-		values[] = { 1, 0 };
-		default = 1;
-	};		
+	#include "\OKS_GOL_Misc\configs\CfgMissionParams.hpp"
 };
+
+#include "\x\GW\addons\admin\CfgDebriefing.hpp"
 
 class CfgFunctions {
-	#include "Modules\LARs\spawnComp\functions\functions.cpp"
-	#include "Modules\Callsigns\Functions\functions.hpp"
-};
-
-class GW_Modules_Base {
-	name = "GW Modules Base";
-	Authors[] = {};
-	version = 1;
-	description = "Dummy for each module";
-	preInit = "preInit.sqf";
-	postInit = "postInit.sqf";
-	requiredModules[] = {};
-	requiredAddons[] = {};
 };
 
 class GW_Modules {
 	#define LOAD_MODULES
-		#include "Modules\Modules.cpp"
+		#include "Gear\Module.hpp"
 	#undef LOAD_MODULES
 };
 
-class Extended_PreInit_EventHandlers {
-	class preInit {
-		Init = QUOTE(call compile preprocessFileLineNumbers 'core\XEH_preInit.sqf');
-	};
-};
-
-class Extended_PostInit_EventHandlers {
-	class postInit {
-		Init = QUOTE(call compile preprocessFileLineNumbers 'core\XEH_postInit.sqf');
-	};
-};
 
 class ACE_Settings {
 	#define LOAD_ACE
-		#include "Modules\Modules.cpp"
+		#include "Gear\Module.hpp"
 	#undef LOAD_ACE
 };
 
-#include "Modules\Callsigns\defines.hpp"
-#include "Modules\Callsigns\dialogs.hpp"
+
