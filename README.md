@@ -71,20 +71,15 @@ The main Modules of the FRAMEWORK include:
 
 ### SetDifficulty:
 * Adds different difficulty levels for enemy AI.
-* This changes their:
-    * Accuracy
-    * Time to aim on target
-    * Courage (May retreat after heavy suppression or heavy assets are present)
-    * General Spotting
-        * Time
-        * Distance
-* The difficulties are split into certain "Trees":
-    * Dummy
-    * Insurgents
-    * Military
-    * Special Forces
-    * -Testing- (Not to be used in real operations)
-    * Each of which come with increasing difficulty and decreased reaction times in terms of the previously mentioned skills.
+* Changes aiming, reaction time, commanding, courage, endurance, general skill, reload speed, fleeing behaviour, and player camouflage.
+* Provides five increasing AI presets, selectable through CBA settings or the mission lobby parameter:
+    * Farmer — lightly buffed Dummy baseline.
+    * Insurgents — the previous Military values.
+    * Regulars — the previous Special Forces values.
+    * Commando — 5 percentage points above Regulars where possible.
+    * Special Forces — 5 percentage points above Commando where possible.
+* The mission lobby option defaults to **No Override**, which preserves the CBA global and side-specific selections.
+* The GW addon source contains a visual percentage comparison and the skill-variation ranges for these presets.
 
 ### Startup:
 * Displays the GOL startup screen when initialising into a **Multiplayer** session.
