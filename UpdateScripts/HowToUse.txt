@@ -25,10 +25,11 @@ What the v4 script does:
   NOT touched: CustomGear\, spawnList.sqf, mission.sqm (updated in-place)
 
 After the script finishes, paste from the FW4 template:
-  Gear\, CustomGear\, Description.ext, version.hpp, Init.sqf,
-  CurrentAddonOptionsImportSettings.txt
+  Gear\, CustomGear\, Description.ext, version.hpp, Init.sqf
 
-Then import CurrentAddonOptionsImportSettings.txt in your Addon Options.
+Then open the mission in 3DEN and use Configure Mission (GW validation). The
+default CBA addon options are applied from the GW addon; no settings file needs
+to be copied.
 
 GEAR PORTING (FW3.1 -> FW4)
 -------------------------

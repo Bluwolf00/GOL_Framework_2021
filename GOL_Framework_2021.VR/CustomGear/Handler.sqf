@@ -249,14 +249,14 @@ if (_isMan) then {
 		switch (_loadoutFile) do {
 			case "Default_AI": {
 				if (fileExists "CustomGear\Default_AI.sqf") then {
-					call compile preprocessFileLineNumbers "CustomGear\Default_AI.sqf";
+					call compile preprocessFileLineNumbers "Gear\Functions\fnc_DefaultAICode_Local.sqf";
 				} else {
 					call GW_Gear_fnc_DefaultAICode;
 				};
 			};
 			default {
 				if (fileExists "CustomGear\Default.sqf") then {
-					call compile preprocessFileLineNumbers "CustomGear\Default.sqf";
+					call compile preprocessFileLineNumbers "Gear\Functions\fnc_DefaultCode_Local.sqf";
 				} else {
 					call GW_Gear_fnc_DefaultCode;
 				};
