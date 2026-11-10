@@ -1,0 +1,194 @@
+version=54;
+center[]={14599.475,17.98,16149.337};
+class items
+{
+	items=3;
+	class Item0
+	{
+		dataType="Layer";
+		name="Mortar Pit (Neko)";
+		class Entities
+		{
+			items=9;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-5.0830078,0.41931152,3.1025391};
+					angles[]={-0,2.3617573,0};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+				};
+				id=1259;
+				type="Land_BagFence_Round_F";
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-4.8466797,0.41931152,-4.1298828};
+					angles[]={-0,0.63033551,0};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+				};
+				id=1260;
+				type="Land_BagFence_Round_F";
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={5.4736328,0.42121887,-2.8564453};
+					angles[]={6.2818484,5.1914024,0.0013372133};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+				};
+				id=1261;
+				type="Land_BagFence_Round_F";
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={4.5146484,0.42848206,3.5507813};
+					angles[]={6.2818484,3.6558862,0.0013372133};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+				};
+				id=1262;
+				type="Land_BagFence_Round_F";
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.4765625,0.72162437,0.4};
+					angles[]={-0,0.0061493502,0};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+					init="call{null = [this, east, ""precise"", ""light"", [""auto"", 30],250,1000,30] execVM ""Scripts\NEKY_Mortars\NEKY_Mortars.sqf"";}";
+				};
+				id=1263;
+				type="O_G_Mortar_01_F";
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-1.5488281,0.42551231,7.3857422};
+					angles[]={6.2818484,3.1345115,0.0013372133};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+				};
+				id=1269;
+				type="Land_BagFence_Long_F";
+			};
+			class Item6
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={1.2158203,0.4291687,7.3642578};
+					angles[]={6.2818484,3.1345115,0.0013372133};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+				};
+				id=1270;
+				type="Land_BagFence_Long_F";
+			};
+			class Item7
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-0.90820313,0.41931152,-7.1982422};
+					angles[]={-0,3.1345115,0};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+				};
+				id=1271;
+				type="Land_BagFence_Long_F";
+			};
+			class Item8
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={1.8564453,0.41931152,-7.2197266};
+					angles[]={-0,3.1345115,0};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+				};
+				id=1272;
+				type="Land_BagFence_Long_F";
+			};
+		};
+		id=1264;
+		atlOffset=0.0019397736;
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-5.2099609,0.96563148,-0.33984375};
+			angles[]={-0,1.5031823,0};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=1266;
+		type="Land_BagBunker_Small_F";
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={4.0771484,0.60826874,0.43066406};
+			angles[]={6.2818484,4.6032848,0.0013372133};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=1267;
+		type="Land_GuardShed";
+	};
+};

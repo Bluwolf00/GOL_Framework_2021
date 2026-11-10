@@ -1,0 +1,182 @@
+version=54;
+center[]={4655.0679,6.7199998,713.70453};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Layer";
+		name="Triggers (Hide)";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Trigger";
+				position[]={0.11425781,0,-0.29138184};
+				angle=-6.2213302;
+				class Attributes
+				{
+					text="HideTrigger";
+					condition="true";
+					onActivation="[thisTrigger, true, []] call GW_Common_fnc_setHideTerrainObjects";
+					sizeA=12;
+					sizeB=12;
+					sizeC=25;
+					isServerOnly=1;
+				};
+				id=2312;
+				type="EmptyDetector";
+			};
+		};
+		id=1823;
+	};
+	class Item1
+	{
+		dataType="Layer";
+		name="Mortar_3";
+		class Entities
+		{
+			items=7;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.28417969,0.84258032,7.2645264};
+					angles[]={0,3.1778414,0};
+				};
+				side="Empty";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=1961;
+				type="Land_Bunker_01_small_F";
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={4.8710938,0.16027498,3.5735474};
+					angles[]={0,0.96177912,0};
+				};
+				side="Empty";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=1962;
+				type="Land_Bunker_01_blocks_3_F";
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={4.7285156,0.16027498,-4.3967896};
+					angles[]={0,2.1849103,0};
+				};
+				side="Empty";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=1963;
+				type="Land_Bunker_01_blocks_3_F";
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.71337891,0.16027498,-6.46698};
+					angles[]={0,3.1440012,0};
+				};
+				side="Empty";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=1964;
+				type="Land_Bunker_01_blocks_3_F";
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-6.706543,0.84258032,-4.5114136};
+					angles[]={0,1.5841126,0};
+				};
+				side="Empty";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=1965;
+				type="Land_Bunker_01_small_F";
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={6.9365234,1.0685058,-0.42895508};
+					angles[]={-0,4.7758303,0};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+				};
+				id=1966;
+				type="Land_BagBunker_01_small_green_F";
+			};
+			class Item6
+			{
+				dataType="Layer";
+				name="Mortar Pit Independent_1";
+				class Entities
+				{
+					items=2;
+					class Item0
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={-5.1831055,0.41931152,5.1188965};
+							angles[]={-0,2.1929531,0};
+						};
+						side="Empty";
+						flags=4;
+						class Attributes
+						{
+						};
+						id=1959;
+						type="Land_BagFence_Round_F";
+					};
+					class Item1
+					{
+						dataType="Object";
+						class PositionInfo
+						{
+							position[]={-5.7578125,0.41931152,0.13903809};
+							angles[]={-0,1.5988708,0};
+						};
+						side="Empty";
+						flags=4;
+						class Attributes
+						{
+						};
+						id=1960;
+						type="Land_BagFence_Long_F";
+					};
+				};
+				id=1958;
+			};
+		};
+		id=1967;
+	};
+};
