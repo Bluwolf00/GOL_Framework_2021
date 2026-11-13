@@ -20,7 +20,7 @@ jobs:
       - name: Read framework version
         id: version
         run: |
-          VERSION_FILE="GOL_Framework_2021.VR/Core/version.hpp"
+          VERSION_FILE="GOL_Framework_2021.VR/version.hpp"
           MAJOR=$(grep -oP '#define FRAMEWORK_MAJOR \K\d+' "$VERSION_FILE")
           MINOR=$(grep -oP '#define FRAMEWORK_MINOR \K\d+' "$VERSION_FILE")
           PATCHLVL=$(grep -oP '#define FRAMEWORK_PATCHLVL \K\d+' "$VERSION_FILE")
@@ -36,7 +36,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           if git rev-parse "${{ steps.version.outputs.tag }}" >/dev/null 2>&1; then
-            echo "::error::Tag ${{ steps.version.outputs.tag }} already exists. Bump FRAMEWORK_MAJOR/MINOR/PATCHLVL in GOL_Framework_2021.VR/Core/version.hpp before pushing to release."
+            echo "::error::Tag ${{ steps.version.outputs.tag }} already exists. Bump FRAMEWORK_MAJOR/MINOR/PATCHLVL in GOL_Framework_2021.VR/version.hpp before pushing to release."
             exit 1
           fi
 
