@@ -20,7 +20,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=19248;
+		nextID=19278;
 	};
 	class Camera
 	{
@@ -31,7 +31,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="gol_framework_2021";
+sourceName="GOL_Framework_2021";
 addons[]=
 {
 	"Desert",
@@ -9698,7 +9698,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=7;
+														value=10;
 													};
 												};
 												class Item1
@@ -9725,7 +9725,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=6;
+														value=1;
 													};
 												};
 												class Item1
@@ -9806,7 +9806,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="BOOL";
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -30900,7 +30900,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.9;
+														value=2;
 													};
 												};
 												class Item1

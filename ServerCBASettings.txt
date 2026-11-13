@@ -654,7 +654,7 @@ force force GOL_Convoy_Markers_Debug = false;
 
 // GW_Common
 force force GW_Common_AutoLock = false;
-force force GW_Common_radioDistnace = 1.9;
+force force GW_Common_radioDistnace = 2;
 force force GW_Common_slingloadEnabled = true;
 force force GW_HeadlessController_Enable = false;
 force force GW_Common_disableThermals = 2;
@@ -702,9 +702,9 @@ force force TFAR_fullDuplex = true;
 force force TFAR_giveLongRangeRadioToGroupLeaders = false;
 force force TFAR_giveMicroDagrToSoldier = false;
 force force TFAR_givePersonalRadioToRegularSoldier = true;
-force force TFAR_globalRadioRangeCoef = 6;
+force force TFAR_globalRadioRangeCoef = 1;
 force force TFAR_instantiate_instantiateAtBriefing = false;
-force force TFAR_objectInterceptionEnabled = false;
+force force TFAR_objectInterceptionEnabled = true;
 force force TFAR_objectInterceptionStrength = 400;
 force force tfar_radiocode_east = "_bluefor";
 force force tfar_radiocode_independent = "_bluefor";
@@ -733,7 +733,7 @@ force force TFAR_setting_DefaultRadio_Rifleman_West = "TFAR_rf7800str";
 force force TFAR_spectatorCanHearEnemyUnits = true;
 force force TFAR_spectatorCanHearFriendlies = true;
 force force TFAR_takingRadio = 2;
-force force tfar_terrain_interception_coefficient = 7;
+force force tfar_terrain_interception_coefficient = 10;
 force force TFAR_voiceCone = false;
 
 // TFAR Scribbles
