@@ -30900,7 +30900,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=2;
+														value=0.7;
 													};
 												};
 												class Item1

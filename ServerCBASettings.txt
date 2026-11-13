@@ -654,7 +654,7 @@ force force GOL_Convoy_Markers_Debug = false;
 
 // GW_Common
 force force GW_Common_AutoLock = false;
-force force GW_Common_radioDistnace = 2;
+force force GW_Common_radioDistnace = 0.7;
 force force GW_Common_slingloadEnabled = true;
 force force GW_HeadlessController_Enable = false;
 force force GW_Common_disableThermals = 2;
