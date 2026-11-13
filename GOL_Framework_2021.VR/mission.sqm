@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=19278;
+		nextID=19308;
 	};
 	class Camera
 	{
 		pos[]={112.67087,75.710129,-28.313148};
-		dir[]={0.0060797669,-0.50201368,0.86485583};
-		up[]={0.0035290429,0.86485744,0.50200385};
-		aside[]={0.99998808,1.518174e-07,-0.0070301625};
+		dir[]={0.0060798023,-0.50200605,0.86484271};
+		up[]={0.0035289905,0.86486405,0.5019936};
+		aside[]={0.9999752,0,-0.0070297774};
 	};
 };
 binarizationWanted=0;
@@ -374,7 +374,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="SCALAR";
-					value=1;
+					value=4;
 				};
 			};
 		};
@@ -8510,7 +8510,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.2;
+														value=0.80000001;
 													};
 												};
 												class Item1
@@ -8537,7 +8537,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.4;
+														value=1.2;
 													};
 												};
 												class Item1
@@ -8564,7 +8564,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=10;
+														value=25;
 													};
 												};
 												class Item1
@@ -18095,7 +18095,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.69999999;
+														value=0.59400803;
 													};
 												};
 												class Item1
@@ -18338,7 +18338,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.15000001;
+														value=0.104382;
 													};
 												};
 												class Item1
@@ -19121,7 +19121,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1;
+														value=0.79846799;
 													};
 												};
 												class Item1
@@ -21974,7 +21974,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1;
+														value=0.69999999;
 													};
 												};
 												class Item1
