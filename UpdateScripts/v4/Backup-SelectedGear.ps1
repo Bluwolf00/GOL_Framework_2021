@@ -8,7 +8,14 @@ param(
 )
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$MissionDir = if ($MissionDir) { (Resolve-Path -LiteralPath $MissionDir).Path } else { Split-Path -Parent (Split-Path -Parent $ScriptDir) }
+if ($MissionDir) {
+    $MissionDir = (Resolve-Path -LiteralPath $MissionDir).Path
+} else {
+    $MissionDir = Split-Path -Parent $ScriptDir
+    if (-not (Test-Path -LiteralPath (Join-Path $MissionDir "mission.sqm")) -and (Test-Path -LiteralPath (Join-Path (Split-Path -Parent $MissionDir) "mission.sqm"))) {
+        $MissionDir = Split-Path -Parent $MissionDir
+    }
+}
 
 if (-not $LogFile) {
     $LogFile = Join-Path $ScriptDir "undo_log.txt"

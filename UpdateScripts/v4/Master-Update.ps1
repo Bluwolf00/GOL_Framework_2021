@@ -1,6 +1,10 @@
 # Master-Update.ps1  (Framework 4)
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$MissionDir = Split-Path -Parent (Split-Path -Parent $ScriptDir)
+# v4\ is normally copied into the mission root; also support UpdateScripts\v4\.
+$MissionDir = Split-Path -Parent $ScriptDir
+if (-not (Test-Path -LiteralPath (Join-Path $MissionDir "mission.sqm")) -and (Test-Path -LiteralPath (Join-Path (Split-Path -Parent $MissionDir) "mission.sqm"))) {
+    $MissionDir = Split-Path -Parent $MissionDir
+}
 Set-Location $MissionDir
 
 $LogFile = Join-Path $ScriptDir "undo_log.txt"

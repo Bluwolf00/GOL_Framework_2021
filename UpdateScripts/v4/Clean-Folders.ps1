@@ -4,7 +4,10 @@ param(
 )
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$MissionDir = Split-Path -Parent (Split-Path -Parent $ScriptDir)
+$MissionDir = Split-Path -Parent $ScriptDir
+if (-not (Test-Path -LiteralPath (Join-Path $MissionDir "mission.sqm")) -and (Test-Path -LiteralPath (Join-Path (Split-Path -Parent $MissionDir) "mission.sqm"))) {
+    $MissionDir = Split-Path -Parent $MissionDir
+}
 Set-Location $MissionDir
 
 function Log-Message($msg) {
