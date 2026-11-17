@@ -416,7 +416,7 @@ function Remove-ObsoleteAddonDependencies {
 
     # Only remove dependencies which are confirmed unused outside mission
     # metadata. This does not remove placed units, objects, or standard markers.
-    $obsoleteAddons = @("Markers", "tsp_faction")
+    $obsoleteAddons = @("Markers", "tsp_faction", "Chemlight_WeightReduction", "GatlingSoundOverhaul_Helo")
     foreach ($addonName in $obsoleteAddons) {
         $escapedAddonName = [regex]::Escape($addonName)
         $Content = [regex]::Replace($Content, '(?m)^\s*"' + $escapedAddonName + '",\s*\r?\n', '')

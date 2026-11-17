@@ -20,18 +20,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=19308;
+		nextID=19458;
 	};
 	class Camera
 	{
-		pos[]={112.67087,75.710129,-28.313148};
-		dir[]={0.0060798023,-0.50200605,0.86484271};
-		up[]={0.0035289905,0.86486405,0.5019936};
-		aside[]={0.9999752,0,-0.0070297774};
+		pos[]={110.11549,75.060867,-31.001926};
+		dir[]={0.016498689,-0.47445482,0.88012654};
+		up[]={0.0088925259,0.88027948,0.47437298};
+		aside[]={0.99982673,-2.3283064e-10,-0.018742541};
 	};
 };
 binarizationWanted=0;
-sourceName="GOL_Framework_2021";
+sourceName="gol_framework_2021";
 addons[]=
 {
 	"Desert",
@@ -41,27 +41,34 @@ addons[]=
 	"A3_Soft_F_MRAP_01",
 	"ace_realisticnames",
 	"A3_Armor_F_Beta_APC_Wheeled_01",
+	"A3_Aegis_Armor_F_Aegis_APC_Wheeled_01",
 	"tfar_external_intercom",
 	"ace_vehicle_damage",
 	"GOL_MISC_ADDON",
+	"A3_Aegis_Characters_F_Aegis",
 	"A3_Weapons_F_Rifles_MX",
 	"A3_Weapons_F_Acc",
 	"ace_scopes",
+	"BettIR_Attachments_Compat_Core",
 	"ace_laserpointer",
+	"BettIR_Attachments_Compat_ACE",
 	"A3_Weapons_F",
+	"A3_Aegis_Weapons_F_Aegis",
 	"ace_smallarms",
 	"ace_ballistics",
 	"A3_Weapons_F_Pistols_P07",
 	"ace_optics",
+	"A3_Aegis_Characters_F_Aegis_Facewear",
 	"ace_goggles",
 	"BettIR_NVG",
 	"ace_nightvision",
+	"A3_Aegis_Characters_F_Aegis_Uniforms",
 	"ace_attach",
-	"Chemlight_WeightReduction",
 	"ace_chemlights",
 	"A3_Weapons_F_Items",
 	"ace_medical_treatment",
 	"A3_Characters_F_Mark",
+	"A3_Aegis_Characters_F_Aegis_Vests",
 	"J3FF_foxHoles",
 	"realistic_mine_detector",
 	"A3_Weapons_F_Orange",
@@ -71,21 +78,19 @@ addons[]=
 	"ace_parachute",
 	"A3_Modules_F",
 	"RHS_US_A2_AirImport",
-	"A3_Modules_F_Multiplayer",
 	"GOL_melber",
 	"rhs_c_a2port_air",
 	"rhs_c_mi28",
 	"A3_Air_F_Beta_Heli_Transport_02",
 	"Kimi_HMDs_Helos",
 	"Kimi_Weapons_Helos",
-	"GatlingSoundOverhaul_Helo",
 	"ace_repair"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=36;
+		items=40;
 		class Item0
 		{
 			className="Desert";
@@ -128,195 +133,222 @@ class AddonsMetaData
 		};
 		class Item6
 		{
+			className="A3_Aegis_Armor_F_Aegis";
+			name="Arma 3 Aegis - Armored Land Vehicles";
+			author="Avery Kaiserin";
+			url="https://steamcommunity.com/sharedfiles/filedetails/?id=949252631";
+		};
+		class Item7
+		{
 			className="tfar_external_intercom";
 			name="TFAR - Intercom Phone";
 			author="Task Force Arrowhead Radio Team";
 		};
-		class Item7
+		class Item8
 		{
 			className="ace_vehicle_damage";
 			name="ACE3 - Vehicle Damage";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item8
+		class Item9
 		{
 			className="GOL_MISC_ADDON";
 			name="GOL Misc Addon";
 			author="OksmanTV";
 			url="https://gol-clan.com/";
 		};
-		class Item9
+		class Item10
+		{
+			className="A3_Aegis_Characters_F_Aegis";
+			name="Arma 3 Aegis - Characters and Clothing";
+			author="Avery Kaiserin";
+			url="https://steamcommunity.com/sharedfiles/filedetails/?id=949252631";
+		};
+		class Item11
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item10
+		class Item12
 		{
 			className="ace_scopes";
 			name="ACE3 - Scopes";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item11
+		class Item13
+		{
+			className="BettIR_Attachments";
+			name="BettIR Attachments";
+			author="Vestarr";
+		};
+		class Item14
 		{
 			className="ace_laserpointer";
 			name="ACE3 - Laser Pointer";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item12
+		class Item15
+		{
+			className="A3_Aegis_Weapons_F_Aegis";
+			name="Arma 3 Aegis - Weapons and Accessories";
+			author="Avery Kaiserin";
+			url="https://steamcommunity.com/sharedfiles/filedetails/?id=949252631";
+		};
+		class Item16
 		{
 			className="ace_smallarms";
 			name="ACE3 - Small Arms";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item13
+		class Item17
 		{
 			className="ace_ballistics";
 			name="ACE3 - Ballistics";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item14
+		class Item18
 		{
 			className="ace_optics";
 			name="ACE3 - Optics";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item15
+		class Item19
 		{
 			className="ace_goggles";
 			name="ACE3 - Goggles";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item16
+		class Item20
 		{
 			className="BettIR_NVG";
 			name="BettIR NVG Module";
 			author="Vestarr";
 		};
-		class Item17
+		class Item21
 		{
 			className="ace_nightvision";
 			name="ACE3 - Night Vision";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item18
+		class Item22
 		{
 			className="ace_attach";
 			name="ACE3 - Attach";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item19
+		class Item23
 		{
 			className="ace_chemlights";
 			name="ACE3 - Chemlights";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item20
+		class Item24
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item21
+		class Item25
 		{
 			className="A3_Characters_F_Mark";
 			name="Arma 3 Marksmen - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item22
+		class Item26
 		{
 			className="J3FF_foxHoles";
 			name="J3FF_foxHoles";
 		};
-		class Item23
+		class Item27
 		{
 			className="realistic_mine_detector";
 			name="realistic_mine_detector";
 			author="FraggerNut";
 		};
-		class Item24
+		class Item28
 		{
 			className="A3_Weapons_F_Orange";
 			name="Arma 3 Orange - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item25
+		class Item29
 		{
 			className="ace_arsenal";
 			name="ACE3 - Arsenal";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item26
+		class Item30
 		{
 			className="FIR_PilotCrewPack_US";
 			name="FIR_PilotCrewPack_US";
 		};
-		class Item27
+		class Item31
 		{
 			className="ace_parachute";
 			name="ACE3 - Parachute";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item28
+		class Item32
 		{
 			className="RHS_US_A2_AirImport";
 			name="RHSUSF A2 Air Ports";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item29
+		class Item33
 		{
 			className="GOL_melber";
 			name="GOL_melber";
 		};
-		class Item30
+		class Item34
 		{
 			className="rhs_c_a2port_air";
 			name="A2 ported air";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item31
+		class Item35
 		{
 			className="rhs_c_mi28";
 			name="Mi-28";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item32
+		class Item36
 		{
 			className="A3_Air_F_Beta";
 			name="Arma 3 Beta - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item33
+		class Item37
 		{
 			className="Kimi_HMDs_Helos";
 			name="Kimi_HMDs_Helos";
 		};
-		class Item34
+		class Item38
 		{
 			className="Kimi_Weapons_Helos";
 			name="Kimi_Weapons_Helos";
 		};
-		class Item35
+		class Item39
 		{
 			className="ace_repair";
 			name="ACE3 - Repair";
@@ -374,7 +406,7 @@ class CustomAttributes
 				class data
 				{
 					singleType="SCALAR";
-					value=4;
+					value=5;
 				};
 			};
 		};
@@ -629,7 +661,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=982;
+									items=984;
 									class Item0
 									{
 										class data
@@ -8486,6 +8518,22 @@ class CustomAttributes
 											value="gol_weather_snowstormsnowfall";
 										};
 									};
+									class Item982
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_weather_snowstormbreathvapour";
+										};
+									};
+									class Item983
+									{
+										class data
+										{
+											singleType="STRING";
+											value="gol_weather_snowstormunitcoldeffects";
+										};
+									};
 								};
 							};
 						};
@@ -8496,7 +8544,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=982;
+									items=984;
 									class Item0
 									{
 										class data
@@ -30900,7 +30948,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=0.7;
+														value=0.69999999;
 													};
 												};
 												class Item1
@@ -35423,6 +35471,60 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item982
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item983
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -35953,7 +36055,7 @@ class Mission
 							dataType="Comment";
 							class PositionInfo
 							{
-								position[]={108.08725,5,161.25745};
+								position[]={107.80454,5,159.84192};
 								angles[]={0,0.06816864,0};
 							};
 							title="MHQ 1";
@@ -35965,7 +36067,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={108.05244,7.2059455,161.30667};
+								position[]={107.76973,7.2059455,159.89114};
 								angles[]={0,6.2772336,0};
 							};
 							side="Empty";
@@ -38858,7 +38960,7 @@ class Mission
 					name="BLUFOR FARP";
 					class Entities
 					{
-						items=18;
+						items=16;
 						class Item0
 						{
 							dataType="Object";
@@ -38920,150 +39022,6 @@ class Mission
 						};
 						class Item2
 						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={48.816002,5,84.513};
-							};
-							id=4783;
-							type="ModuleRespawnVehicle_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ModuleRespawnVehicle_F_ForcedRespawn";
-									expression="_this setVariable ['ForcedRespawn',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="ModuleRespawnVehicle_F_Init";
-									expression="_this setVariable ['Init',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[(_this select 0)] spawn OKS_fnc_Helicopter;";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
-									expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="ModuleRespawnVehicle_F_DesertedDistance";
-									expression="_this setVariable ['DesertedDistance',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="";
-										};
-									};
-								};
-								class Attribute4
-								{
-									property="ModuleRespawnVehicle_F_PositionType";
-									expression="_this setVariable ['PositionType',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute5
-								{
-									property="ModuleRespawnVehicle_F_RespawnCount";
-									expression="_this setVariable ['RespawnCount',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="8";
-										};
-									};
-								};
-								class Attribute6
-								{
-									property="ModuleRespawnVehicle_F_Position";
-									expression="_this setVariable ['Position',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute7
-								{
-									property="ModuleRespawnVehicle_F_Wreck";
-									expression="_this setVariable ['Wreck',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="2";
-										};
-									};
-								};
-								class Attribute8
-								{
-									property="ModuleRespawnVehicle_F_Delay";
-									expression="_this setVariable ['Delay',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="60";
-										};
-									};
-								};
-								class Attribute9
-								{
-									property="ModuleRespawnVehicle_F_ShowNotification";
-									expression="_this setVariable ['ShowNotification',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								nAttributes=10;
-							};
-						};
-						class Item3
-						{
 							dataType="Object";
 							class PositionInfo
 							{
@@ -39097,7 +39055,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item4
+						class Item3
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39112,7 +39070,7 @@ class Mission
 							id=4785;
 							type="GOL_Helipad";
 						};
-						class Item5
+						class Item4
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39127,7 +39085,7 @@ class Mission
 							id=4786;
 							type="GOL_Helipad";
 						};
-						class Item6
+						class Item5
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39142,7 +39100,7 @@ class Mission
 							id=4787;
 							type="GOL_Helipad";
 						};
-						class Item7
+						class Item6
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39157,7 +39115,7 @@ class Mission
 							id=4788;
 							type="GOL_Helipad";
 						};
-						class Item8
+						class Item7
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -39169,7 +39127,7 @@ class Mission
 							description="This station allows pilots to create any resupply box and service stations.";
 							id=4789;
 						};
-						class Item9
+						class Item8
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -39180,7 +39138,7 @@ class Mission
 							description="Used to teleport to the staging area flag, named flag_west_1 for example.";
 							id=4790;
 						};
-						class Item10
+						class Item9
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39196,152 +39154,7 @@ class Mission
 							id=4791;
 							type="GOL_ResupplyStation_WEST_Small";
 						};
-						class Item11
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={46.739189,5,48.304947};
-								angles[]={0,0.016531944,0};
-							};
-							id=4792;
-							type="ModuleRespawnVehicle_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ModuleRespawnVehicle_F_ForcedRespawn";
-									expression="_this setVariable ['ForcedRespawn',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="ModuleRespawnVehicle_F_Init";
-									expression="_this setVariable ['Init',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[(_this select 0)] spawn OKS_fnc_Jet;";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
-									expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="ModuleRespawnVehicle_F_DesertedDistance";
-									expression="_this setVariable ['DesertedDistance',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="";
-										};
-									};
-								};
-								class Attribute4
-								{
-									property="ModuleRespawnVehicle_F_PositionType";
-									expression="_this setVariable ['PositionType',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute5
-								{
-									property="ModuleRespawnVehicle_F_RespawnCount";
-									expression="_this setVariable ['RespawnCount',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="8";
-										};
-									};
-								};
-								class Attribute6
-								{
-									property="ModuleRespawnVehicle_F_Position";
-									expression="_this setVariable ['Position',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute7
-								{
-									property="ModuleRespawnVehicle_F_Wreck";
-									expression="_this setVariable ['Wreck',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="2";
-										};
-									};
-								};
-								class Attribute8
-								{
-									property="ModuleRespawnVehicle_F_Delay";
-									expression="_this setVariable ['Delay',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="60";
-										};
-									};
-								};
-								class Attribute9
-								{
-									property="ModuleRespawnVehicle_F_ShowNotification";
-									expression="_this setVariable ['ShowNotification',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								nAttributes=10;
-							};
-						};
-						class Item12
+						class Item10
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39378,7 +39191,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item13
+						class Item11
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39426,12 +39239,12 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item14
+						class Item12
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={48.184761,7.4950514,50.107109};
+								position[]={48.168976,7.4950514,46.018066};
 								angles[]={0,0.0021118484,0};
 							};
 							side="Empty";
@@ -39518,7 +39331,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item15
+						class Item13
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39552,7 +39365,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item16
+						class Item14
 						{
 							dataType="Object";
 							class PositionInfo
@@ -39568,12 +39381,12 @@ class Mission
 							id=4870;
 							type="GOL_Helipad";
 						};
-						class Item17
+						class Item15
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={47.931198,5,49.715458};
+								position[]={47.915413,5,45.626415};
 								angles[]={0,0.017597491,0};
 							};
 							side="Empty";
@@ -41791,7 +41604,7 @@ class Mission
 					name="OPFOR FARP";
 					class Entities
 					{
-						items=16;
+						items=14;
 						class Item0
 						{
 							dataType="Object";
@@ -41854,150 +41667,6 @@ class Mission
 						};
 						class Item2
 						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={113.12868,5,84.06604};
-							};
-							id=4867;
-							type="ModuleRespawnVehicle_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ModuleRespawnVehicle_F_ForcedRespawn";
-									expression="_this setVariable ['ForcedRespawn',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="ModuleRespawnVehicle_F_Init";
-									expression="_this setVariable ['Init',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[(_this select 0)] spawn OKS_fnc_Helicopter;";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
-									expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="ModuleRespawnVehicle_F_DesertedDistance";
-									expression="_this setVariable ['DesertedDistance',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="";
-										};
-									};
-								};
-								class Attribute4
-								{
-									property="ModuleRespawnVehicle_F_PositionType";
-									expression="_this setVariable ['PositionType',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute5
-								{
-									property="ModuleRespawnVehicle_F_RespawnCount";
-									expression="_this setVariable ['RespawnCount',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="8";
-										};
-									};
-								};
-								class Attribute6
-								{
-									property="ModuleRespawnVehicle_F_Position";
-									expression="_this setVariable ['Position',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute7
-								{
-									property="ModuleRespawnVehicle_F_Wreck";
-									expression="_this setVariable ['Wreck',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="2";
-										};
-									};
-								};
-								class Attribute8
-								{
-									property="ModuleRespawnVehicle_F_Delay";
-									expression="_this setVariable ['Delay',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="60";
-										};
-									};
-								};
-								class Attribute9
-								{
-									property="ModuleRespawnVehicle_F_ShowNotification";
-									expression="_this setVariable ['ShowNotification',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								nAttributes=10;
-							};
-						};
-						class Item3
-						{
 							dataType="Object";
 							class PositionInfo
 							{
@@ -42044,7 +41713,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item4
+						class Item3
 						{
 							dataType="Object";
 							class PositionInfo
@@ -42060,7 +41729,7 @@ class Mission
 							id=4869;
 							type="GOL_Helipad";
 						};
-						class Item5
+						class Item4
 						{
 							dataType="Object";
 							class PositionInfo
@@ -42076,7 +41745,7 @@ class Mission
 							id=4871;
 							type="GOL_Helipad";
 						};
-						class Item6
+						class Item5
 						{
 							dataType="Object";
 							class PositionInfo
@@ -42092,7 +41761,7 @@ class Mission
 							id=4872;
 							type="GOL_Helipad";
 						};
-						class Item7
+						class Item6
 						{
 							dataType="Object";
 							class PositionInfo
@@ -42140,7 +41809,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item8
+						class Item7
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -42151,152 +41820,7 @@ class Mission
 							description="Used to teleport to the staging area flag, named flag_east_1 for example.";
 							id=4874;
 						};
-						class Item9
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={111.93964,5,44.433937};
-								angles[]={0,6.2809501,0};
-							};
-							id=4875;
-							type="ModuleRespawnVehicle_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ModuleRespawnVehicle_F_ForcedRespawn";
-									expression="_this setVariable ['ForcedRespawn',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="ModuleRespawnVehicle_F_Init";
-									expression="_this setVariable ['Init',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[(_this select 0)] spawn OKS_fnc_Jet;";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
-									expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="ModuleRespawnVehicle_F_DesertedDistance";
-									expression="_this setVariable ['DesertedDistance',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="";
-										};
-									};
-								};
-								class Attribute4
-								{
-									property="ModuleRespawnVehicle_F_PositionType";
-									expression="_this setVariable ['PositionType',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute5
-								{
-									property="ModuleRespawnVehicle_F_RespawnCount";
-									expression="_this setVariable ['RespawnCount',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="8";
-										};
-									};
-								};
-								class Attribute6
-								{
-									property="ModuleRespawnVehicle_F_Position";
-									expression="_this setVariable ['Position',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute7
-								{
-									property="ModuleRespawnVehicle_F_Wreck";
-									expression="_this setVariable ['Wreck',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="2";
-										};
-									};
-								};
-								class Attribute8
-								{
-									property="ModuleRespawnVehicle_F_Delay";
-									expression="_this setVariable ['Delay',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="60";
-										};
-									};
-								};
-								class Attribute9
-								{
-									property="ModuleRespawnVehicle_F_ShowNotification";
-									expression="_this setVariable ['ShowNotification',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								nAttributes=10;
-							};
-						};
-						class Item10
+						class Item8
 						{
 							dataType="Object";
 							class PositionInfo
@@ -42311,7 +41835,7 @@ class Mission
 							id=4876;
 							type="GOL_ResupplyStation_EAST_Small";
 						};
-						class Item11
+						class Item9
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -42323,7 +41847,7 @@ class Mission
 							description="This station allows pilots to create any resupply box and service stations.";
 							id=4877;
 						};
-						class Item12
+						class Item10
 						{
 							dataType="Object";
 							class PositionInfo
@@ -42395,7 +41919,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item13
+						class Item11
 						{
 							dataType="Object";
 							class PositionInfo
@@ -42480,7 +42004,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item14
+						class Item12
 						{
 							dataType="Object";
 							class PositionInfo
@@ -42514,7 +42038,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item15
+						class Item13
 						{
 							dataType="Object";
 							class PositionInfo
@@ -44755,7 +44279,7 @@ class Mission
 					name="INDEP FARP";
 					class Entities
 					{
-						items=17;
+						items=15;
 						class Item0
 						{
 							dataType="Comment";
@@ -44884,295 +44408,6 @@ class Mission
 						};
 						class Item7
 						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={176.28482,5,83.92511};
-							};
-							id=4955;
-							type="ModuleRespawnVehicle_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ModuleRespawnVehicle_F_ForcedRespawn";
-									expression="_this setVariable ['ForcedRespawn',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="ModuleRespawnVehicle_F_Init";
-									expression="_this setVariable ['Init',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[(_this select 0)] spawn OKS_fnc_Helicopter;";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
-									expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="ModuleRespawnVehicle_F_DesertedDistance";
-									expression="_this setVariable ['DesertedDistance',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="";
-										};
-									};
-								};
-								class Attribute4
-								{
-									property="ModuleRespawnVehicle_F_PositionType";
-									expression="_this setVariable ['PositionType',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute5
-								{
-									property="ModuleRespawnVehicle_F_RespawnCount";
-									expression="_this setVariable ['RespawnCount',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="8";
-										};
-									};
-								};
-								class Attribute6
-								{
-									property="ModuleRespawnVehicle_F_Position";
-									expression="_this setVariable ['Position',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute7
-								{
-									property="ModuleRespawnVehicle_F_Wreck";
-									expression="_this setVariable ['Wreck',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="2";
-										};
-									};
-								};
-								class Attribute8
-								{
-									property="ModuleRespawnVehicle_F_Delay";
-									expression="_this setVariable ['Delay',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="60";
-										};
-									};
-								};
-								class Attribute9
-								{
-									property="ModuleRespawnVehicle_F_ShowNotification";
-									expression="_this setVariable ['ShowNotification',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								nAttributes=10;
-							};
-						};
-						class Item8
-						{
-							dataType="Logic";
-							class PositionInfo
-							{
-								position[]={175.51109,5,47.490746};
-								angles[]={0,0.00031136922,0};
-							};
-							id=4956;
-							type="ModuleRespawnVehicle_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ModuleRespawnVehicle_F_ForcedRespawn";
-									expression="_this setVariable ['ForcedRespawn',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="ModuleRespawnVehicle_F_Init";
-									expression="_this setVariable ['Init',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[(_this select 0)] spawn OKS_fnc_Jet;";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
-									expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="ModuleRespawnVehicle_F_DesertedDistance";
-									expression="_this setVariable ['DesertedDistance',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="";
-										};
-									};
-								};
-								class Attribute4
-								{
-									property="ModuleRespawnVehicle_F_PositionType";
-									expression="_this setVariable ['PositionType',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute5
-								{
-									property="ModuleRespawnVehicle_F_RespawnCount";
-									expression="_this setVariable ['RespawnCount',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="8";
-										};
-									};
-								};
-								class Attribute6
-								{
-									property="ModuleRespawnVehicle_F_Position";
-									expression="_this setVariable ['Position',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								class Attribute7
-								{
-									property="ModuleRespawnVehicle_F_Wreck";
-									expression="_this setVariable ['Wreck',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="2";
-										};
-									};
-								};
-								class Attribute8
-								{
-									property="ModuleRespawnVehicle_F_Delay";
-									expression="_this setVariable ['Delay',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="60";
-										};
-									};
-								};
-								class Attribute9
-								{
-									property="ModuleRespawnVehicle_F_ShowNotification";
-									expression="_this setVariable ['ShowNotification',_value,true];";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="0";
-										};
-									};
-								};
-								nAttributes=10;
-							};
-						};
-						class Item9
-						{
 							dataType="Marker";
 							position[]={176.06534,5,88.959549};
 							name="farp_independent_1";
@@ -45200,7 +44435,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item10
+						class Item8
 						{
 							dataType="Comment";
 							class PositionInfo
@@ -45211,7 +44446,7 @@ class Mission
 							description="Used to teleport to the staging area flag, named flag_independent_1 for example.";
 							id=4958;
 						};
-						class Item11
+						class Item9
 						{
 							dataType="Object";
 							class PositionInfo
@@ -45228,7 +44463,7 @@ class Mission
 							id=4960;
 							type="GOL_I_Plane_Fighter_04_F";
 						};
-						class Item12
+						class Item10
 						{
 							dataType="Object";
 							class PositionInfo
@@ -45263,7 +44498,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item13
+						class Item11
 						{
 							dataType="Object";
 							class PositionInfo
@@ -45298,7 +44533,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item14
+						class Item12
 						{
 							dataType="Object";
 							class PositionInfo
@@ -45332,7 +44567,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item15
+						class Item13
 						{
 							dataType="Object";
 							class PositionInfo
@@ -45366,7 +44601,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item16
+						class Item14
 						{
 							dataType="Object";
 							class PositionInfo
@@ -45386,167 +44621,6 @@ class Mission
 				};
 			};
 			id=4880;
-		};
-	};
-	class Connections
-	{
-		class LinkIDProvider
-		{
-			nextID=15;
-		};
-		class Links
-		{
-			items=15;
-			class Item0
-			{
-				linkID=0;
-				item0=4879;
-				item1=4867;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item1
-			{
-				linkID=1;
-				item0=4864;
-				item1=4867;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item2
-			{
-				linkID=2;
-				item0=4780;
-				item1=4783;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item3
-			{
-				linkID=3;
-				item0=4784;
-				item1=4783;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item4
-			{
-				linkID=4;
-				item0=4873;
-				item1=4867;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item5
-			{
-				linkID=5;
-				item0=4868;
-				item1=4867;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item6
-			{
-				linkID=6;
-				item0=5015;
-				item1=4783;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item7
-			{
-				linkID=7;
-				item0=4792;
-				item1=5017;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item8
-			{
-				linkID=8;
-				item0=4878;
-				item1=4875;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item9
-			{
-				linkID=9;
-				item0=4963;
-				item1=4955;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item10
-			{
-				linkID=10;
-				item0=4949;
-				item1=4955;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item11
-			{
-				linkID=11;
-				item0=4962;
-				item1=4955;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item12
-			{
-				linkID=12;
-				item0=4961;
-				item1=4955;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item13
-			{
-				linkID=13;
-				item0=4960;
-				item1=4956;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item14
-			{
-				linkID=14;
-				item0=4793;
-				item1=4783;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
 		};
 	};
 };
