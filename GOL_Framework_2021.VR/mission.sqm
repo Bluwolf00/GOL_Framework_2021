@@ -12,22 +12,22 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=5815;
+		nextID=5834;
 	};
 	class MarkerIDProvider
 	{
-		nextID=9;
+		nextID=10;
 	};
 	class LayerIndexProvider
 	{
-		nextID=19548;
+		nextID=19580;
 	};
 	class Camera
 	{
-		pos[]={113.03568,66.610329,-18.831947};
-		dir[]={0.02233788,-0.48958677,0.87170625};
-		up[]={0.01254221,0.87194628,0.48944369};
-		aside[]={0.99970394,4.2435022e-07,-0.025619632};
+		pos[]={111.57784,87.106293,-11.442437};
+		dir[]={0.019272333,-0.63360572,0.77348244};
+		up[]={0.015782714,0.77364379,0.63342255};
+		aside[]={0.99973583,9.3488234e-07,-0.024912247};
 	};
 };
 binarizationWanted=0;
@@ -350,7 +350,7 @@ randomSeed=15706391;
 class ScenarioData
 {
 	author="Editor";
-	overviewText="Framework Version 4.0.0.031126";
+	overviewText="Framework Version 4.0.0.181126";
 	overViewPicture="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	overViewPictureLocked="\OKS_GOL_Misc\data\images\loadImage.jpg";
 	loadScreen="\OKS_GOL_Misc\data\images\loadImage.jpg";
@@ -431,7 +431,7 @@ class CustomAttributes
 		};
 		nAttributes=1;
 	};
-	class Category2
+	class Category3
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -606,7 +606,7 @@ class CustomAttributes
 		};
 		nAttributes=4;
 	};
-	class Category3
+	class Category4
 	{
 		name="Scenario";
 		class Attribute0
@@ -35537,7 +35537,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.5;
+														value=1.703622;
 													};
 												};
 												class Item1
@@ -35564,7 +35564,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.5;
+														value=1.7;
 													};
 												};
 												class Item1
@@ -35591,7 +35591,7 @@ class CustomAttributes
 													class data
 													{
 														singleType="SCALAR";
-														value=1.5;
+														value=1.7;
 													};
 												};
 												class Item1
@@ -35684,7 +35684,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Mission_Name";
-		overviewText="Framework Version 4.0.0.031126";
+		overviewText="Framework Version 4.0.0.181126";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
@@ -35990,6 +35990,9 @@ class Mission
 							position[]={996.63977,5,26.230469};
 							name="helicopter_spawn";
 							type="Empty";
+							colorName="ColorWEST";
+							a=0.5;
+							b=0.5;
 							id=4695;
 						};
 						class Item1
@@ -35998,6 +36001,9 @@ class Mission
 							position[]={24.5002,5,1001.744};
 							name="helicopter_despawn";
 							type="Empty";
+							colorName="ColorWEST";
+							a=0.5;
+							b=0.5;
 							id=4696;
 						};
 						class Item2
@@ -36385,6 +36391,7 @@ class Mission
 							class Attributes
 							{
 								name="Vehicle_1";
+								description="Framework: Vehicle slot 1 (vehicle_1). Template convenience vehicle; keep near staging. Must be empty (no crew).";
 								textures="Sand";
 							};
 							id=4707;
@@ -36614,6 +36621,7 @@ class Mission
 							class Attributes
 							{
 								name="Mobile_HQ";
+								description="Framework: Mobile HQ terminal. Keep 5m north of the staging flag. Used as the mobile HQ/service point in templates.";
 							};
 							id=5077;
 							type="GOL_Mobile_HQ";
@@ -39153,7 +39161,7 @@ class Mission
 							dataType="Marker";
 							position[]={47.653091,5,130.45833};
 							name="respawn_west";
-							text="Staging Area";
+							text="Staging Point";
 							type="b_hq";
 							colorName="ColorWEST";
 							a=0.69999999;
@@ -39183,6 +39191,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								description="Framework: Gear box (WEST). Place near the Staging Point. Used for player gear/loadout access and mission resupply.";
 							};
 							id=4774;
 							type="GOL_GearBox_WEST";
@@ -39220,6 +39229,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								description="Framework: Support box (WEST). Place near the Staging Point. Used for support utilities/supplies depending on framework settings.";
 							};
 							id=4777;
 							type="GOL_SupportBox_WEST";
@@ -39248,6 +39258,7 @@ class Mission
 							class Attributes
 							{
 								name="flag_west_1";
+								description="Framework: Staging flag (west). Visual anchor for player staging and framework grouping.";
 							};
 							id=5068;
 							type="GOL_Flag_Hellfish";
@@ -39350,6 +39361,7 @@ class Mission
 							class Attributes
 							{
 								name="helicopter_1";
+								description="Framework: Helicopter slot 1 (helicopter_1). Template convenience helicopter; placed on the helipad. Must be empty (no crew).";
 								reportOwnPosition=1;
 								pylons="FIR_Hydra_M247_P_19rnd_M;GOL_PylonWeapon_M230_HE_L;FIR_Hydra_M229_P_7rnd_M;FIR_Hydra_M247_P_19rnd_M;rhsusf_M130_CMFlare_Chaff_Magazine_x2;";
 							};
@@ -39384,6 +39396,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								description="Framework: GOL Helipad. Part of the FARP cluster; keep with FARP marker + flag_side_2 + resupply station.";
 							};
 							id=4785;
 							type="GOL_Helipad";
@@ -39468,6 +39481,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								description="Framework: Resupply/Service station (WEST). Keep with the FARP cluster (helipad + flag_west_2 + FARP marker).";
 							};
 							id=4791;
 							type="GOL_ResupplyStation_WEST_Small";
@@ -39662,6 +39676,7 @@ class Mission
 							class Attributes
 							{
 								name="flag_west_2";
+								description="Framework: FARP flag (west). Keep with FARP marker + helipad + resupply station.";
 							};
 							id=5073;
 							type="GOL_Flagpole_AAC";
@@ -41696,7 +41711,7 @@ class Mission
 							dataType="Marker";
 							position[]={113.79144,5,127.71202};
 							name="respawn_east";
-							text="Staging Area";
+							text="Staging Point";
 							type="o_hq";
 							colorName="ColorEAST";
 							a=0.69999999;
@@ -41725,6 +41740,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								description="Framework: Gear box (EAST). Place near the Staging Point. Used for player gear/loadout access and mission resupply.";
 							};
 							id=4854;
 							type="GOL_GearBox_EAST";
@@ -41773,6 +41789,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								description="Framework: Support box (EAST). Place near the Staging Point. Used for support utilities/supplies depending on framework settings.";
 							};
 							id=4858;
 							type="GOL_SupportBox_EAST";
@@ -41790,6 +41807,7 @@ class Mission
 							class Attributes
 							{
 								name="flag_east_1";
+								description="Framework: Staging flag (east). Visual anchor for player staging and framework grouping.";
 							};
 							id=5070;
 							type="GOL_Flag_Hellfish";
@@ -42183,6 +42201,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								description="Framework: Resupply/Service station (EAST). Keep with the FARP cluster (helipad + flag_east_2 + FARP marker).";
 							};
 							id=4876;
 							type="GOL_ResupplyStation_EAST_Small";
@@ -42369,6 +42388,7 @@ class Mission
 							class Attributes
 							{
 								name="flag_east_2";
+								description="Framework: FARP flag (east). Keep with FARP marker + helipad + resupply station.";
 							};
 							id=5072;
 							type="GOL_Flagpole_AAC";
@@ -44496,6 +44516,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								description="Framework: Gear box (GUER). Place near the Staging Point. Used for player gear/loadout access and mission resupply.";
 							};
 							id=4939;
 							type="GOL_GearBox_GUER";
@@ -44562,6 +44583,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								description="Framework: Support box (GUER). Place near the Staging Point. Used for support utilities/supplies depending on framework settings.";
 							};
 							id=4943;
 							type="GOL_SupportBox_GUER";
@@ -44601,6 +44623,7 @@ class Mission
 							class Attributes
 							{
 								name="flag_independent_1";
+								description="Framework: Staging flag (independent). Visual anchor for player staging and framework grouping.";
 							};
 							id=5069;
 							type="GOL_Flag_Hellfish";
@@ -44754,6 +44777,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
+								description="Framework: Resupply/Service station (GUER). Keep with the FARP cluster (helipad + flag_independent_2 + FARP marker).";
 							};
 							id=4954;
 							type="GOL_ResupplyStation_GUER_Small";
@@ -44932,6 +44956,7 @@ class Mission
 							class Attributes
 							{
 								name="flag_independent_2";
+								description="Framework: FARP flag (independent). Keep with FARP marker + helipad + resupply station.";
 							};
 							id=5071;
 							type="GOL_Flagpole_AAC";
