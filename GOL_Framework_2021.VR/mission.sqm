@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=19518;
+		nextID=19548;
 	};
 	class Camera
 	{
-		pos[]={111.78634,71.733772,-30.044088};
-		dir[]={0.02164883,-0.48805174,0.87256044};
-		up[]={0.012105313,0.87281168,0.4879083};
-		aside[]={0.99970537,2.5905319e-07,-0.024804477};
+		pos[]={113.03568,66.610329,-18.831947};
+		dir[]={0.02233788,-0.48958677,0.87170625};
+		up[]={0.01254221,0.87194628,0.48944369};
+		aside[]={0.99970394,4.2435022e-07,-0.025619632};
 	};
 };
 binarizationWanted=0;
@@ -35723,12 +35723,12 @@ class Mission
 						class Item0
 						{
 							dataType="Trigger";
-							position[]={550.26782,5,941.68451};
+							position[]={550.26801,5,941.685};
 							class Attributes
 							{
 								name="SpawnTrigger_1";
 								text="Spawn Trigger 1";
-								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								condition="isServer" \n "&& ([thisList] call GW_Common_Fnc_hasGroundPlayer" \n "|| [thisList] call GW_Common_Fnc_hasAircraftPlayer)";
 								onActivation="call{null = [1] spawn GW_Fnc_spawnList;}";
 								timeout[]={5,5,5};
 								interuptable=1;
@@ -35746,7 +35746,7 @@ class Mission
 							{
 								name="SpawnTrigger_2";
 								text="Spawn Trigger 2";
-								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								condition="isServer" \n "&& ([thisList] call GW_Common_Fnc_hasGroundPlayer" \n "|| [thisList] call GW_Common_Fnc_hasAircraftPlayer)";
 								onActivation="call{null = [2] spawn GW_Fnc_spawnList;}";
 								timeout[]={5,5,5};
 								interuptable=1;
@@ -35764,7 +35764,7 @@ class Mission
 							{
 								name="SpawnTrigger_3";
 								text="Spawn Trigger 3";
-								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								condition="isServer" \n "&& ([thisList] call GW_Common_Fnc_hasGroundPlayer" \n "|| [thisList] call GW_Common_Fnc_hasAircraftPlayer)";
 								onActivation="call{null = [3] spawn GW_Fnc_spawnList;}";
 								timeout[]={5,5,5};
 								interuptable=1;
@@ -35782,7 +35782,7 @@ class Mission
 							{
 								name="SpawnTrigger_4";
 								text="Spawn Trigger 4";
-								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								condition="isServer" \n "&& ([thisList] call GW_Common_Fnc_hasGroundPlayer" \n "|| [thisList] call GW_Common_Fnc_hasAircraftPlayer)";
 								onActivation="call{null = [4] spawn GW_Fnc_spawnList;}";
 								timeout[]={5,5,5};
 								interuptable=1;
@@ -35800,7 +35800,7 @@ class Mission
 							{
 								name="SpawnTrigger_5";
 								text="Spawn Trigger 5";
-								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								condition="isServer" \n "&& ([thisList] call GW_Common_Fnc_hasGroundPlayer" \n "|| [thisList] call GW_Common_Fnc_hasAircraftPlayer)";
 								onActivation="call{null = [5] spawn GW_Fnc_spawnList;}";
 								timeout[]={5,5,5};
 								interuptable=1;
@@ -35813,12 +35813,12 @@ class Mission
 						class Item5
 						{
 							dataType="Trigger";
-							position[]={548.61798,5,837.74707};
+							position[]={548.61798,5,837.74701};
 							class Attributes
 							{
 								name="SpawnTrigger_6";
 								text="Spawn Trigger 6";
-								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								condition="isServer" \n "&& ([thisList] call GW_Common_Fnc_hasGroundPlayer" \n "|| [thisList] call GW_Common_Fnc_hasAircraftPlayer)";
 								onActivation="call{null = [6] spawn GW_Fnc_spawnList;}";
 								timeout[]={5,5,5};
 								interuptable=1;
@@ -35836,7 +35836,7 @@ class Mission
 							{
 								name="SpawnTrigger_7";
 								text="Spawn Trigger 7";
-								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								condition="isServer" \n "&& ([thisList] call GW_Common_Fnc_hasGroundPlayer" \n "|| [thisList] call GW_Common_Fnc_hasAircraftPlayer)";
 								onActivation="call{null = [7] spawn GW_Fnc_spawnList;}";
 								timeout[]={5,5,5};
 								interuptable=1;
@@ -35854,7 +35854,7 @@ class Mission
 							{
 								name="SpawnTrigger_8";
 								text="Spawn Trigger 8";
-								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								condition="isServer" \n "&& ([thisList] call GW_Common_Fnc_hasGroundPlayer" \n "|| [thisList] call GW_Common_Fnc_hasAircraftPlayer)";
 								onActivation="call{null = [8] spawn GW_Fnc_spawnList;}";
 								timeout[]={5,5,5};
 								interuptable=1;
@@ -35872,7 +35872,7 @@ class Mission
 							{
 								name="SpawnTrigger_9";
 								text="Spawn Trigger 9";
-								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								condition="isServer" \n "&& ([thisList] call GW_Common_Fnc_hasGroundPlayer" \n "|| [thisList] call GW_Common_Fnc_hasAircraftPlayer)";
 								onActivation="call{null = [9] spawn GW_Fnc_spawnList;}";
 								timeout[]={5,5,5};
 								interuptable=1;
@@ -35890,7 +35890,7 @@ class Mission
 							{
 								name="SpawnTrigger_10";
 								text="Spawn Trigger 10";
-								condition="call{!({(isNull (objectParent _x))} count thislist isEqualTo 0) && isServer}";
+								condition="isServer" \n "&& ([thisList] call GW_Common_Fnc_hasGroundPlayer" \n "|| [thisList] call GW_Common_Fnc_hasAircraftPlayer)";
 								onActivation="call{null = [10] spawn GW_Fnc_spawnList;}";
 								timeout[]={5,5,5};
 								interuptable=1;
